@@ -1,0 +1,36 @@
+{
+  "provider": "ukg-ready",
+  "reference_version": null,
+  "lookup_status": "template_only",
+  "notice": "PLACEHOLDER: no actual provider codes or meanings are supplied. Not an API response.",
+  "openapi": {
+    "status": "unavailable_unverified",
+    "relative_path": null,
+    "version": null,
+    "source": null,
+    "sha256": null
+  },
+  "distribution": {
+    "status": "unverified",
+    "evidence_reference": null,
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "lookups": [],
+  "known_gaps": [
+    "All lookup domains, supported entity scope, and field units are unverified."
+  ],
+  "authoring_template": {
+    "notice": "Structural example only: remove after verification; null is not a provider code.",
+    "domain": "[VERIFIED_LOOKUP_DOMAIN]",
+    "source_field_pointers": [],
+    "entries": [
+      {
+        "code": null,
+        "meaning": "[VERIFIED_MEANING]",
+        "evidence_reference": "[APPROVED_SOURCE_LOCATION]"
+      }
+    ],
+    "completeness": "[COMPLETE_OR_DOCUMENTED_PARTIAL]"
+  }
+}
