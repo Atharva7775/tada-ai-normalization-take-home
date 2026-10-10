@@ -1,0 +1,43 @@
+{
+  "reviewed_on": "2026-10-09",
+  "distribution": {
+    "status": "user_approved_private_upload",
+    "evidence_reference": "../../docs/REFERENCE_AUDIT.md#private-upload-authorization",
+    "basis": "Organizer explicitly instructed: \"Yeah push those as well\" on 2026-10-09, after the permission gaps were disclosed. This authorizes this private upload; no provider redistribution license is represented.",
+    "provider_redistribution_permission_verified": false,
+    "candidate_sharing_approved": false,
+    "reviewed_at": "2026-10-09"
+  },
+  "artifacts": [
+    {
+      "file": "openapi/isolved-v6.swagger.json",
+      "primary_for_assignment": true,
+      "source": "references/isolved/api_docs.json",
+      "source_sha256": "ee126ab98e819872bbf1049137dacc2fb9d16dbd23a76d5ef3a6926c139e8300",
+      "sha256": "47e92227a8613ff4f3d6d10ba9bbadd84448f2dd9e4975056084c47ff5074555",
+      "swagger": "2.0",
+      "api_version": "6",
+      "paths": 361,
+      "definitions": 538,
+      "modifications": {
+        "example_annotations_removed": 1,
+        "description_code_blocks_removed": 7
+      }
+    },
+    {
+      "file": "openapi/isolved-v6.alternate.swagger.json",
+      "primary_for_assignment": false,
+      "source": "isolved_doc.json",
+      "source_sha256": "e8c009506a07d8466c176c995ab861143ccf54df47f92110a1f377860b24599f",
+      "sha256": "e8b3acec1dbed0399e36542531a43bdcee5781a9ce55d1948a75798f82d86bdb",
+      "swagger": "2.0",
+      "api_version": "6",
+      "paths": 344,
+      "definitions": 516,
+      "modifications": {
+        "example_annotations_removed": 1,
+        "description_code_blocks_removed": 7
+      }
+    }
+  ]
+}

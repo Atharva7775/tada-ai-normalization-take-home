@@ -20,9 +20,10 @@ class StarterChecks(unittest.TestCase):
         for provider in ("isolved", "ukg-ready"):
             with self.subTest(provider=provider):
                 ref = load_reference(provider)
-                self.assertEqual(ref["lookup_status"], "template_only")
-                self.assertEqual(ref["lookups"], [])
-                self.assertEqual(ref["distribution"]["status"], "permission_required")
+                self.assertEqual(ref["lookup_status"], "verified")
+                self.assertTrue(ref["lookups"])
+                self.assertEqual(ref["distribution"]["status"], "user_approved_private_upload")
+                self.assertFalse(ref["distribution"]["provider_redistribution_permission_verified"])
                 self.assertTrue(issues[provider])
 
     def test_all_nine_transformations_are_explicitly_unimplemented(self):

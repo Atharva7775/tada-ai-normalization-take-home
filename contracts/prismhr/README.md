@@ -49,5 +49,6 @@ included. Do not conflate those identifiers with status classes, benefit statuse
 or the field-specific codes listed in the reference. Generate your own synthetic
 lookup/response data where the contract permits open identifiers and label it synthetic.
 
-The complete three-provider pack still requires authorized isolved and UKG Ready
-materials before the seven-day clock starts. See [the audit](../../docs/REFERENCE_AUDIT.md).
+The isolved and UKG references are now included at the organizer's private-upload
+instruction. Their provider redistribution permission and candidate sharing still
+need confirmation before the seven-day clock starts. See [the audit](../../docs/REFERENCE_AUDIT.md).

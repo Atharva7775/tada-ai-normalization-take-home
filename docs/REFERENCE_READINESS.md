@@ -1,24 +1,23 @@
 # Reference readiness and distribution record
 
-**Overall: NOT READY FOR CANDIDATE HANDOFF.** Reviewed 2026-10-09.
-PrismHR is available as a licensed snapshot derivative. The other two providers
-remain withheld. Do not begin the seven-day clock until materials and scope are
-confirmed consistently for every candidate.
+**Overall: NOT READY FOR CANDIDATE HANDOFF.** Updated 2026-10-09.
+The organizer explicitly authorized private upload of the remaining located
+references. That instruction does not establish provider redistribution rights
+or approval to share with candidates. Do not start the seven-day clock yet.
 
-| Provider | Contract | Lookup contents | Distribution basis | Remaining scope review |
+| Provider | Included reference | Partial lookup | Distribution record | Remaining gap |
 | --- | --- | --- | --- | --- |
-| PrismHR | OpenAPI 3.0.1, API 2025.09; 450 paths / 1,168 schemas; examples removed | Eight partial domains / 43 documented entries; client-configured values absent | Source `/info/license` explicitly declares Apache 2.0; license and change notices included | Organizer must select supported entity/endpoint scope; snapshot not confirmed latest |
-| isolved | Swagger 2.0 version 6 located; not copied | Empty template; source has 20 enum locations, not distributed | No artifact license or applicable redistribution grant found in searched sources | Permission, derivative review, lookup scope and completeness required |
-| UKG Ready | 381 cached HTML reference pages located; no standalone OpenAPI found | Empty template | No applicable redistribution grant found in searched sources | Permission plus an authorized contract and lookup scope required |
+| PrismHR | OpenAPI 3.0.1, API 2025.09; 450 paths / 1,168 schemas | Eight domains / 43 entries | Explicit Apache 2.0 artifact license; notices included | Confirm candidate endpoint/entity scope; latest API unverified |
+| isolved | Primary Swagger 2.0 version 6: 361 paths / 538 definitions; alternate: 344 / 516 | 11 enum domains; raw labels, undocumented meanings null | Organizer authorized private upload; provider redistribution grant unverified | Confirm candidate redistribution and scope |
+| UKG Ready | 381 cached HTML pages and 478 extracted JSON Schema blocks; not OpenAPI | 15 enum domains; raw labels, undocumented meanings null | Organizer authorized private upload; provider redistribution grant unverified | Authorized OpenAPI contract or agreed alternate scope, plus candidate redistribution |
 
-See [REFERENCE_AUDIT.md](REFERENCE_AUDIT.md) for exact source hashes, published
-terms, search limits and field-specific UKG unit evidence. See
-[PrismHR's record](../contracts/prismhr/README.md) for the included license and
-modification basis. The audit records an automated artifact/license evidence
-review; it does not represent a provider approval letter or legal certification.
+See [the audit](REFERENCE_AUDIT.md), [isolved's manifest](../contracts/isolved/SOURCE_MANIFEST.json)
+and [UKG's manifest](../contracts/ukg-ready/SOURCE_MANIFEST.json) for original and
+derivative hashes, changes and authorization scope. No API response fixtures,
+customer lookup responses or canonical mappings are supplied.
 
-For every new artifact, record exact product/API/version, source, acquisition
-date if known, checksum, permitted audience/storage/tool restrictions, reviewer
-and review date, supported scope, derivative changes and lookup completeness.
-`check-inputs` checks basic metadata; it does not establish rights, validate an
-OpenAPI document or approve candidate handoff. A status string alone is insufficient.
+For each artifact, record product/API/version, source, acquisition date if known,
+checksum, audience/storage/tool restrictions, review date, supported scope,
+derivative changes and lookup completeness. `check-inputs` checks metadata and
+continues to exit 2 for the incomplete candidate pack. It does not establish
+rights, validate a complete OpenAPI document or authorize candidate handoff.

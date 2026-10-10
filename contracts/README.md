@@ -1,12 +1,16 @@
 # Provider input contracts
 
 There are three provider folders and **one lookup-reference JSON per provider**.
-PrismHR includes an Apache-2.0-declared 2025.09 OpenAPI snapshot derivative and
-eight partial lookup domains with source citations. Its example annotations and
-embedded response renderings were removed. The two remaining JSONs are authoring
-templates with empty lookup domains. Their `openapi/PLACEHOLDER.md` notices are
-not API contracts. See [the audit](../docs/REFERENCE_AUDIT.md) for provenance,
-distribution evidence and missing permissions.
+PrismHR includes an Apache-2.0-declared 2025.09 OpenAPI derivative and eight
+partial lookup domains. isolved includes two version-6 Swagger snapshots and
+11 partial enum domains. UKG Ready includes 381 cached HTML pages, an extracted
+JSON Schema bundle and 15 partial enum domains; **it is not an OpenAPI contract**.
+Response examples were removed from these derivatives. Each reference preserves
+raw values, cites source locations and leaves undocumented meanings null.
+
+The organizer explicitly authorized isolved/UKG's private upload after the rights
+gaps were disclosed. Their provider redistribution permission and candidate
+sharing remain unverified. See [the audit](../docs/REFERENCE_AUDIT.md).
 
 ## Authoring a verified lookup reference
 

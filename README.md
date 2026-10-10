@@ -7,14 +7,14 @@ employee, and payroll responses into one consistent, well-documented model.
 Your job is to discover the mappings, design the canonical schema and enums,
 and show that the transformations preserve meaning across providers.
 
-> **Starter status: partial reference pack; not ready for candidate handoff.**
-> PrismHR's existing 2025.09 snapshot declares Apache 2.0 and is included as a
-> documented derivative, with a partial lookup reference (eight domains,
-> 43 documented code entries). isolved and UKG Ready materials remain withheld
-> pending distribution permission; their files are clearly marked templates.
-> No API response fixtures, employee records, or implementation solution are supplied.
-> The seven-day assessment begins only when the organizer supplies the approved
-> reference pack and confirms its scope. Do not invent provider facts to fill gaps.
+> **Starter status: private reference pack; candidate handoff remains pending.**
+> PrismHR's licensed 2025.09 derivative is included. At the organizer's explicit
+> private-upload instruction, isolved's two Swagger version-6 snapshots and
+> UKG Ready's cached HTML/schema references are now included, with partial
+> documented enum references. Provider redistribution permission for isolved/UKG
+> is still unverified. UKG's references are not an official OpenAPI contract.
+> No API response fixtures, employee records or implementation solution are supplied.
+> The seven-day assessment begins only after candidate sharing and scope are approved.
 
 ## The product problem
 
@@ -29,11 +29,13 @@ traceable decisions, and predictable handling of imperfect source data.
 | Provider | Contract location | Enum / lookup reference |
 | --- | --- | --- |
 | PrismHR | [OpenAPI 3.0.1 snapshot, API 2025.09](contracts/prismhr/openapi/prismhr-2025.09.openapi.json) | [Partial evidenced reference](contracts/prismhr/lookup-reference.json) |
-| isolved | [Withheld Swagger notice](contracts/isolved/openapi/PLACEHOLDER.md) | [Empty template](contracts/isolved/lookup-reference.json) |
-| UKG Ready | [Withheld documentation notice](contracts/ukg-ready/openapi/PLACEHOLDER.md) | [Empty template](contracts/ukg-ready/lookup-reference.json) |
+| isolved | [Primary Swagger 2.0, API version 6](contracts/isolved/openapi/isolved-v6.swagger.json) | [Partial explicit enums](contracts/isolved/lookup-reference.json) |
+| UKG Ready | [Cached HTML and JSON Schema reference pack](contracts/ukg-ready/README.md), not OpenAPI | [Partial explicit enums](contracts/ukg-ready/lookup-reference.json) |
 
-The organizer supplies each Swagger/OpenAPI contract **only when availability
-and distribution rights are verified**. Each provider receives exactly one
+PrismHR inclusion relies on its artifact license. isolved/UKG private inclusion
+was explicitly authorized by the organizer after the permission gaps were disclosed.
+Their provider redistribution permission and candidate sharing remain unverified.
+Release materials to candidates **only when availability, rights and scope are confirmed**. Each provider receives exactly one
 lookup-reference JSON, containing evidenced codes/meanings and source citations,
 not sample API payloads. A reference may be intentionally incomplete; completeness
 and missing domains must be explicit. See [reference rules](contracts/README.md)
@@ -99,7 +101,7 @@ solve mappings, generate mock employee records, or assert provider-specific unit
 ## Starter layout
 
 ```text
-contracts/           PrismHR contract/reference; two withheld notices/lookup templates
+contracts/           Provider contracts/references, partial enums and provenance records
 docs/                Scope, semantics, testing, discovery/design/submission templates
 schemas/             Your canonical schemas and enums
 src/normalization/   CLI, reference readiness checks, three unimplemented adapters

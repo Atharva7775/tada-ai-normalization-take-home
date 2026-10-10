@@ -29,7 +29,7 @@ def readiness_issues(provider, root=ROOT):
             issues.append("Reference version is missing.")
         distribution = ref.get("distribution") or {}
         if distribution.get("status") != "verified" or not distribution.get("evidence_reference"):
-            issues.append("Distribution authorization has not been recorded.")
+            issues.append("Candidate-distribution permission has not been verified.")
         spec = ref.get("openapi") or {}
         if spec.get("status") != "verified":
             issues.append("OpenAPI artifact is absent or unverified.")

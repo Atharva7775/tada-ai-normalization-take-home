@@ -5,7 +5,9 @@
 This is a private starter, **not yet a complete candidate reference pack**.
 PrismHR's existing integration snapshot is now included on the basis of its
 explicit Apache 2.0 declaration, with modification notices and a partial lookup
-reference. isolved and UKG Ready are still withheld; see
+reference. isolved and UKG Ready references were subsequently added at the
+organizer's explicit private-upload instruction; their provider redistribution
+permission and candidate sharing remain unverified. See
 [the audit](REFERENCE_AUDIT.md). This artifact/license review does not certify
 the complete candidate scope or the latest live API. Do not start the seven-day
 clock until the approved scope and materials are ready. A private repository does not establish rights
@@ -31,7 +33,8 @@ For each provider:
 6. Confirm any unavailable concepts and disclose scope adjustments consistently
    to every candidate. Supply the deadline/timezone and approved submission channel.
 
-If rights or access cannot be confirmed, keep the placeholder. Candidates must
+If candidate distribution rights or access cannot be confirmed, keep candidate
+handoff pending even when the organizer has authorized private storage. Candidates must
 not scrape gated documentation or guess proprietary lookup codes to compensate.
 
 ## Review consistency

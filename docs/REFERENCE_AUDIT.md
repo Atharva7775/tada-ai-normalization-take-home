@@ -6,7 +6,38 @@ publication are part of this update. Review method: artifact inspection, source
 provenance comparison and published-license/terms review. This is not a separate
 vendor approval or legal certification.
 
-## Decision
+## Private-upload authorization
+
+After reviewing the disclosed permission gaps, the organizer explicitly instructed
+**“Yeah push those as well”** on 2026-10-09. This is the recorded authorization
+for including the located isolved and UKG references in this personal private
+repository. It does not establish a provider license or a candidate-sharing grant.
+The earlier withholding decisions below describe the initial review; the private
+upload instruction supersedes them for this storage action only.
+
+The update includes both distinct isolved Swagger version-6 snapshots, with the
+361-path snapshot designated primary. It also includes all 381 UKG HTML pages as
+passive derivatives, and 478 parsed JSON Schema blocks extracted from those pages.
+UKG's files are clearly identified as cached reference documentation, not an
+invented or official OpenAPI contract. XML schemas and 18 opaque schema blocks
+remain in the HTML. Source and derivative hashes and modification counts are in
+[isolved's manifest](../contracts/isolved/SOURCE_MANIFEST.json) and
+[UKG's manifest](../contracts/ukg-ready/SOURCE_MANIFEST.json).
+
+Removed isolved example annotations, fenced sample code/payloads and an
+illustrative encoded authorization value. Removed UKG sample tabs, payload
+clipboard duplicates, sample pre blocks, parameter examples and active HTML
+behavior, remaining fenced examples in prose and token-like sample text; retained endpoint descriptions, parameters, response status definitions
+and JSON/XML schemas. Added modification notices and private-upload provenance.
+No API response fixtures or customer lookup responses were copied.
+
+Each provider still has exactly one lookup-reference JSON. isolved's 11 domains
+and UKG's 15 domains contain literal explicit enum values with source pointers;
+per-code meanings not documented by those arrays remain null. These intentionally
+partial references do not define candidate canonical enums or completed mappings.
+Candidate distribution and public sharing remain pending.
+
+## Initial review decision (before the private-upload instruction)
 
 - **Include PrismHR:** its exact existing OpenAPI artifact explicitly declares
   Apache 2.0. Include a documented derivative with example payload material
@@ -33,9 +64,9 @@ current API version.
 | --- | --- | --- |
 | `references/prism/prism_api_specs.json` | PrismHR Services API; OpenAPI 3.0.1; API 2025.09; 450 paths / 1,168 schemas; 3,109,295 source bytes | Licensed derivative included |
 | `chat/src/providers/prism/prism_api_specs.json` | Byte-identical duplicate of the PrismHR reference above | No duplicate copied |
-| `references/isolved/api_docs.json` | isolved REST API; Swagger 2.0; API version 6; 361 paths / 538 definitions; 1,888,054 bytes; 20 enum locations | Withheld |
-| `isolved_doc.json` | isolved REST API; Swagger 2.0; API version 6; 344 paths / 516 definitions; 1,781,586 bytes; 20 enum locations | Withheld; not identical to the other snapshot |
-| `references/saashr-rest-public/` | 381 HTML reference pages, including REST v2 routes and embedded JSON/XML schemas; no standalone OpenAPI artifact located | Withheld |
+| `references/isolved/api_docs.json` | isolved REST API; Swagger 2.0; API version 6; 361 paths / 538 definitions; 1,888,054 bytes; 20 enum locations | Initially withheld; now private derivative included |
+| `isolved_doc.json` | isolved REST API; Swagger 2.0; API version 6; 344 paths / 516 definitions; 1,781,586 bytes; 20 enum locations | Initially withheld; now private alternate included |
+| `references/saashr-rest-public/` | 381 HTML reference pages, including REST v2 routes and embedded JSON/XML schemas; no standalone OpenAPI artifact located | Initially withheld; now private derivative included |
 
 Source SHA-256 values:
 
@@ -134,7 +165,7 @@ generate their own synthetic open identifiers where permitted by the contract.
 
 The inspected cached HTML does contain explicit millisecond descriptions for
 particular fields. The following are factual summaries of inspected schema text,
-not copied HTML or a distributed UKG contract:
+not a claim of an official OpenAPI contract:
 
 | Cached source under `references/saashr-rest-public/res/` | Inspected field / evidence |
 | --- | --- |

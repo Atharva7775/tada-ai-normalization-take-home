@@ -75,5 +75,64 @@ class ReferenceIntegrityChecks(unittest.TestCase):
                     self.assertTrue(entry["meaning"])
 
 
+class PrivateUploadIntegrityChecks(unittest.TestCase):
+    def test_private_uploaded_files_match_manifests(self):
+        for provider in ("isolved", "ukg-ready"):
+            base = ROOT / "contracts" / provider
+            manifest = json.loads((base / "SOURCE_MANIFEST.json").read_text())
+            self.assertFalse(manifest["distribution"]["candidate_sharing_approved"])
+            for artifact in manifest["artifacts"]:
+                with self.subTest(provider=provider, file=artifact["file"]):
+                    path = (base / artifact["file"]).resolve()
+                    self.assertIn(base.resolve(), path.parents)
+                    self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
+                                     artifact["sha256"])
+            if provider == "ukg-ready":
+                self.assertEqual(hashlib.sha256((base / "reference-schemas.json").read_bytes()).hexdigest(),
+                                 manifest["reference_schemas_sha256"])
+
+    def test_private_lookup_entries_are_exact_cited_values(self):
+        for provider in ("isolved", "ukg-ready"):
+            base = ROOT / "contracts" / provider
+            cache = {}
+            for domain in load_reference(provider)["lookups"]:
+                for entry in domain["entries"]:
+                    relative, pointer = entry["evidence_reference"].split("#", 1)
+                    if relative not in cache:
+                        cache[relative] = json.loads((base / relative).read_text())
+                    with self.subTest(provider=provider, domain=domain["domain"], code=entry["code"]):
+                        self.assertEqual(entry["code"], resolve_pointer(cache[relative], pointer))
+                        self.assertIsNone(entry["meaning"])
+                        self.assertTrue(entry["meaning_status"])
+
+    def test_private_schema_contracts_preserve_format_boundaries(self):
+        base = ROOT / "contracts" / "isolved"
+        manifest = json.loads((base / "SOURCE_MANIFEST.json").read_text())
+        for artifact in manifest["artifacts"]:
+            document = json.loads((base / artifact["file"]).read_text())
+            self.assertEqual(document["swagger"], "2.0")
+            for node in walk(document):
+                if isinstance(node, dict):
+                    self.assertNotIn("example", node)
+                    self.assertNotIn("examples", node)
+                    if "$ref" in node:
+                        self.assertTrue(node["$ref"].startswith("#/"))
+                        resolve_pointer(document, node["$ref"])
+        base = ROOT / "contracts" / "ukg-ready"
+        document = json.loads((base / "reference-schemas.json").read_text())
+        self.assertNotIn("openapi", document)
+        self.assertNotIn("swagger", document)
+        self.assertIn("NOT Swagger/OpenAPI", document["artifact_kind"])
+        self.assertTrue(document["schemas"])
+        for record in document["schemas"]:
+            page = base / record["source_page"]
+            self.assertTrue(page.is_file())
+            self.assertIn('id="' + record["source_schema_anchor"] + '"', page.read_text())
+            for node in walk(record["schema"]):
+                if isinstance(node, dict):
+                    self.assertNotIn("example", node)
+                    self.assertNotIn("examples", node)
+
+
 if __name__ == "__main__":
     unittest.main()
