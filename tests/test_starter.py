@@ -13,13 +13,17 @@ class StarterChecks(unittest.TestCase):
         self.assertEqual(set(ADAPTERS), {"prismhr", "isolved", "ukg-ready"})
         self.assertEqual(set(ENTITIES), {"company", "employee", "payroll"})
 
-    def test_references_are_honest_placeholders(self):
-        for provider in ADAPTERS:
+    def test_reference_readiness_matches_distributed_materials(self):
+        issues = all_readiness_issues()
+        self.assertEqual(load_reference("prismhr")["lookup_status"], "verified")
+        self.assertEqual(issues["prismhr"], [])
+        for provider in ("isolved", "ukg-ready"):
             with self.subTest(provider=provider):
                 ref = load_reference(provider)
                 self.assertEqual(ref["lookup_status"], "template_only")
                 self.assertEqual(ref["lookups"], [])
-                self.assertTrue(all_readiness_issues()[provider])
+                self.assertEqual(ref["distribution"]["status"], "permission_required")
+                self.assertTrue(issues[provider])
 
     def test_all_nine_transformations_are_explicitly_unimplemented(self):
         for provider, adapter in ADAPTERS.items():

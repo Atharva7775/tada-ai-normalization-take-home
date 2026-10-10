@@ -2,23 +2,24 @@
   "provider": "isolved",
   "reference_version": null,
   "lookup_status": "template_only",
-  "notice": "PLACEHOLDER: no actual provider codes or meanings are supplied. Not an API response.",
+  "notice": "WITHHELD: source documentation was located, but candidate-redistribution permission is not verified. No actual provider codes or API responses are supplied.",
   "openapi": {
-    "status": "unavailable_unverified",
+    "status": "located_not_distributed",
     "relative_path": null,
     "version": null,
-    "source": null,
+    "source": "TadaAI/full-stack:references/isolved/api_docs.json",
     "sha256": null
   },
   "distribution": {
-    "status": "unverified",
-    "evidence_reference": null,
+    "status": "permission_required",
+    "evidence_reference": "../../docs/REFERENCE_AUDIT.md",
     "reviewed_by": null,
     "reviewed_at": null
   },
   "lookups": [],
   "known_gaps": [
-    "All lookup domains, supported entity scope, and field units are unverified."
+    "Distribution to hiring candidates and storage in this personal repository require an applicable grant.",
+    "Actual lookup values remain withheld; some important domains are client-configurable."
   ],
   "authoring_template": {
     "notice": "Structural example only: remove after verification; null is not a provider code.",
@@ -32,5 +33,11 @@
       }
     ],
     "completeness": "[COMPLETE_OR_DOCUMENTED_PARTIAL]"
+  },
+  "discovery": {
+    "artifact_kind": "Swagger 2.0 snapshot, API version 6; 361 paths / 538 definitions",
+    "source_sha256": "ee126ab98e819872bbf1049137dacc2fb9d16dbd23a76d5ef3a6926c139e8300",
+    "reviewed_on": "2026-10-09",
+    "contents_copied": false
   }
 }

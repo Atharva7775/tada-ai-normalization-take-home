@@ -3,9 +3,12 @@
 ## Release gate
 
 This is a private starter, **not yet a complete candidate reference pack**.
-No verified OpenAPI artifacts or provider lookup codes were supplied with the
-design conversation. Do not start the seven-day clock until the approved scope
-and materials are ready. A private GitHub repository does not establish rights
+PrismHR's existing integration snapshot is now included on the basis of its
+explicit Apache 2.0 declaration, with modification notices and a partial lookup
+reference. isolved and UKG Ready are still withheld; see
+[the audit](REFERENCE_AUDIT.md). This artifact/license review does not certify
+the complete candidate scope or the latest live API. Do not start the seven-day
+clock until the approved scope and materials are ready. A private repository does not establish rights
 to redistribute third-party contracts.
 
 For each provider:
@@ -44,5 +47,6 @@ This repository does not implement automated candidate ranking or hiring decisio
 The intended destination is the organizer's verified personal GitHub account,
 with a newly created private repository and no overwrites. Do not add external
 collaborators, distribute provider materials, or change visibility without an
-approved preview and explicit authorization. No open-source license is supplied;
-do not interpret that omission as permission to redistribute provider artifacts.
+approved preview and explicit authorization. The PrismHR artifact's Apache 2.0
+license applies to that artifact and its derivatives; it does not license the
+whole hiring repository or the other providers' materials.

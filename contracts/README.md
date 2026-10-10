@@ -1,8 +1,12 @@
 # Provider input contracts
 
 There are three provider folders and **one lookup-reference JSON per provider**.
-The current JSONs are authoring templates with empty lookup domains; they contain
-no actual enum codes. The `openapi/PLACEHOLDER.md` notices are not API contracts.
+PrismHR includes an Apache-2.0-declared 2025.09 OpenAPI snapshot derivative and
+eight partial lookup domains with source citations. Its example annotations and
+embedded response renderings were removed. The two remaining JSONs are authoring
+templates with empty lookup domains. Their `openapi/PLACEHOLDER.md` notices are
+not API contracts. See [the audit](../docs/REFERENCE_AUDIT.md) for provenance,
+distribution evidence and missing permissions.
 
 ## Authoring a verified lookup reference
 
@@ -20,7 +24,7 @@ Do not put canonical enums, guessed mappings, or mock API responses in this file
 
 Set `openapi.relative_path` to the exact approved filename under `openapi/`;
 set `openapi.status`, `lookup_status`, and `distribution.status` to `verified`
-only after the organizer's review. Supply version/source/checksum and distribution
+only after an evidence-backed distribution and artifact review. Supply version/source/checksum and distribution
 evidence. `check-inputs` detects missing files and basic metadata but does not
 verify license terms, complete scope, schema syntax, checksum accuracy, or codes.
 

@@ -12,8 +12,10 @@ large values, missing units, and conflicting unit metadata. Preserve exactness
 where practical and make lossy conversions observable.
 
 General arithmetic may include 60 minutes per hour or 1,000 milliseconds per
-second **only when the input field's unit is established**. No UKG Ready
-millisecond field is confirmed by this starter. Do not infer units from provider
+second **only when the input field's unit is established**. The source audit
+records field-specific millisecond descriptions in cached UKG integration docs;
+no UKG contract is distributed here and its current API version is unverified.
+Use approved evidence for the exact endpoint/field/version. Do not infer units from provider
 name, magnitude, field naming alone, or a plausible generated fixture. When
 evidence is missing, report an unresolved mapping or unsupported conversion.
 

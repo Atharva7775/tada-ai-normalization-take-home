@@ -1,6 +1,9 @@
 # Candidate tests
 
-`test_starter.py` verifies deliberate placeholder behavior only. After approved
-inputs arrive, replace placeholder-specific assertions with meaningful tests
-for your implementation. See `docs/TESTING.md` for required evidence. Do not
-count these four starter checks as passing normalization coverage.
+`test_starter.py` checks the scaffold, partial reference readiness and unimplemented
+adapters. `test_reference_integrity.py` checks the included PrismHR artifact's
+checksum/license, local schema references, example removal and lookup citations.
+These seven checks do not validate source-to-canonical semantics or certify a
+complete OpenAPI document. As you implement the assignment, update the deliberate
+unimplemented-adapter assertions and add meaningful behavior tests. See
+`docs/TESTING.md`; passing these checks is not normalization coverage.

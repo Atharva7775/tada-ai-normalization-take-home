@@ -1,8 +1,10 @@
 # Starter contents
 
-This starter contains **37 tracked files**. It includes no verified provider
-specifications, lookup codes, API response fixtures, employee records, canonical
-model, completed transformations, hidden tests, or secrets.
+This starter contains **42 tracked files**. The reference pack includes
+PrismHR's licensed 2025.09 OpenAPI derivative, a partial lookup reference,
+license/attribution/change notices and a source/permission audit. isolved and UKG
+Ready remain withheld with empty lookup templates. No API response fixtures,
+employee records, canonical solution, completed transformations or secrets are supplied.
 
 - [`.editorconfig`](.editorconfig)
 - [`.gitignore`](.gitignore)
@@ -13,8 +15,11 @@ model, completed transformations, hidden tests, or secrets.
 - [`contracts/README.md`](contracts/README.md)
 - [`contracts/isolved/lookup-reference.json`](contracts/isolved/lookup-reference.json)
 - [`contracts/isolved/openapi/PLACEHOLDER.md`](contracts/isolved/openapi/PLACEHOLDER.md)
+- [`contracts/prismhr/LICENSE.apache-2.0.txt`](contracts/prismhr/LICENSE.apache-2.0.txt)
+- [`contracts/prismhr/NOTICE.md`](contracts/prismhr/NOTICE.md)
+- [`contracts/prismhr/README.md`](contracts/prismhr/README.md)
 - [`contracts/prismhr/lookup-reference.json`](contracts/prismhr/lookup-reference.json)
-- [`contracts/prismhr/openapi/PLACEHOLDER.md`](contracts/prismhr/openapi/PLACEHOLDER.md)
+- [`contracts/prismhr/openapi/prismhr-2025.09.openapi.json`](contracts/prismhr/openapi/prismhr-2025.09.openapi.json)
 - [`contracts/ukg-ready/lookup-reference.json`](contracts/ukg-ready/lookup-reference.json)
 - [`contracts/ukg-ready/openapi/PLACEHOLDER.md`](contracts/ukg-ready/openapi/PLACEHOLDER.md)
 - [`docs/AI_USAGE.md`](docs/AI_USAGE.md)
@@ -22,6 +27,7 @@ model, completed transformations, hidden tests, or secrets.
 - [`docs/DISCOVERY_LOG.md`](docs/DISCOVERY_LOG.md)
 - [`docs/MAPPING_MATRIX.csv`](docs/MAPPING_MATRIX.csv)
 - [`docs/ORGANIZER_GUIDE.md`](docs/ORGANIZER_GUIDE.md)
+- [`docs/REFERENCE_AUDIT.md`](docs/REFERENCE_AUDIT.md)
 - [`docs/REFERENCE_READINESS.md`](docs/REFERENCE_READINESS.md)
 - [`docs/SCOPE.md`](docs/SCOPE.md)
 - [`docs/SEMANTICS.md`](docs/SEMANTICS.md)
@@ -40,4 +46,5 @@ model, completed transformations, hidden tests, or secrets.
 - [`src/normalization/references.py`](src/normalization/references.py)
 - [`src/normalization/transforms/README.md`](src/normalization/transforms/README.md)
 - [`tests/README.md`](tests/README.md)
+- [`tests/test_reference_integrity.py`](tests/test_reference_integrity.py)
 - [`tests/test_starter.py`](tests/test_starter.py)

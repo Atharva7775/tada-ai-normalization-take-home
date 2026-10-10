@@ -7,10 +7,12 @@ employee, and payroll responses into one consistent, well-documented model.
 Your job is to discover the mappings, design the canonical schema and enums,
 and show that the transformations preserve meaning across providers.
 
-> **Starter status: awaiting the approved reference pack.** This repository
-> currently contains three enum/lookup-reference **templates**, no verified
-> provider codes, and three OpenAPI **placeholder notices**. No provider API
-> responses, employee records, or implementation solution are supplied.
+> **Starter status: partial reference pack; not ready for candidate handoff.**
+> PrismHR's existing 2025.09 snapshot declares Apache 2.0 and is included as a
+> documented derivative, with a partial lookup reference (eight domains,
+> 43 documented code entries). isolved and UKG Ready materials remain withheld
+> pending distribution permission; their files are clearly marked templates.
+> No API response fixtures, employee records, or implementation solution are supplied.
 > The seven-day assessment begins only when the organizer supplies the approved
 > reference pack and confirms its scope. Do not invent provider facts to fill gaps.
 
@@ -26,15 +28,16 @@ traceable decisions, and predictable handling of imperfect source data.
 
 | Provider | Contract location | Enum / lookup reference |
 | --- | --- | --- |
-| PrismHR | `contracts/prismhr/openapi/` | `contracts/prismhr/lookup-reference.json` |
-| isolved | `contracts/isolved/openapi/` | `contracts/isolved/lookup-reference.json` |
-| UKG Ready | `contracts/ukg-ready/openapi/` | `contracts/ukg-ready/lookup-reference.json` |
+| PrismHR | [OpenAPI 3.0.1 snapshot, API 2025.09](contracts/prismhr/openapi/prismhr-2025.09.openapi.json) | [Partial evidenced reference](contracts/prismhr/lookup-reference.json) |
+| isolved | [Withheld Swagger notice](contracts/isolved/openapi/PLACEHOLDER.md) | [Empty template](contracts/isolved/lookup-reference.json) |
+| UKG Ready | [Withheld documentation notice](contracts/ukg-ready/openapi/PLACEHOLDER.md) | [Empty template](contracts/ukg-ready/lookup-reference.json) |
 
 The organizer supplies each Swagger/OpenAPI contract **only when availability
 and distribution rights are verified**. Each provider receives exactly one
 lookup-reference JSON, containing evidenced codes/meanings and source citations,
 not sample API payloads. A reference may be intentionally incomplete; completeness
-and missing domains must be explicit. See [reference rules](contracts/README.md).
+and missing domains must be explicit. See [reference rules](contracts/README.md)
+and the [source and permission audit](docs/REFERENCE_AUDIT.md).
 
 ## What you build
 
@@ -96,13 +99,13 @@ solve mappings, generate mock employee records, or assert provider-specific unit
 ## Starter layout
 
 ```text
-contracts/           Provider OpenAPI notices and one lookup template per provider
+contracts/           PrismHR contract/reference; two withheld notices/lookup templates
 docs/                Scope, semantics, testing, discovery/design/submission templates
 schemas/             Your canonical schemas and enums
 src/normalization/   CLI, reference readiness checks, three unimplemented adapters
 scripts/             Your fixture generator stub
 fixtures/            Empty documented locations for your generated/adversarial data
-tests/               Four starter checks; add your transformation tests
+tests/               Starter and reference-integrity checks; add transformation tests
 ```
 
 See [CONTENTS.md](CONTENTS.md) for the complete file inventory.
