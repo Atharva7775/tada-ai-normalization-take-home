@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Scheduler</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Scheduler</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Scheduler</span>
@@ -24,7 +24,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -101,7 +101,7 @@ empty, the behavior will be the same as if the parameter was set to false.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -158,7 +158,7 @@ empty, the behavior will be the same as if the parameter was set to false.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/schedules</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -173,7 +173,64 @@ empty, the behavior will be the same as if the parameter was set to false.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "schedules": [
+    {
+      "id": 1475072,
+      "settings_id": 295168,
+      "name": "Default Planner Settings",
+      "schedule_start": "2016-11-23",
+      "schedule_end": "2016-11-23",
+      "continuous_start_date": "2016-11-23",
+      "status": "Posted",
+      "is_continuous": false,
+      "time_zone": {
+        "id": 107,
+        "display_name": "Central"
+      },
+      "template": false,
+      "snapshot": false,
+      "scheduled_cost_centers": [
+        {
+          "id": 1573698,
+          "display_name": "Houston/33 East 17th Street"
+        },
+        {
+          "id": 1573761,
+          "display_name": "Houston/708 Third Avenue"
+        },
+        {
+          "id": 1573697,
+          "display_name": "Houston/22 West 16th Street"
+        }
+      ],
+      "cost_centers_trees": [
+        {
+          "scheduled": true,
+          "tree_index": 1,
+          "display_name": "Team"
+        },
+        {
+          "scheduled": false,
+          "tree_index": 5,
+          "display_name": "Location"
+        }
+      ],
+      "is_locked": false,
+      "_links": {
+        "self": "http://example.com/ta/rest/v2/companies/459716/schedules/1475072",
+        "delete": "http://example.com/ta/rest/v2/companies/459716/schedules/1475072",
+        "post": "http://example.com/ta/rest/v2/companies/459716/schedules/1475072/actions/post"
+      }
+    }
+  ],
+  "_links": {
+    "create": "http://example.com/ta/rest/v2/companies/459716/schedules"
+  }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -419,7 +476,65 @@ empty, the behavior will be the same as if the parameter was set to false.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;schedules_list&gt;
+  &lt;schedules&gt;
+    &lt;schedule&gt;
+      &lt;id&gt;1475072&lt;/id&gt;
+      &lt;settings_id&gt;295168&lt;/settings_id&gt;
+      &lt;name&gt;Default Planner Settings&lt;/name&gt;
+      &lt;schedule_start&gt;2016-11-23&lt;/schedule_start&gt;
+      &lt;schedule_end&gt;2016-11-23&lt;/schedule_end&gt;
+      &lt;status&gt;Posted&lt;/status&gt;
+      &lt;is_continuous&gt;false&lt;/is_continuous&gt;
+      &lt;time_zone&gt;
+        &lt;id&gt;107&lt;/id&gt;
+        &lt;display_name&gt;Central&lt;/display_name&gt;
+      &lt;/time_zone&gt;
+      &lt;template&gt;false&lt;/template&gt;
+      &lt;snapshot&gt;false&lt;/snapshot&gt;
+      &lt;scheduled_cost_centers&gt;
+        &lt;scheduled_cost_center&gt;
+          &lt;id&gt;1573698&lt;/id&gt;
+          &lt;display_name&gt;Houston/33 East 17th Street&lt;/display_name&gt;
+        &lt;/scheduled_cost_center&gt;
+        &lt;scheduled_cost_center&gt;
+          &lt;id&gt;1573761&lt;/id&gt;
+          &lt;display_name&gt;Houston/708 Third Avenue&lt;/display_name&gt;
+        &lt;/scheduled_cost_center&gt;
+        &lt;scheduled_cost_center&gt;
+          &lt;id&gt;1573697&lt;/id&gt;
+          &lt;display_name&gt;Houston/22 West 16th Street&lt;/display_name&gt;
+        &lt;/scheduled_cost_center&gt;
+      &lt;/scheduled_cost_centers&gt;
+      &lt;cost_centers_trees&gt;
+        &lt;cost_centers_tree&gt;
+          &lt;tree_index&gt;1&lt;/tree_index&gt;
+          &lt;scheduled&gt;true&lt;/scheduled&gt;
+          &lt;display_name&gt;Team&lt;/display_name&gt;
+        &lt;/cost_centers_tree&gt;
+        &lt;cost_centers_tree&gt;
+          &lt;tree_index&gt;5&lt;/tree_index&gt;
+          &lt;scheduled&gt;false&lt;/scheduled&gt;
+          &lt;display_name&gt;Location&lt;/display_name&gt;
+        &lt;/cost_centers_tree&gt;
+      &lt;/cost_centers_trees&gt;
+      &lt;is_locked&gt;false&lt;/is_locked&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://example.com/ta/rest/v2/companies/459716/schedules/1475072&lt;/self&gt;
+        &lt;delete&gt;http://example.com/ta/rest/v2/companies/459716/schedules/1475072&lt;/delete&gt;
+        &lt;post&gt;http://example.com/ta/rest/v2/companies/459716/schedules/1475072/actions/post&lt;/post&gt;
+      &lt;/_links&gt;
+    &lt;/schedule&gt;
+  &lt;/schedules&gt;
+  &lt;_links&gt;
+    &lt;create&gt;http://example.com/ta/rest/v2/companies/459716/schedules&lt;/create&gt;
+  &lt;/_links&gt;
+&lt;/schedules_list&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -536,7 +651,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -555,7 +670,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -569,7 +684,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -653,7 +768,16 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "settings_id": 345088,
+  "schedule_start": "2018-06-4",
+  "time_zone_id": 104,
+  "template": false,
+  "open_shift_managing_strategy": 2
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -693,7 +817,17 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;schedule&gt;
+  &lt;schedule_start&gt;2018-06-4&lt;/schedule_start&gt;
+  &lt;settings_id&gt;345088&lt;/settings_id&gt;
+  &lt;time_zone_id&gt;104&lt;/time_zone_id&gt;
+  &lt;template&gt;false&lt;/template&gt;
+&lt;/schedule&gt;
+</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;

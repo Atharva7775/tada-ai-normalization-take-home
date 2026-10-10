@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Announcements</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Announcements</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Announcements</span>
@@ -37,7 +37,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -52,7 +52,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -86,7 +86,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -143,7 +143,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/announcements</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -158,7 +158,111 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "announcements": [
+    {
+      "id": 1548541,
+      "headline": "Big Company Announcement",
+      "body": "This is a big announcement.",
+      "created_at": "2017-05-05T21:20:00.000Z",
+      "available_from": "2020-02-02T00:00:00.000Z",
+      "available_to": "2020-03-01T00:00:00.000Z",
+      "created_by": {
+        "account_id": 2194305,
+        "display_name": "System Administrator"
+      },
+      "documents": [
+        {
+          "id": 1,
+          "display_name": "announc_1",
+          "file_size": 7253,
+          "created_by": {
+            "account_id": 2194305,
+            "display_name": "System Administrator"
+          },
+          "created_at": "2017-05-05T21:20:00.000Z",
+          "available_from": "2020-02-02T00:00:00.000Z",
+          "available_to": "2020-03-01T00:00:00.000Z",
+          "_links": {
+            "content_r": "https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1487561,
+      "headline": "Office Closed Announcement",
+      "countdown": {
+        "enabled": true,
+        "to": "2016-10-14T08:00:00.000Z",
+        "interval": "HOUR"
+      },
+      "show_as_popup": true,
+      "show_marketplace_link": false,
+      "show_on_dashboard_as": "WARNING",
+      "created_at": "2017-05-05T21:20:00.000Z",
+      "available_from": "2020-02-02T00:00:00.000Z",
+      "available_to": "2020-03-01T00:00:00.000Z",
+      "created_by": {
+        "account_id": 2194305,
+        "display_name": "System Administrator"
+      },
+      "documents": []
+    },
+    {
+      "id": 1487556,
+      "headline": "Please Be Sure To Follow The New Process",
+      "created_at": "2017-05-05T21:20:00.000Z",
+      "available_from": "2020-02-02T00:00:00.000Z",
+      "available_to": "2020-03-01T00:00:00.000Z",
+      "created_by": {
+        "account_id": 2194305,
+        "display_name": "System Administrator"
+      },
+      "_links": {
+        "image_href": "https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]"
+      },
+      "documents": [
+        {
+          "id": 21,
+          "display_name": "announc_2",
+          "file_size": 1695,
+          "created_by": {
+            "account_id": 2194305,
+            "display_name": "System Administrator"
+          },
+          "created_at": "2017-05-05T21:20:00.000Z",
+          "available_from": "2020-02-02T00:00:00.000Z",
+          "available_to": "2020-03-01T00:00:00.000Z",
+          "_links": {
+            "content_r": "https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]"
+          }
+        },
+        {
+          "id": 256,
+          "display_name": "announc_1",
+          "file_size": 7253,
+          "created_by": {
+            "account_id": 2194305,
+            "display_name": "System Administrator"
+          },
+          "created_at": "2017-05-05T21:20:00.000Z",
+          "available_from": "2020-02-02T00:00:00.000Z",
+          "available_to": "2020-03-01T00:00:00.000Z",
+          "_links": {
+            "content_r": "https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]"
+          }
+        }
+      ]
+    }
+  ],
+  "has_announcement_permission": true,
+  "announcements_link": "settings/ourCompany/announcements?impl=zeyt.program.announcement.ui.UiControl_Announcements"
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -319,7 +423,96 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;announcements&gt;
+  &lt;announcement&gt;
+    &lt;id&gt;1548541&lt;/id&gt;
+    &lt;headline&gt;Big Company Announcement&lt;/headline&gt;
+    &lt;body&gt;This is a big announcement.&lt;/body&gt;
+    &lt;created_by&gt;
+      &lt;account_id&gt;2201923&lt;/account_id&gt;
+      &lt;display_name&gt;System Administrator&lt;/display_name&gt;
+    &lt;/created_by&gt;
+    &lt;created_at&gt;2016-11-03T16:03:00Z&lt;/created_at&gt;
+    &lt;documents&gt;
+        &lt;document&gt;
+            &lt;id&gt;1&lt;/id&gt;
+            &lt;display_name&gt;announc_1&lt;/display_name&gt;
+            &lt;file_size&gt;7253&lt;/file_size&gt;
+            &lt;created_by&gt;
+                &lt;account_id&gt;2194305&lt;/account_id&gt;
+                &lt;display_name&gt;System Administrator&lt;/display_name&gt;
+            &lt;/created_by&gt;
+            &lt;created_at&gt;2017-05-05T21:20:00.000Z&lt;/created_at&gt;
+            &lt;_links&gt;
+                &lt;content_r&gt;https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]&lt;/content_r&gt;
+            &lt;/_links&gt;
+        &lt;/document&gt;
+    &lt;/documents&gt;
+    &lt;_links&gt;
+      &lt;image_href&gt;https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]&lt;/image_href&gt;
+    &lt;/_links&gt;
+  &lt;/announcement&gt;
+  &lt;announcement&gt;
+    &lt;id&gt;1487561&lt;/id&gt;
+    &lt;headline&gt;Office Closed Announcement&lt;/headline&gt;
+    &lt;body&gt;The office will be closed today due to the snow.&lt;/body&gt;
+    &lt;countdown&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;to&gt;2016-10-14T08:00:00Z&lt;/to&gt;
+      &lt;interval&gt;HOUR&lt;/interval&gt;
+    &lt;/countdown&gt;
+    &lt;show_as_popup&gt;true&lt;/show_as_popup&gt;
+    &lt;show_marketplace_link&gt;false&lt;/show_marketplace_link&gt;
+    &lt;show_on_dashboard_as&gt;WARNING&lt;/show_on_dashboard_as&gt;
+    &lt;created_by&gt;
+      &lt;account_id&gt;2201923&lt;/account_id&gt;
+      &lt;display_name&gt;System Administrator&lt;/display_name&gt;
+    &lt;/created_by&gt;
+    &lt;created_at&gt;2016-11-03T16:03:00Z&lt;/created_at&gt;
+    &lt;documents/&gt;
+  &lt;/announcement&gt;
+  &lt;announcement&gt;
+    &lt;id&gt;1540930&lt;/id&gt;
+    &lt;headline&gt;Please Be Sure To Follow The New Process&lt;/headline&gt;
+    &lt;created_by&gt;
+      &lt;account_id&gt;2201923&lt;/account_id&gt;
+      &lt;display_name&gt;System Administrator&lt;/display_name&gt;
+    &lt;/created_by&gt;
+    &lt;created_at&gt;2016-11-03T16:03:00Z&lt;/created_at&gt;
+    &lt;documents&gt;
+        &lt;document&gt;
+          &lt;id&gt;21&lt;/id&gt;
+            &lt;display_name&gt;announc_2&lt;/display_name&gt;
+            &lt;file_size&gt;1695&lt;/file_size&gt;
+            &lt;created_by&gt;
+                &lt;account_id&gt;2194305&lt;/account_id&gt;
+                &lt;display_name&gt;System Administrator&lt;/display_name&gt;
+            &lt;/created_by&gt;
+            &lt;created_at&gt;2017-05-05T21:16:00.000Z&lt;/created_at&gt;
+            &lt;_links&gt;
+                &lt;content_r&gt;https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]&lt;/content_r&gt;
+            &lt;/_links&gt;
+        &lt;/document&gt;
+        &lt;document&gt;
+            &lt;id&gt;256&lt;/id&gt;
+            &lt;display_name&gt;announc_1&lt;/display_name&gt;
+            &lt;file_size&gt;7253&lt;/file_size&gt;
+            &lt;created_by&gt;
+                &lt;account_id&gt;2194305&lt;/account_id&gt;
+                &lt;display_name&gt;System Administrator&lt;/display_name&gt;
+            &lt;/created_by&gt;
+            &lt;created_at&gt;2017-05-05T21:40:00.000Z&lt;/created_at&gt;
+            &lt;_links&gt;
+                &lt;content_r&gt;https://localhost:8443/ta/fs?ticket=[REDACTED_DOCUMENTATION_TOKEN]&lt;/content_r&gt;
+            &lt;/_links&gt;
+        &lt;/document&gt;
+    &lt;/documents&gt;
+  &lt;/announcement&gt;
+&lt;/announcements&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

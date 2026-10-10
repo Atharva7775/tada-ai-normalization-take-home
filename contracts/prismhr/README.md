@@ -25,16 +25,21 @@ here, and the direct API-host URLs checked returned 404. This inclusion relies
 on the embedded license declaration of the exact existing snapshot, not a claim
 that the vendor separately approved this hiring exercise.
 
-## Modifications and content boundary
+## Modifications and examples
 
-- Removed 340 `example`/`examples` annotations.
-- Omitted eight embedded JSON payload renderings from operation descriptions.
-- Added derivative/provenance metadata and a prominent modification notice.
-- Preserved all formal paths and component schemas, except their example annotations.
-- Supplied no employee/company/payroll record fixtures or API response files.
+At the organizer's instruction, all 340 source `example`/`examples` annotations
+and all eight previously omitted embedded JSON renderings are restored. These
+are **provider-documented illustrative examples**, not customer exports or a
+canonical solution. Candidates must still generate and validate their own
+seeded fixtures; an example does not establish a field's full constraints or
+exhaustive semantics. Original formal schemas and defaults are retained.
 
-Original SHA-256: `e1d9c05933d9bf0a8ccc416d483ec5bf4a2d41929d615daf44427c65e64b71e2`.
-Distributed derivative SHA-256: `a94cbc91c482f44cade3582fd21f3f3ae51a63be26bd18bf4817325b96ca877d`.
+The derivative adds provenance and a prominent example/modification notice.
+Any authentication token example is redacted; counts are recorded inside the
+artifact. Original SHA-256:
+`e1d9c05933d9bf0a8ccc416d483ec5bf4a2d41929d615daf44427c65e64b71e2`.
+Distributed derivative SHA-256:
+`9cb87857940095cf868ed666a70f9092e33d9aa26bcad3c46cb60dad3eff5978`.
 
 ## Lookup reference
 

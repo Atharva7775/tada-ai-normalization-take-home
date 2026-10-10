@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Payrolls</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Payrolls</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Payrolls</span>
@@ -31,7 +31,7 @@ Date range should be less then year.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -48,7 +48,7 @@ Date range should be less then year.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-03-14</p>
 <div class="desc md">Used for getting payrolls with specified pay date. The value is the absolute pay date of the payroll.
 When no value is specified, a date range spanning the current date and one year in the past is used.
 The default value of this parameter is conditional on the value of the start_date and end_date parameters.
@@ -65,7 +65,7 @@ If either is provided on the request, then no default value is used for pay_date
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-03-14</p>
 <div class="desc md">Used for getting payrolls with pay date after specified date. This parameter may not be used with pay_date one.
 </div>
 </div>
@@ -79,7 +79,7 @@ If either is provided on the request, then no default value is used for pay_date
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-03-14</p>
 <div class="desc md">Used for getting list of payrolls to date upper bounded.
 </div>
 </div>
@@ -93,7 +93,7 @@ If either is provided on the request, then no default value is used for pay_date
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-03-14</p>
 <div class="desc md">Used for getting payrolls with a specific payroll pay period start date. The value is the absolute value of the start date of the payroll.
 </div>
 </div>
@@ -107,7 +107,7 @@ If either is provided on the request, then no default value is used for pay_date
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-10-31</p>
 <div class="desc md">Used for getting payrolls with a specific payroll pay period end date. The value is the absolute value of the start date of the payroll.
 </div>
 </div>
@@ -121,7 +121,7 @@ If either is provided on the request, then no default value is used for pay_date
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: OPEN</p>
 <div class="desc md">Used for getting payrolls according to specified status(NEW, OPEN, CLOSED, SUBMITTED, FINALIZED, OPEN_FAILED, CLOSE_FAILED, ROLLBACK_FAILED, FINALIZE_FAILED).
 </div>
 </div>
@@ -135,7 +135,7 @@ If either is provided on the request, then no default value is used for pay_date
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456,15487</p>
 <div class="desc md">Used for getting payrolls of specified type.
 </div>
 </div>
@@ -149,7 +149,7 @@ If either is provided on the request, then no default value is used for pay_date
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Used for getting payrolls that belong to specific ein.
 </div>
 </div>
@@ -178,7 +178,7 @@ If either is provided on the request, then no default value is used for pay_date
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/payrolls</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -197,7 +197,73 @@ If either is provided on the request, then no default value is used for pay_date
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "payrolls": [
+    {
+      "id": 312320,
+      "name": "Regular 02/15/2017",
+      "pay_date": "2017-02-15",
+      "start_date": "2017-02-15",
+      "end_date": "2017-02-15",
+      "type": {
+        "id": 16640,
+        "display_name": "Regular"
+      },
+      "ein": {
+        "id": 82176,
+        "ein_name": "Default"
+      },
+      "status": "OPEN",
+      "billable": true,
+      "_links": {
+        "self": "http://localhost:8080/ta/rest/v2/companies/220/payrolls/312320"
+      }
+    },
+    {
+      "id": 312576,
+      "name": "Quarterly Regular 2017-02-15",
+      "pay_date": "2017-02-15",
+      "start_date": "2017-02-15",
+      "end_date": "2017-02-15",
+      "type": {
+        "id": 16640,
+        "display_name": "Regular"
+      },
+      "ein": {
+        "id": 82176,
+        "ein_name": "Default"
+      },
+      "status": "OPEN",
+      "billable": true,
+      "_links": {
+        "self": "http://localhost:8080/ta/rest/v2/companies/220/payrolls/312576"
+      }
+    },
+    {
+      "id": 327936,
+      "name": "Quarterly Regular 2017-02-15",
+      "pay_date": "2017-02-15",
+      "start_date": "2017-02-15",
+      "end_date": "2017-02-15",
+      "type": {
+        "id": 16640,
+        "display_name": "Regular"
+      },
+      "ein": {
+        "id": 82176,
+        "ein_name": "Default"
+      },
+      "status": "OPEN",
+      "billable": true,
+      "_links": {
+        "self": "http://localhost:8080/ta/rest/v2/companies/220/payrolls/327936"
+      }
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -326,7 +392,55 @@ If either is provided on the request, then no default value is used for pay_date
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;payrolls&gt;
+  &lt;payroll&gt;
+    &lt;id&gt;246016&lt;/id&gt;
+    &lt;name&gt;Quarterly Regular 2017-01-19&lt;/name&gt;
+    &lt;pay_date&gt;2017-01-19&lt;/pay_date&gt;
+    &lt;start_date&gt;2017-01-19&lt;/start_date&gt;
+    &lt;end_date&gt;2017-01-19&lt;/end_date&gt;
+    &lt;type&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+      &lt;display_name&gt;Regular&lt;/display_name&gt;
+    &lt;/type&gt;
+    &lt;ein&gt;
+      &lt;id&gt;82176&lt;/id&gt;
+      &lt;ein_name&gt;Default&lt;/ein_name&gt;
+      &lt;ein_tax_id&gt;11-1111111&lt;/ein_tax_id&gt;
+    &lt;/ein&gt;
+    &lt;status&gt;OPEN&lt;/status&gt;
+    &lt;billable&gt;true&lt;/billable&gt;
+    &lt;_links&gt;
+      &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/246016&lt;/self&gt;
+    &lt;/_links&gt;
+  &lt;/payroll&gt;
+  &lt;payroll&gt;
+    &lt;id&gt;246272&lt;/id&gt;
+    &lt;name&gt;Quarterly Regular 2017-01-19&lt;/name&gt;
+    &lt;pay_date&gt;2017-01-19&lt;/pay_date&gt;
+    &lt;start_date&gt;2017-01-19&lt;/start_date&gt;
+    &lt;end_date&gt;2017-01-19&lt;/end_date&gt;
+    &lt;type&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+      &lt;display_name&gt;Regular&lt;/display_name&gt;
+    &lt;/type&gt;
+    &lt;ein&gt;
+      &lt;id&gt;82176&lt;/id&gt;
+      &lt;ein_name&gt;Default&lt;/ein_name&gt;
+      &lt;ein_tax_id&gt;11-1111111&lt;/ein_tax_id&gt;
+    &lt;/ein&gt;
+    &lt;status&gt;OPEN&lt;/status&gt;
+    &lt;billable&gt;true&lt;/billable&gt;
+    &lt;_links&gt;
+      &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/246272&lt;/self&gt;
+    &lt;/_links&gt;
+  &lt;/payroll&gt;
+&lt;/payrolls&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema
@@ -387,7 +501,55 @@ If either is provided on the request, then no default value is used for pay_date
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;payrolls&gt;
+  &lt;payroll&gt;
+    &lt;id&gt;246016&lt;/id&gt;
+    &lt;name&gt;Quarterly Regular 2017-01-19&lt;/name&gt;
+    &lt;pay_date&gt;2017-01-19&lt;/pay_date&gt;
+    &lt;start_date&gt;2017-01-19&lt;/start_date&gt;
+    &lt;end_date&gt;2017-01-19&lt;/end_date&gt;
+    &lt;type&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+      &lt;display_name&gt;Regular&lt;/display_name&gt;
+    &lt;/type&gt;
+    &lt;ein&gt;
+      &lt;id&gt;82176&lt;/id&gt;
+      &lt;ein_name&gt;Default&lt;/ein_name&gt;
+      &lt;ein_tax_id&gt;11-1111111&lt;/ein_tax_id&gt;
+    &lt;/ein&gt;
+    &lt;status&gt;OPEN&lt;/status&gt;
+    &lt;billable&gt;true&lt;/billable&gt;
+    &lt;_links&gt;
+      &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/246016&lt;/self&gt;
+    &lt;/_links&gt;
+  &lt;/payroll&gt;
+  &lt;payroll&gt;
+    &lt;id&gt;246272&lt;/id&gt;
+    &lt;name&gt;Quarterly Regular 2017-01-19&lt;/name&gt;
+    &lt;pay_date&gt;2017-01-19&lt;/pay_date&gt;
+    &lt;start_date&gt;2017-01-19&lt;/start_date&gt;
+    &lt;end_date&gt;2017-01-19&lt;/end_date&gt;
+    &lt;type&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+      &lt;display_name&gt;Regular&lt;/display_name&gt;
+    &lt;/type&gt;
+    &lt;ein&gt;
+      &lt;id&gt;82176&lt;/id&gt;
+      &lt;ein_name&gt;Default&lt;/ein_name&gt;
+      &lt;ein_tax_id&gt;11-1111111&lt;/ein_tax_id&gt;
+    &lt;/ein&gt;
+    &lt;status&gt;OPEN&lt;/status&gt;
+    &lt;billable&gt;true&lt;/billable&gt;
+    &lt;_links&gt;
+      &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/246272&lt;/self&gt;
+    &lt;/_links&gt;
+  &lt;/payroll&gt;
+&lt;/payrolls&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema
@@ -475,7 +637,7 @@ To see available types for your company use /lookup{cid}/payroll-types.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -574,7 +736,17 @@ To see available types for your company use /lookup{cid}/payroll-types.
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "name": "Quarterly Regular 01/31/2017",
+  "pay_date": "2017-01-31",
+  "type": {
+    "id": 16640,
+    "display_name": "Regular"
+  }
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -645,7 +817,18 @@ To see available types for your company use /lookup{cid}/payroll-types.
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;payroll&gt;
+  &lt;name&gt;Quarterly Regular 01/31/2017&lt;/name&gt;
+  &lt;pay_date&gt;2017-01-19&lt;/pay_date&gt;
+  &lt;type&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+    &lt;display_name&gt;Regular&lt;/display_name&gt;
+  &lt;/type&gt;
+  &lt;billable&gt;true&lt;/billable&gt;
+&lt;/payroll&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;xs:schema
@@ -686,7 +869,18 @@ To see available types for your company use /lookup{cid}/payroll-types.
 <div class="req-tab-post" id="req-tab-id-post-2">
 <div class="example">
 
+<div class="post-example-tab-2 activeTab" id="post-tab-example-2">
 
+<pre class="highlightjs">&lt;payroll&gt;
+  &lt;name&gt;Quarterly Regular 01/31/2017&lt;/name&gt;
+  &lt;pay_date&gt;2017-01-19&lt;/pay_date&gt;
+  &lt;type&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+    &lt;display_name&gt;Regular&lt;/display_name&gt;
+  &lt;/type&gt;
+  &lt;billable&gt;true&lt;/billable&gt;
+&lt;/payroll&gt;</pre>
+</div>
 <div class="post-example-tab-2" id="post-tab-schema-2">
 
 <div class="jsonschema" id="schema-5">&lt;xs:schema

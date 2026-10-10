@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Contact</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Contact</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Contact</span>
@@ -32,7 +32,7 @@ The new pattern for national identification numbers is represented by the 'natio
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -64,7 +64,7 @@ The new pattern for national identification numbers is represented by the 'natio
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -131,7 +131,7 @@ The new pattern for national identification numbers is represented by the 'natio
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/contacts/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -146,7 +146,73 @@ The new pattern for national identification numbers is represented by the 'natio
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "id": 75969,
+  "employee": {
+    "account_id": 52353250
+  },
+  "primary": true,
+  "emergency": true,
+  "dependent": false,
+  "beneficiary": false,
+  "emergency_notif": null,
+  "salutation": "Hola",
+  "first_name": "John",
+  "middle_name": "Bob",
+  "last_name": "Smith",
+  "name_suffix": "PhD",
+  "national_id_numbers": {
+    "primary_number": {
+      "type": "SSN",
+      "value": "123456789"
+    },
+    "secondary_numbers": [
+      {
+        "type": "BSN",
+        "value": "111222333"
+      }
+    ]
+  },
+  "relationship": "Spouse",
+  "work_phone": {
+    "code": 0,
+    "number": "+1(42)461-23-64",
+    "primary": true
+  },
+  "home_phone": {
+    "code": 0,
+    "number": "+375(29)461-23-64",
+    "primary": false
+  },
+  "cell_phone": {
+    "code": 0,
+    "number": "+91(33)461-23-64",
+    "primary": false
+  },
+  "email": "email@example.com",
+  "ssn": "123-45-6789",
+  "birthdate": "1982-09-21",
+  "gender": "MALE",
+  "height": "180cm",
+  "weight": "90kg",
+  "ethnicity": "HISPANIC_OR_LATINO",
+  "smoker": false,
+  "actual_marital_status": "Married",
+  "full_time_student": false,
+  "disability": true,
+  "always_eligible_for_benefit_plans": true,
+  "is_in_any_benefit_plan": true,
+  "use_employee_address": true,
+  "_links": {
+    "self": "https://secure2.saashr.com/ta/rest/v2/companies/453121/employees/53312326/contacts/75969",
+    "edit": "https://secure2.saashr.com/ta/rest/v2/companies/453121/employees/53312326/contacts/75969",
+    "delete": "https://secure2.saashr.com/ta/rest/v2/companies/453121/employees/53312326/contacts/75969"
+  }
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -535,7 +601,74 @@ The new pattern for national identification numbers is represented by the 'natio
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;contact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;id&gt;75969&lt;/id&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;52353250&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;primary&gt;true&lt;/primary&gt;
+  &lt;emergency&gt;true&lt;/emergency&gt;
+  &lt;dependent&gt;true&lt;/dependent&gt;
+  &lt;beneficiary&gt;false&lt;/beneficiary&gt;
+  &lt;emergency_notif xsi:nil="true"/&gt;
+  &lt;salutation&gt;Hola&lt;/salutation&gt;
+  &lt;first_name&gt;John&lt;/first_name&gt;
+  &lt;middle_name&gt;Bob&lt;/middle_name&gt;
+  &lt;last_name&gt;Smith&lt;/last_name&gt;
+  &lt;national_id_numbers&gt;
+    &lt;primary_number&gt;
+      &lt;type&gt;BSN&lt;/type&gt;
+      &lt;value&gt;123456782&lt;/value&gt;
+    &lt;/primary_number&gt;
+    &lt;secondary_numbers&gt;
+      &lt;secondary_number&gt;
+        &lt;type&gt;SSN&lt;/type&gt;
+        &lt;value&gt;123456789&lt;/value&gt;
+      &lt;/secondary_number&gt;
+      &lt;secondary_number&gt;
+        &lt;type&gt;TFN&lt;/type&gt;
+        &lt;value&gt;987654321&lt;/value&gt;
+      &lt;/secondary_number&gt;
+    &lt;/secondary_numbers&gt;
+  &lt;/national_id_numbers&gt;
+  &lt;name_suffix&gt;PhD&lt;/name_suffix&gt;
+  &lt;relationship&gt;Spouse&lt;/relationship&gt;
+  &lt;work_phone&gt;
+    &lt;number&gt;+1(42)461-23-64&lt;/number&gt;
+    &lt;primary&gt;true&lt;/primary&gt;
+  &lt;/work_phone&gt;
+  &lt;home_phone&gt;
+    &lt;number&gt;+375(29)461-23-64&lt;/number&gt;
+    &lt;primary&gt;false&lt;/primary&gt;
+  &lt;/home_phone&gt;
+  &lt;cell_phone&gt;
+    &lt;number&gt;+91(33)461-23-64&lt;/number&gt;
+    &lt;primary&gt;false&lt;/primary&gt;
+  &lt;/cell_phone&gt;
+  &lt;email&gt;email@example.com&lt;/email&gt;
+  &lt;ssn&gt;123-45-6789&lt;/ssn&gt;
+  &lt;birthdate&gt;1982-09-21&lt;/birthdate&gt;
+  &lt;gender&gt;MALE&lt;/gender&gt;
+  &lt;height&gt;180cm&lt;/height&gt;
+  &lt;weight&gt;90kg&lt;/weight&gt;
+  &lt;ethnicity&gt;HISPANIC_OR_LATINO&lt;/ethnicity&gt;
+  &lt;smoker&gt;false&lt;/smoker&gt;
+  &lt;actual_marital_status&gt;Married&lt;/actual_marital_status&gt;
+  &lt;full_time_student&gt;false&lt;/full_time_student&gt;
+  &lt;disability&gt;true&lt;/disability&gt;
+  &lt;always_eligible_for_benefit_plans&gt;true&lt;/always_eligible_for_benefit_plans&gt;
+  &lt;is_in_any_benefit_plan&gt;true&lt;/is_in_any_benefit_plan&gt;
+  &lt;use_employee_address&gt;false&lt;/use_employee_address&gt;
+  &lt;_links&gt;
+    &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/453121/employees/2201602/contacts/75969&lt;/self&gt;
+    &lt;edit&gt;http://localhost:8080/ta/rest/v2/companies/453121/employees/2201602/contacts/75969&lt;/edit&gt;
+    &lt;delete&gt;http://localhost:8080/ta/rest/v2/companies/453121/employees/2201602/contacts/75969&lt;/delete&gt;
+  &lt;/_links&gt;
+&lt;/contact&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -928,7 +1061,7 @@ The new pattern for national identification numbers is represented by the 'natio
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -960,7 +1093,7 @@ The new pattern for national identification numbers is represented by the 'natio
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -974,7 +1107,7 @@ The new pattern for national identification numbers is represented by the 'natio
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -1069,7 +1202,67 @@ The new pattern for national identification numbers is represented by the 'natio
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "employee": {
+    "account_id": 52353250
+  },
+  "primary": true,
+  "emergency": true,
+  "dependent": false,
+  "beneficiary": false,
+  "emergency_notif": null,
+  "salutation": "Hola",
+  "first_name": "John",
+  "middle_name": "Bob",
+  "last_name": "Smith",
+  "name_suffix": "PhD",
+  "relationship": "Spouse",
+  "work_phone": {
+    "code": 0,
+    "number": "+1(42)461-23-64",
+    "primary": true
+  },
+  "home_phone": {
+    "code": 0,
+    "number": "+375(29)461-23-64",
+    "primary": false
+  },
+  "cell_phone": {
+    "code": 0,
+    "number": "+91(33)461-23-64",
+    "primary": false
+  },
+  "email": "email@example.com",
+  "national_id_numbers": {
+    "primary_number": {
+      "type": "SSN",
+      "value": "123-45-6789"
+    },
+    "secondary_numbers": [
+      {
+        "type": "BSN",
+        "value": "111222333"
+      }
+    ]
+  },
+  "ssn": "123-45-6789",
+  "birthdate": "1982-09-21",
+  "gender": "MALE",
+  "height": "180cm",
+  "weight": "90kg",
+  "ethnicity": "HISPANIC_OR_LATINO",
+  "smoker": false,
+  "actual_marital_status": "Married",
+  "full_time_student": false,
+  "disability": true,
+  "always_eligible_for_benefit_plans": true,
+  "use_employee_address": true,
+  "is_in_any_benefit_plan": false
+}
+</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -1458,7 +1651,64 @@ The new pattern for national identification numbers is represented by the 'natio
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;contact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;primary&gt;true&lt;/primary&gt;
+  &lt;emergency&gt;true&lt;/emergency&gt;
+  &lt;dependent&gt;true&lt;/dependent&gt;
+  &lt;beneficiary&gt;false&lt;/beneficiary&gt;
+  &lt;emergency_notif xsi:nil="true"/&gt;
+  &lt;salutation&gt;Hola&lt;/salutation&gt;
+  &lt;first_name&gt;John&lt;/first_name&gt;
+  &lt;middle_name&gt;Bob&lt;/middle_name&gt;
+  &lt;last_name&gt;Smith&lt;/last_name&gt;
+  &lt;name_suffix&gt;PhD&lt;/name_suffix&gt;
+  &lt;relationship&gt;Spouse&lt;/relationship&gt;
+  &lt;work_phone&gt;
+    &lt;number&gt;+1(42)461-23-64&lt;/number&gt;
+    &lt;primary&gt;true&lt;/primary&gt;
+  &lt;/work_phone&gt;
+  &lt;home_phone&gt;
+    &lt;number&gt;+375(29)461-23-64&lt;/number&gt;
+    &lt;primary&gt;false&lt;/primary&gt;
+  &lt;/home_phone&gt;
+  &lt;cell_phone&gt;
+    &lt;number&gt;+91(33)461-23-64&lt;/number&gt;
+    &lt;primary&gt;false&lt;/primary&gt;
+  &lt;/cell_phone&gt;
+  &lt;email&gt;email@example.com&lt;/email&gt;
+  &lt;national_id_numbers&gt;
+    &lt;primary_number&gt;
+      &lt;type&gt;BSN&lt;/type&gt;
+      &lt;value&gt;123456782&lt;/value&gt;
+    &lt;/primary_number&gt;
+    &lt;secondary_numbers&gt;
+      &lt;secondary_number&gt;
+        &lt;type&gt;SSN&lt;/type&gt;
+        &lt;value&gt;123456789&lt;/value&gt;
+      &lt;/secondary_number&gt;
+      &lt;secondary_number&gt;
+        &lt;type&gt;TFN&lt;/type&gt;
+        &lt;value&gt;987654321&lt;/value&gt;
+      &lt;/secondary_number&gt;
+    &lt;/secondary_numbers&gt;
+  &lt;/national_id_numbers&gt;
+  &lt;ssn&gt;123-45-6789&lt;/ssn&gt;
+  &lt;birthdate&gt;1982-09-21&lt;/birthdate&gt;
+  &lt;gender&gt;MALE&lt;/gender&gt;
+  &lt;height&gt;180cm&lt;/height&gt;
+  &lt;weight&gt;90kg&lt;/weight&gt;
+  &lt;ethnicity&gt;HISPANIC_OR_LATINO&lt;/ethnicity&gt;
+  &lt;smoker&gt;false&lt;/smoker&gt;
+  &lt;actual_marital_status&gt;Married&lt;/actual_marital_status&gt;
+  &lt;full_time_student&gt;false&lt;/full_time_student&gt;
+  &lt;disability&gt;true&lt;/disability&gt;
+  &lt;always_eligible_for_benefit_plans&gt;true&lt;/always_eligible_for_benefit_plans&gt;
+  &lt;use_employee_address&gt;false&lt;/use_employee_address&gt;
+&lt;/contact&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -1847,7 +2097,7 @@ The new pattern for national identification numbers is represented by the 'natio
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>

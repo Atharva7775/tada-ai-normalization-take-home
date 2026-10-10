@@ -50,15 +50,17 @@ class ReferenceIntegrityChecks(unittest.TestCase):
         self.assertIn("Version 2.0, January 2004", license_text)
         self.assertTrue((self.base / "NOTICE.md").is_file())
 
-    def test_internal_schema_references_resolve_and_examples_are_removed(self):
+    def test_internal_schema_references_resolve_and_documented_examples_are_included(self):
+        example_count = 0
         for node in walk(self.document):
             if isinstance(node, dict):
-                self.assertNotIn("example", node)
-                self.assertNotIn("examples", node)
+                example_count += sum(key in node for key in ("example", "examples"))
                 if "$ref" in node:
                     with self.subTest(reference=node["$ref"]):
                         self.assertTrue(node["$ref"].startswith("#/"))
                         resolve_pointer(self.document, node["$ref"])
+        self.assertEqual(example_count, 340)
+        self.assertTrue(self.document["x-tada-hiring-derivative"]["documented_examples_included"])
 
     def test_lookup_citations_match_the_distributed_source_descriptions(self):
         for domain in self.reference["lookups"]:
@@ -111,10 +113,9 @@ class PrivateUploadIntegrityChecks(unittest.TestCase):
         for artifact in manifest["artifacts"]:
             document = json.loads((base / artifact["file"]).read_text())
             self.assertEqual(document["swagger"], "2.0")
+            self.assertTrue(document["x-tada-hiring-derivative"]["documented_examples_included"])
             for node in walk(document):
                 if isinstance(node, dict):
-                    self.assertNotIn("example", node)
-                    self.assertNotIn("examples", node)
                     if "$ref" in node:
                         self.assertTrue(node["$ref"].startswith("#/"))
                         resolve_pointer(document, node["$ref"])
@@ -124,14 +125,16 @@ class PrivateUploadIntegrityChecks(unittest.TestCase):
         self.assertNotIn("swagger", document)
         self.assertIn("NOT Swagger/OpenAPI", document["artifact_kind"])
         self.assertTrue(document["schemas"])
+        self.assertTrue(document["documented_examples_included"])
+        example_count = 0
         for record in document["schemas"]:
             page = base / record["source_page"]
             self.assertTrue(page.is_file())
             self.assertIn('id="' + record["source_schema_anchor"] + '"', page.read_text())
             for node in walk(record["schema"]):
                 if isinstance(node, dict):
-                    self.assertNotIn("example", node)
-                    self.assertNotIn("examples", node)
+                    example_count += sum(key in node for key in ("example", "examples", "x-example"))
+        self.assertEqual(example_count, 101)
 
 
 if __name__ == "__main__":

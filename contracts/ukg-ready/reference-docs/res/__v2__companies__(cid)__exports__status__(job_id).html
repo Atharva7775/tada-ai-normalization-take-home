@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Job Status</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Job Status</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Job Status</span>
@@ -23,7 +23,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -140,7 +140,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/exports/status/{job_id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -159,7 +159,29 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "id": 1,
+  "status": "DONE",
+  "result_summary": "Info: Updated ACA for 1 employee(s)",
+  "error": "No finalized W-2 forms found.",
+  "progress": {
+    "line_num": 0,
+    "message": "progress message",
+    "num_to_do": 2,
+    "num_done": 2,
+    "num_skipped": 0
+  },
+  "exportError": {
+    "message": "No payroll meets the selected criteria.",
+    "severity": "Error"
+  },
+  "completion_time": "2023-02-21T10:11:46.190-05:00",
+  "retention": "15",
+  "retention_duration": "days"
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -244,7 +266,30 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;job_processing_status&gt;
+  &lt;id&gt;1&lt;/id&gt;
+  &lt;status&gt;DONE&lt;/status&gt;
+  &lt;result_summary&gt;Info: Updated ACA for 1 employee(s)&lt;/result_summary&gt;
+  &lt;error&gt;No finalized W-2 forms found.&lt;/error&gt;
+  &lt;progress&gt;
+    &lt;line_num&gt;0&lt;/line_num&gt;
+    &lt;message&gt;progress message&lt;/message&gt;
+    &lt;num_to_do&gt;2&lt;/num_to_do&gt;
+    &lt;num_done&gt;2&lt;/num_done&gt;
+    &lt;num_skipped&gt;0&lt;/num_skipped&gt;
+  &lt;/progress&gt;
+  &lt;exportError&gt;
+    &lt;message&gt;No payroll meets the selected criteria.&lt;/message&gt;
+    &lt;severity&gt;Error&lt;/severity&gt;
+  &lt;/exportError&gt;
+  &lt;completion_time&gt;2023-02-21T10:11:46.190-05:00&lt;/completion_time&gt;
+  &lt;retention&gt;15&lt;/retention&gt;
+  &lt;retention_duration&gt;days&lt;/retention_duration&gt;
+&lt;/job_processing_status&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -299,7 +344,30 @@
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;job_processing_status&gt;
+  &lt;id&gt;1&lt;/id&gt;
+  &lt;status&gt;DONE&lt;/status&gt;
+  &lt;result_summary&gt;Info: Updated ACA for 1 employee(s)&lt;/result_summary&gt;
+  &lt;error&gt;No finalized W-2 forms found.&lt;/error&gt;
+  &lt;progress&gt;
+    &lt;line_num&gt;0&lt;/line_num&gt;
+    &lt;message&gt;progress message&lt;/message&gt;
+    &lt;num_to_do&gt;2&lt;/num_to_do&gt;
+    &lt;num_done&gt;2&lt;/num_done&gt;
+    &lt;num_skipped&gt;0&lt;/num_skipped&gt;
+  &lt;/progress&gt;
+  &lt;exportError&gt;
+    &lt;message&gt;No payroll meets the selected criteria.&lt;/message&gt;
+    &lt;severity&gt;Error&lt;/severity&gt;
+  &lt;/exportError&gt;
+  &lt;completion_time&gt;2023-02-21T10:11:46.190-05:00&lt;/completion_time&gt;
+  &lt;retention&gt;15&lt;/retention&gt;
+  &lt;retention_duration&gt;days&lt;/retention_duration&gt;
+&lt;/job_processing_status&gt;</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;?xml version="1.0" encoding="UTF-8"?&gt;

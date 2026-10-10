@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>HR Custom Fields</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>HR Custom Fields</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>HR Custom Fields</span>
@@ -35,7 +35,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -50,7 +50,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -69,7 +69,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -136,7 +136,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/hr-custom-fields</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -151,7 +151,53 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "hr_custom_fields": [
+    {
+      "index": 0,
+      "value": "2017-01-01"
+    },
+    {
+      "index": 1,
+      "value": "monica.geller@gmail.com"
+    },
+    {
+      "index": 2,
+      "value": "37"
+    },
+    {
+      "index": 3,
+      "value": "45.50"
+    },
+    {
+      "index": 4,
+      "value": "11:30"
+    },
+    {
+      "index": 5,
+      "value": "www.kronos.com"
+    },
+    {
+      "index": 6,
+      "value": "Jack Reacher"
+    },
+    {
+      "index": 7,
+      "value": "2253058"
+    },
+    {
+      "index": 8,
+      "value": "123"
+    },
+    {
+      "index": 9,
+      "value": "100"
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -193,7 +239,52 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;hr-custom-fields&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;0&lt;/index&gt;
+    &lt;value&gt;2017-01-01&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;1&lt;/index&gt;
+    &lt;value&gt;monica.geller@gmail.com&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;2&lt;/index&gt;
+    &lt;value&gt;37&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;3&lt;/index&gt;
+    &lt;value&gt;45.50&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;4&lt;/index&gt;
+    &lt;value&gt;11:30&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;5&lt;/index&gt;
+    &lt;value&gt;www.kronos.com&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;6&lt;/index&gt;
+    &lt;value&gt;Jack Reacher&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;7&lt;/index&gt;
+    &lt;value&gt;2253058&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;8&lt;/index&gt;
+    &lt;value&gt;123&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;9&lt;/index&gt;
+    &lt;value&gt;100&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+&lt;/hr-custom-fields&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema elementFormDefault="qualified"
@@ -260,7 +351,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -275,7 +366,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -294,7 +385,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -308,7 +399,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -403,7 +494,53 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "hr_custom_fields": [
+    {
+      "index": 0,
+      "value": "2017-01-01"
+    },
+    {
+      "index": 1,
+      "value": "monica.geller@gmail.com"
+    },
+    {
+      "index": 2,
+      "value": "37"
+    },
+    {
+      "index": 3,
+      "value": "45.50"
+    },
+    {
+      "index": 4,
+      "value": "11:30"
+    },
+    {
+      "index": 5,
+      "value": "www.kronos.com"
+    },
+    {
+      "index": 6,
+      "value": "Jack Reacher"
+    },
+    {
+      "index": 7,
+      "value": "2253058"
+    },
+    {
+      "index": 8,
+      "value": "123"
+    },
+    {
+      "index": 9,
+      "value": "100"
+    }
+  ]
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -445,7 +582,52 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;hr-custom-fields&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;0&lt;/index&gt;
+    &lt;value&gt;2017-01-01&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;1&lt;/index&gt;
+    &lt;value&gt;monica.geller@gmail.com&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;2&lt;/index&gt;
+    &lt;value&gt;37&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;3&lt;/index&gt;
+    &lt;value&gt;45.50&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;4&lt;/index&gt;
+    &lt;value&gt;11:30&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;5&lt;/index&gt;
+    &lt;value&gt;www.kronos.com&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;6&lt;/index&gt;
+    &lt;value&gt;Jack Reacher&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;7&lt;/index&gt;
+    &lt;value&gt;2253058&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;8&lt;/index&gt;
+    &lt;value&gt;123&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+  &lt;hr-custom-field&gt;
+    &lt;index&gt;9&lt;/index&gt;
+    &lt;value&gt;100&lt;/value&gt;
+  &lt;/hr-custom-field&gt;
+&lt;/hr-custom-fields&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema elementFormDefault="qualified"

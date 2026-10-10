@@ -2,14 +2,14 @@
   "provider": "prismhr",
   "reference_version": "2025.09-hiring-reference-1",
   "lookup_status": "verified",
-  "notice": "PARTIAL SOURCE REFERENCE: only documented values from the declared Apache-2.0 snapshot. No tenant-specific lookup payloads, mock API responses, canonical mappings, or employee records.",
+  "notice": "PARTIAL SOURCE REFERENCE: documented field codes from the Apache-2.0 snapshot. Provider-documented examples are included in the spec; no tenant-specific lookup responses, customer exports or canonical mappings are supplied.",
   "openapi": {
     "status": "verified",
     "relative_path": "prismhr-2025.09.openapi.json",
     "version": "2025.09",
     "source": "TadaAI/full-stack:references/prism/prism_api_specs.json",
     "source_sha256": "e1d9c05933d9bf0a8ccc416d483ec5bf4a2d41929d615daf44427c65e64b71e2",
-    "sha256": "a94cbc91c482f44cade3582fd21f3f3ae51a63be26bd18bf4817325b96ca877d",
+    "sha256": "9cb87857940095cf868ed666a70f9092e33d9aa26bcad3c46cb60dad3eff5978",
     "artifact_kind": "sanitized derivative of existing integration snapshot",
     "latest_live_version_verified": false
   },

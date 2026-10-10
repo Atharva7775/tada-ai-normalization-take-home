@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Positions</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Positions</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Positions</span>
@@ -32,7 +32,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -49,7 +49,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2017-09-15T20:55:00Z</p>
 <div class="desc md">Effective as of date. If not provided, current system date will be taken by default.
 </div>
 </div>
@@ -63,7 +63,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: all</p>
 <div class="desc md">A comma separated string of all the details that are required. Possible values to be provided are :
 &lt;br&gt;1.	all -&gt; Will fetch all the details for the positions
 &lt;br&gt;2.	ccdetails -&gt; Will fetch basic details + cost center details.
@@ -114,7 +114,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -171,7 +171,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/position/positions</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -186,7 +186,257 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+    "Positions": [{
+        "position_id": 1606784,
+        "pos_name": "MyPos-01",
+        "title": "weertyy123",
+        "position_number": "00000010",
+    "payroll_code": "PC001",
+        "abbreviation": "MyPos-01-01",
+        "name": "&lt;p&gt;zXXZCfdsavzxvxzv&lt;/p&gt;",
+        "is_critical": false,
+        "is_key": false,
+        "is_diff_to_fill": 0,
+        "effective_from": "2007-01-01",
+        "effective_to": "2021-04-30",
+        "is_past_dated": false,
+        "position_budget": [{
+            "position_id": 1606784,
+            "position_budget_id": 212992,
+            "effective_from": "2007-01-01",
+            "effective_to": "2020-09-30",
+            "budgeted_fte": 5.0,
+            "total_amt_per_year": 100000.000000,
+            "total_hours_per_year": 37440000000,
+            "allow_exceed_budget_fte": 1,
+            "allow_exceed_budget_amount": 1
+        }, {
+            "position_id": 1606784,
+            "position_budget_id": 230144,
+            "effective_from": "2020-10-01",
+            "effective_to": "9999-12-31",
+            "budgeted_fte": 2.0,
+            "total_amt_per_year": 150000.000000,
+            "total_hours_per_year": 14976000000,
+            "allow_exceed_budget_fte": 1,
+            "allow_exceed_budget_amount": 1
+        }],
+        "cost_center_defaults": [{
+            "id": 1572806,
+            "name": "test",
+            "tree_index": 0,
+            "value_id": 1573450,
+            "value_name": "john",
+            "allow_override": false
+        }, {
+            "id": 1572869,
+            "name": "Department",
+            "tree_index": 1,
+            "value_id": 1606976,
+            "value_name": "A-dept11",
+            "allow_override": true
+        }],
+        "direct_reporting_pos": {
+            "id": 1607042,
+            "display_name": "MyPos-07",
+            "position_number": "00000016"
+        },
+        "indirect_reporting_pos_list": [{
+            "id": 1607046,
+            "display_name": "MyPos-11",
+            "position_number": "00000020"
+        }],
+        "job": {
+            "id": 1573505,
+            "display_name": "zZxzxzX"
+        },
+        "attributes": [{
+            "index": 0,
+            "label": "Position Attribute 1",
+            "value": "qqwweerr",
+            "type": "CHAR"
+        }, {
+            "index": 1,
+            "label": "Position Attribute 2",
+            "value": "2020-11-12",
+            "type": "DATE"
+        }],
+        "default_profiles": {
+            "acaProfile": {
+                "values": [{
+                    "id": 589824,
+                    "display_name": "ACA1",
+                    "date_from": "2012-01-01"
+                }]
+            },
+            "benefitProfile": {
+                "values": [{
+                    "id": 11138,
+                    "display_name": "employees profile",
+                    "date_from": "2021-03-01"
+                }, {
+                    "id": 23233,
+                    "display_name": "",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "counterDistributionProfile": {
+                "values": [{
+                    "id": 16640,
+                    "display_name": "Counter Dist Profile 01",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "dashboardLayoutProfile": {
+                "values": [{
+                    "id": 475136,
+                    "display_name": "DAsh123",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "payCalc2Profile": {
+                "values": [{
+                    "id": 147456,
+                    "display_name": "PayCal Profile 01",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "payPrepProfile": {
+                "values": [{
+                    "id": 135873,
+                    "display_name": "Default",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "timeOffPlanningProfile": {
+                "values": [{
+                    "id": 32768,
+                    "display_name": "ttt",
+                    "date_from": "2021-03-01"
+                }, {
+                    "id": 23423,
+                    "display_name": "",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "workdayBreakdownProfile": {
+                "values": [{
+                    "id": 8128,
+                    "display_name": "scded",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "workingTimeRegulationsProfile": {
+                "values": [{
+                    "id": 16384,
+                    "display_name": "Workinf Time regulation 01",
+                    "date_from": "1900-12-31"
+                }]
+            },
+            "accessProfile": {
+                "id": 77123,
+                "display_name": "ACP01"
+            },
+            "accrualsProfile": {
+                "id": 173696,
+                "display_name": "ACC1"
+            },
+            "competencyProfile": {
+                "id": 2944,
+                "display_name": "Competency Profiles 1"
+            },
+            "demographicProfile": {
+                "id": 212992,
+                "display_name": "demo1"
+            },
+            "holidayProfile": {
+                "id": 232258,
+                "display_name": "Holiday Table"
+            },
+            "laborDistributionProfile": {
+                "id": 8832,
+                "display_name": "LD1"
+            },
+            "payCalcProfile": {
+                "id": 134081,
+                "display_name": "Hourly"
+            },
+            "payPeriodProfile": {
+                "id": 284482,
+                "display_name": "regular"
+            },
+            "pstPopulationProfile": {
+                "id": 7168,
+                "display_name": "ptst1"
+            },
+            "performanceReviewProfile": {
+                "id": 7809,
+                "display_name": "Annual review"
+            },
+            "retirementProfile": {
+                "id": 16961,
+                "display_name": "Retiremant Plan 01"
+            },
+            "securityProfile": {
+                "id": 594629,
+                "display_name": "Company Administrator"
+            },
+            "timesheetProfile": {
+                "id": 345537,
+                "display_name": "Start/End Timesheet"
+            },
+            "tsAutoPopulationProfile": {
+                "id": 125891,
+                "display_name": "Holidays &amp; Schedules"
+            },
+            "trainingProfile": {
+                "id": 4288,
+                "display_name": "tra"
+            },
+            "workScheduleProfile": {
+                "id": 218689,
+                "display_name": "9AM - 5PM, Mon-Fri"
+            },
+            "employeeTypeProfile": {
+                "id": 128259,
+                "display_name": "Consultant"
+            },
+            "unionProfile": {
+                "id": 3009,
+                "display_name": "union1"
+            },
+            "payGradeProfile": {
+                "id": 3969,
+                "display_name": "higher"
+            },
+            "shiftProfile": {
+                "id": 75968,
+                "display_name": "Shift"
+            },
+            "firstScreenProfile": {
+                "display_name": "Calculated Time By Calendar Day"
+            },
+            "workerTypeProfile": {
+                "id": 16384,
+                "display_name": "luchha"
+            },
+            "eeoClassificationProfile": {
+                "id": 8,
+                "display_name": "Operatives"
+            },
+            "payTypeProfile": {
+                "id": 125570,
+                "display_name": "Hourly"
+            },
+            "standardWorkDayProfile": 28800000
+        }
+    }],
+    "_total_count": 7017
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -867,7 +1117,304 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;Positions&gt;
+  &lt;item&gt;
+    &lt;position_id&gt;1606784&lt;/position_id&gt;
+    &lt;pos_name&gt;MyPos-01&lt;/pos_name&gt;
+    &lt;title&gt;weertyy123&lt;/title&gt;
+    &lt;position_number&gt;00000010&lt;/position_number&gt;
+    &lt;payroll_code&gt;PC001&lt;/payroll_code&gt;
+    &lt;abbreviation&gt;MyPos-01-01&lt;/abbreviation&gt;
+    &lt;name&gt;&amp;lt;p&amp;gt;zXXZCfdsavzxvxzv&amp;lt;/p&amp;gt;&lt;/name&gt;
+    &lt;is_critical&gt;false&lt;/is_critical&gt;
+    &lt;is_key&gt;false&lt;/is_key&gt;
+    &lt;is_diff_to_fill&gt;0&lt;/is_diff_to_fill&gt;
+    &lt;effective_from&gt;2007-01-01&lt;/effective_from&gt;
+    &lt;effective_to&gt;2021-04-30&lt;/effective_to&gt;
+    &lt;is_past_dated&gt;false&lt;/is_past_dated&gt;
+    &lt;position_budget&gt;
+      &lt;position_budget&gt;
+        &lt;position_id&gt;1606784&lt;/position_id&gt;
+        &lt;position_budget_id&gt;212992&lt;/position_budget_id&gt;
+        &lt;effective_from&gt;2007-01-01&lt;/effective_from&gt;
+        &lt;effective_to&gt;2020-09-30&lt;/effective_to&gt;
+        &lt;budgeted_fte&gt;5.0&lt;/budgeted_fte&gt;
+        &lt;total_amt_per_year&gt;100000.000000&lt;/total_amt_per_year&gt;
+        &lt;total_hours_per_year&gt;37440000000&lt;/total_hours_per_year&gt;
+        &lt;allow_exceed_budget_fte&gt;1&lt;/allow_exceed_budget_fte&gt;
+        &lt;allow_exceed_budget_amount&gt;1&lt;/allow_exceed_budget_amount&gt;
+      &lt;/position_budget&gt;
+      &lt;position_budget&gt;
+        &lt;position_id&gt;1606784&lt;/position_id&gt;
+        &lt;position_budget_id&gt;230144&lt;/position_budget_id&gt;
+        &lt;effective_from&gt;2020-10-01&lt;/effective_from&gt;
+        &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+        &lt;budgeted_fte&gt;2.0&lt;/budgeted_fte&gt;
+        &lt;total_amt_per_year&gt;150000.000000&lt;/total_amt_per_year&gt;
+        &lt;total_hours_per_year&gt;14976000000&lt;/total_hours_per_year&gt;
+        &lt;allow_exceed_budget_fte&gt;1&lt;/allow_exceed_budget_fte&gt;
+        &lt;allow_exceed_budget_amount&gt;1&lt;/allow_exceed_budget_amount&gt;
+      &lt;/position_budget&gt;
+    &lt;/position_budget&gt;
+    &lt;cost_center_defaults&gt;
+      &lt;cost_center_defaults&gt;
+        &lt;id&gt;1572806&lt;/id&gt;
+        &lt;name&gt;test&lt;/name&gt;
+        &lt;tree_index&gt;0&lt;/tree_index&gt;
+        &lt;value_id&gt;1573450&lt;/value_id&gt;
+        &lt;value_name&gt;john&lt;/value_name&gt;
+        &lt;allow_override&gt;false&lt;/allow_override&gt;
+      &lt;/cost_center_defaults&gt;
+      &lt;cost_center_defaults&gt;
+        &lt;id&gt;1572869&lt;/id&gt;
+        &lt;name&gt;Department&lt;/name&gt;
+        &lt;tree_index&gt;1&lt;/tree_index&gt;
+        &lt;value_id&gt;1606976&lt;/value_id&gt;
+        &lt;value_name&gt;A-dept11&lt;/value_name&gt;
+        &lt;allow_override&gt;true&lt;/allow_override&gt;
+      &lt;/cost_center_defaults&gt;
+    &lt;/cost_center_defaults&gt;
+    &lt;direct_reporting_pos&gt;
+      &lt;id&gt;1607042&lt;/id&gt;
+      &lt;display_name&gt;MyPos-07&lt;/display_name&gt;
+      &lt;position_number&gt;00000016&lt;/position_number&gt;
+    &lt;/direct_reporting_pos&gt;
+    &lt;indirect_reporting_pos_list&gt;
+      &lt;indirect_reporting_pos_list&gt;
+        &lt;id&gt;1607046&lt;/id&gt;
+        &lt;display_name&gt;MyPos-11&lt;/display_name&gt;
+        &lt;position_number&gt;00000020&lt;/position_number&gt;
+      &lt;/indirect_reporting_pos_list&gt;
+    &lt;/indirect_reporting_pos_list&gt;
+    &lt;job&gt;
+      &lt;id&gt;1573505&lt;/id&gt;
+      &lt;display_name&gt;zZxzxzX&lt;/display_name&gt;
+    &lt;/job&gt;
+    &lt;attributes&gt;
+      &lt;attributes&gt;
+        &lt;index&gt;0&lt;/index&gt;
+        &lt;label&gt;Position Attribute 1&lt;/label&gt;
+        &lt;value&gt;qqwweerr&lt;/value&gt;
+        &lt;type&gt;CHAR&lt;/type&gt;
+      &lt;/attributes&gt;
+      &lt;attributes&gt;
+        &lt;index&gt;1&lt;/index&gt;
+        &lt;label&gt;Position Attribute 2&lt;/label&gt;
+        &lt;value&gt;2020-11-12&lt;/value&gt;
+        &lt;type&gt;DATE&lt;/type&gt;
+      &lt;/attributes&gt;
+      &lt;attributes&gt;
+        &lt;index&gt;2&lt;/index&gt;
+        &lt;label&gt;PositionAttribute SA&lt;/label&gt;
+        &lt;value&gt;
+          &lt;account_id&gt;2203393&lt;/account_id&gt;
+          &lt;display_name&gt;DM DM&lt;/display_name&gt;
+          &lt;ein&gt;
+            &lt;id&gt;912898&lt;/id&gt;
+            &lt;display_name&gt;Default&lt;/display_name&gt;
+          &lt;/ein&gt;
+        &lt;/value&gt;
+        &lt;type&gt;ACCOUNT&lt;/type&gt;
+      &lt;/attributes&gt;
+    &lt;/attributes&gt;
+    &lt;default_profiles&gt;
+      &lt;acaProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;589824&lt;/id&gt;
+            &lt;display_name&gt;ACA1&lt;/display_name&gt;
+            &lt;date_from&gt;2012-01-01&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/acaProfile&gt;
+      &lt;benefitProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;11138&lt;/id&gt;
+            &lt;display_name&gt;employees profile&lt;/display_name&gt;
+            &lt;date_from&gt;2021-03-01&lt;/date_from&gt;
+          &lt;/values&gt;
+          &lt;values&gt;
+            &lt;id /&gt;
+            &lt;display_name&gt;
+            &lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/benefitProfile&gt;
+      &lt;counterDistributionProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;16640&lt;/id&gt;
+            &lt;display_name&gt;Counter Dist Profile 01&lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/counterDistributionProfile&gt;
+      &lt;dashboardLayoutProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;475136&lt;/id&gt;
+            &lt;display_name&gt;DAsh123&lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/dashboardLayoutProfile&gt;
+      &lt;payCalc2Profile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;147456&lt;/id&gt;
+            &lt;display_name&gt;PayCal Profile 01&lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/payCalc2Profile&gt;
+      &lt;payPrepProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;135873&lt;/id&gt;
+            &lt;display_name&gt;Default&lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/payPrepProfile&gt;
+      &lt;timeOffPlanningProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;32768&lt;/id&gt;
+            &lt;display_name&gt;ttt&lt;/display_name&gt;
+            &lt;date_from&gt;2021-03-01&lt;/date_from&gt;
+          &lt;/values&gt;
+          &lt;values&gt;
+            &lt;id /&gt;
+            &lt;display_name&gt;
+            &lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/timeOffPlanningProfile&gt;
+      &lt;workdayBreakdownProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;8128&lt;/id&gt;
+            &lt;display_name&gt;scded&lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/workdayBreakdownProfile&gt;
+      &lt;workingTimeRegulationsProfile&gt;
+        &lt;values&gt;
+          &lt;values&gt;
+            &lt;id&gt;16384&lt;/id&gt;
+            &lt;display_name&gt;Workinf Time regulation 01&lt;/display_name&gt;
+            &lt;date_from&gt;1900-12-31&lt;/date_from&gt;
+          &lt;/values&gt;
+        &lt;/values&gt;
+      &lt;/workingTimeRegulationsProfile&gt;
+      &lt;accessProfile&gt;
+        &lt;id&gt;77123&lt;/id&gt;
+        &lt;display_name&gt;ACP01&lt;/display_name&gt;
+      &lt;/accessProfile&gt;
+      &lt;accrualsProfile&gt;
+        &lt;id&gt;173696&lt;/id&gt;
+        &lt;display_name&gt;ACC1&lt;/display_name&gt;
+      &lt;/accrualsProfile&gt;
+      &lt;competencyProfile&gt;
+        &lt;id&gt;2944&lt;/id&gt;
+        &lt;display_name&gt;Competency Profiles 1&lt;/display_name&gt;
+      &lt;/competencyProfile&gt;
+      &lt;demographicProfile&gt;
+        &lt;id&gt;212992&lt;/id&gt;
+        &lt;display_name&gt;demo1&lt;/display_name&gt;
+      &lt;/demographicProfile&gt;
+      &lt;holidayProfile&gt;
+        &lt;id&gt;232258&lt;/id&gt;
+        &lt;display_name&gt;Holiday Table&lt;/display_name&gt;
+      &lt;/holidayProfile&gt;
+      &lt;laborDistributionProfile&gt;
+        &lt;id&gt;8832&lt;/id&gt;
+        &lt;display_name&gt;LD1&lt;/display_name&gt;
+      &lt;/laborDistributionProfile&gt;
+      &lt;payCalcProfile&gt;
+        &lt;id&gt;134081&lt;/id&gt;
+        &lt;display_name&gt;Hourly&lt;/display_name&gt;
+      &lt;/payCalcProfile&gt;
+      &lt;payPeriodProfile&gt;
+        &lt;id&gt;284482&lt;/id&gt;
+        &lt;display_name&gt;regular&lt;/display_name&gt;
+      &lt;/payPeriodProfile&gt;
+      &lt;pstPopulationProfile&gt;
+        &lt;id&gt;7168&lt;/id&gt;
+        &lt;display_name&gt;ptst1&lt;/display_name&gt;
+      &lt;/pstPopulationProfile&gt;
+      &lt;performanceReviewProfile&gt;
+        &lt;id&gt;7809&lt;/id&gt;
+        &lt;display_name&gt;Annual review&lt;/display_name&gt;
+      &lt;/performanceReviewProfile&gt;
+      &lt;retirementProfile&gt;
+        &lt;id&gt;16961&lt;/id&gt;
+        &lt;display_name&gt;Retiremant Plan 01&lt;/display_name&gt;
+      &lt;/retirementProfile&gt;
+      &lt;securityProfile&gt;
+        &lt;id&gt;594629&lt;/id&gt;
+        &lt;display_name&gt;Company Administrator&lt;/display_name&gt;
+      &lt;/securityProfile&gt;
+      &lt;timesheetProfile&gt;
+        &lt;id&gt;345537&lt;/id&gt;
+        &lt;display_name&gt;Start/End Timesheet&lt;/display_name&gt;
+      &lt;/timesheetProfile&gt;
+      &lt;tsAutoPopulationProfile&gt;
+        &lt;id&gt;125891&lt;/id&gt;
+        &lt;display_name&gt;Holidays &amp;amp; Schedules&lt;/display_name&gt;
+      &lt;/tsAutoPopulationProfile&gt;
+      &lt;trainingProfile&gt;
+        &lt;id&gt;4288&lt;/id&gt;
+        &lt;display_name&gt;tra&lt;/display_name&gt;
+      &lt;/trainingProfile&gt;
+      &lt;workScheduleProfile&gt;
+        &lt;id&gt;218689&lt;/id&gt;
+        &lt;display_name&gt;9AM - 5PM, Mon-Fri&lt;/display_name&gt;
+      &lt;/workScheduleProfile&gt;
+      &lt;employeeTypeProfile&gt;
+        &lt;id&gt;128259&lt;/id&gt;
+        &lt;display_name&gt;Consultant&lt;/display_name&gt;
+      &lt;/employeeTypeProfile&gt;
+      &lt;unionProfile&gt;
+        &lt;id&gt;3009&lt;/id&gt;
+        &lt;display_name&gt;union1&lt;/display_name&gt;
+      &lt;/unionProfile&gt;
+      &lt;payGradeProfile&gt;
+        &lt;id&gt;3969&lt;/id&gt;
+        &lt;display_name&gt;higher&lt;/display_name&gt;
+      &lt;/payGradeProfile&gt;
+      &lt;shiftProfile&gt;
+        &lt;id&gt;75968&lt;/id&gt;
+        &lt;display_name&gt;Shift&lt;/display_name&gt;
+      &lt;/shiftProfile&gt;
+      &lt;firstScreenProfile&gt;
+        &lt;display_name&gt;Calculated Time By Calendar Day&lt;/display_name&gt;
+      &lt;/firstScreenProfile&gt;
+      &lt;workerTypeProfile&gt;
+        &lt;id&gt;16384&lt;/id&gt;
+        &lt;display_name&gt;luchha&lt;/display_name&gt;
+      &lt;/workerTypeProfile&gt;
+      &lt;eeoClassificationProfile&gt;
+        &lt;id&gt;8&lt;/id&gt;
+        &lt;display_name&gt;Operatives&lt;/display_name&gt;
+      &lt;/eeoClassificationProfile&gt;
+      &lt;payTypeProfile&gt;
+        &lt;id&gt;125570&lt;/id&gt;
+        &lt;display_name&gt;Hourly&lt;/display_name&gt;
+      &lt;/payTypeProfile&gt;
+      &lt;standardWorkDayProfile&gt;28800000&lt;/standardWorkDayProfile&gt;
+    &lt;/default_profiles&gt;
+  &lt;/item&gt;
+  &lt;_total_count&gt;7017&lt;/_total_count&gt;
+&lt;/Positions&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version="1.0" encoding="utf-8"?&gt;

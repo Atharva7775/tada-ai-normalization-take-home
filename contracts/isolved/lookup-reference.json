@@ -2,14 +2,14 @@
   "provider": "isolved",
   "reference_version": "6-private-reference-1",
   "lookup_status": "verified",
-  "notice": "PARTIAL DOCUMENTED ENUM REFERENCE. Uploaded at the organizer's explicit instruction to this private repository. Provider redistribution permission and candidate sharing remain unverified. No response fixtures or canonical mappings supplied.",
+  "notice": "PARTIAL DOCUMENTED ENUM REFERENCE. Uploaded at the organizer's explicit instruction to this private repository. Provider redistribution permission and candidate sharing remain unverified. Provider-documented examples are included; no customer exports or canonical mappings supplied.",
   "openapi": {
     "status": "verified",
     "relative_path": "isolved-v6.swagger.json",
     "version": "6",
     "source": "TadaAI/full-stack:references/isolved/api_docs.json",
     "source_sha256": "ee126ab98e819872bbf1049137dacc2fb9d16dbd23a76d5ef3a6926c139e8300",
-    "sha256": "47e92227a8613ff4f3d6d10ba9bbadd84448f2dd9e4975056084c47ff5074555",
+    "sha256": "d0d3292944a892ec3717ed0a377740ca5b965523c27fb228b39dd36d2ed71ad7",
     "latest_live_version_verified": false,
     "alternate_artifact": "isolved-v6.alternate.swagger.json"
   },

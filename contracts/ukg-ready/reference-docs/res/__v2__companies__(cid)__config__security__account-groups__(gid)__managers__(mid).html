@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Manager</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Manager</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Manager</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -75,7 +75,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -142,7 +142,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/config/security/account-groups/{gid}/managers/{mid}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -157,7 +157,53 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+      "employee": {
+        "account_id": 10,
+        "username": "user"
+      },
+      "active_from": "2016-01-01",
+      "active_to": "2020-12-31",
+      "permissions": {
+        "employee_information": {
+          "view": true,
+          "edit": true
+        },
+        "employee_time": {
+          "view": true,
+          "edit": true,
+          "approve": true,
+          "approve_level": 4,
+          "time_entry_type": {
+            "time": true,
+            "time_off": false
+          },
+          "time_entry_field": {
+            "time": true,
+            "time_off": true,
+            "pay_category": false,
+            "cost_centers": [
+              {
+                "index": 0,
+                "edit": true
+              },
+              {
+                "index": 1,
+                "edit": true
+              }
+            ]
+          },
+          "approve_overtime_requests": false
+        },
+        "employee_pay_statement": {
+          "view": true,
+          "edit": false
+        }
+      }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -470,7 +516,54 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+    &lt;manager&gt;
+      &lt;employee&gt;
+        &lt;account_id&gt;10&lt;/account_id&gt;
+        &lt;username&gt;user&lt;/username&gt;
+      &lt;/employee&gt;
+      &lt;active_from&gt;2016-01-01&lt;/active_from&gt;
+      &lt;active_to&gt;2020-12-31&lt;/active_to&gt;
+      &lt;permissions&gt;
+        &lt;employee_information&gt;
+          &lt;view&gt;true&lt;/view&gt;
+          &lt;edit&gt;true&lt;/edit&gt;
+        &lt;/employee_information&gt;
+        &lt;employee_time&gt;
+          &lt;view&gt;true&lt;/view&gt;
+          &lt;edit&gt;true&lt;/edit&gt;
+          &lt;approve&gt;true&lt;/approve&gt;
+          &lt;approve_level&gt;4&lt;/approve_level&gt;
+          &lt;time_entry_type&gt;
+            &lt;time&gt;true&lt;/time&gt;
+            &lt;time_off&gt;false&lt;/time_off&gt;
+          &lt;/time_entry_type&gt;
+          &lt;time_entry_field&gt;
+            &lt;time&gt;true&lt;/time&gt;
+            &lt;time_off&gt;true&lt;/time_off&gt;
+            &lt;pay_category&gt;false&lt;/pay_category&gt;
+            &lt;cost_centers&gt;
+              &lt;cost_center&gt;
+                &lt;index&gt;0&lt;/index&gt;
+                &lt;edit&gt;true&lt;/edit&gt;
+              &lt;/cost_center&gt;
+              &lt;cost_center&gt;
+                &lt;index&gt;1&lt;/index&gt;
+                &lt;edit&gt;true&lt;/edit&gt;
+              &lt;/cost_center&gt;
+            &lt;/cost_centers&gt;
+          &lt;/time_entry_field&gt;
+          &lt;approve_overtime_requests&gt;false&lt;/approve_overtime_requests&gt;
+        &lt;/employee_time&gt;
+        &lt;employee_pay_statement&gt;
+          &lt;view&gt;true&lt;/view&gt;
+          &lt;edit&gt;true&lt;/edit&gt;
+        &lt;/employee_pay_statement&gt;
+      &lt;/permissions&gt;
+    &lt;/manager&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -721,7 +814,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -766,7 +859,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -780,7 +873,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -875,7 +968,53 @@
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "employee": {
+    "account_id": 10,
+    "username": "user"
+  },
+  "active_from": "2016-01-01",
+  "active_to": "2020-12-31",
+  "permissions": {
+    "employee_information": {
+      "view": true,
+      "edit": true
+    },
+    "employee_time": {
+      "view": true,
+      "edit": true,
+      "approve": true,
+      "approve_level": 4,
+      "time_entry_type": {
+        "time": true,
+        "time_off": false
+      },
+      "time_entry_field": {
+        "time": true,
+        "time_off": true,
+        "pay_category": false,
+        "cost_centers": [
+          {
+            "index": 0,
+            "edit": true
+          },
+          {
+            "index": 1,
+            "edit": true
+          }
+        ]
+      },
+      "approve_overtime_requests": false
+    },
+    "employee_pay_statement": {
+      "view": true,
+      "edit": false
+    }
+  }
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -1188,7 +1327,54 @@
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;manager&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;10&lt;/account_id&gt;
+    &lt;username&gt;user&lt;/username&gt;
+  &lt;/employee&gt;
+  &lt;active_from&gt;2016-01-01&lt;/active_from&gt;
+  &lt;active_to&gt;2020-12-31&lt;/active_to&gt;
+  &lt;permissions&gt;
+    &lt;employee_information&gt;
+      &lt;view&gt;true&lt;/view&gt;
+      &lt;edit&gt;true&lt;/edit&gt;
+    &lt;/employee_information&gt;
+    &lt;employee_time&gt;
+      &lt;view&gt;true&lt;/view&gt;
+      &lt;edit&gt;true&lt;/edit&gt;
+      &lt;approve&gt;true&lt;/approve&gt;
+      &lt;approve_level&gt;4&lt;/approve_level&gt;
+      &lt;time_entry_type&gt;
+        &lt;time&gt;true&lt;/time&gt;
+        &lt;time_off&gt;false&lt;/time_off&gt;
+      &lt;/time_entry_type&gt;
+      &lt;time_entry_field&gt;
+        &lt;time&gt;true&lt;/time&gt;
+        &lt;time_off&gt;true&lt;/time_off&gt;
+        &lt;pay_category&gt;false&lt;/pay_category&gt;
+        &lt;cost_centers&gt;
+          &lt;cost_center&gt;
+            &lt;index&gt;0&lt;/index&gt;
+            &lt;edit&gt;true&lt;/edit&gt;
+          &lt;/cost_center&gt;
+          &lt;cost_center&gt;
+            &lt;index&gt;1&lt;/index&gt;
+            &lt;edit&gt;true&lt;/edit&gt;
+          &lt;/cost_center&gt;
+        &lt;/cost_centers&gt;
+      &lt;/time_entry_field&gt;
+      &lt;approve_overtime_requests&gt;false&lt;/approve_overtime_requests&gt;
+    &lt;/employee_time&gt;
+    &lt;employee_pay_statement&gt;
+      &lt;view&gt;true&lt;/view&gt;
+      &lt;edit&gt;true&lt;/edit&gt;
+    &lt;/employee_pay_statement&gt;
+  &lt;/permissions&gt;
+&lt;/manager&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -1439,7 +1625,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>

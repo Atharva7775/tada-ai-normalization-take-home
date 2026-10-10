@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Rate Schedules</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Rate Schedules</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Rate Schedules</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -101,7 +101,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -168,7 +168,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/rates/tables/{tid}/schedules</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -187,7 +187,202 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "rate_schedules": [
+    {
+      "id": 424848,
+      "line": 1,
+      "rate_table": {
+        "id": 429584,
+        "name": "Personal",
+        "effective_from": "1900-12-31",
+        "effective_to": "9999-12-31",
+        "current_effective_from": "1900-12-31",
+        "current_effective_to": "9999-12-31",
+        "current_rate": 0.0
+      },
+      "type": "HOUR",
+      "description": "Base Compensation Record",
+      "tied_to_base_compensation": true,
+      "rate_items": [
+        {
+          "effective_from": "1900-12-31",
+          "effective_to": "9999-12-31",
+          "id": 544012,
+          "rate": 0.0
+        }
+      ],
+      "rate_reason_code": {
+        "id": 567553,
+        "name": "New Hire"
+      },
+      "usage": {
+        "time_entry": true,
+        "pay_record": true,
+        "payroll": true,
+        "counter": true,
+        "tlm_shift": true
+      },
+      "time_entry_rec": {
+        "time_value": "DO_NOT_CHECK",
+        "piece_value": "DO_NOT_CHECK",
+        "time_off": {
+          "is_time_off": "IS",
+          "incl_subtree": false
+        }
+      },
+      "counter_rec": {
+        "time_off": {
+          "is_time_off": "IS",
+          "incl_subtree": false
+        }
+      }
+    },
+    {
+      "id": 451969,
+      "line": 2,
+      "rate_table": {
+        "id": 429584,
+        "name": "Personal",
+        "effective_from": "1900-12-31",
+        "effective_to": "9999-12-31",
+        "current_effective_from": "1900-12-31",
+        "current_effective_to": "9999-12-31",
+        "current_rate": 100.0
+      },
+      "type": "HOUR",
+      "description": "test_row1",
+      "tied_to_base_compensation": false,
+      "rate_items": [
+        {
+          "effective_from": "1900-12-31",
+          "effective_to": "9999-12-31",
+          "id": 545857,
+          "rate": 100.0
+        }
+      ],
+      "usage": {
+        "time_entry": true,
+        "pay_record": false,
+        "payroll": false,
+        "counter": false,
+        "tlm_shift": false
+      },
+      "global_rec": {
+        "cost_centers": [
+          {
+            "index": 0,
+            "cost_center": {
+              "id": 1602312,
+              "name": "Child 1",
+              "display_name": "Child 1"
+            },
+            "incl_subtree": false,
+            "custom_fields": [
+              {
+                "index": 0,
+                "value": "Single"
+              },
+              {
+                "index": 1,
+                "value": "sddd"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "cost_center": {
+              "id": 1603394,
+              "name": "tesst_CC3_1",
+              "display_name": "tesst_CC3_1"
+            },
+            "incl_subtree": false
+          },
+          {
+            "index": 5,
+            "cost_center": {
+              "id": 1603397,
+              "name": "test_CC6_2",
+              "display_name": "test_CC6_2"
+            },
+            "incl_subtree": false
+          },
+          {
+            "index": 8,
+            "incl_subtree": false,
+            "custom_fields": [
+              {
+                "index": 0,
+                "value": "Single"
+              }
+            ]
+          },
+          {
+            "index": 9,
+            "cost_center": {
+              "id": 1603328,
+              "name": "test",
+              "display_name": "test"
+            },
+            "incl_subtree": false
+          }
+        ]
+      },
+      "time_entry_rec": {
+        "time_value": "DO_NOT_CHECK",
+        "piece_value": "DO_NOT_CHECK",
+        "time_off": {
+          "is_time_off": "IS",
+          "time_off_ref": {
+            "id": 1603456,
+            "display_name": "test_shubhanshu"
+          },
+          "incl_subtree": false
+        },
+        "pay_category": {
+          "id": 155009,
+          "display_name": "OVERTIME"
+        },
+        "week_day": "TUESDAY",
+        "custom_fields": [
+          {
+            "index": 0,
+            "value": "xcxzczcds"
+          },
+          {
+            "index": 2,
+            "value": "test_val2"
+          }
+        ]
+      },
+      "payroll_rec": {
+        "earning": {
+          "id": 53187,
+          "display_name": "Regular"
+        }
+      },
+      "counter_rec": {
+        "counter": {
+          "display_name": "counter2",
+          "id": 245760
+        },
+        "time_off": {
+          "is_time_off": "IS",
+          "time_off_ref": {
+            "id": 1603456,
+            "display_name": "test_shubhanshu"
+          },
+          "incl_subtree": true
+        },
+        "week_day": "THURSDAY"
+      }
+    }
+  ],
+  "_total_count": 2
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -651,7 +846,169 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;rate_table_schedules&gt;
+  &lt;rate_schedules&gt;
+    &lt;rate_schedule&gt;
+      &lt;id&gt;6914048&lt;/id&gt;
+      &lt;line&gt;1&lt;/line&gt;
+      &lt;rate_table&gt;
+        &lt;id&gt;5816320&lt;/id&gt;
+        &lt;name&gt;Personal&lt;/name&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+        &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+        &lt;current_effective_from&gt;1900-12-31&lt;/current_effective_from&gt;
+        &lt;current_effective_to&gt;9999-12-31&lt;/current_effective_to&gt;
+        &lt;current_rate&gt;10.000000&lt;/current_rate&gt;
+      &lt;/rate_table&gt;
+      &lt;type&gt;HOUR&lt;/type&gt;
+      &lt;description&gt;test&lt;/description&gt;
+      &lt;tied_to_base_compensation&gt;false&lt;/tied_to_base_compensation&gt;
+      &lt;rate_items&gt;
+        &lt;rate_item&gt;
+          &lt;id&gt;2312704&lt;/id&gt;
+          &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+          &lt;rate&gt;10.000000&lt;/rate&gt;
+        &lt;/rate_item&gt;
+      &lt;/rate_items&gt;
+      &lt;usage&gt;
+        &lt;time_entry&gt;true&lt;/time_entry&gt;
+        &lt;pay_record&gt;true&lt;/pay_record&gt;
+        &lt;payroll&gt;true&lt;/payroll&gt;
+        &lt;counter&gt;true&lt;/counter&gt;
+        &lt;tlm_shift&gt;true&lt;/tlm_shift&gt;
+      &lt;/usage&gt;
+      &lt;global_rec&gt;
+        &lt;cost_centers&gt;
+          &lt;cost_center&gt;
+            &lt;index&gt;0&lt;/index&gt;
+            &lt;cost_center_ref&gt;
+              &lt;id&gt;3508480&lt;/id&gt;
+              &lt;name&gt;10&lt;/name&gt;
+              &lt;display_name&gt;10&lt;/display_name&gt;
+            &lt;/cost_center_ref&gt;
+            &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+          &lt;/cost_center&gt;
+        &lt;/cost_centers&gt;
+      &lt;/global_rec&gt;
+      &lt;time_entry_rec&gt;
+        &lt;time_value&gt;VALUE_IS_SET&lt;/time_value&gt;
+        &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+        &lt;week_day&gt;TUESDAY&lt;/week_day&gt;
+      &lt;/time_entry_rec&gt;
+      &lt;payroll_rec&gt;
+        &lt;earning&gt;
+          &lt;id&gt;458752&lt;/id&gt;
+          &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/earning&gt;
+      &lt;/payroll_rec&gt;
+      &lt;counter_rec&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/counter_rec&gt;
+      &lt;is_position&gt;false&lt;/is_position&gt;
+    &lt;/rate_schedule&gt;
+    &lt;rate_schedule&gt;
+      &lt;id&gt;6947072&lt;/id&gt;
+      &lt;line&gt;2&lt;/line&gt;
+      &lt;rate_table&gt;
+        &lt;id&gt;5816320&lt;/id&gt;
+        &lt;name&gt;Personal&lt;/name&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+        &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+        &lt;current_effective_from&gt;1900-12-31&lt;/current_effective_from&gt;
+        &lt;current_effective_to&gt;9999-12-31&lt;/current_effective_to&gt;
+        &lt;current_rate&gt;11.000000&lt;/current_rate&gt;
+      &lt;/rate_table&gt;
+      &lt;type&gt;HOUR&lt;/type&gt;
+      &lt;tied_to_base_compensation&gt;false&lt;/tied_to_base_compensation&gt;
+      &lt;rate_items&gt;
+        &lt;rate_item&gt;
+          &lt;id&gt;2261248&lt;/id&gt;
+          &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+          &lt;rate&gt;11.000000&lt;/rate&gt;
+        &lt;/rate_item&gt;
+      &lt;/rate_items&gt;
+      &lt;usage&gt;
+        &lt;time_entry&gt;true&lt;/time_entry&gt;
+        &lt;pay_record&gt;true&lt;/pay_record&gt;
+        &lt;payroll&gt;true&lt;/payroll&gt;
+        &lt;counter&gt;true&lt;/counter&gt;
+        &lt;tlm_shift&gt;true&lt;/tlm_shift&gt;
+      &lt;/usage&gt;
+      &lt;time_entry_rec&gt;
+        &lt;time_value&gt;DO_NOT_CHECK&lt;/time_value&gt;
+        &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/time_entry_rec&gt;
+      &lt;counter_rec&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/counter_rec&gt;
+      &lt;is_position&gt;false&lt;/is_position&gt;
+    &lt;/rate_schedule&gt;
+    &lt;rate_schedule&gt;
+      &lt;id&gt;6980096&lt;/id&gt;
+      &lt;line&gt;3&lt;/line&gt;
+      &lt;rate_table&gt;
+        &lt;id&gt;5816320&lt;/id&gt;
+        &lt;name&gt;Personal&lt;/name&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+        &lt;effective_to&gt;2021-04-19&lt;/effective_to&gt;
+      &lt;/rate_table&gt;
+      &lt;type&gt;HOUR&lt;/type&gt;
+      &lt;description&gt;testdfgdgdf&lt;/description&gt;
+      &lt;tied_to_base_compensation&gt;false&lt;/tied_to_base_compensation&gt;
+      &lt;rate_items&gt;
+        &lt;rate_item&gt;
+          &lt;id&gt;2312192&lt;/id&gt;
+          &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;effective_to&gt;2021-04-19&lt;/effective_to&gt;
+          &lt;rate&gt;8.000000&lt;/rate&gt;
+        &lt;/rate_item&gt;
+      &lt;/rate_items&gt;
+      &lt;usage&gt;
+        &lt;time_entry&gt;true&lt;/time_entry&gt;
+        &lt;pay_record&gt;true&lt;/pay_record&gt;
+        &lt;payroll&gt;true&lt;/payroll&gt;
+        &lt;counter&gt;true&lt;/counter&gt;
+        &lt;tlm_shift&gt;false&lt;/tlm_shift&gt;
+      &lt;/usage&gt;
+      &lt;time_entry_rec&gt;
+        &lt;time_value&gt;VALUE_IS_SET&lt;/time_value&gt;
+        &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/time_entry_rec&gt;
+      &lt;counter_rec&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/counter_rec&gt;
+      &lt;is_position&gt;false&lt;/is_position&gt;
+    &lt;/rate_schedule&gt;
+  &lt;/rate_schedules&gt;
+  &lt;_total_count&gt;3&lt;/_total_count&gt;
+&lt;/rate_table_schedules&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -904,7 +1261,169 @@
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;rate_table_schedules&gt;
+  &lt;rate_schedules&gt;
+    &lt;rate_schedule&gt;
+      &lt;id&gt;6914048&lt;/id&gt;
+      &lt;line&gt;1&lt;/line&gt;
+      &lt;rate_table&gt;
+        &lt;id&gt;5816320&lt;/id&gt;
+        &lt;name&gt;Personal&lt;/name&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+        &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+        &lt;current_effective_from&gt;1900-12-31&lt;/current_effective_from&gt;
+        &lt;current_effective_to&gt;9999-12-31&lt;/current_effective_to&gt;
+        &lt;current_rate&gt;10.000000&lt;/current_rate&gt;
+      &lt;/rate_table&gt;
+      &lt;type&gt;HOUR&lt;/type&gt;
+      &lt;description&gt;test&lt;/description&gt;
+      &lt;tied_to_base_compensation&gt;false&lt;/tied_to_base_compensation&gt;
+      &lt;rate_items&gt;
+        &lt;rate_item&gt;
+          &lt;id&gt;2312704&lt;/id&gt;
+          &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+          &lt;rate&gt;10.000000&lt;/rate&gt;
+        &lt;/rate_item&gt;
+      &lt;/rate_items&gt;
+      &lt;usage&gt;
+        &lt;time_entry&gt;true&lt;/time_entry&gt;
+        &lt;pay_record&gt;true&lt;/pay_record&gt;
+        &lt;payroll&gt;true&lt;/payroll&gt;
+        &lt;counter&gt;true&lt;/counter&gt;
+        &lt;tlm_shift&gt;true&lt;/tlm_shift&gt;
+      &lt;/usage&gt;
+      &lt;global_rec&gt;
+        &lt;cost_centers&gt;
+          &lt;cost_center&gt;
+            &lt;index&gt;0&lt;/index&gt;
+            &lt;cost_center_ref&gt;
+              &lt;id&gt;3508480&lt;/id&gt;
+              &lt;name&gt;10&lt;/name&gt;
+              &lt;display_name&gt;10&lt;/display_name&gt;
+            &lt;/cost_center_ref&gt;
+            &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+          &lt;/cost_center&gt;
+        &lt;/cost_centers&gt;
+      &lt;/global_rec&gt;
+      &lt;time_entry_rec&gt;
+        &lt;time_value&gt;VALUE_IS_SET&lt;/time_value&gt;
+        &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+        &lt;week_day&gt;TUESDAY&lt;/week_day&gt;
+      &lt;/time_entry_rec&gt;
+      &lt;payroll_rec&gt;
+        &lt;earning&gt;
+          &lt;id&gt;458752&lt;/id&gt;
+          &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/earning&gt;
+      &lt;/payroll_rec&gt;
+      &lt;counter_rec&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/counter_rec&gt;
+      &lt;is_position&gt;false&lt;/is_position&gt;
+    &lt;/rate_schedule&gt;
+    &lt;rate_schedule&gt;
+      &lt;id&gt;6947072&lt;/id&gt;
+      &lt;line&gt;2&lt;/line&gt;
+      &lt;rate_table&gt;
+        &lt;id&gt;5816320&lt;/id&gt;
+        &lt;name&gt;Personal&lt;/name&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+        &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+        &lt;current_effective_from&gt;1900-12-31&lt;/current_effective_from&gt;
+        &lt;current_effective_to&gt;9999-12-31&lt;/current_effective_to&gt;
+        &lt;current_rate&gt;11.000000&lt;/current_rate&gt;
+      &lt;/rate_table&gt;
+      &lt;type&gt;HOUR&lt;/type&gt;
+      &lt;tied_to_base_compensation&gt;false&lt;/tied_to_base_compensation&gt;
+      &lt;rate_items&gt;
+        &lt;rate_item&gt;
+          &lt;id&gt;2261248&lt;/id&gt;
+          &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+          &lt;rate&gt;11.000000&lt;/rate&gt;
+        &lt;/rate_item&gt;
+      &lt;/rate_items&gt;
+      &lt;usage&gt;
+        &lt;time_entry&gt;true&lt;/time_entry&gt;
+        &lt;pay_record&gt;true&lt;/pay_record&gt;
+        &lt;payroll&gt;true&lt;/payroll&gt;
+        &lt;counter&gt;true&lt;/counter&gt;
+        &lt;tlm_shift&gt;true&lt;/tlm_shift&gt;
+      &lt;/usage&gt;
+      &lt;time_entry_rec&gt;
+        &lt;time_value&gt;DO_NOT_CHECK&lt;/time_value&gt;
+        &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/time_entry_rec&gt;
+      &lt;counter_rec&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/counter_rec&gt;
+      &lt;is_position&gt;false&lt;/is_position&gt;
+    &lt;/rate_schedule&gt;
+    &lt;rate_schedule&gt;
+      &lt;id&gt;6980096&lt;/id&gt;
+      &lt;line&gt;3&lt;/line&gt;
+      &lt;rate_table&gt;
+        &lt;id&gt;5816320&lt;/id&gt;
+        &lt;name&gt;Personal&lt;/name&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+        &lt;effective_to&gt;2021-04-19&lt;/effective_to&gt;
+      &lt;/rate_table&gt;
+      &lt;type&gt;HOUR&lt;/type&gt;
+      &lt;description&gt;testdfgdgdf&lt;/description&gt;
+      &lt;tied_to_base_compensation&gt;false&lt;/tied_to_base_compensation&gt;
+      &lt;rate_items&gt;
+        &lt;rate_item&gt;
+          &lt;id&gt;2312192&lt;/id&gt;
+          &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;effective_to&gt;2021-04-19&lt;/effective_to&gt;
+          &lt;rate&gt;8.000000&lt;/rate&gt;
+        &lt;/rate_item&gt;
+      &lt;/rate_items&gt;
+      &lt;usage&gt;
+        &lt;time_entry&gt;true&lt;/time_entry&gt;
+        &lt;pay_record&gt;true&lt;/pay_record&gt;
+        &lt;payroll&gt;true&lt;/payroll&gt;
+        &lt;counter&gt;true&lt;/counter&gt;
+        &lt;tlm_shift&gt;false&lt;/tlm_shift&gt;
+      &lt;/usage&gt;
+      &lt;time_entry_rec&gt;
+        &lt;time_value&gt;VALUE_IS_SET&lt;/time_value&gt;
+        &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/time_entry_rec&gt;
+      &lt;counter_rec&gt;
+        &lt;time_off&gt;
+          &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+          &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+        &lt;/time_off&gt;
+      &lt;/counter_rec&gt;
+      &lt;is_position&gt;false&lt;/is_position&gt;
+    &lt;/rate_schedule&gt;
+  &lt;/rate_schedules&gt;
+  &lt;_total_count&gt;3&lt;/_total_count&gt;
+&lt;/rate_table_schedules&gt;</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -1181,7 +1700,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -1243,7 +1762,46 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "line": 1,
+  "type": "HOUR",
+  "description": "Base Compensation Record",
+  "rate_items": [
+    {
+      "effective_from": "1900-12-31",
+      "effective_to": "9999-12-31",
+      "id": 544012,
+      "rate": 0.0
+    }
+  ],
+  "rate_reason_code": {
+    "id": 567553
+  },
+  "usage": {
+    "time_entry": true,
+    "pay_record": true,
+    "payroll": true,
+    "counter": true,
+    "tlm_shift": true
+  },
+  "time_entry_rec": {
+    "time_value": "DO_NOT_CHECK",
+    "piece_value": "DO_NOT_CHECK",
+    "time_off": {
+      "is_time_off": "IS",
+      "incl_subtree": false
+    }
+  },
+  "counter_rec": {
+    "time_off": {
+      "is_time_off": "IS",
+      "incl_subtree": false
+    }
+  }
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -1615,7 +2173,64 @@
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;rate_schedule&gt;
+  &lt;line&gt;1&lt;/line&gt;
+  &lt;type&gt;HOUR&lt;/type&gt;
+  &lt;description&gt;test&lt;/description&gt;
+  &lt;rate_items&gt;
+    &lt;rate_item&gt;
+      &lt;id&gt;2312704&lt;/id&gt;
+      &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+      &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+      &lt;rate&gt;10.000000&lt;/rate&gt;
+    &lt;/rate_item&gt;
+  &lt;/rate_items&gt;
+  &lt;usage&gt;
+    &lt;time_entry&gt;true&lt;/time_entry&gt;
+    &lt;pay_record&gt;true&lt;/pay_record&gt;
+    &lt;payroll&gt;true&lt;/payroll&gt;
+    &lt;counter&gt;true&lt;/counter&gt;
+    &lt;tlm_shift&gt;true&lt;/tlm_shift&gt;
+  &lt;/usage&gt;
+  &lt;global_rec&gt;
+    &lt;cost_centers&gt;
+      &lt;cost_center&gt;
+        &lt;index&gt;0&lt;/index&gt;
+        &lt;cost_center_ref&gt;
+          &lt;id&gt;3508480&lt;/id&gt;
+          &lt;name&gt;10&lt;/name&gt;
+          &lt;display_name&gt;10&lt;/display_name&gt;
+        &lt;/cost_center_ref&gt;
+        &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+      &lt;/cost_center&gt;
+    &lt;/cost_centers&gt;
+  &lt;/global_rec&gt;
+  &lt;time_entry_rec&gt;
+    &lt;time_value&gt;VALUE_IS_SET&lt;/time_value&gt;
+    &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+    &lt;time_off&gt;
+      &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+      &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+    &lt;/time_off&gt;
+    &lt;week_day&gt;TUESDAY&lt;/week_day&gt;
+  &lt;/time_entry_rec&gt;
+  &lt;payroll_rec&gt;
+    &lt;earning&gt;
+      &lt;id&gt;458752&lt;/id&gt;
+      &lt;display_name&gt;Regular&lt;/display_name&gt;
+    &lt;/earning&gt;
+  &lt;/payroll_rec&gt;
+  &lt;counter_rec&gt;
+    &lt;time_off&gt;
+      &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+      &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+    &lt;/time_off&gt;
+  &lt;/counter_rec&gt;
+  &lt;is_position&gt;false&lt;/is_position&gt;
+&lt;/rate_schedule&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -1824,7 +2439,64 @@
 <div class="req-tab-post" id="req-tab-id-post-2">
 <div class="example">
 
+<div class="post-example-tab-2 activeTab" id="post-tab-example-2">
 
+<pre class="highlightjs">&lt;rate_schedule&gt;
+  &lt;line&gt;1&lt;/line&gt;
+  &lt;type&gt;HOUR&lt;/type&gt;
+  &lt;description&gt;test&lt;/description&gt;
+  &lt;rate_items&gt;
+    &lt;rate_item&gt;
+      &lt;id&gt;2312704&lt;/id&gt;
+      &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+      &lt;effective_to&gt;9999-12-31&lt;/effective_to&gt;
+      &lt;rate&gt;10.000000&lt;/rate&gt;
+    &lt;/rate_item&gt;
+  &lt;/rate_items&gt;
+  &lt;usage&gt;
+    &lt;time_entry&gt;true&lt;/time_entry&gt;
+    &lt;pay_record&gt;true&lt;/pay_record&gt;
+    &lt;payroll&gt;true&lt;/payroll&gt;
+    &lt;counter&gt;true&lt;/counter&gt;
+    &lt;tlm_shift&gt;true&lt;/tlm_shift&gt;
+  &lt;/usage&gt;
+  &lt;global_rec&gt;
+    &lt;cost_centers&gt;
+      &lt;cost_center&gt;
+        &lt;index&gt;0&lt;/index&gt;
+        &lt;cost_center_ref&gt;
+          &lt;id&gt;3508480&lt;/id&gt;
+          &lt;name&gt;10&lt;/name&gt;
+          &lt;display_name&gt;10&lt;/display_name&gt;
+        &lt;/cost_center_ref&gt;
+        &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+      &lt;/cost_center&gt;
+    &lt;/cost_centers&gt;
+  &lt;/global_rec&gt;
+  &lt;time_entry_rec&gt;
+    &lt;time_value&gt;VALUE_IS_SET&lt;/time_value&gt;
+    &lt;piece_value&gt;DO_NOT_CHECK&lt;/piece_value&gt;
+    &lt;time_off&gt;
+      &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+      &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+    &lt;/time_off&gt;
+    &lt;week_day&gt;TUESDAY&lt;/week_day&gt;
+  &lt;/time_entry_rec&gt;
+  &lt;payroll_rec&gt;
+    &lt;earning&gt;
+      &lt;id&gt;458752&lt;/id&gt;
+      &lt;display_name&gt;Regular&lt;/display_name&gt;
+    &lt;/earning&gt;
+  &lt;/payroll_rec&gt;
+  &lt;counter_rec&gt;
+    &lt;time_off&gt;
+      &lt;is_time_off&gt;IS&lt;/is_time_off&gt;
+      &lt;incl_subtree&gt;false&lt;/incl_subtree&gt;
+    &lt;/time_off&gt;
+  &lt;/counter_rec&gt;
+  &lt;is_position&gt;false&lt;/is_position&gt;
+&lt;/rate_schedule&gt;</pre>
+</div>
 <div class="post-example-tab-2" id="post-tab-schema-2">
 
 <div class="jsonschema" id="schema-5">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;

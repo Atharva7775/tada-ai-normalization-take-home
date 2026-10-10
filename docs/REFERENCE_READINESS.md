@@ -13,8 +13,10 @@ or approval to share with candidates. Do not start the seven-day clock yet.
 
 See [the audit](REFERENCE_AUDIT.md), [isolved's manifest](../contracts/isolved/SOURCE_MANIFEST.json)
 and [UKG's manifest](../contracts/ukg-ready/SOURCE_MANIFEST.json) for original and
-derivative hashes, changes and authorization scope. No API response fixtures,
-customer lookup responses or canonical mappings are supplied.
+derivative hashes, changes and authorization scope. Provider-documented examples
+are now retained at the organizer's instruction, with authentication token examples
+redacted. No customer lookup responses, independently generated fixture suite or
+canonical mappings are supplied.
 
 For each artifact, record product/API/version, source, acquisition date if known,
 checksum, audience/storage/tool restrictions, review date, supported scope,

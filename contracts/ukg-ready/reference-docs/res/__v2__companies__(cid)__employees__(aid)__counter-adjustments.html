@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Counter adjustments</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Counter adjustments</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Counter adjustments</span>
@@ -31,7 +31,7 @@ The maximum date range of the request is 31 days.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -46,7 +46,7 @@ The maximum date range of the request is 31 days.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -64,7 +64,7 @@ The maximum date range of the request is 31 days.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-05-01</p>
 <div class="desc md">The minimum date of the adjustment's creation.
 </div>
 </div>
@@ -79,7 +79,7 @@ The maximum date range of the request is 31 days.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-05-30</p>
 <div class="desc md">The maximum date of the adjustment's creation.
 </div>
 </div>
@@ -141,7 +141,7 @@ The maximum date range of the request is 31 days.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/counter-adjustments</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -156,7 +156,39 @@ The maximum date range of the request is 31 days.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "counter_adjustments": [
+    {
+      "id": 5308416,
+      "record_date": "2022-08-04",
+      "counter": {
+        "id": 885760,
+        "name": "Amount",
+        "type": "AMOUNT"
+      },
+      "cost_centers": [
+        {
+          "index": 0,
+          "value": {
+            "id": 1557842,
+            "name": "CC1.1",
+            "display_name": "CC1.1"
+          }
+        }
+      ],
+      "value": "8999999.000",
+      "reset": false,
+      "reason_code": {
+        "id": 1983774,
+        "display_name": "Reason Code 1"
+      }
+    }
+  ]
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -178,10 +210,16 @@ The maximum date range of the request is 31 days.
         "properties": {
           "id": {
             "type": "integer",
+            "examples": [
+              5308416
+            ],
             "default": 0
           },
           "record_date": {
             "type": "string",
+            "examples": [
+              "2022-08-04"
+            ],
             "pattern": "^.*$"
           },
           "counter": {
@@ -194,16 +232,27 @@ The maximum date range of the request is 31 days.
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  885760
+                ],
                 "default": 0
               },
               "name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Amount"
+                ],
                 "pattern": "^.*$"
               },
               "type": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "AMOUNT",
+                  "TIME",
+                  "QUANTITY"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -216,6 +265,9 @@ The maximum date range of the request is 31 days.
               "properties": {
                 "index": {
                   "type": "integer",
+                  "examples": [
+                    0
+                  ],
                   "default": 0
                 },
                 "value": {
@@ -223,16 +275,25 @@ The maximum date range of the request is 31 days.
                   "properties": {
                     "id": {
                       "type": "integer",
+                      "examples": [
+                        1557842
+                      ],
                       "default": 0
                     },
                     "name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     },
                     "display_name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     }
                   }
@@ -241,10 +302,16 @@ The maximum date range of the request is 31 days.
             }
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "8999.0"
+            ]
           },
           "reset": {
             "type": "boolean",
+            "examples": [
+              false
+            ],
             "default": true
           },
           "reason_code": {
@@ -252,11 +319,17 @@ The maximum date range of the request is 31 days.
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  1983774
+                ],
                 "default": 0
               },
               "display_name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Reason Code 1"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -272,7 +345,37 @@ The maximum date range of the request is 31 days.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;counter_adjustments&gt;
+  &lt;counter_adjustment&gt;
+    &lt;id&gt;5308416&lt;/id&gt;
+    &lt;record_date&gt;"2022-08-04"&lt;/record_date&gt;
+    &lt;counter&gt;
+      &lt;id&gt;885760&lt;/id&gt;
+      &lt;name&gt;Amount&lt;/name&gt;
+      &lt;type&gt;AMOUNT&lt;/type&gt;
+    &lt;/counter&gt;
+    &lt;cost_centers&gt;
+      &lt;cost_center&gt;
+        &lt;index&gt;0&lt;/index&gt;
+        &lt;value&gt;
+          &lt;id&gt;1557842&lt;/id&gt;
+          &lt;name&gt;CC1.1&lt;/name&gt;
+          &lt;display_name&gt;CC1.1&lt;/display_name&gt;
+        &lt;/value&gt;
+      &lt;/cost_center&gt;
+    &lt;/cost_centers&gt;
+    &lt;value&gt;"8999999"&lt;/value&gt;
+    &lt;reset&gt;false&lt;/reset&gt;
+    &lt;reason_code&gt;
+      &lt;id&gt;1983774&lt;/id&gt;
+      &lt;display_name&gt;Reason Code 1&lt;/display_name&gt;
+    &lt;/reason_code&gt;
+  &lt;/counter_adjustment&gt;
+&lt;/counter_adjustments&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version="1.0" encoding="utf-8"?&gt;
@@ -372,7 +475,7 @@ The maximum date range of the request is 31 days.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -387,7 +490,7 @@ The maximum date range of the request is 31 days.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -466,7 +569,29 @@ The maximum date range of the request is 31 days.
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "record_date": "2022-08-04",
+  "counter_id": 885760,
+  "cost_centers": [
+    {
+      "index": 0,
+      "value": {
+        "id": 1557842,
+        "name": "CC1.1",
+        "display_name": "CC1.1"
+      }
+    }
+  ],
+  "value": "899999999.0",
+  "reset": false,
+  "reason_code": {
+    "id": 1983774,
+    "display_name": "Reason Code 1"
+  }
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -480,10 +605,16 @@ The maximum date range of the request is 31 days.
   "properties": {
     "record_date": {
       "type": "string",
+      "examples": [
+        "2022-08-04"
+      ],
       "pattern": "^.*$"
     },
     "counter_id": {
-      "type": "integer"
+      "type": "integer",
+      "examples": [
+        5308416
+      ]
     },
     "cost_centers": {
       "type": "array",
@@ -493,6 +624,9 @@ The maximum date range of the request is 31 days.
         "properties": {
           "index": {
             "type": "integer",
+            "examples": [
+              0
+            ],
             "default": 0
           },
           "value": {
@@ -500,16 +634,25 @@ The maximum date range of the request is 31 days.
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  1557842
+                ],
                 "default": 0
               },
               "name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "CC1.1"
+                ],
                 "pattern": "^.*$"
               },
               "display_name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "CC1.1"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -518,10 +661,16 @@ The maximum date range of the request is 31 days.
       }
     },
     "value": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "8999.0"
+      ]
     },
     "reset": {
       "type": "boolean",
+      "examples": [
+        false
+      ],
       "default": true
     },
     "reason_code": {
@@ -529,11 +678,17 @@ The maximum date range of the request is 31 days.
       "properties": {
         "id": {
           "type": "integer",
+          "examples": [
+            1983774
+          ],
           "default": 0
         },
         "display_name": {
           "type": "string",
           "default": "",
+          "examples": [
+            "Reason Code 1"
+          ],
           "pattern": "^.*$"
         }
       }
@@ -546,7 +701,30 @@ The maximum date range of the request is 31 days.
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;counter_adjustment&gt;
+  &lt;record_date&gt;2022-08-04&lt;/record_date&gt;
+  &lt;counter_id&gt;885760&lt;/counter_id&gt;
+  &lt;cost_centers&gt;
+    &lt;cost_center&gt;
+      &lt;index&gt;0&lt;/index&gt;
+      &lt;value&gt;
+        &lt;id&gt;1557842&lt;/id&gt;
+        &lt;name&gt;CC1.1&lt;/name&gt;
+        &lt;display_name&gt;CC1.1&lt;/display_name&gt;
+      &lt;/value&gt;
+    &lt;/cost_center&gt;
+  &lt;/cost_centers&gt;
+  &lt;value&gt;"8999999999999.0"&lt;/value&gt;
+  &lt;reset&gt;false&lt;/reset&gt;
+  &lt;reason_code&gt;
+    &lt;id&gt;1983774&lt;/id&gt;
+    &lt;display_name&gt;Reason Code 1&lt;/display_name&gt;
+  &lt;/reason_code&gt;
+&lt;/counter_adjustment&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;?xml version="1.0" encoding="utf-8"?&gt;
@@ -596,7 +774,7 @@ The maximum date range of the request is 31 days.
 </div>
 </div>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-post-0" data-tab-class="resp-tab-post" name="resp-tab-post" type="radio"/>
@@ -611,7 +789,34 @@ The maximum date range of the request is 31 days.
 <div class="resp-tab-post" id="resp-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-resp-tab-0 activeTab" id="post-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "id": 5308416,
+  "record_date": "2022-08-04",
+  "counter": {
+    "id": 885760,
+    "name": "Amount",
+    "type": "AMOUNT"
+  },
+  "cost_centers": [
+    {
+      "index": 0,
+      "value": {
+        "id": 1557842,
+        "name": "CC1.1",
+        "display_name": "CC1.1"
+      }
+    }
+  ],
+  "value": "899999999.0",
+  "reset": false,
+  "reason_code": {
+    "id": 1983774,
+    "display_name": "Reason Code 1"
+  }
+}</pre>
+</div>
 <div class="post-example-resp-tab-0" id="post-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-4">{
@@ -627,10 +832,16 @@ The maximum date range of the request is 31 days.
   "properties": {
     "id": {
       "type": "integer",
+      "examples": [
+        5308416
+      ],
       "default": 0
     },
     "record_date": {
       "type": "string",
+      "examples": [
+        "2022-08-04"
+      ],
       "pattern": "^.*$"
     },
     "counter": {
@@ -643,16 +854,27 @@ The maximum date range of the request is 31 days.
       "properties": {
         "id": {
           "type": "integer",
+          "examples": [
+            885760
+          ],
           "default": 0
         },
         "name": {
           "type": "string",
           "default": "",
+          "examples": [
+            "Amount"
+          ],
           "pattern": "^.*$"
         },
         "type": {
           "type": "string",
           "default": "",
+          "examples": [
+            "AMOUNT",
+            "TIME",
+            "QUANTITY"
+          ],
           "pattern": "^.*$"
         }
       }
@@ -665,6 +887,9 @@ The maximum date range of the request is 31 days.
         "properties": {
           "index": {
             "type": "integer",
+            "examples": [
+              0
+            ],
             "default": 0
           },
           "value": {
@@ -672,16 +897,25 @@ The maximum date range of the request is 31 days.
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  1557842
+                ],
                 "default": 0
               },
               "name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "CC1.1"
+                ],
                 "pattern": "^.*$"
               },
               "display_name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "CC1.1"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -690,10 +924,16 @@ The maximum date range of the request is 31 days.
       }
     },
     "value": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "8999.0"
+      ]
     },
     "reset": {
       "type": "boolean",
+      "examples": [
+        false
+      ],
       "default": true
     },
     "reason_code": {
@@ -701,11 +941,17 @@ The maximum date range of the request is 31 days.
       "properties": {
         "id": {
           "type": "integer",
+          "examples": [
+            1983774
+          ],
           "default": 0
         },
         "display_name": {
           "type": "string",
           "default": "",
+          "examples": [
+            "Reason Code 1"
+          ],
           "pattern": "^.*$"
         }
       }
@@ -718,7 +964,35 @@ The maximum date range of the request is 31 days.
 <div class="resp-tab-post" id="resp-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-resp-tab-1 activeTab" id="post-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;counter_adjustment&gt;
+  &lt;id&gt;5308416&lt;/id&gt;
+  &lt;record_date&gt;"2022-08-04"&lt;/record_date&gt;
+  &lt;counter&gt;
+    &lt;id&gt;885760&lt;/id&gt;
+    &lt;name&gt;Amount&lt;/name&gt;
+    &lt;type&gt;AMOUNT&lt;/type&gt;
+  &lt;/counter&gt;
+  &lt;cost_centers&gt;
+    &lt;cost_center&gt;
+      &lt;index&gt;0&lt;/index&gt;
+      &lt;value&gt;
+        &lt;id&gt;1557842&lt;/id&gt;
+        &lt;name&gt;CC1.1&lt;/name&gt;
+        &lt;display_name&gt;CC1.1&lt;/display_name&gt;
+      &lt;/value&gt;
+    &lt;/cost_center&gt;
+  &lt;/cost_centers&gt;
+  &lt;value&gt;"8999999999999.0"&lt;/value&gt;
+  &lt;reset&gt;false&lt;/reset&gt;
+  &lt;reason_code&gt;
+    &lt;id&gt;1983774&lt;/id&gt;
+    &lt;display_name&gt;Reason Code 1&lt;/display_name&gt;
+  &lt;/reason_code&gt;
+&lt;/counter_adjustment&gt;</pre>
+</div>
 <div class="post-example-resp-tab-1" id="post-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-5">&lt;?xml version="1.0" encoding="utf-8"?&gt;

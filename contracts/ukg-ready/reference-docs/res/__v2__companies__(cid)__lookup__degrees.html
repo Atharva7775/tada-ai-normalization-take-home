@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Degrees</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Degrees</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Degrees</span>
@@ -33,7 +33,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -52,7 +52,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -109,7 +109,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/lookup/degrees</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -124,7 +124,29 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "items": [
+    {
+      "id": 1,
+      "code": "A.A.S.",
+      "degree": "Associate of Applied Science",
+      "description": "Description"
+    },
+    {
+      "id": 2,
+      "code": "A.A.",
+      "degree": "Associate of Arts"
+    },
+    {
+      "id": 3,
+      "code": "A.S.",
+      "degree": "Associate of Science"
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -166,7 +188,28 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;items&gt;
+  &lt;item&gt;
+    &lt;id&gt;1&lt;/id&gt;
+    &lt;code&gt;A.A.S.&lt;/code&gt;
+    &lt;degree&gt;Associate of Applied Science&lt;/degree&gt;
+    &lt;description&gt;Description&lt;/description&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;id&gt;2&lt;/id&gt;
+    &lt;code&gt;A.A.&lt;/code&gt;
+    &lt;degree&gt;Associate of Arts&lt;/degree&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;id&gt;3&lt;/id&gt;
+    &lt;code&gt;A.S.&lt;/code&gt;
+    &lt;degree&gt;Associate of Science&lt;/degree&gt;
+  &lt;/item&gt;
+&lt;/items&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"

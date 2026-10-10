@@ -14,14 +14,18 @@
       "primary_for_assignment": true,
       "source": "references/isolved/api_docs.json",
       "source_sha256": "ee126ab98e819872bbf1049137dacc2fb9d16dbd23a76d5ef3a6926c139e8300",
-      "sha256": "47e92227a8613ff4f3d6d10ba9bbadd84448f2dd9e4975056084c47ff5074555",
+      "sha256": "d0d3292944a892ec3717ed0a377740ca5b965523c27fb228b39dd36d2ed71ad7",
       "swagger": "2.0",
       "api_version": "6",
       "paths": 361,
       "definitions": 538,
       "modifications": {
-        "example_annotations_removed": 1,
-        "description_code_blocks_removed": 7
+        "documented_examples_included": true,
+        "source_example_annotations": 1,
+        "redactions": {
+          "token_like_examples_redacted": 2,
+          "encoded_auth_examples_redacted": 1
+        }
       }
     },
     {
@@ -29,14 +33,18 @@
       "primary_for_assignment": false,
       "source": "isolved_doc.json",
       "source_sha256": "e8c009506a07d8466c176c995ab861143ccf54df47f92110a1f377860b24599f",
-      "sha256": "e8b3acec1dbed0399e36542531a43bdcee5781a9ce55d1948a75798f82d86bdb",
+      "sha256": "f83bf213dfa81bac2d5eb023f9e7e809102b05a4a35129e36dd3fdfd2aa5ea47",
       "swagger": "2.0",
       "api_version": "6",
       "paths": 344,
       "definitions": 516,
       "modifications": {
-        "example_annotations_removed": 1,
-        "description_code_blocks_removed": 7
+        "documented_examples_included": true,
+        "source_example_annotations": 1,
+        "redactions": {
+          "token_like_examples_redacted": 2,
+          "encoded_auth_examples_redacted": 1
+        }
       }
     }
   ]

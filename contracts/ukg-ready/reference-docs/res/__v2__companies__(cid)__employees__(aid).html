@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-
-<html><head><meta charset="utf-8"/><title>Employee</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Employee</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Employee</span>
@@ -46,10 +45,12 @@ The state and state_code fields usually contain the same value. However, in some
 </div>
 <div class="param-content">
 <div>
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -59,10 +60,12 @@ The state and state_code fields usually contain the same value. However, in some
 </div>
 <div class="param-content">
 <div>
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
 </div>
+
 </li>
 </ul>
 <h5>Header Parameters</h5>
@@ -76,8 +79,10 @@ The state and state_code fields usually contain the same value. However, in some
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
+<p>Example: application/json</p>
 </div>
 </div>
+
 </li>
 </ul>
 <h4>Responses</h4>
@@ -141,7 +146,7 @@ The state and state_code fields usually contain the same value. However, in some
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -155,7 +160,171 @@ The state and state_code fields usually contain the same value. However, in some
 <div>
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
+
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
+
+<pre class="highlightjs">{
+  "id": 10,
+  "username": "string",
+  "first_name": "string",
+  "last_name": "string",
+  "photo_href": "string",
+  "isPhotoUploaded": false,
+  "middle_name": "string",
+  "external_id": "string",
+  "employee_id": "string",
+  "address": {
+    "address_line_1": "string",
+    "address_line_2": "string",
+    "address_line_3": "string",
+    "country": "USA",
+    "city": "string",
+    "state": "str",
+    "state_code": "str",
+    "zip": "string",
+    "number": "string",
+    "number_addition": "string"
+  },
+  "use_separate_mailing_address": false,
+  "status": "string",
+  "bsn": "string",
+  "ein": {
+    "id": 10
+  },
+  "force_change_password": false,
+  "locked": true,
+  "first_screen": {
+    "id": "screen"
+  },
+  "phones": {
+    "cell_phone_country_id": "USA",
+    "cell_phone_country_code": "+91",
+    "cell_phone": "+333333333",
+    "home_phone_country_id": "USA",
+    "home_phone_country_code": "+91",
+    "home_phone": "+333333333",
+    "work_phone_country_id": "USA",
+    "work_phone_country_code": "+91",
+    "work_phone": "+333333333",
+    "preferred_phone": "WORK"
+  },
+  "locale": {
+    "id": 1
+  },
+  "mailing_address": {
+    "address_line_1": "string",
+    "address_line_2": "string",
+    "address_line_3": "string",
+    "country": "USA",
+    "city": "string",
+    "state": "str",
+    "zip": "string",
+    "number": "string",
+    "number_addition": "string"
+  },
+  "managers": [
+    {
+      "index": 1,
+      "empl_ref": {
+        "account_id": 10
+      }
+    }
+  ],
+  "national_insurance": "string",
+  "nickname": "string",
+  "primary_email": "string",
+  "secondary_email": "string",
+  "salutation": "string",
+  "social_insurance": "string",
+  "social_security": "string",
+  "suffix": "string",
+  "timezone": "America/New_York",
+  "cost_centers_info": {
+    "defaults": [
+      {
+        "index": 2,
+        "value": {
+          "id": 50
+        }
+      }
+    ],
+    "limits": [
+      {
+        "index": 4,
+        "values": [
+          {
+            "type": "ROOT",
+            "effective_from": "1900-12-31"
+          },
+          {
+            "id": 10,
+            "effective_from": "2013-11-23",
+            "type": "ROOT"
+          }
+        ]
+      }
+    ]
+  },
+  "add_to_new_hire_export": true,
+  "dates": {
+    "hired": "2018-11-01",
+    "deceased": "2018-11-01",
+    "re_hired": "2013-05-22",
+    "started": "2002-11-05",
+    "birthday": "2002-06-24",
+    "review": "2016-02-20",
+    "seniority": "2019-08-19",
+    "frozen_benefit": "2018-02-04",
+    "benefits": "2002-11-16",
+    "retired": "2000-09-14",
+    "terminated": "2015-08-24",
+    "peo_hired": "2015-06-18",
+    "custom_dates": [
+      {
+        "index": 2,
+        "date": "2000-04-21"
+      }
+    ]
+  },
+  "account_extra_fields": [
+    {
+      "index": 4,
+      "values": [
+        {
+          "value": "string",
+          "effective_from": "2017-04-19"
+        }
+      ]
+    }
+  ],
+  "managed_cost_centers_enabled": true,
+  "managed_cost_centers_settings": {
+    "allow_save_others_cost_centers": false
+  },
+  "national_id_numbers": [
+    {
+      "type": "SSN",
+      "value": "012345678",
+      "primary": true
+    },
+    {
+      "type": "BSN",
+      "value": "012345678"
+    }
+  ],
+  "_links": {
+    "self": "https://example.com/ta/rest/v2/companies/453313/employees/10",
+    "demographics": "https://example.com/ta/rest/v2/companies/453313/employees/10/demographics",
+    "pay-info": "https://example.com/ta/rest/v2/companies/453313/employees/10/pay-info",
+    "badges": "https://example.com/ta/rest/v2/companies/453313/employees/10/badges",
+    "profiles": "https://example.com/ta/rest/v2/companies/453313/employees/10/profiles",
+    "hcm-profiles": "https://example.com/ta/rest/v2/companies/453313/employees/10/hcm-profiles",
+    "hcm-fields": "https://example.com/ta/rest/v2/companies/453313/employees/10/hcm-fields"
+  }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
+
 <div class="jsonschema" id="schema-0">{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
@@ -719,7 +888,175 @@ The state and state_code fields usually contain the same value. However, in some
 </div>
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
+
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
+
+<pre class="highlightjs">&lt;employee&gt;
+  &lt;id&gt;10&lt;/id&gt;
+  &lt;username&gt;string&lt;/username&gt;
+  &lt;first_name&gt;string&lt;/first_name&gt;
+  &lt;last_name&gt;string&lt;/last_name&gt;
+  &lt;photo_href&gt;string&lt;/photo_href&gt;
+  &lt;isPhotoUploaded&gt;false&lt;/isPhotoUploaded&gt;
+  &lt;middle_name&gt;string&lt;/middle_name&gt;
+  &lt;external_id&gt;string&lt;/external_id&gt;
+  &lt;employee_id&gt;string&lt;/employee_id&gt;
+  &lt;address&gt;
+    &lt;address_line_1&gt;string&lt;/address_line_1&gt;
+    &lt;address_line_2&gt;string&lt;/address_line_2&gt;
+    &lt;address_line_3&gt;string&lt;/address_line_3&gt;
+    &lt;country&gt;USA&lt;/country&gt;
+    &lt;city&gt;string&lt;/city&gt;
+    &lt;state&gt;NY&lt;/state&gt;
+    &lt;state_code&gt;NY&lt;/state_code&gt;
+    &lt;zip&gt;string&lt;/zip&gt;
+    &lt;number&gt;string&lt;/number&gt;
+    &lt;number_addition&gt;string&lt;/number_addition&gt;
+  &lt;/address&gt;
+  &lt;use_separate_mailing_address&gt;false&lt;/use_separate_mailing_address&gt;
+  &lt;status&gt;string&lt;/status&gt;
+  &lt;bsn&gt;string&lt;/bsn&gt;
+  &lt;ein&gt;
+    &lt;id&gt;10&lt;/id&gt;
+  &lt;/ein&gt;
+  &lt;force_change_password&gt;false&lt;/force_change_password&gt;
+  &lt;locked&gt;true&lt;/locked&gt;
+  &lt;first_screen&gt;
+    &lt;id&gt;scren&lt;/id&gt;
+  &lt;/first_screen&gt;
+  &lt;phones&gt;
+    &lt;cell_phone_country_id&gt;IND&lt;/cell_phone_country_id&gt;
+    &lt;cell_phone_country_code&gt;+91&lt;/cell_phone_country_code&gt;
+    &lt;cell_phone&gt;+3333333333&lt;/cell_phone&gt;
+    &lt;home_phone_country_id&gt;IND&lt;/home_phone_country_id&gt;
+    &lt;home_phone_country_code&gt;+91&lt;/home_phone_country_code&gt;
+    &lt;home_phone&gt;+3333333332&lt;/home_phone&gt;
+    &lt;work_phone_country_id&gt;IND&lt;/work_phone_country_id&gt;
+    &lt;work_phone_country_code&gt;+91&lt;/work_phone_country_code&gt;
+    &lt;work_phone&gt;+3333333331&lt;/work_phone&gt;
+    &lt;preferred_phone&gt;WORK&lt;/preferred_phone&gt;
+  &lt;/phones&gt;
+  &lt;locale&gt;
+    &lt;id&gt;5&lt;/id&gt;
+  &lt;/locale&gt;
+  &lt;mailing_address&gt;
+    &lt;address_line_1&gt;string&lt;/address_line_1&gt;
+    &lt;address_line_2&gt;string&lt;/address_line_2&gt;
+    &lt;address_line_3&gt;string&lt;/address_line_3&gt;
+    &lt;country&gt;USA&lt;/country&gt;
+    &lt;city&gt;string&lt;/city&gt;
+    &lt;state&gt;NY&lt;/state&gt;
+    &lt;zip&gt;string&lt;/zip&gt;
+    &lt;number&gt;string&lt;/number&gt;
+    &lt;number_addition&gt;string&lt;/number_addition&gt;
+  &lt;/mailing_address&gt;
+  &lt;managers&gt;
+    &lt;manager&gt;
+      &lt;index&gt;1&lt;/index&gt;
+      &lt;empl_ref&gt;
+        &lt;account_id&gt;10&lt;/account_id&gt;
+      &lt;/empl_ref&gt;
+    &lt;/manager&gt;
+  &lt;/managers&gt;
+  &lt;national_insurance&gt;string&lt;/national_insurance&gt;
+  &lt;nickname&gt;string&lt;/nickname&gt;
+  &lt;primary_email&gt;string&lt;/primary_email&gt;
+  &lt;secondary_email&gt;string&lt;/secondary_email&gt;
+  &lt;salutation&gt;string&lt;/salutation&gt;
+  &lt;social_insurance&gt;string&lt;/social_insurance&gt;
+  &lt;social_security&gt;string&lt;/social_security&gt;
+  &lt;suffix&gt;string&lt;/suffix&gt;
+  &lt;timezone&gt;America/New_York&lt;/timezone&gt;
+  &lt;cost_centers_info&gt;
+    &lt;defaults&gt;
+      &lt;default&gt;
+        &lt;index&gt;3&lt;/index&gt;
+        &lt;value&gt;
+          &lt;id&gt;100&lt;/id&gt;
+        &lt;/value&gt;
+      &lt;/default&gt;
+    &lt;/defaults&gt;
+    &lt;limits&gt;
+      &lt;limit&gt;
+        &lt;index&gt;2&lt;/index&gt;
+        &lt;values&gt;
+          &lt;value&gt;
+            &lt;type&gt;ROOT&lt;/type&gt;
+            &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;/value&gt;
+          &lt;value&gt;
+            &lt;id&gt;10&lt;/id&gt;
+            &lt;effective_from&gt;2013-11-23&lt;/effective_from&gt;
+            &lt;type&gt;ROOT&lt;/type&gt;
+          &lt;/value&gt;
+        &lt;/values&gt;
+      &lt;/limit&gt;
+    &lt;/limits&gt;
+  &lt;/cost_centers_info&gt;
+  &lt;add_to_new_hire_export&gt;true&lt;/add_to_new_hire_export&gt;
+  &lt;dates&gt;
+    &lt;hired&gt;2018-11-01&lt;/hired&gt;
+    &lt;deceased&gt;2018-11-01&lt;/deceased&gt;
+    &lt;re_hired&gt;2013-05-22&lt;/re_hired&gt;
+    &lt;started&gt;2002-11-05&lt;/started&gt;
+    &lt;birthday&gt;2002-06-24&lt;/birthday&gt;
+    &lt;review&gt;2016-02-20&lt;/review&gt;
+    &lt;seniority&gt;2019-08-19&lt;/seniority&gt;
+    &lt;frozen_benefit&gt;2018-02-04&lt;/frozen_benefit&gt;
+    &lt;benefits&gt;2002-11-16&lt;/benefits&gt;
+    &lt;retired&gt;2000-09-14&lt;/retired&gt;
+    &lt;terminated&gt;2015-08-24&lt;/terminated&gt;
+    &lt;peo_hired&gt;2015-06-18+03:00&lt;/peo_hired&gt;
+    &lt;custom_dates&gt;
+      &lt;custom_date&gt;
+        &lt;index&gt;0&lt;/index&gt;
+        &lt;date&gt;2000-04-21&lt;/date&gt;
+      &lt;/custom_date&gt;
+    &lt;/custom_dates&gt;
+  &lt;/dates&gt;
+  &lt;account_extra_fields&gt;
+    &lt;account_extra_field&gt;
+      &lt;index&gt;4&lt;/index&gt;
+      &lt;values&gt;
+        &lt;value&gt;
+          &lt;value&gt;string&lt;/value&gt;
+          &lt;effective_from&gt;2017-04-19&lt;/effective_from&gt;
+        &lt;/value&gt;
+        &lt;value&gt;
+          &lt;value&gt;string&lt;/value&gt;
+          &lt;effective_from&gt;2015-04-19&lt;/effective_from&gt;
+        &lt;/value&gt;
+      &lt;/values&gt;
+    &lt;/account_extra_field&gt;
+  &lt;/account_extra_fields&gt;
+  &lt;managed_cost_centers_enabled&gt;true&lt;/managed_cost_centers_enabled&gt;
+  &lt;managed_cost_centers_settings&gt;
+    &lt;allow_save_others_cost_centers&gt;false&lt;/allow_save_others_cost_centers&gt;
+  &lt;/managed_cost_centers_settings&gt;
+  &lt;national_id_numbers&gt;
+    &lt;national_id_number&gt;
+      &lt;type&gt;SSN&lt;/type&gt;
+      &lt;value&gt;012345678&lt;/value&gt;
+      &lt;primary&gt;true&lt;/primary&gt;
+    &lt;/national_id_number&gt;
+    &lt;national_id_number&gt;
+      &lt;type&gt;OTHER_1&lt;/type&gt;
+      &lt;value&gt;012345678&lt;/value&gt;
+    &lt;/national_id_number&gt;
+  &lt;/national_id_numbers&gt;
+  &lt;_links&gt;
+    &lt;self&gt;https://example.com/ta/rest/v2/companies/1/employees/10&lt;/self&gt;
+    &lt;demographics&gt;https://example.com/ta/rest/v2/companies/1/employees/10/demographics&lt;/demographics&gt;
+    &lt;pay-info&gt;https://example.com/ta/rest/v2/companies/1/employees/10/pay-info&lt;/pay-info&gt;
+    &lt;badges&gt;https://example.com/ta/rest/v2/companies/1/employees/10/badges&lt;/badges&gt;
+    &lt;profiles&gt;https://example.com/ta/rest/v2/companies/1/employees/10/profiles&lt;/profiles&gt;
+    &lt;hcm-profiles&gt;https://example.com/ta/rest/v2/companies/1/employees/10/hcm-profiles&lt;/hcm-profiles&gt;
+    &lt;hcm-fields&gt;https://example.com/ta/rest/v2/companies/1/employees/10/hcm-fields&lt;/hcm-fields&gt;
+  &lt;/_links&gt;
+&lt;/employee&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
+
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
     &lt;xs:element name="employee"&gt;
@@ -1231,13 +1568,37 @@ The new pattern for national identification numbers is represented by the 'natio
 For profiles where Custom view is enabled, Edit permission is disabled by default.
 
 If `effective_from` needs to be updated for a Cost Center, the ROOT `effective_from` must also be specified, like this:
-[Example code/payload omitted for the hiring reference.]
+```json
+"values": [
+  {
+    "type": "ROOT",
+    "effective_from": "1900-12-31"
+  },
+  {
+    "id": 10,
+    "effective_from": "2013-11-23",
+    "type": "ROOT"
+  }
+]
+```
 
 __If you want to apply the default settings of the cost center.__
 You should set the `apply_defaults` field to `true` in the request body like this:
 
 
-[Example code/payload omitted for the hiring reference.]
+```json
+  "cost_center_info": {
+    "defaults": [
+      {
+        "index": 2,
+        "value": {
+          "id": 50
+        },
+        "apply_defaults": true
+      }
+    ]
+  }
+```
 
 __Termination:__
   `status` field value must be set to the one of existing account statuses with a type equal to "Terminated". `termination_details` field is required.
@@ -1300,10 +1661,12 @@ __Termination:__
 </div>
 <div class="param-content">
 <div>
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1313,10 +1676,12 @@ __Termination:__
 </div>
 <div class="param-content">
 <div>
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
 </div>
+
 </li>
 </ul>
 <h5>Query Parameters</h5>
@@ -1331,6 +1696,7 @@ __Termination:__
 <div class="desc md">If the flag is set to true and "Use Manager Replacement" is enabled for a company, then transfer to dos</div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1342,6 +1708,7 @@ __Termination:__
 <div class="desc md">Warning messages are treated as errors and stops processing. To ignore the warnings set 'ignore_warnings' to true.</div>
 </div>
 </div>
+
 </li>
 </ul>
 <h5>Header Parameters</h5>
@@ -1355,8 +1722,10 @@ __Termination:__
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
+<p>Example: application/json</p>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1367,8 +1736,10 @@ __Termination:__
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
+<p>Example: application/json</p>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1380,6 +1751,7 @@ __Termination:__
 <div>
 </div>
 </div>
+
 </li>
 </ul>
 <h4>Responses</h4>
@@ -1484,7 +1856,285 @@ Note: PUT request returns Unauthorized when custom view is checked in the securi
 <div>
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
+
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
+
+<pre class="highlightjs">{
+  "id": 10,
+  "username": "string",
+  "first_name": "string",
+  "last_name": "string",
+  "photo_href": "string",
+  "isPhotoUploaded": false,
+  "middle_name": "string",
+  "external_id": "string",
+  "employee_id": "string",
+  "address": {
+    "address_line_1": "string",
+    "address_line_2": "string",
+    "address_line_3": "string",
+    "country": "USA",
+    "city": "string",
+    "state": "str",
+    "zip": "string",
+    "number": "string",
+    "number_addition": "string"
+  },
+  "use_separate_mailing_address": false,
+  "status": "Terminated",
+  "termination_details": {
+    "account_status": "Terminated",
+    "termination_date": "2016-04-04",
+    "termination_reason": "reason_name",
+    "termination_notes": "notes",
+    "managers_at_termination": [
+      {
+        "index": 1,
+        "value": {
+          "username": "manager1_username"
+        }
+      },
+      {
+        "index": 2,
+        "value": {
+          "username": "manager2_username"
+        }
+      }
+    ],
+    "rehireable": true,
+    "notice": {
+      "interval": "Days",
+      "count": 5
+    },
+    "benefits_end_date": "2016-04-04",
+    "benefit_coverage_end_date": "2016-04-04",
+    "deduction_end_date": "2016-04-04",
+    "direct_deposit_end_date": "2016-04-04",
+    "earning_end_date": "2016-04-04",
+    "manager_groups_solutions": [
+      {
+        "index": 1,
+        "action": "Remove"
+      },
+      {
+        "index": 2,
+        "action": "Ignore"
+      },
+      {
+        "index": 3,
+        "action": "Replace",
+        "replace_with": {
+          "username": "username"
+        }
+      }
+    ],
+    "other_groups_solution": {
+      "action": "Remove"
+    },
+    "pto_requests_after_termination_solution": {
+      "action": "Delete All"
+    },
+    "pto_requests_before_termination_solution": {
+      "action": "Delete All"
+    },
+    "time_entries_after_termination_solution": {
+      "action": "Delete All Except TO"
+    },
+    "accrual_not_up_to_date_solutions": [
+      {
+        "time_off": {
+          "name": "pto1_name"
+        },
+        "action": "Calculate and Update"
+      },
+      {
+        "time_off": {
+          "name": "pto2_name"
+        },
+        "action": "Ignore"
+      }
+    ],
+    "accrual_over_calculated_solutions": [
+      {
+        "time_off": {
+          "name": "pto3_name"
+        },
+        "action": "Rollback"
+      },
+      {
+        "time_off": {
+          "name": "pto4_name"
+        },
+        "action": "Ignore"
+      }
+    ],
+    "security_profile_solution": {
+      "action": "Ignore"
+    },
+    "assignments_solution": {
+      "action": "Remove"
+    },
+    "badges_solution": {
+      "action": "Set End Date"
+    },
+    "account_benefit_plan_solution": {
+      "action": "Ignore"
+    },
+    "accrual_pay_out_solution": {
+      "action": "Skip"
+    },
+    "scheduled_performance_review_solution": {
+      "action": "Ignore"
+    },
+    "in_progress_performance_review_solution": {
+      "action": "Ignore"
+    },
+    "performance_review_to_do_solution": {
+      "action": "Replace"
+    },
+    "my_to_do_solution": {
+      "action": "Delete"
+    }
+  },
+  "bsn": "string",
+  "ein": {
+    "id": 10
+  },
+  "force_change_password": false,
+  "locked": true,
+  "first_screen": {
+    "id": "screen"
+  },
+  "phones": {
+    "cell_phone_country_id": "USA",
+    "cell_phone_country_code": "+91",
+    "cell_phone": "+333333333",
+    "home_phone_country_id": "USA",
+    "home_phone_country_code": "+91",
+    "home_phone": "+333333333",
+    "work_phone_country_id": "USA",
+    "work_phone_country_code": "+91",
+    "work_phone": "+333333333",
+    "preferred_phone": "WORK"
+  },
+  "locale": {
+    "id": 1
+  },
+  "mailing_address": {
+    "address_line_1": "string",
+    "address_line_2": "string",
+    "address_line_3": "string",
+    "country": "USA",
+    "city": "string",
+    "state": "str",
+    "zip": "string",
+    "number": "string",
+    "number_addition": "string"
+  },
+  "managers": [
+    {
+      "index": 1,
+      "empl_ref": {
+        "account_id": 10
+      }
+    }
+  ],
+  "national_insurance": "string",
+  "nickname": "string",
+  "primary_email": "string",
+  "secondary_email": "string",
+  "salutation": "string",
+  "social_insurance": "string",
+  "social_security": "string",
+  "suffix": "string",
+  "timezone": "America/New_York",
+  "cost_centers_info": {
+    "defaults": [
+      {
+        "index": 2,
+        "value": {
+          "id": 50
+        },
+        "apply_defaults": false
+      }
+    ],
+    "limits": [
+      {
+        "index": 4,
+        "values": [
+          {
+            "type": "ROOT",
+            "effective_from": "1900-12-31"
+          },
+          {
+            "id": 10,
+            "effective_from": "2013-11-23",
+            "type": "ROOT"
+          }
+        ]
+      }
+    ]
+  },
+  "add_to_new_hire_export": true,
+  "dates": {
+    "hired": "2018-11-01",
+    "deceased": "2018-11-01",
+    "re_hired": "2013-05-22",
+    "started": "2002-11-05",
+    "birthday": "2002-06-24",
+    "review": "2016-02-20",
+    "seniority": "2019-08-19",
+    "frozen_benefit": "2018-02-04",
+    "benefits": "2002-11-16",
+    "retired": "2000-09-14",
+    "terminated": "2015-08-24",
+    "peo_hired": "2015-06-18",
+    "custom_dates": [
+      {
+        "index": 2,
+        "date": "2000-04-21"
+      }
+    ]
+  },
+  "account_extra_fields": [
+    {
+      "index": 4,
+      "values": [
+        {
+          "value": "string",
+          "effective_from": "2017-04-19"
+        }
+      ]
+    }
+  ],
+  "managed_cost_centers_enabled": true,
+  "managed_cost_centers_settings": {
+    "allow_save_others_cost_centers": false
+  },
+  "national_id_numbers": [
+    {
+      "type": "SSN",
+      "value": "012345678",
+      "primary": true
+    },
+    {
+      "type": "BSN",
+      "value": "012345678"
+    }
+  ],
+  "_links": {
+    "self": "https://example.com/ta/rest/v2/companies/453313/employees/10",
+    "demographics": "https://example.com/ta/rest/v2/companies/453313/employees/10/demographics",
+    "pay-info": "https://example.com/ta/rest/v2/companies/453313/employees/10/pay-info",
+    "badges": "https://example.com/ta/rest/v2/companies/453313/employees/10/badges",
+    "profiles": "https://example.com/ta/rest/v2/companies/453313/employees/10/profiles",
+    "hcm-profiles": "https://example.com/ta/rest/v2/companies/453313/employees/10/hcm-profiles",
+    "hcm-fields": "https://example.com/ta/rest/v2/companies/453313/employees/10/hcm-fields"
+  }
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
+
 <div class="jsonschema" id="schema-2">{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
@@ -2528,7 +3178,308 @@ Note: PUT request returns Unauthorized when custom view is checked in the securi
 </div>
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
+
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
+
+<pre class="highlightjs">&lt;employee&gt;
+  &lt;id&gt;10&lt;/id&gt;
+  &lt;username&gt;string&lt;/username&gt;
+  &lt;first_name&gt;string&lt;/first_name&gt;
+  &lt;last_name&gt;string&lt;/last_name&gt;
+  &lt;photo_href&gt;string&lt;/photo_href&gt;
+  &lt;isPhotoUploaded&gt;false&lt;/isPhotoUploaded&gt;
+  &lt;middle_name&gt;string&lt;/middle_name&gt;
+  &lt;external_id&gt;string&lt;/external_id&gt;
+  &lt;employee_id&gt;string&lt;/employee_id&gt;
+  &lt;address&gt;
+    &lt;address_line_1&gt;string&lt;/address_line_1&gt;
+    &lt;address_line_2&gt;string&lt;/address_line_2&gt;
+    &lt;address_line_3&gt;string&lt;/address_line_3&gt;
+    &lt;country&gt;USA&lt;/country&gt;
+    &lt;city&gt;string&lt;/city&gt;
+    &lt;state&gt;NY&lt;/state&gt;
+    &lt;zip&gt;string&lt;/zip&gt;
+    &lt;number&gt;string&lt;/number&gt;
+    &lt;number_addition&gt;string&lt;/number_addition&gt;
+  &lt;/address&gt;
+  &lt;use_separate_mailing_address&gt;false&lt;/use_separate_mailing_address&gt;
+  &lt;status&gt;Terminated&lt;/status&gt;
+  &lt;termination_details&gt;
+    &lt;account_status&gt;Terminated&lt;/account_status&gt;
+    &lt;termination_date&gt;2016-04-04&lt;/termination_date&gt;
+    &lt;termination_reason&gt;reason_name&lt;/termination_reason&gt;
+    &lt;termination_notes&gt;notes&lt;/termination_notes&gt;
+
+    &lt;managers_at_termination&gt;
+      &lt;manager_at_termination&gt;
+        &lt;index&gt;1&lt;/index&gt;
+        &lt;value&gt;
+          &lt;username&gt;manager1_username&lt;/username&gt;
+        &lt;/value&gt;
+      &lt;/manager_at_termination&gt;
+      &lt;manager_at_termination&gt;
+        &lt;index&gt;2&lt;/index&gt;
+        &lt;value&gt;
+          &lt;username&gt;manager2_username&lt;/username&gt;
+        &lt;/value&gt;
+      &lt;/manager_at_termination&gt;
+    &lt;/managers_at_termination&gt;
+
+    &lt;rehireable&gt;true&lt;/rehireable&gt;
+
+    &lt;notice&gt;
+      &lt;interval&gt;Days&lt;/interval&gt;
+      &lt;count&gt;5&lt;/count&gt;
+    &lt;/notice&gt;
+
+    &lt;benefits_end_date&gt;2016-04-04&lt;/benefits_end_date&gt;
+    &lt;benefit_coverage_end_date&gt;2016-04-04&lt;/benefit_coverage_end_date&gt;
+    &lt;deduction_end_date&gt;2016-04-04&lt;/deduction_end_date&gt;
+    &lt;direct_deposit_end_date&gt;2016-04-04&lt;/direct_deposit_end_date&gt;
+    &lt;earning_end_date&gt;2016-04-04&lt;/earning_end_date&gt;
+
+    &lt;manager_groups_solutions&gt;
+      &lt;manager_groups_solution&gt;
+        &lt;index&gt;1&lt;/index&gt;
+        &lt;action&gt;Remove&lt;/action&gt;
+      &lt;/manager_groups_solution&gt;
+      &lt;manager_groups_solution&gt;
+        &lt;index&gt;2&lt;/index&gt;
+        &lt;action&gt;Ignore&lt;/action&gt;
+      &lt;/manager_groups_solution&gt;
+      &lt;manager_groups_solution&gt;
+        &lt;index&gt;3&lt;/index&gt;
+        &lt;action&gt;Replace&lt;/action&gt;
+        &lt;replace_with&gt;
+          &lt;username&gt;username&lt;/username&gt;
+        &lt;/replace_with&gt;
+      &lt;/manager_groups_solution&gt;
+    &lt;/manager_groups_solutions&gt;
+
+    &lt;other_groups_solution&gt;
+      &lt;action&gt;Remove&lt;/action&gt;
+    &lt;/other_groups_solution&gt;
+
+    &lt;pto_requests_after_termination_solution&gt;
+      &lt;action&gt;Delete All&lt;/action&gt;
+    &lt;/pto_requests_after_termination_solution&gt;
+
+    &lt;pto_requests_before_termination_solution&gt;
+      &lt;action&gt;Delete All&lt;/action&gt;
+    &lt;/pto_requests_before_termination_solution&gt;
+
+    &lt;time_entries_after_termination_solution&gt;
+      &lt;action&gt;Delete All Except TO&lt;/action&gt;
+    &lt;/time_entries_after_termination_solution&gt;
+
+    &lt;accrual_not_up_to_date_solutions&gt;
+      &lt;accrual_not_up_to_date_solution&gt;
+        &lt;time_off&gt;
+          &lt;name&gt;pto1_name&lt;/name&gt;
+        &lt;/time_off&gt;
+        &lt;action&gt;Calculate and Update&lt;/action&gt;
+      &lt;/accrual_not_up_to_date_solution&gt;
+      &lt;accrual_not_up_to_date_solution&gt;
+        &lt;time_off&gt;
+          &lt;name&gt;pto2_name&lt;/name&gt;
+        &lt;/time_off&gt;
+        &lt;action&gt;Ignore&lt;/action&gt;
+      &lt;/accrual_not_up_to_date_solution&gt;
+    &lt;/accrual_not_up_to_date_solutions&gt;
+
+    &lt;accrual_over_calculated_solutions&gt;
+      &lt;accrual_over_calculated_solution&gt;
+        &lt;time_off&gt;
+          &lt;name&gt;pto3_name&lt;/name&gt;
+        &lt;/time_off&gt;
+        &lt;action&gt;Rollback&lt;/action&gt;
+      &lt;/accrual_over_calculated_solution&gt;
+      &lt;accrual_over_calculated_solution&gt;
+        &lt;time_off&gt;
+          &lt;name&gt;pto4_name&lt;/name&gt;
+        &lt;/time_off&gt;
+        &lt;action&gt;Ignore&lt;/action&gt;
+      &lt;/accrual_over_calculated_solution&gt;
+    &lt;/accrual_over_calculated_solutions&gt;
+
+    &lt;security_profile_solution&gt;
+      &lt;action&gt;Ignore&lt;/action&gt;
+    &lt;/security_profile_solution&gt;
+
+    &lt;assignments_solution&gt;
+      &lt;action&gt;Remove&lt;/action&gt;
+    &lt;/assignments_solution&gt;
+
+    &lt;badges_solution&gt;
+      &lt;action&gt;Set End Date&lt;/action&gt;
+    &lt;/badges_solution&gt;
+
+    &lt;account_benefit_plan_solution&gt;
+      &lt;action&gt;Ignore&lt;/action&gt;
+    &lt;/account_benefit_plan_solution&gt;
+
+    &lt;accrual_pay_out_solution&gt;
+      &lt;action&gt;Skip&lt;/action&gt;
+    &lt;/accrual_pay_out_solution&gt;
+
+    &lt;scheduled_performance_review_solution&gt;
+      &lt;action&gt;Ignore&lt;/action&gt;
+    &lt;/scheduled_performance_review_solution&gt;
+
+    &lt;in_progress_performance_review_solution&gt;
+      &lt;action&gt;Ignore&lt;/action&gt;
+    &lt;/in_progress_performance_review_solution&gt;
+
+    &lt;performance_review_to_do_solution&gt;
+      &lt;action&gt;Replace&lt;/action&gt;
+    &lt;/performance_review_to_do_solution&gt;
+    &lt;my_to_do_solution&gt;
+      &lt;action&gt;Delete&lt;/action&gt;
+    &lt;/my_to_do_solution&gt;
+  &lt;/termination_details&gt;
+  &lt;bsn&gt;string&lt;/bsn&gt;
+  &lt;ein&gt;
+    &lt;id&gt;10&lt;/id&gt;
+  &lt;/ein&gt;
+  &lt;force_change_password&gt;false&lt;/force_change_password&gt;
+  &lt;locked&gt;true&lt;/locked&gt;
+  &lt;first_screen&gt;
+    &lt;id&gt;scren&lt;/id&gt;
+  &lt;/first_screen&gt;
+  &lt;phones&gt;
+    &lt;cell_phone_country_id&gt;IND&lt;/cell_phone_country_id&gt;
+    &lt;cell_phone_country_code&gt;+91&lt;/cell_phone_country_code&gt;
+    &lt;cell_phone&gt;+3333333333&lt;/cell_phone&gt;
+    &lt;home_phone_country_id&gt;IND&lt;/home_phone_country_id&gt;
+    &lt;home_phone_country_code&gt;+91&lt;/home_phone_country_code&gt;
+    &lt;home_phone&gt;+3333333332&lt;/home_phone&gt;
+    &lt;work_phone_country_id&gt;IND&lt;/work_phone_country_id&gt;
+    &lt;work_phone_country_code&gt;+91&lt;/work_phone_country_code&gt;
+    &lt;work_phone&gt;+3333333331&lt;/work_phone&gt;
+    &lt;preferred_phone&gt;WORK&lt;/preferred_phone&gt;
+  &lt;/phones&gt;
+  &lt;locale&gt;
+    &lt;id&gt;5&lt;/id&gt;
+  &lt;/locale&gt;
+  &lt;mailing_address&gt;
+    &lt;address_line_1&gt;string&lt;/address_line_1&gt;
+    &lt;address_line_2&gt;string&lt;/address_line_2&gt;
+    &lt;address_line_3&gt;string&lt;/address_line_3&gt;
+    &lt;country&gt;USA&lt;/country&gt;
+    &lt;city&gt;string&lt;/city&gt;
+    &lt;state&gt;NY&lt;/state&gt;
+    &lt;zip&gt;string&lt;/zip&gt;
+    &lt;number&gt;string&lt;/number&gt;
+    &lt;number_addition&gt;string&lt;/number_addition&gt;
+  &lt;/mailing_address&gt;
+  &lt;managers&gt;
+    &lt;manager&gt;
+      &lt;index&gt;1&lt;/index&gt;
+      &lt;empl_ref&gt;
+        &lt;account_id&gt;10&lt;/account_id&gt;
+      &lt;/empl_ref&gt;
+    &lt;/manager&gt;
+  &lt;/managers&gt;
+  &lt;national_insurance&gt;string&lt;/national_insurance&gt;
+  &lt;nickname&gt;string&lt;/nickname&gt;
+  &lt;primary_email&gt;string&lt;/primary_email&gt;
+  &lt;secondary_email&gt;string&lt;/secondary_email&gt;
+  &lt;salutation&gt;string&lt;/salutation&gt;
+  &lt;social_insurance&gt;string&lt;/social_insurance&gt;
+  &lt;social_security&gt;string&lt;/social_security&gt;
+  &lt;suffix&gt;string&lt;/suffix&gt;
+  &lt;timezone&gt;America/New_York&lt;/timezone&gt;
+  &lt;cost_centers_info&gt;
+    &lt;defaults&gt;
+      &lt;default&gt;
+        &lt;index&gt;3&lt;/index&gt;
+        &lt;value&gt;
+          &lt;id&gt;100&lt;/id&gt;
+        &lt;/value&gt;
+        &lt;apply_defaults&gt;false&lt;/apply_defaults&gt;
+      &lt;/default&gt;
+    &lt;/defaults&gt;
+    &lt;limits&gt;
+      &lt;limit&gt;
+        &lt;index&gt;2&lt;/index&gt;
+        &lt;values&gt;
+          &lt;value&gt;
+            &lt;type&gt;ROOT&lt;/type&gt;
+            &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+          &lt;/value&gt;
+          &lt;value&gt;
+            &lt;id&gt;10&lt;/id&gt;
+            &lt;effective_from&gt;2013-11-23&lt;/effective_from&gt;
+            &lt;type&gt;ROOT&lt;/type&gt;
+          &lt;/value&gt;
+        &lt;/values&gt;
+      &lt;/limit&gt;
+    &lt;/limits&gt;
+  &lt;/cost_centers_info&gt;
+  &lt;add_to_new_hire_export&gt;true&lt;/add_to_new_hire_export&gt;
+  &lt;dates&gt;
+    &lt;hired&gt;2018-11-01&lt;/hired&gt;
+    &lt;deceased&gt;2018-11-01&lt;/deceased&gt;
+    &lt;re_hired&gt;2013-05-22&lt;/re_hired&gt;
+    &lt;started&gt;2002-11-05&lt;/started&gt;
+    &lt;birthday&gt;2002-06-24&lt;/birthday&gt;
+    &lt;review&gt;2016-02-20&lt;/review&gt;
+    &lt;seniority&gt;2019-08-19&lt;/seniority&gt;
+    &lt;frozen_benefit&gt;2018-02-04&lt;/frozen_benefit&gt;
+    &lt;benefits&gt;2002-11-16&lt;/benefits&gt;
+    &lt;retired&gt;2000-09-14&lt;/retired&gt;
+    &lt;terminated&gt;2015-08-24&lt;/terminated&gt;
+    &lt;peo_hired&gt;2015-06-18+03:00&lt;/peo_hired&gt;
+    &lt;custom_dates&gt;
+      &lt;custom_date&gt;
+        &lt;index&gt;0&lt;/index&gt;
+        &lt;date&gt;2000-04-21&lt;/date&gt;
+      &lt;/custom_date&gt;
+    &lt;/custom_dates&gt;
+  &lt;/dates&gt;
+  &lt;account_extra_fields&gt;
+    &lt;account_extra_field&gt;
+      &lt;index&gt;4&lt;/index&gt;
+      &lt;values&gt;
+        &lt;value&gt;
+          &lt;value&gt;string&lt;/value&gt;
+          &lt;effective_from&gt;2017-04-19&lt;/effective_from&gt;
+        &lt;/value&gt;
+        &lt;value&gt;
+          &lt;value&gt;string&lt;/value&gt;
+          &lt;effective_from&gt;2015-04-19&lt;/effective_from&gt;
+        &lt;/value&gt;
+      &lt;/values&gt;
+    &lt;/account_extra_field&gt;
+  &lt;/account_extra_fields&gt;
+  &lt;managed_cost_centers_enabled&gt;true&lt;/managed_cost_centers_enabled&gt;
+  &lt;managed_cost_centers_settings&gt;
+    &lt;allow_save_others_cost_centers&gt;false&lt;/allow_save_others_cost_centers&gt;
+  &lt;/managed_cost_centers_settings&gt;
+  &lt;national_id_numbers&gt;
+    &lt;national_id_number&gt;
+      &lt;type&gt;SSN&lt;/type&gt;
+      &lt;value&gt;012345678&lt;/value&gt;
+      &lt;primary&gt;true&lt;/primary&gt;
+    &lt;/national_id_number&gt;
+    &lt;national_id_number&gt;
+      &lt;type&gt;OTHER_1&lt;/type&gt;
+      &lt;value&gt;012345678&lt;/value&gt;
+    &lt;/national_id_number&gt;
+  &lt;/national_id_numbers&gt;
+  &lt;_links&gt;
+    &lt;self&gt;https://example.com/ta/rest/v2/companies/1/employees/10&lt;/self&gt;
+    &lt;demographics&gt;https://example.com/ta/rest/v2/companies/1/employees/10/demographics&lt;/demographics&gt;
+    &lt;pay-info&gt;https://example.com/ta/rest/v2/companies/1/employees/10/pay-info&lt;/pay-info&gt;
+    &lt;badges&gt;https://example.com/ta/rest/v2/companies/1/employees/10/badges&lt;/badges&gt;
+    &lt;profiles&gt;https://example.com/ta/rest/v2/companies/1/employees/10/profiles&lt;/profiles&gt;
+    &lt;hcm-profiles&gt;https://example.com/ta/rest/v2/companies/1/employees/10/hcm-profiles&lt;/hcm-profiles&gt;
+    &lt;hcm-fields&gt;https://example.com/ta/rest/v2/companies/1/employees/10/hcm-fields&lt;/hcm-fields&gt;
+  &lt;/_links&gt;
+&lt;/employee&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
+
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
     &lt;xs:element name="employee"&gt;
@@ -3434,13 +4385,87 @@ For profiles where Custom view is enabled, Edit permission is disabled by defaul
 To replace/add/remove attributes in the request body, consider the following example:
 
 **Existing Employee Data:**
-[Example code/payload omitted for the hiring reference.]
+```json
+{
+  "nickname": "nickname",
+  "salutation": "Mr",
+  "address": {
+    "country": "IND"
+  },
+  "account_extra_fields": [
+    {
+      "index": 3,
+      "values": [
+        {
+          "value": "East"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "values": [
+        {
+          "value": "Employee"
+        }
+      ]
+    }
+  ]
+}
+```
 
 **PATCH Request Body:**
-[Example code/payload omitted for the hiring reference.]
+```json
+[
+  { "op": "replace", "path": "/nickname", "value": "NewNickname" },
+  { "op": "add", "path": "/primary_email", "value": "abc@ukg.com" },
+  { "op": "replace", "path": "/address/country", "value": "USA" },
+  { "op": "remove", "path": "/salutation" },
+  { "op": "add", "path": "/managers", "value": [] },
+  { "op": "add", "path": "/managers/0", "value": { "index": 0, "empl_ref": {} } },
+  { "op": "add", "path": "/managers/0/empl_ref/account_id", "value": 4341264964 },
+  { "op": "replace", "path": "/managers/0/empl_ref/account_id", "value": 4341264962 },
+  { "op": "add", "path": "/account_extra_fields/-", "value": {"index": 0, "values":[ {"value": "Safty" } ] } },
+  { "op": "replace", "path": "/account_extra_fields/0/values/0/value", "value": "East" },
+  { "op": "remove", "path": "/account_extra_fields/1" }
+]
+```
 
 **Updated Employee Data:**
-[Example code/payload omitted for the hiring reference.]
+```json
+{
+  "nickname": "NewNickname",
+  "primary_email": "abc@ukg.com",
+  "address": {
+    "country": "USA"
+  },
+  "managers": [
+    {
+      "index": 0,
+      "empl_ref": {
+        "account_id": 4341264962
+      }
+    }
+  ],
+  "account_extra_fields": [
+    {
+      "index": 0,
+      "values": [
+        {
+          "value": "Safty"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "values": [
+        {
+          "value": "West"
+        }
+      ]
+    }
+  ]
+}
+```
 </p></div>
 <div>
 <ul class="annotation-list">
@@ -3460,10 +4485,12 @@ To replace/add/remove attributes in the request body, consider the following exa
 </div>
 <div class="param-content">
 <div>
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -3473,10 +4500,12 @@ To replace/add/remove attributes in the request body, consider the following exa
 </div>
 <div class="param-content">
 <div>
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
 </div>
+
 </li>
 </ul>
 <h5>Header Parameters</h5>
@@ -3490,8 +4519,10 @@ To replace/add/remove attributes in the request body, consider the following exa
 <div class="param-content">
 <div>
 <p>Valid values: application/json-patch+json</p>
+<p>Example: application/json-patch+json</p>
 </div>
 </div>
+
 </li>
 </ul>
 <h4>Responses</h4>
@@ -3592,7 +4623,72 @@ Note: PATCH request returns Unauthorized when custom view is checked in the secu
 <div>
 <div class="req-tab-patch" id="req-tab-id-patch-0">
 <div class="example">
+
+<div class="patch-example-tab-0 activeTab" id="patch-tab-example-0">
+
+<pre class="highlightjs">[
+  {
+    "op": "replace",
+    "path": "/last_name",
+    "value": "Newname"
+  },
+  {
+    "op": "add",
+    "path": "/address/country",
+    "value": "USA"
+  },
+  {
+    "op": "remove",
+    "path": "/salutation"
+  },
+  {
+    "op": "add",
+    "path": "/managers",
+    "value": []
+  },
+  {
+    "op": "add",
+    "path": "/managers/0",
+    "value": {
+      "index": 0,
+      "empl_ref": {}
+    }
+  },
+  {
+    "op": "add",
+    "path": "/managers/0/empl_ref/account_id",
+    "value": 4341264964
+  },
+  {
+    "op": "replace",
+    "path": "/managers/0/empl_ref/account_id",
+    "value": 4341264962
+  },
+  {
+    "op": "add",
+    "path": "/account_extra_fields/-",
+    "value": {
+      "index": 0,
+      "values": [
+        {
+          "value": "Safty"
+        }
+      ]
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/account_extra_fields/0/values/0/value",
+    "value": "East"
+  },
+  {
+    "op": "remove",
+    "path": "/account_extra_fields/1"
+  }
+]</pre>
+</div>
 <div class="patch-example-tab-0" id="patch-tab-schema-0">
+
 <div class="jsonschema" id="schema-4">{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "array",
@@ -3682,10 +4778,12 @@ responses:
 </div>
 <div class="param-content">
 <div>
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -3695,10 +4793,12 @@ responses:
 </div>
 <div class="param-content">
 <div>
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
 </div>
+
 </li>
 </ul>
 <h4>Responses</h4>

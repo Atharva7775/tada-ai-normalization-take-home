@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Data Export</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Data Export</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Data Export</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -60,7 +60,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, */xml, application/json</p>
-
+<p>Example: application/xml</p>
 </div>
 </div>
 
@@ -128,7 +128,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/data-exports/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -147,7 +147,15 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "id": 30338,
+  "name": "Test Employee Contracts",
+  "format": "CSV",
+  "type": "Employee Contracts"
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -181,7 +189,16 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;data_export&gt;
+  &lt;id&gt;30338&lt;/id&gt;
+  &lt;name&gt;Test Employee Contracts&lt;/name&gt;
+  &lt;format&gt;CSV&lt;/format&gt;
+  &lt;type&gt;Employee Contracts&lt;/type&gt;
+&lt;/data_export&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -203,7 +220,16 @@
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;data_export&gt;
+  &lt;id&gt;30338&lt;/id&gt;
+  &lt;name&gt;Test Employee Contracts&lt;/name&gt;
+  &lt;format&gt;CSV&lt;/format&gt;
+  &lt;type&gt;Employee Contracts&lt;/type&gt;
+&lt;/data_export&gt;</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

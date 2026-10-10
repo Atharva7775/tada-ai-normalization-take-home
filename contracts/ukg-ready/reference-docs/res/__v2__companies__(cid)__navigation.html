@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Navigation</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Navigation</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Navigation</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -59,7 +59,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/navigation</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -70,7 +70,443 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+    "employee": [
+        {
+            "url": "benefits",
+            "label": "My Benefits",
+            "visible": true,
+            "defaultURL": "benefits/plans",
+            "children": [
+                {
+                    "url": "benefits/plans",
+                    "label": "Benefit Plans",
+                    "visible": true,
+                    "children": [],
+                    "id":"benefitsplans",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"benfits",
+            "icon": "icon-benefits",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "time",
+            "label": "My Time",
+            "visible": true,
+            "defaultURL": "time/timeoff",
+            "children": [
+                {
+                    "url": "time/timeoff",
+                    "label": "Time Off",
+                    "visible": true,
+                    "defaultURL": "time/timeoff/editRequest",
+                    "children": [
+                        {
+                            "url": "time/timeoff/editRequest",
+                            "label": "Request",
+                            "visible": true,
+                            "children": [],
+                            "id":"timetimeeditRequest",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "time/timeoff/requests",
+                            "label": "Time Off History",
+                            "visible": true,
+                            "children": [],
+                            "id":"timetimerequests",
+                            "urlType": "embeddable"
+                        }
+                    ],
+                    "id":"timetimeoff",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"time",
+            "icon": "icon-timesheet",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "pay",
+            "label": "My Pay",
+            "visible": true,
+            "defaultURL": "pay/directDeposit",
+            "children": [
+                {
+                    "url": "pay/directDeposit",
+                    "label": "Direct Deposit",
+                    "visible": true,
+                    "children": [],
+                    "id":"paydirectDeposit",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"pay",
+            "icon": "icon-pay",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "reports",
+            "label": "My Reports",
+            "visible": true,
+            "defaultURL": "reports/system",
+            "children": [
+                {
+                    "url": "reports/system",
+                    "label": "System Reports",
+                    "visible": true,
+                    "defaultURL": "reports/system/utils",
+                    "children": [
+                        {
+                            "url": "reports/system/utils",
+                            "label": "System Utilities",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportssystemutils",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "reports/system/auditTrail",
+                            "label": "Audit Trail",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportssystemauditTrail",
+                            "urlType": "embeddable"
+                        }
+                    ],
+                    "urlType": "embeddable"
+                },
+                {
+                    "url": "reports/reportHub?categoryId=mySavedReports",
+                    "label": "My Saved Reports",
+                    "visible": true,
+                    "children": [],
+                    "id":"reportsmySaved",
+                    "urlType": "embeddable"
+                },
+                {
+                    "url": "reports/team",
+                    "label": "Team Reports",
+                    "visible": true,
+                    "defaultURL": "reports/team/employeeMaintenance",
+                    "children": [
+                        {
+                            "url": "reports/team/employeeMaintenance",
+                            "label": "Employee Maintenance",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportsteamemployeeMaintenance",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "reports/team/employeeHRMaintenance",
+                            "label": "Employee HR Maintenance",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportsteamemployeeHRMaintenance",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "reports/team/employeeActions",
+                            "label": "Employee Actions",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportsteamemployeeActions",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "reports/team/forms",
+                            "label": "Forms",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportsteamforms",
+                            "urlType": "embeddable"
+                        }
+                    ],
+                    "id":"reportsteam",
+                    "urlType": "embeddable"
+                },
+                {
+                    "url": "reports/benefits",
+                    "label": "Benefits Reports",
+                    "visible": true,
+                    "children": [],
+                    "id":"reportsbenefits",
+                    "urlType": "embeddable"
+                },
+                {
+                    "url": "reports/hr",
+                    "label": "HR Reports",
+                    "visible": true,
+                    "defaultURL": "reports/hr/misc",
+                    "children": [
+                        {
+                            "url": "reports/hr/misc",
+                            "label": "Miscellaneous",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportshrmisc",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "reports/hr/turnover",
+                            "label": "Turnover",
+                            "visible": false,
+                            "children": [],
+                            "id":"reportshrturnover",
+                            "urlType": "embeddable"
+                        }
+                    ],
+                    "id":"reportshr",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"reports",
+            "icon": "icon-reports",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "employee",
+            "label": "My Information",
+            "visible": false,
+            "defaultURL": "employee/home",
+            "children": [
+                {
+                    "url": "employee/home",
+                    "label": "My Profile",
+                    "visible": false,
+                    "children": [],
+                    "id":"employeehome",
+                    "urlType": "embeddable"
+                },
+                {
+                    "url": "employee/contacts",
+                    "label": "Contacts",
+                    "visible": false,
+                    "children": [],
+                    "id":"employeecontacts",
+                    "urlType": "embeddable"
+                },
+                {
+                    "url": "employee/notificationPreferences",
+                    "label": "Notification Preferences",
+                    "visible": false,
+                    "children": [],
+                    "id":"employeenotificationPreferences",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"employee",
+            "icon": "icon-employee-info",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "todo",
+            "label": "My Mailbox",
+            "visible": false,
+            "defaultURL": "todo/todoList",
+            "children": [
+                {
+                    "url": "todo/todoList",
+                    "label": "My To Do Items",
+                    "visible": false,
+                    "children": [],
+                    "counter": {
+                        "type": "ToDo"
+                    },
+                    "id":"todotodoList",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"todo",
+            "icon": "NA",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "hr",
+            "label": "My HR",
+            "visible": true,
+            "defaultURL": "hr/actions",
+            "children": [
+                {
+                    "url": "hr/actions",
+                    "label": "HR Actions",
+                    "visible": true,
+                    "defaultURL": "hr/actions/history",
+                    "children": [
+                        {
+                            "url": "hr/actions/history",
+                            "label": "History",
+                            "visible": true,
+                            "children": [],
+                            "id":"hractionshistory",
+                            "urlType": "embeddable"
+                        }
+                    ],
+                    "id":"hractions",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"hr",
+            "icon": "icon-hr",
+            "urlType": "embeddable"
+        }
+    ],
+    "manager": [
+        {
+            "url": "manage",
+            "label": "My Team",
+            "visible": true,
+            "defaultURL": "manage/myEmployees",
+            "children": [
+                {
+                    "url": "manage/myEmployees",
+                    "label": "Team Members",
+                    "visible": true,
+                    "children": [],
+                    "id":"managemyEmployees",
+                    "urlType": "embeddable"
+                },
+                {
+                    "url": "manage/teamReports",
+                    "label": "Team Reports",
+                    "visible": true,
+                    "defaultURL": "manage/teamReports/employeeMaintenance",
+                    "children": [
+                        {
+                            "url": "manage/teamReports/employeeMaintenance",
+                            "label": "Employee Maintenance",
+                            "visible": false,
+                            "children": [],
+                            "id":"manageteamReportsemployeeMaintenance",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "manage/teamReports/employeeHRMaintenance",
+                            "label": "Employee HR Maintenance",
+                            "visible": false,
+                            "children": [],
+                            "id":"manageteamReportsemployeeHRMaintenance",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "manage/teamReports/employeeActions",
+                            "label": "Employee Actions",
+                            "visible": false,
+                            "children": [],
+                            "id":"manageteamReportsemployeeActions",
+                            "urlType": "embeddable"
+                        }
+                    ],
+                    "id":"manageteamReports",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"manage",
+            "icon": "icon-team",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "manage/time",
+            "label": "Time",
+            "visible": true,
+            "defaultURL": "manage/time/timeoff",
+            "children": [
+                {
+                    "url": "manage/time/timeoff",
+                    "label": "Time Off",
+                    "visible": true,
+                    "defaultURL": "manage/time/timeoff/requestBehalf",
+                    "children": [
+                        {
+                            "url": "manage/time/timeoff/requestBehalf",
+                            "label": "Request",
+                            "visible": true,
+                            "children": [],
+                            "id":"managetimetimeoffrequestBehalf",
+                            "urlType": "embeddable"
+                        },
+                        {
+                            "url": "manage/time/timeoff/history",
+                            "label": "Time Off History",
+                            "visible": true,
+                            "children": [],
+                            "id":"managetimetimeoffhistory",
+                            "urlType": "embeddable"
+                        }
+                    ],
+                    "id":"managetimetimeoff",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"managetime",
+            "icon": "icon-manage-time",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "manage/benefitsMgr",
+            "label": "Benefits",
+            "visible": true,
+            "defaultURL": "benefits/plans/employeePlans",
+            "children": [
+                {
+                    "url": "benefits/plans/employeePlans",
+                    "label": "Benefit Plans",
+                    "visible": true,
+                    "children": [],
+                    "id":"benefitsplansemployeePlans",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"managebenefitsMgr",
+            "icon": "icon-benefits",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "employeeMSS",
+            "label": "Employee Information",
+            "visible": false,
+            "defaultURL": "employeeMSS/profileMSS",
+            "children": [
+                {
+                    "url": "employeeMSS/profileMSS",
+                    "label": "Employee Information",
+                    "visible": false,
+                    "children": [],
+                    "id":"employeeMSSprofileMSS",
+                    "urlType": "embeddable"
+                }
+            ],
+            "id":"employeeMSS",
+            "icon": "icon-employee-info",
+            "urlType": "embeddable"
+        },
+        {
+            "url": "/ABCPLTD.admin",
+            "label": "Payroll Manager",
+            "visible": true,
+            "children": [],
+            "id":"60002",
+            "urlType": "non-embeddable"
+        }
+    ],
+    "administrator": [
+        {
+            "url": "/ABCPLTD.admin",
+            "label": "HCM Setup",
+            "visible": true,
+            "children": [],
+            "id" : "60003",
+            "location": "Administration",
+            "urlType": "non-embeddable"
+        }
+    ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -86,19 +522,31 @@
         "properties": {
           "url": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "benefits"
+            ]
           },
           "label": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "My Benefits"
+            ]
           },
           "visible": {
             "type": "boolean",
-            "default": false
+            "default": false,
+            "examples": [
+              true
+            ]
           },
           "defaultURL": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "benefits/plans"
+            ]
           },
           "children": {
             "type": "array",
@@ -107,45 +555,72 @@
               "properties": {
                 "url": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "benefits/plans"
+                  ]
                 },
                 "label": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "Benefit Plans"
+                  ]
                 },
                 "visible": {
                   "type": "boolean",
-                  "default": false
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
                 },
                 "children": {
                   "type": "array"
                 },
                 "id": {
                   "type": "string",
-                  "default": 0
+                  "default": 0,
+                  "examples": [
+                    "10042"
+                  ]
                 },
                 "urlType": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "embeddable"
+                  ]
                 }
               }
             }
           },
           "id": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "dashboard"
+            ]
           },
           "icon": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "icon-benefits"
+            ]
           },
           "urlType": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "embeddable"
+            ]
           },
           "location": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "Top Level"
+            ]
           }
         }
       }
@@ -158,19 +633,31 @@
         "properties": {
           "url": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "manage"
+            ]
           },
           "label": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "My Team"
+            ]
           },
           "visible": {
             "type": "boolean",
-            "default": false
+            "default": false,
+            "examples": [
+              true
+            ]
           },
           "defaultURL": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "manage/myEmployees"
+            ]
           },
           "children": {
             "type": "array",
@@ -180,41 +667,65 @@
               "properties": {
                 "url": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "manage/myEmployees"
+                  ]
                 },
                 "label": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "Team Members"
+                  ]
                 },
                 "visible": {
                   "type": "boolean",
-                  "default": false
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
                 },
                 "children": {
                   "type": "array"
                 },
                 "urlType": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "embeddable"
+                  ]
                 }
               }
             }
           },
           "id": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "manageMyEmployees"
+            ]
           },
           "icon": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "icon-team"
+            ]
           },
           "urlType": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "embeddable"
+            ]
           },
           "location": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "Top Level"
+            ]
           }
         }
       }
@@ -226,30 +737,48 @@
         "properties": {
           "url": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "/ABCPLTD.admin"
+            ]
           },
           "label": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "HCM Setup"
+            ]
           },
           "visible": {
             "type": "boolean",
-            "default": false
+            "default": false,
+            "examples": [
+              true
+            ]
           },
           "children": {
             "type": "array"
           },
           "location": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "Administration"
+            ]
           },
           "id": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "6001"
+            ]
           },
           "urlType": {
             "type": "string",
-            "default": ""
+            "default": "",
+            "examples": [
+              "non-embeddable"
+            ]
           }
         }
       }

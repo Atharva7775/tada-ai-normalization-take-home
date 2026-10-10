@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Direct Deposit</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Direct Deposit</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Direct Deposit</span>
@@ -36,7 +36,7 @@ Retrieves an employee's direct deposit account.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -51,7 +51,7 @@ Retrieves an employee's direct deposit account.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Id of the employee's direct deposit.
 </div>
 </div>
@@ -83,7 +83,7 @@ Retrieves an employee's direct deposit account.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -150,7 +150,7 @@ Retrieves an employee's direct deposit account.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/direct-deposits/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -165,7 +165,34 @@ Retrieves an employee's direct deposit account.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+    "id": 62531,
+    "name": "Wells Fargo DD",
+    "description": "Wells Fargo Direct Deposit",
+    "sequence": 4,
+    "type": "DIRECT_DEPOSIT",
+    "active_from": "2026-01-01",
+    "active_to": "2027-12-31",
+    "active": true,
+    "calc_method": {
+        "display_name": "Entire/Remainder",
+        "type": "FULL"
+    },
+    "account_type": "SAVINGS",
+    "account_number": "6724301",
+    "routing_number": "122105278",
+    "routing_type": "ABA",
+    "used_in_pay_statement": false,
+    "visible": true,
+    "_links": {
+        "self": "http://localhost:8080/ta/rest/v2/companies/448129/direct-deposits/62531",
+        "edit": "http://localhost:8080/ta/rest/v2/companies/448129/direct-deposits/62531",
+        "delete": "http://localhost:8080/ta/rest/v2/companies/448129/direct-deposits/62531"
+    }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -456,7 +483,35 @@ Retrieves an employee's direct deposit account.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;direct_deposit&gt;
+    &lt;id&gt;62531&lt;/id&gt;
+    &lt;name&gt;Wells Fargo DD&lt;/name&gt;
+    &lt;description&gt;Wells Fargo Direct Deposit&lt;/description&gt;
+    &lt;sequence&gt;4&lt;/sequence&gt;
+    &lt;type&gt;DIRECT_DEPOSIT&lt;/type&gt;
+    &lt;active_from&gt;2026-01-01&lt;/active_from&gt;
+    &lt;active_to&gt;2027-12-31&lt;/active_to&gt;
+    &lt;active&gt;true&lt;/active&gt;
+    &lt;calc_method&gt;
+        &lt;display_name&gt;Entire/Remainder&lt;/display_name&gt;
+        &lt;type&gt;FULL&lt;/type&gt;
+    &lt;/calc_method&gt;
+    &lt;account_type&gt;SAVINGS&lt;/account_type&gt;
+    &lt;account_number&gt;6724301&lt;/account_number&gt;
+    &lt;routing_number&gt;122105278&lt;/routing_number&gt;
+    &lt;routing_type&gt;ABA&lt;/routing_type&gt;
+    &lt;used_in_pay_statement&gt;false&lt;/used_in_pay_statement&gt;
+    &lt;visible&gt;true&lt;/visible&gt;
+  &lt;_links&gt;
+        &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/448129/direct-deposits/62531&lt;/self&gt;
+        &lt;edit&gt;http://localhost:8080/ta/rest/v2/companies/448129/direct-deposits/62531&lt;/edit&gt;
+        &lt;delete&gt;http://localhost:8080/ta/rest/v2/companies/448129/direct-deposits/62531&lt;/delete&gt;
+    &lt;/_links&gt;
+&lt;/direct_deposit&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -699,7 +754,7 @@ Updates an existing employee's direct deposit account.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -714,7 +769,7 @@ Updates an existing employee's direct deposit account.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Id of the employee's direct deposit.
 </div>
 </div>
@@ -746,7 +801,7 @@ Updates an existing employee's direct deposit account.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -760,7 +815,7 @@ Updates an existing employee's direct deposit account.
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -855,7 +910,28 @@ Updates an existing employee's direct deposit account.
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+        "name": "Wells Fargo DD",
+        "description": "Wells Fargo Direct Deposit",
+        "type": "DIRECT_DEPOSIT",
+        "active_from": "1900-12-31",
+        "active_to": "9999-12-31",
+        "employee": {
+           "account_id": 123456
+        },
+        "sequence": 1,
+        "amount": 32760,
+        "calc_method": {
+            "type": "FLAT_AMOUNT"
+        },
+        "account_type": "CHECKING",
+        "account_number": "6724301068",
+        "routing_number": "122105278",
+        "routing_type": "ABA"
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -1044,7 +1120,29 @@ Updates an existing employee's direct deposit account.
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root&gt;
+   &lt;name&gt;Wells Fargo DD&lt;/name&gt;
+   &lt;description&gt;Wells Fargo Direct Deposit&lt;/description&gt;
+   &lt;account_number&gt;6724301068&lt;/account_number&gt;
+   &lt;employee&gt;
+     &lt;account_id&gt;123456&lt;/account_id&gt;
+   &lt;/employee&gt;
+   &lt;account_type&gt;DIRECT_DEPOSIT&lt;/account_type&gt;
+   &lt;active_from&gt;1900-12-31&lt;/active_from&gt;
+   &lt;active_to&gt;9999-12-31&lt;/active_to&gt;
+   &lt;amount&gt;32760&lt;/amount&gt;
+   &lt;calc_method&gt;
+      &lt;type&gt;FLAT_AMOUNT&lt;/type&gt;
+   &lt;/calc_method&gt;
+   &lt;routing_number&gt;122105278&lt;/routing_number&gt;
+   &lt;routing_type&gt;ABA&lt;/routing_type&gt;
+   &lt;sequence&gt;1&lt;/sequence&gt;
+   &lt;type&gt;CHECKING&lt;/type&gt;
+&lt;/root&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -1233,7 +1331,7 @@ Deletes an existing employee's direct deposit account.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -1248,7 +1346,7 @@ Deletes an existing employee's direct deposit account.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Id of the employee's direct deposit.
 </div>
 </div>

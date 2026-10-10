@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>DataView</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>DataView</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>DataView</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -48,7 +48,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -62,7 +62,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -153,7 +153,47 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+    "fields": [
+        {
+            "externalFieldId": "PERSONAL_INFORMATION_EMPL_EMPLOYEE_ID"
+        },
+        {
+            "externalFieldId": "PERSPECTIVE_SCORE_SCORE",
+            "parameter": 23555
+        },
+        {
+            "externalFieldId": "PERSPECTIVE_SCORE_SCORE",
+            "parameter": 456653
+        }
+    ],
+    "filters": [
+        {
+            "field_name": "PERSONAL_INFORMATION_EMPL_EMPLOYEE_ID",
+            "operator": {
+                "name": "in"
+            },
+            "values": [
+                "JT12345",
+                "VikasEmpId",
+                "asdf1"
+            ]
+        }
+    ],
+    "date_filters": [
+        {
+            "filter_name": "timeFrame",
+            "operator": {
+                "name": "between"
+            },
+            "startDate": "09/02/2018",
+            "endDate": "09/15/2018"
+        }
+    ]
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -227,7 +267,7 @@
 </div>
 </div>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-post-0" data-tab-class="resp-tab-post" name="resp-tab-post" type="radio"/>
@@ -238,7 +278,85 @@
 <div class="resp-tab-post" id="resp-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-resp-tab-0 activeTab" id="post-tab-resp-example-0">
 
+<pre class="highlightjs">{
+    "meta": {
+        "company_id": 464890,
+        "user_id": 2241472,
+        "total_rows": 2
+    },
+    "header": {
+        "fields": [
+            {
+                "externalFieldId": "PERSONAL_INFORMATION_EMPL_EMPLOYEE_ID",
+                "label": "Employee Id"
+            },
+            {
+                "externalFieldId": "DATES_EMPL_DATE_HIRED_MONTH",
+                "label": "Hired Month"
+            },
+            {
+                "externalFieldId": "DATES_EMPL_DATE_STARTED",
+                "label": "Date Started"
+            },
+            {
+                "externalFieldId": "DATES_DAYS_EMPL_AGE",
+                "label": "Age"
+            },
+            {
+                "externalFieldId": "PERSONAL_INFORMATION_EMPL_STATUS_NAME",
+                "label": "Employee Status"
+            }
+        ]
+    },
+    "body": {
+        "rows": [
+            {
+                "values": [
+                    "43432",
+                    "October",
+                    "10/03/2018",
+                    29,
+                    "Active"
+                ]
+            },
+            {
+                "values": [
+                    "65484077",
+                    "October",
+                    "10/05/2018",
+                    21,
+                    "Active"
+                ]
+            }
+        ]
+    },
+    "errors": [
+        {
+            "code": "20005",
+            "message": "Invalid fields",
+            "detail": "[sfd, 423, gkkdf]"
+        },
+        {
+            "code": "20008",
+            "message": "Duplicate Employees",
+            "detail": "[65484077]"
+        },
+        {
+            "code": "20009",
+            "message": "Invalid Employees",
+            "detail": "[123]"
+        },
+        {
+            "code": "20006",
+            "message": "Fields unavailable",
+            "detail": "[EmplGender]"
+        }
+    ]
+}
+</pre>
+</div>
 <div class="post-example-resp-tab-0" id="post-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-1">{

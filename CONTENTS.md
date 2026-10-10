@@ -5,8 +5,9 @@ PrismHR's licensed derivative, two isolved Swagger snapshots, 381 UKG cached
 reference pages and an extracted JSON Schema bundle, partial enum/lookup references,
 notices, source manifests and the permission audit. UKG's bundle is not OpenAPI.
 isolved/UKG private upload was explicitly authorized by the organizer; provider
-redistribution permission and candidate sharing remain unverified. No API response
-fixtures, employee records, canonical solution or completed transformations are supplied.
+redistribution permission and candidate sharing remain unverified. Provider-documented sample payloads are included and labeled illustrative;
+authentication token examples are redacted. No customer exports, independent
+fixture suite, canonical solution or completed transformations are supplied.
 
 - [`.editorconfig`](.editorconfig)
 - [`.gitignore`](.gitignore)

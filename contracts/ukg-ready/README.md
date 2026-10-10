@@ -2,7 +2,7 @@
 
 **Included at the organizer's explicit private-upload instruction. Provider redistribution permission remains unverified; candidate sharing is pending.**
 
-This pack contains 381 cached HTML pages with endpoint documentation and JSON/XML schemas. Request/response samples were removed and pages render passively. It is **not an official Swagger/OpenAPI specification**. No complete OpenAPI contract or current live API version has been verified.
+This pack contains 381 cached HTML pages with endpoint documentation and JSON/XML schemas. Provider-documented request/response samples and parameter examples are restored and labeled illustrative. Authentication token examples are redacted; pages render passively. Candidates must still generate and validate their own fixtures. It is **not an official Swagger/OpenAPI specification**. No complete OpenAPI contract or current live API version has been verified.
 
 [reference-schemas.json](reference-schemas.json) extracts 478 parsed JSON Schema blocks with page/anchor provenance. XML schemas and opaque `any` blocks remain in the HTML. Endpoint bindings, parameters and response statuses must be discovered from the pages; the bundle is not a fabricated API specification. [lookup-reference.json](lookup-reference.json) supplies a partial set of explicit enum values with exact pointers. Undocumented per-code meanings remain null; no tenant-specific lookup responses or canonical mappings are supplied.
 

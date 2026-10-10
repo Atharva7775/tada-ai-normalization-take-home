@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>/v2/companies/{cid}/config/announcements/{id}</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>/v2/companies/{cid}/config/announcements/{id}</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>/v2/companies/{cid}/config/announcements/{id}</span>
@@ -36,7 +36,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -68,7 +68,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -135,7 +135,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/config/announcements/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -154,7 +154,37 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "headline": "Office Closed Announcement",
+  "active": true,
+  "active_from": "2016-10-12",
+  "active_to": "2016-10-13",
+  "body": "The office will be closed today due to snow.",
+  "created_by": {
+    "account_id": 1457954,
+    "full_name": "John Smith"
+  },
+  "visible_to_group": {
+    "id": 1457884,
+    "name": "All Company Employees"
+  },
+  "visible_to_security_profile": {
+    "id": 478455,
+    "name": "Manager"
+  },
+  "countdown": {
+    "enabled": true,
+    "to": "2016-10-14T08:00Z",
+    "interval": "HOUR"
+  },
+  "show_as_popup": true,
+  "show_marketplace_link": false,
+  "show_on_dashboard_as": "WARNING"
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -298,7 +328,36 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;announcement&gt;
+    &lt;id&gt;1487561&lt;/id&gt;
+    &lt;headline&gt;Office Closed Announcement&lt;/headline&gt;
+    &lt;active&gt;true&lt;/active&gt;
+    &lt;active_from&gt;2016-10-12&lt;/active_from&gt;
+    &lt;active_to&gt;2016-10-13&lt;/active_to&gt;
+    &lt;body&gt;The office will be closed today due to the snow.&lt;/body&gt;
+    &lt;created_by_account&gt;
+        &lt;account_id&gt;1457954&lt;/account_id&gt;
+        &lt;full_name&gt;John Smith&lt;/full_name&gt;
+    &lt;/created_by_account&gt;
+    &lt;visible_to_group&gt;
+      &lt;id&gt;1457884&lt;/id&gt;
+    &lt;/visible_to_group&gt;
+    &lt;visible_to_security_profile&gt;
+      &lt;id&gt;478455&lt;/id&gt;
+    &lt;/visible_to_security_profile&gt;
+    &lt;countdown&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;to&gt;2016-10-14T08:00Z&lt;/to&gt;
+      &lt;interval&gt;HOUR&lt;/interval&gt;
+    &lt;/countdown&gt;
+    &lt;show_as_popup&gt;true&lt;/show_as_popup&gt;
+    &lt;show_marketplace_link&gt;false&lt;/show_marketplace_link&gt;
+    &lt;show_on_dashboard_as&gt;WARNING&lt;/show_on_dashboard_as&gt;
+&lt;/announcement&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">any</div>
@@ -308,7 +367,36 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;announcement&gt;
+    &lt;id&gt;1487561&lt;/id&gt;
+    &lt;headline&gt;Office Closed Announcement&lt;/headline&gt;
+    &lt;active&gt;true&lt;/active&gt;
+    &lt;active_from&gt;2016-10-12&lt;/active_from&gt;
+    &lt;active_to&gt;2016-10-13&lt;/active_to&gt;
+    &lt;body&gt;The office will be closed today due to the snow.&lt;/body&gt;
+    &lt;created_by_account&gt;
+        &lt;account_id&gt;1457954&lt;/account_id&gt;
+        &lt;full_name&gt;John Smith&lt;/full_name&gt;
+    &lt;/created_by_account&gt;
+    &lt;visible_to_group&gt;
+      &lt;id&gt;1457884&lt;/id&gt;
+    &lt;/visible_to_group&gt;
+    &lt;visible_to_security_profile&gt;
+      &lt;id&gt;478455&lt;/id&gt;
+    &lt;/visible_to_security_profile&gt;
+    &lt;countdown&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;to&gt;2016-10-14T08:00Z&lt;/to&gt;
+      &lt;interval&gt;HOUR&lt;/interval&gt;
+    &lt;/countdown&gt;
+    &lt;show_as_popup&gt;true&lt;/show_as_popup&gt;
+    &lt;show_marketplace_link&gt;false&lt;/show_marketplace_link&gt;
+    &lt;show_on_dashboard_as&gt;WARNING&lt;/show_on_dashboard_as&gt;
+&lt;/announcement&gt;</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">any</div>
@@ -349,7 +437,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -381,7 +469,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -395,7 +483,7 @@ Requires at least one of the following subsystems:
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -494,7 +582,37 @@ Requires at least one of the following subsystems:
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "headline": "Office Closed Announcement",
+  "active": true,
+  "active_from": "2016-10-12",
+  "active_to": "2016-10-13",
+  "body": "The office will be closed today due to snow.",
+  "created_by": {
+    "account_id": 1457954,
+    "full_name": "John Smith"
+  },
+  "visible_to_group": {
+    "id": 1457884,
+    "name": "All Company Employees"
+  },
+  "visible_to_security_profile": {
+    "id": 478455,
+    "name": "Manager"
+  },
+  "countdown": {
+    "enabled": true,
+    "to": "2016-10-14T08:00Z",
+    "interval": "HOUR"
+  },
+  "show_as_popup": true,
+  "show_marketplace_link": false,
+  "show_on_dashboard_as": "WARNING"
+}
+</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -638,7 +756,36 @@ Requires at least one of the following subsystems:
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;announcement&gt;
+    &lt;id&gt;1487561&lt;/id&gt;
+    &lt;headline&gt;Office Closed Announcement&lt;/headline&gt;
+    &lt;active&gt;true&lt;/active&gt;
+    &lt;active_from&gt;2016-10-12&lt;/active_from&gt;
+    &lt;active_to&gt;2016-10-13&lt;/active_to&gt;
+    &lt;body&gt;The office will be closed today due to the snow.&lt;/body&gt;
+    &lt;created_by_account&gt;
+        &lt;account_id&gt;1457954&lt;/account_id&gt;
+        &lt;full_name&gt;John Smith&lt;/full_name&gt;
+    &lt;/created_by_account&gt;
+    &lt;visible_to_group&gt;
+      &lt;id&gt;1457884&lt;/id&gt;
+    &lt;/visible_to_group&gt;
+    &lt;visible_to_security_profile&gt;
+      &lt;id&gt;478455&lt;/id&gt;
+    &lt;/visible_to_security_profile&gt;
+    &lt;countdown&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;to&gt;2016-10-14T08:00Z&lt;/to&gt;
+      &lt;interval&gt;HOUR&lt;/interval&gt;
+    &lt;/countdown&gt;
+    &lt;show_as_popup&gt;true&lt;/show_as_popup&gt;
+    &lt;show_marketplace_link&gt;false&lt;/show_marketplace_link&gt;
+    &lt;show_on_dashboard_as&gt;WARNING&lt;/show_on_dashboard_as&gt;
+&lt;/announcement&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">any</div>
@@ -648,7 +795,36 @@ Requires at least one of the following subsystems:
 <div class="req-tab-put" id="req-tab-id-put-2">
 <div class="example">
 
+<div class="put-example-tab-2 activeTab" id="put-tab-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;announcement&gt;
+    &lt;id&gt;1487561&lt;/id&gt;
+    &lt;headline&gt;Office Closed Announcement&lt;/headline&gt;
+    &lt;active&gt;true&lt;/active&gt;
+    &lt;active_from&gt;2016-10-12&lt;/active_from&gt;
+    &lt;active_to&gt;2016-10-13&lt;/active_to&gt;
+    &lt;body&gt;The office will be closed today due to the snow.&lt;/body&gt;
+    &lt;created_by_account&gt;
+        &lt;account_id&gt;1457954&lt;/account_id&gt;
+        &lt;full_name&gt;John Smith&lt;/full_name&gt;
+    &lt;/created_by_account&gt;
+    &lt;visible_to_group&gt;
+      &lt;id&gt;1457884&lt;/id&gt;
+    &lt;/visible_to_group&gt;
+    &lt;visible_to_security_profile&gt;
+      &lt;id&gt;478455&lt;/id&gt;
+    &lt;/visible_to_security_profile&gt;
+    &lt;countdown&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;to&gt;2016-10-14T08:00Z&lt;/to&gt;
+      &lt;interval&gt;HOUR&lt;/interval&gt;
+    &lt;/countdown&gt;
+    &lt;show_as_popup&gt;true&lt;/show_as_popup&gt;
+    &lt;show_marketplace_link&gt;false&lt;/show_marketplace_link&gt;
+    &lt;show_on_dashboard_as&gt;WARNING&lt;/show_on_dashboard_as&gt;
+&lt;/announcement&gt;</pre>
+</div>
 <div class="put-example-tab-2" id="put-tab-schema-2">
 
 <div class="jsonschema" id="schema-5">any</div>
@@ -689,7 +865,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>

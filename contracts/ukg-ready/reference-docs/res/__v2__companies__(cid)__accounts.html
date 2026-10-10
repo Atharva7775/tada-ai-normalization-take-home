@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>System Accounts</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>System Accounts</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>System Accounts</span>
@@ -32,7 +32,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -51,7 +51,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -118,7 +118,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/accounts</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -133,7 +133,25 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "system_accounts": [
+    {
+      "id": 1,
+      "username": "jackS",
+      "first_name": "Jack",
+      "last_name": "Sparrow"
+    },
+    {
+      "id": 2,
+      "username": "elizabethS",
+      "first_name": "Elizabeth",
+      "last_name": "Swann"
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -179,7 +197,24 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;system_accounts&gt;
+  &lt;system_account&gt;
+    &lt;id&gt;2169665&lt;/id&gt;
+    &lt;username&gt;jackS&lt;/username&gt;
+    &lt;first_name&gt;Jack&lt;/first_name&gt;
+    &lt;last_name&gt;Sparrow&lt;/last_name&gt;
+  &lt;/system_account&gt;
+  &lt;system_account&gt;
+    &lt;id&gt;2170817&lt;/id&gt;
+    &lt;username&gt;elizabethS&lt;/username&gt;
+    &lt;first_name&gt;Elizabeth&lt;/first_name&gt;
+    &lt;last_name&gt;Swann&lt;/last_name&gt;
+  &lt;/system_account&gt;
+&lt;/system_accounts&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -235,7 +270,7 @@ When creating an account the following fields if included on the request body wi
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -254,7 +289,7 @@ When creating an account the following fields if included on the request body wi
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -268,7 +303,7 @@ When creating an account the following fields if included on the request body wi
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -403,7 +438,77 @@ When creating an account the following fields if included on the request body wi
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "id": 1,
+  "username": "jackS",
+  "first_name": "Jack",
+  "middle_name": "Edward",
+  "last_name": "Sparrow",
+  "suffix": "Captain",
+  "nickname": "pirate",
+  "force_change_password": false,
+  "locked": false,
+  "status": "Active",
+  "timezone": "America/Puerto_Rico",
+  "primary_email": "jack@email.com",
+  "secondary_email": "sparrow@email.com",
+  "first_screen": {
+    "id": "screen"
+  },
+  "two_factor": {
+    "totp_enabled": false,
+    "totp_reset_at_next_logon": false
+  },
+  "dates": {
+    "inactive_from": "1900-12-31"
+  },
+  "phones": {
+    "cell_phone": "string",
+    "home_phone": "string",
+    "work_phone": "string",
+    "preferred_phone": "NONE"
+  },
+  "address": {
+    "address_line_1": "string",
+    "address_line_2": "string",
+    "address_line_3": "string",
+    "country": "STR",
+    "city": "string",
+    "state": "ST",
+    "zip": "string",
+    "number": "string",
+    "number_addition": "string"
+  },
+  "profiles": {
+    "access": [
+      {
+        "id": 1,
+        "effective_from": "1900-12-31"
+      }
+    ],
+    "security": [
+      {
+        "id": 2,
+        "effective_from": "1900-12-31"
+      }
+    ],
+    "additional_security": [
+      {
+        "id": 3,
+        "effective_from": "1900-12-31"
+      }
+    ],
+    "data_retention": [
+      {
+        "id": 4,
+        "effective_from": "1900-12-31"
+      }
+    ]
+  }
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -622,7 +727,72 @@ When creating an account the following fields if included on the request body wi
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;system_account&gt;
+  &lt;id&gt;9155352&lt;/id&gt;
+  &lt;username&gt;username&lt;/username&gt;
+  &lt;first_name&gt;Max&lt;/first_name&gt;
+  &lt;middle_name&gt;M&lt;/middle_name&gt;
+  &lt;last_name&gt;Power&lt;/last_name&gt;
+  &lt;suffix&gt;Suffix&lt;/suffix&gt;
+  &lt;nickname&gt;Nickname&lt;/nickname&gt;
+  &lt;force_change_password&gt;true&lt;/force_change_password&gt;
+  &lt;locked&gt;true&lt;/locked&gt;
+  &lt;status&gt;Active&lt;/status&gt;
+  &lt;timezone&gt;America/New_York&lt;/timezone&gt;
+  &lt;primary_email&gt;maxpower@test.com&lt;/primary_email&gt;
+  &lt;secondary_email&gt;maxmpower@gmail.com&lt;/secondary_email&gt;
+  &lt;first_screen&gt;
+    &lt;id&gt;SCREEN:1200&lt;/id&gt;
+  &lt;/first_screen&gt;
+  &lt;two_factor&gt;
+    &lt;totp_enabled&gt;true&lt;/totp_enabled&gt;
+    &lt;totp_reset_at_next_logon&gt;true&lt;/totp_reset_at_next_logon&gt;
+  &lt;/two_factor&gt;
+  &lt;dates&gt;
+    &lt;inactive_from&gt;2062-03-01&lt;/inactive_from&gt;
+  &lt;/dates&gt;
+  &lt;phones&gt;
+    &lt;cell_phone&gt;+1234567890&lt;/cell_phone&gt;
+    &lt;home_phone&gt;+1234567890&lt;/home_phone&gt;
+    &lt;work_phone&gt;+1234567890&lt;/work_phone&gt;
+    &lt;preferred_phone&gt;WORK&lt;/preferred_phone&gt;
+  &lt;/phones&gt;
+  &lt;address&gt;
+    &lt;address_line_1&gt;Street&lt;/address_line_1&gt;
+    &lt;address_line_2&gt;1&lt;/address_line_2&gt;
+    &lt;city&gt;Chicago&lt;/city&gt;
+    &lt;state&gt;IL&lt;/state&gt;
+    &lt;zip&gt;60005&lt;/zip&gt;
+  &lt;/address&gt;
+  &lt;profiles&gt;
+    &lt;security&gt;
+        &lt;id&gt;1048195&lt;/id&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+    &lt;/security&gt;
+    &lt;additional_security&gt;
+        &lt;id&gt;1038977&lt;/id&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+    &lt;/additional_security&gt;
+    &lt;data_retention&gt;
+      &lt;data_retention&gt;
+        &lt;id&gt;4390912&lt;/id&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+      &lt;/data_retention&gt;
+      &lt;data_retention&gt;
+        &lt;id&gt;4390912&lt;/id&gt;
+        &lt;effective_from&gt;2021-01-01&lt;/effective_from&gt;
+      &lt;/data_retention&gt;
+    &lt;/data_retention&gt;
+    &lt;access&gt;
+        &lt;id&gt;10434&lt;/id&gt;
+        &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+    &lt;/access&gt;
+  &lt;/profiles&gt;
+&lt;/system_account&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;

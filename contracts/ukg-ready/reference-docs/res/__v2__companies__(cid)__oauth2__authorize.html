@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Authorize</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Authorize</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Authorize</span>
@@ -32,7 +32,7 @@ The additional required parameters are shown as such in list of parameters below
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -50,7 +50,7 @@ The additional required parameters are shown as such in list of parameters below
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: code</p>
 <div class="desc md">Value MUST be set to "code". See response_type description &lt;a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1" target="_blank"&gt;rfc6749 section-4.1.1 &lt;i class="fa fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;</div>
 </div>
 </div>
@@ -64,7 +64,7 @@ The additional required parameters are shown as such in list of parameters below
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1eca38b7-0b27-49e2-a7da-b5f44123c38e</p>
 <div class="desc md">Valid interactive oauth application id. See client_id description &lt;a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1" target="_blank"&gt;rfc6749 section-4.1.1 &lt;i class="fa fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;</div>
 </div>
 </div>
@@ -78,7 +78,7 @@ The additional required parameters are shown as such in list of parameters below
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: https://www.public-client-app.com/oauth2/callback</p>
 <div class="desc md">The uri the authorization server directs the resource owner's user-agent after completing its interaction with the resource owner. See redirect_uri description &lt;a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1" target="_blank"&gt;rfc6749 section-4.1.1 &lt;i class="fa fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;</div>
 </div>
 </div>
@@ -92,7 +92,7 @@ The additional required parameters are shown as such in list of parameters below
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: P3nj-_3SAHMtSss75ulTzhLMQtMcOGQpm0e0KfJDW8Q&amp;</p>
 <div class="desc md">A challenge derived from the code verifier that is sent in the authorization request, to be verified against later. See &lt;a href="https://www.rfc-editor.org/rfc/rfc7636" target="_blank"&gt;rfc7636 &lt;i class="fa fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt; for details.</div>
 </div>
 </div>
@@ -106,7 +106,7 @@ The additional required parameters are shown as such in list of parameters below
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: S256</p>
 <div class="desc md">Value MUST be set to "S256". A method that was used to derive code challenge. See &lt;a href="https://www.rfc-editor.org/rfc/rfc7636" target="_blank"&gt; rfc7636 &lt;i class="fa fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt; for details.</div>
 </div>
 </div>
@@ -119,7 +119,7 @@ The additional required parameters are shown as such in list of parameters below
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: https://www.public-client-app.com/oauth2/callback</p>
 <div class="desc md">An opaque value used by the client to maintain state between the request and callback. The authorization server includes this value when redirecting the user-agent back to the client.  The parameter SHOULD be used for preventing cross-site request forgery. See state description &lt;a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1" target="_blank"&gt;rfc6749# section-4.1.1 &lt;i class="fa fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;</div>
 </div>
 </div>

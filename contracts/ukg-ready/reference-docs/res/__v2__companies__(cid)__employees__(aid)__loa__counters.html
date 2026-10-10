@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Counters</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Counters</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Counters</span>
@@ -31,7 +31,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -46,7 +46,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -63,7 +63,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: moelle</p>
 <div class="desc md">Free text search filter for leave of absence counters.
 Searches against the field `category`.
 Example: `q=moelle` filters counters whose category contains the word "moelle".
@@ -79,7 +79,7 @@ Example: `q=moelle` filters counters whose category contains the word "moelle".
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: category</p>
 <div class="desc md">Used to sort leave of absence counters.
 Available values are category, taken, taken_as_of, entitlement, entitlement_as_of, balance.
 Descending order is established by adding - before column name.
@@ -95,7 +95,7 @@ Descending order is established by adding - before column name.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1</p>
 <div class="desc md">Page query parameter for pagination.</div>
 </div>
 </div>
@@ -108,7 +108,7 @@ Descending order is established by adding - before column name.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 20</p>
 <div class="desc md">Lot size query parameter for pagination.</div>
 </div>
 </div>
@@ -121,7 +121,7 @@ Descending order is established by adding - before column name.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: true</p>
 <div class="desc md">If `true` only editable counter would be returned. `false` by default.</div>
 </div>
 </div>
@@ -139,7 +139,7 @@ Descending order is established by adding - before column name.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -196,7 +196,7 @@ Descending order is established by adding - before column name.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/loa/counters</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -215,7 +215,52 @@ Descending order is established by adding - before column name.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "items": [
+    {
+      "id": 114688,
+      "category_id": 123456,
+      "category": "LOA Cat#1",
+      "entitlement": 18.0,
+      "entitlement_type": "HOURS",
+      "taken": 20.0,
+      "taken_type": "HOURS",
+      "taken_as_of": "2021-05-20",
+      "balance": "-2.0",
+      "entitlement_as_of": "2021-05-17",
+      "manual": false,
+      "duration_unit": "HOURS"
+    },
+    {
+      "id": 114944,
+      "category_id": 654321,
+      "category": "LOA Cat2",
+      "entitlement": 4.0,
+      "entitlement_type": "DAYS",
+      "taken": 0.0,
+      "taken_type": "WEEKS",
+      "taken_as_of": "2021-05-20",
+      "balance": "4.0",
+      "entitlement_as_of": "2021-05-17",
+      "manual": true,
+      "duration_unit": "HOURS",
+      "_links": {
+        "edit": "https://example.com/ta/rest/v2/companies/2294146/employees/123456/loa/counters"
+      }
+    }
+  ],
+  "_links": {
+    "self": "https://example.com/ta/rest/v2/companies/2294146/employees/123456/loa",
+    "edit": "https://example.com/ta/rest/v2/companies/2294146/employees/123456/loa/counters",
+    "run_balance_rules": "https://example.com/ta/rest/v2/companies/2294146/employees/123456/loa/counters",
+    "run_entitlement_rules": "https://example.com/ta/rest/v2/companies/2294146/employees/123456/loa/counters"
+  },
+  "_total_count": 2
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -336,7 +381,50 @@ Descending order is established by adding - before column name.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;items&gt;
+    &lt;item&gt;
+        &lt;id&gt;114688&lt;/id&gt;
+        &lt;category_id&gt;123456&lt;/category_id&gt;
+        &lt;category&gt;LOA Cat#1&lt;/category&gt;
+        &lt;entitlement&gt;18.0&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;HOURS&lt;/entitlement_type&gt;
+        &lt;taken&gt;24.0&lt;/taken&gt;
+        &lt;taken_type&gt;DAYS&lt;/taken_type&gt;
+        &lt;taken_as_of&gt;2021-05-22&lt;/taken_as_of&gt;
+        &lt;balance&gt;?&lt;/balance&gt;
+        &lt;entitlement_as_of&gt;2021-05-19&lt;/entitlement_as_of&gt;
+        &lt;manual&gt;false&lt;/manual&gt;
+        &lt;duration_unit&gt;HOURS&lt;/duration_unit&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;id&gt;114944&lt;/id&gt;
+         &lt;category_id&gt;654321&lt;/category_id&gt;
+        &lt;category&gt;LOA Cat2&lt;/category&gt;
+        &lt;entitlement&gt;24.0&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;HOURS&lt;/entitlement_type&gt;
+        &lt;taken&gt;0.0&lt;/taken&gt;
+        &lt;taken_type&gt;HOURS&lt;/taken_type&gt;
+        &lt;taken_as_of&gt;2021-05-20&lt;/taken_as_of&gt;
+        &lt;balance&gt;24.0&lt;/balance&gt;
+        &lt;entitlement_as_of&gt;2021-05-18&lt;/entitlement_as_of&gt;
+        &lt;manual&gt;false&lt;/manual&gt;
+        &lt;duration_unit&gt;HOURS&lt;/duration_unit&gt;
+    &lt;/item&gt;
+    &lt;_links&gt;
+        &lt;self&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters&lt;/self&gt;
+        &lt;edit&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters&lt;/edit&gt;
+        &lt;run_balance_rules&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters
+        &lt;/run_balance_rules&gt;
+        &lt;run_entitlement_rules&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters
+        &lt;/run_entitlement_rules&gt;
+    &lt;/_links&gt;
+    &lt;_total_count&gt;2&lt;/_total_count&gt;
+&lt;/items&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
@@ -386,7 +474,50 @@ Descending order is established by adding - before column name.
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;items&gt;
+    &lt;item&gt;
+        &lt;id&gt;114688&lt;/id&gt;
+        &lt;category_id&gt;123456&lt;/category_id&gt;
+        &lt;category&gt;LOA Cat#1&lt;/category&gt;
+        &lt;entitlement&gt;18.0&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;HOURS&lt;/entitlement_type&gt;
+        &lt;taken&gt;24.0&lt;/taken&gt;
+        &lt;taken_type&gt;DAYS&lt;/taken_type&gt;
+        &lt;taken_as_of&gt;2021-05-22&lt;/taken_as_of&gt;
+        &lt;balance&gt;?&lt;/balance&gt;
+        &lt;entitlement_as_of&gt;2021-05-19&lt;/entitlement_as_of&gt;
+        &lt;manual&gt;false&lt;/manual&gt;
+        &lt;duration_unit&gt;HOURS&lt;/duration_unit&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;id&gt;114944&lt;/id&gt;
+         &lt;category_id&gt;654321&lt;/category_id&gt;
+        &lt;category&gt;LOA Cat2&lt;/category&gt;
+        &lt;entitlement&gt;24.0&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;HOURS&lt;/entitlement_type&gt;
+        &lt;taken&gt;0.0&lt;/taken&gt;
+        &lt;taken_type&gt;HOURS&lt;/taken_type&gt;
+        &lt;taken_as_of&gt;2021-05-20&lt;/taken_as_of&gt;
+        &lt;balance&gt;24.0&lt;/balance&gt;
+        &lt;entitlement_as_of&gt;2021-05-18&lt;/entitlement_as_of&gt;
+        &lt;manual&gt;false&lt;/manual&gt;
+        &lt;duration_unit&gt;HOURS&lt;/duration_unit&gt;
+    &lt;/item&gt;
+    &lt;_links&gt;
+        &lt;self&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters&lt;/self&gt;
+        &lt;edit&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters&lt;/edit&gt;
+        &lt;run_balance_rules&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters
+        &lt;/run_balance_rules&gt;
+        &lt;run_entitlement_rules&gt;https://example.com/ta/rest/v2/companies/461564/employees/2294146/loa/counters
+        &lt;/run_entitlement_rules&gt;
+    &lt;/_links&gt;
+    &lt;_total_count&gt;2&lt;/_total_count&gt;
+&lt;/items&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
@@ -463,7 +594,7 @@ User must to have access to 'edit leave of absence case' and 'modify loa balance
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -478,7 +609,7 @@ User must to have access to 'edit leave of absence case' and 'modify loa balance
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -527,7 +658,29 @@ User must to have access to 'edit leave of absence case' and 'modify loa balance
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "items": [
+    {
+      "entitlement": 18.0,
+      "entitlement_type": "HOURS",
+      "id": 114688,
+      "taken": 14,
+      "taken_as_of": "2021-05-31",
+      "taken_type": "HOURS",
+      "comment": "comment"
+    },
+    {
+      "entitlement": 4,
+      "entitlement_type": "DAYS",
+      "id": 114944,
+      "taken": 0,
+      "taken_type": "WEEKS"
+    }
+  ]
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -591,7 +744,29 @@ User must to have access to 'edit leave of absence case' and 'modify loa balance
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;items&gt;
+    &lt;item&gt;
+        &lt;id&gt;114688&lt;/id&gt;
+        &lt;entitlement&gt;18.0&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;HOURS&lt;/entitlement_type&gt;
+        &lt;taken&gt;14&lt;/taken&gt;
+        &lt;taken_as_of&gt;2021-05-31&lt;/taken_as_of&gt;
+        &lt;taken_type&gt;HOURS&lt;/taken_type&gt;
+        &lt;comment&gt;comment&lt;/comment&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;id&gt;114944&lt;/id&gt;
+        &lt;entitlement&gt;4&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;DAYS&lt;/entitlement_type&gt;
+        &lt;taken&gt;0&lt;/taken&gt;
+        &lt;taken_type&gt;WEEKS&lt;/taken_type&gt;
+    &lt;/item&gt;
+&lt;/items&gt;
+</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
@@ -625,7 +800,29 @@ User must to have access to 'edit leave of absence case' and 'modify loa balance
 <div class="req-tab-put" id="req-tab-id-put-2">
 <div class="example">
 
+<div class="put-example-tab-2 activeTab" id="put-tab-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;items&gt;
+    &lt;item&gt;
+        &lt;id&gt;114688&lt;/id&gt;
+        &lt;entitlement&gt;18.0&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;HOURS&lt;/entitlement_type&gt;
+        &lt;taken&gt;14&lt;/taken&gt;
+        &lt;taken_as_of&gt;2021-05-31&lt;/taken_as_of&gt;
+        &lt;taken_type&gt;HOURS&lt;/taken_type&gt;
+        &lt;comment&gt;comment&lt;/comment&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;id&gt;114944&lt;/id&gt;
+        &lt;entitlement&gt;4&lt;/entitlement&gt;
+        &lt;entitlement_type&gt;DAYS&lt;/entitlement_type&gt;
+        &lt;taken&gt;0&lt;/taken&gt;
+        &lt;taken_type&gt;WEEKS&lt;/taken_type&gt;
+    &lt;/item&gt;
+&lt;/items&gt;
+</pre>
+</div>
 <div class="put-example-tab-2" id="put-tab-schema-2">
 
 <div class="jsonschema" id="schema-5">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"

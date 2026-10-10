@@ -1,23 +1,9 @@
-# PrismHR snapshot attribution and modification notice
+# PrismHR attribution and modification notice
 
-Source work: **PrismHR Services API**, version **2025.09**, OpenAPI **3.0.1**.
-The source file declares **Apache 2.0 License** at `/info/license`; that declaration
-has been retained. The accompanying license text was obtained from the Apache
-Software Foundation's official license URL. No separate original NOTICE file was
-found beside this integration snapshot. No original attribution or license notice
-was removed.
+Source: PrismHR Services API, version 2025.09, OpenAPI 3.0.1. The source explicitly declares Apache 2.0 at `/info/license`; its license declaration is retained and the full license accompanies this file. No separate original NOTICE file was found beside the snapshot. Existing attribution notices are retained.
 
-Existing integration source: `TadaAI/full-stack/references/prism/prism_api_specs.json`.
-The source file is tracked in commit `d834b8926` (2026-05-01). The duplicate under
-`chat/src/providers/prism/prism_api_specs.json` has the same SHA-256.
+Source: `TadaAI/full-stack/references/prism/prism_api_specs.json`, tracked in source commit `d834b89265ab80af464d45381bd46e13e72a95a3` (2026-05-01). The integration duplicate has the same source hash.
 
-**Changed on 2026-10-09 for this hiring repository:** removed all 340 example
-annotations and eight embedded JSON payload renderings; added derivative metadata
-and a modification notice; reformatted JSON. Formal schemas and endpoint definitions
-are preserved apart from those example annotations and description omissions.
-The lookup reference is a curated derivative of field-description code lists,
-with source pointers, context restrictions and explicit completeness limits.
+Modified 2026-10-09: restored all provider-documented example annotations and embedded payload renderings at the organizer's instruction; added provenance and a prominent illustrative-example notice; reformatted JSON. The derivative records any authentication-example redactions. Source schemas, required fields, defaults, paths and license metadata are retained. The partial lookup reference is a cited derivative of field descriptions, without canonical mappings.
 
-PrismHR's name is used for source identification. No endorsement or separate
-vendor approval is represented. This notice does not grant a license to provider
-services, customer data, unrelated documentation, or Tada implementation code.
+No vendor endorsement, separate approval letter, latest-version confirmation, customer export or independent fixture generation is represented. The artifact license does not license the whole hiring repository or unrelated materials.

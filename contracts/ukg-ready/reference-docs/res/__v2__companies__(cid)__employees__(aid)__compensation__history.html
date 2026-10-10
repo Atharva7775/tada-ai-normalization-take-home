@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>History</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>History</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>History</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -44,7 +44,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -63,7 +63,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -120,7 +120,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/compensation/history</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -135,7 +135,30 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "compensations": [
+    {
+      "id": 201511113218689,
+      "employee": {
+        "account_id": 3218689
+      },
+      "effective_from": "2015-11-13",
+      "amount": 1000000.0,
+      "amount_period": "YEAR",
+      "hourly_pay": 60.00124,
+      "currency": "USD",
+      "time": 28800000,
+      "time_period": "YEAR",
+      "num_pp_in_year": 4,
+      "_links": {
+        "self": "https://kronos.com/ta/rest/v2/companies/11223344/compensation/history/201511132218689"
+      }
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -241,7 +264,28 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;compensations&gt;
+  &lt;compensation&gt;
+    &lt;id&gt;201511132218689&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;2218689&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;effective_from&gt;2015-11-13&lt;/effective_from&gt;
+    &lt;amount&gt;1000000&lt;/amount&gt;
+    &lt;hourly_pay&gt;60.00124&lt;/hourly_pay&gt;
+    &lt;currency&gt;USD&lt;/currency&gt;
+    &lt;amount_period&gt;YEAR&lt;/amount_period&gt;
+    &lt;time&gt;28800000&lt;/time&gt;
+    &lt;time_period&gt;YEAR&lt;/time_period&gt;
+    &lt;num_pp_in_year&gt;4&lt;/num_pp_in_year&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://kronos.com/ta/rest/v2/companies/11223344/compensation/history/201511132218689&lt;/self&gt;
+    &lt;/_links&gt;
+  &lt;/compensation&gt;
+&lt;/compensations&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

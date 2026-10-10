@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Asset Assignment</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Asset Assignment</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Asset Assignment</span>
@@ -34,7 +34,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -66,7 +66,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -133,7 +133,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/asset-assignments/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -148,7 +148,248 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "personal": false,
+  "id": 20996,
+  "employee": {
+    "account_id": 4731456,
+    "employee_id": "emp6",
+    "display_name": "emp6 employee",
+    "abbr": "EE",
+    "ein": {
+      "id": 1070464,
+      "display_name": "Default"
+    },
+    "_links": {
+      "photo_href": "https://example.com/ta/images/uploaded/616796/AccountPhoto4727553.jpg?v=1538075878350"
+    }
+  },
+  "asset": {
+    "id": 28544,
+    "name": "everything",
+    "asset_type": {
+      "id": 16840000,
+      "type": "everything on"
+    },
+    "tag_id": "everything",
+    "category": "everything",
+    "description": "everything on",
+    "current_status": "1",
+    "quantity": 5,
+    "child_assets": [],
+    "properties": {
+      "brand": {
+        "required": true,
+        "value": "Apple"
+      },
+      "cpu": {
+        "required": true,
+        "value": "x"
+      },
+      "carrier": {
+        "required": true,
+        "value": "verizon"
+      },
+      "color": {
+        "required": false,
+        "value": "white"
+      },
+      "condition": {
+        "required": false,
+        "value": "good"
+      },
+      "credit_line": {
+        "required": false,
+        "value": 100
+      },
+      "depth": {
+        "required": false,
+        "value": "example depth"
+      },
+      "height": {
+        "required": false,
+        "value": "example height"
+      },
+      "isbn": {
+        "required": false,
+        "value": "example isbn"
+      },
+      "language": {
+        "required": false,
+        "value": "english"
+      },
+      "license_exp_date": {
+        "required": false,
+        "value": "2026-01-01"
+      },
+      "license_info": {
+        "required": false,
+        "value": "example license info\r\nmultiple lines"
+      },
+      "loss_damage_fee": {
+        "required": false,
+        "value": 100
+      },
+      "make": {
+        "required": false,
+        "value": "example make"
+      },
+      "manufacturer": {
+        "required": false,
+        "value": "example manufacturer"
+      },
+      "material": {
+        "required": false,
+        "value": "example material"
+      },
+      "material_type": {
+        "required": false,
+        "value": "example material type"
+      },
+      "memory": {
+        "required": false,
+        "value": "example memory"
+      },
+      "model": {
+        "required": false,
+        "value": "example model"
+      },
+      "phone_number": {
+        "required": false,
+        "value": "example phone"
+      },
+      "publisher": {
+        "required": false,
+        "value": "example publisher"
+      },
+      "purchase_date": {
+        "required": false,
+        "value": "2019-01-02"
+      },
+      "purchased_price": {
+        "required": false,
+        "value": 1000
+      },
+      "sku": {
+        "required": false,
+        "value": "example sku"
+      },
+      "screen_size": {
+        "required": false,
+        "value": "example screen size"
+      },
+      "serial": {
+        "required": false,
+        "value": "example serial number"
+      },
+      "size": {
+        "required": false,
+        "value": "example size"
+      },
+      "storage": {
+        "required": false,
+        "value": "example storage"
+      },
+      "version": {
+        "required": false,
+        "value": "example version"
+      },
+      "weight": {
+        "required": false,
+        "value": "example weight"
+      },
+      "width": {
+        "required": false,
+        "value": "example width"
+      },
+      "year": {
+        "required": false,
+        "value": 2019
+      },
+      "cost_centers": [
+        {
+          "index": 0,
+          "label": "Cost Center",
+          "required": false,
+          "value": {
+            "id": 2762785,
+            "display_name": "Santa Cruz Mountains"
+          }
+        },
+        {
+          "index": 1,
+          "label": "Projects",
+          "required": false,
+          "value": {
+            "id": 2762920,
+            "display_name": "Task 3"
+          }
+        },
+        {
+          "index": 9,
+          "label": "Jobs",
+          "required": false,
+          "value": {
+            "id": 2762763,
+            "display_name": "Solution Architect"
+          }
+        }
+      ],
+      "custom_fields": [
+        {
+          "index": 0,
+          "label": "cust 1",
+          "required": false,
+          "value": "example custom 1"
+        },
+        {
+          "index": 1,
+          "label": "cust 2",
+          "required": false,
+          "value": "example custom2"
+        },
+        {
+          "index": 2,
+          "label": "cust 3",
+          "required": false,
+          "value": "example custom3"
+        },
+        {
+          "index": 3,
+          "label": "cust 4",
+          "required": false,
+          "value": "example custom4"
+        },
+        {
+          "index": 4,
+          "label": "cust 5",
+          "required": false,
+          "value": "example custom5"
+        }
+      ]
+    },
+    "created": "2019-01-02",
+    "currency": "IMP"
+  },
+  "status": "ASSIGNED",
+  "issued_date": "2019-01-02",
+  "expected_return_date": "2020-01-01",
+  "created": "2019-01-02",
+  "_attachments_count": 1,
+  "_notes_count": 1,
+  "_links": {
+    "notes": "https://example.com/ta/rest/v2/companies/616796/notes?token=1bf6aaeb5ac6b3cb1edeb417d34be91007e2ef214fffee4ae21fda1f0eddf59acb30e322bbffa849732f3017040bf7743f683b6a2d11ead562d01bec95523b530bfc3dc44f2abf603fd6179f4034a1486437056bbd26ab7604d6e09ad7c1aca43980a7d31da41a140d4b6327f72eabfe8bc8d9d8f70fe343",
+    "add_note": "https://example.com/ta/rest/v2/companies/616796/notes?token=1bf6aaeb5ac6b3cb1edeb417d34be91007e2ef214fffee4ae21fda1f0eddf59acb30e322bbffa849732f3017040bf7743f683b6a2d11ead562d01bec95523b530bfc3dc44f2abf603fd6179f4034a1486437056bbd26ab7604d6e09ad7c1aca43980a7d31da41a140d4b6327f72eabfe8bc8d9d8f70fe343",
+    "edit": "https://example.com/ta/rest/v2/companies/616796/asset-assignments/20996",
+    "documents": "https://example.com/ta/rest/v2/companies/616796/ids?type=HR_ASSET_ASSIGNMENT&amp;linked_id=20996",
+    "self": "https://example.com/ta/rest/v2/companies/616796/asset-assignments/20996",
+    "delete": "https://example.com/ta/rest/v2/companies/616796/asset-assignments/20996",
+    "add_document": "https://example.com/ta/rest/v2/companies/616796/ids"
+  }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -817,7 +1058,248 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;asset_assignment&gt;
+  &lt;personal&gt;false&lt;/personal&gt;
+  &lt;id&gt;20992&lt;/id&gt;
+  &lt;asset&gt;
+    &lt;id&gt;28544&lt;/id&gt;
+    &lt;name&gt;everything&lt;/name&gt;
+    &lt;asset_type&gt;
+      &lt;id&gt;16840000&lt;/id&gt;
+      &lt;type&gt;everything on&lt;/type&gt;
+    &lt;/asset_type&gt;
+    &lt;tag_id&gt;everything&lt;/tag_id&gt;
+    &lt;category&gt;everything&lt;/category&gt;
+    &lt;description&gt;everything on&lt;/description&gt;
+    &lt;current_status&gt;1&lt;/current_status&gt;
+    &lt;quantity&gt;5&lt;/quantity&gt;
+    &lt;child_assets/&gt;
+    &lt;properties&gt;
+      &lt;brand&gt;
+        &lt;required&gt;true&lt;/required&gt;
+        &lt;value&gt;Apple&lt;/value&gt;
+      &lt;/brand&gt;
+      &lt;cpu&gt;
+        &lt;required&gt;true&lt;/required&gt;
+        &lt;value&gt;x&lt;/value&gt;
+      &lt;/cpu&gt;
+      &lt;carrier&gt;
+        &lt;required&gt;true&lt;/required&gt;
+        &lt;value&gt;verizon&lt;/value&gt;
+      &lt;/carrier&gt;
+      &lt;color&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;white&lt;/value&gt;
+      &lt;/color&gt;
+      &lt;condition&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;good&lt;/value&gt;
+      &lt;/condition&gt;
+      &lt;credit_line&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;100.000000&lt;/value&gt;
+      &lt;/credit_line&gt;
+      &lt;depth&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example depth&lt;/value&gt;
+      &lt;/depth&gt;
+      &lt;height&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example height&lt;/value&gt;
+      &lt;/height&gt;
+      &lt;isbn&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example isbn&lt;/value&gt;
+      &lt;/isbn&gt;
+      &lt;language&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;english&lt;/value&gt;
+      &lt;/language&gt;
+      &lt;license_exp_date&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;2026-01-01&lt;/value&gt;
+      &lt;/license_exp_date&gt;
+      &lt;license_info&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example license info&amp;#xd;
+          multiple lines&lt;/value&gt;
+      &lt;/license_info&gt;
+      &lt;loss_damage_fee&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;100.000000&lt;/value&gt;
+      &lt;/loss_damage_fee&gt;
+      &lt;make&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example make&lt;/value&gt;
+      &lt;/make&gt;
+      &lt;manufacturer&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example manufacturer&lt;/value&gt;
+      &lt;/manufacturer&gt;
+      &lt;material&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example material&lt;/value&gt;
+      &lt;/material&gt;
+      &lt;material_type&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example material type&lt;/value&gt;
+      &lt;/material_type&gt;
+      &lt;memory&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example memory&lt;/value&gt;
+      &lt;/memory&gt;
+      &lt;model&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example model&lt;/value&gt;
+      &lt;/model&gt;
+      &lt;phone_number&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example phone&lt;/value&gt;
+      &lt;/phone_number&gt;
+      &lt;publisher&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example publisher&lt;/value&gt;
+      &lt;/publisher&gt;
+      &lt;purchase_date&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;2019-01-02&lt;/value&gt;
+      &lt;/purchase_date&gt;
+      &lt;purchased_price&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;1000.000000&lt;/value&gt;
+      &lt;/purchased_price&gt;
+      &lt;sku&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example sku&lt;/value&gt;
+      &lt;/sku&gt;
+      &lt;screen_size&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example screen size&lt;/value&gt;
+      &lt;/screen_size&gt;
+      &lt;serial&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example serial number&lt;/value&gt;
+      &lt;/serial&gt;
+      &lt;size&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example size&lt;/value&gt;
+      &lt;/size&gt;
+      &lt;storage&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example storage&lt;/value&gt;
+      &lt;/storage&gt;
+      &lt;version&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example version&lt;/value&gt;
+      &lt;/version&gt;
+      &lt;weight&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example weight&lt;/value&gt;
+      &lt;/weight&gt;
+      &lt;width&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;example width&lt;/value&gt;
+      &lt;/width&gt;
+      &lt;year&gt;
+        &lt;required&gt;false&lt;/required&gt;
+        &lt;value&gt;2019&lt;/value&gt;
+      &lt;/year&gt;
+      &lt;cost_centers&gt;
+        &lt;cost_center&gt;
+          &lt;index&gt;0&lt;/index&gt;
+          &lt;label&gt;Cost Centers&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;
+            &lt;id&gt;2762785&lt;/id&gt;
+            &lt;display_name&gt;Santa Cruz Mountains&lt;/display_name&gt;
+          &lt;/value&gt;
+        &lt;/cost_center&gt;
+        &lt;cost_center&gt;
+          &lt;index&gt;1&lt;/index&gt;
+          &lt;label&gt;Projects&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;
+            &lt;id&gt;2762920&lt;/id&gt;
+            &lt;display_name&gt;Task 3&lt;/display_name&gt;
+          &lt;/value&gt;
+        &lt;/cost_center&gt;
+        &lt;cost_center&gt;
+          &lt;index&gt;9&lt;/index&gt;
+          &lt;label&gt;Jobs&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;
+            &lt;id&gt;2762763&lt;/id&gt;
+            &lt;display_name&gt;Solution Architect&lt;/display_name&gt;
+          &lt;/value&gt;
+        &lt;/cost_center&gt;
+      &lt;/cost_centers&gt;
+      &lt;custom_fields&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;0&lt;/index&gt;
+          &lt;label&gt;cust 1&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;example custom 1&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;1&lt;/index&gt;
+          &lt;label&gt;cust 2&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;example custom2&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;2&lt;/index&gt;
+          &lt;label&gt;cust 3&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;example custom3&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;3&lt;/index&gt;
+          &lt;label&gt;cust 4&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;example custom4&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;4&lt;/index&gt;
+          &lt;label&gt;cust 5&lt;/label&gt;
+          &lt;required&gt;false&lt;/required&gt;
+          &lt;value&gt;example custom5&lt;/value&gt;
+        &lt;/custom_field&gt;
+      &lt;/custom_fields&gt;
+    &lt;/properties&gt;
+    &lt;created&gt;2019-01-02&lt;/created&gt;
+  &lt;/asset&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;4727553&lt;/account_id&gt;
+    &lt;employee_id&gt;employee1&lt;/employee_id&gt;
+    &lt;display_name&gt;Cynthia  J. Scott&lt;/display_name&gt;
+    &lt;abbr&gt;CS&lt;/abbr&gt;
+    &lt;ein&gt;
+      &lt;id&gt;1070464&lt;/id&gt;
+      &lt;display_name&gt;Default&lt;/display_name&gt;
+    &lt;/ein&gt;
+    &lt;_links&gt;
+      &lt;photo_href&gt;https://example.com/ta/images/uploaded/616796/AccountPhoto4727553.jpg?v=1538075878350&lt;/photo_href&gt;
+    &lt;/_links&gt;
+  &lt;/employee&gt;
+  &lt;status&gt;ASSIGNED&lt;/status&gt;
+  &lt;issued_date&gt;2019-01-02&lt;/issued_date&gt;
+  &lt;created&gt;2019-01-02&lt;/created&gt;
+  &lt;_attachments_count&gt;0&lt;/_attachments_count&gt;
+  &lt;_notes_count&gt;0&lt;/_notes_count&gt;
+  &lt;_links&gt;
+    &lt;notes&gt;https://example.com/ta/rest/v2/companies/616796/notes?token=1bf6aaeb5ac6b3cb6434d3e2bdb8009f29634fb85c9ac548652ebbd3ff2f5658ea8fd6713ad706f7fb739903b1bd2e95a6e91d250c76e22735129bc7f0e1b7e30ab03a20a5bee34095d03d105163f3e907e63003c6cde5921bd66a188611a3574a306f6cb609dbec078411f60a21ba79&lt;/notes&gt;
+    &lt;add_note&gt;https://example.com/ta/rest/v2/companies/616796/notes?token=1bf6aaeb5ac6b3cb6434d3e2bdb8009f29634fb85c9ac548652ebbd3ff2f5658ea8fd6713ad706f7fb739903b1bd2e95a6e91d250c76e22735129bc7f0e1b7e30ab03a20a5bee34095d03d105163f3e907e63003c6cde5921bd66a188611a3574a306f6cb609dbec078411f60a21ba79&lt;/add_note&gt;
+    &lt;edit&gt;https://example.com/ta/rest/v2/companies/616796/asset-assignments/20992&lt;/edit&gt;
+    &lt;documents&gt;https://example.com/ta/rest/v2/companies/616796/ids?type=HR_ASSET_ASSIGNMENT&amp;amp;linked_id=20992&lt;/documents&gt;
+    &lt;self&gt;https://example.com/ta/rest/v2/companies/616796/asset-assignments/20992&lt;/self&gt;
+    &lt;delete&gt;https://example.com/ta/rest/v2/companies/616796/asset-assignments/20992&lt;/delete&gt;
+    &lt;add_document&gt;https://example.com/ta/rest/v2/companies/616796/ids&lt;/add_document&gt;
+  &lt;/_links&gt;
+&lt;/asset_assignment&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
@@ -1270,7 +1752,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -1302,7 +1784,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -1316,7 +1798,7 @@ Requires at least one of the following subsystems:
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -1411,7 +1893,165 @@ Requires at least one of the following subsystems:
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "employee": {
+    "account_id": 4731456
+  },
+  "asset": {
+    "id": 28544,
+    "name": "everything",
+    "tag_id": "everything",
+    "category": "everything",
+    "description": "everything on",
+    "properties": {
+      "brand": {
+        "value": "Apple"
+      },
+      "cpu": {
+        "value": "x"
+      },
+      "carrier": {
+        "value": "verizon"
+      },
+      "color": {
+        "value": "white"
+      },
+      "condition": {
+        "value": "good"
+      },
+      "credit_line": {
+        "value": 100
+      },
+      "depth": {
+        "value": "example depth"
+      },
+      "height": {
+        "value": "example height"
+      },
+      "isbn": {
+        "value": "example isbn"
+      },
+      "language": {
+        "value": "english"
+      },
+      "license_exp_date": {
+        "value": "2026-01-01"
+      },
+      "license_info": {
+        "value": "example license info\r\nmultiple lines"
+      },
+      "loss_damage_fee": {
+        "value": 100
+      },
+      "make": {
+        "value": "example make"
+      },
+      "manufacturer": {
+        "value": "example manufacturer"
+      },
+      "material": {
+        "value": "example material"
+      },
+      "material_type": {
+        "value": "example material type"
+      },
+      "memory": {
+        "value": "example memory"
+      },
+      "model": {
+        "value": "example model"
+      },
+      "phone_number": {
+        "value": "example phone"
+      },
+      "publisher": {
+        "value": "example publisher"
+      },
+      "purchase_date": {
+        "value": "2019-01-02"
+      },
+      "purchased_price": {
+        "value": 1000
+      },
+      "sku": {
+        "value": "example sku"
+      },
+      "screen_size": {
+        "value": "example screen size"
+      },
+      "serial": {
+        "value": "example serial number"
+      },
+      "size": {
+        "value": "example size"
+      },
+      "storage": {
+        "value": "example storage"
+      },
+      "version": {
+        "value": "example version"
+      },
+      "weight": {
+        "value": "example weight"
+      },
+      "width": {
+        "value": "example width"
+      },
+      "year": {
+        "value": 2019
+      },
+      "cost_centers": [
+        {
+          "index": 0,
+          "value": {
+            "id": 2762785
+          }
+        },
+        {
+          "index": 1,
+          "value": {
+            "id": 2762920
+          }
+        },
+        {
+          "index": 9,
+          "value": {
+            "id": 2762763
+          }
+        }
+      ],
+      "custom_fields": [
+        {
+          "index": 0,
+          "value": "example custom 1"
+        },
+        {
+          "index": 1,
+          "value": "example custom2"
+        },
+        {
+          "index": 2,
+          "value": "example custom3"
+        },
+        {
+          "index": 3,
+          "value": "example custom4"
+        },
+        {
+          "index": 4,
+          "value": "example custom5"
+        }
+      ]
+    }
+  },
+  "issued_date": "2019-01-02",
+  "expected_return_date": "2020-01-01",
+  "lost_destroyed_date": "2017-05-04",
+  "actual_return_date": "2018-02-02"
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -1779,7 +2419,164 @@ Requires at least one of the following subsystems:
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;asset_assignment&gt;
+  &lt;asset&gt;
+    &lt;id&gt;28544&lt;/id&gt;
+    &lt;name&gt;everything&lt;/name&gt;
+    &lt;tag_id&gt;everything&lt;/tag_id&gt;
+    &lt;properties&gt;
+      &lt;brand&gt;
+        &lt;value&gt;Apple&lt;/value&gt;
+      &lt;/brand&gt;
+      &lt;cpu&gt;
+        &lt;value&gt;x&lt;/value&gt;
+      &lt;/cpu&gt;
+      &lt;carrier&gt;
+        &lt;value&gt;verizon&lt;/value&gt;
+      &lt;/carrier&gt;
+      &lt;color&gt;
+        &lt;value&gt;white&lt;/value&gt;
+      &lt;/color&gt;
+      &lt;condition&gt;
+        &lt;value&gt;good&lt;/value&gt;
+      &lt;/condition&gt;
+      &lt;credit_line&gt;
+        &lt;value&gt;100.000000&lt;/value&gt;
+      &lt;/credit_line&gt;
+      &lt;depth&gt;
+        &lt;value&gt;example depth&lt;/value&gt;
+      &lt;/depth&gt;
+      &lt;height&gt;
+        &lt;value&gt;example height&lt;/value&gt;
+      &lt;/height&gt;
+      &lt;isbn&gt;
+        &lt;value&gt;example isbn&lt;/value&gt;
+      &lt;/isbn&gt;
+      &lt;language&gt;
+        &lt;value&gt;english&lt;/value&gt;
+      &lt;/language&gt;
+      &lt;license_exp_date&gt;
+        &lt;value&gt;2026-01-01&lt;/value&gt;
+      &lt;/license_exp_date&gt;
+      &lt;license_info&gt;
+        &lt;value&gt;example license info&amp;#xd;
+          multiple lines&lt;/value&gt;
+      &lt;/license_info&gt;
+      &lt;loss_damage_fee&gt;
+        &lt;value&gt;100.000000&lt;/value&gt;
+      &lt;/loss_damage_fee&gt;
+      &lt;make&gt;
+        &lt;value&gt;example make&lt;/value&gt;
+      &lt;/make&gt;
+      &lt;manufacturer&gt;
+        &lt;value&gt;example manufacturer&lt;/value&gt;
+      &lt;/manufacturer&gt;
+      &lt;material&gt;
+        &lt;value&gt;example material&lt;/value&gt;
+      &lt;/material&gt;
+      &lt;material_type&gt;
+        &lt;value&gt;example material type&lt;/value&gt;
+      &lt;/material_type&gt;
+      &lt;memory&gt;
+        &lt;value&gt;example memory&lt;/value&gt;
+      &lt;/memory&gt;
+      &lt;model&gt;
+        &lt;value&gt;example model&lt;/value&gt;
+      &lt;/model&gt;
+      &lt;phone_number&gt;
+        &lt;value&gt;example phone&lt;/value&gt;
+      &lt;/phone_number&gt;
+      &lt;publisher&gt;
+        &lt;value&gt;example publisher&lt;/value&gt;
+      &lt;/publisher&gt;
+      &lt;purchase_date&gt;
+        &lt;value&gt;2019-01-02&lt;/value&gt;
+      &lt;/purchase_date&gt;
+      &lt;purchased_price&gt;
+        &lt;value&gt;1000.000000&lt;/value&gt;
+      &lt;/purchased_price&gt;
+      &lt;sku&gt;
+        &lt;value&gt;example sku&lt;/value&gt;
+      &lt;/sku&gt;
+      &lt;screen_size&gt;
+        &lt;value&gt;example screen size&lt;/value&gt;
+      &lt;/screen_size&gt;
+      &lt;serial&gt;
+        &lt;value&gt;example serial number&lt;/value&gt;
+      &lt;/serial&gt;
+      &lt;size&gt;
+        &lt;value&gt;example size&lt;/value&gt;
+      &lt;/size&gt;
+      &lt;storage&gt;
+        &lt;value&gt;example storage&lt;/value&gt;
+      &lt;/storage&gt;
+      &lt;version&gt;
+        &lt;value&gt;example version&lt;/value&gt;
+      &lt;/version&gt;
+      &lt;weight&gt;
+        &lt;value&gt;example weight&lt;/value&gt;
+      &lt;/weight&gt;
+      &lt;width&gt;
+        &lt;value&gt;example width&lt;/value&gt;
+      &lt;/width&gt;
+      &lt;year&gt;
+        &lt;value&gt;2019&lt;/value&gt;
+      &lt;/year&gt;
+      &lt;cost_centers&gt;
+        &lt;cost_center&gt;
+          &lt;index&gt;0&lt;/index&gt;
+          &lt;value&gt;
+            &lt;id&gt;2762785&lt;/id&gt;
+          &lt;/value&gt;
+        &lt;/cost_center&gt;
+        &lt;cost_center&gt;
+          &lt;index&gt;1&lt;/index&gt;
+          &lt;value&gt;
+            &lt;id&gt;2762920&lt;/id&gt;
+          &lt;/value&gt;
+        &lt;/cost_center&gt;
+        &lt;cost_center&gt;
+          &lt;index&gt;9&lt;/index&gt;
+          &lt;value&gt;
+            &lt;id&gt;2762763&lt;/id&gt;
+          &lt;/value&gt;
+        &lt;/cost_center&gt;
+      &lt;/cost_centers&gt;
+      &lt;custom_fields&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;0&lt;/index&gt;
+          &lt;value&gt;example custom 1&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;1&lt;/index&gt;
+          &lt;value&gt;example custom2&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;2&lt;/index&gt;
+          &lt;value&gt;example custom3&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;3&lt;/index&gt;
+          &lt;value&gt;example custom4&lt;/value&gt;
+        &lt;/custom_field&gt;
+        &lt;custom_field&gt;
+          &lt;index&gt;4&lt;/index&gt;
+          &lt;value&gt;example custom5&lt;/value&gt;
+        &lt;/custom_field&gt;
+      &lt;/custom_fields&gt;
+    &lt;/properties&gt;
+  &lt;/asset&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;4727553&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;issued_date&gt;2019-01-02&lt;/issued_date&gt;
+  &lt;lost_destroyed_date&gt;2019-01-02&lt;/lost_destroyed_date&gt;
+  &lt;actual_return_date&gt;2019-01-02&lt;/actual_return_date&gt;
+&lt;/asset_assignment&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
@@ -2109,7 +2906,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>

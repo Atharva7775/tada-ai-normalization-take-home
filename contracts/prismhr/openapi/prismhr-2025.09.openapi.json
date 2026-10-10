@@ -8,7 +8,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
     "version": "2025.09",
-    "description": "MODIFIED HIRING DERIVATIVE: PrismHR Services API snapshot 2025.09. Removed 340 example/examples annotations and eight embedded JSON payload renderings. Formal schemas, required fields, documented defaults, paths, and license declaration are retained. This is not a current-live API verification. See ../README.md and ../NOTICE.md for provenance and changes."
+    "description": "MODIFIED HIRING REFERENCE: provider-documented examples restored at the organizer's instruction on 2026-10-09. These examples are illustrative source documentation, not customer exports or guaranteed production behavior. Authentication token examples, if any, are redacted. See ../README.md and ../NOTICE.md.\n\n"
   },
   "servers": [
     {
@@ -1979,7 +1979,7 @@
           "benefits"
         ],
         "summary": "Get client benefit work flow grid",
-        "description": "Use this operation to retrieve the fields in the client benefit workflow grid. Depending on the input, this method can return data for workflows with specific start dates at the client level and/or the system level.<br/><br/><strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>This operation is used to retrieve client work flow grid data from PrismHR for use by external programs To use this API, provide a client ID(optional) and desired oe start/end date range(optional). This will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data object may be retrieved.<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p>[Embedded payload example removed in this hiring derivative. Generate your own fixtures from the schemas.]</p>",
+        "description": "Use this operation to retrieve the fields in the client benefit workflow grid. Depending on the input, this method can return data for workflows with specific start dates at the client level and/or the system level.<br/><br/><strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>This operation is used to retrieve client work flow grid data from PrismHR for use by external programs To use this API, provide a client ID(optional) and desired oe start/end date range(optional). This will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data object may be retrieved.<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p style=\"height:250px;overflow-y:auto;font-family: Anonymous Pro,Menlo,Consolas,Bitstream Vera Sans Mono,Courier New,monospace;background-color: #f0f0f0;color: #000;padding: 1px 3px;\">{<br/>&nbsp;&nbsp;\"data\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"clientWorkFlowGrid\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"clientId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"workflowEffDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"betWFId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"beWFDesc\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"windowLength\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeWFId\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeWFDesc\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"anytimeWFId\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"anytimeWFDesc\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeStartDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeEndDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"minOverlapDays\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"endEffDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"enableNotifications\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"systemWorkFlowGrid\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"workflowEffDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"betWFId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"beWFDesc\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"windowLength\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeWFId\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeWFDesc\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"anytimeWFId\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"anytimeWFDesc\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeStartDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"oeEndDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"minOverlapDays\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"endEffDate\": \"YYYY-MM-DD\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</p>",
         "operationId": "getBenefitWorkflowGrid_1",
         "parameters": [
           {
@@ -10296,7 +10296,7 @@
           "clientMaster"
         ],
         "summary": "Create new worksite location",
-        "description": "The operation creates a new worksite location. <br/><br/><strong>Note 1:</strong> Certain messages related to the creation or update of a worksite location may be returned in the updateClientResult.updateMessages array. These messages will have a corresponding errorType of either ERROR, WARNING, or ADDRESS_MISMATCH. The worksite location can be assumed created/updated unless \"errorCode\" is non-zero. <br/><br/><strong>Note 2:</strong> ClientMasterService.setClientLocationDetails support Symmetry geocodes and address lookup. This feature can be enabled by setting the useSymmetry flag in the input object to true. If the street address provided in the input does not match the address obtained from Symmetry, the following object will be returned in the updateClientResult.updateMessages array:<br/><p>[Embedded payload example removed in this hiring derivative. Generate your own fixtures from the schemas.]</p>The worksite location may be updated to use the Symmetry address by calling ClientMasterService.setClientLocationDetails with the address provided.",
+        "description": "The operation creates a new worksite location. <br/><br/><strong>Note 1:</strong> Certain messages related to the creation or update of a worksite location may be returned in the updateClientResult.updateMessages array. These messages will have a corresponding errorType of either ERROR, WARNING, or ADDRESS_MISMATCH. The worksite location can be assumed created/updated unless \"errorCode\" is non-zero. <br/><br/><strong>Note 2:</strong> ClientMasterService.setClientLocationDetails support Symmetry geocodes and address lookup. This feature can be enabled by setting the useSymmetry flag in the input object to true. If the street address provided in the input does not match the address obtained from Symmetry, the following object will be returned in the updateClientResult.updateMessages array:<br/><p style=\"max-height:250px;overflow-y:auto;font-family: Anonymous Pro,Menlo,Consolas,Bitstream Vera Sans Mono,Courier New,monospace;background-color: #f0f0f0;color: #000;padding: 1px 3px;\">{<br/>&nbsp;&nbsp;\"errorType\": \"ADDRESS_MISMATCH\",<br/>&nbsp;&nbsp;\"errorString\": \"123 Fake St Apt 123\"<br/>}<br/></p>The worksite location may be updated to use the Symmetry address by calling ClientMasterService.setClientLocationDetails with the address provided.",
         "operationId": "setClientLocationDetails_1",
         "requestBody": {
           "description": "new worksite location to be created",
@@ -20448,7 +20448,7 @@
           "generalLedger"
         ],
         "summary": "get PEO client accounting data",
-        "description": "<strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>This operation is used to retrieve PEO client accounting data from PrismHR for use by external programs. To use this API, provide a client ID and <strong>either a pay date or post date range (you cannot use both filters). To retrieve all data on or before a specific date, enter an end date and leave the start date empty. To retrieve all data  on or after a specific date, enter a start date and leave the end date empty.</strong><br/><br/> This <strong>API</strong> will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data object may be retrieved.<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p>[Embedded payload example removed in this hiring derivative. Generate your own fixtures from the schemas.]</p>",
+        "description": "<strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>This operation is used to retrieve PEO client accounting data from PrismHR for use by external programs. To use this API, provide a client ID and <strong>either a pay date or post date range (you cannot use both filters). To retrieve all data on or before a specific date, enter an end date and leave the start date empty. To retrieve all data  on or after a specific date, enter a start date and leave the end date empty.</strong><br/><br/> This <strong>API</strong> will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data object may be retrieved.<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p style=\"height:250px;overflow-y:auto;font-family: Anonymous Pro,Menlo,Consolas,Bitstream Vera Sans Mono,Courier New,monospace;background-color: #f0f0f0;color: #000;padding: 1px 3px;\">{<br/>&nbsp;&nbsp;\"clientId\": \"string\",<br/>&nbsp;&nbsp;\"startDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;\"endDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;\"data\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"batchId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"onlineVoucherNo\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"annotation\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"period\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"consolidated\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"consolJrnlId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"postFlag\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"batchJrnlIds\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"glDivision\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"dosFilename\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"postDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"postTime\": \"HH:MM:SS\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"editDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"editUserId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"periodEndDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"detailAnnotation\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"sumDebitAmt\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"sumCreditAmt\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"glInfo\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"glAccountNumber\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"debitAmount\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"creditAmount\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"hoursWorked\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"hoursUnitsPaid\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"id\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"clientId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"journalId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"invoiceNo\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</p>",
         "operationId": "getClientGLData_2",
         "parameters": [
           {
@@ -21454,7 +21454,7 @@
           "humanResources"
         ],
         "summary": "Get onboarding tasks",
-        "description": "Use this operation to download a JSON object summary of onboarding tasks for clients. <br/><br/>You can also filter the results by clientList (comma separated client ids), task, or fromDate. <br/><br/><strong>Note 1:</strong> For information about properly using this operation to keep third-party application data synchronized, please see the getData Best Practices documentation.<br/><br/><strong>Note 2:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong>  of 'DONE', retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>To use this API, provide a valid session token and any desired filter criteria. This will initialize the data retrieval and the API will respond with 'buildStatus': 'INIT'. Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either 'buildStatus': 'BUILD', 'buildStatus': 'ERROR', or 'buildStatus': 'DONE'. If buildStatus is DONE, then 'dataObject' will contain the URL where the compiled JSON data object may be retrieved. <br/><br/>If there are client restrictions on the web service user, at least one clientId must be passed in the clientList field. Up to 10 client IDs may be passed at a time, separated by commas. If no clientList is entered and no client restrictions exist for the web service user, only data from active clients will be returned. <br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p>[Embedded payload example removed in this hiring derivative. Generate your own fixtures from the schemas.]</p>",
+        "description": "Use this operation to download a JSON object summary of onboarding tasks for clients. <br/><br/>You can also filter the results by clientList (comma separated client ids), task, or fromDate. <br/><br/><strong>Note 1:</strong> For information about properly using this operation to keep third-party application data synchronized, please see the getData Best Practices documentation.<br/><br/><strong>Note 2:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong>  of 'DONE', retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>To use this API, provide a valid session token and any desired filter criteria. This will initialize the data retrieval and the API will respond with 'buildStatus': 'INIT'. Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either 'buildStatus': 'BUILD', 'buildStatus': 'ERROR', or 'buildStatus': 'DONE'. If buildStatus is DONE, then 'dataObject' will contain the URL where the compiled JSON data object may be retrieved. <br/><br/>If there are client restrictions on the web service user, at least one clientId must be passed in the clientList field. Up to 10 client IDs may be passed at a time, separated by commas. If no clientList is entered and no client restrictions exist for the web service user, only data from active clients will be returned. <br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p style=\"height:250px;overflow-y:auto;font-family: Anonymous Pro,Menlo,Consolas,Bitstream Vera Sans Mono,Courier New,monospace;background-color: #f0f0f0;color: #000;padding: 1px 3px;\">{<br/>&nbsp;&nbsp;\"clientId\": \"string\",<br/>&nbsp;&nbsp;\"task\": \"string\",<br/>&nbsp;&nbsp;\"prehireId\": \"string\",<br/>&nbsp;&nbsp;\"newHireName\": \"string\",<br/>&nbsp;&nbsp;\"performer\": \"string\",<br/>&nbsp;&nbsp;\"dueDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;\"submitDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;\"workflowDueDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;\"workflowCompleteDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;\"status\": \"string\",<br/>&nbsp;&nbsp;\"forms\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"formId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"formName\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"formDueDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"formCompleteDate\": \"YYYY-MM-DD\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</p>",
         "operationId": "getOnboardTasks_1",
         "parameters": [
           {
@@ -25999,7 +25999,7 @@
           "payroll"
         ],
         "summary": "Get retirement adj voucher-list by date ",
-        "description": "Use this operation to retrieve retirement adjustment voucher id’s by adjustment (pay date) or process date.<br/><br/>This will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the data can be retrieved.\n<br/><br/><strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.\n<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p>[Embedded payload example removed in this hiring derivative. Generate your own fixtures from the schemas.]</p>",
+        "description": "Use this operation to retrieve retirement adjustment voucher id’s by adjustment (pay date) or process date.<br/><br/>This will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the data can be retrieved.\n<br/><br/><strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.\n<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p style=\"height:250px;overflow-y:auto;font-family: Anonymous Pro,Menlo,Consolas,Bitstream Vera Sans Mono,Courier New,monospace;background-color: #f0f0f0;color: #000;padding: 1px 3px;\">{<br/>&nbsp;&nbsp;\"data\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"retirementAdjVoucherLists\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"employeeId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"voucherId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"processDate\": \"MM/DD/YYYY\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"adjustmentDate\": \"MM/DD/YYYY\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</p>",
         "operationId": "getRetirementAdjVoucherListByDate_1",
         "parameters": [
           {
@@ -26392,7 +26392,7 @@
           "payroll"
         ],
         "summary": "Pay Group Schedule Report",
-        "description": "This operation retrieves pay schedule information for a specified client, pay group, and date range.\n\nCalling the endpoint will initialize the data retrieval process, and the endpoint will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data object may be retrieved.\n\nNote: Web Service Users cannot call multiple concurrent instances of this operation. Please wait until the first instance returns a buildStatus of \"DONE,\" retrieve your download link, and then, if necessary, invoke this operation again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the downloadId provided before initiating a new instance.\n\n[Embedded JSON structure rendering omitted in this hiring derivative. See the formal schemas and recorded source provenance.]",
+        "description": "This operation retrieves pay schedule information for a specified client, pay group, and date range.\n\nCalling the endpoint will initialize the data retrieval process, and the endpoint will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data object may be retrieved.\n\nNote: Web Service Users cannot call multiple concurrent instances of this operation. Please wait until the first instance returns a buildStatus of \"DONE,\" retrieve your download link, and then, if necessary, invoke this operation again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the downloadId provided before initiating a new instance.\n\nThe JSON object obtained at the URL in dataObject will have the following structure:\n\n{\n\n“payScheduleData”:\n\n{\n\n“payGroup”: “string”,\n\n“payDateStart”: “string”,\n\n“payDateEnd”: “string”,\n\n“payScheduleDetails”:[\n\n  {\n\n    “payDate”: “string”,\n\n    “payDay”: “string,\n\n   “periodStart”: “string”,\n\n  “periodEnd”: “string”,\n\n   “period”: “string”,\n\n  “remoteCutoffDate”: “string”,\n\n  “batchNumber”: “string”,\n\n  “deliveryDate”: “string”,\n\n  “shipDate”: “string”\n\n}\n\n]\n\n}\n\n}",
         "operationId": "payGroupScheduleReport_1",
         "parameters": [
           {
@@ -29744,7 +29744,7 @@
           "system"
         ],
         "summary": "Generate an AR transaction report",
-        "description": "Use this operation to generate an AR transaction report.\n<br/><br/>This will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the data can be retrieved.\n<br/><br/><strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.\n<br/><br/><strong>Note:</strong> To use this endpoint, it must be listed in the Allowed Methods table of the web service user. Otherwise, it returns HTTP response code 403. If client restrictions are applied to the web service user, you must pass a client id to use this endpoint.\n<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p>[Embedded payload example removed in this hiring derivative. Generate your own fixtures from the schemas.]</p>",
+        "description": "Use this operation to generate an AR transaction report.\n<br/><br/>This will initialize the data retrieval and will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the data can be retrieved.\n<br/><br/><strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.\n<br/><br/><strong>Note:</strong> To use this endpoint, it must be listed in the Allowed Methods table of the web service user. Otherwise, it returns HTTP response code 403. If client restrictions are applied to the web service user, you must pass a client id to use this endpoint.\n<br/><br/>The JSON object obtained at the URL in dataObject will have the following structure:<br/><br/><p style=\"height:250px;overflow-y:auto;font-family: Anonymous Pro,Menlo,Consolas,Bitstream Vera Sans Mono,Courier New,monospace;background-color: #f0f0f0;color: #000;padding: 1px 3px;\">{<br/>&nbsp;&nbsp;\"data\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"reportHeader\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"customerGroup\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"arAccountNo\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"customerName\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"client\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"employerId\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"invoice\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"invoiceDate\": \"MM/DD/YYYY\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"invoiceTot\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payDate\": \"MM/DD/YYYY\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payType\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"receiptAccount\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payRef\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payAmounts\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"openingBalance\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"arTransDetails\": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payDate\": \"MM/DD/YYYY\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payType\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"receiptAccount\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payRef\": \"string\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"payAmounts\": \"string\"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</p>",
         "operationId": "getARTransactionReport_1",
         "parameters": [
           {
@@ -30597,7 +30597,7 @@
           "system"
         ],
         "summary": "Unbilled Benefit Adjustments information",
-        "description": "<strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>Use this operation to return benefit adjustments that have not yet been billed. You can also filter the response by adjustment period, employee status class, and client termination status.<br/><br/>Call this operation with any desired filter criteria. This will initialize the data retrieval and the API will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data may be retrieved.<br/><br/><strong>Note:</strong> To use this endpoint, it must be listed in the Allowed Methods table of the web service user. Otherwise, it returns HTTP response code 403. The Disable Method Restrictions setting is ignored. <br/><br/><strong>Note:</strong> This operation respects any client access security settings configured on the Web Service Users form. By default, the download only includes data from clients that meet these criteria. All other client data is excluded. <br/><br/>The response data consists of one or more <tt>unbilledBenefitAdjustments</tt> objects, each containing an employeeId, a clientId, and one or more <tt>benefitAdjustments</tt> objects. [Inline JSON rendering omitted in this hiring derivative. Generate your own fixtures from the schemas.]",
+        "description": "<strong>Note:</strong> Web Service Users cannot call multiple concurrent instances of this method. Please wait until the first instance returns a <strong>buildStatus</strong> of \"DONE,\" retrieve your download link, and then, if necessary, invoke this method again. If you try to call a second instance before the first one completes, the system will return HTTP response code 429 and you must complete the previous instance using the <strong>downloadId</strong> provided before initiating a new instance.<br/><br/>Use this operation to return benefit adjustments that have not yet been billed. You can also filter the response by adjustment period, employee status class, and client termination status.<br/><br/>Call this operation with any desired filter criteria. This will initialize the data retrieval and the API will respond with \"buildStatus\": \"INIT\". Subsequent calls to this API should be formatted exactly as the initial call, with the addition of the downloadId returned by the initial call. They will return either \"buildStatus\": \"BUILD\", \"buildStatus\": \"ERROR\", or \"buildStatus\": \"DONE\". If buildStatus is DONE, then \"dataObject\" will contain the URL where the compiled JSON data may be retrieved.<br/><br/><strong>Note:</strong> To use this endpoint, it must be listed in the Allowed Methods table of the web service user. Otherwise, it returns HTTP response code 403. The Disable Method Restrictions setting is ignored. <br/><br/><strong>Note:</strong> This operation respects any client access security settings configured on the Web Service Users form. By default, the download only includes data from clients that meet these criteria. All other client data is excluded. <br/><br/>The response data consists of one or more <tt>unbilledBenefitAdjustments</tt> objects, each containing an employeeId, a clientId, and one or more <tt>benefitAdjustments</tt> objects. Below is the complete structure of the JSON data, with descriptions:<br/><br/>{ \"unbilledBenefitAdjustments\": [{ \"employeeId\": employee identifier, \"clientId\": client identifier, \"benefitAdjustments\": [ {\"benefitPlan\": benefit plan associated with the adjustment, \"period\": benefit plan period in YYYYMM format, \"billAmount\": amount to bill the client, per pay cycle, for this adjustment, \"eeContribution\": amount to deduct from the employee pay check per cycle, \"cycles\": number of future payroll cycles where this adjustment will be applied, \"startDate\": start date of the period when this deduction takes effect (in YYYY-MM-DD format), \"insuranceCost\": the premium cost associated with this adjustment,\"refNumber\": adjustment reference number, \"cyclesBilled\": number of cycles billed so far, \"netInvEffect\": net amount billed (billAmount minus eeContribution), \"brAdjAmount\": the benefits reconciliation adjustment to apply during the benefits reconciliation process, \"retroEnroll\": whether the adjustment applies to a retroactive enrollment, \"comment\": descriptive comments about this adjustment, \"checksum\": checksum value to use for data updates } ] } ] } ",
         "operationId": "getUnbilledBenefitAdjustments_1",
         "parameters": [
           {
@@ -32474,7 +32474,8 @@
         "properties": {
           "meetEduReq": {
             "type": "boolean",
-            "description": "'true' if the applicant meets educational requirements, otherwise 'false'"
+            "description": "'true' if the applicant meets educational requirements, otherwise 'false'",
+            "example": false
           },
           "meetEduReqNote": {
             "type": "array",
@@ -32489,7 +32490,8 @@
           },
           "meetTrainReq": {
             "type": "boolean",
-            "description": "'true' if the applicant meets training requirements, otherwise 'false'"
+            "description": "'true' if the applicant meets training requirements, otherwise 'false'",
+            "example": false
           },
           "meetTrainReqNote": {
             "type": "array",
@@ -32504,7 +32506,8 @@
           },
           "meetExperienceReq": {
             "type": "boolean",
-            "description": "'true' if the applicant meets experience requirements, otherwise 'false'"
+            "description": "'true' if the applicant meets experience requirements, otherwise 'false'",
+            "example": false
           },
           "meetExperienceReqNote": {
             "type": "array",
@@ -32577,7 +32580,8 @@
           },
           "eduGraduated": {
             "type": "boolean",
-            "description": "'true' if the applicant graduated, otherwise 'false'"
+            "description": "'true' if the applicant graduated, otherwise 'false'",
+            "example": false
           },
           "eduYearGraduated": {
             "type": "string",
@@ -32668,7 +32672,8 @@
           },
           "employerSupOk": {
             "type": "boolean",
-            "description": "'true' if the supervisor can be contacted, otherwise 'false'"
+            "description": "'true' if the supervisor can be contacted, otherwise 'false'",
+            "example": false
           },
           "employerSalaryStart": {
             "type": "string",
@@ -32846,7 +32851,8 @@
           },
           "adaDisabled": {
             "type": "boolean",
-            "description": "'true' if the applicant is qualified as disabled according to ADA, otherwise 'false'"
+            "description": "'true' if the applicant is qualified as disabled according to ADA, otherwise 'false'",
+            "example": false
           },
           "comments": {
             "type": "string",
@@ -32938,19 +32944,23 @@
           },
           "over18": {
             "type": "boolean",
-            "description": "over 18 years old"
+            "description": "over 18 years old",
+            "example": false
           },
           "usaWorkElig": {
             "type": "boolean",
-            "description": "eligible to work in the USA"
+            "description": "eligible to work in the USA",
+            "example": false
           },
           "employed": {
             "type": "boolean",
-            "description": "currently employed"
+            "description": "currently employed",
+            "example": false
           },
           "previouslyWorked": {
             "type": "boolean",
-            "description": "whether applicant previously worked for employer"
+            "description": "whether applicant previously worked for employer",
+            "example": false
           },
           "priorDateFrom": {
             "type": "string",
@@ -32966,7 +32976,8 @@
           },
           "crime": {
             "type": "boolean",
-            "description": "whether the applicant has criminal history"
+            "description": "whether the applicant has criminal history",
+            "example": false
           },
           "militaryBranch": {
             "type": "string",
@@ -32998,7 +33009,8 @@
           },
           "copyToApplicant": {
             "type": "boolean",
-            "description": "copy to applicant"
+            "description": "copy to applicant",
+            "example": false
           },
           "fadvOrderStatus": {
             "type": "string",
@@ -33014,7 +33026,8 @@
           },
           "rehireOk": {
             "type": "boolean",
-            "description": "whether rehire is approved for this applicant"
+            "description": "whether rehire is approved for this applicant",
+            "example": false
           },
           "takeonStatus": {
             "type": "string",
@@ -33380,7 +33393,8 @@
           },
           "adaDisabled": {
             "type": "boolean",
-            "description": "'true' if the applicant is qualified as disabled according to ADA, otherwise 'false'"
+            "description": "'true' if the applicant is qualified as disabled according to ADA, otherwise 'false'",
+            "example": false
           },
           "comments": {
             "type": "string",
@@ -33472,19 +33486,23 @@
           },
           "over18": {
             "type": "boolean",
-            "description": "over 18 years old"
+            "description": "over 18 years old",
+            "example": false
           },
           "usaWorkElig": {
             "type": "boolean",
-            "description": "eligible to work in the USA"
+            "description": "eligible to work in the USA",
+            "example": false
           },
           "employed": {
             "type": "boolean",
-            "description": "currently employed"
+            "description": "currently employed",
+            "example": false
           },
           "previouslyWorked": {
             "type": "boolean",
-            "description": "whether applicant previously worked for employer"
+            "description": "whether applicant previously worked for employer",
+            "example": false
           },
           "priorDateFrom": {
             "type": "string",
@@ -33500,7 +33518,8 @@
           },
           "crime": {
             "type": "boolean",
-            "description": "whether the applicant has criminal history"
+            "description": "whether the applicant has criminal history",
+            "example": false
           },
           "militaryBranch": {
             "type": "string",
@@ -33532,7 +33551,8 @@
           },
           "copyToApplicant": {
             "type": "boolean",
-            "description": "copy to applicant"
+            "description": "copy to applicant",
+            "example": false
           },
           "fadvOrderStatus": {
             "type": "string",
@@ -33548,7 +33568,8 @@
           },
           "rehireOk": {
             "type": "boolean",
-            "description": "whether rehire is approved for this applicant"
+            "description": "whether rehire is approved for this applicant",
+            "example": false
           },
           "takeonStatus": {
             "type": "string",
@@ -33972,7 +33993,8 @@
           },
           "retroEnroll": {
             "type": "boolean",
-            "description": "whether the adjustment applies to a retroactive enrollment"
+            "description": "whether the adjustment applies to a retroactive enrollment",
+            "example": false
           },
           "comment": {
             "type": "string",
@@ -34376,7 +34398,8 @@
           },
           "updatedCarrier": {
             "type": "boolean",
-            "description": "indicates whether the insurance carrier has been notified of any coverage changes"
+            "description": "indicates whether the insurance carrier has been notified of any coverage changes",
+            "example": false
           },
           "giPendEE": {
             "type": "string"
@@ -34402,7 +34425,8 @@
             }
           },
           "cobraMode": {
-            "type": "boolean"
+            "type": "boolean",
+            "example": false
           }
         }
       },
@@ -34434,7 +34458,8 @@
           },
           "seenByDoctor": {
             "type": "boolean",
-            "description": "indicates whether the dependent has been seen by the doctor"
+            "description": "indicates whether the dependent has been seen by the doctor",
+            "example": false
           },
           "coverageStart": {
             "type": "string",
@@ -34652,7 +34677,8 @@
           },
           "classifySafeHarborMatch": {
             "type": "boolean",
-            "description": "whether this rule is a Safe Harbor Match (Type 1)."
+            "description": "whether this rule is a Safe Harbor Match (Type 1).",
+            "example": false
           },
           "maxMatchingContributionPerWeek": {
             "type": "number",
@@ -34660,7 +34686,8 @@
           },
           "calcSH2NEMatchInAddition": {
             "type": "boolean",
-            "description": "whether to calculate the Safe Harbor 2 Non-Elective Match. If false, the employer matching contribution is used."
+            "description": "whether to calculate the Safe Harbor 2 Non-Elective Match. If false, the employer matching contribution is used.",
+            "example": false
           },
           "nonElectiveRate": {
             "type": "number",
@@ -34668,7 +34695,8 @@
           },
           "calculatePeoMatch": {
             "type": "boolean",
-            "description": "whether to calculate an additional employer matching contribution, funded by the PEO."
+            "description": "whether to calculate an additional employer matching contribution, funded by the PEO.",
+            "example": false
           },
           "vestingCode": {
             "type": "string",
@@ -34680,11 +34708,13 @@
           },
           "suppressMatchPrintOnCheck": {
             "type": "boolean",
-            "description": "whether to prevent the retirement match from printing on pay stubs."
+            "description": "whether to prevent the retirement match from printing on pay stubs.",
+            "example": false
           },
           "excludeCatchUpContribFromMatchCalculation": {
             "type": "boolean",
-            "description": "whether to exclude employees' catch-up contributions when the system calculates the matching contribution."
+            "description": "whether to exclude employees' catch-up contributions when the system calculates the matching contribution.",
+            "example": false
           },
           "layeredMatchRule": {
             "type": "array",
@@ -36293,15 +36323,18 @@
           },
           "takeOnExemptFromMin": {
             "type": "boolean",
-            "description": "if true, imported employees are exempted from the minimum service requirement"
+            "description": "if true, imported employees are exempted from the minimum service requirement",
+            "example": false
           },
           "scorp": {
             "type": "boolean",
-            "description": " if true, the client-paid portion of the benefit is only treated as a fringe benefit for S-Corp Principal employees; note that affected employees must have the client-paid portion assigned to a defined fringe benefit pay code"
+            "description": " if true, the client-paid portion of the benefit is only treated as a fringe benefit for S-Corp Principal employees; note that affected employees must have the client-paid portion assigned to a defined fringe benefit pay code",
+            "example": false
           },
           "autoEscalator": {
             "type": "boolean",
-            "description": "if true, retirement plan contributions will automatically escalate by 1 percent each year until reaching the autoEscalatorMax value; to use this field, autoEnrollment must be true"
+            "description": "if true, retirement plan contributions will automatically escalate by 1 percent each year until reaching the autoEscalatorMax value; to use this field, autoEnrollment must be true",
+            "example": false
           },
           "autoEscalatorMax": {
             "type": "string",
@@ -36317,7 +36350,8 @@
           },
           "displayEmployerAmtOnlineEnrollment": {
             "type": "boolean",
-            "description": "whether to display the employer contribution amount during benefit enrollments, allowing employees to view the amount their employer contributes to the plan.The default value will be true"
+            "description": "whether to display the employer contribution amount during benefit enrollments, allowing employees to view the amount their employer contributes to the plan.The default value will be true",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -36874,7 +36908,8 @@
           },
           "tobaccoUser": {
             "type": "boolean",
-            "description": "indicates whether the dependent uses tobacco products"
+            "description": "indicates whether the dependent uses tobacco products",
+            "example": false
           },
           "relation": {
             "type": "string",
@@ -36914,7 +36949,8 @@
           },
           "fullTimeStudent": {
             "type": "boolean",
-            "description": "indicates whether the dependent is a full-time student"
+            "description": "indicates whether the dependent is a full-time student",
+            "example": false
           },
           "ftStudentCertDate": {
             "type": "string",
@@ -36952,11 +36988,13 @@
           },
           "reportedToCarrier": {
             "type": "boolean",
-            "description": "indicates whether the dependent's coverage has been reported to the insurance carrier"
+            "description": "indicates whether the dependent's coverage has been reported to the insurance carrier",
+            "example": false
           },
           "seenByDoctor": {
             "type": "boolean",
-            "description": "indicates whether the dependent has been seen by the doctor"
+            "description": "indicates whether the dependent has been seen by the doctor",
+            "example": false
           },
           "country": {
             "type": "string",
@@ -36973,11 +37011,13 @@
           },
           "beneficiaryIsATrust": {
             "type": "boolean",
-            "description": "indicates whether the beneficiary is a trust"
+            "description": "indicates whether the beneficiary is a trust",
+            "example": false
           },
           "isDisabled": {
             "type": "boolean",
-            "description": "indicates whether the dependent has a disability"
+            "description": "indicates whether the dependent has a disability",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -36985,7 +37025,8 @@
           },
           "ssnAppliedFor": {
             "type": "boolean",
-            "description": "indicates whether the dependent requires a Social Security Number: if 'N' (default), the ssn field contains a valid social security number; if 'Y', ssn is not required and if a value is passed for ssn in this case, the system automatically changes this field to 'N'."
+            "description": "indicates whether the dependent requires a Social Security Number: if 'N' (default), the ssn field contains a valid social security number; if 'Y', ssn is not required and if a value is passed for ssn in this case, the system automatically changes this field to 'N'.",
+            "example": false
           },
           "relationshipCodeType": {
             "type": "string",
@@ -37781,7 +37822,8 @@
           },
           "carryForwardFlag": {
             "type": "boolean",
-            "description": "indicates whether the funded balance for the account can be carried forward into the next year; if it is of 'Y' (Yes) or 'A' (Automatically carry forward on first payroll of the year) it will be true else false"
+            "description": "indicates whether the funded balance for the account can be carried forward into the next year; if it is of 'Y' (Yes) or 'A' (Automatically carry forward on first payroll of the year) it will be true else false",
+            "example": false
           },
           "fundedBalance": {
             "type": "string",
@@ -37847,7 +37889,8 @@
           },
           "hdhpNotRequired": {
             "type": "boolean",
-            "description": "whether the employee has a Health Savings Account (HSA) but is not enrolled in a High Deductible Health Plan (HDHP). Usually, HDHP enrollment is a requirement"
+            "description": "whether the employee has a Health Savings Account (HSA) but is not enrolled in a High Deductible Health Plan (HDHP). Usually, HDHP enrollment is a requirement",
+            "example": false
           },
           "peoMatchOverride": {
             "type": "string",
@@ -37855,7 +37898,8 @@
           },
           "suppressContributionLimits": {
             "type": "boolean",
-            "description": "Whether to ignore the HSA Maximum Annual Contributions when calculating deductions for this employee"
+            "description": "Whether to ignore the HSA Maximum Annual Contributions when calculating deductions for this employee",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -38238,11 +38282,13 @@
           },
           "disallowEEContrib": {
             "type": "boolean",
-            "description": "if true, selected Group Benefit Plan does not allow employee contribution and is client paid only. So when Benefit Rules are set for this Group Benefit Plan, this flag tells the client to not enter Employee Contributions for this Group Benefit Plan, else it will return an error"
+            "description": "if true, selected Group Benefit Plan does not allow employee contribution and is client paid only. So when Benefit Rules are set for this Group Benefit Plan, this flag tells the client to not enter Employee Contributions for this Group Benefit Plan, else it will return an error",
+            "example": false
           },
           "allowGrossWagePercentContrib": {
             "type": "boolean",
-            "description": "if true then the Percentage of Gross Wages is set as the employee contribution towards a medical plan (employee premium only)"
+            "description": "if true then the Percentage of Gross Wages is set as the employee contribution towards a medical plan (employee premium only)",
+            "example": false
           },
           "grossWageEffDate": {
             "type": "array",
@@ -38585,7 +38631,8 @@
           },
           "stateDependentOverride": {
             "type": "boolean",
-            "description": " if true, state level override(s) for Dependent Age Limits on the Group Benefit Plan setup exists"
+            "description": " if true, state level override(s) for Dependent Age Limits on the Group Benefit Plan setup exists",
+            "example": false
           },
           "coverageEndsOn": {
             "type": "string",
@@ -38593,7 +38640,8 @@
           },
           "useBillingWashRule": {
             "type": "boolean",
-            "description": "if true, billing wash rule is enabled at the global level for the selected group benefit plan unless there is an override set for the client on the Benefit Plan Setup form"
+            "description": "if true, billing wash rule is enabled at the global level for the selected group benefit plan unless there is an override set for the client on the Benefit Plan Setup form",
+            "example": false
           },
           "washRuleDate": {
             "type": "string",
@@ -40047,7 +40095,8 @@
         "properties": {
           "enableInEP": {
             "type": "boolean",
-            "description": "allows employees to request paid time off for this absence code in Employee Portal"
+            "description": "allows employees to request paid time off for this absence code in Employee Portal",
+            "example": false
           },
           "minHours": {
             "type": "number",
@@ -40063,7 +40112,8 @@
           },
           "enableIfNegativeBalance": {
             "type": "boolean",
-            "description": "submit leave request when you currently have a negative balance"
+            "description": "submit leave request when you currently have a negative balance",
+            "example": false
           },
           "maxNegHours": {
             "type": "number",
@@ -40083,11 +40133,13 @@
           },
           "suppressNotifications": {
             "type": "boolean",
-            "description": "whether to suppress email notifications for leave request approvals"
+            "description": "whether to suppress email notifications for leave request approvals",
+            "example": false
           },
           "autoAcceptOnTimeSheet": {
             "type": "boolean",
-            "description": "whether the system will automatically accept leave request hours on the time sheet after the manager approves them, so the payroll processor is not required to accept the hours. To avoid workflow issues, PrismHR recommends activating this feature on all PTO absence codes if you intend to use it. See the Paid Time Off Guide for details"
+            "description": "whether the system will automatically accept leave request hours on the time sheet after the manager approves them, so the payroll processor is not required to accept the hours. To avoid workflow issues, PrismHR recommends activating this feature on all PTO absence codes if you intend to use it. See the Paid Time Off Guide for details",
+            "example": false
           },
           "payMethodRule": {
             "type": "array",
@@ -40139,19 +40191,23 @@
           },
           "updatePtoRegister": {
             "type": "boolean",
-            "description": "use to indicate whether to post to employee PTO registers"
+            "description": "use to indicate whether to post to employee PTO registers",
+            "example": false
           },
           "fmlaLeave": {
             "type": "boolean",
-            "description": "use to indicate whether this absence is a Family Medical Leave Act  (FMLA) event"
+            "description": "use to indicate whether this absence is a Family Medical Leave Act  (FMLA) event",
+            "example": false
           },
           "globalPto": {
             "type": "boolean",
-            "description": "indicates that this absence code integrates with Global PTO features; if true, values can be set for combineStateLocal and the globalRegisterType assignment"
+            "description": "indicates that this absence code integrates with Global PTO features; if true, values can be set for combineStateLocal and the globalRegisterType assignment",
+            "example": false
           },
           "combineStateLocal": {
             "type": "boolean",
-            "description": "whether state and local PTO balances will be combined for this code (default: false)"
+            "description": "whether state and local PTO balances will be combined for this code (default: false)",
+            "example": false
           },
           "globalRegisterTypeList": {
             "type": "array",
@@ -40425,7 +40481,8 @@
           },
           "negCarryover": {
             "type": "boolean",
-            "description": "negative hours carried over from one year to the next"
+            "description": "negative hours carried over from one year to the next",
+            "example": false
           },
           "carryoverExpiration": {
             "type": "integer",
@@ -40445,7 +40502,8 @@
           },
           "accrueArrears": {
             "type": "boolean",
-            "description": "indicates if hours should accrue on arrearage vouchers"
+            "description": "indicates if hours should accrue on arrearage vouchers",
+            "example": false
           },
           "addBalFirstAccrual": {
             "type": "number",
@@ -40470,7 +40528,8 @@
           },
           "stopInitIfExceedLimit": {
             "type": "boolean",
-            "description": "indicates if the system should stop the calculation/initialization step of the time sheet process when one or more employees exceed the Max Use Limit per Register Year"
+            "description": "indicates if the system should stop the calculation/initialization step of the time sheet process when one or more employees exceed the Max Use Limit per Register Year",
+            "example": false
           },
           "flatAmount": {
             "$ref": "#/components/schemas/FlatAmount"
@@ -40576,7 +40635,8 @@
           },
           "applyCurrentHrs": {
             "type": "boolean",
-            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used"
+            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used",
+            "example": false
           },
           "firstYrProratedAmt": {
             "type": "array",
@@ -40616,15 +40676,18 @@
           },
           "useFractions": {
             "type": "boolean",
-            "description": "indicate whether the system should accrue a fraction of PTO hours if the actual hours worked are not an even multiple of the hours worked. Valid values are yes or no"
+            "description": "indicate whether the system should accrue a fraction of PTO hours if the actual hours worked are not an even multiple of the hours worked. Valid values are yes or no",
+            "example": false
           },
           "applyCurrentBeforeStopLimits": {
             "type": "boolean",
-            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system ignores the hours used"
+            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system ignores the hours used",
+            "example": false
           },
           "applyCarryOverTowardMaxPerYear": {
             "type": "boolean",
-            "description": " if true, employees who work at qualified Colorado and Maine employers can carry over their accrued leave hours; employees stop accruing when the sum of carryover and accrued hours reaches the maxAccruedPerYr value"
+            "description": " if true, employees who work at qualified Colorado and Maine employers can carry over their accrued leave hours; employees stop accruing when the sum of carryover and accrued hours reaches the maxAccruedPerYr value",
+            "example": false
           }
         }
       },
@@ -40646,11 +40709,13 @@
           },
           "applyCurrentHrs": {
             "type": "boolean",
-            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used"
+            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used",
+            "example": false
           },
           "enforceYrMaxByPayPeriod": {
             "type": "boolean",
-            "description": "enforce the yearly maximum for this type of accrual on a pay period basis (yearly max divided by pay periods per year). If not specified, the system ignores the yearly maximum"
+            "description": "enforce the yearly maximum for this type of accrual on a pay period basis (yearly max divided by pay periods per year). If not specified, the system ignores the yearly maximum",
+            "example": false
           }
         }
       },
@@ -40672,11 +40737,13 @@
           },
           "applyCurrentHrs": {
             "type": "boolean",
-            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used"
+            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used",
+            "example": false
           },
           "enforceYrMaxByPayPeriod": {
             "type": "boolean",
-            "description": "enforce the yearly maximum for this type of accrual on a pay period basis (yearly max divided by pay periods per year). If not specifed, the system enforces the yearly maximum but not at the pay period level"
+            "description": "enforce the yearly maximum for this type of accrual on a pay period basis (yearly max divided by pay periods per year). If not specifed, the system enforces the yearly maximum but not at the pay period level",
+            "example": false
           }
         }
       },
@@ -40709,7 +40776,8 @@
           },
           "applyCurrentHrs": {
             "type": "boolean",
-            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used"
+            "description": "subtract the hours used before applying a stop-balance limit. If not specified, the system disregards the hours already used",
+            "example": false
           }
         }
       },
@@ -40999,7 +41067,8 @@
           },
           "printOnCheck": {
             "type": "boolean",
-            "description": "indicates if balances for this register type should print on employees’ payroll check stubs"
+            "description": "indicates if balances for this register type should print on employees’ payroll check stubs",
+            "example": false
           },
           "payStubName": {
             "type": "string",
@@ -41007,19 +41076,23 @@
           },
           "inactiveRegister": {
             "type": "boolean",
-            "description": "indicates that this register type is no longer used.The system will not calculate accruals or update existing employee registers."
+            "description": "indicates that this register type is no longer used.The system will not calculate accruals or update existing employee registers.",
+            "example": false
           },
           "paidAbsence": {
             "type": "boolean",
-            "description": "indicates that this PTO register is for tracking absences."
+            "description": "indicates that this PTO register is for tracking absences.",
+            "example": false
           },
           "autoEnrollBeforeStart": {
             "type": "boolean",
-            "description": "forces the accrued through date to be the day before the start date when auto-enrolling employees in plans for this register type."
+            "description": "forces the accrued through date to be the day before the start date when auto-enrolling employees in plans for this register type.",
+            "example": false
           },
           "warnMoreHoursThanAvail": {
             "type": "boolean",
-            "description": "indicates if a warning should display during payroll initialization if an employee uses more hours than currently available."
+            "description": "indicates if a warning should display during payroll initialization if an employee uses more hours than currently available.",
+            "example": false
           },
           "absenceCode": {
             "type": "string",
@@ -41493,11 +41566,13 @@
           },
           "keyEmployee": {
             "type": "boolean",
-            "description": "indicates whether the employee is considered to be a key employee for the purpose of discrimination testing and reporting"
+            "description": "indicates whether the employee is considered to be a key employee for the purpose of discrimination testing and reporting",
+            "example": false
           },
           "highlyCompensated": {
             "type": "boolean",
-            "description": "indicates whether the employee is considered to be highly compensated for the purpose of discrimination testing and reporting"
+            "description": "indicates whether the employee is considered to be highly compensated for the purpose of discrimination testing and reporting",
+            "example": false
           },
           "catchupPercent": {
             "type": "string",
@@ -41921,7 +41996,8 @@
           },
           "updateOfferOfCoverage": {
             "type": "boolean",
-            "description": "If true, you can update the value for acaOfferOfCoverage for a single offer of coverage at a time, rather than appending offer data in the grid. Please note: in this case you can only pass the data for the single offer to update; otherwise, the endpoint returns an error."
+            "description": "If true, you can update the value for acaOfferOfCoverage for a single offer of coverage at a time, rather than appending offer data in the grid. Please note: in this case you can only pass the data for the single offer to update; otherwise, the endpoint returns an error.",
+            "example": false
           },
           "acaEmployeeInformations": {
             "type": "array",
@@ -42636,7 +42712,8 @@
           },
           "allAccruals": {
             "type": "boolean",
-            "description": "whether to apply the action to all PTO registers associated with the employee. If false, specify the affected registers in the accruals object. If true, leave the accruals object empty."
+            "description": "whether to apply the action to all PTO registers associated with the employee. If false, specify the affected registers in the accruals object. If true, leave the accruals object empty.",
+            "example": false
           },
           "accruals": {
             "type": "array",
@@ -43093,11 +43170,13 @@
           },
           "keyEmployee": {
             "type": "boolean",
-            "description": "indicates whether the employee is considered to be a key employee for the purpose of 401(k) plan discrimination testing and reporting"
+            "description": "indicates whether the employee is considered to be a key employee for the purpose of 401(k) plan discrimination testing and reporting",
+            "example": false
           },
           "highlyCompensated": {
             "type": "boolean",
-            "description": "indicates whether the employee is considered to be highly compensated for the purpose of 401(k) plan discrimination testing and reporting"
+            "description": "indicates whether the employee is considered to be highly compensated for the purpose of 401(k) plan discrimination testing and reporting",
+            "example": false
           },
           "catchupPercent": {
             "type": "string",
@@ -43201,7 +43280,8 @@
           },
           "matchEligible": {
             "type": "boolean",
-            "description": "indicates whether the employee is eligible for matching under this plan"
+            "description": "indicates whether the employee is eligible for matching under this plan",
+            "example": false
           },
           "payCode": {
             "type": "array",
@@ -43221,7 +43301,8 @@
           },
           "useCalcMatchStartOnDate": {
             "type": "boolean",
-            "description": "whether or not to add the system-calculated matchStartsOn date to the employee's 401(k) enrollment record"
+            "description": "whether or not to add the system-calculated matchStartsOn date to the employee's 401(k) enrollment record",
+            "example": false
           },
           "status": {
             "type": "string",
@@ -43234,7 +43315,8 @@
           },
           "catchupStartAtLimit": {
             "type": "boolean",
-            "description": "indicates whether catch-up contribution should start only after the regular deferral limit has been reached"
+            "description": "indicates whether catch-up contribution should start only after the regular deferral limit has been reached",
+            "example": false
           },
           "extraElectiveAmt": {
             "type": "string",
@@ -43247,7 +43329,8 @@
           },
           "extraElectiveFICA": {
             "type": "boolean",
-            "description": "indicates whether to subtract FICA from additional elective or match amounts"
+            "description": "indicates whether to subtract FICA from additional elective or match amounts",
+            "example": false
           },
           "loanPaymentCycle": {
             "type": "string",
@@ -43286,7 +43369,8 @@
           },
           "flatOnSupplemental": {
             "type": "boolean",
-            "description": "flat amount on supplemental pay"
+            "description": "flat amount on supplemental pay",
+            "example": false
           },
           "includeOrExclude": {
             "type": "string",
@@ -43322,7 +43406,8 @@
           },
           "benefDesignationReceived": {
             "type": "boolean",
-            "description": "indicates whether client company received beneficiary designation for the retirement plan"
+            "description": "indicates whether client company received beneficiary designation for the retirement plan",
+            "example": false
           },
           "extraRothAmt": {
             "type": "string",
@@ -43563,79 +43648,98 @@
         "properties": {
           "department": {
             "type": "boolean",
-            "description": "whether to clone client departments"
+            "description": "whether to clone client departments",
+            "example": false
           },
           "position": {
             "type": "boolean",
-            "description": "whether to clone client positions"
+            "description": "whether to clone client positions",
+            "example": false
           },
           "ptoPlans": {
             "type": "boolean",
-            "description": "whether to clone client PTO plans"
+            "description": "whether to clone client PTO plans",
+            "example": false
           },
           "benefitGroups": {
             "type": "boolean",
-            "description": "whether to clone client benefit groups"
+            "description": "whether to clone client benefit groups",
+            "example": false
           },
           "billingRules": {
             "type": "boolean",
-            "description": "whether to clone client billing rules"
+            "description": "whether to clone client billing rules",
+            "example": false
           },
           "wcBillingModifiers": {
             "type": "boolean",
-            "description": "whether to clone Workers' Compensation billing modifiers"
+            "description": "whether to clone Workers' Compensation billing modifiers",
+            "example": false
           },
           "accounting": {
             "type": "boolean",
-            "description": "whether to clone client accounting setup"
+            "description": "whether to clone client accounting setup",
+            "example": false
           },
           "payGroups": {
             "type": "boolean",
-            "description": "whether to clone client pay groups"
+            "description": "whether to clone client pay groups",
+            "example": false
           },
           "sutaRates": {
             "type": "boolean",
-            "description": "whether to clone client state unemployment tax (SUTA) rates"
+            "description": "whether to clone client state unemployment tax (SUTA) rates",
+            "example": false
           },
           "userDefinedFields": {
             "type": "boolean",
-            "description": "whether to clone user-defined fields for this client"
+            "description": "whether to clone user-defined fields for this client",
+            "example": false
           },
           "federalEntityId": {
             "type": "boolean",
-            "description": "whether to clone the client federal entity ID, if one exists. This only applies to systems using the SBEA feature set. "
+            "description": "whether to clone the client federal entity ID, if one exists. This only applies to systems using the SBEA feature set. ",
+            "example": false
           },
           "divisions": {
             "type": "boolean",
-            "description": "whether to clone client divisions"
+            "description": "whether to clone client divisions",
+            "example": false
           },
           "shifts": {
             "type": "boolean",
-            "description": "whether to clone client shifts"
+            "description": "whether to clone client shifts",
+            "example": false
           },
           "ptoClasses": {
             "type": "boolean",
-            "description": "whether to clone client PTO classes"
+            "description": "whether to clone client PTO classes",
+            "example": false
           },
           "benefitRules": {
             "type": "boolean",
-            "description": "whether to clone client benefit rules"
+            "description": "whether to clone client benefit rules",
+            "example": false
           },
           "workgroups": {
             "type": "boolean",
-            "description": "whether to clone client work groups"
+            "description": "whether to clone client work groups",
+            "example": false
           },
           "projects": {
             "type": "boolean",
-            "description": "whether to clone client projects"
+            "description": "whether to clone client projects",
+            "example": false
           },
           "companyBenefits": {
             "type": "boolean",
-            "description": "whether to clone the benefits setup for this client"
+            "description": "whether to clone the benefits setup for this client",
+            "example": false
           },
           "locations": {
             "type": "boolean",
-            "description": "whether to clone worksite locations for this client"
+            "description": "whether to clone worksite locations for this client",
+            "example": false
           }
         },
         "description": "whether or not to clone information from the system entities associated with this client"
@@ -43902,7 +44006,8 @@
           },
           "isEmail": {
             "type": "boolean",
-            "description": "indicate whether to send the message by email"
+            "description": "indicate whether to send the message by email",
+            "example": false
           },
           "userId": {
             "type": "array",
@@ -44042,7 +44147,8 @@
           },
           "supervisory": {
             "type": "boolean",
-            "description": "indicate whether this is a supervisory position"
+            "description": "indicate whether this is a supervisory position",
+            "example": false
           },
           "unionCodeOveride": {
             "type": "string",
@@ -44054,7 +44160,8 @@
           },
           "prChauffeurTaxApplies": {
             "type": "boolean",
-            "description": "indicate whether this position is subject to Puerto Rico chauffeur's tax and the primary work location is Puerto Rico"
+            "description": "indicate whether this position is subject to Puerto Rico chauffeur's tax and the primary work location is Puerto Rico",
+            "example": false
           },
           "payGrade": {
             "type": "string",
@@ -44062,11 +44169,13 @@
           },
           "indirectlyTipped": {
             "type": "boolean",
-            "description": "indicates whether this a tipped position that receives tips indirectly; for example, a busboy, cook, or service bartender"
+            "description": "indicates whether this a tipped position that receives tips indirectly; for example, a busboy, cook, or service bartender",
+            "example": false
           },
           "specialRequirements": {
             "type": "boolean",
-            "description": "Use specialRequirements to indicate whether this position requires any special physical or mental requirements. The Americans with Disabilities Act prohibits employers from discriminating against qualified individuals with disabilities. Not including a particular person in the applicant pool for a certain job is only nondiscriminatory if that person does not meet any physical or mental requirements identified as essential functions of the position. Applications for these jobs must be closely monitored for ADA compliance."
+            "description": "Use specialRequirements to indicate whether this position requires any special physical or mental requirements. The Americans with Disabilities Act prohibits employers from discriminating against qualified individuals with disabilities. Not including a particular person in the applicant pool for a certain job is only nondiscriminatory if that person does not meet any physical or mental requirements identified as essential functions of the position. Applications for these jobs must be closely monitored for ADA compliance.",
+            "example": false
           },
           "codeOfAlaska": {
             "type": "string",
@@ -44082,7 +44191,8 @@
           },
           "salesPosition": {
             "type": "boolean",
-            "description": "indicate whether this is a sales position"
+            "description": "indicate whether this is a sales position",
+            "example": false
           },
           "priceCode": {
             "type": "string",
@@ -44090,7 +44200,8 @@
           },
           "tippedPosition": {
             "type": "boolean",
-            "description": "indicate whether this is a tipped position"
+            "description": "indicate whether this is a tipped position",
+            "example": false
           },
           "perDiemPercent": {
             "type": "string",
@@ -44098,11 +44209,13 @@
           },
           "requirementsFromDOT": {
             "type": "boolean",
-            "description": "indicate whether this job code has special requirements as set forth by the U.S. Department of Transportation"
+            "description": "indicate whether this job code has special requirements as set forth by the U.S. Department of Transportation",
+            "example": false
           },
           "wcTimeSheetLocBased": {
             "type": "boolean",
-            "description": "indicate whether to calculate workers' compensation accruals for each employee's actual work location; this overrides the setting in Client Details or Company Master"
+            "description": "indicate whether to calculate workers' compensation accruals for each employee's actual work location; this overrides the setting in Client Details or Company Master",
+            "example": false
           },
           "generalLedgerSegmentCode1": {
             "type": "string",
@@ -44118,7 +44231,8 @@
           },
           "obsolete": {
             "type": "boolean",
-            "description": "indicate whether this position is no longer used"
+            "description": "indicate whether this position is no longer used",
+            "example": false
           },
           "materialCodes": {
             "type": "array",
@@ -44365,7 +44479,8 @@
         "properties": {
           "lockDownNewHire": {
             "type": "boolean",
-            "description": "indicates whether matching employer is locked down"
+            "description": "indicates whether matching employer is locked down",
+            "example": false
           }
         },
         "description": "Use to indicate which employers to lock down when lockDownFlag is set to true. The order of the items in this array matches the order of the employers listed in sutaBillRateDetail. The lock goes into effect during payroll calculation and new hire/rehire."
@@ -44419,7 +44534,8 @@
           },
           "lockDownFlag": {
             "type": "boolean",
-            "description": "Indicate whether to \"lock down\" the employees working in the state to one of the employer IDs entered in the sutaBillRateDetail array. Specify the employers using lockDownDetail."
+            "description": "Indicate whether to \"lock down\" the employees working in the state to one of the employer IDs entered in the sutaBillRateDetail array. Specify the employers using lockDownDetail.",
+            "example": false
           },
           "lockDownDetail": {
             "type": "array",
@@ -48565,7 +48681,8 @@
           },
           "enableInstantPay": {
             "type": "boolean",
-            "description": "indicates if Instant Pay feature is enabled for the client"
+            "description": "indicates if Instant Pay feature is enabled for the client",
+            "example": false
           },
           "nextEmployeeNumber": {
             "type": "string",
@@ -51296,7 +51413,8 @@
           },
           "useOverrideRates": {
             "type": "boolean",
-            "description": "'true' if the system should use override rates when calculating the billing amount, or 'false' if the system should use the discount/debit and modifier values"
+            "description": "'true' if the system should use override rates when calculating the billing amount, or 'false' if the system should use the discount/debit and modifier values",
+            "example": false
           },
           "locationObsoleteDate": {
             "type": "string",
@@ -51859,7 +51977,8 @@
           },
           "contractorsAllowed1099": {
             "type": "boolean",
-            "description": "allow 1099 contractors flag on the client level"
+            "description": "allow 1099 contractors flag on the client level",
+            "example": false
           }
         }
       },
@@ -52023,7 +52142,8 @@
           },
           "sprinklers": {
             "type": "boolean",
-            "description": "'Y' if the building is equipped with sprinklers, otherwise 'N'"
+            "description": "'Y' if the building is equipped with sprinklers, otherwise 'N'",
+            "example": false
           },
           "maxCapacity": {
             "type": "string",
@@ -52339,11 +52459,13 @@
           },
           "eugeneORCSPT": {
             "type": "boolean",
-            "description": "If location is within Eugene city limit, pass Eugene CSPT as true"
+            "description": "If location is within Eugene city limit, pass Eugene CSPT as true",
+            "example": false
           },
           "tempJobSite": {
             "type": "boolean",
-            "description": "temporary job site"
+            "description": "temporary job site",
+            "example": false
           },
           "employerTaxOverride": {
             "type": "string",
@@ -52844,11 +52966,13 @@
           },
           "useWcRateTemplate": {
             "type": "boolean",
-            "description": "indicates whether to use table-based rate templates instead of the traditional method when calculating worker's comp for this client"
+            "description": "indicates whether to use table-based rate templates instead of the traditional method when calculating worker's comp for this client",
+            "example": false
           },
           "calcWcOn1099Emp": {
             "type": "boolean",
-            "description": "indicates whether to calculate worker's comp for 1099 employees"
+            "description": "indicates whether to calculate worker's comp for 1099 employees",
+            "example": false
           },
           "wcPolicySubId": {
             "type": "string",
@@ -52856,7 +52980,8 @@
           },
           "clientModDiscount": {
             "type": "boolean",
-            "description": "indicates whether to use the W/C Accrual Modifiers found at the client level when calculating worker's comp liability"
+            "description": "indicates whether to use the W/C Accrual Modifiers found at the client level when calculating worker's comp liability",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -53014,19 +53139,23 @@
           },
           "contractDate": {
             "type": "string",
-            "description": "date contract was made"
+            "description": "date contract was made",
+            "example": "YYYY-MM-DD"
           },
           "payrollDate": {
             "type": "string",
-            "description": "client payroll date"
+            "description": "client payroll date",
+            "example": "YYYY-MM-DD"
           },
           "firstPeriodStart": {
             "type": "string",
-            "description": "first period start date"
+            "description": "first period start date",
+            "example": "YYYY-MM-DD"
           },
           "firstPeriodEnd": {
             "type": "string",
-            "description": "first period end date"
+            "description": "first period end date",
+            "example": "YYYY-MM-DD"
           },
           "websiteUrl": {
             "type": "string",
@@ -53074,35 +53203,43 @@
           },
           "empNumbersUsed": {
             "type": "boolean",
-            "description": "indicates whether the empnumber used"
+            "description": "indicates whether the empnumber used",
+            "example": false
           },
           "autoEmpNumber": {
             "type": "boolean",
-            "description": "indicates whether the auto-empnumber used"
+            "description": "indicates whether the auto-empnumber used",
+            "example": false
           },
           "divisionRequired": {
             "type": "boolean",
-            "description": "indicates whether the client's division required"
+            "description": "indicates whether the client's division required",
+            "example": false
           },
           "departmentRequired": {
             "type": "boolean",
-            "description": "indicates whether department required"
+            "description": "indicates whether department required",
+            "example": false
           },
           "shiftRequired": {
             "type": "boolean",
-            "description": "indicates whether shift required"
+            "description": "indicates whether shift required",
+            "example": false
           },
           "projectRequired": {
             "type": "boolean",
-            "description": "indicates whether project required"
+            "description": "indicates whether project required",
+            "example": false
           },
           "workGroupRequired": {
             "type": "boolean",
-            "description": "indicates whether work group required"
+            "description": "indicates whether work group required",
+            "example": false
           },
           "contractorsAllowed": {
             "type": "boolean",
-            "description": "indicates whether contractors are allowed"
+            "description": "indicates whether contractors are allowed",
+            "example": false
           },
           "worksitePayrollApproval": {
             "type": "string",
@@ -53210,7 +53347,8 @@
           },
           "adjTipsToMin": {
             "type": "boolean",
-            "description": "whether the system should adjust reported tips to meet minimum wage level"
+            "description": "whether the system should adjust reported tips to meet minimum wage level",
+            "example": false
           },
           "eligibleBenefitsDeterminant": {
             "type": "string",
@@ -53222,7 +53360,8 @@
           },
           "enableInstantPay": {
             "type": "boolean",
-            "description": "indicates if Instant Pay feature is enabled for the client"
+            "description": "indicates if Instant Pay feature is enabled for the client",
+            "example": false
           },
           "instantPayAccount": {
             "type": "string",
@@ -53234,7 +53373,8 @@
           },
           "everify": {
             "type": "boolean",
-            "description": "indicates whether the client's new hires should go through E-Verify"
+            "description": "indicates whether the client's new hires should go through E-Verify",
+            "example": false
           },
           "remoteVerification": {
             "type": "string",
@@ -53580,11 +53720,13 @@
           },
           "railRoadEmployer": {
             "type": "boolean",
-            "description": " whether the client is a railroad employer, which significantly affects tax calculation; see the PrismHR documentation for details"
+            "description": " whether the client is a railroad employer, which significantly affects tax calculation; see the PrismHR documentation for details",
+            "example": false
           },
           "nySdiEmployerCalc": {
             "type": "boolean",
-            "description": "whether the system calculates employer-paid New York disability tax for each employee of this client"
+            "description": "whether the system calculates employer-paid New York disability tax for each employee of this client",
+            "example": false
           },
           "nySdiEmployerRate": {
             "type": "string",
@@ -53596,7 +53738,8 @@
           },
           "pfmlMa1099": {
             "type": "boolean",
-            "description": "whether the employee is a 1099 contractor in Massachusetts and therefore subject to paid family and medical leave (PFML) tax withholdings; if true, the system accrues and bills these taxes to the employer"
+            "description": "whether the employee is a 1099 contractor in Massachusetts and therefore subject to paid family and medical leave (PFML) tax withholdings; if true, the system accrues and bills these taxes to the employer",
+            "example": false
           },
           "taxGeoCodeOverride": {
             "type": "string",
@@ -54291,7 +54434,8 @@
           },
           "inHouse": {
             "type": "boolean",
-            "description": "indicates whether  this course is offered by the company, rather than a third-party vendor. Valid values are True (T) or F (False). The default is false."
+            "description": "indicates whether  this course is offered by the company, rather than a third-party vendor. Valid values are True (T) or F (False). The default is false.",
+            "example": false
           },
           "costPerStudent": {
             "type": "number",
@@ -54303,7 +54447,8 @@
           },
           "regScheduled": {
             "type": "boolean",
-            "description": "indicates whether the course is offered on a regular basis. Valid values are True (T) or False (F). The default is false."
+            "description": "indicates whether the course is offered on a regular basis. Valid values are True (T) or False (F). The default is false.",
+            "example": false
           },
           "schedule": {
             "type": "string",
@@ -54387,7 +54532,8 @@
           },
           "mandatory": {
             "type": "boolean",
-            "description": "if true, this deduction code represents goods and services that are a mandatory part of employment"
+            "description": "if true, this deduction code represents goods and services that are a mandatory part of employment",
+            "example": false
           },
           "printOnPayStub": {
             "type": "string",
@@ -54399,11 +54545,13 @@
           },
           "thirdPartyRequired": {
             "type": "boolean",
-            "description": " voluntary deductions only; if true, this deduction must have a Third Party Payee associated with it; payees are set at the client level"
+            "description": " voluntary deductions only; if true, this deduction must have a Third Party Payee associated with it; payees are set at the client level",
+            "example": false
           },
           "toArrears": {
             "type": "boolean",
-            "description": "voluntary deductions only; if true, the deduction can go into arrears when the employee does not have enough pay to cover it"
+            "description": "voluntary deductions only; if true, the deduction can go into arrears when the employee does not have enough pay to cover it",
+            "example": false
           },
           "obsoleteDate": {
             "type": "string",
@@ -54428,7 +54576,8 @@
           },
           "maximumPeriodEnd": {
             "type": "boolean",
-            "description": "whether or not there is a maximum period end date (Monthly period only)"
+            "description": "whether or not there is a maximum period end date (Monthly period only)",
+            "example": false
           },
           "defaultAmt": {
             "type": "string",
@@ -54440,7 +54589,8 @@
           },
           "unionRelated": {
             "type": "boolean",
-            "description": "if true, this code displays as a default on the Union Codes form"
+            "description": "if true, this code displays as a default on the Union Codes form",
+            "example": false
           },
           "certifiedDesc": {
             "type": "string",
@@ -54452,15 +54602,18 @@
           },
           "allowDescOverride": {
             "type": "boolean",
-            "description": "if true, users are allowed to override this deduction code's description at the client level"
+            "description": "if true, users are allowed to override this deduction code's description at the client level",
+            "example": false
           },
           "kpersContrib": {
             "type": "boolean",
-            "description": "if true, this deduction code is for contributions to the Kansas Public Employees Retirement System"
+            "description": "if true, this deduction code is for contributions to the Kansas Public Employees Retirement System",
+            "example": false
           },
           "mtrbContrib": {
             "type": "boolean",
-            "description": "if true, this deduction code is for contributions to the Massachusetts Teachers Retirement Board"
+            "description": "if true, this deduction code is for contributions to the Massachusetts Teachers Retirement Board",
+            "example": false
           },
           "inPayCode": {
             "type": "string",
@@ -54641,7 +54794,8 @@
           },
           "isObsolete": {
             "type": "boolean",
-            "description": "whether the code is obsolete (true) or in use (false)"
+            "description": "whether the code is obsolete (true) or in use (false)",
+            "example": false
           },
           "perDiemPercent": {
             "type": "string",
@@ -54727,7 +54881,8 @@
           },
           "isObsolete": {
             "type": "boolean",
-            "description": "whether the code is obsolete (true) or in use (false)"
+            "description": "whether the code is obsolete (true) or in use (false)",
+            "example": false
           },
           "checkAcct": {
             "type": "string",
@@ -55429,6 +55584,7 @@
           "defaultAutoHours": {
             "type": "boolean",
             "description": "whether to automatically associate employees' standard hours worked with this pay code; typically set to \"true\" for salaried pay codes",
+            "example": false,
             "default": false
           },
           "altPayRate": {
@@ -55655,7 +55811,8 @@
           },
           "supervisory": {
             "type": "boolean",
-            "description": "indicate whether this is a supervisory position"
+            "description": "indicate whether this is a supervisory position",
+            "example": false
           },
           "unionCodeOveride": {
             "type": "string",
@@ -55667,7 +55824,8 @@
           },
           "prChauffeurTaxApplies": {
             "type": "boolean",
-            "description": "indicate whether this position is subject to Puerto Rico chauffeur's tax and the primary work location is Puerto Rico"
+            "description": "indicate whether this position is subject to Puerto Rico chauffeur's tax and the primary work location is Puerto Rico",
+            "example": false
           },
           "payGrade": {
             "type": "string",
@@ -55675,11 +55833,13 @@
           },
           "indirectlyTipped": {
             "type": "boolean",
-            "description": "indicates whether this a tipped position that receives tips indirectly; for example, a busboy, cook, or service bartender"
+            "description": "indicates whether this a tipped position that receives tips indirectly; for example, a busboy, cook, or service bartender",
+            "example": false
           },
           "specialRequirements": {
             "type": "boolean",
-            "description": "Use specialRequirements to indicate whether this position requires any special physical or mental requirements. The Americans with Disabilities Act prohibits employers from discriminating against qualified individuals with disabilities. Not including a particular person in the applicant pool for a certain job is only nondiscriminatory if that person does not meet any physical or mental requirements identified as essential functions of the position. Applications for these jobs must be closely monitored for ADA compliance."
+            "description": "Use specialRequirements to indicate whether this position requires any special physical or mental requirements. The Americans with Disabilities Act prohibits employers from discriminating against qualified individuals with disabilities. Not including a particular person in the applicant pool for a certain job is only nondiscriminatory if that person does not meet any physical or mental requirements identified as essential functions of the position. Applications for these jobs must be closely monitored for ADA compliance.",
+            "example": false
           },
           "codeOfAlaska": {
             "type": "string",
@@ -55695,7 +55855,8 @@
           },
           "salesPosition": {
             "type": "boolean",
-            "description": "indicate whether this is a sales position"
+            "description": "indicate whether this is a sales position",
+            "example": false
           },
           "priceCode": {
             "type": "string",
@@ -55703,7 +55864,8 @@
           },
           "tippedPosition": {
             "type": "boolean",
-            "description": "indicate whether this is a tipped position"
+            "description": "indicate whether this is a tipped position",
+            "example": false
           },
           "perDiemPercent": {
             "type": "number",
@@ -55711,11 +55873,13 @@
           },
           "requirementsFromDOT": {
             "type": "boolean",
-            "description": "indicate whether this job code has special requirements as set forth by the U.S. Department of Transportation"
+            "description": "indicate whether this job code has special requirements as set forth by the U.S. Department of Transportation",
+            "example": false
           },
           "wcTimeSheetLocBased": {
             "type": "boolean",
-            "description": "indicate whether to calculate workers' compensation accruals for each employee's actual work location; this overrides the setting in Client Details or Company Master"
+            "description": "indicate whether to calculate workers' compensation accruals for each employee's actual work location; this overrides the setting in Client Details or Company Master",
+            "example": false
           },
           "generalLedgerSegmentCode1": {
             "type": "string",
@@ -55731,7 +55895,8 @@
           },
           "obsolete": {
             "type": "boolean",
-            "description": "indicate whether this position is no longer used"
+            "description": "indicate whether this position is no longer used",
+            "example": false
           },
           "benefitGroup": {
             "type": "string",
@@ -55747,11 +55912,13 @@
           },
           "suppressWorkStateTax": {
             "type": "boolean",
-            "description": "if true, employees are subject to taxes in their residence state rather than their work state. During calculations, the system uses the employee's residence as the basis for state taxes. If false, the system uses their work state as the basis for state taxes."
+            "description": "if true, employees are subject to taxes in their residence state rather than their work state. During calculations, the system uses the employee's residence as the basis for state taxes. If false, the system uses their work state as the basis for state taxes.",
+            "example": false
           },
           "agriculturalWorker": {
             "type": "boolean",
-            "description": " 'Y' indicates that the employee is an agricultural worker whose income is reported on IRS Form 943 instead of Form 941. Otherwise, 'N' or '' (empty string)."
+            "description": " 'Y' indicates that the employee is an agricultural worker whose income is reported on IRS Form 943 instead of Form 941. Otherwise, 'N' or '' (empty string).",
+            "example": false
           },
           "materialCodes": {
             "type": "array",
@@ -55911,7 +56078,8 @@
           },
           "stmtOfNonPerf": {
             "type": "boolean",
-            "description": "California (CA)  statement of nonperformance only if you need to indicate a state of non-performance. The system will not include employees in the file. Do not use this option if you want to include employees in the file (this is typical, and the value in the CA XML file will be false for this option)"
+            "description": "California (CA)  statement of nonperformance only if you need to indicate a state of non-performance. The system will not include employees in the file. Do not use this option if you want to include employees in the file (this is typical, and the value in the CA XML file will be false for this option)",
+            "example": false
           }
         }
       },
@@ -55988,7 +56156,8 @@
           },
           "certPayroll": {
             "type": "boolean",
-            "description": "indicates whether the project is subject to certified payroll regulations"
+            "description": "indicates whether the project is subject to certified payroll regulations",
+            "example": false
           },
           "certPayrollRptFmt": {
             "type": "string",
@@ -56016,7 +56185,8 @@
           },
           "unionProject": {
             "type": "boolean",
-            "description": "indicates whether the project is associated with a union "
+            "description": "indicates whether the project is associated with a union ",
+            "example": false
           },
           "unionCode": {
             "type": "string",
@@ -56024,11 +56194,13 @@
           },
           "projObsolete": {
             "type": "boolean",
-            "description": "indicates whether the project is no longer active"
+            "description": "indicates whether the project is no longer active",
+            "example": false
           },
           "otherWcCoverage": {
             "type": "boolean",
-            "description": " indicates whether workers' compensation insurance coverage has been established for this project"
+            "description": " indicates whether workers' compensation insurance coverage has been established for this project",
+            "example": false
           },
           "projectClass": {
             "type": "string",
@@ -56040,7 +56212,8 @@
           },
           "trackPhases": {
             "type": "boolean",
-            "description": "indicates whether the phases of this project are tracked for job costing purposes"
+            "description": "indicates whether the phases of this project are tracked for job costing purposes",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -56055,15 +56228,18 @@
           },
           "useHigherPrevailWage": {
             "type": "boolean",
-            "description": "indicate to use the Higher Prevailing Wage Rate as job rate for the system"
+            "description": "indicate to use the Higher Prevailing Wage Rate as job rate for the system",
+            "example": false
           },
           "subtractBenefitCalcPayRate": {
             "type": "boolean",
-            "description": "indicates to subtract the employee's cost of benefits per hour from the employee's rate when determining the higher rate"
+            "description": "indicates to subtract the employee's cost of benefits per hour from the employee's rate when determining the higher rate",
+            "example": false
           },
           "filterCertPayOnJobs": {
             "type": "boolean",
-            "description": "indicates to filter certified payroll on job codes"
+            "description": "indicates to filter certified payroll on job codes",
+            "example": false
           },
           "certifiedPayrollReportSetup": {
             "$ref": "#/components/schemas/CertifiedPayrollReportSetup"
@@ -56078,15 +56254,18 @@
           },
           "fringeBenPaidApproved": {
             "type": "boolean",
-            "description": "indicate fringe benefits paid to approved plans if fringe benefits are paid to approved plans, funds, or programs"
+            "description": "indicate fringe benefits paid to approved plans if fringe benefits are paid to approved plans, funds, or programs",
+            "example": false
           },
           "fringeBenPaidCash": {
             "type": "boolean",
-            "description": "indicate fringe benefits to be paid in cash"
+            "description": "indicate fringe benefits to be paid in cash",
+            "example": false
           },
           "reportHrsPaid": {
             "type": "boolean",
-            "description": "indicate report hours paid instead of hours worked. This option includes pay codes in the report that are flagged as being included in the certified payroll report but do not represent hours worked, such as sick time"
+            "description": "indicate report hours paid instead of hours worked. This option includes pay codes in the report that are flagged as being included in the certified payroll report but do not represent hours worked, such as sick time",
+            "example": false
           },
           "certifiedPayrollCaXmlParams": {
             "$ref": "#/components/schemas/CertifiedPayrollCaXmlParams"
@@ -56469,7 +56648,8 @@
           },
           "owner": {
             "type": "boolean",
-            "description": "whether or not this contact type designates a contact as a business owner (default is false)."
+            "description": "whether or not this contact type designates a contact as a business owner (default is false).",
+            "example": false
           }
         }
       },
@@ -56528,43 +56708,53 @@
         "properties": {
           "section125": {
             "type": "boolean",
-            "description": "if true, this deduction is part of client-sponsored Section 125 plans"
+            "description": "if true, this deduction is part of client-sponsored Section 125 plans",
+            "example": false
           },
           "retirement401K": {
             "type": "boolean",
-            "description": "if true, this deduction is for client-sponsored 401(k) retirement plans"
+            "description": "if true, this deduction is for client-sponsored 401(k) retirement plans",
+            "example": false
           },
           "retirement457": {
             "type": "boolean",
-            "description": "if true, this deduction is for contributions to a supplemental retirement plan"
+            "description": "if true, this deduction is for contributions to a supplemental retirement plan",
+            "example": false
           },
           "fsaDependentCare": {
             "type": "boolean",
-            "description": "if true, this deduction is for flexible spending dependent care plans"
+            "description": "if true, this deduction is for flexible spending dependent care plans",
+            "example": false
           },
           "catchup401K": {
             "type": "boolean",
-            "description": "if true, this deduction is for 401(k) catch-up contributions"
+            "description": "if true, this deduction is for 401(k) catch-up contributions",
+            "example": false
           },
           "retirement409A": {
             "type": "boolean",
-            "description": "if true, this is for deducting contributions to a 409(a) deferred compensation plan"
+            "description": "if true, this is for deducting contributions to a 409(a) deferred compensation plan",
+            "example": false
           },
           "healthSavingsAcct": {
             "type": "boolean",
-            "description": "if true, this deduction is for client-sponsored Health Savings Accounts"
+            "description": "if true, this deduction is for client-sponsored Health Savings Accounts",
+            "example": false
           },
           "retirement414H": {
             "type": "boolean",
-            "description": "if true, this deduction is for contributions to a 414(h) tax-deferred government retirement plan"
+            "description": "if true, this deduction is for contributions to a 414(h) tax-deferred government retirement plan",
+            "example": false
           },
           "groupMedical": {
             "type": "boolean",
-            "description": "if true, this deduction is for client-sponsored medical plans"
+            "description": "if true, this deduction is for client-sponsored medical plans",
+            "example": false
           },
           "section132": {
             "type": "boolean",
-            "description": "if true, this deduction is for client-sponsored transportation plans"
+            "description": "if true, this deduction is for client-sponsored transportation plans",
+            "example": false
           }
         },
         "description": "voluntaryClassifications"
@@ -56603,7 +56793,8 @@
           },
           "allowObsolete": {
             "type": "boolean",
-            "description": "if true, you can set the department as obsolete when <em>only terminated employees</em> are assigned to it; if false, the system validates whether any employee is assigned to the department, regardless of status"
+            "description": "if true, you can set the department as obsolete when <em>only terminated employees</em> are assigned to it; if false, the system validates whether any employee is assigned to the department, regardless of status",
+            "example": false
           }
         },
         "xml": {
@@ -56990,6 +57181,7 @@
           "defaultAutoHours": {
             "type": "boolean",
             "description": "whether to automatically associate employees' standard hours worked with this pay code; typically set to \"true\" for salaried pay codes",
+            "example": false,
             "default": false
           },
           "altPayRate": {
@@ -58354,7 +58546,8 @@
           },
           "trackArrears": {
             "type": "boolean",
-            "description": "indicates whether the deduction tracks to arrears"
+            "description": "indicates whether the deduction tracks to arrears",
+            "example": false
           },
           "startDate": {
             "type": "string",
@@ -58372,7 +58565,8 @@
           },
           "mandatory": {
             "type": "boolean",
-            "description": "indicates whether the deduction is for goods or services provided to the employee that are a mandatory part of employment"
+            "description": "indicates whether the deduction is for goods or services provided to the employee that are a mandatory part of employment",
+            "example": false
           },
           "matchMethod": {
             "type": "string",
@@ -59085,7 +59279,8 @@
           },
           "multiStepApproval": {
             "type": "boolean",
-            "description": "whether or not to approve a single approval step configured in the approval policy; if false, the endpoint approves the request and bypasses any other approval steps"
+            "description": "whether or not to approve a single approval step configured in the approval policy; if false, the endpoint approves the request and bypasses any other approval steps",
+            "example": false
           }
         }
       },
@@ -59231,7 +59426,8 @@
           },
           "cobraEventRelatedTerm": {
             "type": "boolean",
-            "description": "indicates whether the termination should create a COBRA record"
+            "description": "indicates whether the termination should create a COBRA record",
+            "example": false
           },
           "cobraQualEvent": {
             "type": "string",
@@ -59239,7 +59435,8 @@
           },
           "suppressBenAdjustments": {
             "type": "boolean",
-            "description": "indicates whether to suppress adjustments to benefits"
+            "description": "indicates whether to suppress adjustments to benefits",
+            "example": false
           }
         }
       },
@@ -59527,7 +59724,8 @@
           },
           "internationalAddress": {
             "type": "boolean",
-            "description": "indicates that the address is international; if true, ZIP code validation is disabled and you can update the value in mailAddressCountry"
+            "description": "indicates that the address is international; if true, ZIP code validation is disabled and you can update the value in mailAddressCountry",
+            "example": false
           },
           "mailAddressCountry": {
             "type": "string",
@@ -59599,7 +59797,8 @@
           },
           "unincorporatedResidence": {
             "type": "boolean",
-            "description": "indicates whether employee lives outside city limits in an unincorporated area and is not subject to local resident tax"
+            "description": "indicates whether employee lives outside city limits in an unincorporated area and is not subject to local resident tax",
+            "example": false
           }
         },
         "description": "the PostalAddress object containing the home address information"
@@ -59717,11 +59916,13 @@
           },
           "autoInsurancePolicyStartDate": {
             "type": "string",
-            "description": "start date on the insurance policy"
+            "description": "start date on the insurance policy",
+            "example": "YYYY-MM-DD"
           },
           "autoInsurancePolicyExpDate": {
             "type": "string",
-            "description": "date on which the insurance policy expires"
+            "description": "date on which the insurance policy expires",
+            "example": "YYYY-MM-DD"
           }
         },
         "description": "UpdateEmployeeFieldsRequest-AutoPolicy"
@@ -60488,7 +60689,8 @@
           },
           "w8Filed": {
             "type": "boolean",
-            "description": "indicates whether the employee has submitted Form W-8 BEN or Form W-8 BEN-E"
+            "description": "indicates whether the employee has submitted Form W-8 BEN or Form W-8 BEN-E",
+            "example": false
           }
         }
       },
@@ -61522,7 +61724,8 @@
           },
           "graduated": {
             "type": "boolean",
-            "description": "'true' if employee graduated, otherwise 'false'"
+            "description": "'true' if employee graduated, otherwise 'false'",
+            "example": false
           },
           "gradYear": {
             "type": "string",
@@ -61666,7 +61869,8 @@
           },
           "multipleJobs": {
             "type": "boolean",
-            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (state level)"
+            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (state level)",
+            "example": false
           },
           "dependents": {
             "type": "number",
@@ -61725,11 +61929,13 @@
           },
           "vehicleAddDate": {
             "type": "string",
-            "description": "date on which the vehicle was added to the employee"
+            "description": "date on which the vehicle was added to the employee",
+            "example": "YYYY-MM-DD"
           },
           "vehicleRemoveDate": {
             "type": "string",
-            "description": "date on which the vehicle was removed from the employee"
+            "description": "date on which the vehicle was removed from the employee",
+            "example": "YYYY-MM-DD"
           },
           "vehicleRegNo": {
             "type": "string",
@@ -62809,7 +63015,8 @@
           },
           "nonResAlien": {
             "type": "boolean",
-            "description": "indicates whether employee is non-resident alien"
+            "description": "indicates whether employee is non-resident alien",
+            "example": false
           },
           "alienRegistrationNumberUscisNumber": {
             "type": "string",
@@ -62874,7 +63081,8 @@
           },
           "i9Filed": {
             "type": "boolean",
-            "description": "indicates whether the employment eligibility verification form is on file for the employee. Once this flag has been marked true, section one of the I-9 may no longer be updated via the API."
+            "description": "indicates whether the employment eligibility verification form is on file for the employee. Once this flag has been marked true, section one of the I-9 may no longer be updated via the API.",
+            "example": false
           },
           "i9RenewDate": {
             "type": "string",
@@ -62882,7 +63090,8 @@
           },
           "phrFromOB": {
             "type": "boolean",
-            "description": "indicates whether the I-9 information was part of the electronic onboarding process."
+            "description": "indicates whether the I-9 information was part of the electronic onboarding process.",
+            "example": false
           },
           "phrI9Version": {
             "type": "string",
@@ -64057,15 +64266,18 @@
           },
           "onboarding": {
             "type": "boolean",
-            "description": "whether or not the rehire should be sent to PrismHR Onboarding. Default is false."
+            "description": "whether or not the rehire should be sent to PrismHR Onboarding. Default is false.",
+            "example": false
           },
           "everify": {
             "type": "boolean",
-            "description": "whether the employee is flagged to go through the E-Verify process. if everify flag is set, the employee will be flagged appropriately according to the client and location settings. "
+            "description": "whether the employee is flagged to go through the E-Verify process. if everify flag is set, the employee will be flagged appropriately according to the client and location settings. ",
+            "example": false
           },
           "doNotLaunchBEWorkflow": {
             "type": "boolean",
-            "description": "whether to launch a Benefits Enrollment workflow for the rehired employee. If the value is empty or false, the system launches the workflow if available. If the value is true, no Benefits Enrollment workflow is launched"
+            "description": "whether to launch a Benefits Enrollment workflow for the rehired employee. If the value is empty or false, the system launches the workflow if available. If the value is true, no Benefits Enrollment workflow is launched",
+            "example": false
           },
           "personalEmail": {
             "type": "string",
@@ -64406,11 +64618,13 @@
           },
           "i9Filed": {
             "type": "boolean",
-            "description": "indicates whether the employment eligibility verification form is on file for the employee. Once this flag has been marked true, section one of the I-9 may no longer be updated via the API."
+            "description": "indicates whether the employment eligibility verification form is on file for the employee. Once this flag has been marked true, section one of the I-9 may no longer be updated via the API.",
+            "example": false
           },
           "overrideI9FiledFlag": {
             "type": "boolean",
-            "description": "Once this flag has been marked true, the API allows updates to the sectionOne object, even when i9Filed is set to true."
+            "description": "Once this flag has been marked true, the API allows updates to the sectionOne object, even when i9Filed is set to true.",
+            "example": false
           },
           "i9RenewDate": {
             "type": "string",
@@ -64672,7 +64886,8 @@
           },
           "forceApproval": {
             "type": "boolean",
-            "description": "flag to force approval before termination. If flag is set to true, the termination would always require an approval. If flag is set to false, the termination would follow the approval policies set for managers. Please note that an approval policy must exist for this to function without error."
+            "description": "flag to force approval before termination. If flag is set to true, the termination would always require an approval. If flag is set to false, the termination would follow the approval policies set for managers. Please note that an approval policy must exist for this to function without error.",
+            "example": false
           },
           "lastDayWorked": {
             "type": "string",
@@ -64842,7 +65057,8 @@
           },
           "suppressAccountPrint": {
             "type": "boolean",
-            "description": "'true' suppresses printing of employee's account information on the deposit advice. Default value is false. If this field is not passed in the input the value will be set to false."
+            "description": "'true' suppresses printing of employee's account information on the deposit advice. Default value is false. If this field is not passed in the input the value will be set to false.",
+            "example": false
           },
           "achVoucher": {
             "type": "array",
@@ -64978,11 +65194,13 @@
           },
           "paidThruDate": {
             "type": "string",
-            "description": "date through which benefit contributions have been deducted from this employee's pay"
+            "description": "date through which benefit contributions have been deducted from this employee's pay",
+            "example": "YYYY-MM-DD"
           },
           "providerNotifiedOn": {
             "type": "string",
-            "description": "date on which your organization was notified of the employee’s termination"
+            "description": "date on which your organization was notified of the employee’s termination",
+            "example": "YYYY-MM-DD"
           },
           "overrideWorkGeocode": {
             "type": "string",
@@ -64990,7 +65208,8 @@
           },
           "lastWorkedDate": {
             "type": "string",
-            "description": "last day worked if employee was terminated"
+            "description": "last day worked if employee was terminated",
+            "example": "YYYY-MM-DD"
           },
           "homeLocation": {
             "type": "string",
@@ -65050,7 +65269,8 @@
           },
           "unionDate": {
             "type": "string",
-            "description": "date on which employee started with the labor union"
+            "description": "date on which employee started with the labor union",
+            "example": "YYYY-MM-DD"
           },
           "clockNum": {
             "type": "string",
@@ -65058,43 +65278,53 @@
           },
           "seniorityDate": {
             "type": "string",
-            "description": "date to use for calculating benefits; can be different from last hire date to give employee more seniority to make eligible for different benefits"
+            "description": "date to use for calculating benefits; can be different from last hire date to give employee more seniority to make eligible for different benefits",
+            "example": "YYYY-MM-DD"
           },
           "workersCompExempt": {
             "type": "boolean",
-            "description": "indicates whether the employee is exempt from workers comp."
+            "description": "indicates whether the employee is exempt from workers comp.",
+            "example": false
           },
           "employee1099": {
             "type": "boolean",
-            "description": "indicates whether the employee is a 1099 contractor. If the employee has vouchers for the current year you will not be able to modify the 1099 contractor flag and will need to contact service provider for help."
+            "description": "indicates whether the employee is a 1099 contractor. If the employee has vouchers for the current year you will not be able to modify the 1099 contractor flag and will need to contact service provider for help.",
+            "example": false
           },
           "scorpOwner": {
             "type": "boolean",
-            "description": "indicates whether the employee is s-corp owner."
+            "description": "indicates whether the employee is s-corp owner.",
+            "example": false
           },
           "businessOwner": {
             "type": "boolean",
-            "description": "indicates whether the employee is an owner of the client."
+            "description": "indicates whether the employee is an owner of the client.",
+            "example": false
           },
           "workCompOfficer": {
             "type": "boolean",
-            "description": "indicates whether the employee is the client's workers' compensation officer. Note that this affects workers' compensation rates."
+            "description": "indicates whether the employee is the client's workers' compensation officer. Note that this affects workers' compensation rates.",
+            "example": false
           },
           "officer": {
             "type": "boolean",
-            "description": "indicates whether the employee is a company officer."
+            "description": "indicates whether the employee is a company officer.",
+            "example": false
           },
           "onboardingInProgress": {
             "type": "boolean",
-            "description": "indicates whether the employee's onboarding is in progress. You can turn off the onboardingInProgress flag using EmployeeService.updateEmployeeFields but this is not recommended. Unflagging an employee during the onboarding process does not complete onboarding and onboarding must be completed whether this flag is unchecked or not. Never do this before the I9 section 2 has been completed."
+            "description": "indicates whether the employee's onboarding is in progress. You can turn off the onboardingInProgress flag using EmployeeService.updateEmployeeFields but this is not recommended. Unflagging an employee during the onboarding process does not complete onboarding and onboarding must be completed whether this flag is unchecked or not. Never do this before the I9 section 2 has been completed.",
+            "example": false
           },
           "backgroundTest": {
             "type": "boolean",
-            "description": "indicates whether the background test was completed"
+            "description": "indicates whether the background test was completed",
+            "example": false
           },
           "backgroundTestDate": {
             "type": "string",
-            "description": "date background test was conducted"
+            "description": "date background test was conducted",
+            "example": "YYYY-MM-DD"
           },
           "rehireOk": {
             "type": "string",
@@ -65142,7 +65372,8 @@
           },
           "birthDate": {
             "type": "string",
-            "description": "employee's date of birth; cannot be in the future or more than 100 years in the past"
+            "description": "employee's date of birth; cannot be in the future or more than 100 years in the past",
+            "example": "YYYY-MM-DD"
           },
           "gender": {
             "type": "string",
@@ -65214,7 +65445,8 @@
           },
           "driverLicenseExpireDate": {
             "type": "string",
-            "description": "date on which the employee's driver's license expires"
+            "description": "date on which the employee's driver's license expires",
+            "example": "YYYY-MM-DD"
           },
           "driverState": {
             "type": "string",
@@ -65267,7 +65499,8 @@
           },
           "perfReviewLastDate": {
             "type": "string",
-            "description": "date of employee's previous performance review"
+            "description": "date of employee's previous performance review",
+            "example": "YYYY-MM-DD"
           },
           "perfReviewLastRating": {
             "type": "string",
@@ -65279,19 +65512,23 @@
           },
           "perfReviewNextDate": {
             "type": "string",
-            "description": "date of employee's next performance review"
+            "description": "date of employee's next performance review",
+            "example": "YYYY-MM-DD"
           },
           "compReviewNextDate": {
             "type": "string",
-            "description": "date of employee's next pay review"
+            "description": "date of employee's next pay review",
+            "example": "YYYY-MM-DD"
           },
           "perfAgreement": {
             "type": "boolean",
-            "description": "whether or not the employee is subject to the terms of a performance agreement (Y/N)"
+            "description": "whether or not the employee is subject to the terms of a performance agreement (Y/N)",
+            "example": false
           },
           "taxCreditEmp": {
             "type": "boolean",
-            "description": "whether an employee is a tax credit employee"
+            "description": "whether an employee is a tax credit employee",
+            "example": false
           },
           "selfIdDisabilityForm": {
             "type": "string",
@@ -65310,7 +65547,8 @@
           },
           "w8Filed": {
             "type": "boolean",
-            "description": "indicates whether the employee has submitted Form W-8 BEN or Form W-8 BEN-E"
+            "description": "indicates whether the employee has submitted Form W-8 BEN or Form W-8 BEN-E",
+            "example": false
           }
         }
       },
@@ -65364,7 +65602,8 @@
             }
           },
           "osha10Certified": {
-            "type": "boolean"
+            "type": "boolean",
+            "example": false
           }
         },
         "description": "employee skills and education"
@@ -65612,11 +65851,13 @@
           },
           "autoAcceptTimesheet": {
             "type": "boolean",
-            "description": "whether or not the time sheet automatically populates with a default number of hours"
+            "description": "whether or not the time sheet automatically populates with a default number of hours",
+            "example": false
           },
           "updateTimesheetHours": {
             "type": "boolean",
-            "description": "whether to update the time sheet hours for a salaried employee that exists in a current payroll batch. Time sheet hours are updated to the <em>defaultHours</em> provided in the input. Time sheet hours will only be updated if <em>payMethod</em> is \"S\" and <em>defaultHours</em> has been changed and is greater than zero, otherwise <em>updateTimesheetHours</em> is ignored."
+            "description": "whether to update the time sheet hours for a salaried employee that exists in a current payroll batch. Time sheet hours are updated to the <em>defaultHours</em> provided in the input. Time sheet hours will only be updated if <em>payMethod</em> is \"S\" and <em>defaultHours</em> has been changed and is greater than zero, otherwise <em>updateTimesheetHours</em> is ignored.",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -65771,7 +66012,8 @@
           },
           "multipleJobs": {
             "type": "boolean",
-            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (state level)"
+            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (state level)",
+            "example": false
           },
           "dependents": {
             "type": "string",
@@ -65852,7 +66094,8 @@
           },
           "fedMultipleJobs": {
             "type": "boolean",
-            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (federal level)"
+            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (federal level)",
+            "example": false
           },
           "fedDependents": {
             "type": "string",
@@ -65868,7 +66111,8 @@
           },
           "fedW4Filed": {
             "type": "boolean",
-            "description": "indicates whether Form W-4 is on file for employee"
+            "description": "indicates whether Form W-4 is on file for employee",
+            "example": false
           },
           "fedW4Year": {
             "type": "string",
@@ -65876,7 +66120,8 @@
           },
           "ficaExempt": {
             "type": "boolean",
-            "description": "indicates whether employee is exempt from FICA taxes"
+            "description": "indicates whether employee is exempt from FICA taxes",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -66049,7 +66294,8 @@
           },
           "forceApproval": {
             "type": "boolean",
-            "description": "flag to force approval before termination. If flag is set to true, the termination would always require an approval. If flag is set to false, the termination would follow the approval policies set for managers. Please note that an approval policy must exist for this to function without error."
+            "description": "flag to force approval before termination. If flag is set to true, the termination would always require an approval. If flag is set to false, the termination would follow the approval policies set for managers. Please note that an approval policy must exist for this to function without error.",
+            "example": false
           },
           "lastDayWorked": {
             "type": "string",
@@ -66216,7 +66462,8 @@
           },
           "useNonBillAcct": {
             "type": "boolean",
-            "description": "whether the template uses non-bill accounting settings"
+            "description": "whether the template uses non-bill accounting settings",
+            "example": false
           },
           "nonBillAcct": {
             "$ref": "#/components/schemas/NonBillAcct"
@@ -66260,7 +66507,8 @@
           },
           "showHeading": {
             "type": "boolean",
-            "description": "whether to include the heading row in the file"
+            "description": "whether to include the heading row in the file",
+            "example": false
           }
         },
         "description": "custom accounting layout (only for accountingSystem=\"CUST\")"
@@ -66302,7 +66550,8 @@
           },
           "clientUsesGlobalConfig": {
             "type": "boolean",
-            "description": "indicates whether the client accounting template is associated with a global accounting template"
+            "description": "indicates whether the client accounting template is associated with a global accounting template",
+            "example": false
           },
           "clientAccountingTemplate": {
             "$ref": "#/components/schemas/ClientAccountingTemplate"
@@ -66752,7 +67001,8 @@
           },
           "suspenseAcctNeeded": {
             "type": "boolean",
-            "description": "whether or not the suspense account is necessary"
+            "description": "whether or not the suspense account is necessary",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -67103,7 +67353,8 @@
           },
           "useFGDebit": {
             "type": "boolean",
-            "description": "indicates whether the template uses the state-level debit account (\"OvrFG\"), the federal government (FG) debit account (\"UseFG\"), or that no FG debit account number has been entered (\"No FG\")"
+            "description": "indicates whether the template uses the state-level debit account (\"OvrFG\"), the federal government (FG) debit account (\"UseFG\"), or that no FG debit account number has been entered (\"No FG\")",
+            "example": false
           },
           "creditAccount": {
             "type": "string",
@@ -67111,7 +67362,8 @@
           },
           "useFGCredit": {
             "type": "boolean",
-            "description": "indicates whether the template uses the state-level credit account (\"OvrFG\"), the federal government (FG) credit account (\"UseFG\"), or that no FG credit account number has been entered (\"No FG\")"
+            "description": "indicates whether the template uses the state-level credit account (\"OvrFG\"), the federal government (FG) credit account (\"UseFG\"), or that no FG credit account number has been entered (\"No FG\")",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -67161,7 +67413,8 @@
           },
           "useFGDebit": {
             "type": "boolean",
-            "description": "indicates whether the worker's compensation state has its own debit account (\"OvrFG\"), or uses the federal government (FG) debit account (\"UseFG\")"
+            "description": "indicates whether the worker's compensation state has its own debit account (\"OvrFG\"), or uses the federal government (FG) debit account (\"UseFG\")",
+            "example": false
           },
           "creditAccount": {
             "type": "string",
@@ -67169,7 +67422,8 @@
           },
           "useFGCredit": {
             "type": "boolean",
-            "description": "indicates whether the worker's compensation state has its own credit account (\"OvrFG\"), or uses the federal government (FG) credit account (\"UseFG\")  "
+            "description": "indicates whether the worker's compensation state has its own credit account (\"OvrFG\"), or uses the federal government (FG) credit account (\"UseFG\")  ",
+            "example": false
           },
           "checksum": {
             "type": "string",
@@ -67467,7 +67721,8 @@
           },
           "deposit": {
             "type": "boolean",
-            "description": "whether or not to post this cash deposit"
+            "description": "whether or not to post this cash deposit",
+            "example": false
           },
           "cashReceiptBatchId": {
             "type": "string",
@@ -68116,7 +68371,8 @@
           },
           "fedContractor": {
             "type": "boolean",
-            "description": "indicates whether a fedcontractor or not"
+            "description": "indicates whether a fedcontractor or not",
+            "example": false
           },
           "division": {
             "type": "string",
@@ -68281,7 +68537,8 @@
           },
           "fedContractor": {
             "type": "boolean",
-            "description": "indicates whether a fedcontractor or not"
+            "description": "indicates whether a fedcontractor or not",
+            "example": false
           },
           "division": {
             "type": "string",
@@ -68462,7 +68719,8 @@
           },
           "fedContractor": {
             "type": "boolean",
-            "description": "indicates whether a fedcontractor or not"
+            "description": "indicates whether a fedcontractor or not",
+            "example": false
           },
           "division": {
             "type": "string",
@@ -68668,7 +68926,8 @@
           },
           "overwritePendingRequest": {
             "type": "boolean",
-            "description": "whether to overwrite any existing pending update"
+            "description": "whether to overwrite any existing pending update",
+            "example": false
           },
           "newPermissions": {
             "$ref": "#/components/schemas/ApiPermissionsRequestObject"
@@ -68738,11 +68997,13 @@
           },
           "manualEmailRequest": {
             "type": "boolean",
-            "description": "indicates whether email request is set to manual or not"
+            "description": "indicates whether email request is set to manual or not",
+            "example": false
           },
           "partialEntry": {
             "type": "boolean",
-            "description": "<b>indicates new hire entry status.</b> If true, the only required attributes are clientId, firstName, lastName, and startDate. A true value will send the partial information to the Employee Portal New Hire Dashboard but will not trigger an email to the employee. All necessary new hire information must be entered by a manager in Employee Portal."
+            "description": "<b>indicates new hire entry status.</b> If true, the only required attributes are clientId, firstName, lastName, and startDate. A true value will send the partial information to the Employee Portal New Hire Dashboard but will not trigger an email to the employee. All necessary new hire information must be entered by a manager in Employee Portal.",
+            "example": false
           },
           "firstName": {
             "type": "string",
@@ -69058,7 +69319,8 @@
         "properties": {
           "directDepositMandatoryAllowed": {
             "type": "boolean",
-            "description": "if true, then the corresponding state allows mandatory direct deposit for a new hire (100% of pay must be direct deposit)"
+            "description": "if true, then the corresponding state allows mandatory direct deposit for a new hire (100% of pay must be direct deposit)",
+            "example": false
           }
         }
       },
@@ -69621,11 +69883,13 @@
           },
           "useGlobalNewHire": {
             "type": "boolean",
-            "description": "Flag to override new hire required fields validation based on client settings. When this flag is set to true, PrismHR global settings will be used for new hire required fields validation"
+            "description": "Flag to override new hire required fields validation based on client settings. When this flag is set to true, PrismHR global settings will be used for new hire required fields validation",
+            "example": false
           },
           "ignoreNewHireOptionalFields": {
             "type": "boolean",
-            "description": "Flag to ignore validation for new hire optional fields. Please use this with caution, as these fields are required for appropriate processing of a payroll, calculation of taxes, benefits assignments, and so on"
+            "description": "Flag to ignore validation for new hire optional fields. Please use this with caution, as these fields are required for appropriate processing of a payroll, calculation of taxes, benefits assignments, and so on",
+            "example": false
           },
           "newHireEmployee": {
             "type": "array",
@@ -69865,7 +70129,8 @@
           },
           "officer": {
             "type": "boolean",
-            "description": "indicates whether the employee is an officer at the client company"
+            "description": "indicates whether the employee is an officer at the client company",
+            "example": false
           },
           "defaultDeptCode": {
             "type": "string",
@@ -70101,7 +70366,8 @@
           },
           "mailCheckHome": {
             "type": "boolean",
-            "description": "indicates whether to mail paychecks to the employee's home"
+            "description": "indicates whether to mail paychecks to the employee's home",
+            "example": false
           },
           "w2AddressLine1": {
             "type": "string",
@@ -70138,15 +70404,18 @@
           },
           "scorpPrincipal": {
             "type": "boolean",
-            "description": "indicates whether the employee is an S-Corp Principal"
+            "description": "indicates whether the employee is an S-Corp Principal",
+            "example": false
           },
           "electronicPayStub": {
             "type": "boolean",
-            "description": "indicates whether the employee receives an electronic pay stub"
+            "description": "indicates whether the employee receives an electronic pay stub",
+            "example": false
           },
           "electronicW2Form": {
             "type": "boolean",
-            "description": "indicates whether the employee receives the Form W-2 electronically"
+            "description": "indicates whether the employee receives the Form W-2 electronically",
+            "example": false
           },
           "allocLocation1": {
             "type": "string",
@@ -70270,7 +70539,8 @@
           },
           "onboarding": {
             "type": "boolean",
-            "description": "indicates whether the new employee will complete onboarding process electronically"
+            "description": "indicates whether the new employee will complete onboarding process electronically",
+            "example": false
           },
           "handbookRecvDate": {
             "type": "string",
@@ -70296,11 +70566,13 @@
           },
           "benefitEmailOptIn": {
             "type": "boolean",
-            "description": "indicates whether the employee opted to receive benefit information by email"
+            "description": "indicates whether the employee opted to receive benefit information by email",
+            "example": false
           },
           "useAddedI9Values": {
             "type": "boolean",
-            "description": "the system always treats this as true and adds the following Form W-4, Form W-5, and Form I-9 data to the system"
+            "description": "the system always treats this as true and adds the following Form W-4, Form W-5, and Form I-9 data to the system",
+            "example": false
           },
           "fedW4File": {
             "type": "string",
@@ -70320,11 +70592,13 @@
           },
           "formI9Filed": {
             "type": "boolean",
-            "description": "whether Form I-9 filed"
+            "description": "whether Form I-9 filed",
+            "example": false
           },
           "i9FromOnboard": {
             "type": "boolean",
-            "description": "indicates whether the Form I-9 was originally from onboarding"
+            "description": "indicates whether the Form I-9 was originally from onboarding",
+            "example": false
           },
           "i9RenewDate": {
             "type": "string",
@@ -70418,7 +70692,8 @@
           },
           "nonResAlien": {
             "type": "boolean",
-            "description": "indicates whether employee is non-resident alien"
+            "description": "indicates whether employee is non-resident alien",
+            "example": false
           },
           "handbookMailDate": {
             "type": "string",
@@ -70437,11 +70712,13 @@
           },
           "backgroudTestDone": {
             "type": "boolean",
-            "description": "indicates whether the background test was completed"
+            "description": "indicates whether the background test was completed",
+            "example": false
           },
           "formC112Signed": {
             "type": "boolean",
-            "description": "indicates whether the employee signed the Ohio Form C-112"
+            "description": "indicates whether the employee signed the Ohio Form C-112",
+            "example": false
           },
           "overrideCodePA": {
             "type": "string",
@@ -70453,7 +70730,8 @@
           },
           "fedMultipleJobs": {
             "type": "boolean",
-            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (federal level)"
+            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (federal level)",
+            "example": false
           },
           "fedDependents": {
             "type": "number",
@@ -70469,7 +70747,8 @@
           },
           "wsMultipleJobs": {
             "type": "boolean",
-            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (work state level)"
+            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (work state level)",
+            "example": false
           },
           "wsDependents": {
             "type": "number",
@@ -70485,7 +70764,8 @@
           },
           "hsMultipleJobs": {
             "type": "boolean",
-            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (home state level)"
+            "description": "whether or not the employee has multiple jobs at the same time, or is married filing jointly with a spouse who also works (home state level)",
+            "example": false
           },
           "hsDependents": {
             "type": "number",
@@ -70505,7 +70785,8 @@
           },
           "everify": {
             "type": "boolean",
-            "description": "whether the employee is flagged to go through the E-Verify process. if everify flag is set, the employee will be flagged appropriately according to the client and location settings. If employee is going through prism onboarding, then the everify flag will be ignored."
+            "description": "whether the employee is flagged to go through the E-Verify process. if everify flag is set, the employee will be flagged appropriately according to the client and location settings. If employee is going through prism onboarding, then the everify flag will be ignored.",
+            "example": false
           },
           "newHireQuestions": {
             "type": "array",
@@ -72481,23 +72762,28 @@
           },
           "voucherTypeRegular": {
             "type": "boolean",
-            "description": "indicates whether regular pay vouchers are included in the unbunded billing rule"
+            "description": "indicates whether regular pay vouchers are included in the unbunded billing rule",
+            "example": false
           },
           "voucherTypeVacation": {
             "type": "boolean",
-            "description": "indicates whether vacation pay vouchers are included in the unbundled billing rule"
+            "description": "indicates whether vacation pay vouchers are included in the unbundled billing rule",
+            "example": false
           },
           "voucherTypeSupplemental": {
             "type": "boolean",
-            "description": "indicates whether supplemental pay vouchers are included in the unbundled billing rule"
+            "description": "indicates whether supplemental pay vouchers are included in the unbundled billing rule",
+            "example": false
           },
           "voucherTypeArrearage": {
             "type": "boolean",
-            "description": "indicates whether arrearage pay vouchers are included in the unbundled billing rule"
+            "description": "indicates whether arrearage pay vouchers are included in the unbundled billing rule",
+            "example": false
           },
           "voucherTypeAdjustment": {
             "type": "boolean",
-            "description": "indicates whether adjustment pay vouchers are included in the unbundled billing rule"
+            "description": "indicates whether adjustment pay vouchers are included in the unbundled billing rule",
+            "example": false
           },
           "employeeId": {
             "type": "string",
@@ -72505,15 +72791,18 @@
           },
           "batchTypeRegular": {
             "type": "boolean",
-            "description": "indicates whether regular payroll batches are included in the unbundled billing rule"
+            "description": "indicates whether regular payroll batches are included in the unbundled billing rule",
+            "example": false
           },
           "batchTypeSpecial": {
             "type": "boolean",
-            "description": "indicates whether special payroll batches are included in the unbundled billing rule"
+            "description": "indicates whether special payroll batches are included in the unbundled billing rule",
+            "example": false
           },
           "batchTypeManual": {
             "type": "boolean",
-            "description": "indicates whether manual payroll batches are included in the unbundled billing rule"
+            "description": "indicates whether manual payroll batches are included in the unbundled billing rule",
+            "example": false
           },
           "employeeType": {
             "type": "string",
@@ -74336,7 +74625,8 @@
           },
           "perEmployee": {
             "type": "boolean",
-            "description": "indicates whether to charge the code per employee; if not, the system assesses the charge once per payroll batch"
+            "description": "indicates whether to charge the code per employee; if not, the system assesses the charge once per payroll batch",
+            "example": false
           },
           "billRate": {
             "type": "number",
@@ -74344,7 +74634,8 @@
           },
           "percentage": {
             "type": "boolean",
-            "description": "indicates whether the amount is a flat rate or percentage"
+            "description": "indicates whether the amount is a flat rate or percentage",
+            "example": false
           }
         },
         "description": "values if basedOn is T (tax-code based rule)"
@@ -74362,7 +74653,8 @@
           },
           "perEmployee": {
             "type": "boolean",
-            "description": "indicates whether to charge the code per employee; if not, the system assesses the charge once per payroll batch"
+            "description": "indicates whether to charge the code per employee; if not, the system assesses the charge once per payroll batch",
+            "example": false
           },
           "billRate": {
             "type": "number",
@@ -74370,7 +74662,8 @@
           },
           "percentage": {
             "type": "boolean",
-            "description": "indicates whether the amount is a flat rate or percentage"
+            "description": "indicates whether the amount is a flat rate or percentage",
+            "example": false
           }
         },
         "description": "values if basedOn is T (tax-code based rule)"
@@ -75523,59 +75816,73 @@
           },
           "pageBreakPrimarySort": {
             "type": "boolean",
-            "description": "starts a new report page for each primarySort item"
+            "description": "starts a new report page for each primarySort item",
+            "example": false
           },
           "includeExpReimbursementCodes": {
             "type": "boolean",
-            "description": "includes expense reimbursement pay codes in the report"
+            "description": "includes expense reimbursement pay codes in the report",
+            "example": false
           },
           "includeNonCashCodes": {
             "type": "boolean",
-            "description": "includes non-cash pay codes in the report"
+            "description": "includes non-cash pay codes in the report",
+            "example": false
           },
           "includePayRateWithDetail": {
             "type": "boolean",
-            "description": "displays pay rates with pay details in the report"
+            "description": "displays pay rates with pay details in the report",
+            "example": false
           },
           "suppressBillPendingAllocations": {
             "type": "boolean",
-            "description": "suppresses any bill pending allocations and exclude them from the report"
+            "description": "suppresses any bill pending allocations and exclude them from the report",
+            "example": false
           },
           "allocateDedToEmpHomeAssign": {
             "type": "boolean",
-            "description": "allocates deductions to the employee home location"
+            "description": "allocates deductions to the employee home location",
+            "example": false
           },
           "allocateTaxesToEmpHomeAssign": {
             "type": "boolean",
-            "description": "allocates taxes to the employee home location"
+            "description": "allocates taxes to the employee home location",
+            "example": false
           },
           "includeAdminFeesAsoOnly": {
             "type": "boolean",
-            "description": "(ASO clients only) includes administrative fees in the report"
+            "description": "(ASO clients only) includes administrative fees in the report",
+            "example": false
           },
           "includeSalesTax": {
             "type": "boolean",
-            "description": "includes sales tax amounts in the report"
+            "description": "includes sales tax amounts in the report",
+            "example": false
           },
           "suppressContribAllocations": {
             "type": "boolean",
-            "description": "suppresses the allocation of contributions in the report"
+            "description": "suppresses the allocation of contributions in the report",
+            "example": false
           },
           "excludeNonBilledContrib": {
             "type": "boolean",
-            "description": "excludes non-billed contributions from the report"
+            "description": "excludes non-billed contributions from the report",
+            "example": false
           },
           "includeMiscCharges": {
             "type": "boolean",
-            "description": "includes miscellaneous charges in the report"
+            "description": "includes miscellaneous charges in the report",
+            "example": false
           },
           "includeAdminFees": {
             "type": "boolean",
-            "description": "includes administration fees in the report"
+            "description": "includes administration fees in the report",
+            "example": false
           },
           "includeAdditionalFieldsFirstColumn": {
             "type": "boolean",
-            "description": "displays net cash and net pay information in the report"
+            "description": "displays net cash and net pay information in the report",
+            "example": false
           },
           "createOutputFileInColumnFormat": {
             "type": "boolean",
@@ -75583,23 +75890,28 @@
           },
           "groupByEmpId": {
             "type": "boolean",
-            "description": "groups items in the output file by employee ID"
+            "description": "groups items in the output file by employee ID",
+            "example": false
           },
           "includeDescForCodes": {
             "type": "boolean",
-            "description": "displays code descriptions in the output file"
+            "description": "displays code descriptions in the output file",
+            "example": false
           },
           "includeAdditionalFields": {
             "type": "boolean",
-            "description": "includes additional fields (net cash and net pay) in the output file"
+            "description": "includes additional fields (net cash and net pay) in the output file",
+            "example": false
           },
           "includePTOBalancesInOutput": {
             "type": "boolean",
-            "description": "includes employee paid time off in the output file"
+            "description": "includes employee paid time off in the output file",
+            "example": false
           },
           "includePayCodeColumnDataOnly": {
             "type": "boolean",
-            "description": "includes only the pay code column data in the output file"
+            "description": "includes only the pay code column data in the output file",
+            "example": false
           }
         }
       },
@@ -75702,7 +76014,8 @@
         "properties": {
           "suppressACH": {
             "type": "boolean",
-            "description": "whether to suppress the generation of direct deposit transactions. Employees receive paper checks instead"
+            "description": "whether to suppress the generation of direct deposit transactions. Employees receive paper checks instead",
+            "example": false
           },
           "achEarnTypeLimiter": {
             "type": "string",
@@ -75718,39 +76031,48 @@
           },
           "suppressArrears": {
             "type": "boolean",
-            "description": "whether to prevent the deduction of any amounts in arrears"
+            "description": "whether to prevent the deduction of any amounts in arrears",
+            "example": false
           },
           "suppressGarnishments": {
             "type": "boolean",
-            "description": "whether to prevent garnishment deductions"
+            "description": "whether to prevent garnishment deductions",
+            "example": false
           },
           "suppressBenefitsCalc": {
             "type": "boolean",
-            "description": "whether to suppress any benefit deductions and accruals/arrears calculations"
+            "description": "whether to suppress any benefit deductions and accruals/arrears calculations",
+            "example": false
           },
           "suppressBenefitsUpdate": {
             "type": "boolean",
-            "description": "whether to suppress the benefit update step that updates benefit-related deduction amounts on employee standard deduction records."
+            "description": "whether to suppress the benefit update step that updates benefit-related deduction amounts on employee standard deduction records.",
+            "example": false
           },
           "suppressBenefitAdjust": {
             "type": "boolean",
-            "description": "whether to prevent the processing of any benefits adjustments"
+            "description": "whether to prevent the processing of any benefits adjustments",
+            "example": false
           },
           "suppressClientApproval": {
             "type": "boolean",
-            "description": "whether to except the payroll batch from the approval process"
+            "description": "whether to except the payroll batch from the approval process",
+            "example": false
           },
           "suppressClientBillPending": {
             "type": "boolean",
-            "description": "whether to suppress client bill pending for this batch"
+            "description": "whether to suppress client bill pending for this batch",
+            "example": false
           },
           "suppressLoanPayments": {
             "type": "boolean",
-            "description": "whether to suppress loan payments from calculating and processing for this batch"
+            "description": "whether to suppress loan payments from calculating and processing for this batch",
+            "example": false
           },
           "suppressManualChecks": {
             "type": "boolean",
-            "description": "whether to prevent a manual check from processing in the next regularly scheduled payroll"
+            "description": "whether to prevent a manual check from processing in the next regularly scheduled payroll",
+            "example": false
           },
           "deliveryMethod": {
             "type": "string",
@@ -75770,7 +76092,8 @@
           },
           "fsaReimbursement": {
             "type": "boolean",
-            "description": "whether this is a standalone payroll batch used only to process FSA reimbursements (must be defined in system settings)"
+            "description": "whether this is a standalone payroll batch used only to process FSA reimbursements (must be defined in system settings)",
+            "example": false
           },
           "benefitCalcDate": {
             "type": "string",
@@ -75778,7 +76101,8 @@
           },
           "forceRetirementToZero": {
             "type": "boolean",
-            "description": "whether to set all retirement deductions to zero for employees in this batch"
+            "description": "whether to set all retirement deductions to zero for employees in this batch",
+            "example": false
           },
           "showFutureDatedChecksOnEss": {
             "type": "string",
@@ -75786,15 +76110,18 @@
           },
           "recalculateOvertime": {
             "type": "boolean",
-            "description": "whether the payroll batch should recalculate overtime rates."
+            "description": "whether the payroll batch should recalculate overtime rates.",
+            "example": false
           },
           "replacesScheduledBatch": {
             "type": "boolean",
-            "description": "whether to run this as an unscheduled payroll batch, in place of a regular one. If Y, the system calculates unbundled admin fees as if it were a regularly scheduled payroll"
+            "description": "whether to run this as an unscheduled payroll batch, in place of a regular one. If Y, the system calculates unbundled admin fees as if it were a regularly scheduled payroll",
+            "example": false
           },
           "applyDefaultTSHours": {
             "type": "boolean",
-            "description": " whether to use employees' default time sheet hours, if any, in an unscheduled batch. If N, all employees show 0.00 hours in the time sheet"
+            "description": " whether to use employees' default time sheet hours, if any, in an unscheduled batch. If N, all employees show 0.00 hours in the time sheet",
+            "example": false
           },
           "stateSupplementalRate": {
             "type": "array",
@@ -77574,7 +77901,8 @@
           },
           "clientAccess": {
             "type": "boolean",
-            "description": "whether the user has access to this client"
+            "description": "whether the user has access to this client",
+            "example": false
           },
           "expirationDate": {
             "type": "string",
@@ -77622,7 +77950,8 @@
           },
           "access": {
             "type": "boolean",
-            "description": "whether the user has access to this entity"
+            "description": "whether the user has access to this entity",
+            "example": false
           }
         },
         "description": "user's entity access settings"
@@ -78474,11 +78803,13 @@
           },
           "isClientAllowed": {
             "type": "boolean",
-            "description": "'true' if user has permission to access client, otherwise 'false'"
+            "description": "'true' if user has permission to access client, otherwise 'false'",
+            "example": false
           },
           "isEmployeeAllowed": {
             "type": "boolean",
-            "description": "'true' if user has permission to access employee who works for client, otherwise 'false'"
+            "description": "'true' if user has permission to access employee who works for client, otherwise 'false'",
+            "example": false
           },
           "allowedClientId": {
             "type": "string",
@@ -78536,7 +78867,8 @@
           },
           "userActive": {
             "type": "boolean",
-            "description": "whether the user is active (true) or inactive (false)"
+            "description": "whether the user is active (true) or inactive (false)",
+            "example": false
           }
         },
         "description": "list of PrismHR users"
@@ -80162,7 +80494,8 @@
           },
           "locked": {
             "type": "boolean",
-            "description": "whether the ACH record currently has a process lock"
+            "description": "whether the ACH record currently has a process lock",
+            "example": false
           },
           "lockHolder": {
             "type": "string",
@@ -80960,7 +81293,8 @@
           },
           "selfInsured": {
             "type": "boolean",
-            "description": "whether or not the workers' compensation is self-insured"
+            "description": "whether or not the workers' compensation is self-insured",
+            "example": false
           },
           "selfInsureCertNumber": {
             "type": "string",
@@ -80999,27 +81333,33 @@
           },
           "suppressBilling": {
             "type": "boolean",
-            "description": "whether or not to suppress billing in cases where the client pays the policy premiums"
+            "description": "whether or not to suppress billing in cases where the client pays the policy premiums",
+            "example": false
           },
           "suppressGLAccrual": {
             "type": "boolean",
-            "description": " whether or not to suppress the generation of a G/L account for any pay associated with this policy."
+            "description": " whether or not to suppress the generation of a G/L account for any pay associated with this policy.",
+            "example": false
           },
           "useCompanyModDiscount": {
             "type": "boolean",
-            "description": "whether or not to use the workers' compensation accrual modifiers (found at the client level) when calculating worker's compensation liability for this policy"
+            "description": "whether or not to use the workers' compensation accrual modifiers (found at the client level) when calculating worker's compensation liability for this policy",
+            "example": false
           },
           "useCompanyLevelOverrides": {
             "type": "boolean",
-            "description": "use the rate overrides set at the client level"
+            "description": "use the rate overrides set at the client level",
+            "example": false
           },
           "suppressTRIAPremium": {
             "type": "boolean",
-            "description": "whether or not to suppress the calculation of the state-based terrorism risk insurance act premium"
+            "description": "whether or not to suppress the calculation of the state-based terrorism risk insurance act premium",
+            "example": false
           },
           "suppressShelterBilling": {
             "type": "boolean",
-            "description": "whether or not to bill on gross worker's compensation taxable wages in states that allow Section 125 to shelter W/C wages"
+            "description": "whether or not to bill on gross worker's compensation taxable wages in states that allow Section 125 to shelter W/C wages",
+            "example": false
           }
         }
       },
@@ -81738,17 +82078,12 @@
     "source_sha256": "e1d9c05933d9bf0a8ccc416d483ec5bf4a2d41929d615daf44427c65e64b71e2",
     "source_api_version": "2025.09",
     "prepared_on": "2026-10-09",
-    "examples_removed": 340,
-    "changed_description_pointers": [
-      "/paths/~1benefits~1v1~1getBenefitWorkflowGrid/get/description",
-      "/paths/~1clientMaster~1v1~1setClientLocationDetails/post/description",
-      "/paths/~1generalLedger~1v1~1getClientGLData/get/description",
-      "/paths/~1humanResources~1v1~1getOnboardTasks/get/description",
-      "/paths/~1payroll~1v1~1getRetirementAdjVoucherListByDate/get/description",
-      "/paths/~1system~1v1~1getARTransactionReport/get/description",
-      "/paths/~1system~1v1~1getUnbilledBenefitAdjustments/get/description",
-      "/paths/~1payroll~1v1~1payGroupScheduleReport/get/description"
-    ],
-    "notice": "Modified under the Apache 2.0 license declared at /info/license. No mock API responses or actual employee records are supplied."
+    "documented_examples_included": true,
+    "source_example_annotations": 340,
+    "redactions": {
+      "token_like_examples_redacted": 0,
+      "encoded_auth_examples_redacted": 0
+    },
+    "notice": "Source schemas, defaults and documented examples retained. Apache 2.0 source license retained. No customer exports or independent generated fixtures supplied."
   }
 }

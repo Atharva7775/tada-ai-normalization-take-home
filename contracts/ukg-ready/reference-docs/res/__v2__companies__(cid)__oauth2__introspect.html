@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Introspect</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Introspect</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Introspect</span>
@@ -25,7 +25,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -43,7 +43,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: application/x-www-form-urlencoded</p>
 </div>
 </div>
 
@@ -56,7 +56,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</p>
 <div class="desc md">The access token obtained from the OAuth authorization process. The token must be included in the Authorization header as a Bearer token.
 </div>
 </div>
@@ -142,7 +142,10 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">token_type_hint=access_token&amp;token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -166,7 +169,7 @@
 </div>
 </div>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-post-0" data-tab-class="resp-tab-post" name="resp-tab-post" type="radio"/>
@@ -177,7 +180,22 @@
 <div class="resp-tab-post" id="resp-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-resp-tab-0 activeTab" id="post-tab-resp-example-0">
 
+<pre class="highlightjs">{
+     "sub": "12345",
+     "aud": [
+         "aud.example.com"
+     ],
+     "iss": "iss.example.com",
+     "active": true,
+     "exp": 1234567890,
+     "iat": 1234567890,
+     "aid": "12345",
+     "cid": "12345"
+ }
+</pre>
+</div>
 <div class="post-example-resp-tab-0" id="post-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-1">any</div>

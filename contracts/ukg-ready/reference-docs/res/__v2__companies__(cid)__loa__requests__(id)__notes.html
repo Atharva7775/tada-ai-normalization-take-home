@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Notes</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Notes</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Notes</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -61,7 +61,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -118,7 +118,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/loa/requests/{id}/notes</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -133,7 +133,41 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "notes": [
+    {
+      "id": 1770752,
+      "text": "Approved",
+      "created_at": "2018-02-09T19:36:58.050Z",
+      "created_by": {
+        "account_id": 4253,
+        "display_name": "Ivan Ivanov"
+      },
+      "_links": {
+        "delete": "http://example.com/ta/rest/v2/companies/42/notes?token=wk24nrl32"
+      }
+    },
+    {
+      "id": 1770496,
+      "text": "New note",
+      "created_at": "2018-02-09T19:36:57.850Z",
+      "created_by": {
+        "account_id": 4545,
+        "display_name": "Ann Markova"
+      },
+      "_links": {
+        "delete": "http://example.com/ta/rest/v2/companies/42/notes?token=wk24nrl32"
+      }
+    }
+  ],
+  "_links": {
+    "add": "http://example.com/ta/rest/v2/companies/42/notes?token=wk24nrl32"
+  }
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -230,7 +264,40 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;notes&gt;
+  &lt;note&gt;
+    &lt;id&gt;9835394&lt;/id&gt;
+    &lt;text&gt;Happy Christmas!&lt;/text&gt;
+    &lt;created_at&gt;2016-11-24T16:03:00Z&lt;/created_at&gt;
+    &lt;created_by&gt;
+      &lt;account_id&gt;2201923&lt;/account_id&gt;
+      &lt;display_name&gt;John Smith&lt;/display_name&gt;
+    &lt;/created_by&gt;
+    &lt;_links&gt;
+      &lt;delete&gt;http://example.com/ta/rest/v2/companies/42/notes?token=wk24nrl32&lt;/delete&gt;
+    &lt;/_links&gt;
+  &lt;/note&gt;
+  &lt;note&gt;
+    &lt;id&gt;9835393&lt;/id&gt;
+    &lt;text&gt;Happy New Year!&lt;/text&gt;
+    &lt;created_at&gt;2016-11-30T16:32:00Z&lt;/created_at&gt;
+    &lt;created_by&gt;
+      &lt;account_id&gt;2192131&lt;/account_id&gt;
+      &lt;display_name&gt;Walt Brown&lt;/display_name&gt;
+    &lt;/created_by&gt;
+    &lt;_links&gt;
+      &lt;delete&gt;http://example.com/ta/rest/v2/companies/42/notes?token=wk24nrl32&lt;/delete&gt;
+    &lt;/_links&gt;
+  &lt;/note&gt;
+  &lt;_links&gt;
+    &lt;add&gt;http://example.com/ta/rest/v2/companies/42/notes?token=wk24nrl32&lt;/add&gt;
+  &lt;/_links&gt;
+&lt;/notes&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -302,7 +369,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -334,7 +401,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -348,7 +415,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -433,7 +500,12 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "text": "Some Note"
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -478,7 +550,13 @@
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;note&gt;
+  &lt;text&gt;Some Note&lt;/text&gt;
+&lt;/note&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;?xml version='1.0' encoding='UTF-8'?&gt;

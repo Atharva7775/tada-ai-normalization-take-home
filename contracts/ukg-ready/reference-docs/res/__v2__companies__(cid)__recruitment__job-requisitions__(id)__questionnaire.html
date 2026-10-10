@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Job Requisition Questionniare questions</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Job Requisition Questionniare questions</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Job Requisition Questionniare questions</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -45,7 +45,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Job Requisition Id whose questionnaire is to be fetched.
 </div>
 </div>
@@ -62,7 +62,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1</p>
 <div class="desc md">Job Board. 1 for Indeed 2 for Seek 3 for LinkedIn</div>
 </div>
 </div>
@@ -90,7 +90,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/recruitment/job-requisitions/{id}/questionnaire</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -101,7 +101,291 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">[
+  {
+      "id": "Page 1_open",
+      "type": "pagebreak"
+  },
+  {
+      "id": "Page 1_1",
+      "type": "information",
+      "text": "&lt;p xmlns=\"http://www.w3.org/1999/xhtml\"&gt;page 1 screen message&lt;/p&gt;\n"
+  },
+  {
+      "id": "180992",
+      "type": "select",
+      "question": "character question with list items",
+      "options": [
+          {
+              "label": "ABC",
+              "value": "ABC"
+          },
+          {
+              "label": "XYZ",
+              "value": "XYZ"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "180736",
+      "type": "text",
+      "question": "character question",
+      "required": false,
+      "limit": "5"
+  },
+  {
+      "id": "181248",
+      "type": "text",
+      "question": "integer question",
+      "required": false,
+      "format": "integer",
+      "limit": "2"
+  },
+  {
+      "id": "181504",
+      "type": "select",
+      "question": "integer question with list",
+      "options": [
+          {
+              "label": "item value 1",
+              "value": "item value 1"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "181760",
+      "type": "date",
+      "question": "date question",
+      "required": false,
+      "format": "yyyy-MM-dd"
+  },
+  {
+      "id": "182016",
+      "type": "select",
+      "question": "date question with list",
+      "options": [
+          {
+              "label": "item value 1",
+              "value": "item value 1"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "182272",
+      "type": "text",
+      "question": "time question",
+      "required": false
+  },
+  {
+      "id": "182528",
+      "type": "text",
+      "question": "Link question",
+      "required": false
+  },
+  {
+      "id": "182784",
+      "type": "select",
+      "question": "radiobutton question",
+      "options": [
+          {
+              "label": "radiobutton question",
+              "value": "182784"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "183040",
+      "type": "multiselect",
+      "question": "checkbox question",
+      "options": [
+          {
+              "label": "checkbox question",
+              "value": "1"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "183296",
+      "type": "textarea",
+      "question": "text area question",
+      "required": false,
+      "limit": "10"
+  },
+  {
+      "id": "183552",
+      "type": "multiselect",
+      "question": "muticheckbox question",
+      "options": [
+          {
+              "label": "12",
+              "value": "0"
+          },
+          {
+              "label": "15",
+              "value": "1"
+          }
+      ],
+      "required": true
+  },
+  {
+      "id": "183808",
+      "type": "select",
+      "question": "multiradio button question",
+      "options": [
+          {
+              "label": "12",
+              "value": "0"
+          },
+          {
+              "label": "15",
+              "value": "1"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "184064",
+      "type": "select",
+      "question": "multi radio button with list view",
+      "options": [
+          {
+              "label": "iteam value1",
+              "value": "iteam value1"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "184320",
+      "type": "text",
+      "question": "numeric",
+      "required": false,
+      "format": "decimal",
+      "limit": "2"
+  },
+  {
+      "id": "184576",
+      "type": "multiselect",
+      "question": "'Your question.'",
+      "options": [
+          {
+              "label": "12",
+              "value": "0"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "185088",
+      "type": "multiselect",
+      "question": "Multi checkbox with conditional question",
+      "options": [
+          {
+              "label": "12",
+              "value": "0"
+          },
+          {
+              "label": "13",
+              "value": "1"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "245760",
+      "type": "text",
+      "question": "currenlcy q",
+      "required": false
+  },
+  {
+      "id": "Page 1_close",
+      "type": "pagebreak"
+  },
+  {
+      "id": "Page 1_open",
+      "type": "pagebreak"
+  },
+  {
+      "id": "Page 1_1",
+      "type": "information",
+      "text": "&lt;p xmlns=\"http://www.w3.org/1999/xhtml\"&gt;page 1 screen message&lt;/p&gt;\n"
+  },
+  {
+      "id": "196608",
+      "type": "select",
+      "question": "'Your question.'",
+      "options": [
+          {
+              "label": "1",
+              "value": "1"
+          },
+          {
+              "label": "2",
+              "value": "2"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "196864",
+      "type": "text",
+      "question": "'Additional Question'",
+      "required": false,
+      "condition": {
+          "id": "196608",
+          "value": "1"
+      }
+  },
+  {
+      "id": "246016",
+      "type": "text",
+      "question": "Email q wit no label",
+      "required": false
+  },
+  {
+      "id": "229888",
+      "type": "select",
+      "question": "radiobutton question with no label",
+      "options": [
+          {
+              "label": "radiobutton question with no label",
+              "value": "229888"
+          }
+      ],
+      "required": false
+  },
+  {
+      "id": "Page 1_close",
+      "type": "pagebreak"
+  },
+  {
+      "id": "Page 2_open",
+      "type": "pagebreak"
+  },
+  {
+      "id": "Page 2_2",
+      "type": "information",
+      "text": "&lt;p xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"anchor1\"&gt;&lt;/a&gt;&lt;/p&gt;\n&lt;p xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;span style=\"text-decoration: underline;\"&gt;dsfdsf&lt;/span&gt;&lt;/p&gt;\n&lt;p xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a title=\"google link\" href=\"http://google.com\" target=\"_self\"&gt;&lt;span style=\"text-decoration: underline; font-family: 'arial black', 'avant garde'; font-size: large;\"&gt;asd&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;\n&lt;p xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;span style=\"text-decoration: underline; font-family: 'arial black', 'avant garde'; font-size: large;\"&gt;&lt;img src=\"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimage.shutterstock.com%2Fimage-photo%2Fmountains-during-sunset-beautiful-natural-260nw-407021107.jpg&amp;amp;imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2Fcategory%2Fnature&amp;amp;tbnid=wW5BhncqphFQ0M&amp;amp;vet=12ahUKEwi_v8GUqJPpAhXPW30KHcMWBp4QMygDegUIARCYAg..i&amp;amp;docid=LlgDpz1LoiuznM&amp;amp;w=435&amp;amp;h=280&amp;amp;q=images&amp;amp;ved=2ahUKEwi_v8GUqJPpAhXPW30KHcMWBp4QMygDegUIARCYAg\" alt=\"\"&gt;&lt;/img&gt;&lt;/span&gt;&lt;/p&gt;\n"
+  },
+  {
+      "id": "212992",
+      "type": "text",
+      "question": "'Your question.'",
+      "required": false
+  },
+  {
+      "id": "Page 2_close",
+      "type": "pagebreak"
+  }
+]</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{

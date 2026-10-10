@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Case</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Case</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Case</span>
@@ -31,7 +31,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -63,7 +63,7 @@ Leave of absence functionality must be enabled in company.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -130,7 +130,7 @@ Leave of absence functionality must be enabled in company.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/loa/cases/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -149,7 +149,84 @@ Leave of absence functionality must be enabled in company.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "employee": {
+    "account_id": 123456
+  },
+  "reason": {
+    "name": "Leave of Absence Reason"
+  },
+  "start_date": "2015-11-24",
+  "est_end_date": "2015-11-24",
+  "ignore_look_back_rules": false,
+  "time_sheet_populated": false,
+  "case_number": "AA12",
+  "status": "OPEN",
+  "categories": [
+    {
+      "id": 16640
+    }
+  ],
+  "leave_time": {
+    "weekdays": [
+      {
+        "week_num": 1,
+        "weekday": "MONDAY",
+        "type": "START_END",
+        "from": "12:00",
+        "to": "19:30",
+        "total_time": 27000000,
+        "dynamic_duration": "HALF_DAY"
+      },
+      {
+        "week_num": 2,
+        "weekday": "THURSDAY",
+        "type": "START_END",
+        "from": "12:00",
+        "to": "19:30",
+        "total_time": 27000000,
+        "dynamic_duration": "HALF_DAY"
+      },
+      {
+        "week_num": 3,
+        "weekday": "FRIDAY",
+        "type": "DYNAMIC_DURATION",
+        "dynamic_duration": "HALF_DAY"
+      }
+    ],
+    "type": "INTERMITTENT_WEEKDAYS",
+    "weeks_in_cycle": 2,
+    "use_separate_settings": false,
+    "use_hours_for_weekdays": false
+  },
+  "entries": [
+    {
+      "id": 123456,
+      "category_id": 789,
+      "date": "2015-11-24",
+      "start": 288000000,
+      "end": 57600000,
+      "total_time": 28800000,
+      "days_off": 0,
+      "active": true,
+      "is_start_end": true
+    }
+  ],
+  "time_off_categories": [{
+    "id": 1661297,
+    "name": "Holiday"
+  }],
+  "time_off_entries": [{
+    "date": "2015-11-24",
+    "pto_id": 1661297,
+    "pto_name": "Holiday",
+    "total_time": 28800000
+  }]
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -660,7 +737,87 @@ Leave of absence functionality must be enabled in company.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;case&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;123456&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;reason&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+  &lt;/reason&gt;
+  &lt;start_date&gt;2015-11-24&lt;/start_date&gt;
+  &lt;est_end_date&gt;2015-11-24&lt;/est_end_date&gt;
+  &lt;ignore_look_back_rules&gt;false&lt;/ignore_look_back_rules&gt;
+  &lt;time_sheet_populated&gt;false&lt;/time_sheet_populated&gt;
+  &lt;case_number&gt;AA12&lt;/case_number&gt;
+  &lt;categories&gt;
+    &lt;category&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+    &lt;/category&gt;
+  &lt;/categories&gt;
+  &lt;status&gt;OPEN&lt;/status&gt;
+  &lt;leave_time&gt;
+    &lt;weekdays&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;1&lt;/week_num&gt;
+        &lt;weekday&gt;MONDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;2&lt;/week_num&gt;
+        &lt;weekday&gt;THURSDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;3&lt;/week_num&gt;
+        &lt;weekday&gt;FRIDAY&lt;/weekday&gt;
+        &lt;type&gt;DYNAMIC_DURATION&lt;/type&gt;
+        &lt;dynamic_duration&gt;HALF_DAY&lt;/dynamic_duration&gt;
+      &lt;/weekday&gt;
+    &lt;/weekdays&gt;
+    &lt;type&gt;INTERMITTENT_WEEKDAYS&lt;/type&gt;
+    &lt;weeks_in_cycle&gt;2&lt;/weeks_in_cycle&gt;
+    &lt;use_separate_settings&gt;false&lt;/use_separate_settings&gt;
+    &lt;use_hours_for_weekdays&gt;false&lt;/use_hours_for_weekdays&gt;
+  &lt;/leave_time&gt;
+  &lt;entries&gt;
+    &lt;entry&gt;
+      &lt;id&gt;123456&lt;/id&gt;
+      &lt;category_id&gt;789&lt;/category_id&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;start&gt;288000000&lt;/start&gt;
+      &lt;end&gt;57600000&lt;/end&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+      &lt;days_off&gt;0&lt;/days_off&gt;
+      &lt;active&gt;true&lt;/active&gt;
+      &lt;is_start_end&gt;true&lt;/is_start_end&gt;
+    &lt;/entry&gt;
+  &lt;/entries&gt;
+  &lt;time_off_categories&gt;
+    &lt;time_off_category&gt;
+      &lt;id&gt;1661297&lt;/id&gt;
+      &lt;name&gt;Holiday&lt;/name&gt;
+    &lt;/time_off_category&gt;
+  &lt;/time_off_categories&gt;
+  &lt;time_off_entries&gt;
+    &lt;time_off_entry&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;pto_id&gt;1661297&lt;/pto_id&gt;
+      &lt;pto_name&gt;Holiday&lt;/pto_name&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+    &lt;/time_off_entry&gt;
+  &lt;/time_off_entries&gt;
+&lt;/case&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -961,7 +1118,87 @@ Leave of absence functionality must be enabled in company.
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;case&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;123456&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;reason&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+  &lt;/reason&gt;
+  &lt;start_date&gt;2015-11-24&lt;/start_date&gt;
+  &lt;est_end_date&gt;2015-11-24&lt;/est_end_date&gt;
+  &lt;ignore_look_back_rules&gt;false&lt;/ignore_look_back_rules&gt;
+  &lt;time_sheet_populated&gt;false&lt;/time_sheet_populated&gt;
+  &lt;case_number&gt;AA12&lt;/case_number&gt;
+  &lt;categories&gt;
+    &lt;category&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+    &lt;/category&gt;
+  &lt;/categories&gt;
+  &lt;status&gt;OPEN&lt;/status&gt;
+  &lt;leave_time&gt;
+    &lt;weekdays&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;1&lt;/week_num&gt;
+        &lt;weekday&gt;MONDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;2&lt;/week_num&gt;
+        &lt;weekday&gt;THURSDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;3&lt;/week_num&gt;
+        &lt;weekday&gt;FRIDAY&lt;/weekday&gt;
+        &lt;type&gt;DYNAMIC_DURATION&lt;/type&gt;
+        &lt;dynamic_duration&gt;HALF_DAY&lt;/dynamic_duration&gt;
+      &lt;/weekday&gt;
+    &lt;/weekdays&gt;
+    &lt;type&gt;INTERMITTENT_WEEKDAYS&lt;/type&gt;
+    &lt;weeks_in_cycle&gt;2&lt;/weeks_in_cycle&gt;
+    &lt;use_separate_settings&gt;false&lt;/use_separate_settings&gt;
+    &lt;use_hours_for_weekdays&gt;false&lt;/use_hours_for_weekdays&gt;
+  &lt;/leave_time&gt;
+  &lt;entries&gt;
+    &lt;entry&gt;
+      &lt;id&gt;123456&lt;/id&gt;
+      &lt;category_id&gt;789&lt;/category_id&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;start&gt;288000000&lt;/start&gt;
+      &lt;end&gt;57600000&lt;/end&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+      &lt;days_off&gt;0&lt;/days_off&gt;
+      &lt;active&gt;true&lt;/active&gt;
+      &lt;is_start_end&gt;true&lt;/is_start_end&gt;
+    &lt;/entry&gt;
+  &lt;/entries&gt;
+  &lt;time_off_categories&gt;
+    &lt;time_off_category&gt;
+      &lt;id&gt;1661297&lt;/id&gt;
+      &lt;name&gt;Holiday&lt;/name&gt;
+    &lt;/time_off_category&gt;
+  &lt;/time_off_categories&gt;
+  &lt;time_off_entries&gt;
+    &lt;time_off_entry&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;pto_id&gt;1661297&lt;/pto_id&gt;
+      &lt;pto_name&gt;Holiday&lt;/pto_name&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+    &lt;/time_off_entry&gt;
+  &lt;/time_off_entries&gt;
+&lt;/case&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -1296,7 +1533,7 @@ All basic requirements for request are the same as in POST endpoint, with the di
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -1343,7 +1580,7 @@ All basic requirements for request are the same as in POST endpoint, with the di
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -1357,7 +1594,7 @@ All basic requirements for request are the same as in POST endpoint, with the di
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -1456,7 +1693,84 @@ All basic requirements for request are the same as in POST endpoint, with the di
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "employee": {
+    "account_id": 123456
+  },
+  "reason": {
+    "name": "Leave of Absence Reason"
+  },
+  "start_date": "2015-11-24",
+  "est_end_date": "2015-11-24",
+  "ignore_look_back_rules": false,
+  "time_sheet_populated": false,
+  "case_number": "AA12",
+  "status": "OPEN",
+  "categories": [
+    {
+      "id": 16640
+    }
+  ],
+  "leave_time": {
+    "weekdays": [
+      {
+        "week_num": 1,
+        "weekday": "MONDAY",
+        "type": "START_END",
+        "from": "12:00",
+        "to": "19:30",
+        "total_time": 27000000,
+        "dynamic_duration": "HALF_DAY"
+      },
+      {
+        "week_num": 2,
+        "weekday": "THURSDAY",
+        "type": "START_END",
+        "from": "12:00",
+        "to": "19:30",
+        "total_time": 27000000,
+        "dynamic_duration": "HALF_DAY"
+      },
+      {
+        "week_num": 3,
+        "weekday": "FRIDAY",
+        "type": "DYNAMIC_DURATION",
+        "dynamic_duration": "HALF_DAY"
+      }
+    ],
+    "type": "INTERMITTENT_WEEKDAYS",
+    "weeks_in_cycle": 2,
+    "use_separate_settings": false,
+    "use_hours_for_weekdays": false
+  },
+  "entries": [
+    {
+      "id": 123456,
+      "category_id": 789,
+      "date": "2015-11-24",
+      "start": 288000000,
+      "end": 57600000,
+      "total_time": 28800000,
+      "days_off": 0,
+      "active": true,
+      "is_start_end": true
+    }
+  ],
+  "time_off_categories": [{
+    "id": 1661297,
+    "name": "Holiday"
+  }],
+  "time_off_entries": [{
+    "date": "2015-11-24",
+    "pto_id": 1661297,
+    "pto_name": "Holiday",
+    "total_time": 28800000
+  }]
+}
+</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -1967,7 +2281,87 @@ All basic requirements for request are the same as in POST endpoint, with the di
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;case&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;123456&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;reason&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+  &lt;/reason&gt;
+  &lt;start_date&gt;2015-11-24&lt;/start_date&gt;
+  &lt;est_end_date&gt;2015-11-24&lt;/est_end_date&gt;
+  &lt;ignore_look_back_rules&gt;false&lt;/ignore_look_back_rules&gt;
+  &lt;time_sheet_populated&gt;false&lt;/time_sheet_populated&gt;
+  &lt;case_number&gt;AA12&lt;/case_number&gt;
+  &lt;categories&gt;
+    &lt;category&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+    &lt;/category&gt;
+  &lt;/categories&gt;
+  &lt;status&gt;OPEN&lt;/status&gt;
+  &lt;leave_time&gt;
+    &lt;weekdays&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;1&lt;/week_num&gt;
+        &lt;weekday&gt;MONDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;2&lt;/week_num&gt;
+        &lt;weekday&gt;THURSDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;3&lt;/week_num&gt;
+        &lt;weekday&gt;FRIDAY&lt;/weekday&gt;
+        &lt;type&gt;DYNAMIC_DURATION&lt;/type&gt;
+        &lt;dynamic_duration&gt;HALF_DAY&lt;/dynamic_duration&gt;
+      &lt;/weekday&gt;
+    &lt;/weekdays&gt;
+    &lt;type&gt;INTERMITTENT_WEEKDAYS&lt;/type&gt;
+    &lt;weeks_in_cycle&gt;2&lt;/weeks_in_cycle&gt;
+    &lt;use_separate_settings&gt;false&lt;/use_separate_settings&gt;
+    &lt;use_hours_for_weekdays&gt;false&lt;/use_hours_for_weekdays&gt;
+  &lt;/leave_time&gt;
+  &lt;entries&gt;
+    &lt;entry&gt;
+      &lt;id&gt;123456&lt;/id&gt;
+      &lt;category_id&gt;789&lt;/category_id&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;start&gt;288000000&lt;/start&gt;
+      &lt;end&gt;57600000&lt;/end&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+      &lt;days_off&gt;0&lt;/days_off&gt;
+      &lt;active&gt;true&lt;/active&gt;
+      &lt;is_start_end&gt;true&lt;/is_start_end&gt;
+    &lt;/entry&gt;
+  &lt;/entries&gt;
+  &lt;time_off_categories&gt;
+    &lt;time_off_category&gt;
+      &lt;id&gt;1661297&lt;/id&gt;
+      &lt;name&gt;Holiday&lt;/name&gt;
+    &lt;/time_off_category&gt;
+  &lt;/time_off_categories&gt;
+  &lt;time_off_entries&gt;
+    &lt;time_off_entry&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;pto_id&gt;1661297&lt;/pto_id&gt;
+      &lt;pto_name&gt;Holiday&lt;/pto_name&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+    &lt;/time_off_entry&gt;
+  &lt;/time_off_entries&gt;
+&lt;/case&gt;
+</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -2268,7 +2662,87 @@ All basic requirements for request are the same as in POST endpoint, with the di
 <div class="req-tab-put" id="req-tab-id-put-2">
 <div class="example">
 
+<div class="put-example-tab-2 activeTab" id="put-tab-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;case&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;123456&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;reason&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+  &lt;/reason&gt;
+  &lt;start_date&gt;2015-11-24&lt;/start_date&gt;
+  &lt;est_end_date&gt;2015-11-24&lt;/est_end_date&gt;
+  &lt;ignore_look_back_rules&gt;false&lt;/ignore_look_back_rules&gt;
+  &lt;time_sheet_populated&gt;false&lt;/time_sheet_populated&gt;
+  &lt;case_number&gt;AA12&lt;/case_number&gt;
+  &lt;categories&gt;
+    &lt;category&gt;
+      &lt;id&gt;16640&lt;/id&gt;
+    &lt;/category&gt;
+  &lt;/categories&gt;
+  &lt;status&gt;OPEN&lt;/status&gt;
+  &lt;leave_time&gt;
+    &lt;weekdays&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;1&lt;/week_num&gt;
+        &lt;weekday&gt;MONDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;2&lt;/week_num&gt;
+        &lt;weekday&gt;THURSDAY&lt;/weekday&gt;
+        &lt;type&gt;START_END&lt;/type&gt;
+        &lt;from&gt;12:00&lt;/from&gt;
+        &lt;to&gt;19:30&lt;/to&gt;
+        &lt;total_time&gt;27000000&lt;/total_time&gt;
+      &lt;/weekday&gt;
+      &lt;weekday&gt;
+        &lt;week_num&gt;3&lt;/week_num&gt;
+        &lt;weekday&gt;FRIDAY&lt;/weekday&gt;
+        &lt;type&gt;DYNAMIC_DURATION&lt;/type&gt;
+        &lt;dynamic_duration&gt;HALF_DAY&lt;/dynamic_duration&gt;
+      &lt;/weekday&gt;
+    &lt;/weekdays&gt;
+    &lt;type&gt;INTERMITTENT_WEEKDAYS&lt;/type&gt;
+    &lt;weeks_in_cycle&gt;2&lt;/weeks_in_cycle&gt;
+    &lt;use_separate_settings&gt;false&lt;/use_separate_settings&gt;
+    &lt;use_hours_for_weekdays&gt;false&lt;/use_hours_for_weekdays&gt;
+  &lt;/leave_time&gt;
+  &lt;entries&gt;
+    &lt;entry&gt;
+      &lt;id&gt;123456&lt;/id&gt;
+      &lt;category_id&gt;789&lt;/category_id&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;start&gt;288000000&lt;/start&gt;
+      &lt;end&gt;57600000&lt;/end&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+      &lt;days_off&gt;0&lt;/days_off&gt;
+      &lt;active&gt;true&lt;/active&gt;
+      &lt;is_start_end&gt;true&lt;/is_start_end&gt;
+    &lt;/entry&gt;
+  &lt;/entries&gt;
+  &lt;time_off_categories&gt;
+    &lt;time_off_category&gt;
+      &lt;id&gt;1661297&lt;/id&gt;
+      &lt;name&gt;Holiday&lt;/name&gt;
+    &lt;/time_off_category&gt;
+  &lt;/time_off_categories&gt;
+  &lt;time_off_entries&gt;
+    &lt;time_off_entry&gt;
+      &lt;date&gt;2015-11-24&lt;/date&gt;
+      &lt;pto_id&gt;1661297&lt;/pto_id&gt;
+      &lt;pto_name&gt;Holiday&lt;/pto_name&gt;
+      &lt;total_time&gt;28800000&lt;/total_time&gt;
+    &lt;/time_off_entry&gt;
+  &lt;/time_off_entries&gt;
+&lt;/case&gt;
+</pre>
+</div>
 <div class="put-example-tab-2" id="put-tab-schema-2">
 
 <div class="jsonschema" id="schema-5">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -2595,7 +3069,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Multi Pay Statements</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Multi Pay Statements</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Multi Pay Statements</span>
@@ -33,7 +33,7 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -103,7 +103,119 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+    "pay_statements": [
+        {
+            "employee": {
+                "account_id": 3588
+            },
+            "ein": {
+                "ein_name": "EIN1"
+            },
+            "payroll": {
+                "start_date": "2019-01-01",
+                "end_date": "2019-01-31"
+            },
+            "type": {
+                "id": 18432,
+                "display_name": "Regular"
+            },
+            "process_delta_only": false,
+            "earnings": [
+                {
+                    "earning": {
+                        "name": "Regular",
+                        "code": "Regular"
+                    },
+                    "date_range_from": "2019-01-01",
+                    "date_range_to": "2019-01-31",
+                    "ee_amount": 250,
+                    "cost_centers": [
+                        {
+                            "index": 0,
+                            "value": {
+                                "id": 123456,
+                                "name": "Operations"
+                            }
+                        }
+                    ],
+                    "shift": {
+                        "id": 33024,
+                        "name": "My Shift premium"
+                    },
+                    "batch": {
+                        "id": 34407234,
+                        "display_name": "Regular"
+                    }
+                }
+            ],
+            "deductions": [
+                {
+                    "deduction": {
+                        "name": "401k",
+                        "code": "401k"
+                    },
+                    "er_amount": 25
+                }
+            ]
+        },
+        {
+            "employee": {
+                "account_id": 3589
+            },
+            "ein": {
+                "ein_name": "EIN2"
+            },
+            "payroll": {
+                "start_date": "2019-01-01",
+                "end_date": "2019-01-31"
+            },
+            "type": {
+                "display_name": "Regular"
+            },
+            "batch": {
+                "display_name": "Regular"
+            },
+            "process_delta_only": false,
+            "earnings": [
+                {
+                    "earning": {
+                        "name": "Regular",
+                        "code": "Regular"
+                    },
+                    "date_range_from": "2019-01-01",
+                    "date_range_to": "2019-01-31",
+                    "ee_amount": 250,
+                    "cost_centers": [
+                        {
+                            "index": 0,
+                            "value": {
+                                "id": 123456,
+                                "name": "Operations"
+                            }
+                        }
+                    ],
+                    "shift": {
+                        "id": 33024,
+                        "name": "My Shift premium"
+                    }
+                }
+            ],
+            "deductions": [
+                {
+                    "deduction": {
+                        "name": "401k",
+                        "code": "401k"
+                    },
+                    "er_amount": 25
+                }
+            ]
+        }
+    ]
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -484,7 +596,118 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;pay_statements&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;3588&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;ein&gt;
+            &lt;id&gt;12134312&lt;/id&gt;
+            &lt;ein_name&gt;EIN1&lt;/ein_name&gt;
+        &lt;/ein&gt;
+        &lt;payroll&gt;
+            &lt;start_date&gt;2019-01-01&lt;/start_date&gt;
+            &lt;end_date&gt;2019-01-31&lt;/end_date&gt;
+        &lt;/payroll&gt;
+        &lt;type&gt;
+            &lt;id&gt;12134322&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;calculate_taxes&gt;false&lt;/calculate_taxes&gt;
+        &lt;process_delta_only&gt;false&lt;/process_delta_only&gt;
+        &lt;earnings&gt;
+            &lt;earning&gt;
+                &lt;date_range_from&gt;2019-01-01&lt;/date_range_from&gt;
+                &lt;date_range_to&gt;2019-01-31&lt;/date_range_to&gt;
+                &lt;ee_amount&gt;40&lt;/ee_amount&gt;
+                &lt;shift&gt;
+                    &lt;id&gt;33024&lt;/id&gt;
+                    &lt;name&gt;My Shift premium&lt;/name&gt;
+                &lt;/shift&gt;
+                &lt;cost_centers&gt;
+                    &lt;cost_center&gt;
+                        &lt;index&gt;0&lt;/index&gt;
+                        &lt;value&gt;
+                            &lt;id&gt;123456&lt;/id&gt;
+                            &lt;name&gt;Operations&lt;/name&gt;
+                        &lt;/value&gt;
+                    &lt;/cost_center&gt;
+                &lt;/cost_centers&gt;
+                &lt;earning&gt;
+                    &lt;name&gt;Regular&lt;/name&gt;
+                    &lt;code&gt;Regular&lt;/code&gt;
+                &lt;/earning&gt;
+                &lt;batch&gt;
+                    &lt;id&gt;12134345&lt;/id&gt;
+                    &lt;display_name&gt;Regular&lt;/display_name&gt;
+                &lt;/batch&gt;
+            &lt;/earning&gt;
+        &lt;/earnings&gt;
+        &lt;deductions&gt;
+            &lt;deduction&gt;
+                &lt;er_amount&gt;25&lt;/er_amount&gt;
+                &lt;deduction&gt;
+                    &lt;name&gt;401k&lt;/name&gt;
+                    &lt;code&gt;401k&lt;/code&gt;
+                &lt;/deduction&gt;
+            &lt;/deduction&gt;
+        &lt;/deductions&gt;
+    &lt;/pay_statement&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;3589&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;ein&gt;
+            &lt;ein_name&gt;EIN1&lt;/ein_name&gt;
+        &lt;/ein&gt;
+        &lt;payroll&gt;
+            &lt;start_date&gt;2019-01-01&lt;/start_date&gt;
+            &lt;end_date&gt;2019-01-31&lt;/end_date&gt;
+        &lt;/payroll&gt;
+        &lt;type&gt;
+            &lt;id&gt;1211213&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;calculate_taxes&gt;false&lt;/calculate_taxes&gt;
+        &lt;process_delta_only&gt;false&lt;/process_delta_only&gt;
+        &lt;earnings&gt;
+            &lt;earning&gt;
+                &lt;date_range_from&gt;2019-01-01&lt;/date_range_from&gt;
+                &lt;date_range_to&gt;2019-01-31&lt;/date_range_to&gt;
+                &lt;ee_amount&gt;40&lt;/ee_amount&gt;
+                &lt;shift&gt;
+                    &lt;id&gt;33024&lt;/id&gt;
+                    &lt;name&gt;My Shift premium&lt;/name&gt;
+                &lt;/shift&gt;
+                &lt;cost_centers&gt;
+                    &lt;cost_center&gt;
+                        &lt;index&gt;0&lt;/index&gt;
+                        &lt;value&gt;
+                            &lt;id&gt;123456&lt;/id&gt;
+                            &lt;name&gt;Operations&lt;/name&gt;
+                        &lt;/value&gt;
+                    &lt;/cost_center&gt;
+                &lt;/cost_centers&gt;
+                &lt;earning&gt;
+                    &lt;name&gt;Regular&lt;/name&gt;
+                    &lt;code&gt;Regular&lt;/code&gt;
+                &lt;/earning&gt;
+            &lt;/earning&gt;
+        &lt;/earnings&gt;
+        &lt;deductions&gt;
+            &lt;deduction&gt;
+                &lt;er_amount&gt;25&lt;/er_amount&gt;
+                &lt;deduction&gt;
+                    &lt;name&gt;401k&lt;/name&gt;
+                    &lt;code&gt;401k&lt;/code&gt;
+                &lt;/deduction&gt;
+            &lt;/deduction&gt;
+        &lt;/deductions&gt;
+    &lt;/pay_statement&gt;
+&lt;/pay_statements&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"&gt;
@@ -736,7 +959,118 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="req-tab-post" id="req-tab-id-post-2">
 <div class="example">
 
+<div class="post-example-tab-2 activeTab" id="post-tab-example-2">
 
+<pre class="highlightjs">&lt;pay_statements&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;3588&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;ein&gt;
+            &lt;id&gt;12134312&lt;/id&gt;
+            &lt;ein_name&gt;EIN1&lt;/ein_name&gt;
+        &lt;/ein&gt;
+        &lt;payroll&gt;
+            &lt;start_date&gt;2019-01-01&lt;/start_date&gt;
+            &lt;end_date&gt;2019-01-31&lt;/end_date&gt;
+        &lt;/payroll&gt;
+        &lt;type&gt;
+            &lt;id&gt;12134322&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;calculate_taxes&gt;false&lt;/calculate_taxes&gt;
+        &lt;process_delta_only&gt;false&lt;/process_delta_only&gt;
+        &lt;earnings&gt;
+            &lt;earning&gt;
+                &lt;date_range_from&gt;2019-01-01&lt;/date_range_from&gt;
+                &lt;date_range_to&gt;2019-01-31&lt;/date_range_to&gt;
+                &lt;ee_amount&gt;40&lt;/ee_amount&gt;
+                &lt;shift&gt;
+                    &lt;id&gt;33024&lt;/id&gt;
+                    &lt;name&gt;My Shift premium&lt;/name&gt;
+                &lt;/shift&gt;
+                &lt;cost_centers&gt;
+                    &lt;cost_center&gt;
+                        &lt;index&gt;0&lt;/index&gt;
+                        &lt;value&gt;
+                            &lt;id&gt;123456&lt;/id&gt;
+                            &lt;name&gt;Operations&lt;/name&gt;
+                        &lt;/value&gt;
+                    &lt;/cost_center&gt;
+                &lt;/cost_centers&gt;
+                &lt;earning&gt;
+                    &lt;name&gt;Regular&lt;/name&gt;
+                    &lt;code&gt;Regular&lt;/code&gt;
+                &lt;/earning&gt;
+                &lt;batch&gt;
+                    &lt;id&gt;12134345&lt;/id&gt;
+                    &lt;display_name&gt;Regular&lt;/display_name&gt;
+                &lt;/batch&gt;
+            &lt;/earning&gt;
+        &lt;/earnings&gt;
+        &lt;deductions&gt;
+            &lt;deduction&gt;
+                &lt;er_amount&gt;25&lt;/er_amount&gt;
+                &lt;deduction&gt;
+                    &lt;name&gt;401k&lt;/name&gt;
+                    &lt;code&gt;401k&lt;/code&gt;
+                &lt;/deduction&gt;
+            &lt;/deduction&gt;
+        &lt;/deductions&gt;
+    &lt;/pay_statement&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;3589&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;ein&gt;
+            &lt;ein_name&gt;EIN1&lt;/ein_name&gt;
+        &lt;/ein&gt;
+        &lt;payroll&gt;
+            &lt;start_date&gt;2019-01-01&lt;/start_date&gt;
+            &lt;end_date&gt;2019-01-31&lt;/end_date&gt;
+        &lt;/payroll&gt;
+        &lt;type&gt;
+            &lt;id&gt;1211213&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;calculate_taxes&gt;false&lt;/calculate_taxes&gt;
+        &lt;process_delta_only&gt;false&lt;/process_delta_only&gt;
+        &lt;earnings&gt;
+            &lt;earning&gt;
+                &lt;date_range_from&gt;2019-01-01&lt;/date_range_from&gt;
+                &lt;date_range_to&gt;2019-01-31&lt;/date_range_to&gt;
+                &lt;ee_amount&gt;40&lt;/ee_amount&gt;
+                &lt;shift&gt;
+                    &lt;id&gt;33024&lt;/id&gt;
+                    &lt;name&gt;My Shift premium&lt;/name&gt;
+                &lt;/shift&gt;
+                &lt;cost_centers&gt;
+                    &lt;cost_center&gt;
+                        &lt;index&gt;0&lt;/index&gt;
+                        &lt;value&gt;
+                            &lt;id&gt;123456&lt;/id&gt;
+                            &lt;name&gt;Operations&lt;/name&gt;
+                        &lt;/value&gt;
+                    &lt;/cost_center&gt;
+                &lt;/cost_centers&gt;
+                &lt;earning&gt;
+                    &lt;name&gt;Regular&lt;/name&gt;
+                    &lt;code&gt;Regular&lt;/code&gt;
+                &lt;/earning&gt;
+            &lt;/earning&gt;
+        &lt;/earnings&gt;
+        &lt;deductions&gt;
+            &lt;deduction&gt;
+                &lt;er_amount&gt;25&lt;/er_amount&gt;
+                &lt;deduction&gt;
+                    &lt;name&gt;401k&lt;/name&gt;
+                    &lt;code&gt;401k&lt;/code&gt;
+                &lt;/deduction&gt;
+            &lt;/deduction&gt;
+        &lt;/deductions&gt;
+    &lt;/pay_statement&gt;
+&lt;/pay_statements&gt;</pre>
+</div>
 <div class="post-example-tab-2" id="post-tab-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"&gt;
@@ -986,7 +1320,7 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 </div>
 </div>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-post-0" data-tab-class="resp-tab-post" name="resp-tab-post" type="radio"/>
@@ -1001,7 +1335,36 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="resp-tab-post" id="resp-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-resp-tab-0 activeTab" id="post-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "items": [
+    {
+      "index": 1,
+      "employee":{
+        "account_id":12345679
+       },
+      "status": "FAILURE",
+      "errors": [
+        {
+          "code": 153652,
+          "message": "Cannot process entity because of ..."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "status": "FAILURE",
+      "errors": [
+        {
+          "code": 153652,
+          "message": "Cannot process entity because of ..."
+        }
+      ]
+    }
+  ]
+}</pre>
+</div>
 <div class="post-example-resp-tab-0" id="post-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -1079,7 +1442,35 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="resp-tab-post" id="resp-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-resp-tab-1 activeTab" id="post-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;result&gt;
+  &lt;item&gt;
+    &lt;index&gt;1&lt;/index&gt;
+    &lt;employee&gt;
+        &lt;account_id&gt;12345679&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;status&gt;FAILURE&lt;/status&gt;
+    &lt;errors&gt;
+      &lt;error&gt;
+        &lt;code&gt;153652&lt;/code&gt;
+        &lt;message&gt;Cannot process entity because of ...&lt;/message&gt;
+      &lt;/error&gt;
+    &lt;/errors&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;index&gt;4&lt;/index&gt;
+    &lt;status&gt;FAILURE&lt;/status&gt;
+    &lt;errors&gt;
+      &lt;error&gt;
+        &lt;code&gt;153652&lt;/code&gt;
+        &lt;message&gt;Cannot process entity because of ...&lt;/message&gt;
+      &lt;/error&gt;
+    &lt;/errors&gt;
+  &lt;/item&gt;
+&lt;/result&gt;</pre>
+</div>
 <div class="post-example-resp-tab-1" id="post-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

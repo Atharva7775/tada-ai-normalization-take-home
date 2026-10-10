@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Access Policy Profile</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Access Policy Profile</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Access Policy Profile</span>
@@ -31,7 +31,7 @@ Requires 'View Access Policies (System)' permission.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -63,7 +63,7 @@ Requires 'View Access Policies (System)' permission.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -130,7 +130,7 @@ Requires 'View Access Policies (System)' permission.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/access-profiles/{aid}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -145,7 +145,39 @@ Requires 'View Access Policies (System)' permission.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "id": 9933,
+  "name": "East",
+  "description": "Eastern Region",
+  "active": true,
+  "allow_mobile": true,
+  "access_options": [
+    {
+      "option_id": 64128,
+      "type": "IPv4",
+      "ip_range_start": "10.10.255.0",
+      "ip_range_end": "10.10.255.255",
+      "comment": "Internal Ips"
+    },
+    {
+      "option_id": 64129,
+      "type": "IPv4",
+      "ip_range_start": "192.168.1.1",
+      "ip_range_end": "192.168.1.1",
+      "comment": "Single IP"
+    },
+    {
+      "option_id": 64130,
+      "type": "IPv6",
+      "ip_range_start": "2001:0db8:0000:0000:0000:0000:0000:0123",
+      "ip_range_end": "2001:0db8:0000:0000:0000:0000:0000:0456",
+      "comment": "IPv6 Range"
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -213,7 +245,40 @@ Requires 'View Access Policies (System)' permission.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;access_profile&gt;
+  &lt;id&gt;9933&lt;/id&gt;
+  &lt;name&gt;East&lt;/name&gt;
+  &lt;description&gt;Eastern Region&lt;/description&gt;
+  &lt;active&gt;true&lt;/active&gt;
+  &lt;allow_mobile&gt;true&lt;/allow_mobile&gt;
+  &lt;access_options&gt;
+    &lt;access_option&gt;
+      &lt;option_id&gt;64128&lt;/option_id&gt;
+      &lt;type&gt;IPv4&lt;/type&gt;
+      &lt;ip_range_start&gt;10.10.255.0&lt;/ip_range_start&gt;
+      &lt;ip_range_end&gt;10.10.255.255&lt;/ip_range_end&gt;
+      &lt;comment&gt;Internal Ips&lt;/comment&gt;
+    &lt;/access_option&gt;
+    &lt;access_option&gt;
+      &lt;option_id&gt;64129&lt;/option_id&gt;
+      &lt;type&gt;IPv4&lt;/type&gt;
+      &lt;ip_range_start&gt;192.168.1.1&lt;/ip_range_start&gt;
+      &lt;ip_range_end&gt;192.168.1.1&lt;/ip_range_end&gt;
+      &lt;comment&gt;Single IP&lt;/comment&gt;
+    &lt;/access_option&gt;
+    &lt;access_option&gt;
+      &lt;option_id&gt;64130&lt;/option_id&gt;
+      &lt;type&gt;IPv6&lt;/type&gt;
+      &lt;ip_range_start&gt;2001:0db8:0000:0000:0000:0000:0000:0123&lt;/ip_range_start&gt;
+      &lt;ip_range_end&gt;2001:0db8:0000:0000:0000:0000:0000:0456&lt;/ip_range_end&gt;
+      &lt;comment&gt;IPv6 Range&lt;/comment&gt;
+    &lt;/access_option&gt;
+  &lt;/access_options&gt;
+&lt;/access_profile&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -290,7 +355,7 @@ Requires 'Edit Access Policies (System)' permission.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -322,7 +387,7 @@ Requires 'Edit Access Policies (System)' permission.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -336,7 +401,7 @@ Requires 'Edit Access Policies (System)' permission.
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -441,7 +506,39 @@ Requires 'Edit Access Policies (System)' permission.
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "id": 9933,
+  "name": "East",
+  "description": "Eastern Region",
+  "active": true,
+  "allow_mobile": true,
+  "access_options": [
+    {
+      "option_id": 64128,
+      "type": "IPv4",
+      "ip_range_start": "10.10.255.0",
+      "ip_range_end": "10.10.255.255",
+      "comment": "Internal Ips"
+    },
+    {
+      "option_id": 64129,
+      "type": "IPv4",
+      "ip_range_start": "192.168.1.1",
+      "ip_range_end": "192.168.1.1",
+      "comment": "Single IP"
+    },
+    {
+      "option_id": 64130,
+      "type": "IPv6",
+      "ip_range_start": "2001:0db8:0000:0000:0000:0000:0000:0123",
+      "ip_range_end": "2001:0db8:0000:0000:0000:0000:0000:0456",
+      "comment": "IPv6 Range"
+    }
+  ]
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -509,7 +606,40 @@ Requires 'Edit Access Policies (System)' permission.
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;access_profile&gt;
+  &lt;id&gt;9933&lt;/id&gt;
+  &lt;name&gt;East&lt;/name&gt;
+  &lt;description&gt;Eastern Region&lt;/description&gt;
+  &lt;active&gt;true&lt;/active&gt;
+  &lt;allow_mobile&gt;true&lt;/allow_mobile&gt;
+  &lt;access_options&gt;
+    &lt;access_option&gt;
+      &lt;option_id&gt;64128&lt;/option_id&gt;
+      &lt;type&gt;IPv4&lt;/type&gt;
+      &lt;ip_range_start&gt;10.10.255.0&lt;/ip_range_start&gt;
+      &lt;ip_range_end&gt;10.10.255.255&lt;/ip_range_end&gt;
+      &lt;comment&gt;Internal Ips&lt;/comment&gt;
+    &lt;/access_option&gt;
+    &lt;access_option&gt;
+      &lt;option_id&gt;64129&lt;/option_id&gt;
+      &lt;type&gt;IPv4&lt;/type&gt;
+      &lt;ip_range_start&gt;192.168.1.1&lt;/ip_range_start&gt;
+      &lt;ip_range_end&gt;192.168.1.1&lt;/ip_range_end&gt;
+      &lt;comment&gt;Single IP&lt;/comment&gt;
+    &lt;/access_option&gt;
+    &lt;access_option&gt;
+      &lt;option_id&gt;64130&lt;/option_id&gt;
+      &lt;type&gt;IPv6&lt;/type&gt;
+      &lt;ip_range_start&gt;2001:0db8:0000:0000:0000:0000:0000:0123&lt;/ip_range_start&gt;
+      &lt;ip_range_end&gt;2001:0db8:0000:0000:0000:0000:0000:0456&lt;/ip_range_end&gt;
+      &lt;comment&gt;IPv6 Range&lt;/comment&gt;
+    &lt;/access_option&gt;
+  &lt;/access_options&gt;
+&lt;/access_profile&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -586,7 +716,7 @@ Requires 'Delete Access Policies (System)' permission.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>

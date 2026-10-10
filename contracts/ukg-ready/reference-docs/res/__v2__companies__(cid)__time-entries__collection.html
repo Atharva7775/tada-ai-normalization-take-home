@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Batch Update</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Batch Update</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Batch Update</span>
@@ -39,7 +39,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -56,7 +56,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: true</p>
 <div class="desc md">Use to update entries within the specified time range, instead of replacing them.</div>
 </div>
 </div>
@@ -74,7 +74,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -88,7 +88,7 @@ Requires at least one of the following subsystems:
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -168,7 +168,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/time-entries/collection</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-put-0" data-tab-class="resp-tab-put" name="resp-tab-put" type="radio"/>
@@ -183,7 +183,72 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-put" id="resp-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-resp-tab-0 activeTab" id="put-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "time_entry_sets": [
+    {
+      "employee": {
+        "account_id": 2354242
+      },
+      "start_date": "2016-05-01",
+      "end_date": "2016-05-30",
+      "time_entries": [
+        {
+          "date": "2016-05-02",
+          "type": "TIME",
+          "start_time": "2016-05-02T08:00:00.000-05:00",
+          "end_time": "2016-05-02T09:00:00.000-05:00",
+          "total": 7560000,
+          "time_off": {
+            "id": 1539588
+          },
+          "pay_category": {
+            "id": 145283
+          },
+          "premium_shift": {
+            "id": 72705
+          },
+          "cost_centers": [
+            {
+              "index": 4,
+              "value": {
+                "id": 1542209
+              }
+            },
+            {
+              "index": 6,
+              "value": {
+                "id": 1542209
+              }
+            }
+          ],
+          "custom_fields": [
+            {
+              "index": 0,
+              "value": "value"
+            },
+            {
+              "index": 3,
+              "value": "val"
+            }
+          ],
+          "piecework": 10,
+          "amount": 50
+        },
+        {
+          "date": "2016-05-01",
+          "type": "TIME",
+          "start_time": "2016-05-01T08:00:00.000-05:00",
+          "total": 3600000
+        }
+      ]
+    }
+  ]
+}
+
+</pre>
+</div>
 <div class="put-example-resp-tab-0" id="put-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -381,7 +446,67 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-put" id="resp-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-resp-tab-1 activeTab" id="put-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;time_entry_sets&gt;
+  &lt;time_entry_set&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;235425&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;start_date&gt;2016-05-01&lt;/start_date&gt;
+    &lt;end_date&gt;2016-05-30&lt;/end_date&gt;
+    &lt;time_entries&gt;
+      &lt;time_entry&gt;
+        &lt;date&gt;2016-05-02&lt;/date&gt;
+        &lt;type&gt;TIME&lt;/type&gt;
+        &lt;start_time&gt;2016-05-02T08:00:00.000-05:00&lt;/start_time&gt;
+        &lt;end_time&gt;2016-05-02T10:00:00.000-05:00&lt;/end_time&gt;
+        &lt;total&gt;7560000&lt;/total&gt;
+        &lt;time_off&gt;
+          &lt;id&gt;1539588&lt;/id&gt;
+        &lt;/time_off&gt;
+        &lt;pay_category&gt;
+          &lt;id&gt;145283&lt;/id&gt;
+        &lt;/pay_category&gt;
+        &lt;premium_shift&gt;
+          &lt;id&gt;72705&lt;/id&gt;
+        &lt;/premium_shift&gt;
+        &lt;cost_centers&gt;
+          &lt;cost_center&gt;
+            &lt;index&gt;0&lt;/index&gt;
+            &lt;value&gt;
+              &lt;id&gt;234525&lt;/id&gt;
+            &lt;/value&gt;
+          &lt;/cost_center&gt;
+          &lt;cost_center&gt;
+            &lt;index&gt;9&lt;/index&gt;
+            &lt;value&gt;
+              &lt;id&gt;2345425&lt;/id&gt;
+            &lt;/value&gt;
+          &lt;/cost_center&gt;
+        &lt;/cost_centers&gt;
+        &lt;custom_fields&gt;
+          &lt;custom_field&gt;
+            &lt;index&gt;0&lt;/index&gt;
+            &lt;value&gt;val&lt;/value&gt;
+          &lt;/custom_field&gt;
+          &lt;custom_field&gt;
+            &lt;index&gt;3&lt;/index&gt;
+            &lt;value&gt;val&lt;/value&gt;
+          &lt;/custom_field&gt;
+        &lt;/custom_fields&gt;
+      &lt;/time_entry&gt;
+      &lt;time_entry&gt;
+        &lt;date&gt;2016-05-01&lt;/date&gt;
+        &lt;type&gt;TIME&lt;/type&gt;
+        &lt;start_time&gt;2016-05-02T08:00:00.000-05:00&lt;/start_time&gt;
+        &lt;total&gt;3600000&lt;/total&gt;
+      &lt;/time_entry&gt;
+    &lt;/time_entries&gt;
+  &lt;/time_entry_set&gt;
+&lt;/time_entry_sets&gt;</pre>
+</div>
 <div class="put-example-resp-tab-1" id="put-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

@@ -22,7 +22,9 @@ For each provider:
    evidence and exact permitted scope in `REFERENCE_READINESS.md`.
 3. Store only the approved contract under its `openapi/` directory. Preserve its
    source bytes; record checksum and provenance. Review for embedded real data,
-   secrets and unauthorized example records; replace/redact only with a documented
+   secrets and embedded records. Provider-documented illustrative samples are
+   intended inputs for this brief; distinguish them from customer exports.
+   Redact authentication token examples and record all changes. Replace/redact with a documented
    approved derivative. Do not copy company integration repositories or customer data.
 4. Populate the provider's **one** `lookup-reference.json` with verified domains,
    raw codes, meanings and citations. Document incomplete domains and version.

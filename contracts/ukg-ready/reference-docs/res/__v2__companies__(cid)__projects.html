@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Project Management</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Project Management</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Project Management</span>
@@ -31,7 +31,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -49,7 +49,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -132,7 +132,27 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "name": "Prj1",
+  "business_purpose": "business purpose",
+  "percent_complete": 25.42,
+  "description": "project description",
+  "start_date": "2024-02-03",
+  "end_date": "2024-03-03",
+  "cost_center_list_id": 75005760,
+  "budget_amount": 100.00,
+  "status": "OPEN",
+  "employees": [4370408256,4370408256],
+  "managers": [4370408256],
+  "ein": {
+    "id": 910912,
+    "currency_code": "UAH"
+  },
+  "target_hours": 100
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -203,7 +223,30 @@
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;ProjectDTO&gt;
+  &lt;name&gt;Pr1&lt;/name&gt;
+  &lt;business_purpose&gt;mobile dev&lt;/business_purpose&gt;
+  &lt;percent_complete&gt;22.4&lt;/percent_complete&gt;
+  &lt;description&gt;ein&lt;/description&gt;
+  &lt;start_date&gt;2024-02-03&lt;/start_date&gt;
+  &lt;end_date&gt;2024-03-03&lt;/end_date&gt;
+  &lt;cost_center_id&gt;17252355661&lt;/cost_center_id&gt;
+  &lt;budget_amount&gt;0.190000&lt;/budget_amount&gt;
+  &lt;target_hours&gt;43&lt;/target_hours&gt;
+  &lt;ein&gt;
+    &lt;id&gt;74456384&lt;/id&gt;
+  &lt;/ein&gt;
+  &lt;employees&gt;
+    &lt;employees&gt;4370408642&lt;/employees&gt;
+  &lt;/employees&gt;
+  &lt;managers&gt;
+    &lt;managers&gt;4370408448&lt;/managers&gt;
+  &lt;/managers&gt;
+&lt;/ProjectDTO&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version="1.0" encoding="windows-1252"?&gt;

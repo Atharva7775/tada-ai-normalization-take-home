@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Changed employees</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Changed employees</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Changed employees</span>
@@ -35,7 +35,7 @@ The Employee operations use a separate security profile item to control access r
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -52,7 +52,7 @@ The Employee operations use a separate security profile item to control access r
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2017-09-15T20:55:00Z</p>
 <div class="desc md">Used to set reference date to determine changes, the value cannot be more than 31 days in the past.
 &lt;br&gt;Date should be expressed according to ISO 8601.
 &lt;br&gt;If the timezone is not provided or cannot be parsed the system will default to the timezone of the company. Default value is today minus 5 days.
@@ -68,7 +68,7 @@ The Employee operations use a separate security profile item to control access r
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: false</p>
 <div class="desc md">Used to set flag to filter out changed employee records which are already terminated with respect to reference date(Since). Default Value is true.
 </div>
 </div>
@@ -87,7 +87,7 @@ The Employee operations use a separate security profile item to control access r
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -154,7 +154,7 @@ The Employee operations use a separate security profile item to control access r
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/changed</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -169,7 +169,72 @@ The Employee operations use a separate security profile item to control access r
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+    "entries": [
+        {
+            "id": 2201484,
+            "object": {
+                "id": 2201484,
+                "employee_id": "0008",
+                "external_id": "0008",
+                "username": "employee1",
+                "first_name": "employee1",
+                "last_name": "employee1",
+                "_links": {
+                    "self": "https://example.com/ta/rest/v2/companies/453313/employees/2201484",
+                    "demographics": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/demographics",
+                    "pay_info": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/pay-info",
+                    "profiles": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/profiles",
+                    "hcm-profiles": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/hcm-profiles",
+                    "hcm-fields": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/hcm-fields",
+                    "badges": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/badges",
+                    "base_compensation": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/compensation/history",
+                    "additional_compensation": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/compensation/additional",
+                    "total_compensation": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/compensation/total",
+                    "hr-custom-fields": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/hr-custom-fields",
+                    "skills": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/skills",
+          "credentials": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/credentials",
+          "trainingCourseHistory": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/training/certifications"
+        }
+            },
+            "status": "MODIFIED"
+        },
+        {
+            "id": 2201486,
+            "status": "DELETED"
+        },
+        {
+            "id": 2216133,
+            "object": {
+                "id": 2216133,
+                "employee_id": "employeeId",
+                "username": "employeeForSingleGet2",
+                "first_name": "employee",
+                "last_name": "ForSingleGet2",
+                "_links": {
+                    "self": "https://example.com/ta/rest/v2/companies/453313/employees/2216133",
+                    "demographics": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/demographics",
+                    "pay_info": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/pay-info",
+                    "profiles": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/profiles",
+                    "hcm-profiles": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/hcm-profiles",
+                    "hcm-fields": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/hcm-fields",
+                    "badges": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/badges",
+                    "base_compensation": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/compensation/history",
+                    "additional_compensation": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/compensation/additional",
+                    "total_compensation": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/compensation/total",
+                    "hr-custom-fields": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/hr-custom-fields",
+                    "skills": "https://example.com/ta/rest/v2/companies/453313/employees/2216133/skills",
+          "credentials": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/credentials",
+          "trainingCourseHistory": "https://example.com/ta/rest/v2/companies/453313/employees/2201484/training/certifications"
+                }
+            },
+            "status": "CREATED"
+        }
+    ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -296,7 +361,74 @@ The Employee operations use a separate security profile item to control access r
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;changed_entries&gt;
+  &lt;entries&gt;
+    &lt;entry&gt;
+      &lt;id&gt;2201485&lt;/id&gt;
+      &lt;status&gt;DELETED&lt;/status&gt;
+    &lt;/entry&gt;
+    &lt;entry&gt;
+      &lt;id&gt;2201483&lt;/id&gt;
+      &lt;object&gt;
+        &lt;id&gt;2201483&lt;/id&gt;
+        &lt;primary_account_id&gt;2201483&lt;/primary_account_id&gt;
+        &lt;employee_id&gt;0007&lt;/employee_id&gt;
+        &lt;external_id&gt;0007&lt;/external_id&gt;
+        &lt;username&gt;employee0&lt;/username&gt;
+        &lt;first_name&gt;employee0&lt;/first_name&gt;
+        &lt;last_name&gt;employee0&lt;/last_name&gt;
+        &lt;_links&gt;
+          &lt;self&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483&lt;/self&gt;
+          &lt;demographics&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/demographics&lt;/demographics&gt;
+          &lt;pay_info&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/pay-info&lt;/pay_info&gt;
+          &lt;profiles&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/profiles&lt;/profiles&gt;
+          &lt;hcm-profiles&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/hcm-profiles&lt;/hcm-profiles&gt;
+          &lt;hcm-fields&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/hcm-profiles&lt;/hcm-fields&gt;
+          &lt;badges&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/badges&lt;/badges&gt;
+          &lt;base_compensation&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/compensation/history&lt;/base_compensation&gt;
+          &lt;additional_compensation&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/compensation/additional&lt;/additional_compensation&gt;
+          &lt;total_compensation&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/compensation/total&lt;/total_compensation&gt;
+          &lt;hr-custom-fields&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/hr-custom-fields&lt;/hr-custom-fields&gt;
+          &lt;skills&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/skills&lt;/skills&gt;
+          &lt;credentials&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/credentials&lt;/credentials&gt;
+          &lt;trainingCourseHistory&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/training/certifications&lt;/trainingCourseHistory&gt;
+
+        &lt;/_links&gt;
+      &lt;/object&gt;
+      &lt;status&gt;MODIFIED&lt;/status&gt;
+    &lt;/entry&gt;
+    &lt;entry&gt;
+      &lt;id&gt;2216133&lt;/id&gt;
+      &lt;object&gt;
+        &lt;id&gt;2216133&lt;/id&gt;
+        &lt;primary_account_id&gt;2216133&lt;/primary_account_id&gt;
+        &lt;employee_id&gt;employeeForSingleGetId2&lt;/employee_id&gt;
+        &lt;username&gt;employeeForSingleGet2&lt;/username&gt;
+        &lt;first_name&gt;employee&lt;/first_name&gt;
+        &lt;last_name&gt;ForSingleGet2&lt;/last_name&gt;
+        &lt;_links&gt;
+          &lt;self&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133&lt;/self&gt;
+          &lt;demographics&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/demographics&lt;/demographics&gt;
+          &lt;pay_info&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/pay-info&lt;/pay_info&gt;
+          &lt;profiles&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/profiles&lt;/profiles&gt;
+          &lt;badges&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/badges&lt;/badges&gt;
+          &lt;base_compensation&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/compensation/history&lt;/base_compensation&gt;
+          &lt;additional_compensation&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/compensation/additional&lt;/additional_compensation&gt;
+          &lt;total_compensation&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/compensation/total&lt;/total_compensation&gt;
+          &lt;hr-custom-fields&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/hr-custom-fields&lt;/hr-custom-fields&gt;
+          &lt;skills&gt;https://example.com/ta/rest/v2/companies/453313/employees/2216133/skills&lt;/skills&gt;
+          &lt;credentials&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/credentials&lt;/credentials&gt;
+          &lt;trainingCourseHistory&gt;https://example.com/ta/rest/v2/companies/453313/employees/2201483/training/certifications&lt;/trainingCourseHistory&gt;
+        &lt;/_links&gt;
+      &lt;/object&gt;
+      &lt;status&gt;CREATED&lt;/status&gt;
+    &lt;/entry&gt;
+  &lt;/entries&gt;
+&lt;/changed_entries&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

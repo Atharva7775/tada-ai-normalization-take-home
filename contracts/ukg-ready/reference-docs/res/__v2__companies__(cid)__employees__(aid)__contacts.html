@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Contacts</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Contacts</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Contacts</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -44,7 +44,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -132,7 +132,7 @@ By default employee profile view is used for the account.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -189,7 +189,7 @@ By default employee profile view is used for the account.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/contacts</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -204,7 +204,49 @@ By default employee profile view is used for the account.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "contacts": [
+    {
+      "id": 75969,
+      "employee": {
+        "account_id": 52353250
+      },
+      "primary": true,
+      "emergency": true,
+      "dependent": false,
+      "beneficiary": false,
+      "emergency_notif": null,
+      "salutation": "Hola",
+      "first_name": "John",
+      "middle_name": "Bob",
+      "last_name": "Smith",
+      "name_suffix": "PhD",
+      "relationship": "Spouse",
+      "birthdate": "1982-09-21",
+      "is_in_any_benefit_plan": false,
+      "_links": {
+        "self": "https://secure2.saashr.com/ta/rest/v2/companies/453121/employees/53312326/contacts/75969"
+      },
+      "has_delete_permission": false,
+      "has_activate_deactivate_permission": false,
+      "has_emergency_notification_permission": false
+    }
+  ],
+  "_links": {
+    "create": "https://secure2.saashr.com/ta/rest/v2/companies/453121/contacts"
+  },
+  "_total_count": 1,
+  "_sub_count": {
+    "all": 1,
+    "emergency": 1,
+    "dependent": 0,
+    "beneficiary": 0
+  }
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -438,7 +480,47 @@ By default employee profile view is used for the account.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;contact&gt;
+    &lt;id&gt;123456&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;52353250&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;primary&gt;true&lt;/primary&gt;
+    &lt;emergency&gt;true&lt;/emergency&gt;
+    &lt;dependent&gt;false&lt;/dependent&gt;
+    &lt;beneficiary&gt;false&lt;/beneficiary&gt;
+    &lt;emergency_notif xsi:nil="true"/&gt;
+    &lt;salutation&gt;salutation&lt;/salutation&gt;
+    &lt;first_name&gt;first_name&lt;/first_name&gt;
+    &lt;middle_name&gt;middle_name&lt;/middle_name&gt;
+    &lt;last_name&gt;last_name&lt;/last_name&gt;
+    &lt;name_suffix&gt;suffix&lt;/name_suffix&gt;
+    &lt;relationship&gt;123&lt;/relationship&gt;
+    &lt;birthdate&gt;1982-09-21&lt;/birthdate&gt;
+    &lt;is_in_any_benefit_plan&gt;false&lt;/is_in_any_benefit_plan&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/employees/53312326/contacts/123456&lt;/self&gt;
+    &lt;/_links&gt;
+    &lt;has_delete_permission&gt;false&lt;/has_delete_permission&gt;
+    &lt;has_activate_deactivate_permission&gt;false&lt;/has_activate_deactivate_permission&gt;
+    &lt;has_emergency_notification_permission&gt;false&lt;/has_emergency_notification_permission&gt;
+  &lt;/contact&gt;
+  &lt;_links&gt;
+    &lt;create&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/contacts&lt;/create&gt;
+  &lt;/_links&gt;
+  &lt;_total_count&gt;1&lt;/_total_count&gt;
+  &lt;_sub_count&gt;
+    &lt;all&gt;1&lt;/all&gt;
+    &lt;emergency&gt;1&lt;/emergency&gt;
+    &lt;dependent&gt;0&lt;/dependent&gt;
+    &lt;beneficiary&gt;0&lt;/beneficiary&gt;
+  &lt;/_sub_count&gt;
+&lt;/contacts&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version='1.0' encoding='UTF-8'?&gt;

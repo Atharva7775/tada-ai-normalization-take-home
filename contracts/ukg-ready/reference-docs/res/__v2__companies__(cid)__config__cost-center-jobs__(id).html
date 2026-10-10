@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Cost Center Job</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Cost Center Job</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Cost Center Job</span>
@@ -28,7 +28,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -60,7 +60,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -127,7 +127,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/config/cost-center-jobs/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -142,7 +142,192 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+    "id": 2355,
+    "job_category": "Job Category 1",
+    "name": "Software Engineer I",
+    "abbreviation": "SE1",
+    "description": "This job is for Software Engineer I",
+    "job_description": "Candidate should be Well-versed in JAVA and data structures.",
+    "external_id": "2376A",
+    "payroll_code": "PRC-SE1",
+    "visible": true,
+    "applicant_tracking_display": true,
+    "applicant_tracking_display_only": false,
+    "standard_work_day": {
+        "value": 234234789,
+        "employee_override": false
+    },
+    "employee_type": {
+        "id": 129795,
+        "employee_override": false
+    },
+    "eeo_classification": {
+        "value": "PROFESSIONALS",
+        "employee_override": true
+    },
+    "union": {
+        "id": 6578,
+        "employee_override": false
+    },
+    "pay_grade": {
+        "id": 9647,
+        "employee_override": true
+    },
+    "pay_type": {
+        "id": 3490,
+        "employee_override": true
+    },
+    "first_screen": {
+        "id": "SCREEN:101",
+        "employee_override": true
+    },
+    "worker_type": {
+        "id": 3470,
+        "employee_override": true
+    },
+    "linked_company_eins": [
+        {
+            "id": 380420352,
+            "company_ein":{
+              "id": 914497,
+              "ein_name": "EIN 1",
+              "active": true
+            },
+            "created_date": "2018-02-05 11:21:00",
+            "gl_codes": [
+                {
+                    "index": 0,
+                    "value": "GLD4"
+                }
+            ]
+        },
+        {
+            "id": 380420096,
+            "company_ein":{
+              "id": 916033,
+              "ein_name": "EIN 2",
+              "active": false
+            },
+            "created_date": "2018-02-05 11:21:00",
+            "gl_codes": [
+                {
+                    "index": 0,
+                    "value": "GLD1"
+                }
+            ]
+        }
+    ],
+    "worker_comp_code_types": [
+        {
+            "state": "NCCI",
+            "comp_code": 145785
+        },
+        {
+            "state": "NY",
+            "comp_code": 155795
+        }
+    ],
+    "salary_surveys": [
+        {
+            "id": 65,
+            "name": "Salary Survey 1",
+            "survey_date": "2017-09-28",
+            "min": 2.88,
+            "mid": 12.98,
+            "max": 32.04,
+            "market": 23.94,
+            "compa_ratio": 90.12
+        },
+        {
+            "id": 129,
+            "name": "Salary Survey 2",
+            "survey_date": "2016-10-06",
+            "min": 28.80,
+            "mid": 40.98,
+            "max": 60.04,
+            "market": 33.94,
+            "compa_ratio": 23.49
+        }
+    ],
+    "competency_groups": [
+        {
+            "id": 1234,
+            "group_name": "GRP 1",
+            "weight_evenly": false,
+            "competencies": [
+                {
+                    "id": 2348,
+                    "weight": 42.25,
+                    "sequence": 1,
+                    "code": "Code 1",
+                    "description": "Competency description."
+                }
+            ]
+        }
+    ],
+    "notes": [
+        {
+            "id": 9842240,
+            "created_by": {
+                "account_id": 2196164,
+                "display_name": "Nicky James"
+            },
+            "text": "Cost Center Job Note 1",
+            "created_at": "2018-02-02"
+        }
+    ],
+    "defaults": {
+        "aca": {
+            "employee_override": true,
+            "profiles": [
+                {
+                    "id": 292515,
+                    "effective_from": "2018-02-05"
+                },
+                {
+                    "id": 292516,
+                    "effective_from": "1900-12-31"
+                }
+            ]
+        },
+        "access": {
+            "employee_override": false,
+            "profiles": [
+                {
+                    "id": 285315,
+                    "effective_from": "2018-02-05"
+                }
+            ]
+        }
+    },
+    "cost_center_skills": [
+        {
+            "main_skill": {
+                "id": 256,
+                "name": "C"
+            },
+            "alternative_skills": [
+                {
+                    "id": 512,
+                    "name": "C++"
+                },
+                {
+                    "id": 768,
+                    "name": "Java"
+                }
+            ]
+        }
+    ],
+    "job_strain": {
+        "id": 33536,
+        "reference_type": "LIST",
+        "name": "Job Strain List 1"
+    }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -1305,7 +1490,193 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;cost_center_job&gt;
+   &lt;id&gt;2355&lt;/id&gt;
+   &lt;abbreviation&gt;SE1&lt;/abbreviation&gt;
+   &lt;applicant_tracking_display&gt;true&lt;/applicant_tracking_display&gt;
+   &lt;applicant_tracking_display_only&gt;false&lt;/applicant_tracking_display_only&gt;
+   &lt;job_strain&gt;
+      &lt;id&gt;33536&lt;/id&gt;
+      &lt;reference_type&gt;LIST&lt;/reference_type&gt;
+      &lt;name&gt;Job Strain List 1&lt;/name&gt;
+   &lt;/job_strain&gt;
+   &lt;cost_center_skills&gt;
+      &lt;cost_center_skill&gt;
+         &lt;main_skill&gt;
+            &lt;id&gt;256&lt;/id&gt;
+            &lt;name&gt;C&lt;/name&gt;
+         &lt;/main_skill&gt;
+         &lt;alternative_skills&gt;
+            &lt;alternative_skill&gt;
+               &lt;id&gt;512&lt;/id&gt;
+               &lt;name&gt;C++&lt;/name&gt;
+            &lt;/alternative_skill&gt;
+            &lt;alternative_skill&gt;
+               &lt;id&gt;768&lt;/id&gt;
+               &lt;name&gt;Java&lt;/name&gt;
+            &lt;/alternative_skill&gt;
+         &lt;/alternative_skills&gt;
+      &lt;/cost_center_skill&gt;
+   &lt;/cost_center_skills&gt;
+   &lt;defaults&gt;
+      &lt;aca&gt;
+         &lt;employee_override&gt;true&lt;/employee_override&gt;
+         &lt;profiles&gt;
+            &lt;profile&gt;
+               &lt;effective_from&gt;2018-02-05&lt;/effective_from&gt;
+               &lt;id&gt;292515&lt;/id&gt;
+            &lt;/profile&gt;
+            &lt;profile&gt;
+               &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+               &lt;id&gt;292516&lt;/id&gt;
+            &lt;/profile&gt;
+         &lt;/profiles&gt;
+      &lt;/aca&gt;
+      &lt;access&gt;
+         &lt;employee_override&gt;false&lt;/employee_override&gt;
+         &lt;profiles&gt;
+            &lt;profile&gt;
+               &lt;effective_from&gt;2018-02-05&lt;/effective_from&gt;
+               &lt;id&gt;285315&lt;/id&gt;
+            &lt;/profile&gt;
+         &lt;/profiles&gt;
+      &lt;/access&gt;
+   &lt;/defaults&gt;
+   &lt;description&gt;This job is for Software Engineer I&lt;/description&gt;
+   &lt;eeo_classification&gt;
+      &lt;value&gt;PROFESSIONALS&lt;/value&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+   &lt;/eeo_classification&gt;
+   &lt;employee_type&gt;
+      &lt;employee_override&gt;false&lt;/employee_override&gt;
+      &lt;id&gt;129795&lt;/id&gt;
+   &lt;/employee_type&gt;
+   &lt;external_id&gt;2376A&lt;/external_id&gt;
+   &lt;first_screen&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;SCREEN:101&lt;/id&gt;
+   &lt;/first_screen&gt;
+   &lt;job_category&gt;Job Category 1&lt;/job_category&gt;
+   &lt;job_description&gt;Candidate should be Well-versed in JAVA and data structures.&lt;/job_description&gt;
+   &lt;linked_company_eins&gt;
+      &lt;linked_company_ein&gt;
+         &lt;id&gt;380420352&lt;/id&gt;
+         &lt;company_ein&gt;
+            &lt;id&gt;914497&lt;/id&gt;
+            &lt;ein_name&gt;EIN 1&lt;/ein_name&gt;
+            &lt;active&gt;true&lt;/active&gt;
+         &lt;/company_ein&gt;
+         &lt;created_date&gt;2018-02-05 11:21:00&lt;/created_date&gt;
+         &lt;gl_codes&gt;
+            &lt;gl_code&gt;
+               &lt;index&gt;0&lt;/index&gt;
+               &lt;value&gt;GLD4&lt;/value&gt;
+            &lt;/gl_code&gt;
+         &lt;/gl_codes&gt;
+      &lt;/linked_company_ein&gt;
+      &lt;linked_company_ein&gt;
+         &lt;id&gt;380420096&lt;/id&gt;
+         &lt;company_ein&gt;
+            &lt;id&gt;916033&lt;/id&gt;
+            &lt;ein_name&gt;EIN 2&lt;/ein_name&gt;
+            &lt;active&gt;false&lt;/active&gt;
+         &lt;/company_ein&gt;
+         &lt;created_date&gt;2018-02-05 11:21:00&lt;/created_date&gt;
+         &lt;gl_codes&gt;
+            &lt;gl_code&gt;
+               &lt;index&gt;0&lt;/index&gt;
+               &lt;value&gt;GLD1&lt;/value&gt;
+            &lt;/gl_code&gt;
+         &lt;/gl_codes&gt;
+      &lt;/linked_company_ein&gt;
+   &lt;/linked_company_eins&gt;
+   &lt;name&gt;Software Engineer I&lt;/name&gt;
+   &lt;notes&gt;
+      &lt;note&gt;
+         &lt;added_on&gt;2018-02-02&lt;/added_on&gt;
+         &lt;created_by&gt;
+            &lt;account_id&gt;2196164&lt;/account_id&gt;
+            &lt;display_name&gt;Nicky James&lt;/display_name&gt;
+         &lt;/created_by&gt;
+         &lt;id&gt;9842240&lt;/id&gt;
+         &lt;text&gt;Cost Center Job Note 1&lt;/text&gt;
+      &lt;/note&gt;
+   &lt;/notes&gt;
+   &lt;pay_grade&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;9647&lt;/id&gt;
+   &lt;/pay_grade&gt;
+   &lt;pay_type&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;3490&lt;/id&gt;
+   &lt;/pay_type&gt;
+   &lt;payroll_code&gt;PRC-SE1&lt;/payroll_code&gt;
+   &lt;salary_surveys&gt;
+      &lt;salary_survey&gt;
+         &lt;compa_ratio&gt;90.12&lt;/compa_ratio&gt;
+         &lt;survey_date&gt;2017-09-28&lt;/survey_date&gt;
+         &lt;id&gt;65&lt;/id&gt;
+         &lt;market&gt;23.94&lt;/market&gt;
+         &lt;max&gt;32.04&lt;/max&gt;
+         &lt;mid&gt;12.98&lt;/mid&gt;
+         &lt;min&gt;2.88&lt;/min&gt;
+         &lt;name&gt;Salary Survey 1&lt;/name&gt;
+      &lt;/salary_survey&gt;
+      &lt;salary_survey&gt;
+         &lt;comp_salary&gt;23.49&lt;/comp_salary&gt;
+         &lt;survey_date&gt;2016-10-06&lt;/survey_date&gt;
+         &lt;id&gt;129&lt;/id&gt;
+         &lt;market&gt;33.94&lt;/market&gt;
+         &lt;max&gt;60.04&lt;/max&gt;
+         &lt;mid&gt;40.98&lt;/mid&gt;
+         &lt;min&gt;28.8&lt;/min&gt;
+         &lt;name&gt;Salary Survey 2&lt;/name&gt;
+      &lt;/salary_survey&gt;
+   &lt;/salary_surveys&gt;
+   &lt;competency_groups&gt;
+      &lt;competency_group&gt;
+         &lt;id&gt;1234&lt;/id&gt;
+         &lt;group_name&gt;GRP 1&lt;/group_name&gt;
+         &lt;weight_evenly&gt;false&lt;/weight_evenly&gt;
+         &lt;competencies&gt;
+            &lt;competency&gt;
+               &lt;id&gt;2348&lt;/id&gt;
+               &lt;code&gt;Code 1&lt;/code&gt;
+               &lt;description&gt;Competency description.&lt;/description&gt;
+               &lt;sequence&gt;1&lt;/sequence&gt;
+               &lt;weight&gt;42.25&lt;/weight&gt;
+            &lt;/competency&gt;
+         &lt;/competencies&gt;
+      &lt;/competency_group&gt;
+   &lt;/competency_groups&gt;
+   &lt;standard_work_day&gt;
+      &lt;employee_override&gt;false&lt;/employee_override&gt;
+      &lt;value&gt;234234789&lt;/value&gt;
+   &lt;/standard_work_day&gt;
+   &lt;union&gt;
+      &lt;employee_override&gt;false&lt;/employee_override&gt;
+      &lt;id&gt;6578&lt;/id&gt;
+   &lt;/union&gt;
+   &lt;visible&gt;true&lt;/visible&gt;
+   &lt;worker_comp_code_types&gt;
+      &lt;worker_comp_code_type&gt;
+         &lt;comp_code&gt;145785&lt;/comp_code&gt;
+         &lt;state&gt;NCCI&lt;/state&gt;
+      &lt;/worker_comp_code_type&gt;
+      &lt;worker_comp_code_type&gt;
+         &lt;comp_code&gt;155795&lt;/comp_code&gt;
+         &lt;state&gt;NY&lt;/state&gt;
+      &lt;/worker_comp_code_type&gt;
+   &lt;/worker_comp_code_types&gt;
+   &lt;worker_type&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;3470&lt;/id&gt;
+   &lt;/worker_type&gt;
+&lt;/cost_center_job&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -1690,7 +2061,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -1722,7 +2093,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -1736,7 +2107,7 @@ Requires at least one of the following subsystems:
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -1831,7 +2202,192 @@ Requires at least one of the following subsystems:
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+    "id": 2355,
+    "job_category": "Job Category 1",
+    "name": "Software Engineer I",
+    "abbreviation": "SE1",
+    "description": "This job is for Software Engineer I",
+    "job_description": "Candidate should be Well-versed in JAVA and data structures.",
+    "external_id": "2376A",
+    "payroll_code": "PRC-SE1",
+    "visible": true,
+    "applicant_tracking_display": true,
+    "applicant_tracking_display_only": false,
+    "standard_work_day": {
+        "value": 234234789,
+        "employee_override": false
+    },
+    "employee_type": {
+        "id": 129795,
+        "employee_override": false
+    },
+    "eeo_classification": {
+        "value": "PROFESSIONALS",
+        "employee_override": true
+    },
+    "union": {
+        "id": 6578,
+        "employee_override": false
+    },
+    "pay_grade": {
+        "id": 9647,
+        "employee_override": true
+    },
+    "pay_type": {
+        "id": 3490,
+        "employee_override": true
+    },
+    "first_screen": {
+        "id": "SCREEN:101",
+        "employee_override": true
+    },
+    "worker_type": {
+        "id": 3470,
+        "employee_override": true
+    },
+    "linked_company_eins": [
+        {
+            "id": 380420352,
+            "company_ein":{
+              "id": 914497,
+              "ein_name": "EIN 1",
+              "active": true
+            },
+            "created_date": "2018-02-05 11:21:00",
+            "gl_codes": [
+                {
+                    "index": 0,
+                    "value": "GLD4"
+                }
+            ]
+        },
+        {
+            "id": 380420096,
+            "company_ein":{
+              "id": 916033,
+              "ein_name": "EIN 2",
+              "active": false
+            },
+            "created_date": "2018-02-05 11:21:00",
+            "gl_codes": [
+                {
+                    "index": 0,
+                    "value": "GLD1"
+                }
+            ]
+        }
+    ],
+    "worker_comp_code_types": [
+        {
+            "state": "NCCI",
+            "comp_code": 145785
+        },
+        {
+            "state": "NY",
+            "comp_code": 155795
+        }
+    ],
+    "salary_surveys": [
+        {
+            "id": 65,
+            "name": "Salary Survey 1",
+            "survey_date": "2017-09-28",
+            "min": 2.88,
+            "mid": 12.98,
+            "max": 32.04,
+            "market": 23.94,
+            "compa_ratio": 90.12
+        },
+        {
+            "id": 129,
+            "name": "Salary Survey 2",
+            "survey_date": "2016-10-06",
+            "min": 28.80,
+            "mid": 40.98,
+            "max": 60.04,
+            "market": 33.94,
+            "compa_ratio": 23.49
+        }
+    ],
+    "competency_groups": [
+        {
+            "id": 1234,
+            "group_name": "GRP 1",
+            "weight_evenly": false,
+            "competencies": [
+                {
+                    "id": 2348,
+                    "weight": 42.25,
+                    "sequence": 1,
+                    "code": "Code 1",
+                    "description": "Competency description."
+                }
+            ]
+        }
+    ],
+    "notes": [
+        {
+            "id": 9842240,
+            "created_by": {
+                "account_id": 2196164,
+                "display_name": "Nicky James"
+            },
+            "text": "Cost Center Job Note 1",
+            "created_at": "2018-02-02"
+        }
+    ],
+    "defaults": {
+        "aca": {
+            "employee_override": true,
+            "profiles": [
+                {
+                    "id": 292515,
+                    "effective_from": "2018-02-05"
+                },
+                {
+                    "id": 292516,
+                    "effective_from": "1900-12-31"
+                }
+            ]
+        },
+        "access": {
+            "employee_override": false,
+            "profiles": [
+                {
+                    "id": 285315,
+                    "effective_from": "2018-02-05"
+                }
+            ]
+        }
+    },
+    "cost_center_skills": [
+        {
+            "main_skill": {
+                "id": 256,
+                "name": "C"
+            },
+            "alternative_skills": [
+                {
+                    "id": 512,
+                    "name": "C++"
+                },
+                {
+                    "id": 768,
+                    "name": "Java"
+                }
+            ]
+        }
+    ],
+    "job_strain": {
+        "id": 33536,
+        "reference_type": "LIST",
+        "name": "Job Strain List 1"
+    }
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -2994,7 +3550,193 @@ Requires at least one of the following subsystems:
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;cost_center_job&gt;
+   &lt;id&gt;2355&lt;/id&gt;
+   &lt;abbreviation&gt;SE1&lt;/abbreviation&gt;
+   &lt;applicant_tracking_display&gt;true&lt;/applicant_tracking_display&gt;
+   &lt;applicant_tracking_display_only&gt;false&lt;/applicant_tracking_display_only&gt;
+   &lt;job_strain&gt;
+      &lt;id&gt;33536&lt;/id&gt;
+      &lt;reference_type&gt;LIST&lt;/reference_type&gt;
+      &lt;name&gt;Job Strain List 1&lt;/name&gt;
+   &lt;/job_strain&gt;
+   &lt;cost_center_skills&gt;
+      &lt;cost_center_skill&gt;
+         &lt;main_skill&gt;
+            &lt;id&gt;256&lt;/id&gt;
+            &lt;name&gt;C&lt;/name&gt;
+         &lt;/main_skill&gt;
+         &lt;alternative_skills&gt;
+            &lt;alternative_skill&gt;
+               &lt;id&gt;512&lt;/id&gt;
+               &lt;name&gt;C++&lt;/name&gt;
+            &lt;/alternative_skill&gt;
+            &lt;alternative_skill&gt;
+               &lt;id&gt;768&lt;/id&gt;
+               &lt;name&gt;Java&lt;/name&gt;
+            &lt;/alternative_skill&gt;
+         &lt;/alternative_skills&gt;
+      &lt;/cost_center_skill&gt;
+   &lt;/cost_center_skills&gt;
+   &lt;defaults&gt;
+      &lt;aca&gt;
+         &lt;employee_override&gt;true&lt;/employee_override&gt;
+         &lt;profiles&gt;
+            &lt;profile&gt;
+               &lt;effective_from&gt;2018-02-05&lt;/effective_from&gt;
+               &lt;id&gt;292515&lt;/id&gt;
+            &lt;/profile&gt;
+            &lt;profile&gt;
+               &lt;effective_from&gt;1900-12-31&lt;/effective_from&gt;
+               &lt;id&gt;292516&lt;/id&gt;
+            &lt;/profile&gt;
+         &lt;/profiles&gt;
+      &lt;/aca&gt;
+      &lt;access&gt;
+         &lt;employee_override&gt;false&lt;/employee_override&gt;
+         &lt;profiles&gt;
+            &lt;profile&gt;
+               &lt;effective_from&gt;2018-02-05&lt;/effective_from&gt;
+               &lt;id&gt;285315&lt;/id&gt;
+            &lt;/profile&gt;
+         &lt;/profiles&gt;
+      &lt;/access&gt;
+   &lt;/defaults&gt;
+   &lt;description&gt;This job is for Software Engineer I&lt;/description&gt;
+   &lt;eeo_classification&gt;
+      &lt;value&gt;PROFESSIONALS&lt;/value&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+   &lt;/eeo_classification&gt;
+   &lt;employee_type&gt;
+      &lt;employee_override&gt;false&lt;/employee_override&gt;
+      &lt;id&gt;129795&lt;/id&gt;
+   &lt;/employee_type&gt;
+   &lt;external_id&gt;2376A&lt;/external_id&gt;
+   &lt;first_screen&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;SCREEN:101&lt;/id&gt;
+   &lt;/first_screen&gt;
+   &lt;job_category&gt;Job Category 1&lt;/job_category&gt;
+   &lt;job_description&gt;Candidate should be Well-versed in JAVA and data structures.&lt;/job_description&gt;
+   &lt;linked_company_eins&gt;
+      &lt;linked_company_ein&gt;
+         &lt;id&gt;380420352&lt;/id&gt;
+         &lt;company_ein&gt;
+            &lt;id&gt;914497&lt;/id&gt;
+            &lt;ein_name&gt;EIN 1&lt;/ein_name&gt;
+            &lt;active&gt;true&lt;/active&gt;
+         &lt;/company_ein&gt;
+         &lt;created_date&gt;2018-02-05 11:21:00&lt;/created_date&gt;
+         &lt;gl_codes&gt;
+            &lt;gl_code&gt;
+               &lt;index&gt;0&lt;/index&gt;
+               &lt;value&gt;GLD4&lt;/value&gt;
+            &lt;/gl_code&gt;
+         &lt;/gl_codes&gt;
+      &lt;/linked_company_ein&gt;
+      &lt;linked_company_ein&gt;
+         &lt;id&gt;380420096&lt;/id&gt;
+         &lt;company_ein&gt;
+            &lt;id&gt;916033&lt;/id&gt;
+            &lt;ein_name&gt;EIN 2&lt;/ein_name&gt;
+            &lt;active&gt;false&lt;/active&gt;
+         &lt;/company_ein&gt;
+         &lt;created_date&gt;2018-02-05 11:21:00&lt;/created_date&gt;
+         &lt;gl_codes&gt;
+            &lt;gl_code&gt;
+               &lt;index&gt;0&lt;/index&gt;
+               &lt;value&gt;GLD1&lt;/value&gt;
+            &lt;/gl_code&gt;
+         &lt;/gl_codes&gt;
+      &lt;/linked_company_ein&gt;
+   &lt;/linked_company_eins&gt;
+   &lt;name&gt;Software Engineer I&lt;/name&gt;
+   &lt;notes&gt;
+      &lt;note&gt;
+         &lt;added_on&gt;2018-02-02&lt;/added_on&gt;
+         &lt;created_by&gt;
+            &lt;account_id&gt;2196164&lt;/account_id&gt;
+            &lt;display_name&gt;Nicky James&lt;/display_name&gt;
+         &lt;/created_by&gt;
+         &lt;id&gt;9842240&lt;/id&gt;
+         &lt;text&gt;Cost Center Job Note 1&lt;/text&gt;
+      &lt;/note&gt;
+   &lt;/notes&gt;
+   &lt;pay_grade&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;9647&lt;/id&gt;
+   &lt;/pay_grade&gt;
+   &lt;pay_type&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;3490&lt;/id&gt;
+   &lt;/pay_type&gt;
+   &lt;payroll_code&gt;PRC-SE1&lt;/payroll_code&gt;
+   &lt;salary_surveys&gt;
+      &lt;salary_survey&gt;
+         &lt;compa_ratio&gt;90.12&lt;/compa_ratio&gt;
+         &lt;survey_date&gt;2017-09-28&lt;/survey_date&gt;
+         &lt;id&gt;65&lt;/id&gt;
+         &lt;market&gt;23.94&lt;/market&gt;
+         &lt;max&gt;32.04&lt;/max&gt;
+         &lt;mid&gt;12.98&lt;/mid&gt;
+         &lt;min&gt;2.88&lt;/min&gt;
+         &lt;name&gt;Salary Survey 1&lt;/name&gt;
+      &lt;/salary_survey&gt;
+      &lt;salary_survey&gt;
+         &lt;comp_salary&gt;23.49&lt;/comp_salary&gt;
+         &lt;survey_date&gt;2016-10-06&lt;/survey_date&gt;
+         &lt;id&gt;129&lt;/id&gt;
+         &lt;market&gt;33.94&lt;/market&gt;
+         &lt;max&gt;60.04&lt;/max&gt;
+         &lt;mid&gt;40.98&lt;/mid&gt;
+         &lt;min&gt;28.8&lt;/min&gt;
+         &lt;name&gt;Salary Survey 2&lt;/name&gt;
+      &lt;/salary_survey&gt;
+   &lt;/salary_surveys&gt;
+   &lt;competency_groups&gt;
+      &lt;competency_group&gt;
+         &lt;id&gt;1234&lt;/id&gt;
+         &lt;group_name&gt;GRP 1&lt;/group_name&gt;
+         &lt;weight_evenly&gt;false&lt;/weight_evenly&gt;
+         &lt;competencies&gt;
+            &lt;competency&gt;
+               &lt;id&gt;2348&lt;/id&gt;
+               &lt;code&gt;Code 1&lt;/code&gt;
+               &lt;description&gt;Competency description.&lt;/description&gt;
+               &lt;sequence&gt;1&lt;/sequence&gt;
+               &lt;weight&gt;42.25&lt;/weight&gt;
+            &lt;/competency&gt;
+         &lt;/competencies&gt;
+      &lt;/competency_group&gt;
+   &lt;/competency_groups&gt;
+   &lt;standard_work_day&gt;
+      &lt;employee_override&gt;false&lt;/employee_override&gt;
+      &lt;value&gt;234234789&lt;/value&gt;
+   &lt;/standard_work_day&gt;
+   &lt;union&gt;
+      &lt;employee_override&gt;false&lt;/employee_override&gt;
+      &lt;id&gt;6578&lt;/id&gt;
+   &lt;/union&gt;
+   &lt;visible&gt;true&lt;/visible&gt;
+   &lt;worker_comp_code_types&gt;
+      &lt;worker_comp_code_type&gt;
+         &lt;comp_code&gt;145785&lt;/comp_code&gt;
+         &lt;state&gt;NCCI&lt;/state&gt;
+      &lt;/worker_comp_code_type&gt;
+      &lt;worker_comp_code_type&gt;
+         &lt;comp_code&gt;155795&lt;/comp_code&gt;
+         &lt;state&gt;NY&lt;/state&gt;
+      &lt;/worker_comp_code_type&gt;
+   &lt;/worker_comp_code_types&gt;
+   &lt;worker_type&gt;
+      &lt;employee_override&gt;true&lt;/employee_override&gt;
+      &lt;id&gt;3470&lt;/id&gt;
+   &lt;/worker_type&gt;
+&lt;/cost_center_job&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -3379,7 +4121,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>

@@ -6,6 +6,26 @@ publication are part of this update. Review method: artifact inspection, source
 provenance comparison and published-license/terms review. This is not a separate
 vendor approval or legal certification.
 
+## Documented examples restored
+
+The organizer clarified that provider-documented sample payloads should be
+included. The prior removal interpreted the original no-dummy-response brief
+as applying to embedded documentation examples; this clarification supersedes
+that interpretation. The current pack restores all source example annotations,
+request/response samples, parameter examples and fenced sample code/payloads.
+They are labeled **illustrative provider documentation**, not customer exports
+or guaranteed production behavior. Candidates still generate and validate their
+own seeded fixtures and adversarial cases.
+
+Only literal authentication-token/encoded-credential examples are redacted.
+isolved has two token redactions and one encoded-auth redaction in each snapshot;
+UKG has 70 token-like redactions across visible documentation. Duplicate hidden
+clipboard copies and active HTML behavior are omitted while visible samples
+and schemas are retained. Exact hashes and counts are in the provider manifests.
+PrismHR restores 340 source example annotations and all eight embedded renderings;
+UKG's extracted JSON Schema bundle restores 101 source example annotations.
+Provider redistribution permission and candidate-sharing status are unchanged.
+
 ## Private-upload authorization
 
 After reviewing the disclosed permission gaps, the organizer explicitly instructed
@@ -24,12 +44,9 @@ remain in the HTML. Source and derivative hashes and modification counts are in
 [isolved's manifest](../contracts/isolved/SOURCE_MANIFEST.json) and
 [UKG's manifest](../contracts/ukg-ready/SOURCE_MANIFEST.json).
 
-Removed isolved example annotations, fenced sample code/payloads and an
-illustrative encoded authorization value. Removed UKG sample tabs, payload
-clipboard duplicates, sample pre blocks, parameter examples and active HTML
-behavior, remaining fenced examples in prose and token-like sample text; retained endpoint descriptions, parameters, response status definitions
-and JSON/XML schemas. Added modification notices and private-upload provenance.
-No API response fixtures or customer lookup responses were copied.
+The initial private-upload derivative removed embedded examples. The subsequent
+clarification above restores them in the current pack. No customer lookup
+responses or independent fixture suite was copied or generated.
 
 Each provider still has exactly one lookup-reference JSON. isolved's 11 domains
 and UKG's 15 domains contain literal explicit enum values with source pointers;
@@ -40,8 +57,8 @@ Candidate distribution and public sharing remain pending.
 ## Initial review decision (before the private-upload instruction)
 
 - **Include PrismHR:** its exact existing OpenAPI artifact explicitly declares
-  Apache 2.0. Include a documented derivative with example payload material
-  removed, an attributed partial code reference and the full license text.
+  Apache 2.0. The initial derivative omitted examples; the current derivative restores them
+  after the organizer's clarification, with attribution and the full license text.
 - **Withhold isolved:** two Swagger snapshots were located, but neither declares
   a license and no applicable redistribution grant was found in the sources searched.
 - **Withhold UKG Ready:** cached HTML documentation was located, but no standalone
@@ -89,15 +106,14 @@ original NOTICE file was found beside the snapshot. Existing attribution and
 license metadata were retained. This basis applies to the artifact and its
 derivatives, not unrelated provider pages, customer data or Tada implementation.
 
-The distributed derivative removes 340 `example`/`examples` annotations and
-eight embedded JSON payload renderings from operation descriptions. It adds a
-prominent modification notice and derivative metadata. Formal paths, schema
-constraints, required fields and defaults are preserved. The eight changed
-description pointers are recorded in `/x-tada-hiring-derivative` inside the file.
-No API response fixtures are supplied.
+The current distributed derivative retains all 340 source example annotations,
+embedded descriptive sample payloads, formal paths, schema constraints, required
+fields and defaults. It adds provenance and prominent illustrative-example and
+modification notices. Authentication examples are redacted if present; the
+artifact records zero such redactions for this PrismHR snapshot.
 
-Distributed SHA-256:
-`a94cbc91c482f44cade3582fd21f3f3ae51a63be26bd18bf4817325b96ca877d`.
+Current distributed SHA-256:
+`9cb87857940095cf868ed666a70f9092e33d9aa26bcad3c46cb60dad3eff5978`.
 
 The [partial lookup reference](../contracts/prismhr/lookup-reference.json) contains
 eight domains and 43 documented code entries. Every domain retains its source

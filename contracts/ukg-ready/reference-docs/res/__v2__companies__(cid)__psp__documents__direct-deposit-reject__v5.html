@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Version 5</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Version 5</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Version 5</span>
@@ -45,7 +45,7 @@ The authentication token must have the required security access:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -126,7 +126,36 @@ Returns the document upload ID.
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "podId": "POD123",
+  "tenantId": "TENANT456",
+  "companyId": "COMP789",
+  "countryCode": "CAN",
+  "payrollId": "100234567",
+  "payDate": "2025-01-15",
+  "returnEmployees": [
+    {
+      "employeeNumber": "EMP001",
+      "firstName": "John",
+      "lastName": "Smith",
+      "middleName": "A",
+      "suffix": "Jr.",
+      "returnEntries": [
+        {
+          "accountType": 1,
+          "accountNumber": "123456789",
+          "routingNumber": "987654321",
+          "amount": 1234.56,
+          "returnReason": "R01"
+        }
+      ]
+    }
+  ]
+}
+</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -247,7 +276,7 @@ Returns the document upload ID.
 </div>
 </div>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-post-0" data-tab-class="resp-tab-post" name="resp-tab-post" type="radio"/>
@@ -258,7 +287,14 @@ Returns the document upload ID.
 <div class="resp-tab-post" id="resp-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-resp-tab-0 activeTab" id="post-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "documentName": "AFT_Returns_20260126.json",
+  "documentId": "1234567890"
+}
+</pre>
+</div>
 <div class="post-example-resp-tab-0" id="post-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-1">{

@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Rate Tables</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Rate Tables</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Rate Tables</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -88,7 +88,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -146,7 +146,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/rates/tables</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -165,7 +165,74 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "rate_tables": [
+    {
+      "id": 5636096,
+      "name": "Rate_Table_1",
+      "description": "test test",
+      "name_description_read_only": false,
+      "is_simple": false,
+      "auto_create_cost_center_lists": false,
+      "include_cc_from_ext_rules": false,
+      "include_sub_tree_type": "NEVER",
+      "currency": "USD",
+      "_links": {
+        "self": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096",
+        "edit": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096",
+        "reapply_rates": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096/actions/reapply-rates",
+        "download": "http://example.com/ta/fs?ticket=eyJhbGci.eyJpTA0EIn0.BYTnakxXnUuFdzevX_eVJkx-pvfaKw9w"
+      }
+    },
+    {
+      "id": 5636352,
+      "name": "Rate_Table_5",
+      "name_description_read_only": false,
+      "is_simple": false,
+      "auto_create_cost_center_lists": false,
+      "include_sub_tree_type": "NEVER",
+      "currency": "USD",
+      "_links": {
+        "self": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352",
+        "edit": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352",
+        "delete": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352",
+        "reapply_rates": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352/actions/reapply-rates",
+        "download": "http://example.com/ta/fs?ticket=eyJhbGci.eyJpTA0EIn0.BYTnakxXnUuFdzevX_eVJkx-pvfaKw9w"
+      }
+    },
+    {
+      "id": 5816320,
+      "name": "Personal",
+      "label": "Rate Table 1",
+      "description": "Rate 1 Personal Table",
+      "name_description_read_only": true,
+      "is_simple": true,
+      "auto_create_cost_center_lists": true,
+      "include_sub_tree_type": "ALWAYS",
+      "currency": "USD",
+      "owner": {
+        "account_id": 15172,
+        "display_name": "Lora Palmer",
+        "abbr": "LP",
+        "employee_id": "Lora"
+      },
+      "_links": {
+        "self": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320",
+        "edit": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320",
+        "reapply_rates": "http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320/actions/reapply-rates",
+        "download": "http://example.com/ta/fs?ticket=eyJhbGci.eyJpTA0EIn0.BYTnakxXnUuFdzevX_eVJkx-pvfaKw9w"
+      }
+    }
+  ],
+  "_links": {
+    "self": "http://example.com/ta/rest/v2/companies/3560/rates/tables",
+    "create": "http://example.com/ta/rest/v2/companies/3560/rates/tables"
+  },
+  "_total_count": 21
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -366,7 +433,74 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;rate_tables_list&gt;
+  &lt;rate_tables&gt;
+    &lt;rate_table&gt;
+      &lt;id&gt;5636096&lt;/id&gt;
+      &lt;name&gt;Rate_Table_1&lt;/name&gt;
+      &lt;description&gt;test test&lt;/description&gt;
+      &lt;name_description_read_only&gt;false&lt;/name_description_read_only&gt;
+      &lt;is_simple&gt;false&lt;/is_simple&gt;
+      &lt;auto_create_cost_center_lists&gt;false&lt;/auto_create_cost_center_lists&gt;
+      &lt;include_cc_from_ext_rules&gt;false&lt;/include_cc_from_ext_rules&gt;
+      &lt;include_sub_tree_type&gt;NEVER&lt;/include_sub_tree_type&gt;
+      &lt;currency&gt;USD&lt;/currency&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096&lt;/self&gt;
+        &lt;edit&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096&lt;/edit&gt;
+        &lt;reapply_rates&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096/actions/reapply-rates&lt;/reapply_rates&gt;
+        &lt;download&gt;http://example.com/ta/fs?ticket=eyJhbGciOiJIUzUxMiJ9-pq0V69m5fYT8IzmQ&lt;/download&gt;
+      &lt;/_links&gt;
+    &lt;/rate_table&gt;
+    &lt;rate_table&gt;
+      &lt;id&gt;5636352&lt;/id&gt;
+      &lt;name&gt;Rate_Table_5&lt;/name&gt;
+      &lt;name_description_read_only&gt;false&lt;/name_description_read_only&gt;
+      &lt;is_simple&gt;false&lt;/is_simple&gt;
+      &lt;auto_create_cost_center_lists&gt;false&lt;/auto_create_cost_center_lists&gt;
+      &lt;include_sub_tree_type&gt;NEVER&lt;/include_sub_tree_type&gt;
+      &lt;currency&gt;USD&lt;/currency&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352&lt;/self&gt;
+        &lt;edit&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352&lt;/edit&gt;
+        &lt;delete&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352&lt;/delete&gt;
+        &lt;reapply_rates&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352/actions/reapply-rates&lt;/reapply_rates&gt;
+        &lt;download&gt;http://example.com/ta/fs?ticket=eyJhbGciOiJIUzUxMiJ9-xs8vvaRXG3iwbTXw&lt;/download&gt;
+      &lt;/_links&gt;
+    &lt;/rate_table&gt;
+    &lt;rate_table&gt;
+      &lt;id&gt;5816320&lt;/id&gt;
+      &lt;name&gt;Personal&lt;/name&gt;
+      &lt;label&gt;Rate Table 1&lt;/label&gt;
+      &lt;description&gt;Rate 1 Personal Table&lt;/description&gt;
+      &lt;name_description_read_only&gt;true&lt;/name_description_read_only&gt;
+      &lt;is_simple&gt;true&lt;/is_simple&gt;
+      &lt;auto_create_cost_center_lists&gt;true&lt;/auto_create_cost_center_lists&gt;
+      &lt;include_sub_tree_type&gt;ALWAYS&lt;/include_sub_tree_type&gt;
+      &lt;currency&gt;USD&lt;/currency&gt;
+      &lt;owner&gt;
+        &lt;account_id&gt;15172&lt;/account_id&gt;
+        &lt;display_name&gt;Lora Palmer&lt;/display_name&gt;
+        &lt;abbr&gt;LP&lt;/abbr&gt;
+        &lt;employee_id&gt;Lora&lt;/employee_id&gt;
+      &lt;/owner&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320&lt;/self&gt;
+        &lt;edit&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320&lt;/edit&gt;
+        &lt;reapply_rates&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320/actions/reapply-rates&lt;/reapply_rates&gt;
+        &lt;download&gt;http://example.com/ta/fs?ticket=eyJhbGciOiJIUzUxMiJ9&lt;/download&gt;
+      &lt;/_links&gt;
+    &lt;/rate_table&gt;
+  &lt;/rate_tables&gt;
+  &lt;_links&gt;
+    &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables&lt;/self&gt;
+    &lt;create&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables&lt;/create&gt;
+  &lt;/_links&gt;
+  &lt;_total_count&gt;21&lt;/_total_count&gt;
+&lt;/rate_tables_list&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -510,7 +644,74 @@
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;rate_tables_list&gt;
+  &lt;rate_tables&gt;
+    &lt;rate_table&gt;
+      &lt;id&gt;5636096&lt;/id&gt;
+      &lt;name&gt;Rate_Table_1&lt;/name&gt;
+      &lt;description&gt;test test&lt;/description&gt;
+      &lt;name_description_read_only&gt;false&lt;/name_description_read_only&gt;
+      &lt;is_simple&gt;false&lt;/is_simple&gt;
+      &lt;auto_create_cost_center_lists&gt;false&lt;/auto_create_cost_center_lists&gt;
+      &lt;include_cc_from_ext_rules&gt;false&lt;/include_cc_from_ext_rules&gt;
+      &lt;include_sub_tree_type&gt;NEVER&lt;/include_sub_tree_type&gt;
+      &lt;currency&gt;USD&lt;/currency&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096&lt;/self&gt;
+        &lt;edit&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096&lt;/edit&gt;
+        &lt;reapply_rates&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636096/actions/reapply-rates&lt;/reapply_rates&gt;
+        &lt;download&gt;http://example.com/ta/fs?ticket=eyJhbGciOiJIUzUxMiJ9-pq0V69m5fYT8IzmQ&lt;/download&gt;
+      &lt;/_links&gt;
+    &lt;/rate_table&gt;
+    &lt;rate_table&gt;
+      &lt;id&gt;5636352&lt;/id&gt;
+      &lt;name&gt;Rate_Table_5&lt;/name&gt;
+      &lt;name_description_read_only&gt;false&lt;/name_description_read_only&gt;
+      &lt;is_simple&gt;false&lt;/is_simple&gt;
+      &lt;auto_create_cost_center_lists&gt;false&lt;/auto_create_cost_center_lists&gt;
+      &lt;include_sub_tree_type&gt;NEVER&lt;/include_sub_tree_type&gt;
+      &lt;currency&gt;USD&lt;/currency&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352&lt;/self&gt;
+        &lt;edit&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352&lt;/edit&gt;
+        &lt;delete&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352&lt;/delete&gt;
+        &lt;reapply_rates&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5636352/actions/reapply-rates&lt;/reapply_rates&gt;
+        &lt;download&gt;http://example.com/ta/fs?ticket=eyJhbGciOiJIUzUxMiJ9-xs8vvaRXG3iwbTXw&lt;/download&gt;
+      &lt;/_links&gt;
+    &lt;/rate_table&gt;
+    &lt;rate_table&gt;
+      &lt;id&gt;5816320&lt;/id&gt;
+      &lt;name&gt;Personal&lt;/name&gt;
+      &lt;label&gt;Rate Table 1&lt;/label&gt;
+      &lt;description&gt;Rate 1 Personal Table&lt;/description&gt;
+      &lt;name_description_read_only&gt;true&lt;/name_description_read_only&gt;
+      &lt;is_simple&gt;true&lt;/is_simple&gt;
+      &lt;auto_create_cost_center_lists&gt;true&lt;/auto_create_cost_center_lists&gt;
+      &lt;include_sub_tree_type&gt;ALWAYS&lt;/include_sub_tree_type&gt;
+      &lt;currency&gt;USD&lt;/currency&gt;
+      &lt;owner&gt;
+        &lt;account_id&gt;15172&lt;/account_id&gt;
+        &lt;display_name&gt;Lora Palmer&lt;/display_name&gt;
+        &lt;abbr&gt;LP&lt;/abbr&gt;
+        &lt;employee_id&gt;Lora&lt;/employee_id&gt;
+      &lt;/owner&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320&lt;/self&gt;
+        &lt;edit&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320&lt;/edit&gt;
+        &lt;reapply_rates&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables/5816320/actions/reapply-rates&lt;/reapply_rates&gt;
+        &lt;download&gt;http://example.com/ta/fs?ticket=eyJhbGciOiJIUzUxMiJ9&lt;/download&gt;
+      &lt;/_links&gt;
+    &lt;/rate_table&gt;
+  &lt;/rate_tables&gt;
+  &lt;_links&gt;
+    &lt;self&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables&lt;/self&gt;
+    &lt;create&gt;http://example.com/ta/rest/v2/companies/3560/rates/tables&lt;/create&gt;
+  &lt;/_links&gt;
+  &lt;_total_count&gt;21&lt;/_total_count&gt;
+&lt;/rate_tables_list&gt;</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -678,7 +879,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -697,7 +898,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -711,7 +912,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -800,7 +1001,36 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "name": "Personal",
+  "description": "Rate 1 Personal Table",
+  "auto_create_cost_center_lists": true,
+  "include_cc_from_ext_rules": false,
+  "currency": "USD",
+  "ext_table": {
+    "id": 419328
+  },
+  "alt_tables": [
+    {
+      "op": "MULT",
+      "table": {
+        "id": 419328
+      }
+    },
+    {
+      "table": {
+        "id": 419328
+      },
+      "op": "ALT"
+    },
+    {
+      "op": "ALT2"
+    }
+  ]
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -901,7 +1131,41 @@
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;rate_table&gt;
+  &lt;name&gt;Personal&lt;/name&gt;
+  &lt;description&gt;Rate 1 Personal Table&lt;/description&gt;
+  &lt;auto_create_cost_center_lists&gt;false&lt;/auto_create_cost_center_lists&gt;
+  &lt;include_cc_from_ext_rules&gt;false&lt;/include_cc_from_ext_rules&gt;
+  &lt;include_sub_tree_type&gt;NEVER&lt;/include_sub_tree_type&gt;
+  &lt;currency&gt;USD&lt;/currency&gt;
+  &lt;ext_table&gt;
+    &lt;id&gt;5636096&lt;/id&gt;
+    &lt;display_name&gt;Rate_Table_1&lt;/display_name&gt;
+  &lt;/ext_table&gt;
+  &lt;alt_tables&gt;
+    &lt;alt_table&gt;
+      &lt;table&gt;
+        &lt;id&gt;5636096&lt;/id&gt;
+        &lt;display_name&gt;Rate_Table_1&lt;/display_name&gt;
+      &lt;/table&gt;
+      &lt;op&gt;ADD&lt;/op&gt;
+    &lt;/alt_table&gt;
+    &lt;alt_table&gt;
+      &lt;table&gt;
+        &lt;id&gt;5636352&lt;/id&gt;
+        &lt;display_name&gt;Rate_Table_5&lt;/display_name&gt;
+      &lt;/table&gt;
+      &lt;op&gt;ADD&lt;/op&gt;
+    &lt;/alt_table&gt;
+    &lt;alt_table&gt;
+      &lt;op&gt;&lt;/op&gt;
+    &lt;/alt_table&gt;
+  &lt;/alt_tables&gt;
+&lt;/rate_table&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -997,7 +1261,41 @@
 <div class="req-tab-post" id="req-tab-id-post-2">
 <div class="example">
 
+<div class="post-example-tab-2 activeTab" id="post-tab-example-2">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;rate_table&gt;
+  &lt;name&gt;Personal&lt;/name&gt;
+  &lt;description&gt;Rate 1 Personal Table&lt;/description&gt;
+  &lt;auto_create_cost_center_lists&gt;false&lt;/auto_create_cost_center_lists&gt;
+  &lt;include_cc_from_ext_rules&gt;false&lt;/include_cc_from_ext_rules&gt;
+  &lt;include_sub_tree_type&gt;NEVER&lt;/include_sub_tree_type&gt;
+  &lt;currency&gt;USD&lt;/currency&gt;
+  &lt;ext_table&gt;
+    &lt;id&gt;5636096&lt;/id&gt;
+    &lt;display_name&gt;Rate_Table_1&lt;/display_name&gt;
+  &lt;/ext_table&gt;
+  &lt;alt_tables&gt;
+    &lt;alt_table&gt;
+      &lt;table&gt;
+        &lt;id&gt;5636096&lt;/id&gt;
+        &lt;display_name&gt;Rate_Table_1&lt;/display_name&gt;
+      &lt;/table&gt;
+      &lt;op&gt;ADD&lt;/op&gt;
+    &lt;/alt_table&gt;
+    &lt;alt_table&gt;
+      &lt;table&gt;
+        &lt;id&gt;5636352&lt;/id&gt;
+        &lt;display_name&gt;Rate_Table_5&lt;/display_name&gt;
+      &lt;/table&gt;
+      &lt;op&gt;ADD&lt;/op&gt;
+    &lt;/alt_table&gt;
+    &lt;alt_table&gt;
+      &lt;op&gt;&lt;/op&gt;
+    &lt;/alt_table&gt;
+  &lt;/alt_tables&gt;
+&lt;/rate_table&gt;</pre>
+</div>
 <div class="post-example-tab-2" id="post-tab-schema-2">
 
 <div class="jsonschema" id="schema-5">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;

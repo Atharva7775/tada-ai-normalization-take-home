@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Timesheets</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Timesheets</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Timesheets</span>
@@ -37,7 +37,7 @@ Only one of the following parameters is mandatory to fulfil request:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -52,7 +52,7 @@ Only one of the following parameters is mandatory to fulfil request:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -122,7 +122,7 @@ Only one of the following parameters is mandatory to fulfil request:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -179,7 +179,7 @@ Only one of the following parameters is mandatory to fulfil request:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/timesheets</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -194,7 +194,31 @@ Only one of the following parameters is mandatory to fulfil request:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "timesheets": [
+    {
+      "id": 23728833,
+      "employee": {
+        "account_id": 2152390
+      },
+      "start_date": "2017-01-01",
+      "end_date": "2017-03-31",
+      "state": "APPROVED_PAY_PREP_READY",
+      "editable": true,
+      "_links": {
+        "action_submit": "http://servername/ta/rest/v2/companies/444545/timesheets/30022081/actions/SUBMIT",
+        "action_approve": "http://servername/ta/rest/v2/companies/444545/timesheets/30022081/actions/APPROVE"
+      }
+    }
+  ]
+}
+
+
+
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -276,7 +300,27 @@ Only one of the following parameters is mandatory to fulfil request:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;timesheets&gt;
+  &lt;timesheet&gt;
+    &lt;id&gt;23728833&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;2152390&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;start_date&gt;2017-01-01&lt;/start_date&gt;
+    &lt;end_date&gt;2017-03-31&lt;/end_date&gt;
+    &lt;state&gt;OPEN&lt;/state&gt;
+    &lt;editable&gt;true&lt;/editable&gt;
+    &lt;_links&gt;
+      &lt;action_submit&gt;http://servername/ta/rest/v2/companies/444545/timesheets/30022081/actions/SUBMIT&lt;/action_submit&gt;
+      &lt;action_approve&gt;http://servername/ta/rest/v2/companies/444545/timesheets/30022081/actions/APPROVE&lt;/action_approve&gt;
+    &lt;/_links&gt;
+  &lt;/timesheet&gt;
+&lt;/timesheets&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;

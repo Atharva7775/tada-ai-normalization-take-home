@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Time Entry Notes</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Time Entry Notes</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Time Entry Notes</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -49,7 +49,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -63,7 +63,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -161,7 +161,21 @@ Refer to the corresponding error code table and response schema.
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "time_entry_notes": [{
+    "time_entry_id": 1234567890,
+    "text": "Initial Note"
+  }, {
+    "time_entry_id": 1234567890,
+    "text": "Time Entry Note #1"
+  }, {
+    "time_entry_id": 1234567890,
+    "text": "Time Entry Note #2"
+  }]
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -198,7 +212,24 @@ Refer to the corresponding error code table and response schema.
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;time_entry_notes&gt;
+    &lt;time_entry_note&gt;
+        &lt;time_entry_id&gt;1234567890&lt;/time_entry_id&gt;
+        &lt;text&gt;Initial Note&lt;/text&gt;
+    &lt;/time_entry_note&gt;
+    &lt;time_entry_note&gt;
+        &lt;time_entry_id&gt;1234567891&lt;/time_entry_id&gt;
+        &lt;text&gt;Time Entry Note #1&lt;/text&gt;
+    &lt;/time_entry_note&gt;
+    &lt;time_entry_note&gt;
+        &lt;time_entry_id&gt;1234567892&lt;/time_entry_id&gt;
+        &lt;text&gt;Time Entry Note #2&lt;/text&gt;
+    &lt;/time_entry_note&gt;
+&lt;/time_entry_notes&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema elementFormDefault="qualified"
@@ -228,7 +259,7 @@ Refer to the corresponding error code table and response schema.
 </div>
 </div>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-post-0" data-tab-class="resp-tab-post" name="resp-tab-post" type="radio"/>
@@ -243,7 +274,28 @@ Refer to the corresponding error code table and response schema.
 <div class="resp-tab-post" id="resp-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-resp-tab-0 activeTab" id="post-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "items": [
+    {
+      "index": 0,
+      "id": "153467",
+      "status": "OK"
+    },
+    {
+      "index": 1,
+      "status": "FAILURE",
+      "errors": [
+        {
+          "code": 153652,
+          "message": "Cannot process entity because of ..."
+        }
+      ]
+    }
+  ]
+}</pre>
+</div>
 <div class="post-example-resp-tab-0" id="post-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -312,7 +364,27 @@ Refer to the corresponding error code table and response schema.
 <div class="resp-tab-post" id="resp-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-resp-tab-1 activeTab" id="post-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;result&gt;
+  &lt;item&gt;
+    &lt;index&gt;0&lt;/index&gt;
+    &lt;id&gt;153467&lt;/id&gt;
+    &lt;status&gt;OK&lt;/status&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;index&gt;0&lt;/index&gt;
+    &lt;status&gt;FAILURE&lt;/status&gt;
+    &lt;errors&gt;
+      &lt;error&gt;
+        &lt;code&gt;153652&lt;/code&gt;
+        &lt;message&gt;Cannot process entity because of ...&lt;/message&gt;
+      &lt;/error&gt;
+    &lt;/errors&gt;
+  &lt;/item&gt;
+&lt;/result&gt;</pre>
+</div>
 <div class="post-example-resp-tab-1" id="post-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -387,7 +459,7 @@ Refer to the corresponding error code table and response schema.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -405,7 +477,7 @@ Refer to the corresponding error code table and response schema.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123,432,5366,22145</p>
 <div class="desc md">IDs of the notes to be deleted</div>
 </div>
 </div>
@@ -454,7 +526,7 @@ Refer to the corresponding error code table and response schema.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/time-entries/notes/collection</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-delete-0" data-tab-class="resp-tab-delete" name="resp-tab-delete" type="radio"/>
@@ -469,7 +541,28 @@ Refer to the corresponding error code table and response schema.
 <div class="resp-tab-delete" id="resp-tab-id-delete-0">
 <div class="example">
 
+<div class="delete-example-resp-tab-0 activeTab" id="delete-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "items": [
+    {
+      "index": 0,
+      "id": "153467",
+      "status": "OK"
+    },
+    {
+      "index": 1,
+      "status": "FAILURE",
+      "errors": [
+        {
+          "code": 153652,
+          "message": "Cannot process entity because of ..."
+        }
+      ]
+    }
+  ]
+}</pre>
+</div>
 <div class="delete-example-resp-tab-0" id="delete-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-4">{
@@ -538,7 +631,27 @@ Refer to the corresponding error code table and response schema.
 <div class="resp-tab-delete" id="resp-tab-id-delete-1">
 <div class="example">
 
+<div class="delete-example-resp-tab-1 activeTab" id="delete-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;result&gt;
+  &lt;item&gt;
+    &lt;index&gt;0&lt;/index&gt;
+    &lt;id&gt;153467&lt;/id&gt;
+    &lt;status&gt;OK&lt;/status&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;index&gt;0&lt;/index&gt;
+    &lt;status&gt;FAILURE&lt;/status&gt;
+    &lt;errors&gt;
+      &lt;error&gt;
+        &lt;code&gt;153652&lt;/code&gt;
+        &lt;message&gt;Cannot process entity because of ...&lt;/message&gt;
+      &lt;/error&gt;
+    &lt;/errors&gt;
+  &lt;/item&gt;
+&lt;/result&gt;</pre>
+</div>
 <div class="delete-example-resp-tab-1" id="delete-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-5">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

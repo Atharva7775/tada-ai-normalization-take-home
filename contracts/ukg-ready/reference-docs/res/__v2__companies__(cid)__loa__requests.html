@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Requests</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Requests</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Requests</span>
@@ -29,7 +29,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2017-01-01</p>
 <div class="desc md">Lower bound of a date range for requests.</div>
 </div>
 </div>
@@ -61,7 +61,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2017-01-31</p>
 <div class="desc md">Upper bound of a date range for requests.</div>
 </div>
 </div>
@@ -75,7 +75,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: NEW, APPROVED, REJECTED, DELETED</p>
-
+<p>Example: NEW</p>
 <div class="desc md">State of the request.</div>
 </div>
 </div>
@@ -93,7 +93,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -150,7 +150,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/loa/requests</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -165,7 +165,65 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "loa_requests": [
+    {
+      "employee": {
+        "account_id": 2201859
+      },
+      "reason": {
+        "id": 66304,
+        "name": "Personal Reason"
+      },
+      "start_date": "2016-12-08",
+      "est_end_date": "2016-12-09",
+      "leave_time": {
+        "type": "CONTINUOUS"
+      },
+      "id": 16640,
+      "state": "NEW",
+      "created_at": "2016-12-08T15:08:00.000Z",
+      "notes_count": 1,
+      "_attachments_count": 1,
+      "_links": {
+        "self": "https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/16640",
+        "notes": "https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/16640/notes",
+        "delete": "https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/16640"
+      }
+    },
+    {
+      "employee": {
+        "account_id": 2201859
+      },
+      "reason": {
+        "id": 66048,
+        "name": "Undefined"
+      },
+      "start_date": "2016-12-08",
+      "est_end_date": "2016-12-09",
+      "leave_time": {
+        "type": "INTERMITTENT"
+      },
+      "id": 33024,
+      "state": "APPROVED",
+      "approved_by": {
+        "account_id": 2201923,
+        "display_name": "John Smith"
+      },
+      "approved_at": "2016-12-09T00:00:00.000Z",
+      "created_at": "2016-12-08T20:10:00.000Z",
+      "notes_count": 1,
+      "_links": {
+        "self": "https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/33024",
+        "notes": "https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/33024/notes",
+        "delete": "https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/33024"
+      }
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -336,7 +394,65 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;loa_requests&gt;
+  &lt;loa_request&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;2201859&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;reason&gt;
+      &lt;id&gt;66304&lt;/id&gt;
+      &lt;name&gt;Personal Reason&lt;/name&gt;
+    &lt;/reason&gt;
+    &lt;start_date&gt;2016-12-08&lt;/start_date&gt;
+    &lt;est_end_date&gt;2016-12-09&lt;/est_end_date&gt;
+    &lt;leave_time&gt;
+      &lt;type&gt;CONTINUOUS&lt;/type&gt;
+    &lt;/leave_time&gt;
+    &lt;state&gt;NEW&lt;/state&gt;
+    &lt;created_at&gt;2016-12-08T15:08:00.000Z&lt;/created_at&gt;
+    &lt;notes_count&gt;1&lt;/notes_count&gt;
+    &lt;_attachments_count&gt;3&lt;/_attachments_count&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/16640&lt;/self&gt;
+      &lt;notes&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/16640/notes&lt;/notes&gt;
+      &lt;delete&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/16640&lt;/delete&gt;
+    &lt;/_links&gt;
+  &lt;/loa_request&gt;
+  &lt;loa_request&gt;
+    &lt;id&gt;33024&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;2201859&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;reason&gt;
+      &lt;id&gt;66048&lt;/id&gt;
+      &lt;name&gt;Undefined&lt;/name&gt;
+    &lt;/reason&gt;
+    &lt;start_date&gt;2016-12-08&lt;/start_date&gt;
+    &lt;est_end_date&gt;2016-12-09&lt;/est_end_date&gt;
+    &lt;leave_time&gt;
+      &lt;type&gt;INTERMITTENT&lt;/type&gt;
+    &lt;/leave_time&gt;
+    &lt;state&gt;APPROVED&lt;/state&gt;
+    &lt;approved_by&gt;
+      &lt;account_id&gt;2201923&lt;/account_id&gt;
+      &lt;display_name&gt;John Smith&lt;/display_name&gt;
+    &lt;/approved_by&gt;
+    &lt;approved_at&gt;2016-12-09T00:00:00.000Z&lt;/approved_at&gt;
+    &lt;created_at&gt;2016-12-08T20:10:00.000Z&lt;/created_at&gt;
+    &lt;notes_count&gt;1&lt;/notes_count&gt;
+    &lt;_attachments_count&gt;3&lt;/_attachments_count&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/33024&lt;/self&gt;
+      &lt;notes&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/33024/notes&lt;/notes&gt;
+      &lt;delete&gt;https://secure2.saashr.com/ta/rest/v2/companies/453121/loa/requests/33024&lt;/delete&gt;
+    &lt;/_links&gt;
+  &lt;/loa_request&gt;
+&lt;/loa_requests&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -463,7 +579,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -497,7 +613,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -511,7 +627,7 @@
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -611,7 +727,34 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "employee": {
+    "account_id": 2194376
+  },
+  "reason": {
+    "id": 16640
+  },
+  "start_date": "2014-06-01",
+  "est_end_date": "2014-06-13",
+  "leave_time": {
+    "type": "INTERMITTENT",
+    "total_time": 28800000,
+    "frequency": 5,
+    "frequency_interval": 7,
+    "frequency_interval_type": "DAY",
+    "intermittent_type": "BULK"
+  },
+  "custom_fields": [
+    {
+      "index": 0,
+      "value": "MRP12354"
+    }
+  ],
+  "comment": "My comment."
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -939,7 +1082,35 @@
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;loa_request&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;2194376&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;reason&gt;
+    &lt;id&gt;16640&lt;/id&gt;
+  &lt;/reason&gt;
+  &lt;start_date&gt;2014-06-01&lt;/start_date&gt;
+  &lt;est_end_date&gt;2014-06-13&lt;/est_end_date&gt;
+  &lt;leave_time&gt;
+    &lt;type&gt;INTERMITTENT&lt;/type&gt;
+    &lt;total_time&gt;28800000&lt;/total_time&gt;
+    &lt;frequency&gt;5&lt;/frequency&gt;
+    &lt;frequency_interval&gt;7&lt;/frequency_interval&gt;
+    &lt;frequency_interval_type&gt;DAY&lt;/frequency_interval_type&gt;
+    &lt;intermittent_type&gt;BULK&lt;/intermittent_type&gt;
+  &lt;/leave_time&gt;
+  &lt;custom_fields&gt;
+    &lt;custom_field&gt;
+      &lt;index&gt;0&lt;/index&gt;
+      &lt;value&gt;MRP12354&lt;/value&gt;
+    &lt;/custom_field&gt;
+  &lt;/custom_fields&gt;
+  &lt;comment&gt;My comment.&lt;/comment&gt;
+&lt;/loa_request&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;?xml version="1.0" encoding="UTF-8"?&gt;

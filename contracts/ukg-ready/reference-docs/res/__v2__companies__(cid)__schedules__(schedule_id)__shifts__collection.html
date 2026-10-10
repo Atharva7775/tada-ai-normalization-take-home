@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Collection</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Collection</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Collection</span>
@@ -24,7 +24,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -39,7 +39,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Schedule ID
 </div>
 </div>
@@ -150,7 +150,90 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "shifts": [
+    {
+      "id": 5686528,
+      "account": {
+        "account_id": 2203589
+      },
+      "date": "2016-11-25",
+      "type": "FIXED",
+      "shift_start": "2016-11-25T19:00:00.000-06:00",
+      "shift_end": "2016-11-26T09:00:00.000-06:00",
+      "total_standard_hours": 412321451,
+      "cost_centers": [
+        {
+          "index": 1,
+          "value": {
+            "id": 1573698,
+            "display_name": "Houston/33 East 17th Street"
+          }
+        }
+      ],
+      "skill": {
+        "schedulable": true,
+        "id": 43906,
+        "name": "C#"
+      },
+      "shift_premium": {
+        "id": 435214,
+        "name": "Premium",
+        "code": "11111",
+        "description": "Desc"
+      },
+      "average_rate": 10.0
+    },
+    {
+      "id": 5566345,
+      "account": {
+        "account_id": 2203589
+      },
+      "date": "2016-11-25",
+      "type": "FLOATING",
+      "abbreviation": "ABBR",
+      "daily_rule_name": "Daily rule xxx",
+      "floating_start_min": "2016-11-25T8:00:00.000-06:00",
+      "floating_start_max": "2016-11-25T09:00:00.000-06:00",
+      "floating_total_time": 1728000000,
+      "cost_centers": [
+        {
+          "index": 1,
+          "value": {
+            "id": 1573698,
+            "display_name": "Houston/33 East 17th Street"
+          }
+        }
+      ],
+      "skill": {
+        "schedulable": true,
+        "id": 43906,
+        "name": "JAVA"
+      },
+      "total_standard_hours": 412495451,
+      "shift_premium": {
+        "id": 435214,
+        "name": "Premium",
+        "code": "11111",
+        "description": "Desc"
+      },
+      "workday_breakdown": {
+        "id": 12345
+      },
+      "average_rate": 20.0
+    }
+  ],
+  "accepted_triggers": [
+    {
+      "shift_id": 5686528,
+      "triggers": ["CHANGE_COST_CENTER","SKILL_CHANGE"]
+    }
+  ],
+  "validate_constraints": true
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -336,7 +419,94 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;modify_shifts&gt;
+  &lt;shifts&gt;
+  &lt;shift&gt;
+    &lt;id&gt;5686528&lt;/id&gt;
+    &lt;account&gt;
+      &lt;account_id&gt;2203589&lt;/account_id&gt;
+    &lt;/account&gt;
+    &lt;date&gt;2016-11-25&lt;/date&gt;
+    &lt;type&gt;FIXED&lt;/type&gt;
+    &lt;shift_start&gt;2016-11-25T19:00:00.000-06:00&lt;/shift_start&gt;
+    &lt;shift_end&gt;2016-11-26T09:00:00.000-06:00&lt;/shift_end&gt;
+    &lt;total_standard_hours&gt;123214695&lt;/total_standard_hours&gt;
+    &lt;cost_centers&gt;
+      &lt;cost_center&gt;
+        &lt;index&gt;1&lt;/index&gt;
+        &lt;value&gt;
+          &lt;display_name&gt;Houston/33 East 17th Street&lt;/display_name&gt;
+          &lt;id&gt;1573698&lt;/id&gt;
+        &lt;/value&gt;
+      &lt;/cost_center&gt;
+    &lt;/cost_centers&gt;
+    &lt;skill&gt;
+      &lt;id&gt;43906&lt;/id&gt;
+      &lt;name&gt;C#&lt;/name&gt;
+      &lt;schedulable&gt;true&lt;/schedulable&gt;
+    &lt;/skill&gt;
+    &lt;shift_premium&gt;
+      &lt;id&gt;123&lt;/id&gt;
+      &lt;name&gt;Premium&lt;/name&gt;
+      &lt;code&gt;1111&lt;/code&gt;
+      &lt;description&gt;Desc&lt;/description&gt;
+    &lt;/shift_premium&gt;
+    &lt;average_rate&gt;10.0&lt;/average_rate&gt;
+  &lt;/shift&gt;
+  &lt;shift&gt;
+    &lt;id&gt;5566345&lt;/id&gt;
+    &lt;account&gt;
+      &lt;account_id&gt;2203589&lt;/account_id&gt;
+    &lt;/account&gt;
+    &lt;date&gt;2016-11-25&lt;/date&gt;
+    &lt;type&gt;FLOATING&lt;/type&gt;
+    &lt;abbreviation&gt;ABBR&lt;/abbreviation&gt;
+    &lt;daily_rule_name&gt;Daily rule xxx&lt;/daily_rule_name&gt;
+    &lt;floating_start_min&gt;2016-11-25T8:00:00.000-06:00&lt;/floating_start_min&gt;
+    &lt;floating_start_max&gt;2016-11-25T09:00:00.000-06:00&lt;/floating_start_max&gt;
+    &lt;floating_total_time&gt;1728000000&lt;/floating_total_time&gt;
+    &lt;total_standard_hours&gt;59394912&lt;/total_standard_hours&gt;
+    &lt;cost_centers&gt;
+      &lt;cost_center&gt;
+        &lt;index&gt;1&lt;/index&gt;
+        &lt;value&gt;
+          &lt;display_name&gt;Houston/33 East 17th Street&lt;/display_name&gt;
+          &lt;id&gt;1573698&lt;/id&gt;
+        &lt;/value&gt;
+      &lt;/cost_center&gt;
+    &lt;/cost_centers&gt;
+    &lt;skill&gt;
+      &lt;id&gt;43906&lt;/id&gt;
+      &lt;name&gt;JAVA&lt;/name&gt;
+      &lt;schedulable&gt;true&lt;/schedulable&gt;
+    &lt;/skill&gt;
+    &lt;shift_premium&gt;
+      &lt;id&gt;123&lt;/id&gt;
+      &lt;name&gt;Premium&lt;/name&gt;
+      &lt;code&gt;1111&lt;/code&gt;
+      &lt;description&gt;Desc&lt;/description&gt;
+    &lt;/shift_premium&gt;
+    &lt;workday_breakdown&gt;
+      &lt;id&gt;12345&lt;/id&gt;
+    &lt;/workday_breakdown&gt;
+    &lt;average_rate&gt;20.0&lt;/average_rate&gt;
+  &lt;/shift&gt;
+&lt;/shifts&gt;
+  &lt;accepted_triggers&gt;
+    &lt;accepted_trigger shift_id="5686528"&gt;
+      &lt;triggers&gt;
+        &lt;trigger&gt;CHANGE_COST_CENTER&lt;/trigger&gt;
+        &lt;trigger&gt;SHIFT_LENGTH&lt;/trigger&gt;
+      &lt;/triggers&gt;
+    &lt;/accepted_trigger&gt;
+  &lt;/accepted_triggers&gt;
+  &lt;validate_constraints&gt;true&lt;/validate_constraints&gt;
+&lt;/modify_shifts&gt;
+</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -479,7 +649,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -494,7 +664,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Schedule ID
 </div>
 </div>
@@ -605,7 +775,90 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "shifts": [
+    {
+      "id": 5686528,
+      "account": {
+        "account_id": 2203589
+      },
+      "date": "2016-11-25",
+      "type": "FIXED",
+      "shift_start": "2016-11-25T19:00:00.000-06:00",
+      "shift_end": "2016-11-26T09:00:00.000-06:00",
+      "total_standard_hours": 412321451,
+      "cost_centers": [
+        {
+          "index": 1,
+          "value": {
+            "id": 1573698,
+            "display_name": "Houston/33 East 17th Street"
+          }
+        }
+      ],
+      "skill": {
+        "schedulable": true,
+        "id": 43906,
+        "name": "C#"
+      },
+      "shift_premium": {
+        "id": 435214,
+        "name": "Premium",
+        "code": "11111",
+        "description": "Desc"
+      },
+      "average_rate": 10.0
+    },
+    {
+      "id": 5566345,
+      "account": {
+        "account_id": 2203589
+      },
+      "date": "2016-11-25",
+      "type": "FLOATING",
+      "abbreviation": "ABBR",
+      "daily_rule_name": "Daily rule xxx",
+      "floating_start_min": "2016-11-25T8:00:00.000-06:00",
+      "floating_start_max": "2016-11-25T09:00:00.000-06:00",
+      "floating_total_time": 1728000000,
+      "cost_centers": [
+        {
+          "index": 1,
+          "value": {
+            "id": 1573698,
+            "display_name": "Houston/33 East 17th Street"
+          }
+        }
+      ],
+      "skill": {
+        "schedulable": true,
+        "id": 43906,
+        "name": "JAVA"
+      },
+      "total_standard_hours": 412495451,
+      "shift_premium": {
+        "id": 435214,
+        "name": "Premium",
+        "code": "11111",
+        "description": "Desc"
+      },
+      "workday_breakdown": {
+        "id": 12345
+      },
+      "average_rate": 20.0
+    }
+  ],
+  "accepted_triggers": [
+    {
+      "shift_id": 5686528,
+      "triggers": ["CHANGE_COST_CENTER","SKILL_CHANGE"]
+    }
+  ],
+  "validate_constraints": true
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -791,7 +1044,94 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;modify_shifts&gt;
+  &lt;shifts&gt;
+  &lt;shift&gt;
+    &lt;id&gt;5686528&lt;/id&gt;
+    &lt;account&gt;
+      &lt;account_id&gt;2203589&lt;/account_id&gt;
+    &lt;/account&gt;
+    &lt;date&gt;2016-11-25&lt;/date&gt;
+    &lt;type&gt;FIXED&lt;/type&gt;
+    &lt;shift_start&gt;2016-11-25T19:00:00.000-06:00&lt;/shift_start&gt;
+    &lt;shift_end&gt;2016-11-26T09:00:00.000-06:00&lt;/shift_end&gt;
+    &lt;total_standard_hours&gt;123214695&lt;/total_standard_hours&gt;
+    &lt;cost_centers&gt;
+      &lt;cost_center&gt;
+        &lt;index&gt;1&lt;/index&gt;
+        &lt;value&gt;
+          &lt;display_name&gt;Houston/33 East 17th Street&lt;/display_name&gt;
+          &lt;id&gt;1573698&lt;/id&gt;
+        &lt;/value&gt;
+      &lt;/cost_center&gt;
+    &lt;/cost_centers&gt;
+    &lt;skill&gt;
+      &lt;id&gt;43906&lt;/id&gt;
+      &lt;name&gt;C#&lt;/name&gt;
+      &lt;schedulable&gt;true&lt;/schedulable&gt;
+    &lt;/skill&gt;
+    &lt;shift_premium&gt;
+      &lt;id&gt;123&lt;/id&gt;
+      &lt;name&gt;Premium&lt;/name&gt;
+      &lt;code&gt;1111&lt;/code&gt;
+      &lt;description&gt;Desc&lt;/description&gt;
+    &lt;/shift_premium&gt;
+    &lt;average_rate&gt;10.0&lt;/average_rate&gt;
+  &lt;/shift&gt;
+  &lt;shift&gt;
+    &lt;id&gt;5566345&lt;/id&gt;
+    &lt;account&gt;
+      &lt;account_id&gt;2203589&lt;/account_id&gt;
+    &lt;/account&gt;
+    &lt;date&gt;2016-11-25&lt;/date&gt;
+    &lt;type&gt;FLOATING&lt;/type&gt;
+    &lt;abbreviation&gt;ABBR&lt;/abbreviation&gt;
+    &lt;daily_rule_name&gt;Daily rule xxx&lt;/daily_rule_name&gt;
+    &lt;floating_start_min&gt;2016-11-25T8:00:00.000-06:00&lt;/floating_start_min&gt;
+    &lt;floating_start_max&gt;2016-11-25T09:00:00.000-06:00&lt;/floating_start_max&gt;
+    &lt;floating_total_time&gt;1728000000&lt;/floating_total_time&gt;
+    &lt;total_standard_hours&gt;59394912&lt;/total_standard_hours&gt;
+    &lt;cost_centers&gt;
+      &lt;cost_center&gt;
+        &lt;index&gt;1&lt;/index&gt;
+        &lt;value&gt;
+          &lt;display_name&gt;Houston/33 East 17th Street&lt;/display_name&gt;
+          &lt;id&gt;1573698&lt;/id&gt;
+        &lt;/value&gt;
+      &lt;/cost_center&gt;
+    &lt;/cost_centers&gt;
+    &lt;skill&gt;
+      &lt;id&gt;43906&lt;/id&gt;
+      &lt;name&gt;JAVA&lt;/name&gt;
+      &lt;schedulable&gt;true&lt;/schedulable&gt;
+    &lt;/skill&gt;
+    &lt;shift_premium&gt;
+      &lt;id&gt;123&lt;/id&gt;
+      &lt;name&gt;Premium&lt;/name&gt;
+      &lt;code&gt;1111&lt;/code&gt;
+      &lt;description&gt;Desc&lt;/description&gt;
+    &lt;/shift_premium&gt;
+    &lt;workday_breakdown&gt;
+      &lt;id&gt;12345&lt;/id&gt;
+    &lt;/workday_breakdown&gt;
+    &lt;average_rate&gt;20.0&lt;/average_rate&gt;
+  &lt;/shift&gt;
+&lt;/shifts&gt;
+  &lt;accepted_triggers&gt;
+    &lt;accepted_trigger shift_id="5686528"&gt;
+      &lt;triggers&gt;
+        &lt;trigger&gt;CHANGE_COST_CENTER&lt;/trigger&gt;
+        &lt;trigger&gt;SHIFT_LENGTH&lt;/trigger&gt;
+      &lt;/triggers&gt;
+    &lt;/accepted_trigger&gt;
+  &lt;/accepted_triggers&gt;
+  &lt;validate_constraints&gt;true&lt;/validate_constraints&gt;
+&lt;/modify_shifts&gt;
+</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -934,7 +1274,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -949,7 +1289,7 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Schedule ID
 </div>
 </div>
@@ -1030,7 +1370,22 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-delete" id="req-tab-id-delete-0">
 <div class="example">
 
+<div class="delete-example-tab-0 activeTab" id="delete-tab-example-0">
 
+<pre class="highlightjs">&lt;modify_shifts&gt;
+  &lt;shift_ids&gt;
+    &lt;shift_id&gt;54354545&lt;/shift_id&gt;
+    &lt;shift_id&gt;54354545&lt;/shift_id&gt;
+  &lt;/shift_ids&gt;
+  &lt;accepted_triggers&gt;
+    &lt;accepted_trigger shift_id="54354545"&gt;
+      &lt;triggers&gt;
+        &lt;trigger&gt;SHIFT_LENGTH&lt;/trigger&gt;
+      &lt;/triggers&gt;
+    &lt;/accepted_trigger&gt;
+  &lt;/accepted_triggers&gt;
+&lt;/modify_shifts&gt;</pre>
+</div>
 <div class="delete-example-tab-0" id="delete-tab-schema-0">
 
 <div class="jsonschema" id="schema-4">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -1075,7 +1430,18 @@ Advanced Scheduler (&lt;b&gt;SCHEDULE&lt;/b&gt;) Subsystem must be enabled in co
 <div class="req-tab-delete" id="req-tab-id-delete-1">
 <div class="example">
 
+<div class="delete-example-tab-1 activeTab" id="delete-tab-example-1">
 
+<pre class="highlightjs">{
+  "shift_ids": [
+    54354545,
+    21312412
+  ],
+  "accepted_triggers": [
+    {"shift_id": 54354545, "triggers": ["SHIFT_LENGTH"]}
+  ]
+}</pre>
+</div>
 <div class="delete-example-tab-1" id="delete-tab-schema-1">
 
 <div class="jsonschema" id="schema-5">{

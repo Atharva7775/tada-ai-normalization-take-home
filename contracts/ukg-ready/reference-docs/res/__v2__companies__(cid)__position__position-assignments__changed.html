@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Position Assignments Changed</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Position Assignments Changed</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Position Assignments Changed</span>
@@ -32,7 +32,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -49,7 +49,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2017-09-15T20:55:00Z</p>
 <div class="desc md">Used to set reference date to determine changes, the value cannot be more than 31 days in the past.
 &lt;br&gt;Date should be expressed according to ISO 8601.
 &lt;br&gt;If the timezone is not provided or cannot be parsed the system will default to the timezone of the company. Default value is today minus 5 days.
@@ -65,7 +65,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: all</p>
 <div class="desc md">A comma separated string of all the details that are required. Possible values to be provided are :
 &lt;br&gt;1.	all -&gt; Will fetch all the details for the assignment
 &lt;br&gt;2.	ccdetails -&gt; Will fetch basic details + cost center details.
@@ -88,7 +88,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: true</p>
 <div class="desc md">If set as true, the result set will be filtered to contain only those assignments
 whose duration overlaps with given duration i.e. (since date - today).
 &lt;br&gt;If not provided, the default value of this flag is false.
@@ -133,7 +133,7 @@ whose duration overlaps with given duration i.e. (since date - today).
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -190,7 +190,7 @@ whose duration overlaps with given duration i.e. (since date - today).
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/position/position-assignments/changed</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -205,7 +205,196 @@ whose duration overlaps with given duration i.e. (since date - today).
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "entries": [
+    {
+      "id": 852224,
+      "status": "DELETED"
+    },
+    {
+      "id": 950272,
+      "object": {
+        "assignment_id": 950272,
+        "assignment_number": "00000029",
+        "position_id": 1606784,
+        "position_number": "00000010",
+        "position_name": "MyPos-01",
+        "account_id": 2202241,
+        "account_name": "vamsi vamsi",
+        "start_date": "2020-07-01",
+        "end_date": "2021-04-30",
+        "assignee": {
+          "account_id": 2202241,
+          "primary_account_id": 2202241,
+          "display_name": "vamsi vamsi",
+          "ein": {
+            "id": 912898,
+            "display_name": "Default"
+          },
+          "employee_id": "12123333",
+          "hire_date": "2019-12-29",
+          "seniority_date": "2024-12-29"
+        },
+        "assigned_fte": 0.5,
+        "annual_base_comp": 1.0,
+        "annual_supp_comp": 15627.0,
+        "total_base_comp": 15628.0,
+        "avg_annual_budgeted_total_comp": 10000.0,
+        "annual_work_hours": 3744000000,
+        "is_primary_assignment": false,
+        "action_by": "John Williams",
+        "cost_center_list": [
+          {
+            "id": 1572806,
+            "name": "test",
+            "tree_index": 0,
+            "value_id": 1573450,
+            "value_name": "john",
+            "allow_override": false
+          },
+          {
+            "id": 1572869,
+            "name": "Department",
+            "tree_index": 1,
+            "value_id": 1606976,
+            "value_name": "A-dept11",
+            "allow_override": true
+          }
+        ],
+        "read_only": false,
+        "assignment_rate_schedules": [
+          {
+            "rate_table_selected": true,
+            "rate_table_name": "Rate 1: Rate Table 1",
+            "rate_table_index": 0,
+            "rate_schedule_id": 425344,
+            "rate_items": [
+              {
+                "rate_id": 544768,
+                "rate": 21.0,
+                "start_date": "2020-07-01",
+                "end_date": "2020-12-31"
+              },
+              {
+                "rate_id": 544769,
+                "rate": 21.0,
+                "start_date": "2021-01-01",
+                "end_date": "2021-04-05"
+              }
+            ]
+          }
+        ],
+        "direct_reporting_assignment": {
+          "assignment_id": 1163264,
+          "assignment_number": "00000044",
+          "position_id": 1607042,
+          "position_name": "MyPos-07",
+          "account_id": 2203393,
+          "account_name": "DM DM",
+          "start_date": "2021-04-01",
+          "assignee": {
+            "account_id": 2203393,
+            "primary_account_id": 2202119,
+            "display_name": "DM DM",
+            "ein": {
+              "id": 912898,
+              "display_name": "Default"
+            },
+            "employee_id": "12123333"
+          }
+        },
+        "attributes": [
+          {
+            "index": 0,
+            "label": "Assignment Attribute 01 [Integer]",
+            "value": "32",
+            "type": "INT"
+          },
+          {
+            "index": 1,
+            "label": "Assignment Attribute 02",
+            "value": "At 0112",
+            "type": "CHAR"
+          },
+          {
+            "index": 2,
+            "label": "Assignment Attribute 02 [Date]",
+            "value": "2021-04-01",
+            "type": "DATE"
+          },
+          {
+            "index": 3,
+            "label": "Assignment Attribute 04 [SA]",
+            "value": {
+              "account_id": 2204291,
+              "display_name": "dwsdsa dasdasdasd",
+              "ein": {
+                "id": 912898,
+                "display_name": "Default"
+              }
+            },
+            "type": "ACCOUNT"
+          }
+        ]
+      },
+      "status": "MODIFIED"
+    },
+    {
+      "id": 1163264,
+      "object": {
+        "assignment_id": 1163264,
+        "assignment_number": "00000044",
+        "position_id": 1607042,
+        "position_number": "00000016",
+        "position_name": "MyPos-07",
+        "account_id": 2203393,
+        "account_name": "DM DM",
+        "start_date": "2021-04-01",
+        "annual_base_comp": 0.0,
+        "total_base_comp": 0.0,
+        "is_primary_assignment": true,
+        "action_by": "John Williams",
+        "cost_center_list": [
+          {
+            "id": 1572806,
+            "name": "test",
+            "tree_index": 0,
+            "allow_override": true
+          },
+          {
+            "id": 1572869,
+            "name": "Department",
+            "tree_index": 1,
+            "allow_override": true
+          }
+        ],
+        "read_only": false,
+        "attributes": [
+          {
+            "index": 4,
+            "label": "Assignment Attribute 01 [Integer]",
+            "type": "INT"
+          },
+          {
+            "index": 32,
+            "label": "Assignment Attribute 02",
+            "type": "CHAR"
+          },
+          {
+            "index": 2,
+            "label": "Assignment Attribute 02 [Date]",
+            "type": "DATE"
+          }
+        ]
+      },
+      "status": "CREATED"
+    }
+  ],
+  "_total_count": 3
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -482,7 +671,275 @@ whose duration overlaps with given duration i.e. (since date - today).
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;entries&gt;
+  &lt;item&gt;
+    &lt;id&gt;852224&lt;/id&gt;
+    &lt;status&gt;DELETED&lt;/status&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;id&gt;950272&lt;/id&gt;
+    &lt;object&gt;
+      &lt;assignment_id&gt;950272&lt;/assignment_id&gt;
+      &lt;assignment_number&gt;00000029&lt;/assignment_number&gt;
+      &lt;position_id&gt;1606784&lt;/position_id&gt;
+      &lt;position_number&gt;00000010&lt;/position_number&gt;
+      &lt;position_name&gt;MyPos-01&lt;/position_name&gt;
+      &lt;account_id&gt;2202241&lt;/account_id&gt;
+      &lt;account_name&gt;vamsi vamsi&lt;/account_name&gt;
+      &lt;start_date&gt;2020-07-01&lt;/start_date&gt;
+      &lt;end_date&gt;2021-04-30&lt;/end_date&gt;
+      &lt;assignee&gt;
+        &lt;account_id&gt;2202241&lt;/account_id&gt;
+        &lt;primary_account_id&gt;2202241&lt;/primary_account_id&gt;
+        &lt;display_name&gt;vamsi vamsi&lt;/display_name&gt;
+        &lt;ein&gt;
+          &lt;id&gt;912898&lt;/id&gt;
+          &lt;display_name&gt;Default&lt;/display_name&gt;
+        &lt;/ein&gt;
+        &lt;employee_id&gt;12123333&lt;/employee_id&gt;
+        &lt;hire_date&gt;2019-12-29&lt;/hire_date&gt;
+        &lt;seniority_date&gt;2024-12-29&lt;/seniority_date&gt;
+      &lt;/assignee&gt;
+      &lt;assigned_fte&gt;0.5&lt;/assigned_fte&gt;
+      &lt;annual_base_comp&gt;1.000000&lt;/annual_base_comp&gt;
+      &lt;annual_supp_comp&gt;15627.000000&lt;/annual_supp_comp&gt;
+      &lt;total_base_comp&gt;15628.000000&lt;/total_base_comp&gt;
+      &lt;avg_annual_budgeted_total_comp&gt;10000.000000&lt;/avg_annual_budgeted_total_comp&gt;
+      &lt;annual_work_hours&gt;3744000000&lt;/annual_work_hours&gt;
+      &lt;is_primary_assignment&gt;false&lt;/is_primary_assignment&gt;
+      &lt;action_by&gt;john williams&lt;/action_by&gt;
+      &lt;cost_center_list&gt;
+        &lt;cost_center_list&gt;
+          &lt;id&gt;1572806&lt;/id&gt;
+          &lt;name&gt;test&lt;/name&gt;
+          &lt;tree_index&gt;0&lt;/tree_index&gt;
+          &lt;value_id&gt;1573450&lt;/value_id&gt;
+          &lt;value_name&gt;john&lt;/value_name&gt;
+          &lt;allow_override&gt;false&lt;/allow_override&gt;
+        &lt;/cost_center_list&gt;
+        &lt;cost_center_list&gt;
+          &lt;id&gt;1572869&lt;/id&gt;
+          &lt;name&gt;Department&lt;/name&gt;
+          &lt;tree_index&gt;1&lt;/tree_index&gt;
+          &lt;value_id&gt;1606976&lt;/value_id&gt;
+          &lt;value_name&gt;A-dept11&lt;/value_name&gt;
+          &lt;allow_override&gt;true&lt;/allow_override&gt;
+        &lt;/cost_center_list&gt;
+      &lt;/cost_center_list&gt;
+      &lt;read_only&gt;false&lt;/read_only&gt;
+      &lt;assignment_rate_schedules&gt;
+        &lt;assignment_rate_schedules&gt;
+          &lt;rate_table_selected&gt;true&lt;/rate_table_selected&gt;
+          &lt;rate_table_name&gt;Rate 1: Rate Table 1&lt;/rate_table_name&gt;
+          &lt;rate_table_index&gt;0&lt;/rate_table_index&gt;
+          &lt;rate_schedule_id&gt;425344&lt;/rate_schedule_id&gt;
+          &lt;rate_items&gt;
+            &lt;rate_items&gt;
+              &lt;rate_id&gt;544768&lt;/rate_id&gt;
+              &lt;rate&gt;21.000000&lt;/rate&gt;
+              &lt;start_date&gt;2020-07-01&lt;/start_date&gt;
+              &lt;end_date&gt;2020-12-31&lt;/end_date&gt;
+            &lt;/rate_items&gt;
+            &lt;rate_items&gt;
+              &lt;rate_id&gt;544769&lt;/rate_id&gt;
+              &lt;rate&gt;21.000000&lt;/rate&gt;
+              &lt;start_date&gt;2021-01-01&lt;/start_date&gt;
+              &lt;end_date&gt;2021-04-05&lt;/end_date&gt;
+            &lt;/rate_items&gt;
+          &lt;/rate_items&gt;
+        &lt;/assignment_rate_schedules&gt;
+      &lt;/assignment_rate_schedules&gt;
+      &lt;direct_reporting_assignment&gt;
+        &lt;assignment_id&gt;1163264&lt;/assignment_id&gt;
+        &lt;assignment_number&gt;00000044&lt;/assignment_number&gt;
+        &lt;position_id&gt;1607042&lt;/position_id&gt;
+        &lt;position_name&gt;MyPos-07&lt;/position_name&gt;
+        &lt;account_id&gt;2203393&lt;/account_id&gt;
+        &lt;account_name&gt;DM DM&lt;/account_name&gt;
+        &lt;start_date&gt;2021-04-01&lt;/start_date&gt;
+        &lt;assignee&gt;
+          &lt;account_id&gt;2203393&lt;/account_id&gt;
+          &lt;primary_account_id&gt;2202119&lt;/primary_account_id&gt;
+          &lt;display_name&gt;DM DM&lt;/display_name&gt;
+          &lt;ein&gt;
+            &lt;id&gt;912898&lt;/id&gt;
+            &lt;display_name&gt;Default&lt;/display_name&gt;
+          &lt;/ein&gt;
+          &lt;employee_id&gt;12123333&lt;/employee_id&gt;
+        &lt;/assignee&gt;
+      &lt;/direct_reporting_assignment&gt;
+      &lt;attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;0&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 01 [Integer]&lt;/label&gt;
+          &lt;value&gt;32&lt;/value&gt;
+          &lt;type&gt;INT&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;1&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 02&lt;/label&gt;
+          &lt;value&gt;At 0112&lt;/value&gt;
+          &lt;type&gt;CHAR&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;2&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 02 [Date]&lt;/label&gt;
+          &lt;value&gt;2021-04-01&lt;/value&gt;
+          &lt;type&gt;DATE&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;3&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 04 [SA]&lt;/label&gt;
+          &lt;value&gt;
+            &lt;account_id&gt;2204291&lt;/account_id&gt;
+            &lt;display_name&gt;dwsdsa dasdasdasd&lt;/display_name&gt;
+            &lt;ein&gt;
+              &lt;id&gt;912898&lt;/id&gt;
+              &lt;display_name&gt;Default&lt;/display_name&gt;
+            &lt;/ein&gt;
+          &lt;/value&gt;
+          &lt;type&gt;ACCOUNT&lt;/type&gt;
+          &lt;type&gt;ACCOUNT&lt;/type&gt;
+        &lt;/attributes&gt;
+      &lt;/attributes&gt;
+    &lt;/object&gt;
+    &lt;status&gt;MODIFIED&lt;/status&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;id&gt;917760&lt;/id&gt;
+    &lt;object&gt;
+      &lt;assignment_id&gt;917760&lt;/assignment_id&gt;
+      &lt;assignment_number&gt;00000025&lt;/assignment_number&gt;
+      &lt;position_id&gt;1606786&lt;/position_id&gt;
+      &lt;position_number&gt;00000012&lt;/position_number&gt;
+      &lt;position_name&gt;MyPos-03&lt;/position_name&gt;
+      &lt;account_id&gt;2203393&lt;/account_id&gt;
+      &lt;account_name&gt;DM DM&lt;/account_name&gt;
+      &lt;start_date&gt;2020-10-01&lt;/start_date&gt;
+      &lt;end_date&gt;2021-03-31&lt;/end_date&gt;
+      &lt;assigned_fte&gt;0.6&lt;/assigned_fte&gt;
+      &lt;annual_base_comp&gt;0.000000&lt;/annual_base_comp&gt;
+      &lt;total_base_comp&gt;0.000000&lt;/total_base_comp&gt;
+      &lt;annual_work_hours&gt;1497600000&lt;/annual_work_hours&gt;
+      &lt;is_primary_assignment&gt;true&lt;/is_primary_assignment&gt;
+      &lt;action_by&gt;john williams&lt;/action_by&gt;
+      &lt;cost_center_list&gt;
+        &lt;cost_center_list&gt;
+          &lt;id&gt;1572806&lt;/id&gt;
+          &lt;name&gt;test&lt;/name&gt;
+          &lt;tree_index&gt;0&lt;/tree_index&gt;
+          &lt;value_id&gt;1572811&lt;/value_id&gt;
+          &lt;value_name&gt;HRMS&lt;/value_name&gt;
+          &lt;allow_override&gt;true&lt;/allow_override&gt;
+        &lt;/cost_center_list&gt;
+        &lt;cost_center_list&gt;
+          &lt;id&gt;1572869&lt;/id&gt;
+          &lt;name&gt;Department&lt;/name&gt;
+          &lt;tree_index&gt;1&lt;/tree_index&gt;
+          &lt;value_id&gt;1573452&lt;/value_id&gt;
+          &lt;value_name&gt;dept1&lt;/value_name&gt;
+          &lt;allow_override&gt;true&lt;/allow_override&gt;
+        &lt;/cost_center_list&gt;
+      &lt;/cost_center_list&gt;
+      &lt;read_only&gt;false&lt;/read_only&gt;
+      &lt;attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;0&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 01 [Integer]&lt;/label&gt;
+          &lt;value&gt;101&lt;/value&gt;
+          &lt;type&gt;INT&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;1&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 02&lt;/label&gt;
+          &lt;value&gt;test Attr&lt;/value&gt;
+          &lt;type&gt;CHAR&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;2&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 02 [Date]&lt;/label&gt;
+          &lt;value&gt;2021-01-01&lt;/value&gt;
+          &lt;type&gt;DATE&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;3&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 04 [SA]&lt;/label&gt;
+          &lt;type&gt;ACCOUNT&lt;/type&gt;
+        &lt;/attributes&gt;
+      &lt;/attributes&gt;
+    &lt;/object&gt;
+    &lt;status&gt;MODIFIED&lt;/status&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;id&gt;1163264&lt;/id&gt;
+    &lt;object&gt;
+      &lt;assignment_id&gt;1163264&lt;/assignment_id&gt;
+      &lt;assignment_number&gt;00000044&lt;/assignment_number&gt;
+      &lt;position_id&gt;1607042&lt;/position_id&gt;
+      &lt;position_number&gt;00000016&lt;/position_number&gt;
+      &lt;position_name&gt;MyPos-07&lt;/position_name&gt;
+      &lt;account_id&gt;2203393&lt;/account_id&gt;
+      &lt;account_name&gt;DM DM&lt;/account_name&gt;
+      &lt;start_date&gt;2021-04-01&lt;/start_date&gt;
+      &lt;annual_base_comp&gt;0.000000&lt;/annual_base_comp&gt;
+      &lt;total_base_comp&gt;0.000000&lt;/total_base_comp&gt;
+      &lt;is_primary_assignment&gt;true&lt;/is_primary_assignment&gt;
+      &lt;action_by&gt;john williams&lt;/action_by&gt;
+      &lt;cost_center_list&gt;
+        &lt;cost_center_list&gt;
+          &lt;id&gt;1572806&lt;/id&gt;
+          &lt;name&gt;test&lt;/name&gt;
+          &lt;tree_index&gt;0&lt;/tree_index&gt;
+          &lt;allow_override&gt;true&lt;/allow_override&gt;
+        &lt;/cost_center_list&gt;
+        &lt;cost_center_list&gt;
+          &lt;id&gt;1572869&lt;/id&gt;
+          &lt;name&gt;Department&lt;/name&gt;
+          &lt;tree_index&gt;1&lt;/tree_index&gt;
+          &lt;allow_override&gt;true&lt;/allow_override&gt;
+        &lt;/cost_center_list&gt;
+      &lt;/cost_center_list&gt;
+      &lt;read_only&gt;false&lt;/read_only&gt;
+      &lt;attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;0&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 01 [Integer]&lt;/label&gt;
+          &lt;type&gt;INT&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;1&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 02&lt;/label&gt;
+          &lt;type&gt;CHAR&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;2&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 02 [Date]&lt;/label&gt;
+          &lt;type&gt;DATE&lt;/type&gt;
+        &lt;/attributes&gt;
+        &lt;attributes&gt;
+          &lt;index&gt;3&lt;/index&gt;
+          &lt;label&gt;Assignment Attribute 04 [SA]&lt;/label&gt;
+          &lt;value&gt;
+            &lt;account_id&gt;2203521&lt;/account_id&gt;
+            &lt;display_name&gt;bansi bansi&lt;/display_name&gt;
+            &lt;ein&gt;
+              &lt;id&gt;912898&lt;/id&gt;
+              &lt;display_name&gt;Default&lt;/display_name&gt;
+            &lt;/ein&gt;
+          &lt;/value&gt;
+          &lt;type&gt;ACCOUNT&lt;/type&gt;
+          &lt;type&gt;ACCOUNT&lt;/type&gt;
+        &lt;/attributes&gt;
+      &lt;/attributes&gt;
+    &lt;/object&gt;
+    &lt;status&gt;CREATED&lt;/status&gt;
+  &lt;/item&gt;
+  &lt;_total_count&gt;4&lt;/_total_count&gt;
+&lt;/entries&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;?xml version="1.0" encoding="utf-8"?&gt;

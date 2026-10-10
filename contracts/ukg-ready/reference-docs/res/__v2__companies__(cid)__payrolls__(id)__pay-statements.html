@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Pay Statements</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Pay Statements</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Pay Statements</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -61,7 +61,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123123</p>
 <div class="desc md">filter pay statements by coresponding payroll batch id.</div>
 </div>
 </div>
@@ -79,7 +79,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -146,7 +146,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/payrolls/{id}/pay-statements</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -165,7 +165,30 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "pay_statements": [
+    {
+      "employee": {
+        "account_id": 3588
+      },
+      "id": 147712,
+      "pay_date": "2017-01-19",
+      "status": "OPEN",
+      "type": {
+        "id": 18432,
+        "display_name": "Regular"
+      },
+      "pay_period_start": "2017-01-19",
+      "pay_period_end": "2017-01-19",
+      "_links": {
+        "self": "http://localhost:8080/ta/rest/v2/companies/220/pay-statements/147712"
+      }
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -255,7 +278,46 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;pay_statements&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;35238&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;id&gt;246016&lt;/id&gt;
+        &lt;pay_date&gt;2017-03-01&lt;/pay_date&gt;
+        &lt;status&gt;OPEN&lt;/status&gt;
+        &lt;type&gt;
+            &lt;id&gt;18432&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;pay_period_start&gt;2017-03-01&lt;/pay_period_start&gt;
+        &lt;pay_period_end&gt;2017-03-01&lt;/pay_period_end&gt;
+        &lt;_links&gt;
+            &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/393984/pay-statements/35238&lt;/self&gt;
+        &lt;/_links&gt;
+    &lt;/pay_statement&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;3588&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;id&gt;246016&lt;/id&gt;
+        &lt;pay_date&gt;2017-03-01&lt;/pay_date&gt;
+        &lt;status&gt;OPEN&lt;/status&gt;
+        &lt;type&gt;
+            &lt;id&gt;18432&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;pay_period_start&gt;2017-03-01&lt;/pay_period_start&gt;
+        &lt;pay_period_end&gt;2017-03-01&lt;/pay_period_end&gt;
+        &lt;_links&gt;
+            &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/393984/pay-statements/246016&lt;/self&gt;
+        &lt;/_links&gt;
+    &lt;/pay_statement&gt;
+&lt;/pay_statements&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"&gt;
@@ -305,7 +367,46 @@
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;pay_statements&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;35238&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;id&gt;246016&lt;/id&gt;
+        &lt;pay_date&gt;2017-03-01&lt;/pay_date&gt;
+        &lt;status&gt;OPEN&lt;/status&gt;
+        &lt;type&gt;
+            &lt;id&gt;18432&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;pay_period_start&gt;2017-03-01&lt;/pay_period_start&gt;
+        &lt;pay_period_end&gt;2017-03-01&lt;/pay_period_end&gt;
+        &lt;_links&gt;
+            &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/393984/pay-statements/35238&lt;/self&gt;
+        &lt;/_links&gt;
+    &lt;/pay_statement&gt;
+    &lt;pay_statement&gt;
+        &lt;employee&gt;
+            &lt;account_id&gt;3588&lt;/account_id&gt;
+        &lt;/employee&gt;
+        &lt;id&gt;246016&lt;/id&gt;
+        &lt;pay_date&gt;2017-03-01&lt;/pay_date&gt;
+        &lt;status&gt;OPEN&lt;/status&gt;
+        &lt;type&gt;
+            &lt;id&gt;18432&lt;/id&gt;
+            &lt;display_name&gt;Regular&lt;/display_name&gt;
+        &lt;/type&gt;
+        &lt;pay_period_start&gt;2017-03-01&lt;/pay_period_start&gt;
+        &lt;pay_period_end&gt;2017-03-01&lt;/pay_period_end&gt;
+        &lt;_links&gt;
+            &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/220/payrolls/393984/pay-statements/246016&lt;/self&gt;
+        &lt;/_links&gt;
+    &lt;/pay_statement&gt;
+&lt;/pay_statements&gt;</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"&gt;
@@ -383,7 +484,7 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -496,7 +597,50 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "employee": {
+    "account_id": 3588
+  },
+  "type": {
+    "id": 18432,
+    "display_name": "Regular"
+  },
+  "calculate_taxes": false,
+  "process_delta_only" : false,
+  "earnings": [
+    {
+      "earning": {
+        "name": "Regular",
+        "code": "Regular"
+      },
+      "date_range_from": "2017-03-02",
+      "date_range_to": "2017-03-07",
+      "ee_amount": 250,
+      "shift": {
+        "id": 33024,
+        "name": "My Shift premium"
+      },
+      "batch": {
+        "id": 34407234
+      }
+    }
+  ],
+  "deductions": [
+    {
+      "deduction": {
+        "name": "401k",
+        "code": "401k"
+      },
+      "er_amount": 25,
+      "batch": {
+        "id": 34407234
+      }
+    }
+  ]
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -846,7 +990,50 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;pay_statement&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;3588&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;type&gt;
+    &lt;id&gt;18432&lt;/id&gt;
+    &lt;display_name&gt;Regular&lt;/display_name&gt;
+  &lt;/type&gt;
+  &lt;calculate_taxes&gt;false&lt;/calculate_taxes&gt;
+  &lt;process_delta_only&gt;false&lt;/process_delta_only&gt;
+  &lt;earnings&gt;
+    &lt;earning&gt;
+      &lt;date_range_from&gt;2017-03-02&lt;/date_range_from&gt;
+      &lt;date_range_to&gt;2017-03-07&lt;/date_range_to&gt;
+      &lt;ee_amount&gt;40&lt;/ee_amount&gt;
+      &lt;shift&gt;
+        &lt;id&gt;33024&lt;/id&gt;
+        &lt;name&gt;My Shift premium&lt;/name&gt;
+      &lt;/shift&gt;
+      &lt;earning&gt;
+        &lt;name&gt;Regular&lt;/name&gt;
+        &lt;code&gt;Regular&lt;/code&gt;
+      &lt;/earning&gt;
+      &lt;batch&gt;
+        &lt;id&gt;34407234&lt;/id&gt;
+      &lt;/batch&gt;
+    &lt;/earning&gt;
+  &lt;/earnings&gt;
+  &lt;deductions&gt;
+    &lt;deduction&gt;
+      &lt;er_amount&gt;25&lt;/er_amount&gt;
+      &lt;deduction&gt;
+        &lt;name&gt;401k&lt;/name&gt;
+        &lt;code&gt;401k&lt;/code&gt;
+      &lt;/deduction&gt;
+      &lt;batch&gt;
+        &lt;id&gt;34407234&lt;/id&gt;
+      &lt;/batch&gt;
+    &lt;/deduction&gt;
+  &lt;/deductions&gt;
+&lt;/pay_statement&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"&gt;
@@ -1055,7 +1242,50 @@ For example, Regular is used for processing a regular payroll, 3rd Party Sick is
 <div class="req-tab-post" id="req-tab-id-post-2">
 <div class="example">
 
+<div class="post-example-tab-2 activeTab" id="post-tab-example-2">
 
+<pre class="highlightjs">&lt;pay_statement&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;3588&lt;/account_id&gt;
+  &lt;/employee&gt;
+  &lt;type&gt;
+    &lt;id&gt;18432&lt;/id&gt;
+    &lt;display_name&gt;Regular&lt;/display_name&gt;
+  &lt;/type&gt;
+  &lt;calculate_taxes&gt;false&lt;/calculate_taxes&gt;
+  &lt;process_delta_only&gt;false&lt;/process_delta_only&gt;
+  &lt;earnings&gt;
+    &lt;earning&gt;
+      &lt;date_range_from&gt;2017-03-02&lt;/date_range_from&gt;
+      &lt;date_range_to&gt;2017-03-07&lt;/date_range_to&gt;
+      &lt;ee_amount&gt;40&lt;/ee_amount&gt;
+      &lt;shift&gt;
+        &lt;id&gt;33024&lt;/id&gt;
+        &lt;name&gt;My Shift premium&lt;/name&gt;
+      &lt;/shift&gt;
+      &lt;earning&gt;
+        &lt;name&gt;Regular&lt;/name&gt;
+        &lt;code&gt;Regular&lt;/code&gt;
+      &lt;/earning&gt;
+      &lt;batch&gt;
+        &lt;id&gt;34407234&lt;/id&gt;
+      &lt;/batch&gt;
+    &lt;/earning&gt;
+  &lt;/earnings&gt;
+  &lt;deductions&gt;
+    &lt;deduction&gt;
+      &lt;er_amount&gt;25&lt;/er_amount&gt;
+      &lt;deduction&gt;
+        &lt;name&gt;401k&lt;/name&gt;
+        &lt;code&gt;401k&lt;/code&gt;
+      &lt;/deduction&gt;
+      &lt;batch&gt;
+        &lt;id&gt;34407234&lt;/id&gt;
+      &lt;/batch&gt;
+    &lt;/deduction&gt;
+  &lt;/deductions&gt;
+&lt;/pay_statement&gt;</pre>
+</div>
 <div class="post-example-tab-2" id="post-tab-schema-2">
 
 <div class="jsonschema" id="schema-5">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"&gt;

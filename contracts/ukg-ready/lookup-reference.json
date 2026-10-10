@@ -729,7 +729,7 @@
   },
   "reference_artifact": {
     "relative_path": "reference-schemas.json",
-    "sha256": "3c9737dfdb286311b570db63f799c43fd30012e26cb0f65c4b6b5a99637ac35b",
+    "sha256": "32ec1d1e30731f94205acd07a8f09696586dc41525498947bbefaef64c15a622",
     "kind": "JSON Schema blocks extracted from cached UKG Ready HTML reference pages; NOT Swagger/OpenAPI",
     "html_directory": "reference-docs/"
   }

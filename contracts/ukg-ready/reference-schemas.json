@@ -16662,37 +16662,55 @@
                   "type": "string",
                   "title": "Name",
                   "description": "Name of widget.",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "BENEFITS"
+                  ]
                 },
                 "locale": {
                   "type": "string",
                   "title": "Locale.",
                   "description": "Locale for label of widget.",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "en_US"
+                  ]
                 },
                 "label": {
                   "type": "string",
                   "title": "Label",
                   "description": "Label for the widget.",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "Benefits"
+                  ]
                 },
                 "height": {
                   "type": "integer",
                   "title": "Height.",
                   "description": "Height of widget.",
-                  "default": 0
+                  "default": 0,
+                  "examples": [
+                    100
+                  ]
                 },
                 "url": {
                   "type": "string",
                   "title": "Url",
                   "description": "URL of widget.",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "/ta/{company_short_name}.embed#widgets/benefits"
+                  ]
                 },
                 "icon": {
                   "type": "string",
                   "title": "Icon",
                   "description": "CSS class name for widget icon.",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "notifications"
+                  ]
                 },
                 "navLink": {
                   "type": "object",
@@ -16701,25 +16719,37 @@
                       "type": "string",
                       "title": "Navigation URL",
                       "description": "Navigation URL.",
-                      "default": ""
+                      "default": "",
+                      "examples": [
+                        "/ta/{company_short_name}.embed#dashboard/home"
+                      ]
                     },
                     "type": {
                       "type": "string",
                       "title": "Navigation Type",
                       "description": "Type of navigation i.e. MERCURY/CLASSIC.",
-                      "default": ""
+                      "default": "",
+                      "examples": [
+                        "MERCURY"
+                      ]
                     },
                     "locale": {
                       "type": "string",
                       "title": "Locale",
                       "description": "Locale of label for navigation.",
-                      "default": ""
+                      "default": "",
+                      "examples": [
+                        "en_US"
+                      ]
                     },
                     "label": {
                       "type": "string",
                       "title": "Label",
                       "description": "Label for navigation.",
-                      "default": ""
+                      "default": "",
+                      "examples": [
+                        "Widget Navigation label"
+                      ]
                     }
                   }
                 }
@@ -23759,10 +23789,16 @@
               "properties": {
                 "id": {
                   "type": "integer",
+                  "examples": [
+                    5308416
+                  ],
                   "default": 0
                 },
                 "record_date": {
                   "type": "string",
+                  "examples": [
+                    "2022-08-04"
+                  ],
                   "pattern": "^.*$"
                 },
                 "counter": {
@@ -23775,16 +23811,27 @@
                   "properties": {
                     "id": {
                       "type": "integer",
+                      "examples": [
+                        885760
+                      ],
                       "default": 0
                     },
                     "name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "Amount"
+                      ],
                       "pattern": "^.*$"
                     },
                     "type": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "AMOUNT",
+                        "TIME",
+                        "QUANTITY"
+                      ],
                       "pattern": "^.*$"
                     }
                   }
@@ -23797,6 +23844,9 @@
                     "properties": {
                       "index": {
                         "type": "integer",
+                        "examples": [
+                          0
+                        ],
                         "default": 0
                       },
                       "value": {
@@ -23804,16 +23854,25 @@
                         "properties": {
                           "id": {
                             "type": "integer",
+                            "examples": [
+                              1557842
+                            ],
                             "default": 0
                           },
                           "name": {
                             "type": "string",
                             "default": "",
+                            "examples": [
+                              "CC1.1"
+                            ],
                             "pattern": "^.*$"
                           },
                           "display_name": {
                             "type": "string",
                             "default": "",
+                            "examples": [
+                              "CC1.1"
+                            ],
                             "pattern": "^.*$"
                           }
                         }
@@ -23822,10 +23881,16 @@
                   }
                 },
                 "value": {
-                  "type": "string"
+                  "type": "string",
+                  "examples": [
+                    "8999.0"
+                  ]
                 },
                 "reset": {
                   "type": "boolean",
+                  "examples": [
+                    false
+                  ],
                   "default": true
                 },
                 "reason_code": {
@@ -23833,11 +23898,17 @@
                   "properties": {
                     "id": {
                       "type": "integer",
+                      "examples": [
+                        1983774
+                      ],
                       "default": 0
                     },
                     "display_name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "Reason Code 1"
+                      ],
                       "pattern": "^.*$"
                     }
                   }
@@ -23864,10 +23935,16 @@
         "properties": {
           "record_date": {
             "type": "string",
+            "examples": [
+              "2022-08-04"
+            ],
             "pattern": "^.*$"
           },
           "counter_id": {
-            "type": "integer"
+            "type": "integer",
+            "examples": [
+              5308416
+            ]
           },
           "cost_centers": {
             "type": "array",
@@ -23877,6 +23954,9 @@
               "properties": {
                 "index": {
                   "type": "integer",
+                  "examples": [
+                    0
+                  ],
                   "default": 0
                 },
                 "value": {
@@ -23884,16 +23964,25 @@
                   "properties": {
                     "id": {
                       "type": "integer",
+                      "examples": [
+                        1557842
+                      ],
                       "default": 0
                     },
                     "name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     },
                     "display_name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     }
                   }
@@ -23902,10 +23991,16 @@
             }
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "8999.0"
+            ]
           },
           "reset": {
             "type": "boolean",
+            "examples": [
+              false
+            ],
             "default": true
           },
           "reason_code": {
@@ -23913,11 +24008,17 @@
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  1983774
+                ],
                 "default": 0
               },
               "display_name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Reason Code 1"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -23943,10 +24044,16 @@
         "properties": {
           "id": {
             "type": "integer",
+            "examples": [
+              5308416
+            ],
             "default": 0
           },
           "record_date": {
             "type": "string",
+            "examples": [
+              "2022-08-04"
+            ],
             "pattern": "^.*$"
           },
           "counter": {
@@ -23959,16 +24066,27 @@
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  885760
+                ],
                 "default": 0
               },
               "name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Amount"
+                ],
                 "pattern": "^.*$"
               },
               "type": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "AMOUNT",
+                  "TIME",
+                  "QUANTITY"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -23981,6 +24099,9 @@
               "properties": {
                 "index": {
                   "type": "integer",
+                  "examples": [
+                    0
+                  ],
                   "default": 0
                 },
                 "value": {
@@ -23988,16 +24109,25 @@
                   "properties": {
                     "id": {
                       "type": "integer",
+                      "examples": [
+                        1557842
+                      ],
                       "default": 0
                     },
                     "name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     },
                     "display_name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     }
                   }
@@ -24006,10 +24136,16 @@
             }
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "8999.0"
+            ]
           },
           "reset": {
             "type": "boolean",
+            "examples": [
+              false
+            ],
             "default": true
           },
           "reason_code": {
@@ -24017,11 +24153,17 @@
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  1983774
+                ],
                 "default": 0
               },
               "display_name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Reason Code 1"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -24040,10 +24182,16 @@
         "properties": {
           "record_date": {
             "type": "string",
+            "examples": [
+              "2022-08-04"
+            ],
             "pattern": "^.*$"
           },
           "counter_id": {
-            "type": "integer"
+            "type": "integer",
+            "examples": [
+              5308416
+            ]
           },
           "cost_centers": {
             "type": "array",
@@ -24053,6 +24201,9 @@
               "properties": {
                 "index": {
                   "type": "integer",
+                  "examples": [
+                    0
+                  ],
                   "default": 0
                 },
                 "value": {
@@ -24060,16 +24211,25 @@
                   "properties": {
                     "id": {
                       "type": "integer",
+                      "examples": [
+                        1557842
+                      ],
                       "default": 0
                     },
                     "name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     },
                     "display_name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     }
                   }
@@ -24078,10 +24238,16 @@
             }
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "8999.0"
+            ]
           },
           "reset": {
             "type": "boolean",
+            "examples": [
+              false
+            ],
             "default": true
           },
           "reason_code": {
@@ -24089,11 +24255,17 @@
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  1983774
+                ],
                 "default": 0
               },
               "display_name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Reason Code 1"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -24119,10 +24291,16 @@
         "properties": {
           "id": {
             "type": "integer",
+            "examples": [
+              5308416
+            ],
             "default": 0
           },
           "record_date": {
             "type": "string",
+            "examples": [
+              "2022-08-04"
+            ],
             "pattern": "^.*$"
           },
           "counter": {
@@ -24135,16 +24313,27 @@
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  885760
+                ],
                 "default": 0
               },
               "name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Amount"
+                ],
                 "pattern": "^.*$"
               },
               "type": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "AMOUNT",
+                  "TIME",
+                  "QUANTITY"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -24157,6 +24346,9 @@
               "properties": {
                 "index": {
                   "type": "integer",
+                  "examples": [
+                    0
+                  ],
                   "default": 0
                 },
                 "value": {
@@ -24164,16 +24356,25 @@
                   "properties": {
                     "id": {
                       "type": "integer",
+                      "examples": [
+                        1557842
+                      ],
                       "default": 0
                     },
                     "name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     },
                     "display_name": {
                       "type": "string",
                       "default": "",
+                      "examples": [
+                        "CC1.1"
+                      ],
                       "pattern": "^.*$"
                     }
                   }
@@ -24182,10 +24383,16 @@
             }
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "8999.0"
+            ]
           },
           "reset": {
             "type": "boolean",
+            "examples": [
+              false
+            ],
             "default": true
           },
           "reason_code": {
@@ -24193,11 +24400,17 @@
             "properties": {
               "id": {
                 "type": "integer",
+                "examples": [
+                  1983774
+                ],
                 "default": 0
               },
               "display_name": {
                 "type": "string",
                 "default": "",
+                "examples": [
+                  "Reason Code 1"
+                ],
                 "pattern": "^.*$"
               }
             }
@@ -40354,19 +40567,31 @@
               "properties": {
                 "url": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "benefits"
+                  ]
                 },
                 "label": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "My Benefits"
+                  ]
                 },
                 "visible": {
                   "type": "boolean",
-                  "default": false
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
                 },
                 "defaultURL": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "benefits/plans"
+                  ]
                 },
                 "children": {
                   "type": "array",
@@ -40375,45 +40600,72 @@
                     "properties": {
                       "url": {
                         "type": "string",
-                        "default": ""
+                        "default": "",
+                        "examples": [
+                          "benefits/plans"
+                        ]
                       },
                       "label": {
                         "type": "string",
-                        "default": ""
+                        "default": "",
+                        "examples": [
+                          "Benefit Plans"
+                        ]
                       },
                       "visible": {
                         "type": "boolean",
-                        "default": false
+                        "default": false,
+                        "examples": [
+                          true
+                        ]
                       },
                       "children": {
                         "type": "array"
                       },
                       "id": {
                         "type": "string",
-                        "default": 0
+                        "default": 0,
+                        "examples": [
+                          "10042"
+                        ]
                       },
                       "urlType": {
                         "type": "string",
-                        "default": ""
+                        "default": "",
+                        "examples": [
+                          "embeddable"
+                        ]
                       }
                     }
                   }
                 },
                 "id": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "dashboard"
+                  ]
                 },
                 "icon": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "icon-benefits"
+                  ]
                 },
                 "urlType": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "embeddable"
+                  ]
                 },
                 "location": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "Top Level"
+                  ]
                 }
               }
             }
@@ -40426,19 +40678,31 @@
               "properties": {
                 "url": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "manage"
+                  ]
                 },
                 "label": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "My Team"
+                  ]
                 },
                 "visible": {
                   "type": "boolean",
-                  "default": false
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
                 },
                 "defaultURL": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "manage/myEmployees"
+                  ]
                 },
                 "children": {
                   "type": "array",
@@ -40448,41 +40712,65 @@
                     "properties": {
                       "url": {
                         "type": "string",
-                        "default": ""
+                        "default": "",
+                        "examples": [
+                          "manage/myEmployees"
+                        ]
                       },
                       "label": {
                         "type": "string",
-                        "default": ""
+                        "default": "",
+                        "examples": [
+                          "Team Members"
+                        ]
                       },
                       "visible": {
                         "type": "boolean",
-                        "default": false
+                        "default": false,
+                        "examples": [
+                          true
+                        ]
                       },
                       "children": {
                         "type": "array"
                       },
                       "urlType": {
                         "type": "string",
-                        "default": ""
+                        "default": "",
+                        "examples": [
+                          "embeddable"
+                        ]
                       }
                     }
                   }
                 },
                 "id": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "manageMyEmployees"
+                  ]
                 },
                 "icon": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "icon-team"
+                  ]
                 },
                 "urlType": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "embeddable"
+                  ]
                 },
                 "location": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "Top Level"
+                  ]
                 }
               }
             }
@@ -40494,30 +40782,48 @@
               "properties": {
                 "url": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "/ABCPLTD.admin"
+                  ]
                 },
                 "label": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "HCM Setup"
+                  ]
                 },
                 "visible": {
                   "type": "boolean",
-                  "default": false
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
                 },
                 "children": {
                   "type": "array"
                 },
                 "location": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "Administration"
+                  ]
                 },
                 "id": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "6001"
+                  ]
                 },
                 "urlType": {
                   "type": "string",
-                  "default": ""
+                  "default": "",
+                  "examples": [
+                    "non-embeddable"
+                  ]
                 }
               }
             }
@@ -43531,6 +43837,35 @@
                 }
               }
             }
+          }
+        ],
+        "examples": [
+          {
+            "name": "Weekly Payroll Profile",
+            "description": "Weekly pay periods starting on Sunday with Friday pay dates",
+            "pay_period_type": "WEEKLY",
+            "weekly_start_day": 1,
+            "active": true,
+            "auto_lock_enabled": true,
+            "auto_lock_days": 3,
+            "pay_date_calc_type": "DATE_BASED_PP_END",
+            "pay_date_days_from_end": 0,
+            "saturday_move_enabled": true,
+            "saturday_move_type": "PREV_FRIDAY",
+            "sunday_move_enabled": true,
+            "sunday_move_type": "NEXT_MONDAY"
+          },
+          {
+            "name": "Semi-Monthly Payroll Profile",
+            "description": "Semi-monthly pay periods on 1st and 16th of each month",
+            "pay_period_type": "SEMI_MONTHLY",
+            "semi_monthly_start1": 1,
+            "semi_monthly_start2": 16,
+            "active": true,
+            "pay_date_calc_type": "SEMI_MONTHLY",
+            "pay_date_semi_monthly_day1": 15,
+            "pay_date_semi_monthly_day2": 31,
+            "pay_date_semi_monthly_direction": "BACK"
           }
         ]
       }
@@ -57108,5 +57443,6 @@
     "XML schemas and opaque any-type blocks remain in the HTML; this JSON extraction is not a complete endpoint contract.",
     "Endpoint bindings/parameters/response statuses remain in the HTML and require candidate discovery.",
     "No official OpenAPI artifact or current live version is verified."
-  ]
+  ],
+  "documented_examples_included": true
 }

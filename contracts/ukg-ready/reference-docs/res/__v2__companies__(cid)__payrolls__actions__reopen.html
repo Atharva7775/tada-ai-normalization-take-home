@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Reopen</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Reopen</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Reopen</span>
@@ -23,7 +23,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -67,7 +67,17 @@
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "ids": [
+    "140941",
+    "140996"
+  ],
+  "open_pay_statements": true,
+  "clear_auto_check_numbers": false
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -101,7 +111,17 @@
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;payrolls_reopen&gt;
+  &lt;ids&gt;
+    &lt;id&gt;140941&lt;/id&gt;
+    &lt;id&gt;140996&lt;/id&gt;
+  &lt;/ids&gt;
+  &lt;open_pay_statements&gt;true&lt;/open_pay_statements&gt;
+  &lt;clear_auto_check_numbers&gt;false&lt;/clear_auto_check_numbers&gt;
+&lt;/payrolls_reopen&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -126,7 +146,7 @@
 </div>
 </div>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-post-0" data-tab-class="resp-tab-post" name="resp-tab-post" type="radio"/>
@@ -141,7 +161,33 @@
 <div class="resp-tab-post" id="resp-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-resp-tab-0 activeTab" id="post-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "jobs": [
+    {
+      "id": 585992,
+      "status": "NEW",
+      "process_total": 0,
+      "completed_success": 0,
+      "completed_error": 0,
+      "_links": {
+        "self": "http://localhost:8080/ta/rest/v2/companies/464616/system-jobs/585992/status"
+      }
+    }
+  ],
+  "user_messages": [
+    {
+      "severity": "INFO",
+      "text": "Processing action for payroll: monthly Regular 09/03/2019"
+    },
+    {
+      "severity": "ERROR",
+      "text": "Weekly Regular 09/03/2019: Cannot open payroll, Payroll is finalized."
+    }
+  ]
+}</pre>
+</div>
 <div class="post-example-resp-tab-0" id="post-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -227,7 +273,34 @@
 <div class="resp-tab-post" id="resp-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-resp-tab-1 activeTab" id="post-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;job_list&gt;
+  &lt;jobs&gt;
+    &lt;job&gt;
+      &lt;id&gt;585993&lt;/id&gt;
+      &lt;status&gt;NEW&lt;/status&gt;
+      &lt;process_total&gt;0&lt;/process_total&gt;
+      &lt;completed_success&gt;0&lt;/completed_success&gt;
+      &lt;completed_error&gt;0&lt;/completed_error&gt;
+      &lt;_links&gt;
+        &lt;self&gt;http://localhost:8080/ta/rest/v2/companies/464616/system-jobs/585993/status&lt;/self&gt;
+      &lt;/_links&gt;
+    &lt;/job&gt;
+  &lt;/jobs&gt;
+  &lt;user_messages&gt;
+    &lt;user_message&gt;
+      &lt;severity&gt;ERROR&lt;/severity&gt;
+      &lt;text&gt;Weekly Regular 09/03/2019: Cannot open payroll, Payroll is finalized.&lt;/text&gt;
+    &lt;/user_message&gt;
+    &lt;user_message&gt;
+      &lt;severity&gt;INFO&lt;/severity&gt;
+      &lt;text&gt;Processing action for payroll: Weekly Regular 09/10/2019&lt;/text&gt;
+    &lt;/user_message&gt;
+  &lt;/user_messages&gt;
+&lt;/job_list&gt;</pre>
+</div>
 <div class="post-example-resp-tab-1" id="post-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;

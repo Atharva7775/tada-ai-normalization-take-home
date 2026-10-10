@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Asset Assignments</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Asset Assignments</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Asset Assignments</span>
@@ -36,7 +36,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -55,7 +55,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -112,7 +112,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/asset-assignments</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -127,7 +127,42 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "asset_assignments": [
+    {
+      "personal": false,
+      "id": 20996,
+      "asset": {
+        "id": 28546,
+        "name": "more than one account"
+      },
+      "employee": {
+        "account_id": 4731456,
+        "employee_id": "emp6",
+        "display_name": "emp6 employee",
+        "abbr": "EE",
+        "ein": {
+          "id": 1070464,
+          "display_name": "Default"
+        },
+        "_links": {
+          "photo_href": "https://example.com/ta/images/uploaded/616796/AccountPhoto4727553.jpg?v=1538075878350"
+        }
+      },
+      "_links": {
+        "self": "https://example.com/ta/rest/v2/companies/616796/asset-assignments/20996",
+        "edit": "https://example.com/ta/rest/v2/companies/616796/asset-assignments/20996",
+        "delete": "https://example.com/ta/rest/v2/companies/616796/asset-assignments/20996"
+      }
+    }
+  ],
+  "_links": {
+    "create": "https://kronos.com/ta/rest/v2/companies/616796/asset-assignments"
+  }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -260,7 +295,41 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;asset_assignments&gt;
+  &lt;asset_assignment&gt;
+    &lt;personal&gt;false&lt;/personal&gt;
+    &lt;id&gt;20996&lt;/id&gt;
+    &lt;asset&gt;
+      &lt;id&gt;28546&lt;/id&gt;
+      &lt;name&gt;more than one account&lt;/name&gt;
+    &lt;/asset&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;4731456&lt;/account_id&gt;
+      &lt;employee_id&gt;emp6&lt;/employee_id&gt;
+      &lt;display_name&gt;emp6 employee&lt;/display_name&gt;
+      &lt;abbr&gt;EE&lt;/abbr&gt;
+      &lt;ein&gt;
+        &lt;id&gt;1070464&lt;/id&gt;
+        &lt;display_name&gt;Default&lt;/display_name&gt;
+      &lt;/ein&gt;
+      &lt;_links&gt;
+        &lt;photo_href&gt;https://example.com/ta/images/uploaded/616796/AccountPhoto4731328.jpg?v=1545857634680&lt;/photo_href&gt;
+      &lt;/_links&gt;
+    &lt;/employee&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://example.com/ta/rest/v2/companies/616796/asset-assignments/20611&lt;/self&gt;
+      &lt;edit&gt;https://example.com/ta/rest/v2/companies/616796/asset-assignments/20611&lt;/edit&gt;
+      &lt;delete&gt;https://example.com/ta/rest/v2/companies/616796/asset-assignments/20611&lt;/delete&gt;
+    &lt;/_links&gt;
+  &lt;/asset_assignment&gt;
+  &lt;_links&gt;
+    &lt;create&gt;https://example.com//ta/rest/v2/companies/19950604/asset-assignments&lt;/create&gt;
+  &lt;/_links&gt;
+&lt;/asset_assignments&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
@@ -363,7 +432,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -382,7 +451,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -396,7 +465,7 @@ Requires at least one of the following subsystems:
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -481,7 +550,20 @@ Requires at least one of the following subsystems:
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "personal": true,
+  "asset": {
+    "asset_type": {
+      "id": 16839170
+    }
+  },
+  "employee": {
+    "account_id": 4731456
+  }
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -540,7 +622,22 @@ Requires at least one of the following subsystems:
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;asset_assignment&gt;
+  &lt;personal&gt;true&lt;/personal&gt;
+  &lt;asset&gt;
+    &lt;id&gt;28096&lt;/id&gt;
+    &lt;asset_type&gt;
+      &lt;id&gt;16839170&lt;/id&gt;
+    &lt;/asset_type&gt;
+  &lt;/asset&gt;
+  &lt;employee&gt;
+    &lt;account_id&gt;4731456&lt;/account_id&gt;
+  &lt;/employee&gt;
+&lt;/asset_assignment&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Cases</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Cases</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Cases</span>
@@ -32,7 +32,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -47,7 +47,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -64,7 +64,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-05-15</p>
 <div class="desc md">Can be used for getting start date lower bounded cases.</div>
 </div>
 </div>
@@ -77,7 +77,7 @@ Leave of absence functionality must be enabled in company.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-09-10</p>
 <div class="desc md">Can be used for getting actual end date upper bounded cases.</div>
 </div>
 </div>
@@ -95,7 +95,7 @@ Leave of absence functionality must be enabled in company.
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -152,7 +152,7 @@ Leave of absence functionality must be enabled in company.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/loa/cases</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -171,7 +171,42 @@ Leave of absence functionality must be enabled in company.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "cases": [
+    {
+      "id": 147968,
+      "employee": {
+        "account_id": 123456
+      },
+      "start_date": "2015-12-08",
+      "end_date": "2016-09-20",
+      "case_number": "AA2-0007",
+      "status": "CLOSED",
+      "_links": {
+        "self": "https://kronos.com/ta/rest/v2/companies/666/loa/cases/147968",
+        "notes": "https://kronos.com/ta/rest/v2/companies/666/loa/cases/147968/notes"
+      }
+    },
+    {
+      "id": 148224,
+      "employee": {
+        "account_id": 123456
+      },
+      "start_date": "2015-11-09",
+      "est_end_date": "2016-09-20",
+      "case_number": "AA2-0008",
+      "status": "OPEN",
+      "_links": {
+        "self": "https://kronos.com/ta/rest/v2/companies/666/loa/cases/148224",
+        "notes": "https://kronos.com/ta/rest/v2/companies/666/loa/cases/148224/notes"
+      }
+    }
+  ]
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -248,7 +283,41 @@ Leave of absence functionality must be enabled in company.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;cases&gt;
+  &lt;case&gt;
+    &lt;id&gt;147968&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;123456&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;start_date&gt;2015-12-08&lt;/start_date&gt;
+    &lt;est_end_date&gt;2016-09-20&lt;/est_end_date&gt;
+    &lt;case_number&gt;AA2-0007&lt;/case_number&gt;
+    &lt;status&gt;OPEN&lt;/status&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/147968&lt;/self&gt;
+      &lt;notes&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/147968/notes&lt;/notes&gt;
+    &lt;/_links&gt;
+  &lt;/case&gt;
+  &lt;case&gt;
+    &lt;id&gt;148224&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;123456&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;start_date&gt;2015-11-09&lt;/start_date&gt;
+    &lt;end_date&gt;2016-09-20&lt;/end_date&gt;
+    &lt;case_number&gt;AA2-0008&lt;/case_number&gt;
+    &lt;status&gt;CLOSED&lt;/status&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/148224&lt;/self&gt;
+      &lt;notes&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/148224/notes&lt;/notes&gt;
+    &lt;/_links&gt;
+  &lt;/case&gt;
+&lt;/cases&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
@@ -310,7 +379,41 @@ Leave of absence functionality must be enabled in company.
 <div class="resp-tab-get" id="resp-tab-id-get-2">
 <div class="example">
 
+<div class="get-example-resp-tab-2 activeTab" id="get-tab-resp-example-2">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;cases&gt;
+  &lt;case&gt;
+    &lt;id&gt;147968&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;123456&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;start_date&gt;2015-12-08&lt;/start_date&gt;
+    &lt;est_end_date&gt;2016-09-20&lt;/est_end_date&gt;
+    &lt;case_number&gt;AA2-0007&lt;/case_number&gt;
+    &lt;status&gt;OPEN&lt;/status&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/147968&lt;/self&gt;
+      &lt;notes&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/147968/notes&lt;/notes&gt;
+    &lt;/_links&gt;
+  &lt;/case&gt;
+  &lt;case&gt;
+    &lt;id&gt;148224&lt;/id&gt;
+    &lt;employee&gt;
+      &lt;account_id&gt;123456&lt;/account_id&gt;
+    &lt;/employee&gt;
+    &lt;start_date&gt;2015-11-09&lt;/start_date&gt;
+    &lt;end_date&gt;2016-09-20&lt;/end_date&gt;
+    &lt;case_number&gt;AA2-0008&lt;/case_number&gt;
+    &lt;status&gt;CLOSED&lt;/status&gt;
+    &lt;_links&gt;
+      &lt;self&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/148224&lt;/self&gt;
+      &lt;notes&gt;https://kronos.com/ta/rest/v2/companies/666/loa/cases/148224/notes&lt;/notes&gt;
+    &lt;/_links&gt;
+  &lt;/case&gt;
+&lt;/cases&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-2" id="get-tab-resp-schema-2">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"

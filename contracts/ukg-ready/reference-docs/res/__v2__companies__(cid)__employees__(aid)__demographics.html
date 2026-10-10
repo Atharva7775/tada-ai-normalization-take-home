@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-
-<html><head><meta charset="utf-8"/><title>Demographics</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Demographics</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Demographics</span>
@@ -37,10 +36,12 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -50,10 +51,12 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
 </div>
+
 </li>
 </ul>
 <h5>Header Parameters</h5>
@@ -67,8 +70,10 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
+<p>Example: application/json</p>
 </div>
 </div>
+
 </li>
 </ul>
 <h4>Responses</h4>
@@ -132,7 +137,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/demographics</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -146,7 +151,33 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
+
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
+
+<pre class="highlightjs">{
+  "citizenship": "US_CITIZEN",
+  "ethnicity": "AMERICAN_INDIAN_OR_ALASKA_NATIVE",
+  "eye_color": "Blue",
+  "full_time_student": false,
+  "gender": "MALE",
+  "height": "183cm",
+  "referral": {
+    "id": 2758
+  },
+  "recruiter": {
+    "account_id": 12345,
+    "display_name": "Xyz"
+  },
+  "seasonal": false,
+  "visa": {
+    "type": "H2A",
+    "number": "YHF25",
+    "expiration_date": "2017-03-30"
+  }
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
+
 <div class="jsonschema" id="schema-0">{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
@@ -653,7 +684,31 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
+
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
+
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;demographics&gt;
+    &lt;citizenship&gt;US_CITIZEN&lt;/citizenship&gt;
+    &lt;ethnicity&gt;AMERICAN_INDIAN_OR_ALASKA_NATIVE&lt;/ethnicity&gt;
+    &lt;eye_color&gt;Blue&lt;/eye_color&gt;
+    &lt;full_time_student&gt;false&lt;/full_time_student&gt;
+    &lt;gender&gt;MALE&lt;/gender&gt;
+    &lt;height&gt;183cm&lt;/height&gt;
+    &lt;seasonal&gt;false&lt;/seasonal&gt;
+    &lt;referral&gt;
+        &lt;id&gt;2758&lt;/id&gt;
+    &lt;/referral&gt;
+    &lt;visa&gt;
+        &lt;type&gt;H2A&lt;/type&gt;
+        &lt;number&gt;YHF25&lt;/number&gt;
+        &lt;expiration_date&gt;2017-03-30&lt;/expiration_date&gt;
+    &lt;/visa&gt;
+&lt;/demographics&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
+
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
     &lt;xs:element name="demographics"&gt;
@@ -1156,13 +1211,46 @@ The Employee APIs use a separate security profile item to control access rights 
 To see which fields are available to be modified reference the Employee V2 GET or PUT request.
 
 **Existing Employee Data:**
-[Example code/payload omitted for the hiring reference.]
+```json
+{
+  "ethnicity": "TWO_OR_MORE_RACES",
+  "gender": "FEMALE",
+  "recruiter": {
+    "account_id": 4345638512,
+    "display_name": "Test Administrator"
+  }
+}
+```
 
 **PATCH Request Body:**
-[Example code/payload omitted for the hiring reference.]
+```json
+[
+  { "op": "add", "path": "/eye_color", "value": "Green" },
+  { "op": "add", "path": "/height", "value": "180cm" },
+  { "op": "remove", "path": "/ethnicity" },
+  { "op": "replace", "path": "/gender", "value": "MALE" },
+  { "op": "add", "path": "/referral", "value": { "id": 33812245 } },
+  { "op": "add", "path": "/seasonal",  "value": false },
+  { "op": "replace", "path": "/recruiter/account_id", "value": 4345638511 }
+]
+```
 
 **Updated Employee Demographics Data:**
-[Example code/payload omitted for the hiring reference.]
+```json
+{
+  "eye_color": "Green",
+  "gender": "MALE",
+  "height": "180cm",
+  "referral": {
+    "id": 33812245
+  },
+  "seasonal": false,
+  "recruiter": {
+    "account_id": 4345638511,
+    "display_name": "Test Manager1"
+  }
+}
+```
 </p></div>
 <div>
 <ul class="annotation-list">
@@ -1182,10 +1270,12 @@ To see which fields are available to be modified reference the Employee V2 GET o
 </div>
 <div class="param-content">
 <div>
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1195,10 +1285,12 @@ To see which fields are available to be modified reference the Employee V2 GET o
 </div>
 <div class="param-content">
 <div>
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
 </div>
+
 </li>
 </ul>
 <h5>Header Parameters</h5>
@@ -1211,8 +1303,10 @@ To see which fields are available to be modified reference the Employee V2 GET o
 <div class="param-content">
 <div>
 <p>Valid values: application/json</p>
+<p>Example: application/json</p>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1223,8 +1317,10 @@ To see which fields are available to be modified reference the Employee V2 GET o
 <div class="param-content">
 <div>
 <p>Valid values: application/json-patch+json</p>
+<p>Example: application/json-patch+json</p>
 </div>
 </div>
+
 </li>
 </ul>
 <h4>Responses</h4>
@@ -1324,7 +1420,60 @@ To see which fields are available to be modified reference the Employee V2 GET o
 <div>
 <div class="req-tab-patch" id="req-tab-id-patch-0">
 <div class="example">
+
+<div class="patch-example-tab-0 activeTab" id="patch-tab-example-0">
+
+<pre class="highlightjs">[
+  {
+    "op": "add",
+    "path": "/eye_color",
+    "value" : "green"
+  },
+  {
+    "op": "add",
+    "path": "/height",
+    "value": "180cm"
+  },
+  {
+    "op": "replace",
+    "path": "/ethnicity",
+    "value" : "AMERICAN_INDIAN_OR_ALASKA_NATIVE"
+  },
+  {
+    "op": "remove",
+    "path": "/gender"
+  },
+  {
+    "op": "add",
+    "path": "/referral",
+    "value": {
+      "id": 4443
+    }
+  },
+  {
+    "op": "add",
+    "path": "/recruiter",
+    "value": {
+      "account_id": 12345,
+      "display_name": "XYZ"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/seasonal",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/visa",
+    "value": {
+      "type" : "A3"
+    }
+  }
+]</pre>
+</div>
 <div class="patch-example-tab-0" id="patch-tab-schema-0">
+
 <div class="jsonschema" id="schema-2">{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "array",
@@ -1400,10 +1549,12 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1413,10 +1564,12 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
 </div>
+
 </li>
 </ul>
 <h5>Header Parameters</h5>
@@ -1430,8 +1583,10 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
+<p>Example: application/json</p>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1442,8 +1597,10 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
+<p>Example: application/json</p>
 </div>
 </div>
+
 </li>
 <li>
 <div class="param-desc">
@@ -1455,6 +1612,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 </div>
 </div>
+
 </li>
 </ul>
 <h4>Responses</h4>
@@ -1533,7 +1691,33 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
+
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
+
+<pre class="highlightjs">{
+  "citizenship": "US_CITIZEN",
+  "ethnicity": "AMERICAN_INDIAN_OR_ALASKA_NATIVE",
+  "eye_color": "Blue",
+  "full_time_student": false,
+  "gender": "MALE",
+  "height": "183cm",
+  "referral": {
+    "id": 2758
+  },
+  "recruiter": {
+    "account_id": 12345,
+    "display_name": "Xyz"
+  },
+  "seasonal": false,
+  "visa": {
+    "type": "H2A",
+    "number": "YHF25",
+    "expiration_date": "2017-03-30"
+  }
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
+
 <div class="jsonschema" id="schema-3">{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
@@ -2040,7 +2224,31 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
+
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
+
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;demographics&gt;
+    &lt;citizenship&gt;US_CITIZEN&lt;/citizenship&gt;
+    &lt;ethnicity&gt;AMERICAN_INDIAN_OR_ALASKA_NATIVE&lt;/ethnicity&gt;
+    &lt;eye_color&gt;Blue&lt;/eye_color&gt;
+    &lt;full_time_student&gt;false&lt;/full_time_student&gt;
+    &lt;gender&gt;MALE&lt;/gender&gt;
+    &lt;height&gt;183cm&lt;/height&gt;
+    &lt;seasonal&gt;false&lt;/seasonal&gt;
+    &lt;referral&gt;
+        &lt;id&gt;2758&lt;/id&gt;
+    &lt;/referral&gt;
+    &lt;visa&gt;
+        &lt;type&gt;H2A&lt;/type&gt;
+        &lt;number&gt;YHF25&lt;/number&gt;
+        &lt;expiration_date&gt;2017-03-30&lt;/expiration_date&gt;
+    &lt;/visa&gt;
+&lt;/demographics&gt;
+</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
+
 <div class="jsonschema" id="schema-4">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
     &lt;xs:element name="demographics"&gt;

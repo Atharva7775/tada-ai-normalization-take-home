@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Accrual Balances</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Accrual Balances</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Accrual Balances</span>
@@ -34,7 +34,7 @@ The hour(s) value is in milliseconds (ms).
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -49,7 +49,7 @@ The hour(s) value is in milliseconds (ms).
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -95,7 +95,7 @@ The hour(s) value is in milliseconds (ms).
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -152,7 +152,7 @@ The hour(s) value is in milliseconds (ms).
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/accrual/1/balances</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -163,7 +163,122 @@ The hour(s) value is in milliseconds (ms).
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "accrual_balances": [
+    {
+      "accrual_year": {
+        "start_date": "2019-11-10",
+        "end_date": "2020-11-10"
+      },
+      "accrued": 4053226250,
+      "accrued_to": "2020-09-22",
+      "carry_over": 0,
+      "carry_over_used_by_balance": 0,
+      "employee": {
+        "account_id": 1965509,
+        "username": "1001"
+      },
+      "estimated_accrued": 5512721340,
+      "estimated_remaining": 5512721340,
+      "external_accrued": 0,
+      "external_carry_over": 0,
+      "external_taken": 0,
+      "pending_approval": 0,
+      "regular_day_time": 28080000,
+      "remaining": 4053226250,
+      "scheduled": 0,
+      "taken": 0,
+      "time_off": {
+        "id": 1922185,
+        "name": "New TO"
+      }
+    },
+    {
+      "accrual_year": {
+        "start_date": "2020-11-10",
+        "end_date": "2021-11-10"
+      },
+      "accrued": 0,
+      "carry_over": 0,
+      "carry_over_used_by_balance": 0,
+      "employee": {
+        "account_id": 1965509,
+        "username": "1001"
+      },
+      "estimated_accrued": 0,
+      "estimated_remaining": 0,
+      "external_accrued": 0,
+      "external_carry_over": 0,
+      "external_taken": 0,
+      "pending_approval": 0,
+      "regular_day_time": 28080000,
+      "remaining": 0,
+      "scheduled": 0,
+      "taken": 0,
+      "time_off": {
+        "id": 1923137,
+        "name": "Personal Day"
+      }
+    },
+    {
+      "accrual_year": {
+        "start_date": "2020-11-10",
+        "end_date": "2021-11-10"
+      },
+      "accrued": 0,
+      "carry_over": 0,
+      "carry_over_used_by_balance": 0,
+      "employee": {
+        "account_id": 1965509,
+        "username": "1001"
+      },
+      "estimated_accrued": 0,
+      "estimated_remaining": 0,
+      "external_accrued": 0,
+      "external_carry_over": 0,
+      "external_taken": 0,
+      "pending_approval": 0,
+      "regular_day_time": 28080000,
+      "remaining": 0,
+      "scheduled": 0,
+      "taken": 0,
+      "time_off": {
+        "id": 1923138,
+        "name": "Sick"
+      }
+    },
+    {
+      "accrual_year": {
+        "start_date": "2020-11-10",
+        "end_date": "2021-11-10"
+      },
+      "accrued": 82800000,
+      "carry_over": 0,
+      "carry_over_used_by_balance": 0,
+      "employee": {
+        "account_id": 1965509,
+        "username": "1001"
+      },
+      "estimated_accrued": 0,
+      "estimated_remaining": 0,
+      "external_accrued": 0,
+      "external_carry_over": 0,
+      "external_taken": 0,
+      "pending_approval": 0,
+      "regular_day_time": 28080000,
+      "remaining": 82800000,
+      "scheduled": 0,
+      "taken": 0,
+      "time_off": {
+        "id": 1923136,
+        "name": "Vacations"
+      }
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -293,7 +408,7 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -308,7 +423,7 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -327,7 +442,7 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -341,7 +456,7 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -425,7 +540,35 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 <div class="req-tab-post" id="req-tab-id-post-0">
 <div class="example">
 
+<div class="post-example-tab-0 activeTab" id="post-tab-example-0">
 
+<pre class="highlightjs">{
+  "accrual_balances": [
+    {
+      "company": {
+        "short_name": "company_short_name"
+      },
+      "employee": {
+        "username": "username"
+      },
+      "time_off": {
+        "name": "VAC"
+      },
+      "as_of_date": "2015-11-11",
+      "updated_to_date": {
+        "date": "2015-11-11",
+        "set_to_end_of_accrual_year": false
+      },
+      "hours": "24:00",
+      "import_reflects_old_taken": true,
+      "import_reflects_old_scheduled": false,
+      "external_accrued": "11:30",
+      "external_taken": "12.50",
+      "external_carry_over": "12:30"
+    }
+  ]
+}</pre>
+</div>
 <div class="post-example-tab-0" id="post-tab-schema-0">
 
 <div class="jsonschema" id="schema-1">{
@@ -582,7 +725,34 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 <div class="req-tab-post" id="req-tab-id-post-1">
 <div class="example">
 
+<div class="post-example-tab-1 activeTab" id="post-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;accrual_balances&gt;
+    &lt;accrual_balance&gt;
+        &lt;company&gt;
+            &lt;short_name&gt;company_short_name&lt;/short_name&gt;
+        &lt;/company&gt;
+        &lt;employee&gt;
+            &lt;username&gt;username&lt;/username&gt;
+        &lt;/employee&gt;
+        &lt;time_off&gt;
+            &lt;name&gt;VAC&lt;/name&gt;
+        &lt;/time_off&gt;
+        &lt;as_of_date&gt;2015-11-11&lt;/as_of_date&gt;
+        &lt;updated_to_date&gt;
+            &lt;date&gt;2015-11-11&lt;/date&gt;
+            &lt;set_to_end_of_accrual_year&gt;false&lt;/set_to_end_of_accrual_year&gt;
+        &lt;/updated_to_date&gt;
+        &lt;hours&gt;24:00&lt;/hours&gt;
+        &lt;import_reflects_old_taken&gt;true&lt;/import_reflects_old_taken&gt;
+        &lt;import_reflects_old_scheduled&gt;false&lt;/import_reflects_old_scheduled&gt;
+        &lt;external_accrued&gt;10:00&lt;/external_accrued&gt;
+        &lt;external_taken&gt;12:00&lt;/external_taken&gt;
+        &lt;external_carry_over&gt;12:12&lt;/external_carry_over&gt;
+    &lt;/accrual_balance&gt;
+&lt;/accrual_balances&gt;</pre>
+</div>
 <div class="post-example-tab-1" id="post-tab-schema-1">
 
 <div class="jsonschema" id="schema-2">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -726,7 +896,7 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -741,7 +911,7 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -836,7 +1006,35 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "accrual_balances": [
+    {
+      "company": {
+        "short_name": "company_short_name"
+      },
+      "employee": {
+        "username": "username"
+      },
+      "time_off": {
+        "name": "VAC"
+      },
+      "as_of_date": "2015-11-11",
+      "updated_to_date": {
+        "date": "2015-11-11",
+        "set_to_end_of_accrual_year": false
+      },
+      "hours": "24:00",
+      "import_reflects_old_taken": true,
+      "import_reflects_old_scheduled": false,
+      "external_accrued": "11:30",
+      "external_taken": "12.50",
+      "external_carry_over": "12:30"
+    }
+  ]
+}</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-3">{
@@ -993,7 +1191,34 @@ The `hours`, `external_accrued`, `external_taken`, and `external_carry_over` fie
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;accrual_balances&gt;
+    &lt;accrual_balance&gt;
+        &lt;company&gt;
+            &lt;short_name&gt;company_short_name&lt;/short_name&gt;
+        &lt;/company&gt;
+        &lt;employee&gt;
+            &lt;username&gt;username&lt;/username&gt;
+        &lt;/employee&gt;
+        &lt;time_off&gt;
+            &lt;name&gt;VAC&lt;/name&gt;
+        &lt;/time_off&gt;
+        &lt;as_of_date&gt;2015-11-11&lt;/as_of_date&gt;
+        &lt;updated_to_date&gt;
+            &lt;date&gt;2015-11-11&lt;/date&gt;
+            &lt;set_to_end_of_accrual_year&gt;false&lt;/set_to_end_of_accrual_year&gt;
+        &lt;/updated_to_date&gt;
+        &lt;hours&gt;24:00&lt;/hours&gt;
+        &lt;import_reflects_old_taken&gt;true&lt;/import_reflects_old_taken&gt;
+        &lt;import_reflects_old_scheduled&gt;false&lt;/import_reflects_old_scheduled&gt;
+        &lt;external_accrued&gt;10:00&lt;/external_accrued&gt;
+        &lt;external_taken&gt;12:00&lt;/external_taken&gt;
+        &lt;external_carry_over&gt;12:12&lt;/external_carry_over&gt;
+    &lt;/accrual_balance&gt;
+&lt;/accrual_balances&gt;</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-4">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

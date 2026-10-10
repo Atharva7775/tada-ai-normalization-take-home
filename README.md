@@ -13,7 +13,8 @@ and show that the transformations preserve meaning across providers.
 > UKG Ready's cached HTML/schema references are now included, with partial
 > documented enum references. Provider redistribution permission for isolved/UKG
 > is still unverified. UKG's references are not an official OpenAPI contract.
-> No API response fixtures, employee records or implementation solution are supplied.
+> Provider-documented sample payloads are included and labeled illustrative.
+> No customer exports, independently generated fixtures or implementation solution are supplied.
 > The seven-day assessment begins only after candidate sharing and scope are approved.
 
 ## The product problem
@@ -37,7 +38,9 @@ was explicitly authorized by the organizer after the permission gaps were disclo
 Their provider redistribution permission and candidate sharing remain unverified.
 Release materials to candidates **only when availability, rights and scope are confirmed**. Each provider receives exactly one
 lookup-reference JSON, containing evidenced codes/meanings and source citations,
-not sample API payloads. A reference may be intentionally incomplete; completeness
+not additional API response files. Provider-documented payload examples are retained
+in the contracts/reference pages; candidates still generate and validate their own
+seeded test data. A reference may be intentionally incomplete; completeness
 and missing domains must be explicit. See [reference rules](contracts/README.md)
 and the [source and permission audit](docs/REFERENCE_AUDIT.md).
 
@@ -96,7 +99,7 @@ PYTHONPATH=src python3 -m normalization normalize \
 ```
 
 The scaffold is scaffolding: it does not define the canonical output shape,
-solve mappings, generate mock employee records, or assert provider-specific units.
+solve mappings, generate your test fixtures, or assert unsupported provider-specific units.
 
 ## Starter layout
 

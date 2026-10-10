@@ -5,7 +5,9 @@ PrismHR includes an Apache-2.0-declared 2025.09 OpenAPI derivative and eight
 partial lookup domains. isolved includes two version-6 Swagger snapshots and
 11 partial enum domains. UKG Ready includes 381 cached HTML pages, an extracted
 JSON Schema bundle and 15 partial enum domains; **it is not an OpenAPI contract**.
-Response examples were removed from these derivatives. Each reference preserves
+Provider-documented examples are included at the organizer's instruction, with
+authentication token examples redacted. These are illustrative documentation,
+not customer exports or a complete candidate fixture suite. Each reference preserves
 raw values, cites source locations and leaves undocumented meanings null.
 
 The organizer explicitly authorized isolved/UKG's private upload after the rights
@@ -34,4 +36,6 @@ verify license terms, complete scope, schema syntax, checksum accuracy, or codes
 
 An incomplete verified lookup reference may remain intentionally partial when
 documented and agreed; candidates must handle unknown codes and cite known ones.
-No sample employee, company, or payroll response is distributed by this starter.
+Provider-documented employee/company/payroll examples may appear in the source
+contracts and reference pages. Candidates must still generate their own seeded
+fixtures, validate them against the contracts and add boundary/unknown-value cases.

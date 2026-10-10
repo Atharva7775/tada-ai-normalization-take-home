@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Benefit Plan</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Benefit Plan</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Benefit Plan</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -62,7 +62,7 @@
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -129,7 +129,7 @@
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/benefits/{id}</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -144,7 +144,73 @@
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+    "id": 218164032,
+    "employee": {
+        "account_id": 3225537
+    },
+    "benefit_plan": {
+        "id": 18561,
+        "currency": "USD"
+    },
+    "coverage_effective_from": "2017-11-12",
+    "coverage_effective_to": "9999-12-31",
+    "custom_fields": [],
+    "earnings_deductions": [
+        {
+            "id": 225099776,
+            "index": 0,
+            "type": "EARNING",
+            "deduction_effective_from": "2017-11-12",
+            "deduction_effective_to": "9999-12-31",
+            "employee_amount": 2808,
+            "employee_frequency": {
+                "type": "ANNUAL",
+                "name": "Annual"
+            },
+            "employer_amount": 13456,
+            "employer_frequency": {
+                "type": "ANNUAL",
+                "name": "Annual"
+            },
+            "coverage_amount": 1300098,
+            "show_coverage": true,
+            "show_employer_contribution": true
+        }
+    ],
+    "coverage": {
+        "id": 16822209,
+        "name": "Salary 2x",
+        "brief_coverage_explanation": "&lt;p&gt;Basic Life -----&amp;nbsp;&amp;nbsp; G T L&amp;nbsp; 2X - employee 2x salary amount&lt;/p&gt;"
+    },
+    "dependents": [
+      {
+        "type": "CHILD",
+        "contact": {
+          "id": 77249,
+          "first_name": "Kevin",
+          "last_name": "Smith",
+          "relationship": "Child",
+          "birthdate": "2010-04-21"
+        },
+        "effective_from": "2017-01-01",
+        "effective_to": "2017-12-31",
+        "custom_fields": [
+          {
+            "index": 0,
+            "value": "2017-01-01"
+          },
+          {
+            "index": 1,
+            "value": "a.block@gmail.com"
+          }
+        ]
+      }
+    ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -422,7 +488,73 @@
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root&gt;
+   &lt;benefit_plan&gt;
+      &lt;id&gt;18561&lt;/id&gt;
+   &lt;/benefit_plan&gt;
+   &lt;coverage&gt;
+      &lt;brief_coverage_explanation&gt;&amp;lt;p&amp;gt;Basic Life -----&amp;amp;nbsp;&amp;amp;nbsp; G T L&amp;amp;nbsp; 2X - employee 2x salary amount&amp;lt;/p&amp;gt;&lt;/brief_coverage_explanation&gt;
+      &lt;id&gt;16822209&lt;/id&gt;
+      &lt;name&gt;Salary 2x&lt;/name&gt;
+   &lt;/coverage&gt;
+   &lt;coverage_effective_from&gt;2017-11-12&lt;/coverage_effective_from&gt;
+   &lt;coverage_effective_to&gt;9999-12-31&lt;/coverage_effective_to&gt;
+   &lt;custom_fields /&gt;
+   &lt;dependents&gt;
+      &lt;element&gt;
+         &lt;contact&gt;
+            &lt;birthdate&gt;2010-04-21&lt;/birthdate&gt;
+            &lt;first_name&gt;Kevin&lt;/first_name&gt;
+            &lt;id&gt;77249&lt;/id&gt;
+            &lt;last_name&gt;Smith&lt;/last_name&gt;
+            &lt;relationship&gt;Child&lt;/relationship&gt;
+         &lt;/contact&gt;
+         &lt;custom_fields&gt;
+            &lt;element&gt;
+               &lt;index&gt;0&lt;/index&gt;
+               &lt;value&gt;2017-01-01&lt;/value&gt;
+            &lt;/element&gt;
+            &lt;element&gt;
+               &lt;index&gt;1&lt;/index&gt;
+               &lt;value&gt;a.block@gmail.com&lt;/value&gt;
+            &lt;/element&gt;
+         &lt;/custom_fields&gt;
+         &lt;effective_from&gt;2017-01-01&lt;/effective_from&gt;
+         &lt;effective_to&gt;2017-12-31&lt;/effective_to&gt;
+         &lt;type&gt;CHILD&lt;/type&gt;
+      &lt;/element&gt;
+   &lt;/dependents&gt;
+   &lt;earnings_deductions&gt;
+      &lt;element&gt;
+         &lt;coverage_amount&gt;28000&lt;/coverage_amount&gt;
+         &lt;deduction_effective_from&gt;2017-11-12&lt;/deduction_effective_from&gt;
+         &lt;deduction_effective_to&gt;9999-12-31&lt;/deduction_effective_to&gt;
+         &lt;employee_amount&gt;0&lt;/employee_amount&gt;
+         &lt;employee_frequency&gt;
+            &lt;name&gt;Annual&lt;/name&gt;
+            &lt;type&gt;ANNUAL&lt;/type&gt;
+         &lt;/employee_frequency&gt;
+         &lt;employer_amount&gt;2808&lt;/employer_amount&gt;
+         &lt;employer_frequency&gt;
+            &lt;name&gt;Annual&lt;/name&gt;
+            &lt;type&gt;ANNUAL&lt;/type&gt;
+         &lt;/employer_frequency&gt;
+         &lt;id&gt;225099776&lt;/id&gt;
+         &lt;index&gt;0&lt;/index&gt;
+         &lt;show_coverage&gt;true&lt;/show_coverage&gt;
+         &lt;show_employer_contribution&gt;true&lt;/show_employer_contribution&gt;
+         &lt;type&gt;EARNING&lt;/type&gt;
+      &lt;/element&gt;
+   &lt;/earnings_deductions&gt;
+   &lt;employee&gt;
+      &lt;account_id&gt;3225537&lt;/account_id&gt;
+   &lt;/employee&gt;
+   &lt;id&gt;218164032&lt;/id&gt;
+&lt;/root&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;

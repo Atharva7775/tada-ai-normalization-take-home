@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Cost Centers</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Cost Centers</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Cost Centers</span>
@@ -43,7 +43,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -61,7 +61,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 3</p>
 <div class="desc md">Tree index must be greater than or equal to 0 and less than or equal to 8.</div>
 </div>
 </div>
@@ -74,7 +74,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: cost center</p>
 <div class="desc md">The name of cost center.</div>
 </div>
 </div>
@@ -87,7 +87,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: cc_external_id_0_126</p>
 <div class="desc md">The external id of cost center.</div>
 </div>
 </div>
@@ -100,7 +100,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 683</p>
 <div class="desc md">The payroll code of cost center.</div>
 </div>
 </div>
@@ -113,7 +113,7 @@ Requires at least one of the following subsystems:
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 586</p>
 <div class="desc md">The location code of cost center.</div>
 </div>
 </div>
@@ -127,7 +127,7 @@ Requires at least one of the following subsystems:
 <div class="param-content">
 <div>
 <p>Default: true</p>
-
+<p>Example: true</p>
 <div class="desc md">Whether cost center is visible or not.</div>
 </div>
 </div>
@@ -145,7 +145,7 @@ Requires at least one of the following subsystems:
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -202,7 +202,7 @@ Requires at least one of the following subsystems:
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/config/cost-centers</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -217,7 +217,51 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "cost_centers": [
+    {
+      "id": 1540749,
+      "name": "Cost Center 3"
+    },
+    {
+      "id": 1540929,
+      "parent_id": 1540749,
+      "name": "CC3_1",
+      "payroll_code": "546",
+      "external_id": "213"
+    },
+    {
+      "id": 1540930,
+      "parent_id": 1540749,
+      "name": "CC3_2",
+      "description": "Description for CC3_2",
+      "payroll_code": "78"
+    },
+    {
+      "id": 1540931,
+      "parent_id": 1540929,
+      "name": "CC3_1.1",
+      "external_id": "123",
+      "location_code": "179"
+    },
+    {
+      "id": 1540932,
+      "parent_id": 1540930,
+      "name": "CC3_2.1",
+      "description": "Description for CC3_2.1",
+      "payroll_code": "89",
+      "external_id": "9"
+    },
+    {
+      "id": 1540933,
+      "parent_id": 1540929,
+      "name": "CC3_1.2"
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -275,7 +319,49 @@ Requires at least one of the following subsystems:
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;cost_centers&gt;
+  &lt;cost_center&gt;
+    &lt;id&gt;1540749&lt;/id&gt;
+    &lt;name&gt;Cost Center 3&lt;/name&gt;
+  &lt;/cost_center&gt;
+  &lt;cost_center&gt;
+    &lt;id&gt;1540929&lt;/id&gt;
+    &lt;parent_id&gt;1540749&lt;/parent_id&gt;
+    &lt;name&gt;CC3_1&lt;/name&gt;
+    &lt;payroll_code&gt;546&lt;/payroll_code&gt;
+    &lt;external_id&gt;213&lt;/external_id&gt;
+  &lt;/cost_center&gt;
+  &lt;cost_center&gt;
+    &lt;id&gt;1540930&lt;/id&gt;
+    &lt;parent_id&gt;1540749&lt;/parent_id&gt;
+    &lt;name&gt;CC3_2&lt;/name&gt;
+    &lt;description&gt;Description for CC3_2&lt;/description&gt;
+    &lt;payroll_code&gt;78&lt;/payroll_code&gt;
+  &lt;/cost_center&gt;
+  &lt;cost_center&gt;
+    &lt;id&gt;1540931&lt;/id&gt;
+    &lt;parent_id&gt;1540929&lt;/parent_id&gt;
+    &lt;name&gt;CC3_1.1&lt;/name&gt;
+    &lt;external_id&gt;123&lt;/external_id&gt;
+    &lt;location_code&gt;179&lt;/location_code&gt;
+  &lt;/cost_center&gt;
+  &lt;cost_center&gt;
+    &lt;id&gt;1540932&lt;/id&gt;
+    &lt;parent_id&gt;1540930&lt;/parent_id&gt;
+    &lt;name&gt;CC3_2.1&lt;/name&gt;
+    &lt;description&gt;Description for CC3_2.1&lt;/description&gt;
+    &lt;payroll_code&gt;89&lt;/payroll_code&gt;
+    &lt;external_id&gt;9&lt;/external_id&gt;
+  &lt;/cost_center&gt;
+  &lt;cost_center&gt;
+    &lt;id&gt;1540933&lt;/id&gt;
+    &lt;parent_id&gt;1540929&lt;/parent_id&gt;
+    &lt;name&gt;CC3_1.2&lt;/name&gt;
+  &lt;/cost_center&gt;
+&lt;/cost_centers&gt;</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"

@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Pay Periods</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Pay Periods</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Pay Periods</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1689</p>
 <div class="desc md">The ein id to get the pay periods if a company has multiple eins. All pay periods for all eins are returned if not specified.
 A list of company eins can be fetched using the ein lookup api.
 </div>
@@ -63,7 +63,7 @@ A list of company eins can be fetched using the ein lookup api.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2016-08-15</p>
 <div class="desc md">Used for getting pay periods to date lower bounded. The date, six months prior to today's date is used as date_from if not specified.
 </div>
 </div>
@@ -78,7 +78,7 @@ A list of company eins can be fetched using the ein lookup api.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2017-02-15</p>
 <div class="desc md">Used for getting pay periods to date upper bounded. Today's date is used as date_to if not specified.
 </div>
 </div>
@@ -93,7 +93,7 @@ A list of company eins can be fetched using the ein lookup api.
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 2017-02-15</p>
 <div class="desc md">Used to filter pay periods by pay date specified. Ignored if it's not present.
 </div>
 </div>
@@ -181,7 +181,7 @@ A list of company eins can be fetched using the ein lookup api.
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/pay-periods</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -196,7 +196,53 @@ A list of company eins can be fetched using the ein lookup api.
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "pay_periods": [
+    {
+      "id": 55234507,
+      "pay_period_profile": {
+        "id": 270536
+      },
+      "ein": {
+        "id": 1680,
+        "ein_name": "testein",
+        "ein_tax_id": "11-1221122"
+      },
+      "total_employees": 10,
+      "locked_employees": 5,
+      "available_employees": 10,
+      "start_date": "2016-08-01",
+      "end_date": "2016-08-15",
+      "locked": false,
+      "pay_date": "2016-08-10",
+      "submit_date": "2016-08-05",
+      "process_date": "2016-08-08"
+    },
+    {
+      "id": 55234508,
+      "pay_period_profile": {
+        "id": 270536
+      },
+      "ein": {
+        "id": 1680,
+        "ein_name": "testein",
+        "ein_tax_id": "11-1221122"
+      },
+      "total_employees": 100,
+      "locked_employees": 6,
+      "available_employees": 90,
+      "start_date": "2016-08-16",
+      "end_date": "2016-08-31",
+      "locked": true,
+      "pay_date": "2016-08-26",
+      "submit_date": "2016-08-23",
+      "process_date": "2016-08-24"
+    }
+  ]
+}</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -286,7 +332,53 @@ A list of company eins can be fetched using the ein lookup api.
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;pay_periods&gt;
+  &lt;pay_period&gt;
+    &lt;id&gt;55234507&lt;/id&gt;
+    &lt;pay_period_profile&gt;
+        &lt;id&gt;270536&lt;/id&gt;
+    &lt;/pay_period_profile&gt;
+    &lt;ein&gt;
+        &lt;id&gt;1680&lt;/id&gt;
+        &lt;ein_name&gt;testein&lt;/ein_name&gt;
+        &lt;ein_tax_id&gt;11-1221122&lt;/ein_tax_id&gt;
+    &lt;/ein&gt;
+    &lt;total_employees&gt;10&lt;/total_employees&gt;
+    &lt;locked_employees&gt;5&lt;/locked_employees&gt;
+    &lt;available_employees&gt;10&lt;/available_employees&gt;
+    &lt;start_date&gt;2016-08-01&lt;/start_date&gt;
+    &lt;end_date&gt;2016-08-15&lt;/end_date&gt;
+    &lt;locked&gt;false&lt;/locked&gt;
+    &lt;pay_date&gt;2016-08-10&lt;/pay_date&gt;
+    &lt;submit_date&gt;2016-08-05&lt;/submit_date&gt;
+    &lt;process_date&gt;2016-08-08&lt;/process_date&gt;
+  &lt;/pay_period&gt;
+  &lt;pay_period&gt;
+    &lt;id&gt;55234508&lt;/id&gt;
+    &lt;pay_period_profile&gt;
+        &lt;id&gt;270536&lt;/id&gt;
+    &lt;/pay_period_profile&gt;
+    &lt;ein&gt;
+        &lt;id&gt;1680&lt;/id&gt;
+        &lt;ein_name&gt;testein&lt;/ein_name&gt;
+        &lt;ein_tax_id&gt;11-1221122&lt;/ein_tax_id&gt;
+    &lt;/ein&gt;
+    &lt;total_employees&gt;100&lt;/total_employees&gt;
+    &lt;locked_employees&gt;6&lt;/locked_employees&gt;
+    &lt;available_employees&gt;90&lt;/available_employees&gt;
+    &lt;start_date&gt;2016-08-16&lt;/start_date&gt;
+    &lt;end_date&gt;2016-08-31&lt;/end_date&gt;
+    &lt;locked&gt;true&lt;/locked&gt;
+    &lt;pay_date&gt;2016-08-26&lt;/pay_date&gt;
+    &lt;submit_date&gt;2016-08-23&lt;/submit_date&gt;
+    &lt;process_date&gt;2016-08-24&lt;/process_date&gt;
+  &lt;/pay_period&gt;
+&lt;/pay_periods&gt;
+
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;

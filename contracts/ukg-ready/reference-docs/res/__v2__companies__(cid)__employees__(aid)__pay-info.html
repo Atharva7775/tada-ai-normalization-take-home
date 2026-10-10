@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Pay Information</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private integration reference — 2026-10-09.</strong> Request/response samples removed; passive HTML rendering with schemas retained. Provider redistribution permission is unverified; candidate sharing is pending. This is not an OpenAPI document.</aside>
+<html><head><meta charset="utf-8"><title>Pay Information</title><style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}aside{background:#fff3cc;padding:1rem}.jsonschema,pre{white-space:pre-wrap;font:13px monospace;overflow-wrap:anywhere;background:#f4f5f7;padding:1rem}.uri{font-family:monospace}h2,h3{margin-top:2rem}</style></head><body><aside><strong>Modified private reference — 2026-10-09.</strong> Provider-documented illustrative examples are included; authentication token examples are redacted. These are not customer exports or guaranteed production behavior. Candidate sharing is pending. This is not OpenAPI.</aside>
 <div class="group">
 <h2 class="anchored" id="item.anchor">
 <span>Pay Information</span>
@@ -35,7 +35,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -50,7 +50,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -69,7 +69,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -136,7 +136,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <span class="textUri"><span class="baseUri">{{ getUriPrefix() }}</span><span class="relativeUri">/v2/companies/{cid}/employees/{aid}/pay-info</span></span>
 </code>
 </div>
-<h4>Response schemas (samples omitted)</h4>
+<h4>Response Samples</h4>
 <div class="tab-title-group">
 <label>
 <input checked="checked" data-full-tab-id="resp-tab-id-get-0" data-tab-class="resp-tab-get" name="resp-tab-get" type="radio"/>
@@ -151,7 +151,65 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="resp-tab-get" id="resp-tab-id-get-0">
 <div class="example">
 
+<div class="get-example-resp-tab-0 activeTab" id="get-tab-resp-example-0">
 
+<pre class="highlightjs">{
+  "default_job": {
+    "id": 1546305
+  },
+  "job_change_reason_code": {
+    "display_name": "Promotion"
+  },
+  "job_last_changed": "2017-04-04",
+  "standard_work_day": 28800000,
+  "employee_type": {
+    "id": 2
+  },
+  "pay_type": {
+    "id": 3
+  },
+  "shift_premium": {
+    "id": 6
+  },
+  "medical_eligibility": "NOT_ELIGIBLE",
+  "dental_eligibility": "NOT_ELIGIBLE",
+  "dependent_benefits_eligibility": "NOT_ELIGIBLE",
+  "benefit_auto_enrollment_eligibility": "ELIGIBLE",
+  "eeo_classification": "PROFESSIONALS",
+  "eeo4_classification": "SERVICE_MAINTENANCE",
+  "eeo4_function": "FIRE_PROTECTION",
+  "workers_comp_code": {
+    "external_id": "3179:AL"
+  },
+  "union": {
+    "id": 4
+  },
+  "payroll_classification": "HOUSEHOLD",
+  "bank_account_number": "BANKNUMBER1",
+  "pay_grade": {
+    "id": 5,
+    "parent": {
+      "id": 10,
+      "code": 1008,
+      "name": "parent"
+    }
+  },
+  "gl_codes": [
+    {
+      "index": 0,
+      "value": "MyCompanyGLBook"
+    }
+  ],
+  "ttoc": [
+    {
+      "id": 101,
+      "display_name": "Bartenders",
+      "effective_from": "2026-01-01"
+    }
+  ]
+}
+</pre>
+</div>
 <div class="get-example-resp-tab-0" id="get-tab-resp-schema-0">
 
 <div class="jsonschema" id="schema-0">{
@@ -391,7 +449,66 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="resp-tab-get" id="resp-tab-id-get-1">
 <div class="example">
 
+<div class="get-example-resp-tab-1 activeTab" id="get-tab-resp-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;pay_information&gt;
+  &lt;default_job&gt;
+    &lt;id&gt;1546305&lt;/id&gt;
+  &lt;/default_job&gt;
+  &lt;job_change_reason_code&gt;
+    &lt;display_name&gt;Promotion&lt;/display_name&gt;
+  &lt;/job_change_reason_code&gt;
+  &lt;job_last_changed&gt;2017-04-04&lt;/job_last_changed&gt;
+  &lt;standard_work_day&gt;28800000&lt;/standard_work_day&gt;
+  &lt;employee_type&gt;
+    &lt;id&gt;2&lt;/id&gt;
+  &lt;/employee_type&gt;
+  &lt;pay_type&gt;
+    &lt;id&gt;1&lt;/id&gt;
+  &lt;/pay_type&gt;
+  &lt;shift_premium&gt;
+    &lt;id&gt;6&lt;/id&gt;
+  &lt;/shift_premium&gt;
+  &lt;medical_eligibility&gt;NOT_ELIGIBLE&lt;/medical_eligibility&gt;
+  &lt;dental_eligibility&gt;NOT_ELIGIBLE&lt;/dental_eligibility&gt;
+  &lt;dependent_benefits_eligibility&gt;NOT_ELIGIBLE&lt;/dependent_benefits_eligibility&gt;
+  &lt;benefit_auto_enrollment_eligibility&gt;ELIGIBLE&lt;/benefit_auto_enrollment_eligibility&gt;
+  &lt;eeo_classification&gt;PROFESSIONALS&lt;/eeo_classification&gt;
+  &lt;eeo4_classification&gt;SERVICE_MAINTENANCE&lt;/eeo4_classification&gt;
+  &lt;eeo4_function&gt;FIRE_PROTECTION&lt;/eeo4_function&gt;
+  &lt;workers_comp_code&gt;
+    &lt;external_id&gt;3179:AL&lt;/external_id&gt;
+  &lt;/workers_comp_code&gt;
+  &lt;union&gt;
+    &lt;id&gt;6&lt;/id&gt;
+  &lt;/union&gt;
+  &lt;payroll_classification&gt;HOUSEHOLD&lt;/payroll_classification&gt;
+  &lt;bank_account_number&gt;BANKNUMBER1&lt;/bank_account_number&gt;
+  &lt;pay_grade&gt;
+    &lt;id&gt;6&lt;/id&gt;
+    &lt;parent&gt;
+      &lt;id&gt;12&lt;/id&gt;
+      &lt;code&gt;1002&lt;/code&gt;
+      &lt;name&gt;parent&lt;/name&gt;
+    &lt;/parent&gt;
+  &lt;/pay_grade&gt;
+  &lt;gl_codes&gt;
+    &lt;gl_code&gt;
+      &lt;index&gt;0&lt;/index&gt;
+      &lt;value&gt;MyCompanyGLBook&lt;/value&gt;
+    &lt;/gl_code&gt;
+  &lt;/gl_codes&gt;
+  &lt;ttoc&gt;
+    &lt;ttoc_item&gt;
+      &lt;id&gt;101&lt;/id&gt;
+      &lt;display_name&gt;Bartenders&lt;/display_name&gt;
+      &lt;effective_from&gt;2026-01-01&lt;/effective_from&gt;
+    &lt;/ttoc_item&gt;
+  &lt;/ttoc&gt;
+&lt;/pay_information&gt;
+</pre>
+</div>
 <div class="get-example-resp-tab-1" id="get-tab-resp-schema-1">
 
 <div class="jsonschema" id="schema-1">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -593,7 +710,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 123456</p>
 <div class="desc md">Company should be referenced via company id or company unique id or company short name using `|short_name` or `!short_name` format.
 </div>
 </div>
@@ -608,7 +725,7 @@ The Employee APIs use a separate security profile item to control access rights 
 </div>
 <div class="param-content">
 <div>
-
+<p>Example: 1234567</p>
 <div class="desc md">Account should be referenced via account id or account external id using `|external_id` or `!external_id` format.
 </div>
 </div>
@@ -627,7 +744,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <div>
 <p>Valid values: application/json, application/xml, text/xml</p>
 <p>Default: application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -641,7 +758,7 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="param-content">
 <div>
 <p>Valid values: application/xml, text/xml, application/json</p>
-
+<p>Example: application/json</p>
 </div>
 </div>
 
@@ -736,7 +853,60 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="req-tab-put" id="req-tab-id-put-0">
 <div class="example">
 
+<div class="put-example-tab-0 activeTab" id="put-tab-example-0">
 
+<pre class="highlightjs">{
+  "default_job": {
+    "id": 1546305
+  },
+  "job_change_reason_code": {
+    "display_name": "Promotion"
+  },
+  "job_last_changed": "2017-04-04",
+  "standard_work_day": 28800000,
+  "employee_type": {
+    "id": 2
+  },
+  "pay_type": {
+    "id": 3
+  },
+  "shift_premium": {
+    "id": 6
+  },
+  "medical_eligibility": "NOT_ELIGIBLE",
+  "dental_eligibility": "NOT_ELIGIBLE",
+  "dependent_benefits_eligibility": "NOT_ELIGIBLE",
+  "benefit_auto_enrollment_eligibility": "ELIGIBLE",
+  "eeo_classification": "PROFESSIONALS",
+  "eeo4_classification": "SERVICE_MAINTENANCE",
+  "eeo4_function": "FIRE_PROTECTION",
+  "workers_comp_code": {
+    "external_id": "3179:AL"
+  },
+  "union": {
+    "id": 4
+  },
+  "payroll_classification": "HOUSEHOLD",
+  "bank_account_number": "BANKNUMBER1",
+  "pay_grade": {
+    "id": 5
+  },
+  "gl_codes": [
+    {
+      "index": 0,
+      "value": "MyCompanyGLBook"
+    }
+  ],
+  "ttoc": [
+    {
+      "id": 101,
+      "display_name": "Bartenders",
+      "effective_from": "2026-01-01"
+    }
+  ]
+}
+</pre>
+</div>
 <div class="put-example-tab-0" id="put-tab-schema-0">
 
 <div class="jsonschema" id="schema-2">{
@@ -962,7 +1132,59 @@ The Employee APIs use a separate security profile item to control access rights 
 <div class="req-tab-put" id="req-tab-id-put-1">
 <div class="example">
 
+<div class="put-example-tab-1 activeTab" id="put-tab-example-1">
 
+<pre class="highlightjs">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;pay_information&gt;
+    &lt;default_job&gt;
+        &lt;id&gt;1546305&lt;/id&gt;
+    &lt;/default_job&gt;
+    &lt;job_change_reason_code&gt;
+        &lt;display_name&gt;Promotion&lt;/display_name&gt;
+    &lt;/job_change_reason_code&gt;
+    &lt;job_last_changed&gt;2017-04-04&lt;/job_last_changed&gt;
+    &lt;standard_work_day&gt;28800000&lt;/standard_work_day&gt;
+    &lt;employee_type&gt;
+        &lt;id&gt;2&lt;/id&gt;
+    &lt;/employee_type&gt;
+    &lt;pay_type&gt;
+        &lt;id&gt;1&lt;/id&gt;
+    &lt;/pay_type&gt;
+    &lt;shift_premium&gt;
+        &lt;id&gt;6&lt;/id&gt;
+    &lt;/shift_premium&gt;
+    &lt;medical_eligibility&gt;NOT_ELIGIBLE&lt;/medical_eligibility&gt;
+    &lt;dental_eligibility&gt;NOT_ELIGIBLE&lt;/dental_eligibility&gt;
+    &lt;dependent_benefits_eligibility&gt;NOT_ELIGIBLE&lt;/dependent_benefits_eligibility&gt;
+    &lt;benefit_auto_enrollment_eligibility&gt;ELIGIBLE&lt;/benefit_auto_enrollment_eligibility&gt;
+    &lt;eeo_classification&gt;PROFESSIONALS&lt;/eeo_classification&gt;
+    &lt;workers_comp_code&gt;
+        &lt;external_id&gt;3179:AL&lt;/external_id&gt;
+    &lt;/workers_comp_code&gt;
+    &lt;union&gt;
+        &lt;id&gt;6&lt;/id&gt;
+    &lt;/union&gt;
+    &lt;payroll_classification&gt;HOUSEHOLD&lt;/payroll_classification&gt;
+    &lt;bank_account_number&gt;BANKNUMBER1&lt;/bank_account_number&gt;
+    &lt;pay_grade&gt;
+        &lt;id&gt;6&lt;/id&gt;
+    &lt;/pay_grade&gt;
+    &lt;gl_codes&gt;
+        &lt;gl_code&gt;
+            &lt;index&gt;0&lt;/index&gt;
+            &lt;value&gt;MyCompanyGLBook&lt;/value&gt;
+        &lt;/gl_code&gt;
+    &lt;/gl_codes&gt;
+    &lt;ttoc&gt;
+        &lt;ttoc_item&gt;
+            &lt;id&gt;101&lt;/id&gt;
+            &lt;display_name&gt;Bartenders&lt;/display_name&gt;
+            &lt;effective_from&gt;2026-01-01&lt;/effective_from&gt;
+        &lt;/ttoc_item&gt;
+    &lt;/ttoc&gt;
+&lt;/pay_information&gt;
+</pre>
+</div>
 <div class="put-example-tab-1" id="put-tab-schema-1">
 
 <div class="jsonschema" id="schema-3">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
