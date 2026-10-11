@@ -6,6 +6,7 @@ Build a local platform that normalizes company, employee, and payroll data from
 **PrismHR, isolved, and UKG Ready** into a consistent model. Discover the provider
 mappings, design your own canonical schemas and enums, generate synthetic test
 data, and implement transformations that preserve the meaning of the source data.
+Use any programming language or stack.
 
 ## Reference materials
 
@@ -81,94 +82,6 @@ Live access is optional for discovery. Keep fixture generation and submitted
 tests deterministic and able to run locally without credentials or live services.
 Use the demo accounts for inspection, and keep returned tokens and any downloaded
 records out of Git and your submission.
-
-## What to build
-
-1. **Discover the contracts.** Identify endpoints, response schemas, identifiers,
-   fields, code domains, units, and company/employee/payroll relationships. Cite
-   exact source fields or schema pointers for factual mapping decisions and record
-   unresolved questions.
-2. **Design a canonical model.** Define company, employee, and payroll schemas,
-   enums, identity scope, relationships, validation, versioning, and provenance.
-   Explain your tradeoffs. No target schema or canonical enum list is prescribed.
-3. **Generate synthetic responses.** Implement deterministic, seeded fixture
-   generation from the supplied reference schemas. Validate normal fixtures and
-   record seed, generator version, reference checksums, schema pointers, and
-   validation results. Keep deliberately invalid cases separate and labeled.
-4. **Implement normalization.** Cover all nine provider/entity combinations within
-   the approved scope. Separate provider extraction from shared conversions and
-   validation. Expose JSON input/output through a documented local CLI or API.
-5. **Test and demonstrate behavior.** Show an end-to-end run, equivalent business
-   situations across providers, repeatable generation, and useful diagnostics for
-   ambiguous or invalid inputs.
-
-Only claim support for concepts evidenced by the reference pack. If a requested
-concept is absent or ambiguous, document the gap and agree scope with the organizer.
-You choose the stack, storage, output representation, and batching. Live provider
-calls, authentication, cloud infrastructure, a production database, a frontend,
-and payroll tax calculations are not required. Use synthetic identities and data.
-
-## Semantic requirements and tests
-
-| Area | Required behavior and test cases |
-| --- | --- |
-| Durations | Establish units for each source field; distinguish elapsed time, paid quantities, and timestamps. Choose a canonical unit and precision/rounding policy. Test fractions, zero, negatives, large values, and missing/conflicting units. |
-| Statuses and categories | Cite actual source codes and meanings; justify canonical grouping and preserve relevant distinctions. Test unknown values, wrong code domains, and codes that must remain distinct. |
-| Missing data | Distinguish absent, null, empty, zero, false, malformed, unknown, and unsupported concepts. Define reject/partial-result behavior and avoid silent coercion. |
-| Identity and relationships | Preserve opaque IDs and leading zeros, scope IDs by provider/company, and resolve or report dangling links. Test collisions, duplicates, and reruns. |
-| Money and dates | Define currency, decimal precision, rounding, date-only versus instant handling, time zones, and period boundaries. Report missing currency/time-zone information explicitly. |
-| Reproducibility | The same seed regenerates the same fixtures; the same inputs produce stable outputs and diagnostics. Processing one input must not mutate another input or provider's state. |
-
-Infer units from field-specific evidence, not provider names, field names alone,
-or numeric magnitude. Keep factual source evidence separate from your own design
-decisions and illustrative assumptions. Make unsupported or lossy conversions
-observable. Assertions should check expected meaning, relationships, and failure
-behavior, including all supported provider/entity paths.
-
-## Local quick start
-
-The optional Python scaffold uses **Python 3.9+ and the standard library**. No
-credentials or package downloads are needed. You may replace it with another
-stack if you document equivalent setup, generation, normalization, and test commands.
-
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-PYTHONPATH=src python3 -m normalization list-providers
-PYTHONPATH=src python3 -m normalization check-inputs
-PYTHONPATH=src python3 -m unittest discover -s tests -v
-```
-
-`check-inputs` currently exits **2** because the candidate reference pack remains
-incomplete. It checks basic metadata readiness, not complete schema validity or
-distribution approval. The three adapters and fixture generator deliberately
-raise `NotImplementedError` until you implement them. The ten included checks cover
-starter plumbing and source-reference integrity; add transformation tests and
-update the assertions that expect unimplemented adapters as you build.
-
-After implementing an adapter, use the scaffold interface:
-
-```sh
-PYTHONPATH=src python3 -m normalization normalize \
-  --provider prismhr --entity employee \
-  --input path/to/generated-response.json \
-  --output path/to/normalized-output.json
-```
-
-The starter refuses to overwrite an existing output file. Provider choices are
-`prismhr`, `isolved`, and `ukg-ready`; entity choices are `company`, `employee`, and
-`payroll`. The CLI does not prescribe your canonical output shape.
-
-```text
-contracts/                  Source specifications, lookup facts, and provenance
-docs/REFERENCE_AUDIT.md      Existing source and distribution evidence
-src/normalization/          CLI, reference checks, and three adapter stubs
-scripts/generate_fixtures.py Fixture generator stub
-tests/                      Starter and reference-integrity tests
-```
-
-Create schema, fixture, shared-transform, and design-document locations as needed;
-no empty documentation templates are required.
 
 ## Suggested seven-day plan
 
