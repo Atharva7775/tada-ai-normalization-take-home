@@ -6,6 +6,7 @@ deduction, and payroll data from
 mappings, design your own canonical schemas and enums, generate synthetic test
 data, and implement transformations that preserve the meaning of the source data.
 Use any programming language or stack.
+You can use AI as much as you want throughout this project.
 
 ## Data to normalize
 
@@ -46,7 +47,7 @@ your own fixtures rather than treating those samples as exhaustive contracts.
 **Reference status:** this repository is public. PrismHR's artifact license is
 retained, and the organizer has approved sharing this reference pack with candidates.
 The organizer provides the handoff, scope, deadline, and timezone. Use the
-organizer-approved sharing channel and AI tools.
+organizer-approved sharing channel.
 
 Source history and evidence remain in the [reference audit](docs/REFERENCE_AUDIT.md),
 [isolved manifest](contracts/isolved/SOURCE_MANIFEST.json), and
