@@ -26,9 +26,9 @@ supplied. Discover the mappings and define your own canonical enums. Documented
 sample payloads are retained as illustrative source examples; generate and validate
 your own fixtures rather than treating those samples as exhaustive contracts.
 
-**Reference status:** this repository is private. PrismHR's artifact license is
+**Reference status:** this repository is public. PrismHR's artifact license is
 retained, and the organizer has approved sharing this reference pack with candidates.
-The organizer provides the handoff, scope, deadline, and timezone. Keep materials and submissions private and use the
+The organizer provides the handoff, scope, deadline, and timezone. Use the
 organizer-approved sharing channel and AI tools.
 
 Source history and evidence remain in the [reference audit](docs/REFERENCE_AUDIT.md),
