@@ -1,10 +1,27 @@
 # Tada AI · Data Normalization Take-Home
 
-Build a local platform that normalizes company, employee, and payroll data from
+Build a local platform that normalizes company, employee, direct deposit,
+deduction, and payroll data from
 **PrismHR, isolved, and UKG Ready** into a consistent model. Discover the provider
 mappings, design your own canonical schemas and enums, generate synthetic test
 data, and implement transformations that preserve the meaning of the source data.
 Use any programming language or stack.
+
+## Data to normalize
+
+Normalize these four data types across **PrismHR, isolved, and UKG Ready**:
+
+| Data type | What to cover |
+| --- | --- |
+| **Employee data** | The complete employee data available from each provider, including profile/contact information, employment status and dates, job and organization details, and compensation. Cover all available employee fields, rather than only a small summary. |
+| **Direct deposits** | Employee direct-deposit setup, including account types, deposit allocations, amounts or percentages, priority, and status/effective dates where available. |
+| **Deductions** | Employee deduction setup and deductions recorded in payroll, including provider codes/types, amounts or percentages, and applicable rules or dates where available. |
+| **Payroll data** | Payroll runs/periods and employee paycheck records, including earnings, hours, gross/net pay, taxes, deductions, and benefit contributions where available. |
+
+Keep the company and employee relationships so these records can be linked in
+your normalized model. If a provider does not expose a field or data type, document
+that gap and your assumptions or decisions in the Markdown explanation described
+under Submission.
 
 ## Reference materials
 
