@@ -1,7 +1,5 @@
 # Tada AI · Data Normalization Take-Home
 
-**Seven calendar days · About 12–16 focused hours · AI assistance welcome**
-
 Build a local platform that normalizes company, employee, and payroll data from
 **PrismHR, isolved, and UKG Ready** into a consistent model. Discover the provider
 mappings, design your own canonical schemas and enums, generate synthetic test
@@ -30,8 +28,7 @@ your own fixtures rather than treating those samples as exhaustive contracts.
 
 **Reference status:** this repository is private. PrismHR's artifact license is
 retained, and the organizer has approved sharing this reference pack with candidates.
-The seven-day period begins with the organizer's approved handoff,
-scope, deadline, and timezone. Keep materials and submissions private and use the
+The organizer provides the handoff, scope, deadline, and timezone. Keep materials and submissions private and use the
 organizer-approved sharing channel and AI tools.
 
 Source history and evidence remain in the [reference audit](docs/REFERENCE_AUDIT.md),
