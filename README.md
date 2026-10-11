@@ -86,5 +86,14 @@ records out of Git and your submission.
 ## Submission
 
 Submit a link to your own repository containing everything needed to run your
-solution locally. Include a README explaining your approach, how you built it,
-and the steps to set up and run it.
+solution locally. Include:
+
+- A README explaining your approach, how you built it, and the steps to set up
+  and run it.
+- A Markdown file documenting your assumptions and decisions, with an explanation
+  of why you made them.
+
+If something fails, or data seems incorrect, inconsistent, or different from
+what you expected, you are free to make your own assumptions and decisions.
+Clearly document the issue, what you assumed or decided, and your reasoning in
+that Markdown file. Be prepared to explain those choices.
