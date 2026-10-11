@@ -83,42 +83,8 @@ tests deterministic and able to run locally without credentials or live services
 Use the demo accounts for inspection, and keep returned tokens and any downloaded
 records out of Git and your submission.
 
-## Suggested seven-day plan
-
-| Day | Focus |
-| --- | --- |
-| 1 | Inspect the approved inputs, discover endpoints, and record gaps. |
-| 2 | Design canonical schemas, enums, relationships, and precision policies. |
-| 3 | Build seeded fixture generation and schema validation. |
-| 4 | Implement the first provider end to end. |
-| 5 | Add the remaining providers. |
-| 6 | Test conversions, unknown values, relationships, and equivalence. |
-| 7 | Verify a clean-clone run and prepare the submission. |
-
-Timebox your work and record actual hours. Be clear about incomplete scope,
-priorities, and next steps.
-
 ## Submission
 
-Submit a private repository URL and exact commit SHA, or an archive if requested
-by the organizer. Include:
-
-- Updated README with setup, fixture generation, normalization, validation, and
-  test commands that work from a clean clone without live services.
-- Canonical schemas/enums and a concise explanation of design decisions.
-- Mapping evidence covering source endpoints/fields, codes, meanings, units,
-  canonical decisions, reference versions, and unresolved questions.
-- Seeded fixture generator, generation manifest, synthetic fixtures, and example
-  outputs produced by your implementation.
-- Meaningful transformation and boundary tests with results and uncovered cases.
-- Supported scope, hours spent, limitations, assumptions, and next steps.
-- Brief AI-use disclosure: tools used, meaningful assistance, verification, and
-  corrected assumptions. You remain responsible for the submitted work.
-- One end-to-end walkthrough and one ambiguous/invalid case. A short video is
-  optional; a written walkthrough is sufficient.
-
-Preserve source specifications and provenance; document any derivative changes.
-Do not include credentials or real employee/payroll data. Assessment focuses on
-semantic correctness, canonical model design, source evidence, tests,
-reproducibility, and clear engineering decisions. Passing the starter checks alone
-does not complete the assignment.
+Submit a link to your own repository containing everything needed to run your
+solution locally. Include a README explaining your approach, how you built it,
+and the steps to set up and run it.
