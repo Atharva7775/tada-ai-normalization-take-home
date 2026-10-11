@@ -28,9 +28,8 @@ sample payloads are retained as illustrative source examples; generate and valid
 your own fixtures rather than treating those samples as exhaustive contracts.
 
 **Reference status:** this repository is private. PrismHR's artifact license is
-retained. isolved and UKG materials were approved for private storage by the
-organizer; provider redistribution permission and candidate sharing remain
-unverified. The seven-day period begins with the organizer's approved handoff,
+retained, and the organizer has approved sharing this reference pack with candidates.
+The seven-day period begins with the organizer's approved handoff,
 scope, deadline, and timezone. Keep materials and submissions private and use the
 organizer-approved sharing channel and AI tools.
 
@@ -38,6 +37,50 @@ Source history and evidence remain in the [reference audit](docs/REFERENCE_AUDIT
 [isolved manifest](contracts/isolved/SOURCE_MANIFEST.json), and
 [UKG manifest](contracts/ukg-ready/SOURCE_MANIFEST.json). Attribution/modification
 notices and PrismHR's license stay alongside the specifications.
+
+## Access live demo data
+
+You can inspect live demo responses from all three providers to understand their
+data and validate mapping assumptions. The organizer supplies the **API key
+privately**; it is not included in this repository.
+
+Send `POST https://tada-demo-provider-signin.onrender.com/signin` with an
+`X-API-Key` header and a JSON body containing `tenant`:
+
+```sh
+curl -X POST 'https://tada-demo-provider-signin.onrender.com/signin' \
+  -H "X-API-Key: $DEMO_SIGNIN_API_KEY" \
+  -H 'Content-Type: application/json' \
+  -d '{"tenant":"ukg"}'
+```
+
+Set `DEMO_SIGNIN_API_KEY` locally to the key provided by the organizer. Change
+`tenant` to `prism`, `isol`, or `ukg` to select the corresponding demo account.
+
+| Tenant | Authentication returned | Demo identifiers returned |
+| --- | --- | --- |
+| `prism` | `auth.sessionId`; use it in the provider's `sessionId` header | `context.companies[].client_id` |
+| `isol` | `auth.access_token` and the refresh token when issued; use `Authorization: Bearer <access_token>` | `context.companies[].client_id` and `legal_id` |
+| `ukg` | `auth.access_token`; use `Authorization: Bearer <access_token>` | `context.companies[].company_id` |
+
+Each response also includes the provider's `base_url`, `tenant_id`, token expiry
+when supplied, and `usage.header_name` / `usage.header_prefix`. Use the returned
+authentication and identifiers with the provider endpoints in the reference
+materials. Retrieve company names, employees, and payroll records through those
+provider APIs; company names and employee/payroll records are not returned by
+the sign-in endpoint. Prism client IDs and isolved client/legal-entity IDs identify
+the seeded demo companies available for exploration.
+
+Call `/signin` again when authentication expires. A refresh token is returned
+only if the provider issues one; Prism uses a session ID. The hosted service may
+take longer on its first request after inactivity. See the
+[sign-in service README](https://github.com/Niwant/demo-provider-signin) for the
+response fields and error behavior.
+
+Live access is optional for discovery. Keep fixture generation and submitted
+tests deterministic and able to run locally without credentials or live services.
+Use the demo accounts for inspection, and keep returned tokens and any downloaded
+records out of Git and your submission.
 
 ## What to build
 
