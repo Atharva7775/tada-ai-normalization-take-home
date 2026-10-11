@@ -111,3 +111,17 @@ If something fails, or data seems incorrect, inconsistent, or different from
 what you expected, you are free to make your own assumptions and decisions.
 Clearly document the issue, what you assumed or decided, and your reasoning in
 that Markdown file. Be prepared to explain those choices.
+
+## Optional extension: write canonical data to a provider
+
+If you want to take the project further, add a write path that accepts canonical
+employee data and a destination tenant, such as UKG Ready or PrismHR. Map the
+canonical data into that provider's format and use its API to create or update
+the employee in the selected destination tenant. Explain which operations and
+fields you support, how you handle provider differences, and any assumptions
+or limitations. You can demonstrate the mapping with a dry run or use a demo
+tenant for the write.
+
+This is an open-ended project. Choose your own design, architecture, interfaces,
+and implementation approach. Build it in the way you think works best, and
+explain your decisions in your Markdown file.
