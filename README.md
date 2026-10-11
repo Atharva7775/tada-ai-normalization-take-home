@@ -122,6 +122,9 @@ fields you support, how you handle provider differences, and any assumptions
 or limitations. You can demonstrate the mapping with a dry run or use a demo
 tenant for the write.
 
-This is an open-ended project. Choose your own design, architecture, interfaces,
-and implementation approach. Build it in the way you think works best, and
-explain your decisions in your Markdown file.
+This is an open-ended project. You can build an end-to-end system or application,
+covering provider data access, normalization into your canonical model, and,
+if you choose, writing canonical employee data to a destination tenant. Choose
+your own design, architecture, interfaces, and implementation approach. Build
+it in the way you think works best, and explain your decisions in your Markdown
+file.
