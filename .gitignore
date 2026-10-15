@@ -13,3 +13,14 @@ htmlcov/
 node_modules/
 dist/
 build/
+
+# Downloaded live-demo records (README: keep these out of Git and the submission)
+live_demo_data.sql
+live_demo_data.db
+adapter_demo_run/
+canonical_prismhr_data.sql
+canonical_isolved_data.sql
+canonical_ukg_ready_data.sql
+canonical.db
+canonical_export.sql
+.synthetic_tmp_*/

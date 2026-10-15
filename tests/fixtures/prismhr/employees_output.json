@@ -1,0 +1,657 @@
+[
+  {
+    "id": "prismhr:employee:E90000",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "E90000"
+    },
+    "company_id": "prismhr:company:900",
+    "employee_number": "E90000",
+    "first_name": "Jordan",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1960-01-10",
+    "gender": "MALE",
+    "raw_gender": "M",
+    "marital_status": "MARRIED",
+    "raw_marital_status": "M",
+    "ssn_last4": null,
+    "contact": {
+      "email": "jordan.alvarez@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "181 Maple St",
+      "line2": null,
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78701",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "A",
+    "worker_type": null,
+    "raw_worker_type": "F",
+    "job_title": "WAREHOUSE",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2022-06-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "B",
+    "pay_rates": [
+      {
+        "basis": "SALARY",
+        "raw_basis": "S",
+        "amount": "48000.00",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "prismhr:directdeposit:E90000:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90000:0"
+        },
+        "account_type": "SAVINGS",
+        "raw_account_type": "S",
+        "bank_name": "Harbor National",
+        "routing_number_last4": "1153",
+        "account_number_last4": "4791",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "B",
+        "amount": null,
+        "percent": null,
+        "priority": null,
+        "status": "ACTIVE",
+        "raw_status": "D",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "prismhr:deduction:E90000:deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90000:deductions:0"
+        },
+        "code": "401k",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": "K",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": "4.0",
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "prismhr:deduction:E90000:voluntary_deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90000:voluntary_deductions:0"
+        },
+        "code": "MED",
+        "description": "Medical",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": "C",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": "35.0",
+        "percent": null,
+        "start_date": null,
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "prismhr:employee:E90001",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "E90001"
+    },
+    "company_id": "prismhr:company:900",
+    "employee_number": "E90001",
+    "first_name": "Priya",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1961-02-11",
+    "gender": "FEMALE",
+    "raw_gender": "F",
+    "marital_status": "SINGLE",
+    "raw_marital_status": "S",
+    "ssn_last4": null,
+    "contact": {
+      "email": "priya.okafor@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "809 Cedar Ave",
+      "line2": null,
+      "city": "Tampa",
+      "state": "FL",
+      "postal_code": "33602",
+      "country": "USA"
+    },
+    "employment_status": "TERMINATED",
+    "raw_employment_status": "T",
+    "worker_type": null,
+    "raw_worker_type": "F",
+    "job_title": "OFFICE",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2022-06-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": "Resigned",
+    "pay_frequency": null,
+    "raw_pay_frequency": "B",
+    "pay_rates": [
+      {
+        "basis": "HOURLY",
+        "raw_basis": "H",
+        "amount": "19.5000",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "prismhr:directdeposit:E90001:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90001:0"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "C",
+        "bank_name": "Lakeside Credit Union",
+        "routing_number_last4": "5717",
+        "account_number_last4": "7539",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "B",
+        "amount": null,
+        "percent": null,
+        "priority": null,
+        "status": "ACTIVE",
+        "raw_status": "D",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "prismhr:deduction:E90001:deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90001:deductions:0"
+        },
+        "code": "401k",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": "K",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": "4.0",
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "prismhr:deduction:E90001:voluntary_deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90001:voluntary_deductions:0"
+        },
+        "code": "MED",
+        "description": "Medical",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": "C",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": "35.0",
+        "percent": null,
+        "start_date": null,
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "prismhr:employee:E90002",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "E90002"
+    },
+    "company_id": "prismhr:company:900",
+    "employee_number": "E90002",
+    "first_name": "Marcus",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1962-03-12",
+    "gender": "MALE",
+    "raw_gender": "M",
+    "marital_status": "MARRIED",
+    "raw_marital_status": "M",
+    "ssn_last4": null,
+    "contact": {
+      "email": "marcus.alvarez@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "300 River Rd",
+      "line2": null,
+      "city": "Columbus",
+      "state": "OH",
+      "postal_code": "43215",
+      "country": "USA"
+    },
+    "employment_status": "ON_LEAVE",
+    "raw_employment_status": "L",
+    "worker_type": null,
+    "raw_worker_type": "F",
+    "job_title": "SALES",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2022-06-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "B",
+    "pay_rates": [
+      {
+        "basis": "SALARY",
+        "raw_basis": "S",
+        "amount": "50000.00",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "prismhr:directdeposit:E90002:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90002:0"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "C",
+        "bank_name": "Harbor National",
+        "routing_number_last4": "8874",
+        "account_number_last4": "5108",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "B",
+        "amount": null,
+        "percent": null,
+        "priority": null,
+        "status": "ACTIVE",
+        "raw_status": "D",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "prismhr:deduction:E90002:deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90002:deductions:0"
+        },
+        "code": "401k",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": "K",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": "4.0",
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "prismhr:deduction:E90002:voluntary_deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90002:voluntary_deductions:0"
+        },
+        "code": "MED",
+        "description": "Medical",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": "C",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": "35.0",
+        "percent": null,
+        "start_date": null,
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "prismhr:employee:E90003",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "E90003"
+    },
+    "company_id": "prismhr:company:900",
+    "employee_number": "E90003",
+    "first_name": "Elena",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1963-04-13",
+    "gender": "FEMALE",
+    "raw_gender": "F",
+    "marital_status": "SINGLE",
+    "raw_marital_status": "S",
+    "ssn_last4": null,
+    "contact": {
+      "email": "elena.okafor@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "117 Birch Ln",
+      "line2": null,
+      "city": "Spokane",
+      "state": "WA",
+      "postal_code": "99201",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "A",
+    "worker_type": null,
+    "raw_worker_type": "F",
+    "job_title": "SALES",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2022-06-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "B",
+    "pay_rates": [
+      {
+        "basis": "HOURLY",
+        "raw_basis": "H",
+        "amount": "21.5000",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [],
+    "deductions": []
+  },
+  {
+    "id": "prismhr:employee:E90004",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "E90004"
+    },
+    "company_id": "prismhr:company:900",
+    "employee_number": "E90004",
+    "first_name": "Kofi",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1964-05-14",
+    "gender": "MALE",
+    "raw_gender": "M",
+    "marital_status": "MARRIED",
+    "raw_marital_status": "M",
+    "ssn_last4": null,
+    "contact": {
+      "email": "kofi.alvarez@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "885 Harbor Dr",
+      "line2": null,
+      "city": "Charlotte",
+      "state": "NC",
+      "postal_code": "28202",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "A",
+    "worker_type": null,
+    "raw_worker_type": "F",
+    "job_title": "WAREHOUSE",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2022-06-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "B",
+    "pay_rates": [
+      {
+        "basis": "SALARY",
+        "raw_basis": "S",
+        "amount": "52000.00",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "prismhr:directdeposit:E90004:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90004:0"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "C",
+        "bank_name": "Lakeside Credit Union",
+        "routing_number_last4": "2941",
+        "account_number_last4": "1231",
+        "allocation_method": "FLAT_AMOUNT",
+        "raw_allocation_method": "F",
+        "amount": "250.0",
+        "percent": null,
+        "priority": null,
+        "status": "ACTIVE",
+        "raw_status": "D",
+        "effective_from": null,
+        "effective_to": null
+      },
+      {
+        "id": "prismhr:directdeposit:E90004:1",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90004:1"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "C",
+        "bank_name": "First Union Bank",
+        "routing_number_last4": "4761",
+        "account_number_last4": "1743",
+        "allocation_method": "PERCENT_OF_GROSS",
+        "raw_allocation_method": "P",
+        "amount": null,
+        "percent": "15.0",
+        "priority": null,
+        "status": "ACTIVE",
+        "raw_status": "D",
+        "effective_from": null,
+        "effective_to": null
+      },
+      {
+        "id": "prismhr:directdeposit:E90004:2",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90004:2"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "C",
+        "bank_name": "Lakeside Credit Union",
+        "routing_number_last4": "2657",
+        "account_number_last4": "8924",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "B",
+        "amount": null,
+        "percent": null,
+        "priority": null,
+        "status": "ACTIVE",
+        "raw_status": "D",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "prismhr:deduction:E90004:deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90004:deductions:0"
+        },
+        "code": "401k",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": "K",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": "6.0",
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "prismhr:employee:E90005",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "E90005"
+    },
+    "company_id": "prismhr:company:900",
+    "employee_number": "E90005",
+    "first_name": "Hannah",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1965-06-15",
+    "gender": "FEMALE",
+    "raw_gender": "F",
+    "marital_status": "SINGLE",
+    "raw_marital_status": "S",
+    "ssn_last4": null,
+    "contact": {
+      "email": "hannah.okafor@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "619 Union Way",
+      "line2": null,
+      "city": "Boise",
+      "state": "ID",
+      "postal_code": "83702",
+      "country": "USA"
+    },
+    "employment_status": "UNKNOWN",
+    "raw_employment_status": "Z",
+    "worker_type": null,
+    "raw_worker_type": "F",
+    "job_title": "OFFICE",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2022-06-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "B",
+    "pay_rates": [
+      {
+        "basis": "HOURLY",
+        "raw_basis": "H",
+        "amount": "23.5000",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "prismhr:directdeposit:E90005:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90005:0"
+        },
+        "account_type": "SAVINGS",
+        "raw_account_type": "S",
+        "bank_name": "First Union Bank",
+        "routing_number_last4": "5477",
+        "account_number_last4": "1968",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "B",
+        "amount": null,
+        "percent": null,
+        "priority": null,
+        "status": "ACTIVE",
+        "raw_status": "D",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "prismhr:deduction:E90005:deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90005:deductions:0"
+        },
+        "code": "401k",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": "K",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": "4.0",
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "prismhr:deduction:E90005:voluntary_deductions:0",
+        "source": {
+          "provider": "prismhr",
+          "raw_id": "E90005:voluntary_deductions:0"
+        },
+        "code": "MED",
+        "description": "Medical",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": "C",
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": "35.0",
+        "percent": null,
+        "start_date": null,
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  }
+]

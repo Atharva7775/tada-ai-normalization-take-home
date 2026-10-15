@@ -1,0 +1,821 @@
+[
+  {
+    "profile": {
+      "employee": [
+        {
+          "id": "E90000",
+          "lastName": "Alvarez",
+          "firstName": "Jordan",
+          "middleInitial": "",
+          "preferredName": "",
+          "person": {
+            "birthDate": "1960-01-10",
+            "gender": "M",
+            "maritalStatus": "M"
+          },
+          "contactInformation": {
+            "addressLine1": "181 Maple St",
+            "addressLine2": "",
+            "city": "Austin",
+            "state": "TX",
+            "zipcode": "78701",
+            "zipSuffix": "",
+            "county": "",
+            "schoolDistrict": "",
+            "homePhone": "",
+            "mobilePhone": "",
+            "emailAddress": "jordan.alvarez@example.com"
+          },
+          "client": {
+            "employeeStatus": "A",
+            "statusClass": "A",
+            "statusDate": "2024-01-01",
+            "employeeType": "FT",
+            "typeClass": "F",
+            "typeDate": "2024-01-01",
+            "jobCode": "WAREHOUSE",
+            "jobStartDate": "2022-06-01",
+            "firstHireDate": "2022-06-01",
+            "lastHireDate": "2022-06-01",
+            "flsaExempt": false,
+            "termReasonCode": "",
+            "termExplanation": ""
+          },
+          "compensation": {
+            "ssn": "***-**-****",
+            "payGroup": "WFRI",
+            "payPeriod": "B",
+            "payMethod": "S",
+            "standardHours": "40.00",
+            "hourlyPayRate": "18.5000",
+            "annualPay": "48000.00",
+            "effectiveDate": "2024-01-01"
+          },
+          "directDeposit": {
+            "achStatus": "A",
+            "voucherType": "RVS",
+            "suppressAccountPrint": false,
+            "achVoucher": [
+              {
+                "transitNum": "055201153",
+                "accountNum": "*4791",
+                "accountType": "S",
+                "method": "B",
+                "amount": null,
+                "limit": null,
+                "status": "D",
+                "bankName": "Harbor National",
+                "voucherTypeOverride": ""
+              }
+            ],
+            "directDepositChecksum": "456"
+          }
+        }
+      ],
+      "infoMessage": null,
+      "updateMessage": null,
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "ach_deductions": {
+      "achDeductionSettings": [],
+      "achChecksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "deductions": {
+      "employeeDeductions": {
+        "deduction": [
+          {
+            "deductionCode": "401k",
+            "deductionType": "K",
+            "deductionMethod": "K",
+            "description": "401k",
+            "usePercent": true,
+            "amount": 4.0,
+            "period": "12345",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "",
+            "startDate": "2023-01-01",
+            "stopDate": ""
+          }
+        ]
+      },
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "voluntary_deductions": {
+      "voluntaryDeduction": {
+        "deduction": [
+          {
+            "deductionCode": "MED",
+            "deductionType": "C",
+            "deductionMethod": "F",
+            "description": "Medical",
+            "usePercent": false,
+            "amount": 35.0,
+            "period": "1234",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "BCBS"
+          }
+        ]
+      },
+      "checksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "scheduled_deductions": {
+      "sessionId": "",
+      "clientId": "900",
+      "employeeId": "E90000",
+      "checksum": "0",
+      "scheduledDeduction": [],
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "client_id": "900"
+  },
+  {
+    "profile": {
+      "employee": [
+        {
+          "id": "E90001",
+          "lastName": "Okafor",
+          "firstName": "Priya",
+          "middleInitial": "",
+          "preferredName": "",
+          "person": {
+            "birthDate": "1961-02-11",
+            "gender": "F",
+            "maritalStatus": "S"
+          },
+          "contactInformation": {
+            "addressLine1": "809 Cedar Ave",
+            "addressLine2": "",
+            "city": "Tampa",
+            "state": "FL",
+            "zipcode": "33602",
+            "zipSuffix": "",
+            "county": "",
+            "schoolDistrict": "",
+            "homePhone": "",
+            "mobilePhone": "",
+            "emailAddress": "priya.okafor@example.com"
+          },
+          "client": {
+            "employeeStatus": "T",
+            "statusClass": "T",
+            "statusDate": "2024-01-01",
+            "employeeType": "FT",
+            "typeClass": "F",
+            "typeDate": "2024-01-01",
+            "jobCode": "OFFICE",
+            "jobStartDate": "2022-06-01",
+            "firstHireDate": "2022-06-01",
+            "lastHireDate": "2022-06-01",
+            "flsaExempt": false,
+            "termReasonCode": "VOL",
+            "termExplanation": "Resigned",
+            "termDate": "2024-11-15"
+          },
+          "compensation": {
+            "ssn": "***-**-****",
+            "payGroup": "WFRI",
+            "payPeriod": "B",
+            "payMethod": "H",
+            "standardHours": "40.00",
+            "hourlyPayRate": "19.5000",
+            "annualPay": "49000.00",
+            "effectiveDate": "2024-01-01"
+          },
+          "directDeposit": {
+            "achStatus": "A",
+            "voucherType": "RVS",
+            "suppressAccountPrint": false,
+            "achVoucher": [
+              {
+                "transitNum": "067755717",
+                "accountNum": "*7539",
+                "accountType": "C",
+                "method": "B",
+                "amount": null,
+                "limit": null,
+                "status": "D",
+                "bankName": "Lakeside Credit Union",
+                "voucherTypeOverride": ""
+              }
+            ],
+            "directDepositChecksum": "456"
+          }
+        }
+      ],
+      "infoMessage": null,
+      "updateMessage": null,
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "ach_deductions": {
+      "achDeductionSettings": [],
+      "achChecksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "deductions": {
+      "employeeDeductions": {
+        "deduction": [
+          {
+            "deductionCode": "401k",
+            "deductionType": "K",
+            "deductionMethod": "K",
+            "description": "401k",
+            "usePercent": true,
+            "amount": 4.0,
+            "period": "12345",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "",
+            "startDate": "2023-01-01",
+            "stopDate": ""
+          }
+        ]
+      },
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "voluntary_deductions": {
+      "voluntaryDeduction": {
+        "deduction": [
+          {
+            "deductionCode": "MED",
+            "deductionType": "C",
+            "deductionMethod": "F",
+            "description": "Medical",
+            "usePercent": false,
+            "amount": 35.0,
+            "period": "1234",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "BCBS"
+          }
+        ]
+      },
+      "checksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "scheduled_deductions": {
+      "sessionId": "",
+      "clientId": "900",
+      "employeeId": "E90001",
+      "checksum": "0",
+      "scheduledDeduction": [],
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "client_id": "900"
+  },
+  {
+    "profile": {
+      "employee": [
+        {
+          "id": "E90002",
+          "lastName": "Alvarez",
+          "firstName": "Marcus",
+          "middleInitial": "",
+          "preferredName": "",
+          "person": {
+            "birthDate": "1962-03-12",
+            "gender": "M",
+            "maritalStatus": "M"
+          },
+          "contactInformation": {
+            "addressLine1": "300 River Rd",
+            "addressLine2": "",
+            "city": "Columbus",
+            "state": "OH",
+            "zipcode": "43215",
+            "zipSuffix": "",
+            "county": "",
+            "schoolDistrict": "",
+            "homePhone": "",
+            "mobilePhone": "",
+            "emailAddress": "marcus.alvarez@example.com"
+          },
+          "client": {
+            "employeeStatus": "L",
+            "statusClass": "L",
+            "statusDate": "2024-01-01",
+            "employeeType": "FT",
+            "typeClass": "F",
+            "typeDate": "2024-01-01",
+            "jobCode": "SALES",
+            "jobStartDate": "2022-06-01",
+            "firstHireDate": "2022-06-01",
+            "lastHireDate": "2022-06-01",
+            "flsaExempt": false,
+            "termReasonCode": "",
+            "termExplanation": ""
+          },
+          "compensation": {
+            "ssn": "***-**-****",
+            "payGroup": "WFRI",
+            "payPeriod": "B",
+            "payMethod": "S",
+            "standardHours": "40.00",
+            "hourlyPayRate": "20.5000",
+            "annualPay": "50000.00",
+            "effectiveDate": "2024-01-01"
+          },
+          "directDeposit": {
+            "achStatus": "A",
+            "voucherType": "RVS",
+            "suppressAccountPrint": false,
+            "achVoucher": [
+              {
+                "transitNum": "048408874",
+                "accountNum": "*5108",
+                "accountType": "C",
+                "method": "B",
+                "amount": null,
+                "limit": null,
+                "status": "D",
+                "bankName": "Harbor National",
+                "voucherTypeOverride": ""
+              }
+            ],
+            "directDepositChecksum": "456"
+          }
+        }
+      ],
+      "infoMessage": null,
+      "updateMessage": null,
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "ach_deductions": {
+      "achDeductionSettings": [],
+      "achChecksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "deductions": {
+      "employeeDeductions": {
+        "deduction": [
+          {
+            "deductionCode": "401k",
+            "deductionType": "K",
+            "deductionMethod": "K",
+            "description": "401k",
+            "usePercent": true,
+            "amount": 4.0,
+            "period": "12345",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "",
+            "startDate": "2023-01-01",
+            "stopDate": ""
+          }
+        ]
+      },
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "voluntary_deductions": {
+      "voluntaryDeduction": {
+        "deduction": [
+          {
+            "deductionCode": "MED",
+            "deductionType": "C",
+            "deductionMethod": "F",
+            "description": "Medical",
+            "usePercent": false,
+            "amount": 35.0,
+            "period": "1234",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "BCBS"
+          }
+        ]
+      },
+      "checksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "scheduled_deductions": {
+      "sessionId": "",
+      "clientId": "900",
+      "employeeId": "E90002",
+      "checksum": "0",
+      "scheduledDeduction": [],
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "client_id": "900"
+  },
+  {
+    "profile": {
+      "employee": [
+        {
+          "id": "E90003",
+          "lastName": "Okafor",
+          "firstName": "Elena",
+          "middleInitial": "",
+          "preferredName": "",
+          "person": {
+            "birthDate": "1963-04-13",
+            "gender": "F",
+            "maritalStatus": "S"
+          },
+          "contactInformation": {
+            "addressLine1": "117 Birch Ln",
+            "addressLine2": "",
+            "city": "Spokane",
+            "state": "WA",
+            "zipcode": "99201",
+            "zipSuffix": "",
+            "county": "",
+            "schoolDistrict": "",
+            "homePhone": "",
+            "mobilePhone": "",
+            "emailAddress": "elena.okafor@example.com"
+          },
+          "client": {
+            "employeeStatus": "A",
+            "statusClass": "A",
+            "statusDate": "2024-01-01",
+            "employeeType": "FT",
+            "typeClass": "F",
+            "typeDate": "2024-01-01",
+            "jobCode": "SALES",
+            "jobStartDate": "2022-06-01",
+            "firstHireDate": "2022-06-01",
+            "lastHireDate": "2022-06-01",
+            "flsaExempt": false,
+            "termReasonCode": "",
+            "termExplanation": ""
+          },
+          "compensation": {
+            "ssn": "***-**-****",
+            "payGroup": "WFRI",
+            "payPeriod": "B",
+            "payMethod": "H",
+            "standardHours": "40.00",
+            "hourlyPayRate": "21.5000",
+            "annualPay": "51000.00",
+            "effectiveDate": "2024-01-01"
+          },
+          "directDeposit": {
+            "achStatus": "I",
+            "voucherType": "RVS",
+            "suppressAccountPrint": false,
+            "achVoucher": [],
+            "directDepositChecksum": "0"
+          }
+        }
+      ],
+      "infoMessage": null,
+      "updateMessage": null,
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "ach_deductions": {
+      "achDeductionSettings": [],
+      "achChecksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "deductions": {
+      "employeeDeductions": {
+        "deduction": []
+      },
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "voluntary_deductions": {
+      "voluntaryDeduction": {
+        "deduction": []
+      },
+      "checksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "scheduled_deductions": {
+      "sessionId": "",
+      "clientId": "900",
+      "employeeId": "E90003",
+      "checksum": "0",
+      "scheduledDeduction": [],
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "client_id": "900"
+  },
+  {
+    "profile": {
+      "employee": [
+        {
+          "id": "E90004",
+          "lastName": "Alvarez",
+          "firstName": "Kofi",
+          "middleInitial": "",
+          "preferredName": "",
+          "person": {
+            "birthDate": "1964-05-14",
+            "gender": "M",
+            "maritalStatus": "M"
+          },
+          "contactInformation": {
+            "addressLine1": "885 Harbor Dr",
+            "addressLine2": "",
+            "city": "Charlotte",
+            "state": "NC",
+            "zipcode": "28202",
+            "zipSuffix": "",
+            "county": "",
+            "schoolDistrict": "",
+            "homePhone": "",
+            "mobilePhone": "",
+            "emailAddress": "kofi.alvarez@example.com"
+          },
+          "client": {
+            "employeeStatus": "A",
+            "statusClass": "A",
+            "statusDate": "2024-01-01",
+            "employeeType": "FT",
+            "typeClass": "F",
+            "typeDate": "2024-01-01",
+            "jobCode": "WAREHOUSE",
+            "jobStartDate": "2022-06-01",
+            "firstHireDate": "2022-06-01",
+            "lastHireDate": "2022-06-01",
+            "flsaExempt": false,
+            "termReasonCode": "",
+            "termExplanation": ""
+          },
+          "compensation": {
+            "ssn": "***-**-****",
+            "payGroup": "WFRI",
+            "payPeriod": "B",
+            "payMethod": "S",
+            "standardHours": "40.00",
+            "hourlyPayRate": "22.5000",
+            "annualPay": "52000.00",
+            "effectiveDate": "2024-01-01"
+          },
+          "directDeposit": {
+            "achStatus": "A",
+            "voucherType": "RVS",
+            "suppressAccountPrint": false,
+            "achVoucher": [
+              {
+                "transitNum": "083752941",
+                "accountNum": "*1231",
+                "accountType": "C",
+                "method": "F",
+                "amount": 250.0,
+                "limit": null,
+                "status": "D",
+                "bankName": "Lakeside Credit Union",
+                "voucherTypeOverride": ""
+              },
+              {
+                "transitNum": "031734761",
+                "accountNum": "*1743",
+                "accountType": "C",
+                "method": "P",
+                "amount": null,
+                "limit": 15.0,
+                "status": "D",
+                "bankName": "First Union Bank",
+                "voucherTypeOverride": ""
+              },
+              {
+                "transitNum": "099562657",
+                "accountNum": "*8924",
+                "accountType": "C",
+                "method": "B",
+                "amount": null,
+                "limit": null,
+                "status": "D",
+                "bankName": "Lakeside Credit Union",
+                "voucherTypeOverride": ""
+              }
+            ],
+            "directDepositChecksum": "123"
+          }
+        }
+      ],
+      "infoMessage": null,
+      "updateMessage": null,
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "ach_deductions": {
+      "achDeductionSettings": [],
+      "achChecksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "deductions": {
+      "employeeDeductions": {
+        "deduction": [
+          {
+            "deductionCode": "401k",
+            "deductionType": "K",
+            "deductionMethod": "K",
+            "description": "401k",
+            "usePercent": true,
+            "amount": 6.0,
+            "period": "12345",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "",
+            "startDate": "2023-01-01",
+            "stopDate": ""
+          }
+        ]
+      },
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "voluntary_deductions": {
+      "voluntaryDeduction": {
+        "deduction": []
+      },
+      "checksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "scheduled_deductions": {
+      "sessionId": "",
+      "clientId": "900",
+      "employeeId": "E90004",
+      "checksum": "0",
+      "scheduledDeduction": [],
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "client_id": "900"
+  },
+  {
+    "profile": {
+      "employee": [
+        {
+          "id": "E90005",
+          "lastName": "Okafor",
+          "firstName": "Hannah",
+          "middleInitial": "",
+          "preferredName": "",
+          "person": {
+            "birthDate": "1965-06-15",
+            "gender": "F",
+            "maritalStatus": "S"
+          },
+          "contactInformation": {
+            "addressLine1": "619 Union Way",
+            "addressLine2": "",
+            "city": "Boise",
+            "state": "ID",
+            "zipcode": "83702",
+            "zipSuffix": "",
+            "county": "",
+            "schoolDistrict": "",
+            "homePhone": "",
+            "mobilePhone": "",
+            "emailAddress": "hannah.okafor@example.com"
+          },
+          "client": {
+            "employeeStatus": "Z",
+            "statusClass": "Z",
+            "statusDate": "2024-01-01",
+            "employeeType": "FT",
+            "typeClass": "F",
+            "typeDate": "2024-01-01",
+            "jobCode": "OFFICE",
+            "jobStartDate": "2022-06-01",
+            "firstHireDate": "2022-06-01",
+            "lastHireDate": "2022-06-01",
+            "flsaExempt": false,
+            "termReasonCode": "",
+            "termExplanation": ""
+          },
+          "compensation": {
+            "ssn": "***-**-****",
+            "payGroup": "WFRI",
+            "payPeriod": "B",
+            "payMethod": "H",
+            "standardHours": "40.00",
+            "hourlyPayRate": "23.5000",
+            "annualPay": "53000.00",
+            "effectiveDate": "2024-01-01"
+          },
+          "directDeposit": {
+            "achStatus": "A",
+            "voucherType": "RVS",
+            "suppressAccountPrint": false,
+            "achVoucher": [
+              {
+                "transitNum": "088925477",
+                "accountNum": "*1968",
+                "accountType": "S",
+                "method": "B",
+                "amount": null,
+                "limit": null,
+                "status": "D",
+                "bankName": "First Union Bank",
+                "voucherTypeOverride": ""
+              }
+            ],
+            "directDepositChecksum": "456"
+          }
+        }
+      ],
+      "infoMessage": null,
+      "updateMessage": null,
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "ach_deductions": {
+      "achDeductionSettings": [],
+      "achChecksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "deductions": {
+      "employeeDeductions": {
+        "deduction": [
+          {
+            "deductionCode": "401k",
+            "deductionType": "K",
+            "deductionMethod": "K",
+            "description": "401k",
+            "usePercent": true,
+            "amount": 4.0,
+            "period": "12345",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "",
+            "startDate": "2023-01-01",
+            "stopDate": ""
+          }
+        ]
+      },
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "voluntary_deductions": {
+      "voluntaryDeduction": {
+        "deduction": [
+          {
+            "deductionCode": "MED",
+            "deductionType": "C",
+            "deductionMethod": "F",
+            "description": "Medical",
+            "usePercent": false,
+            "amount": 35.0,
+            "period": "1234",
+            "loanOrGarnishId": "",
+            "benefitPlanId": "BCBS"
+          }
+        ]
+      },
+      "checksum": "0",
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "scheduled_deductions": {
+      "sessionId": "",
+      "clientId": "900",
+      "employeeId": "E90005",
+      "checksum": "0",
+      "scheduledDeduction": [],
+      "errorCode": "0",
+      "errorMessage": "",
+      "extension": null
+    },
+    "client_id": "900"
+  }
+]

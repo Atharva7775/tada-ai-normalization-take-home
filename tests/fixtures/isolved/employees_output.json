@@ -1,0 +1,654 @@
+[
+  {
+    "id": "isolved:employee:900100",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "900100"
+    },
+    "company_id": "isolved:company:9000",
+    "employee_number": "1000",
+    "first_name": "Jordan",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1960-01-10",
+    "gender": "MALE",
+    "raw_gender": "Male",
+    "marital_status": "MARRIED",
+    "raw_marital_status": "Married",
+    "ssn_last4": "1000",
+    "contact": {
+      "email": "jordan.alvarez@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "529 Maple St",
+      "line2": null,
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78701",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "Active",
+    "worker_type": null,
+    "raw_worker_type": "FT",
+    "job_title": "Technician",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2021-03-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "24",
+    "pay_rates": [
+      {
+        "basis": "SALARY",
+        "raw_basis": "Salary",
+        "amount": "55000.0",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "isolved:directdeposit:700002",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "700002"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "Checking",
+        "bank_name": "Lakeshore Federal",
+        "routing_number_last4": "9094",
+        "account_number_last4": "3409",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": null,
+        "amount": null,
+        "percent": null,
+        "priority": 0,
+        "status": "ACTIVE",
+        "raw_status": "Active",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "isolved:deduction:payitem:900100:800000",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800000"
+        },
+        "code": "401K",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "isolved:deduction:payitem:900100:800001",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800001"
+        },
+        "code": "DEN",
+        "description": "Dental Pre-tax",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "isolved:employee:900101",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "900101"
+    },
+    "company_id": "isolved:company:9000",
+    "employee_number": "1001",
+    "first_name": "Priya",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1961-02-11",
+    "gender": "FEMALE",
+    "raw_gender": "Female",
+    "marital_status": "SINGLE",
+    "raw_marital_status": "Single",
+    "ssn_last4": "1001",
+    "contact": {
+      "email": "priya.okafor@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "718 Cedar Ave",
+      "line2": null,
+      "city": "Tampa",
+      "state": "FL",
+      "postal_code": "33602",
+      "country": "USA"
+    },
+    "employment_status": "TERMINATED",
+    "raw_employment_status": "Terminated",
+    "worker_type": null,
+    "raw_worker_type": "FT",
+    "job_title": "Technician",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2021-03-01",
+    "rehire_date": null,
+    "termination_date": "2024-10-01",
+    "termination_reason": "Resignation",
+    "pay_frequency": null,
+    "raw_pay_frequency": "24",
+    "pay_rates": [
+      {
+        "basis": "HOURLY",
+        "raw_basis": "Hourly",
+        "amount": "23.5",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "isolved:directdeposit:700003",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "700003"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "Checking",
+        "bank_name": "Lakeshore Federal",
+        "routing_number_last4": "7770",
+        "account_number_last4": "2490",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": null,
+        "amount": null,
+        "percent": null,
+        "priority": 0,
+        "status": "ACTIVE",
+        "raw_status": "Active",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "isolved:deduction:payitem:900101:800001",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800001"
+        },
+        "code": "401K",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "isolved:deduction:payitem:900101:800002",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800002"
+        },
+        "code": "DEN",
+        "description": "Dental Pre-tax",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "isolved:employee:900102",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "900102"
+    },
+    "company_id": "isolved:company:9000",
+    "employee_number": "1002",
+    "first_name": "Marcus",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1962-03-12",
+    "gender": "MALE",
+    "raw_gender": "Male",
+    "marital_status": "MARRIED",
+    "raw_marital_status": "Married",
+    "ssn_last4": "1002",
+    "contact": {
+      "email": "marcus.alvarez@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "664 River Rd",
+      "line2": null,
+      "city": "Columbus",
+      "state": "OH",
+      "postal_code": "43215",
+      "country": "USA"
+    },
+    "employment_status": "UNKNOWN",
+    "raw_employment_status": "Inactive",
+    "worker_type": null,
+    "raw_worker_type": "FT",
+    "job_title": "Technician",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2021-03-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "24",
+    "pay_rates": [
+      {
+        "basis": "SALARY",
+        "raw_basis": "Salary",
+        "amount": "57000.0",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "isolved:directdeposit:700004",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "700004"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "Checking",
+        "bank_name": "Lakeshore Federal",
+        "routing_number_last4": "1526",
+        "account_number_last4": "7758",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": null,
+        "amount": null,
+        "percent": null,
+        "priority": 0,
+        "status": "ACTIVE",
+        "raw_status": "Active",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "isolved:deduction:payitem:900102:800002",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800002"
+        },
+        "code": "401K",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "isolved:deduction:payitem:900102:800003",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800003"
+        },
+        "code": "DEN",
+        "description": "Dental Pre-tax",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "isolved:employee:900103",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "900103"
+    },
+    "company_id": "isolved:company:9000",
+    "employee_number": "1003",
+    "first_name": "Elena",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1963-04-13",
+    "gender": "FEMALE",
+    "raw_gender": "Female",
+    "marital_status": "SINGLE",
+    "raw_marital_status": "Single",
+    "ssn_last4": "1003",
+    "contact": {
+      "email": "elena.okafor@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "236 Birch Ln",
+      "line2": null,
+      "city": "Spokane",
+      "state": "WA",
+      "postal_code": "99201",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "Active",
+    "worker_type": null,
+    "raw_worker_type": "FT",
+    "job_title": "Accountant",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2021-03-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "24",
+    "pay_rates": [
+      {
+        "basis": "HOURLY",
+        "raw_basis": "Hourly",
+        "amount": "25.5",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [],
+    "deductions": []
+  },
+  {
+    "id": "isolved:employee:900104",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "900104"
+    },
+    "company_id": "isolved:company:9000",
+    "employee_number": "1004",
+    "first_name": "Kofi",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1964-05-14",
+    "gender": "MALE",
+    "raw_gender": "Male",
+    "marital_status": "MARRIED",
+    "raw_marital_status": "Married",
+    "ssn_last4": "1004",
+    "contact": {
+      "email": "kofi.alvarez@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "773 Harbor Dr",
+      "line2": null,
+      "city": "Charlotte",
+      "state": "NC",
+      "postal_code": "28202",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "Active",
+    "worker_type": null,
+    "raw_worker_type": "FT",
+    "job_title": "Accountant",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2021-03-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "24",
+    "pay_rates": [
+      {
+        "basis": "SALARY",
+        "raw_basis": "Salary",
+        "amount": "59000.0",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "isolved:directdeposit:700004",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "700004"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "Checking",
+        "bank_name": "Lakeshore Federal",
+        "routing_number_last4": "1268",
+        "account_number_last4": "4810",
+        "allocation_method": "FLAT_AMOUNT",
+        "raw_allocation_method": null,
+        "amount": "300.0",
+        "percent": null,
+        "priority": 0,
+        "status": "ACTIVE",
+        "raw_status": "Active",
+        "effective_from": null,
+        "effective_to": null
+      },
+      {
+        "id": "isolved:directdeposit:700005",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "700005"
+        },
+        "account_type": "SAVINGS",
+        "raw_account_type": "Savings",
+        "bank_name": "Pioneer Trust",
+        "routing_number_last4": "9240",
+        "account_number_last4": "9661",
+        "allocation_method": "PERCENT_OF_GROSS",
+        "raw_allocation_method": null,
+        "amount": null,
+        "percent": "10.0",
+        "priority": 1,
+        "status": "ACTIVE",
+        "raw_status": "Active",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "isolved:deduction:payitem:900104:800004",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800004"
+        },
+        "code": "401K",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "isolved:deduction:payitem:900104:800005",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800005"
+        },
+        "code": "DEN",
+        "description": "Dental Pre-tax",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  },
+  {
+    "id": "isolved:employee:900105",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "900105"
+    },
+    "company_id": "isolved:company:9000",
+    "employee_number": "1005",
+    "first_name": "Hannah",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1965-06-15",
+    "gender": "FEMALE",
+    "raw_gender": "Female",
+    "marital_status": "SINGLE",
+    "raw_marital_status": "Single",
+    "ssn_last4": "1005",
+    "contact": {
+      "email": "hannah.okafor@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "364 Union Way",
+      "line2": null,
+      "city": "Boise",
+      "state": "ID",
+      "postal_code": "83702",
+      "country": "USA"
+    },
+    "employment_status": "UNKNOWN",
+    "raw_employment_status": "Pending Review",
+    "worker_type": null,
+    "raw_worker_type": "FT",
+    "job_title": "Accountant",
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2021-03-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": "24",
+    "pay_rates": [
+      {
+        "basis": "HOURLY",
+        "raw_basis": "Hourly",
+        "amount": "27.5",
+        "effective_date": "2024-01-01"
+      }
+    ],
+    "direct_deposits": [
+      {
+        "id": "isolved:directdeposit:700007",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "700007"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "Checking",
+        "bank_name": "Pioneer Trust",
+        "routing_number_last4": "0534",
+        "account_number_last4": "6446",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": null,
+        "amount": null,
+        "percent": null,
+        "priority": 0,
+        "status": "ACTIVE",
+        "raw_status": "Active",
+        "effective_from": null,
+        "effective_to": null
+      }
+    ],
+    "deductions": [
+      {
+        "id": "isolved:deduction:payitem:900105:800005",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800005"
+        },
+        "code": "401K",
+        "description": "401k",
+        "category": "RETIREMENT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      },
+      {
+        "id": "isolved:deduction:payitem:900105:800006",
+        "source": {
+          "provider": "isolved",
+          "raw_id": "800006"
+        },
+        "code": "DEN",
+        "description": "Dental Pre-tax",
+        "category": "PRETAX_BENEFIT",
+        "raw_category": null,
+        "calc_method": "OTHER",
+        "raw_calc_method": null,
+        "amount": null,
+        "percent": null,
+        "start_date": "2023-01-01",
+        "stop_date": null,
+        "is_active": null
+      }
+    ]
+  }
+]

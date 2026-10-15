@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ukg-ready:company:990001",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990001"
+    },
+    "name": null,
+    "legal_name": null,
+    "tax_id": null,
+    "status": "OTHER",
+    "raw_status": null,
+    "address": null
+  },
+  {
+    "id": "ukg-ready:company:990002",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990002"
+    },
+    "name": null,
+    "legal_name": null,
+    "tax_id": null,
+    "status": "OTHER",
+    "raw_status": null,
+    "address": null
+  }
+]

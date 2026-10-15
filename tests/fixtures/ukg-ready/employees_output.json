@@ -1,0 +1,448 @@
+[
+  {
+    "id": "ukg-ready:employee:990100",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990100"
+    },
+    "company_id": "ukg-ready:company:990001",
+    "employee_number": "100",
+    "first_name": "Jordan",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1960-01-10",
+    "gender": null,
+    "raw_gender": null,
+    "marital_status": null,
+    "raw_marital_status": null,
+    "ssn_last4": "1000",
+    "contact": {
+      "email": "jordan@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "773 Maple St",
+      "line2": null,
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78701",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "Active",
+    "worker_type": null,
+    "raw_worker_type": null,
+    "job_title": null,
+    "department": null,
+    "manager_employee_id": null,
+    "hire_date": "2020-05-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": null,
+    "pay_rates": [],
+    "direct_deposits": [
+      {
+        "id": "ukg-ready:directdeposit:600003",
+        "source": {
+          "provider": "ukg-ready",
+          "raw_id": "600003"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "CHECKING",
+        "bank_name": null,
+        "routing_number_last4": "2568",
+        "account_number_last4": "7614",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "FULL",
+        "amount": null,
+        "percent": null,
+        "priority": 1,
+        "status": "ACTIVE",
+        "raw_status": "True",
+        "effective_from": "2023-01-01",
+        "effective_to": "2099-12-31"
+      }
+    ],
+    "deductions": []
+  },
+  {
+    "id": "ukg-ready:employee:990101",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990101"
+    },
+    "company_id": "ukg-ready:company:990001",
+    "employee_number": "101",
+    "first_name": "Priya",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1961-02-11",
+    "gender": null,
+    "raw_gender": null,
+    "marital_status": null,
+    "raw_marital_status": null,
+    "ssn_last4": "1001",
+    "contact": {
+      "email": "priya@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "390 Cedar Ave",
+      "line2": null,
+      "city": "Tampa",
+      "state": "FL",
+      "postal_code": "33602",
+      "country": "USA"
+    },
+    "employment_status": "TERMINATED",
+    "raw_employment_status": "Terminated",
+    "worker_type": null,
+    "raw_worker_type": null,
+    "job_title": null,
+    "department": null,
+    "manager_employee_id": "990100",
+    "hire_date": "2020-05-01",
+    "rehire_date": null,
+    "termination_date": "2024-09-30",
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": null,
+    "pay_rates": [],
+    "direct_deposits": [
+      {
+        "id": "ukg-ready:directdeposit:600004",
+        "source": {
+          "provider": "ukg-ready",
+          "raw_id": "600004"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "CHECKING",
+        "bank_name": null,
+        "routing_number_last4": "9688",
+        "account_number_last4": "7959",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "FULL",
+        "amount": null,
+        "percent": null,
+        "priority": 1,
+        "status": "ACTIVE",
+        "raw_status": "True",
+        "effective_from": "2023-01-01",
+        "effective_to": "2099-12-31"
+      }
+    ],
+    "deductions": []
+  },
+  {
+    "id": "ukg-ready:employee:990102",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990102"
+    },
+    "company_id": "ukg-ready:company:990001",
+    "employee_number": "102",
+    "first_name": "Marcus",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1962-03-12",
+    "gender": null,
+    "raw_gender": null,
+    "marital_status": null,
+    "raw_marital_status": null,
+    "ssn_last4": "1002",
+    "contact": {
+      "email": "marcus@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "303 River Rd",
+      "line2": null,
+      "city": "Columbus",
+      "state": "OH",
+      "postal_code": "43215",
+      "country": "USA"
+    },
+    "employment_status": "UNKNOWN",
+    "raw_employment_status": "Leave of Absence",
+    "worker_type": null,
+    "raw_worker_type": null,
+    "job_title": null,
+    "department": null,
+    "manager_employee_id": "990100",
+    "hire_date": "2020-05-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": null,
+    "pay_rates": [],
+    "direct_deposits": [
+      {
+        "id": "ukg-ready:directdeposit:600005",
+        "source": {
+          "provider": "ukg-ready",
+          "raw_id": "600005"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "CHECKING",
+        "bank_name": null,
+        "routing_number_last4": "2909",
+        "account_number_last4": "3256",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "FULL",
+        "amount": null,
+        "percent": null,
+        "priority": 1,
+        "status": "ACTIVE",
+        "raw_status": "True",
+        "effective_from": "2023-01-01",
+        "effective_to": "2099-12-31"
+      }
+    ],
+    "deductions": []
+  },
+  {
+    "id": "ukg-ready:employee:990103",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990103"
+    },
+    "company_id": "ukg-ready:company:990001",
+    "employee_number": "103",
+    "first_name": "Elena",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1963-04-13",
+    "gender": null,
+    "raw_gender": null,
+    "marital_status": null,
+    "raw_marital_status": null,
+    "ssn_last4": "1003",
+    "contact": {
+      "email": "elena@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "231 Birch Ln",
+      "line2": null,
+      "city": "Spokane",
+      "state": "WA",
+      "postal_code": "99201",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "Active",
+    "worker_type": null,
+    "raw_worker_type": null,
+    "job_title": null,
+    "department": null,
+    "manager_employee_id": "990100",
+    "hire_date": "2020-05-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": null,
+    "pay_rates": [],
+    "direct_deposits": [],
+    "deductions": []
+  },
+  {
+    "id": "ukg-ready:employee:990104",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990104"
+    },
+    "company_id": "ukg-ready:company:990001",
+    "employee_number": "104",
+    "first_name": "Kofi",
+    "last_name": "Alvarez",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1964-05-14",
+    "gender": null,
+    "raw_gender": null,
+    "marital_status": null,
+    "raw_marital_status": null,
+    "ssn_last4": "1004",
+    "contact": {
+      "email": "kofi@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "760 Harbor Dr",
+      "line2": null,
+      "city": "Charlotte",
+      "state": "NC",
+      "postal_code": "28202",
+      "country": "USA"
+    },
+    "employment_status": "ACTIVE",
+    "raw_employment_status": "Active",
+    "worker_type": null,
+    "raw_worker_type": null,
+    "job_title": null,
+    "department": null,
+    "manager_employee_id": "990100",
+    "hire_date": "2020-05-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": null,
+    "pay_rates": [],
+    "direct_deposits": [
+      {
+        "id": "ukg-ready:directdeposit:600004",
+        "source": {
+          "provider": "ukg-ready",
+          "raw_id": "600004"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "CHECKING",
+        "bank_name": null,
+        "routing_number_last4": "2700",
+        "account_number_last4": "5082",
+        "allocation_method": "FLAT_AMOUNT",
+        "raw_allocation_method": "FLAT_AMOUNT",
+        "amount": "400.0",
+        "percent": null,
+        "priority": 1,
+        "status": "ACTIVE",
+        "raw_status": "True",
+        "effective_from": "2023-01-01",
+        "effective_to": "2099-12-31"
+      },
+      {
+        "id": "ukg-ready:directdeposit:600005",
+        "source": {
+          "provider": "ukg-ready",
+          "raw_id": "600005"
+        },
+        "account_type": "SAVINGS",
+        "raw_account_type": "SAVINGS",
+        "bank_name": null,
+        "routing_number_last4": "6282",
+        "account_number_last4": "7747",
+        "allocation_method": "PERCENT_OF_NET",
+        "raw_allocation_method": "NET_PAY",
+        "amount": null,
+        "percent": "10.0",
+        "priority": 2,
+        "status": "ACTIVE",
+        "raw_status": "True",
+        "effective_from": "2023-01-01",
+        "effective_to": "2099-12-31"
+      },
+      {
+        "id": "ukg-ready:directdeposit:600006",
+        "source": {
+          "provider": "ukg-ready",
+          "raw_id": "600006"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "CHECKING",
+        "bank_name": null,
+        "routing_number_last4": "2812",
+        "account_number_last4": "7180",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "FULL",
+        "amount": null,
+        "percent": null,
+        "priority": 3,
+        "status": "ACTIVE",
+        "raw_status": "True",
+        "effective_from": "2023-01-01",
+        "effective_to": "2099-12-31"
+      }
+    ],
+    "deductions": []
+  },
+  {
+    "id": "ukg-ready:employee:990105",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "990105"
+    },
+    "company_id": "ukg-ready:company:990001",
+    "employee_number": "105",
+    "first_name": "Hannah",
+    "last_name": "Okafor",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": "1965-06-15",
+    "gender": null,
+    "raw_gender": null,
+    "marital_status": null,
+    "raw_marital_status": null,
+    "ssn_last4": "1005",
+    "contact": {
+      "email": "hannah@example.com",
+      "mobile_phone": null,
+      "home_phone": null,
+      "work_phone": null
+    },
+    "address": {
+      "line1": "290 Union Way",
+      "line2": null,
+      "city": "Boise",
+      "state": "ID",
+      "postal_code": "83702",
+      "country": "USA"
+    },
+    "employment_status": "UNKNOWN",
+    "raw_employment_status": "Furloughed",
+    "worker_type": null,
+    "raw_worker_type": null,
+    "job_title": null,
+    "department": null,
+    "manager_employee_id": "990100",
+    "hire_date": "2020-05-01",
+    "rehire_date": null,
+    "termination_date": null,
+    "termination_reason": null,
+    "pay_frequency": null,
+    "raw_pay_frequency": null,
+    "pay_rates": [],
+    "direct_deposits": [
+      {
+        "id": "ukg-ready:directdeposit:600008",
+        "source": {
+          "provider": "ukg-ready",
+          "raw_id": "600008"
+        },
+        "account_type": "CHECKING",
+        "raw_account_type": "CHECKING",
+        "bank_name": null,
+        "routing_number_last4": "4672",
+        "account_number_last4": "6586",
+        "allocation_method": "REMAINING_BALANCE",
+        "raw_allocation_method": "FULL",
+        "amount": null,
+        "percent": null,
+        "priority": 1,
+        "status": "ACTIVE",
+        "raw_status": "True",
+        "effective_from": "2023-01-01",
+        "effective_to": "2099-12-31"
+      }
+    ],
+    "deductions": []
+  }
+]

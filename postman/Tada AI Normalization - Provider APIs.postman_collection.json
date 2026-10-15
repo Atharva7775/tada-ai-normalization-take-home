@@ -1,0 +1,2132 @@
+{
+  "info": {
+    "_postman_id": "c88a95c6-1434-4886-8870-a1088d2df839",
+    "name": "Tada AI Normalization - Provider APIs (PrismHR, isolved, UKG Ready)",
+    "description": "Exploratory requests against the three take-home providers' live demo APIs, fronted by the organizer's demo-provider-signin service. Covers the four data types from the take-home: company/employee data, direct deposits, deductions, and payroll data.\n\nEvery request's Tests tab checks more than HTTP status: it verifies the body is JSON (not an HTML error page), checks PrismHR's embedded errorCode on responses that return 200 even on business errors, and asserts the documented response field actually contains the right shape of data. Run the whole collection with Postman's Collection Runner (or Newman) and the results view tells you exactly which provider/endpoint is broken and at which layer (auth, routing, or data).\n\nSetup:\n1. Import this collection and the companion environment file (Tada AI Normalization - Demo.postman_environment.json).\n2. Select that environment in Postman's environment dropdown.\n3. Set demo_signin_api_key to the key the organizer gave you privately (never commit it).\n4. Run the three requests in '0 - Sign In' once - their Tests scripts populate every other variable this collection needs.\n5. Run requests inside the PrismHR / isolved / UKG Ready folders top-to-bottom; each folder's early requests auto-save the ids its later requests depend on.\n\nSee postman/TESTING_FLOW.md in the repo for the full walkthrough, expected responses, token-refresh notes, and troubleshooting.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0 - Sign In (run these first)",
+      "description": "Obtains short-lived credentials from the organizer-provided demo-provider-signin service for each of the three tenants. Each request's Tests tab asserts the response shape explicitly (so a missing field fails loudly here instead of causing a confusing failure three requests later) and auto-saves the token, base_url, and demo company identifiers into this environment. Run all three once per session, and again whenever a token expires, before using the provider folders below.",
+      "item": [
+        {
+          "name": "Sign In - PrismHR (tenant=prism)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{demo_signin_api_key}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{signin_base_url}}/signin",
+              "host": [
+                "{{signin_base_url}}"
+              ],
+              "path": [
+                "signin"
+              ]
+            },
+            "description": "Returns auth.sessionId plus context.companies[].client_id for the PrismHR demo tenant.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tenant\": \"prism\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"PrismHR sign-in: sign-in returned HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"PrismHR sign-in: response body is JSON\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"PrismHR sign-in: sessionId is present\", function () {",
+                  "        pm.expect(data.auth, \"auth object\").to.exist;",
+                  "        pm.expect(data.auth.sessionId, \"auth.sessionId\").to.exist;",
+                  "    });",
+                  "    if (data.auth && data.auth.sessionId) {",
+                  "        pm.environment.set(\"prismhr_session_id\", data.auth.sessionId);",
+                  "    }",
+                  "",
+                  "    pm.test(\"PrismHR sign-in: base_url is present\", function () {",
+                  "        pm.expect(data.base_url, \"base_url\").to.exist;",
+                  "    });",
+                  "    if (data.base_url) {",
+                  "        pm.environment.set(\"prismhr_base_url\", data.base_url);",
+                  "    }",
+                  "",
+                  "    pm.test(\"PrismHR sign-in: context.companies[0] is present\", function () {",
+                  "        pm.expect(data.context, \"context\").to.exist;",
+                  "        pm.expect(data.context.companies, \"context.companies\").to.be.an(\"array\").with.length.above(0);",
+                  "    });",
+                  "    if (data.context && data.context.companies && data.context.companies.length) {",
+                  "        var company = data.context.companies[0];",
+                  "        if (company.client_id !== undefined) { pm.environment.set(\"prismhr_client_id\", company.client_id); }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sign In - isolved (tenant=isol)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{demo_signin_api_key}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{signin_base_url}}/signin",
+              "host": [
+                "{{signin_base_url}}"
+              ],
+              "path": [
+                "signin"
+              ]
+            },
+            "description": "Returns auth.access_token (and refresh token if issued) plus context.companies[].client_id/legal_id for the isolved demo tenant.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tenant\": \"isol\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"isolved sign-in: sign-in returned HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"isolved sign-in: response body is JSON\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"isolved sign-in: access_token is present\", function () {",
+                  "        pm.expect(data.auth, \"auth object\").to.exist;",
+                  "        pm.expect(data.auth.access_token, \"auth.access_token\").to.exist;",
+                  "    });",
+                  "    if (data.auth && data.auth.access_token) {",
+                  "        pm.environment.set(\"isolved_access_token\", data.auth.access_token);",
+                  "    }",
+                  "",
+                  "    pm.test(\"isolved sign-in: base_url is present\", function () {",
+                  "        pm.expect(data.base_url, \"base_url\").to.exist;",
+                  "    });",
+                  "    if (data.base_url) {",
+                  "        pm.environment.set(\"isolved_base_url\", data.base_url);",
+                  "    }",
+                  "",
+                  "    pm.test(\"isolved sign-in: context.companies[0] is present\", function () {",
+                  "        pm.expect(data.context, \"context\").to.exist;",
+                  "        pm.expect(data.context.companies, \"context.companies\").to.be.an(\"array\").with.length.above(0);",
+                  "    });",
+                  "    if (data.context && data.context.companies && data.context.companies.length) {",
+                  "        var company = data.context.companies[0];",
+                  "        if (company.client_id !== undefined) { pm.environment.set(\"isolved_client_id\", company.client_id); }",
+                  "        if (company.legal_id !== undefined) { pm.environment.set(\"isolved_legal_id\", company.legal_id); }",
+                  "    }",
+                  "}",
+                  "",
+                  "if (data && data.auth && data.auth.refresh_token) {",
+                  "    pm.environment.set(\"isolved_refresh_token\", data.auth.refresh_token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sign In - UKG Ready (tenant=ukg)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{demo_signin_api_key}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{signin_base_url}}/signin",
+              "host": [
+                "{{signin_base_url}}"
+              ],
+              "path": [
+                "signin"
+              ]
+            },
+            "description": "Returns auth.access_token plus context.companies[].company_id for the UKG Ready demo tenant.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tenant\": \"ukg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"UKG Ready sign-in: sign-in returned HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"UKG Ready sign-in: response body is JSON\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"UKG Ready sign-in: access_token is present\", function () {",
+                  "        pm.expect(data.auth, \"auth object\").to.exist;",
+                  "        pm.expect(data.auth.access_token, \"auth.access_token\").to.exist;",
+                  "    });",
+                  "    if (data.auth && data.auth.access_token) {",
+                  "        pm.environment.set(\"ukg_access_token\", data.auth.access_token);",
+                  "    }",
+                  "",
+                  "    pm.test(\"UKG Ready sign-in: base_url is present\", function () {",
+                  "        pm.expect(data.base_url, \"base_url\").to.exist;",
+                  "    });",
+                  "    if (data.base_url) {",
+                  "        pm.environment.set(\"ukg_base_url\", data.base_url);",
+                  "    }",
+                  "",
+                  "    pm.test(\"UKG Ready sign-in: context.companies[0] is present\", function () {",
+                  "        pm.expect(data.context, \"context\").to.exist;",
+                  "        pm.expect(data.context.companies, \"context.companies\").to.be.an(\"array\").with.length.above(0);",
+                  "    });",
+                  "    if (data.context && data.context.companies && data.context.companies.length) {",
+                  "        var company = data.context.companies[0];",
+                  "        if (company.company_id !== undefined) { pm.environment.set(\"ukg_company_id\", company.company_id); }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PrismHR",
+      "description": "All requests use sessionId as a header (set by the Sign In request) rather than Bearer auth. Spec: contracts/prismhr/openapi/prismhr-2025.09.openapi.json. Every PrismHR response wraps its payload with errorCode/errorMessage at the top level even on HTTP 200 - the tests below check that field, not just the HTTP status. Run 'Get Client List' then 'Get Employee List' first so prismhr_client_id and prismhr_employee_id are populated for the requests below.",
+      "item": [
+        {
+          "name": "Get Client List (companies)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/clientMaster/v1/getClientList",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "clientMaster",
+                "v1",
+                "getClientList"
+              ]
+            },
+            "description": "GET /clientMaster/v1/getClientList - lists companies visible to the session; confirms prismhr_client_id from sign-in is valid. Response: clientListResult.clientList[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Client List: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Client List: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Client List: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Client List: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Client List: result is an array\", function () {",
+                  "        var result = (data.clientListResult && data.clientListResult.clientList) || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/employee/v1/getEmployeeList?clientId={{prismhr_client_id}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "employee",
+                "v1",
+                "getEmployeeList"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                }
+              ]
+            },
+            "description": "GET /employee/v1/getEmployeeList - lists employees for the client; auto-saves the first employeeId into prismhr_employee_id. Response: employeeList.employeeId[] (an array of ID strings, not employee objects)."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee List: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee List: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee List: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee List: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee List: result is an array\", function () {",
+                  "        var result = (data.employeeList && data.employeeList.employeeId) || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}",
+                  "if (data) {",
+                  "    var _list = (data.employeeList && data.employeeList.employeeId) || [];",
+                  "    if (Array.isArray(_list) && _list.length) {",
+                  "        var _first = _list[0];",
+                  "        var _id = _first;",
+                  "        if (_id !== undefined && _id !== null) {",
+                  "            pm.environment.set(\"prismhr_employee_id\", _id);",
+                  "        }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee (profile, compensation, direct deposit)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/employee/v1/getEmployee?employeeId={{prismhr_employee_id}}&clientId={{prismhr_client_id}}&options=DirectDeposit",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "employee",
+                "v1",
+                "getEmployee"
+              ],
+              "query": [
+                {
+                  "key": "employeeId",
+                  "value": "{{prismhr_employee_id}}"
+                },
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "options",
+                  "value": "DirectDeposit"
+                }
+              ]
+            },
+            "description": "GET /employee/v1/getEmployee - full employee record. 'options=DirectDeposit' also returns achVoucher + directDepositChecksum needed to call updateDirectDeposit. Response: employee[] (array containing the one requested employee)."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee: result is an array\", function () {",
+                  "        var result = data.employee || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get ACH Deductions (voluntary direct-deposit setup)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/employee/v1/getACHDeductions?clientId={{prismhr_client_id}}&employeeId={{prismhr_employee_id}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "employee",
+                "v1",
+                "getACHDeductions"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{prismhr_employee_id}}"
+                }
+              ]
+            },
+            "description": "GET /employee/v1/getACHDeductions - voluntary ACH deduction setup (accountType DED1/DED2/DED3). Response: achDeductionSettings[]; may legitimately be empty if the demo employee has none configured."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get ACH Deductions: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get ACH Deductions: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get ACH Deductions: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get ACH Deductions: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get ACH Deductions: result is an array\", function () {",
+                  "        var result = data.achDeductionSettings || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Deductions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/deductions/v1/getDeductions?clientId={{prismhr_client_id}}&employeeId={{prismhr_employee_id}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "deductions",
+                "v1",
+                "getDeductions"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{prismhr_employee_id}}"
+                }
+              ]
+            },
+            "description": "GET /deductions/v1/getDeductions - employee deduction setup. Response: employeeDeductions.deduction[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Deductions: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Deductions: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Deductions: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Deductions: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Deductions: result is an array\", function () {",
+                  "        var result = (data.employeeDeductions && data.employeeDeductions.deduction) || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Voluntary Recurring Deductions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/deductions/v1/getVoluntaryRecurringDeductions?clientId={{prismhr_client_id}}&employeeId={{prismhr_employee_id}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "deductions",
+                "v1",
+                "getVoluntaryRecurringDeductions"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{prismhr_employee_id}}"
+                }
+              ]
+            },
+            "description": "GET /deductions/v1/getVoluntaryRecurringDeductions. Response: voluntaryDeduction.deduction[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Voluntary Recurring Deductions: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Voluntary Recurring Deductions: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Voluntary Recurring Deductions: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Voluntary Recurring Deductions: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Voluntary Recurring Deductions: result is an array\", function () {",
+                  "        var result = (data.voluntaryDeduction && data.voluntaryDeduction.deduction) || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Scheduled Deductions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/employee/v1/getScheduledDeductions?clientId={{prismhr_client_id}}&employeeId={{prismhr_employee_id}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "employee",
+                "v1",
+                "getScheduledDeductions"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{prismhr_employee_id}}"
+                }
+              ]
+            },
+            "description": "GET /employee/v1/getScheduledDeductions. Response: scheduledDeduction[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Scheduled Deductions: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Scheduled Deductions: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Scheduled Deductions: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Scheduled Deductions: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Scheduled Deductions: result is an array\", function () {",
+                  "        var result = data.scheduledDeduction || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Payroll Vouchers (paychecks)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/payroll/v1/getPayrollVouchersForEmployee?clientId={{prismhr_client_id}}&employeeId={{prismhr_employee_id}}&payDateStart={{prismhr_pay_date_start}}&payDateEnd={{prismhr_pay_date_end}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "payroll",
+                "v1",
+                "getPayrollVouchersForEmployee"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{prismhr_employee_id}}"
+                },
+                {
+                  "key": "payDateStart",
+                  "value": "{{prismhr_pay_date_start}}"
+                },
+                {
+                  "key": "payDateEnd",
+                  "value": "{{prismhr_pay_date_end}}"
+                }
+              ]
+            },
+            "description": "GET /payroll/v1/getPayrollVouchersForEmployee - paycheck vouchers for the employee in the date range. Pre-request script fills prismhr_pay_date_start/_end with a trailing-12-months window if not already set. Response: payrollVouchers[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (!pm.environment.get(\"prismhr_pay_date_end\")) {",
+                  "    pm.environment.set(\"prismhr_pay_date_end\", new Date().toISOString().slice(0, 10));",
+                  "}",
+                  "if (!pm.environment.get(\"prismhr_pay_date_start\")) {",
+                  "    var d = new Date();",
+                  "    d.setFullYear(d.getFullYear() - 1);",
+                  "    pm.environment.set(\"prismhr_pay_date_start\", d.toISOString().slice(0, 10));",
+                  "}",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Payroll Vouchers: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Payroll Vouchers: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Payroll Vouchers: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Payroll Vouchers: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Payroll Vouchers: result is an array\", function () {",
+                  "        var result = data.payrollVouchers || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Payroll Summary (by year)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/payroll/v1/getEmployeePayrollSummary?clientId={{prismhr_client_id}}&employeeId={{prismhr_employee_id}}&year={{prismhr_pay_year}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "payroll",
+                "v1",
+                "getEmployeePayrollSummary"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{prismhr_employee_id}}"
+                },
+                {
+                  "key": "year",
+                  "value": "{{prismhr_pay_year}}"
+                }
+              ]
+            },
+            "description": "GET /payroll/v1/getEmployeePayrollSummary - gross/net/tax/deduction summary for the year. Response: employeePayrollSummary[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (!pm.environment.get(\"prismhr_pay_year\")) {",
+                  "    pm.environment.set(\"prismhr_pay_year\", new Date().getFullYear());",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Payroll Summary: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Payroll Summary: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Payroll Summary: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Payroll Summary: no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Payroll Summary: result is an array\", function () {",
+                  "        var result = data.employeePayrollSummary || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Payroll Vouchers (all employees, batch-level)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "sessionId",
+                "value": "{{prismhr_session_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{prismhr_base_url}}/payroll/v1/getPayrollVouchers?clientId={{prismhr_client_id}}&payDateStart={{prismhr_pay_date_start}}&payDateEnd={{prismhr_pay_date_end}}",
+              "host": [
+                "{{prismhr_base_url}}"
+              ],
+              "path": [
+                "payroll",
+                "v1",
+                "getPayrollVouchers"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "{{prismhr_client_id}}"
+                },
+                {
+                  "key": "payDateStart",
+                  "value": "{{prismhr_pay_date_start}}"
+                },
+                {
+                  "key": "payDateEnd",
+                  "value": "{{prismhr_pay_date_end}}"
+                }
+              ]
+            },
+            "description": "GET /payroll/v1/getPayrollVouchers - all paycheck vouchers for the client in the date range (payroll run data). Response: payrollVouchers[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (!pm.environment.get(\"prismhr_pay_date_end\")) {",
+                  "    pm.environment.set(\"prismhr_pay_date_end\", new Date().toISOString().slice(0, 10));",
+                  "}",
+                  "if (!pm.environment.get(\"prismhr_pay_date_start\")) {",
+                  "    var d = new Date();",
+                  "    d.setFullYear(d.getFullYear() - 1);",
+                  "    pm.environment.set(\"prismhr_pay_date_start\", d.toISOString().slice(0, 10));",
+                  "}",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Payroll Vouchers (batch): returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Payroll Vouchers (batch): response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Payroll Vouchers (batch): non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Payroll Vouchers (batch): no PrismHR business error\", function () {",
+                  "        var code = data.errorCode;",
+                  "        var ok = !code || code === \"0\";",
+                  "        if (!ok) {",
+                  "            throw new Error(\"errorCode=\" + code + \" errorMessage=\" + (data.errorMessage || \"(none)\"));",
+                  "        }",
+                  "    });",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Payroll Vouchers (batch): result is an array\", function () {",
+                  "        var result = data.payrollVouchers || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "isolved",
+      "description": "Uses the primary isolved v6 swagger snapshot only (contracts/isolved/openapi/isolved-v6.swagger.json) - do not mix in the alternate snapshot's schemas. Auth is 'Authorization: Bearer <access_token>' from the Sign In request. Collection/list endpoints here (clients, employees, checks) return a paged wrapper with the items under '.results', not '.items' or a bare array - the tests below check '.results' specifically. Run 'Get Clients' and 'Get Legals' first if isolved_client_id/legal_id are not already set from sign-in.",
+      "item": [
+        {
+          "name": "Get Clients (companies)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients"
+              ]
+            },
+            "description": "GET /api/clients - companies visible to this token. Response: PagedModelItemListOfClientModel.results[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Clients: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Clients: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Clients: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Clients: result is an array\", function () {",
+                  "        var result = data.results || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Legals for Client",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients/{{isolved_client_id}}/legals",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals"
+              ]
+            },
+            "description": "GET /api/clients/{clientId}/legals - legal entities under the client; auto-saves the first legal id into isolved_legal_id if not already set. Response: a bare array of LegalModel (not paged)."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Legals: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Legals: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Legals: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Legals: result is an array\", function () {",
+                  "        var result = Array.isArray(data) ? data : (data.results || []);",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}",
+                  "if (data) {",
+                  "    var _list = Array.isArray(data) ? data : (data.results || []);",
+                  "    if (Array.isArray(_list) && _list.length) {",
+                  "        var _first = _list[0];",
+                  "        var _id = _first.id;",
+                  "        if (_id !== undefined && _id !== null) {",
+                  "            pm.environment.set(\"isolved_legal_id\", _id);",
+                  "        }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employees",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/employees?includeOrganizations=true&includeTaxes=true",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "employees"
+              ],
+              "query": [
+                {
+                  "key": "includeOrganizations",
+                  "value": "true"
+                },
+                {
+                  "key": "includeTaxes",
+                  "value": "true"
+                }
+              ]
+            },
+            "description": "GET .../employees - employee list; auto-saves the first employee id into isolved_employee_id. Response: PagedModelItemListOfEmployeeModel.results[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employees: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employees: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employees: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employees: result is an array\", function () {",
+                  "        var result = data.results || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}",
+                  "if (data) {",
+                  "    var _list = data.results || [];",
+                  "    if (Array.isArray(_list) && _list.length) {",
+                  "        var _first = _list[0];",
+                  "        var _id = _first.id;",
+                  "        if (_id !== undefined && _id !== null) {",
+                  "            pm.environment.set(\"isolved_employee_id\", _id);",
+                  "        }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee by Id (full profile)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/employees/{{isolved_employee_id}}?includeOrganizations=true&includeTaxes=true&includeAlternateRates=true",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "employees",
+                "{{isolved_employee_id}}"
+              ],
+              "query": [
+                {
+                  "key": "includeOrganizations",
+                  "value": "true"
+                },
+                {
+                  "key": "includeTaxes",
+                  "value": "true"
+                },
+                {
+                  "key": "includeAlternateRates",
+                  "value": "true"
+                }
+              ]
+            },
+            "description": "GET .../employees/{id} - full employee profile, job/org, and tax details. Response: a single EmployeeModel object."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee by Id: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee by Id: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee by Id: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee by Id: result has an identifying field ('id')\", function () {",
+                  "        var result = data;",
+                  "        pm.expect(result).to.exist;",
+                  "        pm.expect(result).to.have.property(\"id\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Direct Deposits",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/employees/{{isolved_employee_id}}/directdeposits",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "employees",
+                "{{isolved_employee_id}}",
+                "directdeposits"
+              ]
+            },
+            "description": "GET .../employees/{employeeId}/directdeposits - direct-deposit accounts, allocations, and status. Response: a bare array of EmployeeDirectDepositModel; may be empty if the demo employee has none configured."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Direct Deposits: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Direct Deposits: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Direct Deposits: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Direct Deposits: result is an array\", function () {",
+                  "        var result = data || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Pay Items (deduction/earning codes)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/employees/{{isolved_employee_id}}/payItems",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "employees",
+                "{{isolved_employee_id}}",
+                "payItems"
+              ]
+            },
+            "description": "GET .../employees/{employeeId}/payItems - recurring pay items (includes deduction/earning setup). Response: a bare array of EmployeePayItemModel."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Pay Items: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Pay Items: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Pay Items: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Pay Items: result is an array\", function () {",
+                  "        var result = data || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Deductions (corestream)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/corestream/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/employees/{{isolved_employee_id}}/deductions",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "corestream",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "employees",
+                "{{isolved_employee_id}}",
+                "deductions"
+              ]
+            },
+            "description": "GET /api/corestream/.../employees/{employeeId}/deductions - deduction setup via the corestream sub-API. Response: a bare array of Corestream.EmployeeDeductionModel."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Deductions (corestream): returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Deductions (corestream): response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Deductions (corestream): non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Deductions (corestream): result is an array\", function () {",
+                  "        var result = data || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Checks (paycheck records)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/employees/{{isolved_employee_id}}/checks?includeDetails=true",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "employees",
+                "{{isolved_employee_id}}",
+                "checks"
+              ],
+              "query": [
+                {
+                  "key": "includeDetails",
+                  "value": "true"
+                }
+              ]
+            },
+            "description": "GET .../employees/{employeeId}/checks - paycheck records (earnings, taxes, deductions, net pay). Response: PagedModelItemListOfCheckModel.results[]; may be empty if the demo employee has no processed checks."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Checks: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Checks: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Checks: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Checks: result is an array\", function () {",
+                  "        var result = data.results || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Legal + Pay Groups + Payroll Schedules",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/corestream/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/legalAndPayGroupsWithPayrollSchedules",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "corestream",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "legalAndPayGroupsWithPayrollSchedules"
+              ]
+            },
+            "description": "GET /api/corestream/.../legalAndPayGroupsWithPayrollSchedules - discovers pay group ids; auto-saves the first into isolved_paygroup_id for the request below. Response: LegalAndPayGroupsWithPayrollSchedulesModel.payGroups[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Legal + Pay Groups: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Legal + Pay Groups: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Legal + Pay Groups: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Legal + Pay Groups: result is an array\", function () {",
+                  "        var result = data.payGroups || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}",
+                  "if (data) {",
+                  "    var _list = data.payGroups || [];",
+                  "    if (Array.isArray(_list) && _list.length) {",
+                  "        var _first = _list[0];",
+                  "        var _id = _first.id || _first.payGroupId;",
+                  "        if (_id !== undefined && _id !== null) {",
+                  "            pm.environment.set(\"isolved_paygroup_id\", _id);",
+                  "        }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Payroll Run History (pay group)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{isolved_access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{isolved_base_url}}/api/clients/{{isolved_client_id}}/legals/{{isolved_legal_id}}/paygroupId/{{isolved_paygroup_id}}/payrollRunHistory",
+              "host": [
+                "{{isolved_base_url}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "{{isolved_client_id}}",
+                "legals",
+                "{{isolved_legal_id}}",
+                "paygroupId",
+                "{{isolved_paygroup_id}}",
+                "payrollRunHistory"
+              ]
+            },
+            "description": "GET .../paygroupId/{paygroupId}/payrollRunHistory - payroll runs/periods for the pay group. Response: a bare array of PayrollRunHistoryModel."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Payroll Run History: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Payroll Run History: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Payroll Run History: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Payroll Run History: result is an array\", function () {",
+                  "        var result = data || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UKG Ready",
+      "description": "UKG Ready has no official OpenAPI/Swagger contract; endpoints below come from the cached pages in contracts/ukg-ready/reference-docs/res/. Auth is 'Authorization: Bearer <access_token>' from the Sign In request. There is no companies-list endpoint in the reference docs, so ukg_company_id comes from the Sign In response's context.companies[].company_id.",
+      "item": [
+        {
+          "name": "Get Employees",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ukg_access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{ukg_base_url}}/rest/v2/companies/{{ukg_company_id}}/employees",
+              "host": [
+                "{{ukg_base_url}}"
+              ],
+              "path": [
+                "rest",
+                "v2",
+                "companies",
+                "{{ukg_company_id}}",
+                "employees"
+              ]
+            },
+            "description": "GET /v2/companies/{cid}/employees - employee list; auto-saves the first employee id into ukg_employee_id. Response: employees[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employees: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employees: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employees: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employees: result is an array\", function () {",
+                  "        var result = data.employees || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}",
+                  "if (data) {",
+                  "    var _list = data.employees || [];",
+                  "    if (Array.isArray(_list) && _list.length) {",
+                  "        var _first = _list[0];",
+                  "        var _id = _first.id;",
+                  "        if (_id !== undefined && _id !== null) {",
+                  "            pm.environment.set(\"ukg_employee_id\", _id);",
+                  "        }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee by Id (full profile)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ukg_access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{ukg_base_url}}/rest/v2/companies/{{ukg_company_id}}/employees/{{ukg_employee_id}}",
+              "host": [
+                "{{ukg_base_url}}"
+              ],
+              "path": [
+                "rest",
+                "v2",
+                "companies",
+                "{{ukg_company_id}}",
+                "employees",
+                "{{ukg_employee_id}}"
+              ]
+            },
+            "description": "GET /v2/companies/{cid}/employees/{aid} - core employee record (profile, address, managers, cost centers). Response: a single employee object."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee by Id: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee by Id: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee by Id: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee by Id: result has an identifying field ('id')\", function () {",
+                  "        var result = data;",
+                  "        pm.expect(result).to.exist;",
+                  "        pm.expect(result).to.have.property(\"id\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Direct Deposits (deprecated, still live)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ukg_access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-End-of-Support-Timeline",
+                "value": "2026-01-29",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{ukg_base_url}}/rest/v2/companies/{{ukg_company_id}}/employees/{{ukg_employee_id}}/direct-deposits",
+              "host": [
+                "{{ukg_base_url}}"
+              ],
+              "path": [
+                "rest",
+                "v2",
+                "companies",
+                "{{ukg_company_id}}",
+                "employees",
+                "{{ukg_employee_id}}",
+                "direct-deposits"
+              ]
+            },
+            "description": "GET .../employees/{aid}/direct-deposits - deposit accounts, calc method, amount/percentage, status. Deprecated by UKG (April 2023) but documented as still functional through the deprecation policy; the X-End-of-Support-Timeline header is required by the spec. Response: deposits[]; may be empty if the demo employee has none configured."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Direct Deposits: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Direct Deposits: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Direct Deposits: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Direct Deposits: result is an array\", function () {",
+                  "        var result = data.deposits || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Employee Deductions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ukg_access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{ukg_base_url}}/rest/v2/companies/{{ukg_company_id}}/employees/{{ukg_employee_id}}/deductions",
+              "host": [
+                "{{ukg_base_url}}"
+              ],
+              "path": [
+                "rest",
+                "v2",
+                "companies",
+                "{{ukg_company_id}}",
+                "employees",
+                "{{ukg_employee_id}}",
+                "deductions"
+              ]
+            },
+            "description": "GET .../employees/{aid}/deductions - scheduled deduction setup (code, name, effective dates). Response: deductions[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Employee Deductions: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Employee Deductions: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Employee Deductions: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Employee Deductions: result is an array\", function () {",
+                  "        var result = data.deductions || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Payrolls",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ukg_access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{ukg_base_url}}/rest/v2/companies/{{ukg_company_id}}/payrolls",
+              "host": [
+                "{{ukg_base_url}}"
+              ],
+              "path": [
+                "rest",
+                "v2",
+                "companies",
+                "{{ukg_company_id}}",
+                "payrolls"
+              ]
+            },
+            "description": "GET /v2/companies/{cid}/payrolls - payroll runs/periods; auto-saves the first payroll id into ukg_payroll_id. Response: payrolls[]."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Payrolls: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Payrolls: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Payrolls: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Payrolls: result is an array\", function () {",
+                  "        var result = data.payrolls || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "        pm.expect(result.length, \"demo data: expected at least one item\").to.be.above(0);",
+                  "    });",
+                  "}",
+                  "if (data) {",
+                  "    var _list = data.payrolls || [];",
+                  "    if (Array.isArray(_list) && _list.length) {",
+                  "        var _first = _list[0];",
+                  "        var _id = _first.id;",
+                  "        if (_id !== undefined && _id !== null) {",
+                  "            pm.environment.set(\"ukg_payroll_id\", _id);",
+                  "        }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Pay Statements for Payroll (paychecks)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{ukg_access_token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{ukg_base_url}}/rest/v2/companies/{{ukg_company_id}}/payrolls/{{ukg_payroll_id}}/pay-statements",
+              "host": [
+                "{{ukg_base_url}}"
+              ],
+              "path": [
+                "rest",
+                "v2",
+                "companies",
+                "{{ukg_company_id}}",
+                "payrolls",
+                "{{ukg_payroll_id}}",
+                "pay-statements"
+              ]
+            },
+            "description": "GET /v2/companies/{cid}/payrolls/{id}/pay-statements - individual paycheck records for that payroll run. Response: pay_statements[]; may be empty if that payroll run has none processed yet."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Get Pay Statements: returns HTTP 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var data = null;",
+                  "pm.test(\"Get Pay Statements: response body is JSON (not an HTML error page)\", function () {",
+                  "    data = pm.response.json();",
+                  "});",
+                  "if (!data) {",
+                  "    console.warn(\"Get Pay Statements: non-JSON body, first 300 chars: \" + pm.response.text().slice(0, 300));",
+                  "}",
+                  "",
+                  "if (data) {",
+                  "    pm.test(\"Get Pay Statements: result is an array\", function () {",
+                  "        var result = data.pay_statements || [];",
+                  "        pm.expect(result).to.be.an(\"array\");",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

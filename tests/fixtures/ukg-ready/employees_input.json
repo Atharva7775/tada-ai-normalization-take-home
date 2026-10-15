@@ -1,0 +1,372 @@
+[
+  {
+    "profile": {
+      "id": 990100,
+      "employee_id": "100",
+      "first_name": "Jordan",
+      "last_name": "Alvarez",
+      "middle_name": null,
+      "nickname": null,
+      "primary_email": "jordan@example.com",
+      "phones": {
+        "cell_phone": null,
+        "home_phone": null,
+        "work_phone": null
+      },
+      "address": {
+        "address_line_1": "773 Maple St",
+        "address_line_2": null,
+        "city": "Austin",
+        "state": "TX",
+        "state_code": "TX",
+        "zip": "78701",
+        "country": "USA"
+      },
+      "dates": {
+        "birthday": "1960-01-10",
+        "hired": "2020-05-01"
+      },
+      "social_security": "100-20-1000",
+      "status": "Active",
+      "managers": []
+    },
+    "direct_deposits": {
+      "deposits": [
+        {
+          "id": 600003,
+          "sequence": 1,
+          "type": "DIRECT_DEPOSIT",
+          "active_from": "2023-01-01",
+          "active_to": "2099-12-31",
+          "active": true,
+          "calc_method": {
+            "type": "FULL"
+          },
+          "account_type": "CHECKING",
+          "account_number": "357614",
+          "routing_type": "ABA",
+          "routing_number": "097462568"
+        }
+      ]
+    },
+    "deductions": null,
+    "company_id": "990001"
+  },
+  {
+    "profile": {
+      "id": 990101,
+      "employee_id": "101",
+      "first_name": "Priya",
+      "last_name": "Okafor",
+      "middle_name": null,
+      "nickname": null,
+      "primary_email": "priya@example.com",
+      "phones": {
+        "cell_phone": null,
+        "home_phone": null,
+        "work_phone": null
+      },
+      "address": {
+        "address_line_1": "390 Cedar Ave",
+        "address_line_2": null,
+        "city": "Tampa",
+        "state": "FL",
+        "state_code": "FL",
+        "zip": "33602",
+        "country": "USA"
+      },
+      "dates": {
+        "birthday": "1961-02-11",
+        "hired": "2020-05-01",
+        "terminated": "2024-09-30"
+      },
+      "social_security": "101-21-1001",
+      "status": "Terminated",
+      "managers": [
+        {
+          "index": 1,
+          "empl_ref": {
+            "account_id": 990100
+          }
+        }
+      ]
+    },
+    "direct_deposits": {
+      "deposits": [
+        {
+          "id": 600004,
+          "sequence": 1,
+          "type": "DIRECT_DEPOSIT",
+          "active_from": "2023-01-01",
+          "active_to": "2099-12-31",
+          "active": true,
+          "calc_method": {
+            "type": "FULL"
+          },
+          "account_type": "CHECKING",
+          "account_number": "897959",
+          "routing_type": "ABA",
+          "routing_number": "094919688"
+        }
+      ]
+    },
+    "deductions": null,
+    "company_id": "990001"
+  },
+  {
+    "profile": {
+      "id": 990102,
+      "employee_id": "102",
+      "first_name": "Marcus",
+      "last_name": "Alvarez",
+      "middle_name": null,
+      "nickname": null,
+      "primary_email": "marcus@example.com",
+      "phones": {
+        "cell_phone": null,
+        "home_phone": null,
+        "work_phone": null
+      },
+      "address": {
+        "address_line_1": "303 River Rd",
+        "address_line_2": null,
+        "city": "Columbus",
+        "state": "OH",
+        "state_code": "OH",
+        "zip": "43215",
+        "country": "USA"
+      },
+      "dates": {
+        "birthday": "1962-03-12",
+        "hired": "2020-05-01"
+      },
+      "social_security": "102-22-1002",
+      "status": "Leave of Absence",
+      "managers": [
+        {
+          "index": 1,
+          "empl_ref": {
+            "account_id": 990100
+          }
+        }
+      ]
+    },
+    "direct_deposits": {
+      "deposits": [
+        {
+          "id": 600005,
+          "sequence": 1,
+          "type": "DIRECT_DEPOSIT",
+          "active_from": "2023-01-01",
+          "active_to": "2099-12-31",
+          "active": true,
+          "calc_method": {
+            "type": "FULL"
+          },
+          "account_type": "CHECKING",
+          "account_number": "843256",
+          "routing_type": "ABA",
+          "routing_number": "032332909"
+        }
+      ]
+    },
+    "deductions": null,
+    "company_id": "990001"
+  },
+  {
+    "profile": {
+      "id": 990103,
+      "employee_id": "103",
+      "first_name": "Elena",
+      "last_name": "Okafor",
+      "middle_name": null,
+      "nickname": null,
+      "primary_email": "elena@example.com",
+      "phones": {
+        "cell_phone": null,
+        "home_phone": null,
+        "work_phone": null
+      },
+      "address": {
+        "address_line_1": "231 Birch Ln",
+        "address_line_2": null,
+        "city": "Spokane",
+        "state": "WA",
+        "state_code": "WA",
+        "zip": "99201",
+        "country": "USA"
+      },
+      "dates": {
+        "birthday": "1963-04-13",
+        "hired": "2020-05-01"
+      },
+      "social_security": "103-23-1003",
+      "status": "Active",
+      "managers": [
+        {
+          "index": 1,
+          "empl_ref": {
+            "account_id": 990100
+          }
+        }
+      ]
+    },
+    "direct_deposits": {
+      "deposits": []
+    },
+    "deductions": null,
+    "company_id": "990001"
+  },
+  {
+    "profile": {
+      "id": 990104,
+      "employee_id": "104",
+      "first_name": "Kofi",
+      "last_name": "Alvarez",
+      "middle_name": null,
+      "nickname": null,
+      "primary_email": "kofi@example.com",
+      "phones": {
+        "cell_phone": null,
+        "home_phone": null,
+        "work_phone": null
+      },
+      "address": {
+        "address_line_1": "760 Harbor Dr",
+        "address_line_2": null,
+        "city": "Charlotte",
+        "state": "NC",
+        "state_code": "NC",
+        "zip": "28202",
+        "country": "USA"
+      },
+      "dates": {
+        "birthday": "1964-05-14",
+        "hired": "2020-05-01"
+      },
+      "social_security": "104-24-1004",
+      "status": "Active",
+      "managers": [
+        {
+          "index": 1,
+          "empl_ref": {
+            "account_id": 990100
+          }
+        }
+      ]
+    },
+    "direct_deposits": {
+      "deposits": [
+        {
+          "id": 600004,
+          "sequence": 1,
+          "type": "DIRECT_DEPOSIT",
+          "active_from": "2023-01-01",
+          "active_to": "2099-12-31",
+          "active": true,
+          "calc_method": {
+            "type": "FLAT_AMOUNT"
+          },
+          "account_type": "CHECKING",
+          "account_number": "275082",
+          "routing_type": "ABA",
+          "routing_number": "099642700",
+          "amount": 400.0
+        },
+        {
+          "id": 600005,
+          "sequence": 2,
+          "type": "DIRECT_DEPOSIT",
+          "active_from": "2023-01-01",
+          "active_to": "2099-12-31",
+          "active": true,
+          "calc_method": {
+            "type": "NET_PAY"
+          },
+          "account_type": "SAVINGS",
+          "account_number": "517747",
+          "routing_type": "ABA",
+          "routing_number": "024936282",
+          "percentage": 10.0
+        },
+        {
+          "id": 600006,
+          "sequence": 3,
+          "type": "DIRECT_DEPOSIT",
+          "active_from": "2023-01-01",
+          "active_to": "2099-12-31",
+          "active": true,
+          "calc_method": {
+            "type": "FULL"
+          },
+          "account_type": "CHECKING",
+          "account_number": "947180",
+          "routing_type": "ABA",
+          "routing_number": "041692812"
+        }
+      ]
+    },
+    "deductions": null,
+    "company_id": "990001"
+  },
+  {
+    "profile": {
+      "id": 990105,
+      "employee_id": "105",
+      "first_name": "Hannah",
+      "last_name": "Okafor",
+      "middle_name": null,
+      "nickname": null,
+      "primary_email": "hannah@example.com",
+      "phones": {
+        "cell_phone": null,
+        "home_phone": null,
+        "work_phone": null
+      },
+      "address": {
+        "address_line_1": "290 Union Way",
+        "address_line_2": null,
+        "city": "Boise",
+        "state": "ID",
+        "state_code": "ID",
+        "zip": "83702",
+        "country": "USA"
+      },
+      "dates": {
+        "birthday": "1965-06-15",
+        "hired": "2020-05-01"
+      },
+      "social_security": "105-25-1005",
+      "status": "Furloughed",
+      "managers": [
+        {
+          "index": 1,
+          "empl_ref": {
+            "account_id": 990100
+          }
+        }
+      ]
+    },
+    "direct_deposits": {
+      "deposits": [
+        {
+          "id": 600008,
+          "sequence": 1,
+          "type": "DIRECT_DEPOSIT",
+          "active_from": "2023-01-01",
+          "active_to": "2099-12-31",
+          "active": true,
+          "calc_method": {
+            "type": "FULL"
+          },
+          "account_type": "CHECKING",
+          "account_number": "826586",
+          "routing_type": "ABA",
+          "routing_number": "084694672"
+        }
+      ]
+    },
+    "deductions": null,
+    "company_id": "990001"
+  }
+]

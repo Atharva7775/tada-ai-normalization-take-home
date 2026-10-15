@@ -1,0 +1,42 @@
+[
+  {
+    "id": "isolved:company:9000",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "9000"
+    },
+    "name": "Alvarez Builders Inc",
+    "legal_name": "Alvarez Builders",
+    "tax_id": "500009000",
+    "status": "ACTIVE",
+    "raw_status": "Active",
+    "address": {
+      "line1": "193 Maple St",
+      "line2": null,
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78701",
+      "country": "USA"
+    }
+  },
+  {
+    "id": "isolved:company:9001",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "9001"
+    },
+    "name": "Okafor Freight Inc",
+    "legal_name": "Okafor Freight",
+    "tax_id": "500009001",
+    "status": "ACTIVE",
+    "raw_status": "Active",
+    "address": {
+      "line1": "569 Cedar Ave",
+      "line2": null,
+      "city": "Tampa",
+      "state": "FL",
+      "postal_code": "33602",
+      "country": "USA"
+    }
+  }
+]

@@ -1,0 +1,483 @@
+[
+  {
+    "id": "isolved:paycheck:1",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "1"
+    },
+    "employee_id": "isolved:employee:900100",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-09-30",
+    "period_start": "2024-09-30",
+    "period_end": "2024-09-30",
+    "gross_pay": "2196.03",
+    "net_pay": "1668.98",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2196.03"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "65.88",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:2",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "2"
+    },
+    "employee_id": "isolved:employee:900100",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1849.51",
+    "net_pay": "1405.63",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "1849.51"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "55.49",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:3",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "3"
+    },
+    "employee_id": "isolved:employee:900101",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-09-30",
+    "period_start": "2024-09-30",
+    "period_end": "2024-09-30",
+    "gross_pay": "2169.93",
+    "net_pay": "1649.15",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2169.93"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "65.1",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:4",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "4"
+    },
+    "employee_id": "isolved:employee:900101",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "2162.96",
+    "net_pay": "1643.85",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2162.96"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "64.89",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:5",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "5"
+    },
+    "employee_id": "isolved:employee:900102",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-09-30",
+    "period_start": "2024-09-30",
+    "period_end": "2024-09-30",
+    "gross_pay": "2112.1",
+    "net_pay": "1605.2",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2112.1"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "63.36",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:6",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "6"
+    },
+    "employee_id": "isolved:employee:900102",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1909.02",
+    "net_pay": "1450.86",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "1909.02"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "57.27",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:7",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "7"
+    },
+    "employee_id": "isolved:employee:900103",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-09-30",
+    "period_start": "2024-09-30",
+    "period_end": "2024-09-30",
+    "gross_pay": "1990.45",
+    "net_pay": "1512.74",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "1990.45"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "59.71",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:8",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "8"
+    },
+    "employee_id": "isolved:employee:900103",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "2199.21",
+    "net_pay": "1671.4",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2199.21"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "65.98",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:9",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "9"
+    },
+    "employee_id": "isolved:employee:900104",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-09-30",
+    "period_start": "2024-09-30",
+    "period_end": "2024-09-30",
+    "gross_pay": "2185.69",
+    "net_pay": "1661.12",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2185.69"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "65.57",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:10",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "10"
+    },
+    "employee_id": "isolved:employee:900104",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "2134.55",
+    "net_pay": "1622.26",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2134.55"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "64.04",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:11",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "11"
+    },
+    "employee_id": "isolved:employee:900105",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-09-30",
+    "period_start": "2024-09-30",
+    "period_end": "2024-09-30",
+    "gross_pay": "1852.12",
+    "net_pay": "1407.61",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "1852.12"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "55.56",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:12",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "12"
+    },
+    "employee_id": "isolved:employee:900105",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Regular",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1974.53",
+    "net_pay": "1500.64",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "1974.53"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "59.24",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "isolved:paycheck:13",
+    "source": {
+      "provider": "isolved",
+      "raw_id": "13"
+    },
+    "employee_id": "isolved:employee:900100",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "Off-Cycle Correction",
+    "check_date": "2024-11-01",
+    "period_start": "2024-11-01",
+    "period_end": "2024-11-01",
+    "gross_pay": "2197.7",
+    "net_pay": "1670.25",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "01",
+        "description": "Regular",
+        "hours": "80.0",
+        "rate": null,
+        "amount": "2197.7"
+      }
+    ],
+    "taxes": [],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401K",
+        "employee_amount": "65.93",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  }
+]

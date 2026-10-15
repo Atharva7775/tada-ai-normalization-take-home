@@ -1,0 +1,275 @@
+[
+  {
+    "id": "ukg-ready:paycheck:1",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "1"
+    },
+    "employee_id": "ukg-ready:employee:990100",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-09-27",
+    "period_start": "2024-09-27",
+    "period_end": "2024-09-27",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:2",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "2"
+    },
+    "employee_id": "ukg-ready:employee:990100",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-10-11",
+    "period_start": "2024-10-11",
+    "period_end": "2024-10-11",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:3",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "3"
+    },
+    "employee_id": "ukg-ready:employee:990101",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-09-27",
+    "period_start": "2024-09-27",
+    "period_end": "2024-09-27",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:4",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "4"
+    },
+    "employee_id": "ukg-ready:employee:990101",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-10-11",
+    "period_start": "2024-10-11",
+    "period_end": "2024-10-11",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:5",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "5"
+    },
+    "employee_id": "ukg-ready:employee:990102",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-09-27",
+    "period_start": "2024-09-27",
+    "period_end": "2024-09-27",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:6",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "6"
+    },
+    "employee_id": "ukg-ready:employee:990102",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-10-11",
+    "period_start": "2024-10-11",
+    "period_end": "2024-10-11",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:7",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "7"
+    },
+    "employee_id": "ukg-ready:employee:990103",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-09-27",
+    "period_start": "2024-09-27",
+    "period_end": "2024-09-27",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:8",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "8"
+    },
+    "employee_id": "ukg-ready:employee:990103",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-10-11",
+    "period_start": "2024-10-11",
+    "period_end": "2024-10-11",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:9",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "9"
+    },
+    "employee_id": "ukg-ready:employee:990104",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-09-27",
+    "period_start": "2024-09-27",
+    "period_end": "2024-09-27",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:10",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "10"
+    },
+    "employee_id": "ukg-ready:employee:990104",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-10-11",
+    "period_start": "2024-10-11",
+    "period_end": "2024-10-11",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:11",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "11"
+    },
+    "employee_id": "ukg-ready:employee:990105",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-09-27",
+    "period_start": "2024-09-27",
+    "period_end": "2024-09-27",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:12",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "12"
+    },
+    "employee_id": "ukg-ready:employee:990105",
+    "payroll_run_id": null,
+    "status": "OPEN",
+    "raw_status": "OPEN",
+    "check_date": "2024-10-11",
+    "period_start": "2024-10-11",
+    "period_end": "2024-10-11",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  },
+  {
+    "id": "ukg-ready:paycheck:13",
+    "source": {
+      "provider": "ukg-ready",
+      "raw_id": "13"
+    },
+    "employee_id": "ukg-ready:employee:990100",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "PENDING_REVIEW",
+    "check_date": "2024-11-08",
+    "period_start": "2024-11-08",
+    "period_end": "2024-11-08",
+    "gross_pay": null,
+    "net_pay": null,
+    "total_hours": null,
+    "earnings": [],
+    "taxes": [],
+    "deductions": [],
+    "benefit_contributions": []
+  }
+]

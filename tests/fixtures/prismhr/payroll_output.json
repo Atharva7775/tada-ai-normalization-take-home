@@ -1,0 +1,808 @@
+[
+  {
+    "id": "prismhr:paycheck:E90000:000001",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000001"
+    },
+    "employee_id": "prismhr:employee:E90000",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-09-15",
+    "period_start": "2024-09-15",
+    "period_end": "2024-09-15",
+    "gross_pay": "1563.86",
+    "net_pay": "1256.56",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "19.5482",
+        "amount": "1563.86"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "187.66",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "22.68",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "96.96",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "22.68"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "62.55",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90000:000002",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000002"
+    },
+    "employee_id": "prismhr:employee:E90000",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1766.27",
+    "net_pay": "1419.2",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "22.0784",
+        "amount": "1766.27"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "211.95",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "25.61",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "109.51",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "25.61"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "70.65",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90001:000003",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000003"
+    },
+    "employee_id": "prismhr:employee:E90001",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-09-15",
+    "period_start": "2024-09-15",
+    "period_end": "2024-09-15",
+    "gross_pay": "1841.52",
+    "net_pay": "1479.67",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "23.019",
+        "amount": "1841.52"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "220.98",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "26.7",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "114.17",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "26.7"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "73.66",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90001:000004",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000004"
+    },
+    "employee_id": "prismhr:employee:E90001",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1600.64",
+    "net_pay": "1286.11",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "20.008",
+        "amount": "1600.64"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "192.08",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "23.21",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "99.24",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "23.21"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "64.03",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90002:000005",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000005"
+    },
+    "employee_id": "prismhr:employee:E90002",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-09-15",
+    "period_start": "2024-09-15",
+    "period_end": "2024-09-15",
+    "gross_pay": "1898.91",
+    "net_pay": "1525.78",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "23.7364",
+        "amount": "1898.91"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "227.87",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "27.53",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "117.73",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "27.53"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "75.96",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90002:000006",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000006"
+    },
+    "employee_id": "prismhr:employee:E90002",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1874.1",
+    "net_pay": "1505.85",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "23.4262",
+        "amount": "1874.1"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "224.89",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "27.17",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "116.19",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "27.17"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "74.96",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90003:000007",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000007"
+    },
+    "employee_id": "prismhr:employee:E90003",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-09-15",
+    "period_start": "2024-09-15",
+    "period_end": "2024-09-15",
+    "gross_pay": "1924.97",
+    "net_pay": "1546.71",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "24.0621",
+        "amount": "1924.97"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "231.0",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "27.91",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "119.35",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "27.91"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "77.0",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90003:000008",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000008"
+    },
+    "employee_id": "prismhr:employee:E90003",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1529.81",
+    "net_pay": "1229.2",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "19.1226",
+        "amount": "1529.81"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "183.58",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "22.18",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "94.85",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "22.18"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "61.19",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90004:000009",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000009"
+    },
+    "employee_id": "prismhr:employee:E90004",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-09-15",
+    "period_start": "2024-09-15",
+    "period_end": "2024-09-15",
+    "gross_pay": "1613.88",
+    "net_pay": "1296.75",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "20.1735",
+        "amount": "1613.88"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "193.67",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "23.4",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "100.06",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "23.4"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "64.56",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90004:000010",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000010"
+    },
+    "employee_id": "prismhr:employee:E90004",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1546.11",
+    "net_pay": "1242.3",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "19.3264",
+        "amount": "1546.11"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "185.53",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "22.42",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "95.86",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "22.42"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "61.84",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90005:000011",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000011"
+    },
+    "employee_id": "prismhr:employee:E90005",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-09-15",
+    "period_start": "2024-09-15",
+    "period_end": "2024-09-15",
+    "gross_pay": "1507.16",
+    "net_pay": "1211.01",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "18.8395",
+        "amount": "1507.16"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "180.86",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "21.85",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "93.44",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "21.85"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "60.29",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90005:000012",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000012"
+    },
+    "employee_id": "prismhr:employee:E90005",
+    "payroll_run_id": null,
+    "status": "FINALIZED",
+    "raw_status": "PRNT",
+    "check_date": "2024-10-15",
+    "period_start": "2024-10-15",
+    "period_end": "2024-10-15",
+    "gross_pay": "1584.15",
+    "net_pay": "1272.86",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "19.8019",
+        "amount": "1584.15"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "190.1",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "22.97",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "98.22",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "22.97"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "63.37",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  },
+  {
+    "id": "prismhr:paycheck:E90000:000013",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "000013"
+    },
+    "employee_id": "prismhr:employee:E90000",
+    "payroll_run_id": null,
+    "status": "OTHER",
+    "raw_status": "HELD",
+    "check_date": "2024-11-15",
+    "period_start": "2024-11-15",
+    "period_end": "2024-11-15",
+    "gross_pay": "1717.78",
+    "net_pay": "1380.24",
+    "total_hours": null,
+    "earnings": [
+      {
+        "category": "REGULAR",
+        "raw_category": "REG",
+        "description": "Earnings",
+        "hours": "80.0",
+        "rate": "21.4722",
+        "amount": "1717.78"
+      }
+    ],
+    "taxes": [
+      {
+        "code": "00-10",
+        "jurisdiction": "Federal Income Tax",
+        "employee_amount": "206.13",
+        "employer_amount": null
+      },
+      {
+        "code": "00-11",
+        "jurisdiction": "Medicare - Employee",
+        "employee_amount": "24.91",
+        "employer_amount": null
+      },
+      {
+        "code": "00-12",
+        "jurisdiction": "Soc Security - Employee",
+        "employee_amount": "106.5",
+        "employer_amount": null
+      },
+      {
+        "code": "00-15",
+        "jurisdiction": "Medicare - Employer",
+        "employee_amount": null,
+        "employer_amount": "24.91"
+      }
+    ],
+    "deductions": [
+      {
+        "deduction_setup_id": null,
+        "code": "401k",
+        "employee_amount": "68.71",
+        "employer_amount": null
+      }
+    ],
+    "benefit_contributions": []
+  }
+]

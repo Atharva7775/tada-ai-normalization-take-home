@@ -1,0 +1,20 @@
+{
+  "clientListResult": {
+    "clientList": [
+      {
+        "clientId": "900",
+        "clientName": "Alvarez Manufacturing",
+        "legalName": "Alvarez Manufacturing LLC",
+        "status": "A",
+        "serviceType": null
+      },
+      {
+        "clientId": "901",
+        "clientName": "Okafor Logistics",
+        "legalName": "Okafor Logistics LLC",
+        "status": "A",
+        "serviceType": null
+      }
+    ]
+  }
+}

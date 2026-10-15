@@ -1,0 +1,28 @@
+[
+  {
+    "id": "prismhr:company:900",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "900"
+    },
+    "name": "Alvarez Manufacturing",
+    "legal_name": "Alvarez Manufacturing LLC",
+    "tax_id": null,
+    "status": "ACTIVE",
+    "raw_status": "A",
+    "address": null
+  },
+  {
+    "id": "prismhr:company:901",
+    "source": {
+      "provider": "prismhr",
+      "raw_id": "901"
+    },
+    "name": "Okafor Logistics",
+    "legal_name": "Okafor Logistics LLC",
+    "tax_id": null,
+    "status": "ACTIVE",
+    "raw_status": "A",
+    "address": null
+  }
+]

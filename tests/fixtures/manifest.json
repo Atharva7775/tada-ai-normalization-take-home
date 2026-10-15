@@ -1,0 +1,20 @@
+{
+  "seed": 20251014,
+  "providers": [
+    "prismhr"
+  ],
+  "files": {
+    "prismhr": {
+      "company_input": "tests/fixtures/prismhr/company_input.json",
+      "employees_input": "tests/fixtures/prismhr/employees_input.json",
+      "payroll_input": "tests/fixtures/prismhr/payroll_input.json"
+    }
+  },
+  "counts": {
+    "prismhr": {
+      "companies": 2,
+      "employees": 6,
+      "paychecks": 13
+    }
+  }
+}

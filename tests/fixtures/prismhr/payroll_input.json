@@ -1,0 +1,1167 @@
+{
+  "total": null,
+  "startpage": null,
+  "count": null,
+  "errorCode": "0",
+  "errorMessage": "",
+  "extension": null,
+  "payrollVoucher": [
+    {
+      "voucherId": "000001",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "94027",
+      "payDate": "2024-09-15",
+      "employeeId": "E90000",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-09-15",
+      "payPeriodEnd": "2024-09-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-09-15",
+      "totalEarnings": 1563.86,
+      "netPay": 1256.56,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1563.86,
+          "empTaxAmount": 187.66,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1563.86,
+          "empTaxAmount": 22.68,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1563.86,
+          "empTaxAmount": 96.96,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1563.86,
+          "comTaxType": "9F",
+          "comTaxAmount": 22.68,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-09-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 19.5482,
+          "payAmount": 1563.86,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000001",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 62.55,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000002",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "71675",
+      "payDate": "2024-10-15",
+      "employeeId": "E90000",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-10-15",
+      "payPeriodEnd": "2024-10-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-10-15",
+      "totalEarnings": 1766.27,
+      "netPay": 1419.2,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1766.27,
+          "empTaxAmount": 211.95,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1766.27,
+          "empTaxAmount": 25.61,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1766.27,
+          "empTaxAmount": 109.51,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1766.27,
+          "comTaxType": "9F",
+          "comTaxAmount": 25.61,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-10-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 22.0784,
+          "payAmount": 1766.27,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000002",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 70.65,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000003",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "87772",
+      "payDate": "2024-09-15",
+      "employeeId": "E90001",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-09-15",
+      "payPeriodEnd": "2024-09-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-09-15",
+      "totalEarnings": 1841.52,
+      "netPay": 1479.67,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1841.52,
+          "empTaxAmount": 220.98,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1841.52,
+          "empTaxAmount": 26.7,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1841.52,
+          "empTaxAmount": 114.17,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1841.52,
+          "comTaxType": "9F",
+          "comTaxAmount": 26.7,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-09-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 23.019,
+          "payAmount": 1841.52,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000003",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 73.66,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000004",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "51684",
+      "payDate": "2024-10-15",
+      "employeeId": "E90001",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-10-15",
+      "payPeriodEnd": "2024-10-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-10-15",
+      "totalEarnings": 1600.64,
+      "netPay": 1286.11,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1600.64,
+          "empTaxAmount": 192.08,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1600.64,
+          "empTaxAmount": 23.21,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1600.64,
+          "empTaxAmount": 99.24,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1600.64,
+          "comTaxType": "9F",
+          "comTaxAmount": 23.21,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-10-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 20.008,
+          "payAmount": 1600.64,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000004",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 64.03,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000005",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "31717",
+      "payDate": "2024-09-15",
+      "employeeId": "E90002",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-09-15",
+      "payPeriodEnd": "2024-09-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-09-15",
+      "totalEarnings": 1898.91,
+      "netPay": 1525.78,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1898.91,
+          "empTaxAmount": 227.87,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1898.91,
+          "empTaxAmount": 27.53,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1898.91,
+          "empTaxAmount": 117.73,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1898.91,
+          "comTaxType": "9F",
+          "comTaxAmount": 27.53,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-09-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 23.7364,
+          "payAmount": 1898.91,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000005",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 75.96,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000006",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "94589",
+      "payDate": "2024-10-15",
+      "employeeId": "E90002",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-10-15",
+      "payPeriodEnd": "2024-10-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-10-15",
+      "totalEarnings": 1874.1,
+      "netPay": 1505.85,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1874.1,
+          "empTaxAmount": 224.89,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1874.1,
+          "empTaxAmount": 27.17,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1874.1,
+          "empTaxAmount": 116.19,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1874.1,
+          "comTaxType": "9F",
+          "comTaxAmount": 27.17,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-10-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 23.4262,
+          "payAmount": 1874.1,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000006",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 74.96,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000007",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "52729",
+      "payDate": "2024-09-15",
+      "employeeId": "E90003",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-09-15",
+      "payPeriodEnd": "2024-09-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-09-15",
+      "totalEarnings": 1924.97,
+      "netPay": 1546.71,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1924.97,
+          "empTaxAmount": 231.0,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1924.97,
+          "empTaxAmount": 27.91,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1924.97,
+          "empTaxAmount": 119.35,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1924.97,
+          "comTaxType": "9F",
+          "comTaxAmount": 27.91,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-09-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 24.0621,
+          "payAmount": 1924.97,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000007",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 77.0,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000008",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "27109",
+      "payDate": "2024-10-15",
+      "employeeId": "E90003",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-10-15",
+      "payPeriodEnd": "2024-10-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-10-15",
+      "totalEarnings": 1529.81,
+      "netPay": 1229.2,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1529.81,
+          "empTaxAmount": 183.58,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1529.81,
+          "empTaxAmount": 22.18,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1529.81,
+          "empTaxAmount": 94.85,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1529.81,
+          "comTaxType": "9F",
+          "comTaxAmount": 22.18,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-10-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 19.1226,
+          "payAmount": 1529.81,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000008",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 61.19,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000009",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "48478",
+      "payDate": "2024-09-15",
+      "employeeId": "E90004",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-09-15",
+      "payPeriodEnd": "2024-09-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-09-15",
+      "totalEarnings": 1613.88,
+      "netPay": 1296.75,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1613.88,
+          "empTaxAmount": 193.67,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1613.88,
+          "empTaxAmount": 23.4,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1613.88,
+          "empTaxAmount": 100.06,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1613.88,
+          "comTaxType": "9F",
+          "comTaxAmount": 23.4,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-09-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 20.1735,
+          "payAmount": 1613.88,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000009",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 64.56,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000010",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "39653",
+      "payDate": "2024-10-15",
+      "employeeId": "E90004",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-10-15",
+      "payPeriodEnd": "2024-10-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-10-15",
+      "totalEarnings": 1546.11,
+      "netPay": 1242.3,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1546.11,
+          "empTaxAmount": 185.53,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1546.11,
+          "empTaxAmount": 22.42,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1546.11,
+          "empTaxAmount": 95.86,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1546.11,
+          "comTaxType": "9F",
+          "comTaxAmount": 22.42,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-10-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 19.3264,
+          "payAmount": 1546.11,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000010",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 61.84,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000011",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "98610",
+      "payDate": "2024-09-15",
+      "employeeId": "E90005",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-09-15",
+      "payPeriodEnd": "2024-09-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-09-15",
+      "totalEarnings": 1507.16,
+      "netPay": 1211.01,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1507.16,
+          "empTaxAmount": 180.86,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1507.16,
+          "empTaxAmount": 21.85,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1507.16,
+          "empTaxAmount": 93.44,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1507.16,
+          "comTaxType": "9F",
+          "comTaxAmount": 21.85,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-09-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 18.8395,
+          "payAmount": 1507.16,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000011",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 60.29,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000012",
+      "status": "PRNT",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "16937",
+      "payDate": "2024-10-15",
+      "employeeId": "E90005",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-10-15",
+      "payPeriodEnd": "2024-10-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-10-15",
+      "totalEarnings": 1584.15,
+      "netPay": 1272.86,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1584.15,
+          "empTaxAmount": 190.1,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1584.15,
+          "empTaxAmount": 22.97,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1584.15,
+          "empTaxAmount": 98.22,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1584.15,
+          "comTaxType": "9F",
+          "comTaxAmount": 22.97,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-10-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 19.8019,
+          "payAmount": 1584.15,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000012",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 63.37,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    },
+    {
+      "voucherId": "000013",
+      "status": "HELD",
+      "type": "R",
+      "voidDate": "",
+      "checkNumber": "38938",
+      "payDate": "2024-11-15",
+      "employeeId": "E90000",
+      "payPeriod": "B",
+      "payPeriodStart": "2024-11-15",
+      "payPeriodEnd": "2024-11-15",
+      "payGroup": "WFRI",
+      "dateProcessed": "2024-11-15",
+      "totalEarnings": 1717.78,
+      "netPay": 1380.24,
+      "employeeTax": [
+        {
+          "empTaxDeductCode": "00-10",
+          "empTaxDeductCodeDesc": "Federal Income Tax",
+          "empTaxableAmount": 1717.78,
+          "empTaxAmount": 206.13,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-11",
+          "empTaxDeductCodeDesc": "Medicare - Employee",
+          "empTaxableAmount": 1717.78,
+          "empTaxAmount": 24.91,
+          "empOverLimitAmount": 0.0
+        },
+        {
+          "empTaxDeductCode": "00-12",
+          "empTaxDeductCodeDesc": "Soc Security - Employee",
+          "empTaxableAmount": 1717.78,
+          "empTaxAmount": 106.5,
+          "empOverLimitAmount": 0.0
+        }
+      ],
+      "companyTax": [
+        {
+          "comTaxEntity": "P",
+          "comTaxDeductCode": "00-15",
+          "comTaxDeductCodeDesc": "Medicare - Employer",
+          "comExemptAmount": 0.0,
+          "comShelteredAmount": 0.0,
+          "comTaxableAmount": 1717.78,
+          "comTaxType": "9F",
+          "comTaxAmount": 24.91,
+          "comOvrLimit": 0.0,
+          "comTaxRate": 0.0145,
+          "comClientSutaRpt": ""
+        }
+      ],
+      "earning": [
+        {
+          "payCode": "REG",
+          "payClassDescription": "Earnings",
+          "chargeDate": "2024-11-15",
+          "hoursUnits": 80.0,
+          "hoursWorked": 80.0,
+          "unitRate": 21.4722,
+          "payAmount": 1717.78,
+          "division": "",
+          "jobCode": "OFFICE",
+          "shift": "",
+          "department": "100",
+          "location": "1",
+          "glCode": "",
+          "workComp": "",
+          "projWork": "",
+          "projPhase": ""
+        }
+      ],
+      "otherEarningsDetail": [],
+      "fsaMatch": [],
+      "batchId": "O000013",
+      "deduction": [
+        {
+          "deductCode": "401k",
+          "deductDescription": "401k",
+          "deductAmount": 68.71,
+          "deductType": "K",
+          "deductUnionId": "",
+          "planId": ""
+        }
+      ],
+      "otherDeduction": [],
+      "benefit": []
+    }
+  ]
+}

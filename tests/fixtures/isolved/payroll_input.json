@@ -1,0 +1,515 @@
+{
+  "nextPageUrl": null,
+  "previousPageUrl": null,
+  "results": [
+    {
+      "id": 1,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1668.98,
+      "checkDate": "2024-09-30",
+      "checkNumber": 8431,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 10,
+          "checkDollars": 65.88,
+          "currentDollars": 65.88,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 395.29
+        }
+      ],
+      "directDepositAmount": 1668.98,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 11,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2196.03,
+          "ytdDollars": 13176.18
+        }
+      ],
+      "employeeId": 900100,
+      "grossPay": 2196.03,
+      "grossWages": 2196.03,
+      "netPay": 1668.98,
+      "periodBeginDate": "2024-09-30",
+      "periodEndDate": "2024-09-30",
+      "taxes": null
+    },
+    {
+      "id": 2,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1405.63,
+      "checkDate": "2024-10-15",
+      "checkNumber": 6372,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 20,
+          "checkDollars": 55.49,
+          "currentDollars": 55.49,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 332.91
+        }
+      ],
+      "directDepositAmount": 1405.63,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 21,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 1849.51,
+          "ytdDollars": 11097.06
+        }
+      ],
+      "employeeId": 900100,
+      "grossPay": 1849.51,
+      "grossWages": 1849.51,
+      "netPay": 1405.63,
+      "periodBeginDate": "2024-10-15",
+      "periodEndDate": "2024-10-15",
+      "taxes": null
+    },
+    {
+      "id": 3,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1649.15,
+      "checkDate": "2024-09-30",
+      "checkNumber": 5015,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 30,
+          "checkDollars": 65.1,
+          "currentDollars": 65.1,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 390.59
+        }
+      ],
+      "directDepositAmount": 1649.15,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 31,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2169.93,
+          "ytdDollars": 13019.58
+        }
+      ],
+      "employeeId": 900101,
+      "grossPay": 2169.93,
+      "grossWages": 2169.93,
+      "netPay": 1649.15,
+      "periodBeginDate": "2024-09-30",
+      "periodEndDate": "2024-09-30",
+      "taxes": null
+    },
+    {
+      "id": 4,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1643.85,
+      "checkDate": "2024-10-15",
+      "checkNumber": 5491,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 40,
+          "checkDollars": 64.89,
+          "currentDollars": 64.89,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 389.33
+        }
+      ],
+      "directDepositAmount": 1643.85,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 41,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2162.96,
+          "ytdDollars": 12977.76
+        }
+      ],
+      "employeeId": 900101,
+      "grossPay": 2162.96,
+      "grossWages": 2162.96,
+      "netPay": 1643.85,
+      "periodBeginDate": "2024-10-15",
+      "periodEndDate": "2024-10-15",
+      "taxes": null
+    },
+    {
+      "id": 5,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1605.2,
+      "checkDate": "2024-09-30",
+      "checkNumber": 8245,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 50,
+          "checkDollars": 63.36,
+          "currentDollars": 63.36,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 380.18
+        }
+      ],
+      "directDepositAmount": 1605.2,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 51,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2112.1,
+          "ytdDollars": 12672.6
+        }
+      ],
+      "employeeId": 900102,
+      "grossPay": 2112.1,
+      "grossWages": 2112.1,
+      "netPay": 1605.2,
+      "periodBeginDate": "2024-09-30",
+      "periodEndDate": "2024-09-30",
+      "taxes": null
+    },
+    {
+      "id": 6,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1450.86,
+      "checkDate": "2024-10-15",
+      "checkNumber": 7574,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 60,
+          "checkDollars": 57.27,
+          "currentDollars": 57.27,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 343.62
+        }
+      ],
+      "directDepositAmount": 1450.86,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 61,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 1909.02,
+          "ytdDollars": 11454.12
+        }
+      ],
+      "employeeId": 900102,
+      "grossPay": 1909.02,
+      "grossWages": 1909.02,
+      "netPay": 1450.86,
+      "periodBeginDate": "2024-10-15",
+      "periodEndDate": "2024-10-15",
+      "taxes": null
+    },
+    {
+      "id": 7,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1512.74,
+      "checkDate": "2024-09-30",
+      "checkNumber": 6581,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 70,
+          "checkDollars": 59.71,
+          "currentDollars": 59.71,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 358.28
+        }
+      ],
+      "directDepositAmount": 1512.74,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 71,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 1990.45,
+          "ytdDollars": 11942.7
+        }
+      ],
+      "employeeId": 900103,
+      "grossPay": 1990.45,
+      "grossWages": 1990.45,
+      "netPay": 1512.74,
+      "periodBeginDate": "2024-09-30",
+      "periodEndDate": "2024-09-30",
+      "taxes": null
+    },
+    {
+      "id": 8,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1671.4,
+      "checkDate": "2024-10-15",
+      "checkNumber": 7708,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 80,
+          "checkDollars": 65.98,
+          "currentDollars": 65.98,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 395.86
+        }
+      ],
+      "directDepositAmount": 1671.4,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 81,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2199.21,
+          "ytdDollars": 13195.26
+        }
+      ],
+      "employeeId": 900103,
+      "grossPay": 2199.21,
+      "grossWages": 2199.21,
+      "netPay": 1671.4,
+      "periodBeginDate": "2024-10-15",
+      "periodEndDate": "2024-10-15",
+      "taxes": null
+    },
+    {
+      "id": 9,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1661.12,
+      "checkDate": "2024-09-30",
+      "checkNumber": 6476,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 90,
+          "checkDollars": 65.57,
+          "currentDollars": 65.57,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 393.42
+        }
+      ],
+      "directDepositAmount": 1661.12,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 91,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2185.69,
+          "ytdDollars": 13114.14
+        }
+      ],
+      "employeeId": 900104,
+      "grossPay": 2185.69,
+      "grossWages": 2185.69,
+      "netPay": 1661.12,
+      "periodBeginDate": "2024-09-30",
+      "periodEndDate": "2024-09-30",
+      "taxes": null
+    },
+    {
+      "id": 10,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1622.26,
+      "checkDate": "2024-10-15",
+      "checkNumber": 7173,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 100,
+          "checkDollars": 64.04,
+          "currentDollars": 64.04,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 384.22
+        }
+      ],
+      "directDepositAmount": 1622.26,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 101,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2134.55,
+          "ytdDollars": 12807.3
+        }
+      ],
+      "employeeId": 900104,
+      "grossPay": 2134.55,
+      "grossWages": 2134.55,
+      "netPay": 1622.26,
+      "periodBeginDate": "2024-10-15",
+      "periodEndDate": "2024-10-15",
+      "taxes": null
+    },
+    {
+      "id": 11,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1407.61,
+      "checkDate": "2024-09-30",
+      "checkNumber": 8348,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 110,
+          "checkDollars": 55.56,
+          "currentDollars": 55.56,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 333.38
+        }
+      ],
+      "directDepositAmount": 1407.61,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 111,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 1852.12,
+          "ytdDollars": 11112.72
+        }
+      ],
+      "employeeId": 900105,
+      "grossPay": 1852.12,
+      "grossWages": 1852.12,
+      "netPay": 1407.61,
+      "periodBeginDate": "2024-09-30",
+      "periodEndDate": "2024-09-30",
+      "taxes": null
+    },
+    {
+      "id": 12,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1500.64,
+      "checkDate": "2024-10-15",
+      "checkNumber": 5606,
+      "checkSequence": 0,
+      "checkTypeDescription": "Regular",
+      "deductions": [
+        {
+          "id": 120,
+          "checkDollars": 59.24,
+          "currentDollars": 59.24,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 355.42
+        }
+      ],
+      "directDepositAmount": 1500.64,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 121,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 1974.53,
+          "ytdDollars": 11847.18
+        }
+      ],
+      "employeeId": 900105,
+      "grossPay": 1974.53,
+      "grossWages": 1974.53,
+      "netPay": 1500.64,
+      "periodBeginDate": "2024-10-15",
+      "periodEndDate": "2024-10-15",
+      "taxes": null
+    },
+    {
+      "id": 13,
+      "accruals": null,
+      "benefits": null,
+      "checkAmount": 1670.25,
+      "checkDate": "2024-11-01",
+      "checkNumber": 8533,
+      "checkSequence": 0,
+      "checkTypeDescription": "Off-Cycle Correction",
+      "deductions": [
+        {
+          "id": 130,
+          "checkDollars": 65.93,
+          "currentDollars": 65.93,
+          "itemCode": "401K",
+          "itemDescription": "401k",
+          "ytdDollars": 395.59
+        }
+      ],
+      "directDepositAmount": 1670.25,
+      "directDeposits": null,
+      "earnings": [
+        {
+          "id": 131,
+          "itemCode": "01",
+          "itemDescription": "Regular",
+          "checkHours": 80.0,
+          "checkDollars": 2197.7,
+          "ytdDollars": 13186.2
+        }
+      ],
+      "employeeId": 900100,
+      "grossPay": 2197.7,
+      "grossWages": 2197.7,
+      "netPay": 1670.25,
+      "periodBeginDate": "2024-11-01",
+      "periodEndDate": "2024-11-01",
+      "taxes": null
+    }
+  ],
+  "totalItems": 13,
+  "totalPages": 1.0
+}

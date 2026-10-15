@@ -1,0 +1,690 @@
+[
+  {
+    "profile": {
+      "id": 900100,
+      "employeeNumber": "1000",
+      "nameAddress": {
+        "firstName": "Jordan",
+        "lastName": "Alvarez",
+        "middleName": "",
+        "preferredName": null,
+        "address1": "529 Maple St",
+        "city": "Austin",
+        "state": "TX",
+        "zipCode": "78701"
+      },
+      "personal": {
+        "mobilePhone": null,
+        "homePhone": null,
+        "officePhone": null,
+        "personalEmailAddress": "jordan@example.com"
+      },
+      "birthDate": "1960-01-10T00:00:00",
+      "gender": "Male",
+      "maritalStatus": "Married",
+      "ssn": "100-20-1000",
+      "emailAddress": "jordan.alvarez@example.com",
+      "employmentStatus": "Active",
+      "employmentCategoryCode": "FT",
+      "jobTitle": "Technician",
+      "hireDate": "2021-03-01T00:00:00",
+      "rehireDate": null,
+      "terminationDate": null,
+      "terminationReason": null,
+      "payType": "Salary",
+      "hourlyRate": 22.5,
+      "annualSalary": 55000.0,
+      "perPaySalary": null,
+      "salaryEffectiveDate": "2024-01-01T00:00:00",
+      "payFrequency": 24
+    },
+    "direct_deposits": [
+      {
+        "id": 700002,
+        "accountNumber": "453409",
+        "accountType": "Checking",
+        "amount": null,
+        "bankName": "Lakeshore Federal",
+        "description": null,
+        "frequency": "Every Pay",
+        "percent": null,
+        "routingNumber": "020529094",
+        "sequenceNumber": 0,
+        "status": "Active"
+      }
+    ],
+    "pay_items": [
+      {
+        "id": 800000,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900100,
+        "employeeNumber": "900100",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "401K",
+        "payItemId": 800000,
+        "payItemName": "401k",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800001,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900100,
+        "employeeNumber": "900100",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "DEN",
+        "payItemId": 800001,
+        "payItemName": "Dental Pre-tax",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800002,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900100,
+        "employeeNumber": "900100",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "13",
+        "payItemId": 800002,
+        "payItemName": "Bonus",
+        "payItemType": "Earning",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      }
+    ],
+    "corestream_deductions": null,
+    "client_id": "9900",
+    "legal_id": "9000"
+  },
+  {
+    "profile": {
+      "id": 900101,
+      "employeeNumber": "1001",
+      "nameAddress": {
+        "firstName": "Priya",
+        "lastName": "Okafor",
+        "middleName": "",
+        "preferredName": null,
+        "address1": "718 Cedar Ave",
+        "city": "Tampa",
+        "state": "FL",
+        "zipCode": "33602"
+      },
+      "personal": {
+        "mobilePhone": null,
+        "homePhone": null,
+        "officePhone": null,
+        "personalEmailAddress": "priya@example.com"
+      },
+      "birthDate": "1961-02-11T00:00:00",
+      "gender": "Female",
+      "maritalStatus": "Single",
+      "ssn": "101-21-1001",
+      "emailAddress": "priya.okafor@example.com",
+      "employmentStatus": "Terminated",
+      "employmentCategoryCode": "FT",
+      "jobTitle": "Technician",
+      "hireDate": "2021-03-01T00:00:00",
+      "rehireDate": null,
+      "terminationDate": "2024-10-01T00:00:00",
+      "terminationReason": "Resignation",
+      "payType": "Hourly",
+      "hourlyRate": 23.5,
+      "annualSalary": 56000.0,
+      "perPaySalary": null,
+      "salaryEffectiveDate": "2024-01-01T00:00:00",
+      "payFrequency": 24
+    },
+    "direct_deposits": [
+      {
+        "id": 700003,
+        "accountNumber": "662490",
+        "accountType": "Checking",
+        "amount": null,
+        "bankName": "Lakeshore Federal",
+        "description": null,
+        "frequency": "Every Pay",
+        "percent": null,
+        "routingNumber": "024507770",
+        "sequenceNumber": 0,
+        "status": "Active"
+      }
+    ],
+    "pay_items": [
+      {
+        "id": 800001,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900101,
+        "employeeNumber": "900101",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "401K",
+        "payItemId": 800001,
+        "payItemName": "401k",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800002,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900101,
+        "employeeNumber": "900101",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "DEN",
+        "payItemId": 800002,
+        "payItemName": "Dental Pre-tax",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800003,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900101,
+        "employeeNumber": "900101",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "13",
+        "payItemId": 800003,
+        "payItemName": "Bonus",
+        "payItemType": "Earning",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      }
+    ],
+    "corestream_deductions": null,
+    "client_id": "9900",
+    "legal_id": "9000"
+  },
+  {
+    "profile": {
+      "id": 900102,
+      "employeeNumber": "1002",
+      "nameAddress": {
+        "firstName": "Marcus",
+        "lastName": "Alvarez",
+        "middleName": "",
+        "preferredName": null,
+        "address1": "664 River Rd",
+        "city": "Columbus",
+        "state": "OH",
+        "zipCode": "43215"
+      },
+      "personal": {
+        "mobilePhone": null,
+        "homePhone": null,
+        "officePhone": null,
+        "personalEmailAddress": "marcus@example.com"
+      },
+      "birthDate": "1962-03-12T00:00:00",
+      "gender": "Male",
+      "maritalStatus": "Married",
+      "ssn": "102-22-1002",
+      "emailAddress": "marcus.alvarez@example.com",
+      "employmentStatus": "Inactive",
+      "employmentCategoryCode": "FT",
+      "jobTitle": "Technician",
+      "hireDate": "2021-03-01T00:00:00",
+      "rehireDate": null,
+      "terminationDate": null,
+      "terminationReason": null,
+      "payType": "Salary",
+      "hourlyRate": 24.5,
+      "annualSalary": 57000.0,
+      "perPaySalary": null,
+      "salaryEffectiveDate": "2024-01-01T00:00:00",
+      "payFrequency": 24
+    },
+    "direct_deposits": [
+      {
+        "id": 700004,
+        "accountNumber": "477758",
+        "accountType": "Checking",
+        "amount": null,
+        "bankName": "Lakeshore Federal",
+        "description": null,
+        "frequency": "Every Pay",
+        "percent": null,
+        "routingNumber": "032681526",
+        "sequenceNumber": 0,
+        "status": "Active"
+      }
+    ],
+    "pay_items": [
+      {
+        "id": 800002,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900102,
+        "employeeNumber": "900102",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "401K",
+        "payItemId": 800002,
+        "payItemName": "401k",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800003,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900102,
+        "employeeNumber": "900102",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "DEN",
+        "payItemId": 800003,
+        "payItemName": "Dental Pre-tax",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800004,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900102,
+        "employeeNumber": "900102",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "13",
+        "payItemId": 800004,
+        "payItemName": "Bonus",
+        "payItemType": "Earning",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      }
+    ],
+    "corestream_deductions": null,
+    "client_id": "9900",
+    "legal_id": "9000"
+  },
+  {
+    "profile": {
+      "id": 900103,
+      "employeeNumber": "1003",
+      "nameAddress": {
+        "firstName": "Elena",
+        "lastName": "Okafor",
+        "middleName": "",
+        "preferredName": null,
+        "address1": "236 Birch Ln",
+        "city": "Spokane",
+        "state": "WA",
+        "zipCode": "99201"
+      },
+      "personal": {
+        "mobilePhone": null,
+        "homePhone": null,
+        "officePhone": null,
+        "personalEmailAddress": "elena@example.com"
+      },
+      "birthDate": "1963-04-13T00:00:00",
+      "gender": "Female",
+      "maritalStatus": "Single",
+      "ssn": "103-23-1003",
+      "emailAddress": "elena.okafor@example.com",
+      "employmentStatus": "Active",
+      "employmentCategoryCode": "FT",
+      "jobTitle": "Accountant",
+      "hireDate": "2021-03-01T00:00:00",
+      "rehireDate": null,
+      "terminationDate": null,
+      "terminationReason": null,
+      "payType": "Hourly",
+      "hourlyRate": 25.5,
+      "annualSalary": 58000.0,
+      "perPaySalary": null,
+      "salaryEffectiveDate": "2024-01-01T00:00:00",
+      "payFrequency": 24
+    },
+    "direct_deposits": [],
+    "pay_items": [],
+    "corestream_deductions": null,
+    "client_id": "9900",
+    "legal_id": "9000"
+  },
+  {
+    "profile": {
+      "id": 900104,
+      "employeeNumber": "1004",
+      "nameAddress": {
+        "firstName": "Kofi",
+        "lastName": "Alvarez",
+        "middleName": "",
+        "preferredName": null,
+        "address1": "773 Harbor Dr",
+        "city": "Charlotte",
+        "state": "NC",
+        "zipCode": "28202"
+      },
+      "personal": {
+        "mobilePhone": null,
+        "homePhone": null,
+        "officePhone": null,
+        "personalEmailAddress": "kofi@example.com"
+      },
+      "birthDate": "1964-05-14T00:00:00",
+      "gender": "Male",
+      "maritalStatus": "Married",
+      "ssn": "104-24-1004",
+      "emailAddress": "kofi.alvarez@example.com",
+      "employmentStatus": "Active",
+      "employmentCategoryCode": "FT",
+      "jobTitle": "Accountant",
+      "hireDate": "2021-03-01T00:00:00",
+      "rehireDate": null,
+      "terminationDate": null,
+      "terminationReason": null,
+      "payType": "Salary",
+      "hourlyRate": 26.5,
+      "annualSalary": 59000.0,
+      "perPaySalary": null,
+      "salaryEffectiveDate": "2024-01-01T00:00:00",
+      "payFrequency": 24
+    },
+    "direct_deposits": [
+      {
+        "id": 700004,
+        "accountNumber": "944810",
+        "accountType": "Checking",
+        "amount": 300.0,
+        "bankName": "Lakeshore Federal",
+        "description": null,
+        "frequency": "Every Pay",
+        "percent": null,
+        "routingNumber": "022071268",
+        "sequenceNumber": 0,
+        "status": "Active"
+      },
+      {
+        "id": 700005,
+        "accountNumber": "779661",
+        "accountType": "Savings",
+        "amount": null,
+        "bankName": "Pioneer Trust",
+        "description": null,
+        "frequency": "Every Pay",
+        "percent": 10.0,
+        "routingNumber": "012889240",
+        "sequenceNumber": 1,
+        "status": "Active"
+      }
+    ],
+    "pay_items": [
+      {
+        "id": 800004,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900104,
+        "employeeNumber": "900104",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "401K",
+        "payItemId": 800004,
+        "payItemName": "401k",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800005,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900104,
+        "employeeNumber": "900104",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "DEN",
+        "payItemId": 800005,
+        "payItemName": "Dental Pre-tax",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800006,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900104,
+        "employeeNumber": "900104",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "13",
+        "payItemId": 800006,
+        "payItemName": "Bonus",
+        "payItemType": "Earning",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      }
+    ],
+    "corestream_deductions": null,
+    "client_id": "9900",
+    "legal_id": "9000"
+  },
+  {
+    "profile": {
+      "id": 900105,
+      "employeeNumber": "1005",
+      "nameAddress": {
+        "firstName": "Hannah",
+        "lastName": "Okafor",
+        "middleName": "",
+        "preferredName": null,
+        "address1": "364 Union Way",
+        "city": "Boise",
+        "state": "ID",
+        "zipCode": "83702"
+      },
+      "personal": {
+        "mobilePhone": null,
+        "homePhone": null,
+        "officePhone": null,
+        "personalEmailAddress": "hannah@example.com"
+      },
+      "birthDate": "1965-06-15T00:00:00",
+      "gender": "Female",
+      "maritalStatus": "Single",
+      "ssn": "105-25-1005",
+      "emailAddress": "hannah.okafor@example.com",
+      "employmentStatus": "Pending Review",
+      "employmentCategoryCode": "FT",
+      "jobTitle": "Accountant",
+      "hireDate": "2021-03-01T00:00:00",
+      "rehireDate": null,
+      "terminationDate": null,
+      "terminationReason": null,
+      "payType": "Hourly",
+      "hourlyRate": 27.5,
+      "annualSalary": 60000.0,
+      "perPaySalary": null,
+      "salaryEffectiveDate": "2024-01-01T00:00:00",
+      "payFrequency": 24
+    },
+    "direct_deposits": [
+      {
+        "id": 700007,
+        "accountNumber": "896446",
+        "accountType": "Checking",
+        "amount": null,
+        "bankName": "Pioneer Trust",
+        "description": null,
+        "frequency": "Every Pay",
+        "percent": null,
+        "routingNumber": "032260534",
+        "sequenceNumber": 0,
+        "status": "Active"
+      }
+    ],
+    "pay_items": [
+      {
+        "id": 800005,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900105,
+        "employeeNumber": "900105",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "401K",
+        "payItemId": 800005,
+        "payItemName": "401k",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800006,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900105,
+        "employeeNumber": "900105",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "DEN",
+        "payItemId": 800006,
+        "payItemName": "Dental Pre-tax",
+        "payItemType": "Deduction",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      },
+      {
+        "id": 800007,
+        "auditId": null,
+        "calcParams": [
+          {
+            "paramType": "Rate",
+            "paramValue": 0.0
+          }
+        ],
+        "employeeId": 900105,
+        "employeeNumber": "900105",
+        "firstName": "",
+        "lastName": "",
+        "payItemCode": "13",
+        "payItemId": 800007,
+        "payItemName": "Bonus",
+        "payItemType": "Earning",
+        "referenceNumber": null,
+        "scheduleOverride": null,
+        "startDate": "2023-01-01T00:00:00",
+        "stopDate": null
+      }
+    ],
+    "corestream_deductions": null,
+    "client_id": "9900",
+    "legal_id": "9000"
+  }
+]
