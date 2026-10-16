@@ -1,131 +1,137 @@
-# Tada AI · Data Normalization Take-Home
+# Tada AI · Data Normalization
 
-Build a local platform that normalizes company, employee, direct deposit,
-deduction, and payroll data from
-**PrismHR, isolved, and UKG Ready** into a consistent model. Discover the provider
-mappings, design your own canonical schemas and enums, generate synthetic test
-data, and implement transformations that preserve the meaning of the source data.
-Use any programming language or stack.
-You can use AI as much as you want throughout this project.
+A local platform that pulls employee, direct-deposit, deduction, and payroll
+data from three payroll providers — **PrismHR, isolved, and UKG Ready** —
+and normalizes all of it into one shared canonical schema, regardless of
+which provider it came from. Built for the Tada AI data-normalization
+take-home; the original assignment brief is preserved verbatim at
+[ASSIGNMENT.md](ASSIGNMENT.md).
 
-## Data to normalize
+- **Full setup and run commands:** [RUNNING.md](RUNNING.md)
+- **Assumptions, decisions, known gaps, and real bugs found and fixed:**
+  [ASSUMPTIONS_AND_DECISIONS.md](ASSUMPTIONS_AND_DECISIONS.md)
+- **Canonical schema design rationale:** [docs/CANONICAL_SCHEMA.md](docs/CANONICAL_SCHEMA.md)
+  (technical) and [docs/layman.md](docs/layman.md) (plain-English walkthrough)
 
-Normalize these four data types across **PrismHR, isolved, and UKG Ready**:
+## What's in this repo
 
-| Data type | What to cover |
-| --- | --- |
-| **Employee data** | The complete employee data available from each provider, including profile/contact information, employment status and dates, job and organization details, and compensation. Cover all available employee fields, rather than only a small summary. |
-| **Direct deposits** | Employee direct-deposit setup, including account types, deposit allocations, amounts or percentages, priority, and status/effective dates where available. |
-| **Deductions** | Employee deduction setup and deductions recorded in payroll, including provider codes/types, amounts or percentages, and applicable rules or dates where available. |
-| **Payroll data** | Payroll runs/periods and employee paycheck records, including earnings, hours, gross/net pay, taxes, deductions, and benefit contributions where available. |
-
-Keep the company and employee relationships so these records can be linked in
-your normalized model. If a provider does not expose a field or data type, document
-that gap and your assumptions or decisions in the Markdown explanation described
-under Submission.
-
-## Reference materials
-
-| Provider | Source specifications | Lookup reference |
-| --- | --- | --- |
-| PrismHR | [OpenAPI 3.0.1, API 2025.09](contracts/prismhr/openapi/prismhr-2025.09.openapi.json) | [Documented codes and meanings](contracts/prismhr/lookup-reference.json) |
-| isolved | [Primary Swagger 2.0, API version 6](contracts/isolved/openapi/isolved-v6.swagger.json); [alternate snapshot](contracts/isolved/openapi/isolved-v6.alternate.swagger.json) for comparison | [Documented enum values](contracts/isolved/lookup-reference.json) |
-| UKG Ready | [Cached reference pages](contracts/ukg-ready/reference-docs/index.html) and [extracted JSON schemas](contracts/ukg-ready/reference-schemas.json) | [Documented enum values](contracts/ukg-ready/lookup-reference.json) |
-
-UKG Ready's material is cached HTML documentation and an extracted schema bundle,
-**not an official Swagger/OpenAPI contract**. Read the pages for endpoint bindings,
-parameters, response statuses, XML schemas, and opaque schema blocks. Use isolved's
-primary snapshot consistently; do not mix schemas between its two snapshots.
-The reference versions have not been verified against the latest live APIs.
-
-The lookup files contain actual, cited source values. They are partial references;
-undocumented meanings remain unknown, and tenant-configured lookup values are not
-supplied. Discover the mappings and define your own canonical enums. Documented
-sample payloads are retained as illustrative source examples; generate and validate
-your own fixtures rather than treating those samples as exhaustive contracts.
-
-**Reference status:** this repository is public. PrismHR's artifact license is
-retained, and the organizer has approved sharing this reference pack with candidates.
-The organizer provides the handoff, scope, deadline, and timezone. Use the
-organizer-approved sharing channel.
-
-Source history and evidence remain in the [reference audit](docs/REFERENCE_AUDIT.md),
-[isolved manifest](contracts/isolved/SOURCE_MANIFEST.json), and
-[UKG manifest](contracts/ukg-ready/SOURCE_MANIFEST.json). Attribution/modification
-notices and PrismHR's license stay alongside the specifications.
-
-## Access live demo data
-
-You can inspect live demo responses from all three providers to understand their
-data and validate mapping assumptions. The organizer supplies the **API key
-privately**; it is not included in this repository.
-
-Send `POST https://tada-demo-provider-signin.onrender.com/signin` with an
-`X-API-Key` header and a JSON body containing `tenant`:
-
-```sh
-curl -X POST 'https://tada-demo-provider-signin.onrender.com/signin' \
-  -H "X-API-Key: $DEMO_SIGNIN_API_KEY" \
-  -H 'Content-Type: application/json' \
-  -d '{"tenant":"ukg"}'
+```
+contracts/                  Organizer-supplied API specs and lookup references (read-only)
+src/normalization/
+  canonical/                 The shared schema every provider maps into (models.py, enums.py)
+  adapters/                  One file per provider - raw API shape -> canonical schema
+  __main__.py                CLI entry point (organizer-provided scaffold)
+scripts/generate_fixtures.py Deterministic synthetic data generator, no credentials needed
+app/                         Streamlit wizard app + the Python modules it's built from
+tests/                       pytest suite against the synthetic fixtures (23 tests)
+docs/                        Design-rationale documents
+postman/                     Importable Postman collection covering all three provider APIs
 ```
 
-Set `DEMO_SIGNIN_API_KEY` locally to the key provided by the organizer. Change
-`tenant` to `prism`, `isol`, or `ukg` to select the corresponding demo account.
+## Approach
 
-| Tenant | Authentication returned | Demo identifiers returned |
-| --- | --- | --- |
-| `prism` | `auth.sessionId`; use it in the provider's `sessionId` header | `context.companies[].client_id` |
-| `isol` | `auth.access_token` and the refresh token when issued; use `Authorization: Bearer <access_token>` | `context.companies[].client_id` and `legal_id` |
-| `ukg` | `auth.access_token`; use `Authorization: Bearer <access_token>` | `context.companies[].company_id` |
+**Three adapters, one schema.** Each provider (`src/normalization/adapters/`)
+gets its own adapter whose only job is translating that provider's raw API
+shape into one shared canonical schema (`src/normalization/canonical/`) -
+`Company`, `Employee` (with `direct_deposits`/`deductions` nested inside, per
+the assignment's four data types), and `Paycheck`. Every adapter exposes the
+same `normalize(entity, response, reference)` entry point, so nothing
+downstream (the CLI, the test suite, the Streamlit app) needs to know which
+provider it's looking at.
 
-Each response also includes the provider's `base_url`, `tenant_id`, token expiry
-when supplied, and `usage.header_name` / `usage.header_prefix`. Use the returned
-authentication and identifiers with the provider endpoints in the reference
-materials. Retrieve company names, employees, and payroll records through those
-provider APIs; company names and employee/payroll records are not returned by
-the sign-in endpoint. Prism client IDs and isolved client/legal-entity IDs identify
-the seeded demo companies available for exploration.
+**Cross-provider identity without a mapping table.** Canonical ids are
+provider-prefixed composite strings (`canonical_id(provider, kind, raw_id)`
+→ `"prismhr:employee:A00576"`), so an `Employee.company_id` can point
+straight at a `Company.id` with no separate id-mapping table to keep in
+sync, and ids from all three providers can coexist in one shared SQLite
+database without colliding.
 
-Call `/signin` again when authentication expires. A refresh token is returned
-only if the provider issues one; Prism uses a session ID. The hosted service may
-take longer on its first request after inactivity. See the
-[sign-in service README](https://github.com/Niwant/demo-provider-signin) for the
-response fields and error behavior.
+**Every enum keeps its raw code.** The organizer's own lookup-reference
+files say outright that they're partial - undocumented and
+tenant-configured values aren't supplied. So every enum field (employment
+status, deduction category, etc.) ships with a sibling `raw_*` string: the
+adapter's best-guess canonical value, plus the original code, always both,
+never just one. An unrecognized code falls back to `OTHER`/`UNKNOWN`
+instead of raising.
 
-Live access is optional for discovery. Keep fixture generation and submitted
-tests deterministic and able to run locally without credentials or live services.
-Use the demo accounts for inspection, and keep returned tokens and any downloaded
-records out of Git and your submission.
+**Deterministic synthetic data, no credentials required.**
+`scripts/generate_fixtures.py` fabricates six scripted scenarios per
+provider (happy path, terminated, on-leave, no-deposits/no-deductions,
+multiple-deposits, and a deliberately-unrecognized status code) in each
+provider's real raw API shape - committed under `tests/fixtures/` and
+exercised by the test suite, so grading never depends on live credentials.
 
-## Submission
+**A Streamlit app ties the whole pipeline together end to end.** Sign in to
+the organizer's live demo APIs (optional) or generate synthetic data, run
+either through the real adapters, and save the result into one shared
+SQLite database (`canonical.db`) - with a built-in table browser and a
+per-session SQL export, so the normalized output is actually inspectable,
+not just a JSON blob in a terminal. See [RUNNING.md](RUNNING.md) for the
+full step-by-step wizard walkthrough.
 
-Submit a link to your own repository containing everything needed to run your
-solution locally. Include:
+## How I built it
 
-- A README explaining your approach, how you built it, and the steps to set up
-  and run it.
-- A Markdown file documenting your assumptions and decisions, with an explanation
-  of why you made them.
+1. Read the organizer's reference specs for all three providers and the
+   `contracts/*/lookup-reference.json` files to see what was actually
+   documented versus what wasn't.
+2. Designed the canonical schema first (`docs/CANONICAL_SCHEMA.md` /
+   `docs/layman.md`), before writing a single adapter - what fields every
+   provider needed to fit into, and the house rules that apply everywhere
+   (exact-precision money, raw-code preservation, PII minimization,
+   `extra="forbid"` validation).
+3. Built the PrismHR adapter first (the most completely documented
+   provider), verified it against real pulled data, then isolved and UKG
+   Ready, each of which surfaced new gaps that fed back into the schema.
+4. Built `scripts/generate_fixtures.py` so the test suite and submission
+   never depend on live credentials, and wrote `tests/test_*_adapter.py`
+   against those fixtures.
+5. Built the Streamlit app (`app/`) as a thin UI layer over the same
+   adapters and schema - every module under `app/` is deliberately
+   Streamlit-free at its core (`data_client.py`, `canonicalize_client.py`,
+   `db_client.py`, etc.) so the actual pull/normalize/save logic is
+   reusable outside the UI, and `streamlit_app.py` just wires it together.
+6. Iterated on the app based on actual use: pulling live data surfaced real
+   bugs the fixtures hadn't (a PrismHR date field that's genuinely
+   `"0000-01-01"` for some employees; two providers' direct-deposit ids
+   that collide across different employees) - both found and fixed, with
+   the reasoning documented in
+   [ASSUMPTIONS_AND_DECISIONS.md](ASSUMPTIONS_AND_DECISIONS.md).
 
-If something fails, or data seems incorrect, inconsistent, or different from
-what you expected, you are free to make your own assumptions and decisions.
-Clearly document the issue, what you assumed or decided, and your reasoning in
-that Markdown file. Be prepared to explain those choices.
+**Optional write-path extension:** not attempted. This submission is
+read/normalize-only (provider → canonical), as the assignment explicitly
+scopes that extension as optional.
 
-## Optional extension: write canonical data to a provider
+## Quickstart
 
-If you want to take the project further, add a write path that accepts canonical
-employee data and a destination tenant, such as UKG Ready or PrismHR. Map the
-canonical data into that provider's format and use its API to create or update
-the employee in the selected destination tenant. Explain which operations and
-fields you support, how you handle provider differences, and any assumptions
-or limitations. You can demonstrate the mapping with a dry run or use a demo
-tenant for the write.
+```sh
+git clone <this-repo-url>
+cd tada-ai-normalization-take-home
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+PYTHONPATH=src python3 -m pytest tests/ -q      # 23 tests, synthetic fixtures, no credentials needed
+streamlit run app/streamlit_app.py              # the full wizard app
+```
 
-This is an open-ended project. You can build an end-to-end system or application,
-covering provider data access, normalization into your canonical model, and,
-if you choose, writing canonical employee data to a destination tenant. Choose
-your own design, architecture, interfaces, and implementation approach. Build
-it in the way you think works best, and explain your decisions in your Markdown
-file.
+Full commands (CLI usage, regenerating fixtures, live-demo credentials, a
+step-by-step tour of the Streamlit wizard) are in
+[RUNNING.md](RUNNING.md).
+
+## Testing
+
+`PYTHONPATH=src python3 -m pytest tests/ -q` runs 23 tests: one suite per
+provider adapter (company/employee/payroll conversion against the
+deterministic synthetic fixtures, including the six scripted scenarios
+above and both real bugs listed in the assumptions file), plus the
+organizer's own starter and reference-integrity checks. All synthetic,
+deterministic, and credential-free.
+
+## Known limitations
+
+Every provider has real, confirmed gaps - fields that live behind an
+endpoint this project never crawled (UKG's `/demographics`, `/pay-info`),
+fields no provider in this project's discovery ever documented an enum for
+(isolved's employment-status strings), and fields genuinely absent from
+the data (`Paycheck.benefit_contributions` for all three). None of these
+are silently guessed at - each is either mapped from directly-observed
+values or left `None` with the reason recorded inline. Full list, with
+reasoning, in [ASSUMPTIONS_AND_DECISIONS.md](ASSUMPTIONS_AND_DECISIONS.md).

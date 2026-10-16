@@ -5,17 +5,17 @@
       "provider": "isolved",
       "raw_id": "9000"
     },
-    "name": "Alvarez Builders Inc",
-    "legal_name": "Alvarez Builders",
+    "name": "Costa Builders Inc",
+    "legal_name": "Costa Builders",
     "tax_id": "500009000",
     "status": "ACTIVE",
     "raw_status": "Active",
     "address": {
-      "line1": "193 Maple St",
+      "line1": "193 Pine Rd",
       "line2": null,
-      "city": "Austin",
-      "state": "TX",
-      "postal_code": "78701",
+      "city": "Portland",
+      "state": "OR",
+      "postal_code": "97201",
       "country": "USA"
     }
   },
@@ -25,17 +25,17 @@
       "provider": "isolved",
       "raw_id": "9001"
     },
-    "name": "Okafor Freight Inc",
-    "legal_name": "Okafor Freight",
+    "name": "Ibrahim Freight Inc",
+    "legal_name": "Ibrahim Freight",
     "tax_id": "500009001",
     "status": "ACTIVE",
     "raw_status": "Active",
     "address": {
-      "line1": "569 Cedar Ave",
+      "line1": "805 Willow Ln",
       "line2": null,
-      "city": "Tampa",
-      "state": "FL",
-      "postal_code": "33602",
+      "city": "Raleigh",
+      "state": "NC",
+      "postal_code": "27601",
       "country": "USA"
     }
   }

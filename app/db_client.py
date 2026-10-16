@@ -26,7 +26,7 @@ from __future__ import annotations
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Collection, Dict, List, Optional, Tuple
 
 DB_PATH = Path(__file__).resolve().parents[1] / "canonical.db"
 
@@ -234,26 +234,92 @@ def save_employee(employee: Dict[str, Any]) -> None:
         conn.close()
 
 
-def provider_counts() -> Dict[str, int]:
+TABLE_NAMES = ("employees", "pay_rates", "direct_deposits", "deduction_setups")
+
+# employees is keyed by its own id; every other table hangs off employee_id -
+# so filtering any of these four tables down to "just these employees" is
+# always a single IN (...) on exactly one of these two columns.
+_EMPLOYEE_ID_COLUMN = {
+    "employees": "id",
+    "pay_rates": "employee_id",
+    "direct_deposits": "employee_id",
+    "deduction_setups": "employee_id",
+}
+
+
+def fetch_table(
+    table_name: str, employee_ids: Optional[Collection[str]] = None
+) -> Tuple[List[str], List[Tuple[Any, ...]]]:
+    """Runs the equivalent of SELECT * FROM <table_name> against
+    canonical.db and returns (column_names, rows). table_name MUST be one
+    of TABLE_NAMES - sqlite3 placeholders can't parameterize a table name,
+    so this checks against that fixed allow-list instead of ever
+    string-formatting caller-supplied input directly into SQL.
+
+    employee_ids, if given, restricts the result to rows belonging to that
+    set of canonical employee ids (via _EMPLOYEE_ID_COLUMN) - this is how
+    the UI shows only what THIS session saved, rather than every row ever
+    saved to the file. None (the default) means no filtering - every row
+    in the table."""
+    if table_name not in TABLE_NAMES:
+        raise ValueError(f"Unknown table {table_name!r}; expected one of {TABLE_NAMES}")
     conn = _connect()
     try:
-        rows = conn.execute(
-            "SELECT source_provider, COUNT(*) AS n FROM employees GROUP BY source_provider"
-        ).fetchall()
-        return {row["source_provider"]: row["n"] for row in rows}
+        if employee_ids is None:
+            cursor = conn.execute(f"SELECT * FROM {table_name}")
+        else:
+            ids = list(employee_ids)
+            if not ids:
+                cursor = conn.execute(f"SELECT * FROM {table_name} LIMIT 0")
+            else:
+                id_column = _EMPLOYEE_ID_COLUMN[table_name]
+                placeholders = ",".join("?" for _ in ids)
+                cursor = conn.execute(f"SELECT * FROM {table_name} WHERE {id_column} IN ({placeholders})", ids)
+        columns = [d[0] for d in cursor.description]
+        rows = [tuple(row) for row in cursor.fetchall()]
+        return columns, rows
     finally:
         conn.close()
 
 
-def export_sql() -> str:
+def export_sql(employee_ids: Optional[Collection[str]] = None) -> str:
     """A complete, runnable SQL script - CREATE TABLE plus INSERT
-    statements for everything currently saved - via sqlite3's own
-    iterdump(). Viewing the database happens outside this app: paste/run
-    this script in any browser-based SQLite tool (e.g. sqliteonline.com,
-    sqlite.org/fiddle) to rebuild and browse the exact same database
-    there."""
+    statements - for canonical.db. With employee_ids given, the script
+    contains only those employees' rows (across all four tables) rather
+    than the whole file: built by copying just the matching rows into a
+    throwaway in-memory database and dumping THAT, so the same
+    battle-tested sqlite3.iterdump() escaping is reused instead of
+    hand-rolling SQL string-literal quoting. employee_ids=None (the
+    default) dumps the entire file, unfiltered, via iterdump() directly.
+    Viewing the database happens outside this app: paste/run this script
+    in any browser-based SQLite tool (e.g. sqliteonline.com,
+    sqlite.org/fiddle) to rebuild and browse it there."""
     conn = _connect()
     try:
-        return "\n".join(conn.iterdump())
+        if employee_ids is None:
+            return "\n".join(conn.iterdump())
+
+        ids = list(employee_ids)
+        tmp = sqlite3.connect(":memory:")
+        try:
+            tmp.executescript(_SCHEMA)
+            if ids:
+                placeholders = ",".join("?" for _ in ids)
+                for table in TABLE_NAMES:
+                    id_column = _EMPLOYEE_ID_COLUMN[table]
+                    rows = conn.execute(
+                        f"SELECT * FROM {table} WHERE {id_column} IN ({placeholders})", ids
+                    ).fetchall()
+                    if rows:
+                        columns = list(rows[0].keys())
+                        col_list = ", ".join(columns)
+                        value_placeholders = ", ".join("?" for _ in columns)
+                        tmp.executemany(
+                            f"INSERT INTO {table} ({col_list}) VALUES ({value_placeholders})", rows
+                        )
+            tmp.commit()
+            return "\n".join(tmp.iterdump())
+        finally:
+            tmp.close()
     finally:
         conn.close()

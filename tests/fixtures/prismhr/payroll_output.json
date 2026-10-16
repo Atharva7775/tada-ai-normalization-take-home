@@ -12,8 +12,8 @@
     "check_date": "2024-09-15",
     "period_start": "2024-09-15",
     "period_end": "2024-09-15",
-    "gross_pay": "1563.86",
-    "net_pay": "1256.56",
+    "gross_pay": "1559.23",
+    "net_pay": "1252.84",
     "total_hours": null,
     "earnings": [
       {
@@ -21,41 +21,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "19.5482",
-        "amount": "1563.86"
+        "rate": "19.4904",
+        "amount": "1559.23"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "187.66",
+        "employee_amount": "187.11",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "22.68",
+        "employee_amount": "22.61",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "96.96",
+        "employee_amount": "96.67",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "22.68"
+        "employer_amount": "22.61"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "62.55",
+        "employee_amount": "62.37",
         "employer_amount": null
       }
     ],
@@ -74,8 +74,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1766.27",
-    "net_pay": "1419.2",
+    "gross_pay": "1867.66",
+    "net_pay": "1500.67",
     "total_hours": null,
     "earnings": [
       {
@@ -83,41 +83,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "22.0784",
-        "amount": "1766.27"
+        "rate": "23.3458",
+        "amount": "1867.66"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "211.95",
+        "employee_amount": "224.12",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "25.61",
+        "employee_amount": "27.08",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "109.51",
+        "employee_amount": "115.79",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "25.61"
+        "employer_amount": "27.08"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "70.65",
+        "employee_amount": "74.71",
         "employer_amount": null
       }
     ],
@@ -136,8 +136,8 @@
     "check_date": "2024-09-15",
     "period_start": "2024-09-15",
     "period_end": "2024-09-15",
-    "gross_pay": "1841.52",
-    "net_pay": "1479.67",
+    "gross_pay": "1591.51",
+    "net_pay": "1278.78",
     "total_hours": null,
     "earnings": [
       {
@@ -145,41 +145,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "23.019",
-        "amount": "1841.52"
+        "rate": "19.8939",
+        "amount": "1591.51"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "220.98",
+        "employee_amount": "190.98",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "26.7",
+        "employee_amount": "23.08",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "114.17",
+        "employee_amount": "98.67",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "26.7"
+        "employer_amount": "23.08"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "73.66",
+        "employee_amount": "63.66",
         "employer_amount": null
       }
     ],
@@ -198,8 +198,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1600.64",
-    "net_pay": "1286.11",
+    "gross_pay": "1508.81",
+    "net_pay": "1212.32",
     "total_hours": null,
     "earnings": [
       {
@@ -207,41 +207,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "20.008",
-        "amount": "1600.64"
+        "rate": "18.8601",
+        "amount": "1508.81"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "192.08",
+        "employee_amount": "181.06",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "23.21",
+        "employee_amount": "21.88",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "99.24",
+        "employee_amount": "93.55",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "23.21"
+        "employer_amount": "21.88"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "64.03",
+        "employee_amount": "60.35",
         "employer_amount": null
       }
     ],
@@ -260,8 +260,8 @@
     "check_date": "2024-09-15",
     "period_start": "2024-09-15",
     "period_end": "2024-09-15",
-    "gross_pay": "1898.91",
-    "net_pay": "1525.78",
+    "gross_pay": "1713.89",
+    "net_pay": "1377.11",
     "total_hours": null,
     "earnings": [
       {
@@ -269,41 +269,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "23.7364",
-        "amount": "1898.91"
+        "rate": "21.4236",
+        "amount": "1713.89"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "227.87",
+        "employee_amount": "205.67",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "27.53",
+        "employee_amount": "24.85",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "117.73",
+        "employee_amount": "106.26",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "27.53"
+        "employer_amount": "24.85"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "75.96",
+        "employee_amount": "68.56",
         "employer_amount": null
       }
     ],
@@ -322,8 +322,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1874.1",
-    "net_pay": "1505.85",
+    "gross_pay": "1971.76",
+    "net_pay": "1584.31",
     "total_hours": null,
     "earnings": [
       {
@@ -331,41 +331,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "23.4262",
-        "amount": "1874.1"
+        "rate": "24.647",
+        "amount": "1971.76"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "224.89",
+        "employee_amount": "236.61",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "27.17",
+        "employee_amount": "28.59",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "116.19",
+        "employee_amount": "122.25",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "27.17"
+        "employer_amount": "28.59"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "74.96",
+        "employee_amount": "78.87",
         "employer_amount": null
       }
     ],
@@ -384,8 +384,8 @@
     "check_date": "2024-09-15",
     "period_start": "2024-09-15",
     "period_end": "2024-09-15",
-    "gross_pay": "1924.97",
-    "net_pay": "1546.71",
+    "gross_pay": "1816.83",
+    "net_pay": "1459.83",
     "total_hours": null,
     "earnings": [
       {
@@ -393,41 +393,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "24.0621",
-        "amount": "1924.97"
+        "rate": "22.7104",
+        "amount": "1816.83"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "231.0",
+        "employee_amount": "218.02",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "27.91",
+        "employee_amount": "26.34",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "119.35",
+        "employee_amount": "112.64",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "27.91"
+        "employer_amount": "26.34"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "77.0",
+        "employee_amount": "72.67",
         "employer_amount": null
       }
     ],
@@ -446,8 +446,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1529.81",
-    "net_pay": "1229.2",
+    "gross_pay": "1888.25",
+    "net_pay": "1517.21",
     "total_hours": null,
     "earnings": [
       {
@@ -455,41 +455,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "19.1226",
-        "amount": "1529.81"
+        "rate": "23.6031",
+        "amount": "1888.25"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "183.58",
+        "employee_amount": "226.59",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "22.18",
+        "employee_amount": "27.38",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "94.85",
+        "employee_amount": "117.07",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "22.18"
+        "employer_amount": "27.38"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "61.19",
+        "employee_amount": "75.53",
         "employer_amount": null
       }
     ],
@@ -508,8 +508,8 @@
     "check_date": "2024-09-15",
     "period_start": "2024-09-15",
     "period_end": "2024-09-15",
-    "gross_pay": "1613.88",
-    "net_pay": "1296.75",
+    "gross_pay": "1910.32",
+    "net_pay": "1534.94",
     "total_hours": null,
     "earnings": [
       {
@@ -517,41 +517,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "20.1735",
-        "amount": "1613.88"
+        "rate": "23.879",
+        "amount": "1910.32"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "193.67",
+        "employee_amount": "229.24",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "23.4",
+        "employee_amount": "27.7",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "100.06",
+        "employee_amount": "118.44",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "23.4"
+        "employer_amount": "27.7"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "64.56",
+        "employee_amount": "76.41",
         "employer_amount": null
       }
     ],
@@ -570,8 +570,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1546.11",
-    "net_pay": "1242.3",
+    "gross_pay": "1726.38",
+    "net_pay": "1387.14",
     "total_hours": null,
     "earnings": [
       {
@@ -579,41 +579,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "19.3264",
-        "amount": "1546.11"
+        "rate": "21.5798",
+        "amount": "1726.38"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "185.53",
+        "employee_amount": "207.17",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "22.42",
+        "employee_amount": "25.03",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "95.86",
+        "employee_amount": "107.04",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "22.42"
+        "employer_amount": "25.03"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "61.84",
+        "employee_amount": "69.06",
         "employer_amount": null
       }
     ],
@@ -632,8 +632,8 @@
     "check_date": "2024-09-15",
     "period_start": "2024-09-15",
     "period_end": "2024-09-15",
-    "gross_pay": "1507.16",
-    "net_pay": "1211.01",
+    "gross_pay": "1773.57",
+    "net_pay": "1425.06",
     "total_hours": null,
     "earnings": [
       {
@@ -641,41 +641,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "18.8395",
-        "amount": "1507.16"
+        "rate": "22.1696",
+        "amount": "1773.57"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "180.86",
+        "employee_amount": "212.83",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "21.85",
+        "employee_amount": "25.72",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "93.44",
+        "employee_amount": "109.96",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "21.85"
+        "employer_amount": "25.72"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "60.29",
+        "employee_amount": "70.94",
         "employer_amount": null
       }
     ],
@@ -694,8 +694,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1584.15",
-    "net_pay": "1272.86",
+    "gross_pay": "1601.58",
+    "net_pay": "1286.87",
     "total_hours": null,
     "earnings": [
       {
@@ -703,41 +703,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "19.8019",
-        "amount": "1584.15"
+        "rate": "20.0197",
+        "amount": "1601.58"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "190.1",
+        "employee_amount": "192.19",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "22.97",
+        "employee_amount": "23.22",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "98.22",
+        "employee_amount": "99.3",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "22.97"
+        "employer_amount": "23.22"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "63.37",
+        "employee_amount": "64.06",
         "employer_amount": null
       }
     ],
@@ -756,8 +756,8 @@
     "check_date": "2024-11-15",
     "period_start": "2024-11-15",
     "period_end": "2024-11-15",
-    "gross_pay": "1717.78",
-    "net_pay": "1380.24",
+    "gross_pay": "1671.35",
+    "net_pay": "1342.94",
     "total_hours": null,
     "earnings": [
       {
@@ -765,41 +765,41 @@
         "raw_category": "REG",
         "description": "Earnings",
         "hours": "80.0",
-        "rate": "21.4722",
-        "amount": "1717.78"
+        "rate": "20.8919",
+        "amount": "1671.35"
       }
     ],
     "taxes": [
       {
         "code": "00-10",
         "jurisdiction": "Federal Income Tax",
-        "employee_amount": "206.13",
+        "employee_amount": "200.56",
         "employer_amount": null
       },
       {
         "code": "00-11",
         "jurisdiction": "Medicare - Employee",
-        "employee_amount": "24.91",
+        "employee_amount": "24.23",
         "employer_amount": null
       },
       {
         "code": "00-12",
         "jurisdiction": "Soc Security - Employee",
-        "employee_amount": "106.5",
+        "employee_amount": "103.62",
         "employer_amount": null
       },
       {
         "code": "00-15",
         "jurisdiction": "Medicare - Employer",
         "employee_amount": null,
-        "employer_amount": "24.91"
+        "employer_amount": "24.23"
       }
     ],
     "deductions": [
       {
         "deduction_setup_id": null,
         "code": "401k",
-        "employee_amount": "68.71",
+        "employee_amount": "66.85",
         "employer_amount": null
       }
     ],

@@ -3,15 +3,15 @@
     "clientList": [
       {
         "clientId": "900",
-        "clientName": "Alvarez Manufacturing",
-        "legalName": "Alvarez Manufacturing LLC",
+        "clientName": "Silva Manufacturing",
+        "legalName": "Silva Manufacturing LLC",
         "status": "A",
         "serviceType": null
       },
       {
         "clientId": "901",
-        "clientName": "Okafor Logistics",
-        "legalName": "Okafor Logistics LLC",
+        "clientName": "Patel Logistics",
+        "legalName": "Patel Logistics LLC",
         "status": "A",
         "serviceType": null
       }

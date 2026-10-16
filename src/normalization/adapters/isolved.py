@@ -243,8 +243,14 @@ def _map_direct_deposits(employee_id: str, deposits: Optional[List[Dict[str, Any
     for dd in deposits or []:
         raw_account_type = dd.get("accountType")
         raw_status = dd.get("status")
+        # dd["id"] is NOT globally unique on its own - confirmed empirically
+        # (this project's own synthetic fixtures reuse the same deposit id
+        # across two different employees' records, which previously caused
+        # a UNIQUE constraint failure saving to canonical.db). Scoping by
+        # employee_id is the same fix already applied to this file's own
+        # _map_deductions, for the same root cause.
         dd_model = DirectDeposit(
-            id=canonical_id(PROVIDER, "directdeposit", str(dd.get("id"))),
+            id=canonical_id(PROVIDER, "directdeposit", f"{employee_id}:{dd.get('id')}"),
             source=Source(provider=PROVIDER, raw_id=str(dd.get("id"))),
             account_type=_ACCOUNT_TYPE.get(raw_account_type, DirectDepositAccountType.OTHER),
             raw_account_type=raw_account_type,

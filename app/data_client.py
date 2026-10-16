@@ -1,19 +1,19 @@
-"""Step 2: pull ONE employee's FULL bundle per provider - profile plus every
-section its adapter's "employee" entity expects (direct deposits,
-deductions, etc.) - using the auth already stored from step 1's sign-in
-(app/signin_client.py). Deliberately scoped to one employee, not the
-full-breadth crawl scripts/generate_fixtures.py's real-data discovery
-phase did earlier in this project. Kept Streamlit-free, same reasoning as
-signin_client.py: step 3 (adapter conversion) can reuse
-pull_sample_employee_bundle() without depending on the UI layer.
+"""Step 2: pull one employee's FULL bundle - profile plus every section its
+adapter's "employee" entity expects (direct deposits, deductions, etc.) -
+per company, for one or more of a tenant's signed-in companies, using the
+auth already stored from step 1's sign-in (app/signin_client.py).
+Deliberately scoped to one employee PER COMPANY, not the full-breadth
+crawl scripts/generate_fixtures.py's real-data discovery phase did earlier
+in this project. Kept Streamlit-free, same reasoning as signin_client.py:
+the conversion step can reuse pull_employee_bundles() without depending on
+the UI layer.
 
-**The dict this module returns is a direct, valid input to
+**Each dict this module returns is a direct, valid input to
 ADAPTERS[provider_key].normalize("employee", bundle, reference)** - no
 further wrapping needed. Every key matches exactly what each adapter's own
 module docstring documents as its expected composite-bundle shape.
 
-Per-provider call count, each reusing the first company identifier step 1
-already captured:
+Per-provider call count, per company pulled:
   - PrismHR: 6 calls - getEmployeeList (discover an id) -> getEmployee
     (full profile, options=Person,ContactInformation,Client,Compensation,
     DirectDeposit) -> getACHDeductions, getDeductions,
@@ -31,12 +31,13 @@ already captured:
     employee this project has ever pulled - treated as "no data", not a
     hard failure, matching the adapter's own documented known gap).
 
-Only the PROFILE call is hard-required per provider - if it fails, the
-whole pull aborts. Every other section is optional, exactly like the real
-adapters already treat it (see each adapter's own docstring): a failure
-there is captured as `None` in the bundle rather than aborting the pull,
-UNLESS it's specifically a 401 (token expired) - in that case every
-remaining call would fail too, so the whole pull aborts immediately with
+Only the PROFILE call is hard-required per company - if it fails, that
+company's pull aborts. Every other section is optional, exactly like the
+real adapters already treat it (see each adapter's own docstring): a
+failure there is captured as `None` in the bundle rather than aborting the
+pull, UNLESS it's specifically a 401 (token expired) - in that case every
+remaining call (for this company AND every other company still queued)
+would fail too, so the whole multi-company pull aborts immediately with
 token_expired=True rather than making several more doomed requests.
 
 Auth headers are NOT hardcoded per provider - they're built from
@@ -45,7 +46,7 @@ response already returned.
 """
 from __future__ import annotations
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 
@@ -154,10 +155,8 @@ def _prismhr_ok(data: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     return data
 
 
-def _pull_prismhr(result: SignInResult) -> Dict[str, Any]:
-    if not result.company_identifiers:
-        raise DataPullError("No PrismHR companies available from sign-in.")
-    client_id = result.company_identifiers[0]["client_id"]
+def _pull_prismhr(result: SignInResult, company: Dict[str, str]) -> Dict[str, Any]:
+    client_id = company["client_id"]
     headers = _auth_headers(result)
 
     list_data = _get(f"{result.base_url}/employee/v1/getEmployeeList", headers, {"clientId": client_id})
@@ -189,10 +188,7 @@ def _pull_prismhr(result: SignInResult) -> Dict[str, Any]:
     return _redact(bundle)
 
 
-def _pull_isolved(result: SignInResult) -> Dict[str, Any]:
-    if not result.company_identifiers:
-        raise DataPullError("No isolved companies available from sign-in.")
-    company = result.company_identifiers[0]
+def _pull_isolved(result: SignInResult, company: Dict[str, str]) -> Dict[str, Any]:
     client_id, legal_id = company["client_id"], company["legal_id"]
     headers = _auth_headers(result)
 
@@ -228,10 +224,8 @@ def _pull_isolved(result: SignInResult) -> Dict[str, Any]:
     return _redact(bundle)
 
 
-def _pull_ukg(result: SignInResult) -> Dict[str, Any]:
-    if not result.company_identifiers:
-        raise DataPullError("No UKG Ready company available from sign-in.")
-    company_id = result.company_identifiers[0]["company_id"]
+def _pull_ukg(result: SignInResult, company: Dict[str, str]) -> Dict[str, Any]:
+    company_id = company["company_id"]
     headers = {**_auth_headers(result), "Accept": "application/json"}
     # UKG's sign-in base_url is missing the /rest path segment (confirmed
     # against the live service - its own documented API root is
@@ -266,15 +260,47 @@ def _pull_ukg(result: SignInResult) -> Dict[str, Any]:
 _PULLERS = {"prism": _pull_prismhr, "isol": _pull_isolved, "ukg": _pull_ukg}
 
 
-def pull_sample_employee_bundle(tenant: str, result: SignInResult) -> Dict[str, Any]:
-    """Pulls one real employee's full bundle for the given tenant - profile
-    plus every optional section its adapter's "employee" entity expects -
-    using the sign-in result's stored base_url/token/company id. The
-    returned dict is a direct, valid input to
-    ADAPTERS[provider_key].normalize("employee", bundle, reference).
-    Raises DataPullError (with .token_expired set on a 401) if the
-    required profile call fails; optional sections fail soft (None).
+def pull_employee_bundles(
+    tenant: str, result: SignInResult, count: Optional[int] = 1
+) -> Tuple[List[Dict[str, Any]], List[Tuple[str, str]]]:
+    """Pulls one real employee's full bundle per company, for up to
+    `count` of the tenant's signed-in companies (result.company_identifiers,
+    in the order sign-in returned them) - or every signed-in company if
+    `count` is None ("pull all"). Each bundle is a direct, valid input to
+    ADAPTERS[provider_key].normalize("employee", bundle, reference), same
+    as the old single-company pull produced.
+
+    Returns (bundles, skipped) - skipped is a list of (company_id, reason)
+    for every requested company that did NOT yield a bundle (e.g. a
+    company with zero employees), so the caller can tell the difference
+    between "the count you asked for" and "the bundles you actually got"
+    instead of only seeing a shorter-than-expected list.
+
+    Raises DataPullError (with .token_expired set on a 401) if the very
+    first company's required profile call fails, or if ANY company hits a
+    401 (token expiry dooms every remaining company too, so the whole
+    pull aborts immediately rather than making several more doomed
+    requests). A LATER company's non-401 failure (e.g. that specific
+    company genuinely has no employees) is soft-skipped instead of
+    discarding the companies that already succeeded.
     """
     if tenant not in _PULLERS:
         raise DataPullError(f"Unknown tenant selector {tenant!r}")
-    return _PULLERS[tenant](result)
+    if not result.company_identifiers:
+        raise DataPullError(f"No companies available from sign-in for {tenant!r}.")
+    companies = result.company_identifiers if count is None else result.company_identifiers[:count]
+    puller = _PULLERS[tenant]
+
+    bundles: List[Dict[str, Any]] = []
+    skipped: List[Tuple[str, str]] = []
+    for i, company in enumerate(companies):
+        try:
+            bundles.append(puller(result, company))
+        except DataPullError as exc:
+            if exc.token_expired or i == 0:
+                raise
+            skipped.append((company, str(exc)))
+            continue  # a later company's own profile call failing - skip it, keep what we already pulled
+    if not bundles:
+        raise DataPullError(f"Could not pull any employees for {tenant!r}.")
+    return bundles, skipped

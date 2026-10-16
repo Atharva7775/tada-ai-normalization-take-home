@@ -11,7 +11,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "94027",
+      "checkNumber": "23044",
       "payDate": "2024-09-15",
       "employeeId": "E90000",
       "payPeriod": "B",
@@ -19,28 +19,28 @@
       "payPeriodEnd": "2024-09-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-09-15",
-      "totalEarnings": 1563.86,
-      "netPay": 1256.56,
+      "totalEarnings": 1559.23,
+      "netPay": 1252.84,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1563.86,
-          "empTaxAmount": 187.66,
+          "empTaxableAmount": 1559.23,
+          "empTaxAmount": 187.11,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1563.86,
-          "empTaxAmount": 22.68,
+          "empTaxableAmount": 1559.23,
+          "empTaxAmount": 22.61,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1563.86,
-          "empTaxAmount": 96.96,
+          "empTaxableAmount": 1559.23,
+          "empTaxAmount": 96.67,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -51,9 +51,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1563.86,
+          "comTaxableAmount": 1559.23,
           "comTaxType": "9F",
-          "comTaxAmount": 22.68,
+          "comTaxAmount": 22.61,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -66,8 +66,8 @@
           "chargeDate": "2024-09-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 19.5482,
-          "payAmount": 1563.86,
+          "unitRate": 19.4904,
+          "payAmount": 1559.23,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -86,7 +86,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 62.55,
+          "deductAmount": 62.37,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -100,7 +100,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "71675",
+      "checkNumber": "48850",
       "payDate": "2024-10-15",
       "employeeId": "E90000",
       "payPeriod": "B",
@@ -108,28 +108,28 @@
       "payPeriodEnd": "2024-10-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-10-15",
-      "totalEarnings": 1766.27,
-      "netPay": 1419.2,
+      "totalEarnings": 1867.66,
+      "netPay": 1500.67,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1766.27,
-          "empTaxAmount": 211.95,
+          "empTaxableAmount": 1867.66,
+          "empTaxAmount": 224.12,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1766.27,
-          "empTaxAmount": 25.61,
+          "empTaxableAmount": 1867.66,
+          "empTaxAmount": 27.08,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1766.27,
-          "empTaxAmount": 109.51,
+          "empTaxableAmount": 1867.66,
+          "empTaxAmount": 115.79,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -140,9 +140,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1766.27,
+          "comTaxableAmount": 1867.66,
           "comTaxType": "9F",
-          "comTaxAmount": 25.61,
+          "comTaxAmount": 27.08,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -155,8 +155,8 @@
           "chargeDate": "2024-10-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 22.0784,
-          "payAmount": 1766.27,
+          "unitRate": 23.3458,
+          "payAmount": 1867.66,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -175,7 +175,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 70.65,
+          "deductAmount": 74.71,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -189,7 +189,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "87772",
+      "checkNumber": "77599",
       "payDate": "2024-09-15",
       "employeeId": "E90001",
       "payPeriod": "B",
@@ -197,28 +197,28 @@
       "payPeriodEnd": "2024-09-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-09-15",
-      "totalEarnings": 1841.52,
-      "netPay": 1479.67,
+      "totalEarnings": 1591.51,
+      "netPay": 1278.78,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1841.52,
-          "empTaxAmount": 220.98,
+          "empTaxableAmount": 1591.51,
+          "empTaxAmount": 190.98,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1841.52,
-          "empTaxAmount": 26.7,
+          "empTaxableAmount": 1591.51,
+          "empTaxAmount": 23.08,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1841.52,
-          "empTaxAmount": 114.17,
+          "empTaxableAmount": 1591.51,
+          "empTaxAmount": 98.67,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -229,9 +229,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1841.52,
+          "comTaxableAmount": 1591.51,
           "comTaxType": "9F",
-          "comTaxAmount": 26.7,
+          "comTaxAmount": 23.08,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -244,8 +244,8 @@
           "chargeDate": "2024-09-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 23.019,
-          "payAmount": 1841.52,
+          "unitRate": 19.8939,
+          "payAmount": 1591.51,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -264,7 +264,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 73.66,
+          "deductAmount": 63.66,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -278,7 +278,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "51684",
+      "checkNumber": "23597",
       "payDate": "2024-10-15",
       "employeeId": "E90001",
       "payPeriod": "B",
@@ -286,28 +286,28 @@
       "payPeriodEnd": "2024-10-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-10-15",
-      "totalEarnings": 1600.64,
-      "netPay": 1286.11,
+      "totalEarnings": 1508.81,
+      "netPay": 1212.32,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1600.64,
-          "empTaxAmount": 192.08,
+          "empTaxableAmount": 1508.81,
+          "empTaxAmount": 181.06,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1600.64,
-          "empTaxAmount": 23.21,
+          "empTaxableAmount": 1508.81,
+          "empTaxAmount": 21.88,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1600.64,
-          "empTaxAmount": 99.24,
+          "empTaxableAmount": 1508.81,
+          "empTaxAmount": 93.55,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -318,9 +318,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1600.64,
+          "comTaxableAmount": 1508.81,
           "comTaxType": "9F",
-          "comTaxAmount": 23.21,
+          "comTaxAmount": 21.88,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -333,8 +333,8 @@
           "chargeDate": "2024-10-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 20.008,
-          "payAmount": 1600.64,
+          "unitRate": 18.8601,
+          "payAmount": 1508.81,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -353,7 +353,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 64.03,
+          "deductAmount": 60.35,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -367,7 +367,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "31717",
+      "checkNumber": "19126",
       "payDate": "2024-09-15",
       "employeeId": "E90002",
       "payPeriod": "B",
@@ -375,28 +375,28 @@
       "payPeriodEnd": "2024-09-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-09-15",
-      "totalEarnings": 1898.91,
-      "netPay": 1525.78,
+      "totalEarnings": 1713.89,
+      "netPay": 1377.11,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1898.91,
-          "empTaxAmount": 227.87,
+          "empTaxableAmount": 1713.89,
+          "empTaxAmount": 205.67,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1898.91,
-          "empTaxAmount": 27.53,
+          "empTaxableAmount": 1713.89,
+          "empTaxAmount": 24.85,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1898.91,
-          "empTaxAmount": 117.73,
+          "empTaxableAmount": 1713.89,
+          "empTaxAmount": 106.26,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -407,9 +407,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1898.91,
+          "comTaxableAmount": 1713.89,
           "comTaxType": "9F",
-          "comTaxAmount": 27.53,
+          "comTaxAmount": 24.85,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -422,8 +422,8 @@
           "chargeDate": "2024-09-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 23.7364,
-          "payAmount": 1898.91,
+          "unitRate": 21.4236,
+          "payAmount": 1713.89,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -442,7 +442,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 75.96,
+          "deductAmount": 68.56,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -456,7 +456,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "94589",
+      "checkNumber": "40863",
       "payDate": "2024-10-15",
       "employeeId": "E90002",
       "payPeriod": "B",
@@ -464,28 +464,28 @@
       "payPeriodEnd": "2024-10-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-10-15",
-      "totalEarnings": 1874.1,
-      "netPay": 1505.85,
+      "totalEarnings": 1971.76,
+      "netPay": 1584.31,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1874.1,
-          "empTaxAmount": 224.89,
+          "empTaxableAmount": 1971.76,
+          "empTaxAmount": 236.61,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1874.1,
-          "empTaxAmount": 27.17,
+          "empTaxableAmount": 1971.76,
+          "empTaxAmount": 28.59,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1874.1,
-          "empTaxAmount": 116.19,
+          "empTaxableAmount": 1971.76,
+          "empTaxAmount": 122.25,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -496,9 +496,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1874.1,
+          "comTaxableAmount": 1971.76,
           "comTaxType": "9F",
-          "comTaxAmount": 27.17,
+          "comTaxAmount": 28.59,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -511,8 +511,8 @@
           "chargeDate": "2024-10-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 23.4262,
-          "payAmount": 1874.1,
+          "unitRate": 24.647,
+          "payAmount": 1971.76,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -531,7 +531,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 74.96,
+          "deductAmount": 78.87,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -545,7 +545,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "52729",
+      "checkNumber": "77197",
       "payDate": "2024-09-15",
       "employeeId": "E90003",
       "payPeriod": "B",
@@ -553,28 +553,28 @@
       "payPeriodEnd": "2024-09-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-09-15",
-      "totalEarnings": 1924.97,
-      "netPay": 1546.71,
+      "totalEarnings": 1816.83,
+      "netPay": 1459.83,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1924.97,
-          "empTaxAmount": 231.0,
+          "empTaxableAmount": 1816.83,
+          "empTaxAmount": 218.02,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1924.97,
-          "empTaxAmount": 27.91,
+          "empTaxableAmount": 1816.83,
+          "empTaxAmount": 26.34,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1924.97,
-          "empTaxAmount": 119.35,
+          "empTaxableAmount": 1816.83,
+          "empTaxAmount": 112.64,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -585,9 +585,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1924.97,
+          "comTaxableAmount": 1816.83,
           "comTaxType": "9F",
-          "comTaxAmount": 27.91,
+          "comTaxAmount": 26.34,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -600,8 +600,8 @@
           "chargeDate": "2024-09-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 24.0621,
-          "payAmount": 1924.97,
+          "unitRate": 22.7104,
+          "payAmount": 1816.83,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -620,7 +620,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 77.0,
+          "deductAmount": 72.67,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -634,7 +634,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "27109",
+      "checkNumber": "96902",
       "payDate": "2024-10-15",
       "employeeId": "E90003",
       "payPeriod": "B",
@@ -642,28 +642,28 @@
       "payPeriodEnd": "2024-10-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-10-15",
-      "totalEarnings": 1529.81,
-      "netPay": 1229.2,
+      "totalEarnings": 1888.25,
+      "netPay": 1517.21,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1529.81,
-          "empTaxAmount": 183.58,
+          "empTaxableAmount": 1888.25,
+          "empTaxAmount": 226.59,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1529.81,
-          "empTaxAmount": 22.18,
+          "empTaxableAmount": 1888.25,
+          "empTaxAmount": 27.38,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1529.81,
-          "empTaxAmount": 94.85,
+          "empTaxableAmount": 1888.25,
+          "empTaxAmount": 117.07,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -674,9 +674,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1529.81,
+          "comTaxableAmount": 1888.25,
           "comTaxType": "9F",
-          "comTaxAmount": 22.18,
+          "comTaxAmount": 27.38,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -689,8 +689,8 @@
           "chargeDate": "2024-10-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 19.1226,
-          "payAmount": 1529.81,
+          "unitRate": 23.6031,
+          "payAmount": 1888.25,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -709,7 +709,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 61.19,
+          "deductAmount": 75.53,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -723,7 +723,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "48478",
+      "checkNumber": "14623",
       "payDate": "2024-09-15",
       "employeeId": "E90004",
       "payPeriod": "B",
@@ -731,28 +731,28 @@
       "payPeriodEnd": "2024-09-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-09-15",
-      "totalEarnings": 1613.88,
-      "netPay": 1296.75,
+      "totalEarnings": 1910.32,
+      "netPay": 1534.94,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1613.88,
-          "empTaxAmount": 193.67,
+          "empTaxableAmount": 1910.32,
+          "empTaxAmount": 229.24,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1613.88,
-          "empTaxAmount": 23.4,
+          "empTaxableAmount": 1910.32,
+          "empTaxAmount": 27.7,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1613.88,
-          "empTaxAmount": 100.06,
+          "empTaxableAmount": 1910.32,
+          "empTaxAmount": 118.44,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -763,9 +763,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1613.88,
+          "comTaxableAmount": 1910.32,
           "comTaxType": "9F",
-          "comTaxAmount": 23.4,
+          "comTaxAmount": 27.7,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -778,8 +778,8 @@
           "chargeDate": "2024-09-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 20.1735,
-          "payAmount": 1613.88,
+          "unitRate": 23.879,
+          "payAmount": 1910.32,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -798,7 +798,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 64.56,
+          "deductAmount": 76.41,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -812,7 +812,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "39653",
+      "checkNumber": "18394",
       "payDate": "2024-10-15",
       "employeeId": "E90004",
       "payPeriod": "B",
@@ -820,28 +820,28 @@
       "payPeriodEnd": "2024-10-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-10-15",
-      "totalEarnings": 1546.11,
-      "netPay": 1242.3,
+      "totalEarnings": 1726.38,
+      "netPay": 1387.14,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1546.11,
-          "empTaxAmount": 185.53,
+          "empTaxableAmount": 1726.38,
+          "empTaxAmount": 207.17,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1546.11,
-          "empTaxAmount": 22.42,
+          "empTaxableAmount": 1726.38,
+          "empTaxAmount": 25.03,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1546.11,
-          "empTaxAmount": 95.86,
+          "empTaxableAmount": 1726.38,
+          "empTaxAmount": 107.04,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -852,9 +852,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1546.11,
+          "comTaxableAmount": 1726.38,
           "comTaxType": "9F",
-          "comTaxAmount": 22.42,
+          "comTaxAmount": 25.03,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -867,8 +867,8 @@
           "chargeDate": "2024-10-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 19.3264,
-          "payAmount": 1546.11,
+          "unitRate": 21.5798,
+          "payAmount": 1726.38,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -887,7 +887,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 61.84,
+          "deductAmount": 69.06,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -901,7 +901,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "98610",
+      "checkNumber": "35173",
       "payDate": "2024-09-15",
       "employeeId": "E90005",
       "payPeriod": "B",
@@ -909,28 +909,28 @@
       "payPeriodEnd": "2024-09-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-09-15",
-      "totalEarnings": 1507.16,
-      "netPay": 1211.01,
+      "totalEarnings": 1773.57,
+      "netPay": 1425.06,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1507.16,
-          "empTaxAmount": 180.86,
+          "empTaxableAmount": 1773.57,
+          "empTaxAmount": 212.83,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1507.16,
-          "empTaxAmount": 21.85,
+          "empTaxableAmount": 1773.57,
+          "empTaxAmount": 25.72,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1507.16,
-          "empTaxAmount": 93.44,
+          "empTaxableAmount": 1773.57,
+          "empTaxAmount": 109.96,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -941,9 +941,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1507.16,
+          "comTaxableAmount": 1773.57,
           "comTaxType": "9F",
-          "comTaxAmount": 21.85,
+          "comTaxAmount": 25.72,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -956,8 +956,8 @@
           "chargeDate": "2024-09-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 18.8395,
-          "payAmount": 1507.16,
+          "unitRate": 22.1696,
+          "payAmount": 1773.57,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -976,7 +976,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 60.29,
+          "deductAmount": 70.94,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -990,7 +990,7 @@
       "status": "PRNT",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "16937",
+      "checkNumber": "30418",
       "payDate": "2024-10-15",
       "employeeId": "E90005",
       "payPeriod": "B",
@@ -998,28 +998,28 @@
       "payPeriodEnd": "2024-10-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-10-15",
-      "totalEarnings": 1584.15,
-      "netPay": 1272.86,
+      "totalEarnings": 1601.58,
+      "netPay": 1286.87,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1584.15,
-          "empTaxAmount": 190.1,
+          "empTaxableAmount": 1601.58,
+          "empTaxAmount": 192.19,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1584.15,
-          "empTaxAmount": 22.97,
+          "empTaxableAmount": 1601.58,
+          "empTaxAmount": 23.22,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1584.15,
-          "empTaxAmount": 98.22,
+          "empTaxableAmount": 1601.58,
+          "empTaxAmount": 99.3,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -1030,9 +1030,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1584.15,
+          "comTaxableAmount": 1601.58,
           "comTaxType": "9F",
-          "comTaxAmount": 22.97,
+          "comTaxAmount": 23.22,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -1045,8 +1045,8 @@
           "chargeDate": "2024-10-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 19.8019,
-          "payAmount": 1584.15,
+          "unitRate": 20.0197,
+          "payAmount": 1601.58,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -1065,7 +1065,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 63.37,
+          "deductAmount": 64.06,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""
@@ -1079,7 +1079,7 @@
       "status": "HELD",
       "type": "R",
       "voidDate": "",
-      "checkNumber": "38938",
+      "checkNumber": "45239",
       "payDate": "2024-11-15",
       "employeeId": "E90000",
       "payPeriod": "B",
@@ -1087,28 +1087,28 @@
       "payPeriodEnd": "2024-11-15",
       "payGroup": "WFRI",
       "dateProcessed": "2024-11-15",
-      "totalEarnings": 1717.78,
-      "netPay": 1380.24,
+      "totalEarnings": 1671.35,
+      "netPay": 1342.94,
       "employeeTax": [
         {
           "empTaxDeductCode": "00-10",
           "empTaxDeductCodeDesc": "Federal Income Tax",
-          "empTaxableAmount": 1717.78,
-          "empTaxAmount": 206.13,
+          "empTaxableAmount": 1671.35,
+          "empTaxAmount": 200.56,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-11",
           "empTaxDeductCodeDesc": "Medicare - Employee",
-          "empTaxableAmount": 1717.78,
-          "empTaxAmount": 24.91,
+          "empTaxableAmount": 1671.35,
+          "empTaxAmount": 24.23,
           "empOverLimitAmount": 0.0
         },
         {
           "empTaxDeductCode": "00-12",
           "empTaxDeductCodeDesc": "Soc Security - Employee",
-          "empTaxableAmount": 1717.78,
-          "empTaxAmount": 106.5,
+          "empTaxableAmount": 1671.35,
+          "empTaxAmount": 103.62,
           "empOverLimitAmount": 0.0
         }
       ],
@@ -1119,9 +1119,9 @@
           "comTaxDeductCodeDesc": "Medicare - Employer",
           "comExemptAmount": 0.0,
           "comShelteredAmount": 0.0,
-          "comTaxableAmount": 1717.78,
+          "comTaxableAmount": 1671.35,
           "comTaxType": "9F",
-          "comTaxAmount": 24.91,
+          "comTaxAmount": 24.23,
           "comOvrLimit": 0.0,
           "comTaxRate": 0.0145,
           "comClientSutaRpt": ""
@@ -1134,8 +1134,8 @@
           "chargeDate": "2024-11-15",
           "hoursUnits": 80.0,
           "hoursWorked": 80.0,
-          "unitRate": 21.4722,
-          "payAmount": 1717.78,
+          "unitRate": 20.8919,
+          "payAmount": 1671.35,
           "division": "",
           "jobCode": "OFFICE",
           "shift": "",
@@ -1154,7 +1154,7 @@
         {
           "deductCode": "401k",
           "deductDescription": "401k",
-          "deductAmount": 68.71,
+          "deductAmount": 66.85,
           "deductType": "K",
           "deductUnionId": "",
           "planId": ""

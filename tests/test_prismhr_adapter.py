@@ -9,6 +9,7 @@ data and checks the result. It runs only when this test suite runs (e.g.
 different time than fixture generation - generating fixtures does not run
 these tests, and running these tests does not regenerate fixtures.
 """
+import copy
 import json
 import unittest
 from pathlib import Path
@@ -129,6 +130,18 @@ class PrismHRAdapterTests(unittest.TestCase):
         statuses = [pc["status"] for pc in paychecks]
         self.assertEqual(statuses.count("FINALIZED"), 12)
         self.assertEqual(statuses.count("OTHER"), 1)  # the deliberately unrecognized "HELD" voucher status
+
+    def test_zero_sentinel_date_is_treated_as_absent(self):
+        # Confirmed live: a real PrismHR company's employee had
+        # compensation.effectiveDate = "0000-01-01" - PrismHR's own "never
+        # set" sentinel, not a valid calendar date (year 0). Before this
+        # was handled, that string reached PayRate.effective_date unchanged
+        # and pydantic's date parser raised, aborting the whole conversion.
+        bundle = copy.deepcopy(self.employees_input[0])
+        bundle["profile"]["employee"][0]["compensation"]["effectiveDate"] = "0000-01-01"
+        emp = self.adapter.normalize("employee", bundle, self.reference)
+        Employee(**emp)  # raises pydantic.ValidationError if it doesn't conform
+        self.assertIsNone(emp["pay_rates"][0]["effective_date"])
 
     def test_none_input_still_raises_not_implemented(self):
         # Preserves the scaffolding contract tests/test_starter.py already

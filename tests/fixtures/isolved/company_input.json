@@ -1,28 +1,28 @@
 [
   {
     "id": 9000,
-    "legalName": "Alvarez Builders Inc",
-    "dbaName": "Alvarez Builders",
+    "legalName": "Costa Builders Inc",
+    "dbaName": "Costa Builders",
     "federalEIN": "500009000",
     "status": "Active",
     "legalAddress": {
-      "address1": "193 Maple St",
-      "city": "Austin",
-      "state": "TX",
-      "zipCode": "78701"
+      "address1": "193 Pine Rd",
+      "city": "Portland",
+      "state": "OR",
+      "zipCode": "97201"
     }
   },
   {
     "id": 9001,
-    "legalName": "Okafor Freight Inc",
-    "dbaName": "Okafor Freight",
+    "legalName": "Ibrahim Freight Inc",
+    "dbaName": "Ibrahim Freight",
     "federalEIN": "500009001",
     "status": "Active",
     "legalAddress": {
-      "address1": "569 Cedar Ave",
-      "city": "Tampa",
-      "state": "FL",
-      "zipCode": "33602"
+      "address1": "805 Willow Ln",
+      "city": "Raleigh",
+      "state": "NC",
+      "zipCode": "27601"
     }
   }
 ]

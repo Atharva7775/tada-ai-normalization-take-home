@@ -198,8 +198,14 @@ def _dec(value: Any) -> Optional[Decimal]:
 
 
 def _date(value: Any) -> Optional[str]:
-    """Pass through PrismHR's already-ISO-8601 date strings; treat blanks as absent."""
+    """Pass through PrismHR's already-ISO-8601 date strings; treat blanks as
+    absent, along with PrismHR's own "unset" sentinel - year 0000 (e.g.
+    "0000-01-01"), not a valid calendar date and not representable by the
+    canonical schema's date field, confirmed live on at least one real
+    employee's compensation.effectiveDate."""
     if not value:
+        return None
+    if str(value).startswith("0000-"):
         return None
     return value
 

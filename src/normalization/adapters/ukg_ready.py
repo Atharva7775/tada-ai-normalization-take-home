@@ -162,13 +162,18 @@ def _normalize_company(response: Dict[str, Any]) -> Dict[str, Any]:
 # employee
 # ---------------------------------------------------------------------------
 
-def _map_direct_deposits(deposits_response: Optional[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def _map_direct_deposits(employee_id: str, deposits_response: Optional[Dict[str, Any]]) -> List[Dict[str, Any]]:
     out = []
     for dep in (deposits_response or {}).get("deposits") or []:
         raw_account_type = dep.get("account_type")
         raw_calc_type = (dep.get("calc_method") or {}).get("type")
+        # dep["id"] is NOT assumed globally unique on its own - same latent
+        # risk already confirmed and fixed for isolved's direct deposits
+        # (a UNIQUE constraint failure saving to canonical.db). Scoping by
+        # employee_id here preemptively guards against the same class of
+        # collision.
         dd = DirectDeposit(
-            id=canonical_id(PROVIDER, "directdeposit", str(dep.get("id"))),
+            id=canonical_id(PROVIDER, "directdeposit", f"{employee_id}:{dep.get('id')}"),
             source=Source(provider=PROVIDER, raw_id=str(dep.get("id"))),
             account_type=_ACCOUNT_TYPE.get(raw_account_type, DirectDepositAccountType.OTHER),
             raw_account_type=raw_account_type,
@@ -249,7 +254,7 @@ def _normalize_employee(bundle: Dict[str, Any]) -> Dict[str, Any]:
         pay_frequency=None,  # lives under /pay-info, not crawled
         raw_pay_frequency=None,
         pay_rates=[],  # lives under /pay-info, not crawled
-        direct_deposits=_map_direct_deposits(bundle.get("direct_deposits")),
+        direct_deposits=_map_direct_deposits(str(employee_id), bundle.get("direct_deposits")),
         deductions=[],  # GET .../deductions 404s live for this demo tenant - see module docstring
     )
     return employee.model_dump(mode="json")

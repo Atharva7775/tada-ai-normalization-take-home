@@ -49,29 +49,84 @@ VARIANTS = (
     "unknown_status_code",
 )
 
-FIRST_NAMES = ["Jordan", "Priya", "Marcus", "Elena", "Kofi", "Hannah"]
-LAST_NAMES = ["Alvarez", "Nakamura", "Johnson", "Okafor", "Petrov", "Lindqvist"]
-CITIES = [
-    ("Austin", "TX", "78701"),
-    ("Tampa", "FL", "33602"),
-    ("Columbus", "OH", "43215"),
-    ("Spokane", "WA", "99201"),
-    ("Charlotte", "NC", "28202"),
-    ("Boise", "ID", "83702"),
+# 24 entries each, in 3 blocks of 8 (one block per provider - see
+# PROVIDER_OFFSETS below) with 6 used and 2 spare per block. Sized well
+# past the bare minimum (3 providers x 6 variants = 18) so no two
+# providers' synthetic employees ever land on the same name, city, or
+# street, even though every provider generates the same 6 scripted
+# variants from the same deterministic seed.
+FIRST_NAMES = [
+    "Jordan", "Priya", "Marcus", "Elena", "Kofi", "Hannah", "Liam", "Fatima",
+    "Diego", "Natasha", "Omar", "Chloe", "Ravi", "Aisha", "Lucas", "Mei",
+    "Samuel", "Ingrid", "Tariq", "Sofia", "Noah", "Yuki", "Gabriel", "Amara",
 ]
-STREETS = ["Maple St", "Cedar Ave", "River Rd", "Birch Ln", "Harbor Dr", "Union Way"]
+LAST_NAMES = [
+    "Alvarez", "Nakamura", "Johnson", "Okafor", "Petrov", "Lindqvist", "Garcia", "Chen",
+    "Mueller", "Osei", "Rossi", "Kowalski", "Silva", "Patel", "Novak", "Hughes",
+    "Almeida", "Haddad", "Larsson", "Brennan", "Costa", "Ibrahim", "Fischer", "Delgado",
+]
+CITIES = [
+    ("Austin", "TX", "78701"), ("Tampa", "FL", "33602"), ("Columbus", "OH", "43215"),
+    ("Spokane", "WA", "99201"), ("Charlotte", "NC", "28202"), ("Boise", "ID", "83702"),
+    ("Denver", "CO", "80202"), ("Nashville", "TN", "37203"), ("Portland", "OR", "97201"),
+    ("Raleigh", "NC", "27601"), ("Phoenix", "AZ", "85004"), ("Minneapolis", "MN", "55401"),
+    ("Sacramento", "CA", "95814"), ("Richmond", "VA", "23219"), ("Omaha", "NE", "68102"),
+    ("Louisville", "KY", "40202"), ("Albuquerque", "NM", "87102"), ("Tucson", "AZ", "85701"),
+    ("Fresno", "CA", "93721"), ("Mesa", "AZ", "85201"), ("Atlanta", "GA", "30303"),
+    ("Cleveland", "OH", "44113"), ("Pittsburgh", "PA", "15222"), ("Cincinnati", "OH", "45202"),
+]
+STREETS = [
+    "Maple St", "Cedar Ave", "River Rd", "Birch Ln", "Harbor Dr", "Union Way",
+    "Elm St", "Oak Ave", "Pine Rd", "Willow Ln", "Sunset Dr", "Lakeview Way",
+    "Chestnut St", "Magnolia Ave", "Creekside Rd", "Hilltop Ln", "Meadow Dr", "Orchard Way",
+    "Walnut St", "Spruce Ave", "Ridgeline Rd", "Fieldstone Ln", "Bayview Dr", "Heritage Way",
+]
+MIDDLE_INITIALS = [
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+    "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+]
+# Parallel to FIRST_NAMES (same index = that first name's nickname).
+NICKNAMES = [
+    "Jo", "Pri", "Marc", "Lena", "Ko", "Han", "Li", "Fati",
+    "Dee", "Tash", "Om", "Chlo", "Rav", "Ash", "Luke", "Mimi",
+    "Sam", "Indy", "Taz", "So", "Noey", "Yu", "Gabe", "Mara",
+]
+
+# One non-overlapping 8-wide block per provider within the 24-entry lists
+# above - each provider only ever indexes idx 0..5 (len(VARIANTS)), so an
+# 8-wide block leaves 2 spare entries per provider.
+PROVIDER_OFFSETS = {"prismhr": 0, "isolved": 8, "ukg-ready": 16}
 
 
-def _person(rng: random.Random, idx: int):
-    first = FIRST_NAMES[idx % len(FIRST_NAMES)]
-    last = LAST_NAMES[(idx * 3) % len(LAST_NAMES)]
-    city, state, zip_code = CITIES[idx % len(CITIES)]
+def _person(rng: random.Random, idx: int, provider_offset: int = 0):
+    i = provider_offset + idx
+    first = FIRST_NAMES[i % len(FIRST_NAMES)]
+    # Additive, not multiplicative: a plain modulus is always a bijection
+    # regardless of list length. The previous `(idx * 3) % len(LAST_NAMES)`
+    # only ever produced 2 of the 6 surnames here, since 3 and 6 share a
+    # common factor - confirmed empirically, not just theoretically.
+    last = LAST_NAMES[(i + len(LAST_NAMES) // 2) % len(LAST_NAMES)]
+    city, state, zip_code = CITIES[i % len(CITIES)]
     street_num = 100 + rng.randint(0, 899)
-    street = STREETS[idx % len(STREETS)]
-    dob = f"19{60 + idx % 35}-0{1 + idx % 9}-{10 + idx % 18}"
+    street = STREETS[i % len(STREETS)]
+    dob = f"19{60 + i % 35}-0{1 + i % 9}-{10 + i % 18}"
+    middle_initial = MIDDLE_INITIALS[i % len(MIDDLE_INITIALS)]
+    nickname = NICKNAMES[i % len(NICKNAMES)]
+    # Optional personal/contact fields (middle name, preferred name, phone
+    # numbers) are always filled in - no real active employee's record
+    # would plausibly have these blank. Business-logic nulls elsewhere
+    # (termination date on an active employee, a deposit's amount xor
+    # percent, envelope fields a provider's real API always sends as null)
+    # are deliberately left alone - see each _*_employee_bundle().
+    area_code = rng.randint(200, 899)
+    home_phone = f"({area_code}) {rng.randint(200, 999)}-{rng.randint(1000, 9999)}"
+    mobile_phone = f"({area_code}) {rng.randint(200, 999)}-{rng.randint(1000, 9999)}"
+    work_phone = f"({area_code}) {rng.randint(200, 999)}-{rng.randint(1000, 9999)}"
     return {
         "first": first, "last": last, "city": city, "state": state, "zip": zip_code,
         "address": f"{street_num} {street}", "dob": dob,
+        "middle_initial": middle_initial, "nickname": nickname,
+        "home_phone": home_phone, "mobile_phone": mobile_phone, "work_phone": work_phone,
     }
 
 
@@ -94,7 +149,7 @@ def _write(output_dir: Path, provider: str, filename: str, data: Any) -> str:
 def _prismhr_company_input(rng: random.Random) -> Dict[str, Any]:
     clients = []
     for i, (status, client_id) in enumerate((("A", "900"), ("A", "901"))):
-        p = _person(rng, i)
+        p = _person(rng, i, PROVIDER_OFFSETS["prismhr"])
         clients.append({
             "clientId": client_id,
             "clientName": f"{p['last']} {('Logistics' if i else 'Manufacturing')}",
@@ -120,7 +175,7 @@ def _prismhr_ach_voucher(rng: random.Random, method: str, status: str, amount: O
 
 
 def _prismhr_employee_bundle(rng: random.Random, idx: int, variant: str, client_id: str) -> Dict[str, Any]:
-    p = _person(rng, idx)
+    p = _person(rng, idx, PROVIDER_OFFSETS["prismhr"])
     emp_id = f"E9{idx:04d}"
     status_class = {"active_simple": "A", "terminated": "T", "on_leave_or_undocumented": "L",
                      "no_deposits_no_deductions": "A", "multiple_deposits": "A",
@@ -176,14 +231,15 @@ def _prismhr_employee_bundle(rng: random.Random, idx: int, variant: str, client_
     bundle = {
         "profile": {
             "employee": [{
-                "id": emp_id, "lastName": p["last"], "firstName": p["first"], "middleInitial": "",
-                "preferredName": "",
+                "id": emp_id, "lastName": p["last"], "firstName": p["first"], "middleInitial": p["middle_initial"],
+                "preferredName": p["nickname"],
                 "person": {"birthDate": p["dob"], "gender": "F" if idx % 2 else "M",
                            "maritalStatus": "S" if idx % 2 else "M"},
                 "contactInformation": {
                     "addressLine1": p["address"], "addressLine2": "", "city": p["city"], "state": p["state"],
                     "zipcode": p["zip"], "zipSuffix": "", "county": "", "schoolDistrict": "",
-                    "homePhone": "", "mobilePhone": "", "emailAddress": f"{p['first'].lower()}.{p['last'].lower()}@example.com",
+                    "homePhone": p["home_phone"], "mobilePhone": p["mobile_phone"],
+                    "emailAddress": f"{p['first'].lower()}.{p['last'].lower()}@example.com",
                 },
                 "client": client_block,
                 "compensation": comp,
@@ -253,7 +309,7 @@ def _prismhr_payroll_input(rng: random.Random, employee_ids: List[str]) -> Dict[
 def _isolved_company_input(rng: random.Random) -> List[Dict[str, Any]]:
     legals = []
     for i, legal_id in enumerate((9000, 9001)):
-        p = _person(rng, i)
+        p = _person(rng, i, PROVIDER_OFFSETS["isolved"])
         legals.append({
             "id": legal_id,
             "legalName": f"{p['last']} {('Freight' if i else 'Builders')} Inc",
@@ -285,7 +341,7 @@ def _isolved_pay_item(rng: random.Random, item_id: int, employee_id: int, code: 
 
 
 def _isolved_employee_bundle(rng: random.Random, idx: int, variant: str, client_id: str, legal_id: str) -> Dict[str, Any]:
-    p = _person(rng, idx)
+    p = _person(rng, idx, PROVIDER_OFFSETS["isolved"])
     employee_id = 900100 + idx
     status = {"active_simple": "Active", "terminated": "Terminated", "on_leave_or_undocumented": "Inactive",
               "no_deposits_no_deductions": "Active", "multiple_deposits": "Active",
@@ -293,9 +349,11 @@ def _isolved_employee_bundle(rng: random.Random, idx: int, variant: str, client_
 
     profile = {
         "id": employee_id, "employeeNumber": str(1000 + idx),
-        "nameAddress": {"firstName": p["first"], "lastName": p["last"], "middleName": "", "preferredName": None,
+        "nameAddress": {"firstName": p["first"], "lastName": p["last"], "middleName": p["middle_initial"],
+                         "preferredName": p["nickname"],
                          "address1": p["address"], "city": p["city"], "state": p["state"], "zipCode": p["zip"]},
-        "personal": {"mobilePhone": None, "homePhone": None, "officePhone": None, "personalEmailAddress": f"{p['first'].lower()}@example.com"},
+        "personal": {"mobilePhone": p["mobile_phone"], "homePhone": p["home_phone"], "officePhone": p["work_phone"],
+                     "personalEmailAddress": f"{p['first'].lower()}@example.com"},
         "birthDate": f"{p['dob']}T00:00:00", "gender": "Female" if idx % 2 else "Male",
         "maritalStatus": "Single" if idx % 2 else "Married", "ssn": _ssn_fake(idx),
         "emailAddress": f"{p['first'].lower()}.{p['last'].lower()}@example.com",
@@ -390,7 +448,7 @@ def _ukg_direct_deposit(rng: random.Random, dep_id: int, account_type: str, calc
 
 
 def _ukg_employee_bundle(rng: random.Random, idx: int, variant: str, company_id: str) -> Dict[str, Any]:
-    p = _person(rng, idx)
+    p = _person(rng, idx, PROVIDER_OFFSETS["ukg-ready"])
     employee_id = 990100 + idx
     status = {"active_simple": "Active", "terminated": "Terminated", "on_leave_or_undocumented": "Leave of Absence",
               "no_deposits_no_deductions": "Active", "multiple_deposits": "Active",
@@ -398,8 +456,8 @@ def _ukg_employee_bundle(rng: random.Random, idx: int, variant: str, company_id:
 
     profile = {
         "id": employee_id, "employee_id": str(100 + idx), "first_name": p["first"], "last_name": p["last"],
-        "middle_name": None, "nickname": None, "primary_email": f"{p['first'].lower()}@example.com",
-        "phones": {"cell_phone": None, "home_phone": None, "work_phone": None},
+        "middle_name": p["middle_initial"], "nickname": p["nickname"], "primary_email": f"{p['first'].lower()}@example.com",
+        "phones": {"cell_phone": p["mobile_phone"], "home_phone": p["home_phone"], "work_phone": p["work_phone"]},
         "address": {"address_line_1": p["address"], "address_line_2": None, "city": p["city"],
                     "state": p["state"], "state_code": p["state"], "zip": p["zip"], "country": "USA"},
         "dates": {"birthday": p["dob"], "hired": "2020-05-01"},
