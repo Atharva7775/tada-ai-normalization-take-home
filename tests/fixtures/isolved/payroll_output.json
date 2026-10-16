@@ -12,8 +12,8 @@
     "check_date": "2024-09-30",
     "period_start": "2024-09-30",
     "period_end": "2024-09-30",
-    "gross_pay": "2023.45",
-    "net_pay": "1537.82",
+    "gross_pay": "2145.34",
+    "net_pay": "1630.46",
     "total_hours": null,
     "earnings": [
       {
@@ -22,7 +22,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "2023.45"
+        "amount": "2145.34"
       }
     ],
     "taxes": [],
@@ -30,7 +30,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "60.7",
+        "employee_amount": "64.36",
         "employer_amount": null
       }
     ],
@@ -49,8 +49,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1976.33",
-    "net_pay": "1502.01",
+    "gross_pay": "1972.31",
+    "net_pay": "1498.96",
     "total_hours": null,
     "earnings": [
       {
@@ -59,7 +59,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1976.33"
+        "amount": "1972.31"
       }
     ],
     "taxes": [],
@@ -67,7 +67,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "59.29",
+        "employee_amount": "59.17",
         "employer_amount": null
       }
     ],
@@ -86,8 +86,8 @@
     "check_date": "2024-09-30",
     "period_start": "2024-09-30",
     "period_end": "2024-09-30",
-    "gross_pay": "2174.7",
-    "net_pay": "1652.77",
+    "gross_pay": "2167.64",
+    "net_pay": "1647.41",
     "total_hours": null,
     "earnings": [
       {
@@ -96,7 +96,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "2174.7"
+        "amount": "2167.64"
       }
     ],
     "taxes": [],
@@ -104,7 +104,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "65.24",
+        "employee_amount": "65.03",
         "employer_amount": null
       }
     ],
@@ -123,8 +123,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1905.33",
-    "net_pay": "1448.05",
+    "gross_pay": "2041.7",
+    "net_pay": "1551.69",
     "total_hours": null,
     "earnings": [
       {
@@ -133,7 +133,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1905.33"
+        "amount": "2041.7"
       }
     ],
     "taxes": [],
@@ -141,7 +141,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "57.16",
+        "employee_amount": "61.25",
         "employer_amount": null
       }
     ],
@@ -160,8 +160,8 @@
     "check_date": "2024-09-30",
     "period_start": "2024-09-30",
     "period_end": "2024-09-30",
-    "gross_pay": "1833.42",
-    "net_pay": "1393.4",
+    "gross_pay": "2089.0",
+    "net_pay": "1587.64",
     "total_hours": null,
     "earnings": [
       {
@@ -170,7 +170,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1833.42"
+        "amount": "2089.0"
       }
     ],
     "taxes": [],
@@ -178,7 +178,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "55.0",
+        "employee_amount": "62.67",
         "employer_amount": null
       }
     ],
@@ -197,8 +197,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "2089.03",
-    "net_pay": "1587.66",
+    "gross_pay": "1859.23",
+    "net_pay": "1413.01",
     "total_hours": null,
     "earnings": [
       {
@@ -207,7 +207,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "2089.03"
+        "amount": "1859.23"
       }
     ],
     "taxes": [],
@@ -215,7 +215,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "62.67",
+        "employee_amount": "55.78",
         "employer_amount": null
       }
     ],
@@ -234,8 +234,8 @@
     "check_date": "2024-09-30",
     "period_start": "2024-09-30",
     "period_end": "2024-09-30",
-    "gross_pay": "1800.17",
-    "net_pay": "1368.13",
+    "gross_pay": "2167.66",
+    "net_pay": "1647.42",
     "total_hours": null,
     "earnings": [
       {
@@ -244,7 +244,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1800.17"
+        "amount": "2167.66"
       }
     ],
     "taxes": [],
@@ -252,7 +252,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "54.01",
+        "employee_amount": "65.03",
         "employer_amount": null
       }
     ],
@@ -271,8 +271,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1967.96",
-    "net_pay": "1495.65",
+    "gross_pay": "1891.51",
+    "net_pay": "1437.55",
     "total_hours": null,
     "earnings": [
       {
@@ -281,7 +281,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1967.96"
+        "amount": "1891.51"
       }
     ],
     "taxes": [],
@@ -289,7 +289,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "59.04",
+        "employee_amount": "56.75",
         "employer_amount": null
       }
     ],
@@ -308,8 +308,8 @@
     "check_date": "2024-09-30",
     "period_start": "2024-09-30",
     "period_end": "2024-09-30",
-    "gross_pay": "1940.13",
-    "net_pay": "1474.5",
+    "gross_pay": "1808.81",
+    "net_pay": "1374.7",
     "total_hours": null,
     "earnings": [
       {
@@ -318,7 +318,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1940.13"
+        "amount": "1808.81"
       }
     ],
     "taxes": [],
@@ -326,7 +326,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "58.2",
+        "employee_amount": "54.26",
         "employer_amount": null
       }
     ],
@@ -345,8 +345,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "2128.73",
-    "net_pay": "1617.83",
+    "gross_pay": "1853.42",
+    "net_pay": "1408.6",
     "total_hours": null,
     "earnings": [
       {
@@ -355,7 +355,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "2128.73"
+        "amount": "1853.42"
       }
     ],
     "taxes": [],
@@ -363,7 +363,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "63.86",
+        "employee_amount": "55.6",
         "employer_amount": null
       }
     ],
@@ -382,8 +382,8 @@
     "check_date": "2024-09-30",
     "period_start": "2024-09-30",
     "period_end": "2024-09-30",
-    "gross_pay": "1813.43",
-    "net_pay": "1378.21",
+    "gross_pay": "1835.92",
+    "net_pay": "1395.3",
     "total_hours": null,
     "earnings": [
       {
@@ -392,7 +392,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1813.43"
+        "amount": "1835.92"
       }
     ],
     "taxes": [],
@@ -400,7 +400,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "54.4",
+        "employee_amount": "55.08",
         "employer_amount": null
       }
     ],
@@ -419,8 +419,8 @@
     "check_date": "2024-10-15",
     "period_start": "2024-10-15",
     "period_end": "2024-10-15",
-    "gross_pay": "1858.4",
-    "net_pay": "1412.38",
+    "gross_pay": "2171.24",
+    "net_pay": "1650.14",
     "total_hours": null,
     "earnings": [
       {
@@ -429,7 +429,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1858.4"
+        "amount": "2171.24"
       }
     ],
     "taxes": [],
@@ -437,7 +437,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "55.75",
+        "employee_amount": "65.14",
         "employer_amount": null
       }
     ],
@@ -456,8 +456,8 @@
     "check_date": "2024-11-01",
     "period_start": "2024-11-01",
     "period_end": "2024-11-01",
-    "gross_pay": "1829.42",
-    "net_pay": "1390.36",
+    "gross_pay": "2000.87",
+    "net_pay": "1520.66",
     "total_hours": null,
     "earnings": [
       {
@@ -466,7 +466,7 @@
         "description": "Regular",
         "hours": "80.0",
         "rate": null,
-        "amount": "1829.42"
+        "amount": "2000.87"
       }
     ],
     "taxes": [],
@@ -474,7 +474,7 @@
       {
         "deduction_setup_id": null,
         "code": "401K",
-        "employee_amount": "54.88",
+        "employee_amount": "60.03",
         "employer_amount": null
       }
     ],

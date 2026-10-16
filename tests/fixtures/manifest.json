@@ -1,39 +1,17 @@
 {
   "seed": 20251014,
   "providers": [
-    "prismhr",
-    "isolved",
-    "ukg-ready"
+    "prismhr"
   ],
   "files": {
     "prismhr": {
       "company_input": "tests/fixtures/prismhr/company_input.json",
       "employees_input": "tests/fixtures/prismhr/employees_input.json",
       "payroll_input": "tests/fixtures/prismhr/payroll_input.json"
-    },
-    "isolved": {
-      "company_input": "tests/fixtures/isolved/company_input.json",
-      "employees_input": "tests/fixtures/isolved/employees_input.json",
-      "payroll_input": "tests/fixtures/isolved/payroll_input.json"
-    },
-    "ukg-ready": {
-      "company_input": "tests/fixtures/ukg-ready/company_input.json",
-      "employees_input": "tests/fixtures/ukg-ready/employees_input.json",
-      "payroll_input": "tests/fixtures/ukg-ready/payroll_input.json"
     }
   },
   "counts": {
     "prismhr": {
-      "companies": 2,
-      "employees": 6,
-      "paychecks": 13
-    },
-    "isolved": {
-      "companies": 2,
-      "employees": 6,
-      "paychecks": 13
-    },
-    "ukg-ready": {
       "companies": 2,
       "employees": 6,
       "paychecks": 13

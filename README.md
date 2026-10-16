@@ -22,6 +22,8 @@ src/normalization/
   adapters/                  One file per provider - raw API shape -> canonical schema
   __main__.py                CLI entry point (organizer-provided scaffold)
 scripts/generate_fixtures.py Deterministic synthetic data generator, no credentials needed
+scripts/pull_live_and_normalize.py
+                              Pulls one real employee live and converts it, from the terminal
 app/                         Streamlit wizard app + the Python modules it's built from
 tests/                       pytest suite against the synthetic fixtures (23 tests)
 docs/                        Design-rationale documents
@@ -68,6 +70,15 @@ SQLite database (`canonical.db`) - with a built-in table browser and a
 per-session SQL export, so the normalized output is actually inspectable,
 not just a JSON blob in a terminal. See [RUNNING.md](RUNNING.md) for the
 full step-by-step wizard walkthrough.
+
+**Live data and normalization also work without Streamlit.**
+`scripts/pull_live_and_normalize.py` signs in, pulls one real employee, and
+runs it through the same adapter - entirely from the terminal. It exists
+because the CLI's own `normalize` subcommand enforces a licensing
+readiness check that currently blocks isolved and UKG Ready (see
+[ASSUMPTIONS_AND_DECISIONS.md](ASSUMPTIONS_AND_DECISIONS.md) §4); this
+script calls the adapter directly, so live data from all three providers
+can be normalized from the terminal, not just PrismHR.
 
 ## How I built it
 

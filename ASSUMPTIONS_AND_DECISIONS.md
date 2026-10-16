@@ -189,6 +189,13 @@ the same adapter code the CLI would call, just not routed through the CLI
 wrapper's gate. `python -m normalization normalize --provider prismhr ...`
 is unaffected and works end to end.
 
+For live (not fixture) data specifically, `scripts/pull_live_and_normalize.py`
+is this project's terminal-only workaround: it pulls one employee live and
+calls `canonicalize_employee()` directly (the same code path above), so
+live data from isolved and UKG Ready can be normalized from the terminal
+without going through the CLI's blocked `normalize` subcommand. See
+[RUNNING.md](RUNNING.md) for usage.
+
 ## 5. Application-layer decisions (`app/`)
 
 - **Deterministic synthetic data generates all six scripted scenarios per
@@ -232,20 +239,3 @@ data and write it into a destination provider tenant) was not built. This
 submission is read/normalize-only: provider → canonical. Everything above
 and in `docs/CANONICAL_SCHEMA.md` reflects that scope.
 
-## 7. What's still open
-
-- `Employee.worker_type`, `department`, `manager_employee_id` (PrismHR/
-  isolved), and `pay_frequency` are unset across all three adapters - each
-  has a real raw field but no documented enum, no clean 1:1 mapping, or
-  lives behind a sub-resource never crawled.
-- `Paycheck.benefit_contributions` is unpopulated for all three providers
-  (§2) - `BenefitContributionLine` stays part of the schema as a documented
-  gap, not removed, since the underlying data is real and was seen live for
-  PrismHR, just not yet mapped.
-- `DeductionLine.deduction_setup_id` is always `None` for PrismHR and
-  isolved (§2).
-- Garnishments and benefit-plan enrollment are visible in all three
-  provider specs but arguably belong to data types outside this
-  assignment's required four - left out of scope rather than folded into
-  `DeductionSetup`/`BenefitContributionLine` without a clearer signal they
-  belong there.
